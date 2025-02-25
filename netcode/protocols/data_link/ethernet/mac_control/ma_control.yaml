@@ -1,0 +1,12 @@
+# Description of pritives and functions
+functions:
+  name: "MA_CONTROL"
+  protocol:
+    request: [ "destination_address", "opcode", "request_operand_list"]
+    indication: [ "opcode", "request_operand_list" ]
+  documentation:
+    - origin: "IEEE"
+      name: "IEEE Std 802.3-2022, IEEE Standard for Ethernet"
+      section: "31.3.1.2"
+    - origin: "Kebag Logic"
+      section: "books/standards-dissection/page/media-access-control-mac-and-framing"

@@ -1,0 +1,46 @@
+#Description of primitives and functions
+
+# The list of the supported protocols:
+support:
+  - "100Mbps"
+  - "1000Mbps"
+  - "2.5g"
+  - "5g"
+  - "10g"
+  - "25g"
+  - "40g"
+  - "100g"
+functions:
+  - name: "PLS_DATA"
+    protocol:
+      request: [ "OUTPUT_UNIT" ]
+      indication: [ "INPUT_UNIT" ]
+    documentation:
+      - origin: "IEEE"
+        name: "IEEE Std 802.3-2022, IEEE Standard for Ethernet"
+        section: [ "35.2.1.1", "35.2.1.2" ]
+
+  - name: "PLS_CARRIER"
+    protocol:
+      indication: [ "CARRIER_STATUS" ]
+    documentation:
+      - origin: "IEEE"
+        name: "IEEE Std 802.3-2022, IEEE Standard for Ethernet"
+        section: [ "35.2.1.3" ]
+
+  - name: "PLS_SIGNAL"
+    protocol:
+      indication: [ "SIGNAL_STATUS" ]
+    documentation:
+      - origin: "IEEE"
+        name: "IEEE Std 802.3-2022, IEEE Standard for Ethernet"
+        section: [ "35.2.1.4" ]
+
+  - name: "PLS_DATA_VALID"
+    protocol:
+      indication: [ "DATA_VALID_STATUS" ]
+    documentation:
+      - origin: "IEEE"
+        name: "IEEE Std 802.3-2022, IEEE Standard for Ethernet"
+        section: [ "35.2.1.7" ]
+
