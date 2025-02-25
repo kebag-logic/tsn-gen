@@ -4,3 +4,6 @@
 [submodule "external/PcapPlusPlus"]
 	path = external/PcapPlusPlus
 	url = https://github.com/seladb/PcapPlusPlus.git
+[submodule "external/rapidyaml"]
+	path = external/rapidyaml
+	url = https://github.com/biojppm/rapidyaml.git
