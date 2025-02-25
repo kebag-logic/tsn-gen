@@ -1,0 +1,6 @@
+[submodule "external/protobuf-c"]
+	path = external/protobuf-c
+	url = https://github.com/protobuf-c/protobuf-c.git
+[submodule "external/PcapPlusPlus"]
+	path = external/PcapPlusPlus
+	url = https://github.com/seladb/PcapPlusPlus.git
