@@ -1,12 +1,142 @@
 #Description of primitives and functions
 
-functions:
-  - name: "ADP_INTERFACE"
-    protocol:
-      request: [ "ADP_INTERFACE_INTPUT" ]
-      indication: [ "ADP_INTERFACE_OUTPUT" ]
-    documentation:
-      - origin: "IEEE"
-        name: "IEEE Std 802.3-2022, IEEE Standard for Ethernet"
-        section: [ "35.2.1.1", "35.2.1.2" ]
+name: atdecc_adp_service
 
+# Keep the message in the order they would arrive for pdu, defined the PDU
+message:
+  - var: message_type
+    size: 4  # Type of message (e.g., control, data)
+  - var: valid_time
+    size: 5  # Time validity window (e.g., in TSN)
+  - var: control_data_length
+    size: 11  # Length of control data payload
+  - var: entity_id
+    size: 64  # Unique identifier for the entity
+  - var: entity_model_id
+    size: 64  # Model identifier (e.g., hardware/software version)
+  - var: entity_capabilities
+    size: 32  # Bitmask of entity capabilities
+  - var: talker_stream_sources
+    size: 16  # Number of talker stream sources
+  - var: talker_capabilities
+    size: 16  # Capabilities of talker streams
+  - var: listener_stream_sinks
+    size: 16  # Number of listener stream sinks
+  - var: listener_capabilities
+    size: 16  # Capabilities of listener sinks
+  - var: controller_capabilities
+    size: 32  # Bitmask of controller capabilities
+  - var: available_index
+    size: 32  # Index for available resources or configurations
+  - var: gptp_grandmaster_id
+    size: 64  # Identifier for the gPTP grandmaster clock
+  - var: gptp_domain_number
+    size: 8  # Domain number for gPTP synchronization
+  - var: reserved0
+    size: 8  # Reserved for future use
+  - var: current_configuration_index
+    size: 16  # Index of the current configuration
+  - var: identify_control_index
+    size: 16  # Index for control identification
+  - var: interface_index
+    size: 16  # Index of the network interface
+  - var: association_id
+    size: 64  # Identifier for associations (e.g., TSN streams)
+  - var: reserved1
+    size: 32  # Reserved for future use
+
+typedefs:
+  - typedef: entityInfoTypeDef
+    type: structure
+    vars:
+      - var: valid_time
+        size: 5  # Time validity window (e.g., in TSN)
+      - var: control_data_length
+        size: 11  # Length of control data payload
+      - var: entity_id
+        size: 64  # Unique identifier for the entity
+      - var: entity_model_id
+        size: 64  # Model identifier (e.g., hardware/software version)
+      - var: entity_capabilities
+        size: 32  # Bitmask of entity capabilities
+      - var: talker_stream_sources
+        size: 16  # Number of talker stream sources
+      - var: talker_capabilities
+        size: 16  # Capabilities of talker streams
+      - var: listener_stream_sinks
+        size: 16  # Number of listener stream sinks
+      - var: listener_capabilities
+        size: 16  # Capabilities of listener sinks
+      - var: controller_capabilities
+        size: 32  # Bitmask of controller capabilities
+      - var: available_index
+        size: 32  # Index for available resources or configurations
+      - var: gptp_grandmaster_id
+        size: 64  # Identifier for the gPTP grandmaster clock
+      - var: gptp_domain_number
+        size: 8  # Domain number for gPTP synchronization
+      - var: current_configuration_index
+        size: 16  # Index of the current configuration
+      - var: identify_control_index
+        size: 16  # Index for control identification
+      - var: interface_index
+        size: 16  # Index of the network interface
+      - var: association_id
+        size: 64  # Identifier for associations (e.g., TSN streams)
+  - typedef: advEntityFSMEnum
+    type: enum
+    vars: [ 
+
+
+# Global variable shared amongst different block internally and externally
+global:
+  vars:
+    - var: curentTime
+      size: 64
+      dir: in
+    - var: entityInfo
+      type: entityInfoTypeDef
+      dir: inout
+    - var: reannounceTimerTimeout
+      dir: out
+    - var: needsAdvertise
+      type: boolean
+      dir: out
+    - var: doTerminate
+      type: boolean
+      dir: out
+    - var: delayTimerTimeout
+      dir: out
+
+# Entities that can be in the ADP service
+entities:
+  - entity: ADP_INTERFACE
+    interfaces:
+      - interface: ADP_IF
+        dir: in
+      - interface: ADP_ENT_IF
+        dir: out
+    function:
+      - function: ADP_IF_ADVERTISE_STATE_MACHINE
+        vars:
+          - var: state
+      - function: ADP_IF_ANNOUNCE_STATE_MACHINE
+    introspection:
+      interfaces: 
+        - ADP_IF_ADVERTISE_INTROSPECTION
+        - ADP_IF_ANNOUNCE_INTROSPECTION
+  entity: ADP_ENTITY
+    interfaces:
+      - ADP_ENT_IF
+    function:
+      - ADP_ADVERTISE_STATE_MACHINE
+      - ADP_ANNOUNCE_STATE_MACHINE
+    introspection:
+      interfaces: 
+        - ADP_IF_ADVERTISE_INTROSPECTION
+        - ADP_IF_ANNOUNCE_INTROSPECTION
+
+documentation:
+  - origin: "IEEE"
+    name: "IEEE Std 1722-1-2021"
+    section: [ "6" ]
