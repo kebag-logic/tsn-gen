@@ -1,0 +1,11 @@
+#Description of primitives and functions
+
+service: 1722_avtp_alternate_service
+
+message:
+  - var: subtype 
+    size: 8  # Type of message (e.g., control, data)
+  - var: h
+    size: 1
+  - var: version
+    size: 3

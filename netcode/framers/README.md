@@ -4,12 +4,13 @@ Framers
 # One protocol, different Layers
 
 Framers are layers of translation that would allow systems to be tested 
-indpedendently of their nature, which could be:
+independently of their nature, which could be:
 
  * Standard Linux sockets
  * XDP for performances
  * DPDK for performances
  * Verilog code over Verilator
+ * P4 code generation
  * PCAP file 
 
 Each of the above mentioned systems use different "core engines".

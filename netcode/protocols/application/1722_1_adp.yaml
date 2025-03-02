@@ -1,6 +1,6 @@
 #Description of primitives and functions
 
-name: atdecc_adp_service
+service: atdecc_adp_service
 
 # Keep the message in the order they would arrive for pdu, defined the PDU
 message:
@@ -85,7 +85,7 @@ typedefs:
         size: 64  # Identifier for associations (e.g., TSN streams)
   - typedef: advEntityFSMEnum
     type: enum
-    vars: [ 
+    vars: [  ]
 
 
 # Global variable shared amongst different block internally and externally
@@ -114,7 +114,7 @@ entities:
     interfaces:
       - interface: ADP_IF
         dir: in
-      - interface: ADP_ENT_IF
+      - interface: ADP_ENT_IF # Connection with the entity interfacing
         dir: out
     function:
       - function: ADP_IF_ADVERTISE_STATE_MACHINE
@@ -129,12 +129,12 @@ entities:
     interfaces:
       - ADP_ENT_IF
     function:
-      - ADP_ADVERTISE_STATE_MACHINE
-      - ADP_ANNOUNCE_STATE_MACHINE
+      - ADP_ENTITY_ADVERTISE_STATE_MACHINE
+      - ADP_ENTITY_ANNOUNCE_STATE_MACHINE
     introspection:
       interfaces: 
-        - ADP_IF_ADVERTISE_INTROSPECTION
-        - ADP_IF_ANNOUNCE_INTROSPECTION
+        - ADP_ENTITY_ADVERTISE_INTROSPECTION
+        - ADP_ENTITY_ANNOUNCE_INTROSPECTION
 
 documentation:
   - origin: "IEEE"

@@ -1,0 +1,33 @@
+#Description of primitives and functions
+
+service: 1722_avtp_common_stream
+
+message:
+- name: subtype
+  size: 8  # Subtype (8 bits)
+- name: sv
+  size: 1  # SV (1 bit)
+- name: version
+  size: 3  # Version (3 bits)
+- name: mv
+  size: 1  # MV (1 bit)
+- name: t_s_d
+  size: 1  # T_S_D (1 bit)
+- name: tv
+  size: 1  # TV (1 bit)
+- name: sequence_num
+  size: 8  # Sequence Number (8 bits)
+- name: format_specific_data_1
+  size: 8  # Format Specific Data 1 (8 bits)
+- name: tu
+  size: 8  # TU (8 bits)
+- name: stream_id
+  size: 32  # Stream ID (32 bits)
+- name: avtp_timestamp
+  size: 32  # AVTP Timestamp (32 bits)
+- name: format_specific_data_2
+  size: 32  # Format Specific Data 2 (32 bits)
+- name: stream_data_length
+  size: 16  # Stream Data Length (16 bits)
+- name: format_specific_data_3
+  size: 16  # Format Specific Data 3 (16 bits)
