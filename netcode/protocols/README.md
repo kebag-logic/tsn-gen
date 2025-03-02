@@ -24,5 +24,3 @@ Sure! Here's a table with at least **five examples** for each **OSI model layer*
 | **Layer 5 – Session**   | Manages sessions, maintains connections          | TLS (Transport Layer Security), NetBIOS, SIP (Session Initiation Protocol), RPC (Remote Procedure Call), SOCKS (Socket Secure) |
 | **Layer 6 – Presentation** | Data encoding, encryption, and compression      | SSL/TLS (Secure Sockets Layer), JPEG/PNG Compression, MPEG (video encoding), ASCII/Unicode (text encoding), XML/JSON Parsing |
 | **Layer 7 – Application** | User-facing applications and services           | HTTP/HTTPS (web browsing), DNS (Domain Name System), FTP (File Transfer Protocol), SMTP/IMAP/POP3 (email protocols), IEEE 1722.1 (AVDECC for AVB/TSN) |
-
-This structured format should make it easier to reference the OSI layers and their corresponding protocols! 🚀
