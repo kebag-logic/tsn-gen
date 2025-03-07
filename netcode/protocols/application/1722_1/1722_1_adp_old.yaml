@@ -1,0 +1,10 @@
+functions:
+  - name: "ADP_ENTITY_DATA"
+    primitives:
+      # Connection with the AVTP, could be something else
+      request: [ "ADP_ENTITY_INPUT" ]
+      indication: [ "ADP_ENTITY_OUTPUT" ]
+    documentation:
+      - origin: "IEEE"
+        name: "IEEE Std 1722.1-2021"
+        section: [ "6.1", "6.2" ]

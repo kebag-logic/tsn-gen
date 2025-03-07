@@ -1,0 +1,9 @@
+functions:
+  - name: "AECP_MESSAGE"
+    primitives:
+      request: [ "AECP_INPUT" ]
+      indication: [ "AECP_OUTPUT" ]
+    documentation:
+      - origin: "IEEE"
+        name: "IEEE Std 802.3-2022, IEEE Standard for Ethernet"
+        section: [ "35.2.1.1", "35.2.1.2" ]
