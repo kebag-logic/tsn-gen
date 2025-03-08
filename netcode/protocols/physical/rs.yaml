@@ -1,5 +1,6 @@
 #Description of primitives and functions
 
+# TODO redo it
 # The list of the supported protocols:
 support:
   - "100Mbps"
