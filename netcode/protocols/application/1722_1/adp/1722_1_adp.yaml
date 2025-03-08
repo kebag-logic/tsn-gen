@@ -83,10 +83,41 @@ typedefs:
         size: 16  # Index of the network interface
       - var: association_id
         size: 64  # Identifier for associations (e.g., TSN streams)
-  - typedef: advEntityFSMEnum
+  - typedef: advertiseEntityFSMEnum
     type: enum
-    vars: [  ]
-
+    size: 8
+    vars: 
+     - INITIALIZE: 0
+     - DELAY: 1
+     - ADVERTISE : 2
+     - WAITING: 3
+  - typedef: advertiseInterfaceFSMEnum
+    type: enum
+    size: 8
+    vars: 
+     - INITIALIZE: 0
+     - WAITING: 1 
+     - DEPARTING: 2
+     - ADVERTISE : 3
+  - typedef: discoverEntityFSMEnum
+    type: enum
+    size: 8
+    vars: 
+     - WAITING: 0
+     - DISCOVER: 1 
+     - AVAILABLE: 2
+     - DEPARTING: 3
+     - TIMEOUT : 4
+  - typedef: discoverInterfaceFSMEnum
+    type: enum
+    size: 8
+    vars: 
+     - INITIALIZE: 0
+     - WAITING: 1 
+     - RECEIVED_DISCOVER: 2
+     - UPDATE_GM: 3
+     - LINK_STATE_CHANGE : 4
+     - UPDATE_CONFIGURATION : 5
 
 # Global variable shared amongst different block internally and externally
 global:
