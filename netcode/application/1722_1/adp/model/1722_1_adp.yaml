@@ -4,11 +4,12 @@
 # Sucha s controller or not controoler 
 # Such as stream info sink/source
 # Such as ptp etc...
+# Generate the dependency such as 1722_1::protocol::vars::var_name
 
 service: atdecc_adp_service
 
 # Keep the message in the order they would arrive for pdu, defined the PDU
-message:
+vars:
   - var: message_type
     size: 4  # Type of message (e.g., control, data)
     expected: 
@@ -70,44 +71,49 @@ message:
     expected:
       value: 0
 
+message:
+  - var: message_type
+  - var: valid_time
+  - var: control_data_length
+  - var: entity_id
+  - var: entity_model_id
+  - var: entity_capabilities
+  - var: talker_stream_sources
+  - var: talker_capabilities
+  - var: listener_stream_sinks
+  - var: listener_capabilities
+  - var: controller_capabilities
+  - var: available_index
+  - var: gptp_grandmaster_id
+  - var: gptp_domain_number
+  - var: reserved0
+  - var: current_configuration_index
+  - var: identify_control_index
+  - var: interface_index
+  - var: association_id
+  - var: reserved1
+
 typedefs:
   - typedef: entityInfoTypeDef
     type: structure
     vars:
       - var: valid_time
-        size: 5  # Time validity window (e.g., in TSN)
       - var: control_data_length
-        size: 11  # Length of control data payload
       - var: entity_id
-        size: 64  # Unique identifier for the entity
       - var: entity_model_id
-        size: 64  # Model identifier (e.g., hardware/software version)
       - var: entity_capabilities
-        size: 32  # Bitmask of entity capabilities
       - var: talker_stream_sources
-        size: 16  # Number of talker stream sources
       - var: talker_capabilities
-        size: 16  # Capabilities of talker streams
       - var: listener_stream_sinks
-        size: 16  # Number of listener stream sinks
       - var: listener_capabilities
-        size: 16  # Capabilities of listener sinks
       - var: controller_capabilities
-        size: 32  # Bitmask of controller capabilities
       - var: available_index
-        size: 32  # Index for available resources or configurations
       - var: gptp_grandmaster_id
-        size: 64  # Identifier for the gPTP grandmaster clock
       - var: gptp_domain_number
-        size: 8  # Domain number for gPTP synchronization
       - var: current_configuration_index
-        size: 16  # Index of the current configuration
       - var: identify_control_index
-        size: 16  # Index for control identification
       - var: interface_index
-        size: 16  # Index of the network interface
       - var: association_id
-        size: 64  # Identifier for associations (e.g., TSN streams)
   - typedef: advertiseEntityFSMEnum
     type: enum
     size: 8
