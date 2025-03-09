@@ -7,3 +7,6 @@
 [submodule "external/rapidyaml"]
 	path = external/rapidyaml
 	url = https://github.com/biojppm/rapidyaml.git
+[submodule "external/mininet"]
+	path = external/mininet
+	url = https://github.com/mininet/mininet.git
