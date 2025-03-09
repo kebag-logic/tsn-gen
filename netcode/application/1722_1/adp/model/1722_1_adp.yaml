@@ -1,17 +1,31 @@
 #Description of primitives and functions
 
+#TODO add information for dependencies
+# Sucha s controller or not controoler 
+# Such as stream info sink/source
+# Such as ptp etc...
+
 service: atdecc_adp_service
 
 # Keep the message in the order they would arrive for pdu, defined the PDU
 message:
   - var: message_type
     size: 4  # Type of message (e.g., control, data)
+    expected: 
+      values: [ 0, 1, 2 ]
   - var: valid_time
     size: 5  # Time validity window (e.g., in TSN)
+    expected:
+      range: [ 1, 31 ]
+      steps: 1
   - var: control_data_length
     size: 11  # Length of control data payload
+      value: 56  
   - var: entity_id
     size: 64  # Unique identifier for the entity
+    expected:
+      not:
+        exact: [ 0xFFFFFFFFFFFFFFFF, 0x0000000000000000 ]
   - var: entity_model_id
     size: 64  # Model identifier (e.g., hardware/software version)
   - var: entity_capabilities
@@ -20,20 +34,29 @@ message:
     size: 16  # Number of talker stream sources
   - var: talker_capabilities
     size: 16  # Capabilities of talker streams
+      mask: [ 0x803F ]
   - var: listener_stream_sinks
     size: 16  # Number of listener stream sinks
   - var: listener_capabilities
     size: 16  # Capabilities of listener sinks
+    expected:
+      mask: [ 0x803F ]
   - var: controller_capabilities
     size: 32  # Bitmask of controller capabilities
+    expected:
+      mask: [ 0x8000 ]
   - var: available_index
     size: 32  # Index for available resources or configurations
+    expected:
+      values: [ 0, 1 ] 
   - var: gptp_grandmaster_id
     size: 64  # Identifier for the gPTP grandmaster clock
   - var: gptp_domain_number
     size: 8  # Domain number for gPTP synchronization
   - var: reserved0
     size: 8  # Reserved for future use
+    expected:
+      value: 0
   - var: current_configuration_index
     size: 16  # Index of the current configuration
   - var: identify_control_index
@@ -44,6 +67,8 @@ message:
     size: 64  # Identifier for associations (e.g., TSN streams)
   - var: reserved1
     size: 32  # Reserved for future use
+    expected:
+      value: 0
 
 typedefs:
   - typedef: entityInfoTypeDef
@@ -143,23 +168,23 @@ global:
 entities:
   - entity: ADP_INTERFACE
     interfaces:
-      - interface: ADP_IF # Connection with the lower level interfaces
+      - interface: ADP_IF_DATA # Connection with the lower level interfaces
         dir: in
-      - interface: ADP_ENT_IF # Connection with the entity interfacing
+      - interface: ADP_DLL_INFO # Connection with Date link layer to get info such as PTP link up mac aet
+        dir: in
+      - interface: ADP_ENT_IF_DATA # Connection with the entity interfacing
         dir: out
-    function:
-      - function: ADP_IF_ADVERTISE_STATE_MACHINE
-        vars:
-          - var: state
-      - function: ADP_IF_ANNOUNCE_STATE_MACHINE
+    functions:
+      - ADP_IF_ADVERTISE_STATE_MACHINE
+      - ADP_IF_ANNOUNCE_STATE_MACHINE
     introspection:
       interfaces: 
-        - ADP_IF_ADVERTISE_INTROSPECTION
+        - ADP_IF_ADVERTIS_INTROSPECTION
         - ADP_IF_ANNOUNCE_INTROSPECTION
   entity: ADP_ENTITY
     interfaces:
-      - ADP_ENT_IF
-    function:
+      - ADP_ENTITY_INTERFACE
+    functions:
       - ADP_ENTITY_ADVERTISE_STATE_MACHINE
       - ADP_ENTITY_ANNOUNCE_STATE_MACHINE
     introspection:
