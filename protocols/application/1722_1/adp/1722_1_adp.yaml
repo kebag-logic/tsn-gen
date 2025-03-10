@@ -151,38 +151,37 @@ typedefs:
      - UPDATE_CONFIGURATION : 5
 
 # Global variable shared amongst different block internally and externally
-global:
-  vars:
-    - var: curentTime
-      size: 64
-      dir: in
-    - var: entityInfo
-      type: entityInfoTypeDef
-      dir: inout
-    - var: reannounceTimerTimeout
-      dir: out
-    - var: needsAdvertise
-      type: boolean
-      dir: out
-    - var: doTerminate
-      type: boolean
-      dir: out
-    - var: delayTimerTimeout
-      dir: out
+#global:
+#  vars:
+#    - var: curentTime
+#      size: 64
+#      dir: in
+#    - var: entityInfo
+#      type: entityInfoTypeDef
+#      dir: inout
+#    - var: reannounceTimerTimeout
+#      dir: out
+#    - var: needsAdvertise
+#      type: boolean
+#      dir: out
+#    - var: doTerminate
+#      type: boolean
+#      dir: out
+#    - var: delayTimerTimeout
+#      dir: out
 
 # Entities that can be in the ADP service
 entities:
   - entity: ADP_INTERFACE
     interfaces:
-      - interface: ADP_IF_DATA # Connection with the lower level interfaces
+      # Connection with the lower level interfaces
+      - interface: ADP_IF_DATA
         dir: in
-      - interface: ADP_DLL_INFO # Connection with Date link layer to get info such as PTP link up mac aet
+      # Connection with Date link layer to get info such as PTP link up mac aet
+      - interface: ADP_DLL_INFO
         dir: in
       - interface: ADP_ENT_IF_DATA # Connection with the entity interfacing
         dir: out
-    functions:
-      - ADP_IF_ADVERTISE_STATE_MACHINE
-      - ADP_IF_ANNOUNCE_STATE_MACHINE
     introspection:
       interfaces: 
         - ADP_IF_ADVERTIS_INTROSPECTION
@@ -190,9 +189,6 @@ entities:
   entity: ADP_ENTITY
     interfaces:
       - ADP_ENTITY_INTERFACE
-    functions:
-      - ADP_ENTITY_ADVERTISE_STATE_MACHINE
-      - ADP_ENTITY_ANNOUNCE_STATE_MACHINE
     introspection:
       interfaces: 
         - ADP_ENTITY_ADVERTISE_INTROSPECTION
