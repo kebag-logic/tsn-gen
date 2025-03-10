@@ -2,9 +2,7 @@
 
 This tool will generate parse a protocol database and desired inputs, which are:
 
- * Protocol relationship (stacking)
- * Platform FPGA/x86
- * Where to place glues
+ * Service, their parameters, and stacking location
 
 Used with external tool it can provide information about the following:
 
