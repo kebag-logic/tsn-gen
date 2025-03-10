@@ -10,3 +10,9 @@
 [submodule "external/mininet"]
 	path = external/mininet
 	url = https://github.com/mininet/mininet.git
+[submodule "external/googletest"]
+	path = external/googletest
+	url = https://github.com/google/googletest.git
+[submodule "external/FTXUI"]
+	path = external/FTXUI
+	url = https://github.com/ArthurSonzogni/FTXUI.git
