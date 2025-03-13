@@ -9,4 +9,7 @@ public:
 	 */
 	Hierarchy(const Node& baseNode);
 
+	/**
+	 *
+
 };

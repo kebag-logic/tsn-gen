@@ -1,0 +1,19 @@
+@startuml "Structur"
+
+class Tree {
+}
+
+class RootNode {
+}
+
+class Leaf {
+}
+
+abstract Node {
+}
+
+Tree *--> RootNode
+Leaf ..|> Node
+RootNode ..|> Node
+
+@enduml

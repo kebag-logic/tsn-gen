@@ -1,0 +1,32 @@
+@startuml "Protocol"
+
+
+Abstract Var {
+    + getName(): String
+    # name: String
+    # Type: String
+    # Length: sizeof T
+    # Value: valueT
+}
+
+class VarTypdef {
+    - mVar: Var[]
+}
+
+class InterfaceProtocol {
+    - name: string
+    - direction: Enum { in, out }
+    - mVars: Var[]
+}
+
+class Protocol {
+    -name: String
+    -mInterface: InterfaceProtocol[]
+}
+
+VarTypdef o-up--> Var
+VarTypdef ..|> Var
+InterfaceProtocol o-left--> "1..*" Var
+Protocol *--> "1..*" InterfaceProtocol
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml "Protocol"
+class TreeBuilder {
+}
+
+class Tree {
+}
+
+class RootNode {
+}
+
+class Leaf {
+}
+
+abstract Node {
+}
+
+
+@enduml
