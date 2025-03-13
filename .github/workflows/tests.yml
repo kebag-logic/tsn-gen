@@ -1,0 +1,21 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Retrieve Submodules
+      run: git submodule update --init --recursive
+    - name: Setup, Configure and Build
+      run: ./setup.sh
+    - name: Execute tests
+      run: ./tests/run-tests.sh
