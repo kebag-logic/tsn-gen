@@ -33,12 +33,14 @@ if [ $# -eq 1 ]; then
 		echo "${1} is not a valid directory"
 		exit 255
 	fi
+	build_dir=${1}
 fi
 
 echo "Executing software test suite"
-echo "Test location: ${1}"
+echo "Test location: $build_dir"
 
-tests_folders=$(find ${1} -type d -iname "tests")
+tests_folders=$(find ${build_dir} -type d -path ${build_dir}/external -prune , -iname "tests")
+echo $tests_folders
 
 for tests_folder in $tests_folders
 do

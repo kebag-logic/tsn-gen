@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO seperate the different action, such as the configuration and the compilation
+
 SCRIPT=$(realpath -s "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 
