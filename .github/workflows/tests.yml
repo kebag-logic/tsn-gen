@@ -12,6 +12,6 @@ jobs:
     - name: Retrieve Submodules
       run: git submodule update --init --recursive
     - name: Setup, Configure and Build
-      run: ./setup.sh
+      run: ./setup.sh d
     - name: Execute tests
       run: ./tests/run-tests.sh
