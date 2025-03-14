@@ -13,9 +13,21 @@ fi
 
 mkdir -p ${SCRIPTPATH}/build
 cd ${SCRIPTPATH}/build
+
+## Configuration
 cmake ${SCRIPTPATH}
+if [ $? -ne 0 ]; then
+	echo "ERROR: Configuration failed"
+	exit 255
+fi
+
+## Compilation
 make -j$(nprocs)
+if [ $? -ne 0 ]; then
+	echo "ERROR: Compilation failed"
+	exit 255
+fi
+
 ../tests/run-tests.sh
 
 cd ${SCRIPTPATH}
-

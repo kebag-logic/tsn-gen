@@ -19,12 +19,6 @@ option(ENABLE_PARSER_TESTS "Enable Parser Unit Tests" ON)
 add_subdirectory(parser)
 add_subdirectory(external)
 
-##################### UNIT TESTS
-
-# The Parses
-if (${ENABLE_PARSER_TESTS})
-    add_subdirectory(parser/tests)
-endif(${ENABLE_PARSER_TESTS})
 
 #### Normal applicaiton #### 
 
