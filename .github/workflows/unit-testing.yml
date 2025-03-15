@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: Unit-testing
 
 on: [push, pull_request]
 
