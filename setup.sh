@@ -26,7 +26,7 @@ if [ $? -ne 0 ]; then
 fi
 
 ## Compilation
-make -j$(nprocs)
+make -j$(nproc)
 if [ $? -ne 0 ]; then
 	echo "ERROR: Compilation failed"
 	exit 255
