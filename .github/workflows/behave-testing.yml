@@ -1,0 +1,16 @@
+name: Behave Testing
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Retrieve Submodules
+      run: git submodule update --init --recursive
+    - name: Setup, Configure and Build
+      run: ./setup.sh d
+    - name: Execute tests
+      run: ./tests/run-tests-behave.sh
