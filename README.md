@@ -2,6 +2,8 @@
 
 The CPP tsn tool is a collection of network protocol and interfaces.
 
+# Goals
+
 
 The aim of the tool is 6-fold:
 
@@ -18,3 +20,12 @@ or impede developer for this it will use:
  * Avoid dependencies
  * Use dynanic linking
  * Cache as much as possible.
+
+# Dependencies
+
+Testing:
+ * g++, clang, clang++, make, cmake, python3, bash, binutils
+
+
+To use behave, _run-test-behave.sh_, which will create a virtualenv in your the 
+folder tests/ called behav-pyvenv

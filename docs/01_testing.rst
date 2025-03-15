@@ -8,3 +8,9 @@ Once compile the source that will be available in the build folder will be found
 and executed one by in any order.
 
 The execution shall stop upon the first failure.
+
+## Unit testing
+
+/TODO
+
+## DEBHAVE TESTING
