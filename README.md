@@ -38,3 +38,10 @@ $ ./exec-local-test.sh
 ```
 in the end it will provide the expected results as if running in github
 
+
+To make it executable on each commit, the tests/install-pre-commit-hook.sh 
+shall be executed to verify everything is done fine
+
+```bash
+$ ./test/install-pre-commit-hook.sh
+```
