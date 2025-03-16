@@ -9,7 +9,7 @@ include(CMakeGenTestingLibraries)
 #################### SOURCES	####################
 
 set(PROTO_PARSER_SRCS 
-	src/protocol-parser.cpp
+	src/protocol_parser.cpp
 )
 
 set(PROTO_PARSER_INC_DIRS

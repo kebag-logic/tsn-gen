@@ -22,7 +22,7 @@ target_link_libraries(
 
 #### First case the protocol parser
 set(PROTOCOL_PARSER_SRCS
-	protocol-parser-test.cpp
+	protocol_parser_test.cpp
 )
 
 target_link_testlibs(

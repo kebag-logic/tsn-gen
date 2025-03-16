@@ -19,4 +19,10 @@ const std::string& ProtocolParser::getBasePath(void) const
 	return mProtocolBasePath;
 }
 
+const ProtocolParserErr& ProtocolParser::parse(std::vector<ProtocolNode>& nodes)
+{
+	mErrorsMsg.setErrorCode(ProtocolParserErr::PROTOPARSERERR_INVALID_PATH);
+	return mErrorsMsg;
+}
+
 
