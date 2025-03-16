@@ -15,3 +15,6 @@ pip3 install behave
 cd features
 
 behave
+if [ $? -ne 0 ]; then
+	exit 255
+fi
