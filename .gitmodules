@@ -16,3 +16,6 @@
 [submodule "external/FTXUI"]
 	path = external/FTXUI
 	url = https://github.com/ArthurSonzogni/FTXUI.git
+[submodule "tests/act"]
+	path = tests/act
+	url = https://github.com/nektos/act.git
