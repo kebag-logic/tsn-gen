@@ -34,7 +34,7 @@ Local execution can be done using the following command:
 
 ```bash
 $ <package manager> install go # make sure to install go first
-$ ./exec-local-test.sh
+$ ./tests/exec-local-test.sh
 ```
 in the end it will provide the expected results as if running in github
 
