@@ -7,12 +7,11 @@
 SCRIPT=$(realpath -s "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 PWD_CUR=$(pwd)
-cd $SCRIPTPATH
-
-cd ./tests/act/
+cd $SCRIPTPATH/act
 if [ ! -d "./dist/" ]; then
 	make build
 fi
-cd $SCRIPTPATH
+cd $SCRIPTPATH/..
 
+# Execute act for local build
 ./tests/act/dist/local/act -P https://github.com/catthehacker/docker_images --rm
