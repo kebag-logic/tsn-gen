@@ -3,6 +3,10 @@
 #include <string>
 #include <version.h>
 
+/**
+ * This class is in charge of retrieve the list of NODE availables
+ * in the base ProtocolPath
+ */
 class ProtocolParser {
 public:
 	ProtocolParser(const std::string& baseProtoPath);
@@ -29,4 +33,5 @@ public:
 private:
 	const std::string mProtocolParserVersion;
 	const std::string mProtocolBasePath;
+
 };

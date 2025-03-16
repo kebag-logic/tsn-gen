@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include <protocol-parser.h>
+#include <protocol_parser.h>
 #include <version.h>
 
 ProtocolParser::ProtocolParser(const std::string& baseProtoPath):
@@ -18,3 +18,5 @@ const std::string& ProtocolParser::getBasePath(void) const
 {
 	return mProtocolBasePath;
 }
+
+
