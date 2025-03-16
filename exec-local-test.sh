@@ -13,4 +13,4 @@ if [ ! -d "./dist/" ]; then
 fi
 cd $SCRIPTPATH
 
-./tests/act/dist/local/act -P https://github.com/catthehacker/docker_images --rm 
+./tests/act/dist/local/act -P https://github.com/catthehacker/docker_images --rm
