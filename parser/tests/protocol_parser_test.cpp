@@ -28,8 +28,15 @@ TEST(Parser, InvalidPathInt) {
 		ProtocolParserErr::PROTOPARSERERR_INVALID_INPUT);
 }
 
-
-
 TEST(Parser, VarCreation)
 {
+	std::string varNameTest = "nameofthevar";
+	std::string varToCheck = "";
+	Var myVar(std::string("nameofthevar"));
+
+	VarErr error = myVar.getVarName(varToCheck);
+	EXPECT_EQ(error.getErrorCode(), VarErr::VAR_SUCCESS);
+
+	EXPECT_STREQ(varToCheck.c_str(), varNameTest.c_str());
+
 }
