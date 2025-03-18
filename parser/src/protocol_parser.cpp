@@ -1,7 +1,9 @@
 #include <iostream>
+#include <filesystem>
 
 #include <protocol_parser.h>
 #include <version.h>
+
 
 ProtocolParser::ProtocolParser(const std::string& baseProtoPath):
 	mProtocolParserVersion(PROTOCOL_PARSER_VERSION),
@@ -19,10 +21,28 @@ const std::string& ProtocolParser::getBasePath(void) const
 	return mProtocolBasePath;
 }
 
-const ProtocolParserErr& ProtocolParser::parse(std::vector<ProtocolNode>& nodes)
+const ProtocolParserErr ProtocolParser::parse(void)
 {
-	mErrorsMsg.setErrorCode(ProtocolParserErr::PROTOPARSERERR_INVALID_PATH);
-	return mErrorsMsg;
+	ProtocolParserErr err;
+
+	err.setErrorCode(ProtocolParserErr::PROTOPARSERERR_INVALID_INPUT);
+	return err;
 }
 
+// TODO create its own class
+const ProtocolParserErr ProtocolParser::parseInterfaces(void)
+{
+	ProtocolParserErr err;
 
+	err.setErrorCode(ProtocolParserErr::PROTOPARSERERR_INVALID_INPUT);
+	return err;
+}
+
+// TODO create its own classfg
+const ProtocolParserErr ProtocolParser::parseVars(void)
+{
+	ProtocolParserErr err;
+	
+
+	return err;
+}

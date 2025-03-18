@@ -1,11 +1,9 @@
 #pragma once
 
-#include <string>
+#include <node.h>
 
-class ProtocolNode {
+class ProtocolNode: public Node {
 public:
 	ProtocolNode(const std::string& nodePath);
-
 private:
-	const std::string mPath;
 };

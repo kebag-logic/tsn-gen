@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <protocol_parser.h>
-#include <protocol_node.h>
+#include <protocol.h>
 
 #include <string>
 
@@ -20,11 +20,16 @@ TEST(ParserUsingTest, BasePath) {
 TEST(Parser, InvalidPathInt) {
 	const std::string dummypath("Unknown_path");
 	ProtocolParser testProtocol(dummypath);
-	std::vector<ProtocolNode> protoNodes;
 	 
-	const ProtocolParserErr& error = testProtocol.parse(protoNodes);
+	ProtocolParserErr error = testProtocol.parse();
 
 	// Check valid path ?
 	EXPECT_EQ(error.getErrorCode(),
-		ProtocolParserErr::PROTOPARSERERR_INVALID_PATH);
+		ProtocolParserErr::PROTOPARSERERR_INVALID_INPUT);
+}
+
+
+
+TEST(Parser, VarCreation)
+{
 }
