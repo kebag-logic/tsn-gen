@@ -40,3 +40,13 @@ TEST(Parser, VarCreation)
 	EXPECT_STREQ(varToCheck.c_str(), varNameTest.c_str());
 
 }
+
+TEST(Parser, VarCreationTooSmall)
+{
+	std::string varNameTest = "";
+	std::string varToCheck = "";
+	Var myVar(varNameTest);
+
+	VarErr error = myVar.getVarName(varToCheck);
+	EXPECT_EQ(error.getErrorCode(), VarErr::VAR_ERR_UNVALID_VAR);
+}
