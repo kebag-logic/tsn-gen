@@ -32,7 +32,7 @@
 /** 
  * Error class, each class has to have its own error class
  */
-class ProtocolParserErr {
+class ProtocolParserErr: public Error {
 public:
 	enum {
 		PROTOPARSER_SUCCESS,
@@ -41,23 +41,14 @@ public:
 		PROTOPARSERERR_UNEXPECTED,
 		PROTOPARSERERR_UNDEFINED,
 		PROTOPARSERERR_EXISTS,
-		ENUM_SENTINEL
+		PROTOPARSERERR_ENUM_SENTINEL
 	};
 
-	ProtocolParserErr(void) {} ;
+	ProtocolParserErr(void): Error(0, mErrorVector) {}
+	ProtocolParserErr(int errorNum): Error(errorNum, mErrorVector) {}
+
 	//ProtocolParserErr(const ProtocolParserErr & ) = delete;
 
-	const std::string& getErrorMsg(void) const {
-		return mErrorVector[mErrorCode];
-	}
-
-	int getErrorCode(void) const {
-		return mErrorCode;
-	}
-
-	void setErrorCode(const int errorCode) {
-		mErrorCode = errorCode;
-	}
 private:
 	const std::vector<std::string> mErrorVector = { 
 		"PPASER:ERR: SUCCESS",
@@ -126,7 +117,7 @@ public:
 	 *
 	 * @return If one of the Var have a missing value (ref not defined for ex),
 	 *				then PROTOPARSERERR_UNDEFINED will be return,
-	 *
+	 */
 	const ProtocolParserErr validateProtocols(void);
 private:
 
