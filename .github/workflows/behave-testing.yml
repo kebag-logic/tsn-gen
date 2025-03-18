@@ -1,10 +1,9 @@
-name: Behave Testing
+name: Behave-Testing
 
 on: [push, pull_request]
 
 jobs:
-  build:
-
+  behave-testing:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
