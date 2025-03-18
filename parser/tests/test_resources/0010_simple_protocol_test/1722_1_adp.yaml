@@ -22,7 +22,6 @@ vars:
       steps: 1
   - var: control_data_length
     size: 11  # Length of control data payload
-    expected:
       value: 56  
   - var: entity_id
     size: 64  # Unique identifier for the entity
@@ -37,7 +36,6 @@ vars:
     size: 16  # Number of talker stream sources
   - var: talker_capabilities
     size: 16  # Capabilities of talker streams
-    expected:
       mask: [ 0x803F ]
   - var: listener_stream_sinks
     size: 16  # Number of listener stream sinks
@@ -73,96 +71,105 @@ vars:
     size: 32  # Reserved for future use
     expected:
       value: 0
-  - var_ref: system::time::curentTime
-  - var_ref: entityInfo
-  - var_ref: reannounceTimerTimeout
-  - var_ref: system::needsAdvertise
-  - var_ref: system::doTerminate
-  - var_ref: delayTimerTimeout
+
+message:
+  - var: message_type
+  - var: valid_time
+  - var: control_data_length
+  - var: entity_id
+  - var: entity_model_id
+  - var: entity_capabilities
+  - var: talker_stream_sources
+  - var: talker_capabilities
+  - var: listener_stream_sinks
+  - var: listener_capabilities
+  - var: controller_capabilities
+  - var: available_index
+  - var: gptp_grandmaster_id
+  - var: gptp_domain_number
+  - var: reserved0
+  - var: current_configuration_index
+  - var: identify_control_index
+  - var: interface_index
+  - var: association_id
+  - var: reserved1
 
 typedefs:
-  - typedef: ADPMessage:
-    type: structure:
-    vars:
-      - var_ref: message_type
-      - var_ref: valid_time
-      - var_ref: control_data_length
-      - var_ref: entity_id
-      - var_ref: entity_model_id
-      - var_ref: entity_capabilities
-      - var_ref: talker_stream_sources
-      - var_ref: talker_capabilities
-      - var_ref: listener_stream_sinks
-      - var_ref: listener_capabilities
-      - var_ref: controller_capabilities
-      - var_ref: available_index
-      - var_ref: gptp_grandmaster_id
-      - var_ref: gptp_domain_number
-      - var_ref: reserved0
-      - var_ref: current_configuration_index
-      - var_ref: identify_control_index
-      - var_ref: interface_index
-      - var_ref: association_id
-      - var_ref: reserved1
   - typedef: entityInfoTypeDef
     type: structure
     vars:
-      - var_ref: valid_time
-      - var_ref: control_data_length
-      - var_ref: entity_id
-      - var_ref: entity_model_id
-      - var_ref: entity_capabilities
-      - var_ref: talker_stream_sources
-      - var_ref: talker_capabilities
-      - var_ref: listener_stream_sinks
-      - var_ref: listener_capabilities
-      - var_ref: controller_capabilities
-      - var_ref: available_index
-      - var_ref: gptp_grandmaster_id
-      - var_ref: gptp_domain_number
-      - var_ref: current_configuration_index
-      - var_ref: identify_control_index
-      - var_ref: interface_index
-      - var_ref: association_id
+      - var: valid_time
+      - var: control_data_length
+      - var: entity_id
+      - var: entity_model_id
+      - var: entity_capabilities
+      - var: talker_stream_sources
+      - var: talker_capabilities
+      - var: listener_stream_sinks
+      - var: listener_capabilities
+      - var: controller_capabilities
+      - var: available_index
+      - var: gptp_grandmaster_id
+      - var: gptp_domain_number
+      - var: current_configuration_index
+      - var: identify_control_index
+      - var: interface_index
+      - var: association_id
   - typedef: advertiseEntityFSMEnum
     type: enum
     size: 8
-    expected:
-      values: 
-        - INITIALIZE: 0
-        - DELAY: 1
-        - ADVERTISE : 2
-        - WAITING: 3
+    vars: 
+     - INITIALIZE: 0
+     - DELAY: 1
+     - ADVERTISE : 2
+     - WAITING: 3
   - typedef: advertiseInterfaceFSMEnum
     type: enum
     size: 8
-    expected:
-      values: 
-        - INITIALIZE: 0
-        - WAITING: 1 
-        - DEPARTING: 2
-        - ADVERTISE : 3
+    vars: 
+     - INITIALIZE: 0
+     - WAITING: 1 
+     - DEPARTING: 2
+     - ADVERTISE : 3
   - typedef: discoverEntityFSMEnum
     type: enum
     size: 8
-    expected:
-      values: 
-        - WAITING: 0
-        - DISCOVER: 1 
-        - AVAILABLE: 2
-        - DEPARTING: 3
-        - TIMEOUT : 4
+    vars: 
+     - WAITING: 0
+     - DISCOVER: 1 
+     - AVAILABLE: 2
+     - DEPARTING: 3
+     - TIMEOUT : 4
   - typedef: discoverInterfaceFSMEnum
     type: enum
     size: 8
-    expected:
-      values:
-        - INITIALIZE: 0
-        - WAITING: 1
-        - RECEIVED_DISCOVER: 2
-        - UPDATE_GM: 3
-        - LINK_STATE_CHANGE : 4
-        - UPDATE_CONFIGURATION : 5
+    vars: 
+     - INITIALIZE: 0
+     - WAITING: 1 
+     - RECEIVED_DISCOVER: 2
+     - UPDATE_GM: 3
+     - LINK_STATE_CHANGE : 4
+     - UPDATE_CONFIGURATION : 5
+
+# Global variable shared amongst different block internally and externally
+#global:
+#  vars:
+#    - var: curentTime
+#      size: 64
+#      dir: in
+#    - var: entityInfo
+#      type: entityInfoTypeDef
+#      dir: inout
+#    - var: reannounceTimerTimeout
+#      dir: out
+#    - var: needsAdvertise
+#      type: boolean
+#      dir: out
+#    - var: doTerminate
+#      type: boolean
+#      dir: out
+#    - var: delayTimerTimeout
+#      dir: out
 
 # Entities that can be in the ADP service
 entities:
@@ -171,8 +178,6 @@ entities:
       # Connection with the lower level interfaces
       - interface: ADP_IF_DATA
         dir: in
-        vars:
-          - var_ref: message_type
       # Connection with Date link layer to get info such as PTP link up mac aet
       - interface: ADP_DLL_INFO
         dir: in
@@ -180,19 +185,15 @@ entities:
         dir: out
     introspection:
       interfaces: 
-        - interface: ADP_IF_ADVERTIS_INTROSPECTION
-          dir: out
-        - interface: ADP_IF_ANNOUNCE_INTROSPECTION
-          dir: out
-  - entity: ADP_ENTITY
+        - ADP_IF_ADVERTIS_INTROSPECTION
+        - ADP_IF_ANNOUNCE_INTROSPECTION
+  entity: ADP_ENTITY
     interfaces:
       - ADP_ENTITY_INTERFACE
     introspection:
       interfaces: 
-        - interface: ADP_ENTITY_ADVERTISE_INTROSPECTION
-          dir: out
-        - interface: ADP_ENTITY_ANNOUNCE_INTROSPECTION
-          dir: out
+        - ADP_ENTITY_ADVERTISE_INTROSPECTION
+        - ADP_ENTITY_ANNOUNCE_INTROSPECTION
 
 documentation:
   - origin: "IEEE"
