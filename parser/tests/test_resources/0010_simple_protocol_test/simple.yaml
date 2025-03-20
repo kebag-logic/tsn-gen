@@ -1,0 +1,15 @@
+service: simple_service
+
+vars:
+  - var: simple_var
+    size: 4  # Type of message (e.g., control, data)
+    expected: 
+      values: [ 0, 1, 2 ]
+
+entities:
+  - entity: SIMPLE_SERVICE_ENTITY
+    interfaces:
+      - interface: SIMPLE_INTERFACE
+        dir: in
+        vars:
+          var_ref: simple_var
