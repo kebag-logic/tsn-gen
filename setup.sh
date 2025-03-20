@@ -19,7 +19,7 @@ mkdir -p ${SCRIPTPATH}/build
 cd ${SCRIPTPATH}/build
 
 ## Configuration
-cmake ${SCRIPTPATH}
+cmake ${SCRIPTPATH} -DBUILD_SHARED_LIBS=ON
 if [ $? -ne 0 ]; then
 	echo "ERROR: Configuration failed"
 	exit 255
