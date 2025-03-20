@@ -30,6 +30,7 @@ target_link_testlibs(
   protocol_parser
   "${PROTOCOL_PARSER_SRCS}"
   GTest::gtest_main
+  ryml::ryml
 )
 
 ################### Make google discover tests ######
