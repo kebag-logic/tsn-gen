@@ -3,7 +3,7 @@ cmake_policy(VERSION 3.31)
 
 ##################### BASE PROJECT INFO AND CONFIGURATIONS
 project(tsn_gen)
-
+cmake_policy(SET CMP0037 OLD)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Werror -pedantic")
@@ -26,16 +26,22 @@ set(COMP_ASAN_FLAGS "-static-libasan -fsanitize=address")
 ##################### EXTERNAL DEPENDENCIES
 
 add_subdirectory(external)
+
+#################### FOR BAD LIBRARY IMPLEMENTATIONS need the header path here
+
+include_directories(external/rapidyaml/src)
+include_directories(external/rapidyaml/ext/c4core/src)
+
+#################### Sub directory fok
 add_subdirectory(parser)
 
+##################### Normal applicaiton ####
 
-#### Normal applicaiton #### 
-
-# add_executable(${PROJECT_NAME} 
+# add_executable(${PROJECT_NAME}
 #     main.cpp
 #     )
 
-# target_link_libraries(${PROJECT_NAME} 
+# target_link_libraries(${PROJECT_NAME}
 #     rpyl
 #     )
 

@@ -23,13 +23,16 @@
 
 #include <version.h>
 
-#include <var.h>
+#include <database.h>
 #include <entity.h>
 #include <protocol.h>
 #include <protocol_interface.h>
+#include <var.h>
 
 
-/** 
+#define MAX_CURRENT_DEPTH_PATH	(16)
+
+/**
  * Error class, each class has to have its own error class
  */
 class ProtocolParserErr: public Error {
@@ -44,13 +47,17 @@ public:
 		PROTOPARSERERR_ENUM_SENTINEL
 	};
 
-	ProtocolParserErr(void): Error(0, mErrorVector) {}
-	ProtocolParserErr(int errorNum): Error(errorNum, mErrorVector) {}
+	ProtocolParserErr(void) = delete;
+	ProtocolParserErr(int errorNum): Error(errorNum, mErrVector) {}
 
-	//ProtocolParserErr(const ProtocolParserErr & ) = delete;
+	ProtocolParserErr& operator=(const ProtocolParserErr other)
+	{
+		mErrorCode = other.mErrorCode;
+		return *this;
+	}
 
 private:
-	const std::vector<std::string> mErrorVector = { 
+	const std::vector<std::string> mErrVector = {
 		"PPASER:ERR: SUCCESS",
 		"PPASER:ERR: UNKNOWN",
 		"PPASER:ERR: INVALID INPUT",
@@ -58,13 +65,6 @@ private:
 		"PPASER:ERR: UNDEFINED"
 		"PPASER:ERR: EXISTS"
        	};
-
-	/** 
-	 * This is the erorr code, for internal retrievial 
-	 * @fixme Make it trade safe,
-	 */ 
-	int mErrorCode;
-
 };
 
 /**
@@ -112,23 +112,20 @@ public:
 	 */
 	const ProtocolParserErr parse(void);
 
-	/**
-	 * @brief At the end of the generation of the protocols, the parser checks
-	 *
-	 * @return If one of the Var have a missing value (ref not defined for ex),
-	 *				then PROTOPARSERERR_UNDEFINED will be return,
-	 */
-	const ProtocolParserErr validateProtocols(void);
 private:
 
 	/**
-	 * @brief This function will list the yaml file, and will create a list of 
+	 * @brief This function will list the yaml file, and will create a list of
 	 *		yaml file That are going to be processed.
-	 *		Once a yaml file is found it will add to the lsit 
-	 * @return 0 upon success, PROTOPARSERERR_INVALID_INPUT if no yaml file are 
-	 *		found.
+	 *		Once a yaml file is found it will add to the lsit
+	 * @return 0 upon success, PROTOPARSERERR_INVALID_INPUT if no yaml file are
+	 *		found
+	 * 		if folder depth < MAX_CURRENT_DEPTH_PATH, then
+	 * 			PROTOPARSERERR_UNEXPECTED shall be return
+	 *
+	 * @todo create its own class
 	 */
-	const ProtocolParserErr listProtocolFiles(void);
+	const ProtocolParserErr listProtocolFiles(const std::string& path);
 
 	/**
 	 * @brief Will loop through the file list and then start parsing each file,
@@ -139,7 +136,7 @@ private:
 	 * 			as defined.
 	 *
 	 */
-	const ProtocolParserErr parseProtocols(void);
+	const ProtocolParserErr parseProtocol(const std::string& path);
 
 	/**
 	 * @brief Go through a protocol defined file, and looks for the information
@@ -149,7 +146,7 @@ private:
 
 	/**
 	 * @brief Parse the var from the file, if it does not exist already,
-	 * 			then it adds it to the mVars, with the full name, even if the
+	 * 			then it adds it to the mDbVars, with the full name, even if the
 	 * 			this is a reference, without the value. So that later its value
 	 * 			can be set correctly.
 	 *
@@ -164,8 +161,9 @@ private:
 	const std::string mProtocolBasePath;
 
 	std::vector<std::string> yamlPaths;
-	std::map<std::string, Protocol> mProtocols;
-	std::map<std::string, ProtocoInterface> mProtocolInterfaces;
-	std::map<std::string, Var> mVars;
-
+	/** The databased that are used by the parser */
+	Database<Var> mProtocols;
+	Database<Var> mDbVars;
+	Database<ProtocolInterface> mDbIfproto;
+	int mCurrentDepthPathListing ;
 };

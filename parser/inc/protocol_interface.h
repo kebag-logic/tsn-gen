@@ -2,7 +2,7 @@
 
 #include <string>
 
-class ProtocoInterface {
+class ProtocolInterface {
 public:
 	/*
 	 * This is the direction of the interface, and that 
@@ -12,7 +12,7 @@ public:
 		IN,
 		OUT,
 	};
-	ProtocoInterface(const std::string& interfaceName);
+	ProtocolInterface(const std::string& interfaceName);
 
 private:
 	const std::string& mInterfaceName;

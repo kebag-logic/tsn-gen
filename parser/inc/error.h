@@ -18,11 +18,20 @@ public:
         return mErrorCode;
     }
 
+    /***
+     * @brief set the error code of the according the max value possible
+     */
     void setErrorCode(const int errorCode) {
         assert((void("ERR: Invalid mErrorCode"), mErrorCode < mErrorVector.size()));
         mErrorCode = errorCode;
     }
 
+    /**
+     * @brief retrieve the String message link with the
+     * error message
+     *
+     * @return the message
+     */
     const std::string& getErrorMsg(void) {
         assert((void("ERR: Invalid mErrorCode"), mErrorCode < mErrorVector.size()));
         return mErrorVector[mErrorCode];

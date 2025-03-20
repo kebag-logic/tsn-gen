@@ -10,6 +10,10 @@ include(CMakeGenTestingLibraries)
 
 set(PROTO_PARSER_SRCS 
 	src/protocol_parser.cpp
+	src/protocol.cpp
+	src/db_proto_if_impl.cpp
+	src/db_proto_impl.cpp
+	src/db_var_impl.cpp
 )
 
 set(PROTO_PARSER_INC_DIRS
@@ -20,6 +24,9 @@ set(PROTO_PARSER_INC_DIRS
 
 add_library(${PROJECT_NAME} SHARED
 	${PROTO_PARSER_SRCS}
+)
+target_link_libraries(${PROJECT_NAME}
+	ryml::ryml
 )
 
 target_include_directories(protocol_parser PUBLIC
@@ -40,8 +47,8 @@ endif (${ENABLE_PARSER_TESTS})
 
 target_compile_options(protocol_parser PUBLIC
 	$<$<CONFIG:Debug>:-O0 -g3>
-	$<$<CONFIG:Release>:-O3 -g0>
-	$<$<CONFIG:MinSizeRel>:-Os -g0>
+	$<$<CONFIG:Release>:-O3 -g3>
+	$<$<CONFIG:MinSizeRel>:-Os -g3>
 	$<$<CONFIG:RelWithDebInfo>:-Os -g3>
 )
 
