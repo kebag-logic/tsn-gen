@@ -4,7 +4,7 @@
 # Sucha s controller or not controoler 
 # Such as stream info sink/source
 # Such as ptp etc...
-# Generate the dependency such as 1722_1::protocol::vars::var_name
+# Generate the dependency such as 1722_1/protocol/vars/var_name
 
 type: protocol
 service: atdecc_adp_service
