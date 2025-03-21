@@ -8,7 +8,7 @@ include(CMakeGenTestingLibraries)
 
 #################### SOURCES	####################
 
-set(PROTO_PARSER_SRCS 
+set(PROTO_PARSER_SRCS
 	src/protocol_parser.cpp
 	src/protocol.cpp
 	src/db_proto_if_impl.cpp
