@@ -14,7 +14,11 @@ public:
     {
     }
 
-    int getErrorCode(void) const {
+    /**
+     * @brief retrive the error code
+     */
+    int getErrorCode(void) const
+    {
         return mErrorCode;
     }
 
@@ -32,12 +36,30 @@ public:
      *
      * @return the message
      */
-    const std::string& getErrorMsg(void) {
+    const std::string& getErrorMsg(void) const
+    {
         assert((void("ERR: Invalid mErrorCode"), mErrorCode < mErrorVector.size()));
         return mErrorVector[mErrorCode];
+    }
+
+    /**
+     * @brief Setting the external message, can be re-used later
+     */
+    void setmExtMsg(const std::string& msg)
+    {
+        mExtMsg = msg;
+    }
+
+    /**
+     * @brief retrieved the setted external message
+     */
+    const std::string& getmExtMsg(void) const
+    {
+        return mExtMsg;
     }
 
 protected:
     int mErrorCode;
     const std::vector<std::string>& mErrorVector;
+    std::string mExtMsg;
 };
