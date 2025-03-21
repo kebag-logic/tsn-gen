@@ -21,7 +21,7 @@ TEST(ParserUsingTest, BasePath) {
 TEST(Parser, InvalidPathInt) {
 	const std::string dummypath("Unknown_path");
 	ProtocolParser testProtocol(dummypath);
-	 
+
 	ProtocolParserErr error = testProtocol.parse();
 
 	// Check valid path ?
