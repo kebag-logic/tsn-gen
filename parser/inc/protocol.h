@@ -66,6 +66,10 @@ public:
         Database<Var>& dbVars, Database<ProtocolInterface>& dbIfproto);
 
 private:
+    /** @brief Checking nodes with expeted type and format
+     *  @param node, node to be checked
+     *
+    */
     const ProtocolErr checkNodeValidity(ryml::ConstNodeRef& node,
                                         std::unique_ptr<ryml::Parser>& parser,
                                         ryml::NodeType_e type, bool checkisNumber);

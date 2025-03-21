@@ -33,13 +33,11 @@ const ProtocolErr Protocol::checkNodeValidity(ryml::ConstNodeRef &node,
         err.setErrorCode(ProtocolErr::PROTOERR_INVALID_FILE);
     } else {
         /** Checking whether the node is the one we want to have */
-        std::cout << "INF: " << "Parsing protocol " << node.key() << std::endl;
-        if (node.type() != type) {
+        std::cout << "INF: " << "Parsing protocol " << std::endl;
+        if (!(node.id() & type)) {
             err.setmExtMsg("un-expected type");
-            std::cout << "ERR: " << err.getmExtMsg() << " "<< node.key() <<
-                    std::endl;
             err.setErrorCode(ProtocolErr::PROTOERR_UNEXPECTED);
-        }else if (node.val().is_number() != checkisNumber) {
+        } else if (node.val().is_number() != checkisNumber) {
             /** Fr */
             err.setErrorCode(ProtocolErr::PROTOERR_UNEXPECTED);
             err.setmExtMsg("No number expected");
@@ -53,7 +51,7 @@ const ProtocolErr Protocol::checkNodeValidity(ryml::ConstNodeRef &node,
                         " C:" << loc.col << std::endl;
 
             std::cerr << "     " << node.key() <<
-                    " Should not have any subnode" << std::endl;
+                    err.getmExtMsg() << std::endl;
         }
     }
 
@@ -69,7 +67,8 @@ const ProtocolErr Protocol::getProtocolName(std::unique_ptr<ryml::Parser>& parse
 
     ryml::ConstNodeRef serviceNode = mTree[nodeName.c_str()];
 
-    err = checkNodeValidity(serviceNode, parser, ryml::NodeType_e::VAL, false);
+    err = checkNodeValidity(serviceNode, parser, ryml::NodeType_e::VAL,
+                        false);
     if  (!err.getErrorCode()) {
         /** No error so this is our node */
        protoName = serviceNode;
@@ -121,11 +120,11 @@ const ProtocolErr Protocol::parseProtocolFile(
     }
 
     ryml::ParserOptions opts = {};
+    opts.locations(true);
     ryml::EventHandlerTree evt_handler = {};
     std::unique_ptr<ryml::Parser> parser =
-                    std::make_unique<ryml::Parser>(&evt_handler, opts);
+                  std::make_unique<ryml::Parser>(&evt_handler, opts);
 
-    opts.locations(true); // enable locations, default is false
     mTree = ryml::parse_in_arena(parser.get(), ryml::csubstr(mPath.c_str()),
                  ryml::csubstr(static_cast<char *>(ptr)));
 

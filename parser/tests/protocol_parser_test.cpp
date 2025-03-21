@@ -90,3 +90,16 @@ TEST(Parser, DivergingPath)
 	EXPECT_EQ(error.getErrorCode(),
 			  ProtocolParserErr::PROTOPARSERERR_INVALID_INPUT);
 }
+
+TEST(Parser, ParsingProtocolNameInvalid)
+{
+	const std::string dummypath("/srv/amx-server/home/alex/prjs/ames/"
+								"kebag-logic/cpptsn-tools/parser/tests/test_resources/"
+								"0004_invalid_protocol_name");
+	ProtocolParser protoParser(dummypath);
+
+	ProtocolParserErr error = protoParser.parse();
+
+	EXPECT_EQ(error.getErrorCode(),
+			  ProtocolParserErr::PROTOPARSERERR_UNEXPECTED);
+}
