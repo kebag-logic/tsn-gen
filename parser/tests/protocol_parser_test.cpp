@@ -1,12 +1,9 @@
-#include <gtest/gtest.h>
+#include <parser_common_test.h>
 #include <protocol_parser.h>
 #include <protocol.h>
 
 #include <string>
 
-#ifndef PARSER_TESTS_RES_PATH
-#error "Undefined PARSER_TESTS_RES_PATH"
-#endif
 
 TEST(ParserUsingTest, Version) {
 	ProtocolParser testProtocol("NOTHING");
