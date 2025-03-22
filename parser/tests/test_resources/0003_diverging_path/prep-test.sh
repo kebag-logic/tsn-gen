@@ -1,5 +1,8 @@
 #!/bin/bash
 
+SCRIPT=$(realpath -s "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+
 level=0
 function recursion_gen()
 {
@@ -21,4 +24,5 @@ function recursion_gen()
 	cd ..
 }
 
+cd $SCRIPTPATH
 recursion_gen
