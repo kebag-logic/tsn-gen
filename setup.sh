@@ -32,6 +32,10 @@ if [ $? -ne 0 ]; then
 	exit 255
 fi
 
+## Preparing tests
+
+../parser/tests/prep-tests.sh
+
 ../tests/run-tests.sh
 
 cd ${SCRIPTPATH}
