@@ -4,6 +4,10 @@
 
 #include <string>
 
+#ifndef PARSER_TESTS_RES_PATH
+#error "Undefined PARSER_TESTS_RES_PATH"
+#endif
+
 TEST(ParserUsingTest, Version) {
 	ProtocolParser testProtocol("NOTHING");
 
@@ -54,9 +58,8 @@ TEST(Parser, VarCreationTooSmall)
 
 TEST(Parser, listFiles)
 {
-	const std::string dummypath("/srv/amx-server/home/alex/prjs/ames/"
-			"kebag-logic/cpptsn-tools/parser/tests/test_resources/"
-			"0001_yaml_but_not_a_protocol_description/");
+	const std::string dummypath(PARSER_TESTS_RES_PATH
+			"/0001_yaml_but_not_a_protocol_description/");
 	ProtocolParser protoParser(dummypath);
 
 	ProtocolParserErr error = protoParser.parse();
@@ -67,9 +70,8 @@ TEST(Parser, listFiles)
 
 TEST(Parser, VerifyDepth)
 {
-	const std::string dummypath("/srv/amx-server/home/alex/prjs/ames/"
-			"kebag-logic/cpptsn-tools/parser/tests/test_resources/"
-			"0002_max_depth_reached_out");
+	const std::string dummypath(PARSER_TESTS_RES_PATH
+			"/0002_max_depth_reached_out");
 	ProtocolParser protoParser(dummypath);
 
 	ProtocolParserErr error = protoParser.parse();
@@ -80,9 +82,8 @@ TEST(Parser, VerifyDepth)
 
 TEST(Parser, DivergingPath)
 {
-	const std::string dummypath("/srv/amx-server/home/alex/prjs/ames/"
-			"kebag-logic/cpptsn-tools/parser/tests/test_resources/"
-			"0003_diverging_path");
+	const std::string dummypath(PARSER_TESTS_RES_PATH
+			"/0003_diverging_path");
 	ProtocolParser protoParser(dummypath);
 
 	ProtocolParserErr error = protoParser.parse();
@@ -93,9 +94,8 @@ TEST(Parser, DivergingPath)
 
 TEST(Parser, ParsingProtocolNameInvalid)
 {
-	const std::string dummypath("/srv/amx-server/home/alex/prjs/ames/"
-			"kebag-logic/cpptsn-tools/parser/tests/test_resources/"
-			"0004_invalid_protocol_name");
+	const std::string dummypath(PARSER_TESTS_RES_PATH
+			"/0004_invalid_protocol_name");
 	ProtocolParser protoParser(dummypath);
 
 	ProtocolParserErr error = protoParser.parse();

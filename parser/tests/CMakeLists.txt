@@ -4,6 +4,11 @@ enable_testing()
 ##################### MODULES   ####################
 include(CMakeLinkToTestlibs)
 
+#################### Add compile option ###########
+
+add_compile_options(
+  -DPARSER_TESTS_RES_PATH="${CMAKE_CURRENT_SOURCE_DIR}/test_resources"
+)
 
 #################### List of test execs ############
 
@@ -22,7 +27,7 @@ target_link_libraries(
 
 #### First case the protocol parser
 set(PROTOCOL_PARSER_SRCS
-	protocol_parser_test.cpp
+  protocol_parser_test.cpp
 )
 
 target_link_testlibs(
