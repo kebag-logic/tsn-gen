@@ -11,7 +11,7 @@ include_directories(
 )
 
 add_compile_options(
-  -DPARSER_TESTS_RES_PATH="${CMAKE_CURRENT_SOURCE_DIR}/test_resources"
+	-DTRAFFIC_GEN_TESTS_RES_PATH="${CMAKE_CURRENT_SOURCE_DIR}/test_resources"
 )
 
 #################### List of test execs ############

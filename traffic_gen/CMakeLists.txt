@@ -8,37 +8,37 @@ include(CMakeGenTestingLibraries)
 
 #################### SOURCES	####################
 
-set(TRAFFIC_GEN_PARSER_SRCS 
+set(TRAFFIC_GEN_SRCS 
 	src/traffic_gen.cpp
 )
 
-set(TRAFFIC_GEN_PARSER_INC_DIRS
+set(TRAFFIC_GEN_INC_DIRS
 	${CMAKE_CURRENT_SOURCE_DIR}/inc
 )
 
 ##################### LIBRARY   ####################
 
 add_library(${PROJECT_NAME} SHARED
-	${TRAFFIC_GEN_PARSER_SRCS}
+	${TRAFFIC_GEN_SRCS}
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
-  $<BUILD_INTERFACE:${TRAFFIC_GEN_PARSER_INC_DIRS}>
+  $<BUILD_INTERFACE:${TRAFFIC_GEN_INC_DIRS}>
   $<INSTALL_INTERFACE:include/${PROJECT_NAME}/>
 )
 
-if (${ENABLE_PARSER_TESTS})
+if (${ENABLE_TRAFFIC_GEN_TESTS})
 generate_test_libs(
 	${PROJECT_NAME}
-	"${TRAFFIC_GEN_PARSER_INC_DIRS}"
-	${TRAFFIC_GEN_PARSER_SRCS}
+	"${TRAFFIC_GEN_INC_DIRS}"
+	${TRAFFIC_GEN_SRCS}
 )
-endif (${ENABLE_PARSER_TESTS})
+endif (${ENABLE_TRAFFIC_GEN_TESTS})
 
 
 ##################### OPTIONS   ####################
 
-target_compile_options($PROJECT_NAME} PUBLIC
+target_compile_options(${PROJECT_NAME} PUBLIC
 	$<$<CONFIG:Debug>:-O0 -g3>
 	$<$<CONFIG:Release>:-O3 -g0>
 	$<$<CONFIG:MinSizeRel>:-Os -g0>
