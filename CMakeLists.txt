@@ -12,7 +12,8 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 ##################### OPTIONS
 
-option(ENABLE_PARSER_TESTS "Enable Parser Unit Tests" ON)
+option(ENABLE_PARSER_TESTS "Enable Parser Unit Tests" OFF)
+option(ENABLE_TRAFFIC_GEN_TESTS "Enable Traffic Generator Unit Tests" ON)
 option(CONFIG "Build config, Release, Debug..." Release)
 
 ##################### VARS
@@ -32,8 +33,9 @@ add_subdirectory(external)
 include_directories(external/rapidyaml/src)
 include_directories(external/rapidyaml/ext/c4core/src)
 
-#################### Sub directory fok
+#################### Sub directory library
 add_subdirectory(parser)
+add_subdirectory(traffic_gen)
 
 ##################### Normal applicaiton ####
 
