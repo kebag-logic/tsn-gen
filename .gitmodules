@@ -19,3 +19,6 @@
 [submodule "tests/act"]
 	path = tests/act
 	url = https://github.com/nektos/act.git
+[submodule "external/libprotobuf-mutator"]
+	path = external/libprotobuf-mutator
+	url = https://github.com/google/libprotobuf-mutator.git
