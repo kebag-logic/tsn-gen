@@ -1,0 +1,23 @@
+syntax = "proto3"
+
+// Custom options for constraints (optional, requires protobuf extensions)
+import "google/protobuf/descriptor.proto";
+
+package common
+
+extend google.protobuf.FieldOptions {
+  // Bit size for the field
+  uint32 bit_size = 50000;
+
+  repeated uint32 exactValue = 50001;
+
+  message Range {
+    uint32 minVal = 1;
+    uint32 maxVal = 2;
+  }
+  optional Range expectedRange = 50002;
+
+  // Expected mask (for bitmask fields)
+  optional uint32 expected_mask = 50003;
+
+}

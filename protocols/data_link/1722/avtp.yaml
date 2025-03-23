@@ -1,0 +1,15 @@
+service: avtp
+
+entities:
+  - entity: AVTP
+    interfaces:
+      - inteface: AVTP
+        dir: in
+      - inteface: ADP_IF_DATA
+        dir: out
+
+documentation:
+documentation:
+  - origin: "IEEE"
+    name: "IEEE Std 1722-2016"
+    section: [ "4" ]

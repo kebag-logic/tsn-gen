@@ -1,0 +1,23 @@
+syntax = "proto3"
+
+import "common.proto"
+
+package avtp
+
+message Message {
+    uint32 message_type = 1 [
+    (bit_size) = 4,
+    (expected_values) = 0,
+    (expected_values) = 1,
+    (expected_values) = 2
+  ];
+
+    uint32 test  = 1 [
+    (bit_size) = 1,
+  ];
+
+    uint32 version  = 1 [
+    (bit_size) = 1,
+  ];
+
+}
