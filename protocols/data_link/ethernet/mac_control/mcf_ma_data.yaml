@@ -1,4 +1,10 @@
-# Description of pritives and functions function:
+
+ # SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+ # SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+ # SPDX-License-Identifier: MIT
+ 
+
+ # Description of pritives and functions function:
 # This is the MAC_CONTROL interception from the client
   protocol:
     request: [ "destination_address", "opcode", "request_operand_list"]

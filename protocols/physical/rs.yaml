@@ -1,4 +1,10 @@
-#Description of primitives and functions
+
+ # SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+ # SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+ # SPDX-License-Identifier: MIT
+ 
+
+ #Description of primitives and functions
 
 # TODO redo it
 # The list of the supported protocols:
@@ -44,4 +50,3 @@ functions:
       - origin: "IEEE"
         name: "IEEE Std 802.3-2022, IEEE Standard for Ethernet"
         section: [ "35.2.1.7" ]
-

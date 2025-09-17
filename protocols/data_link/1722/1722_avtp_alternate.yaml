@@ -1,4 +1,10 @@
-#Description of primitives and functions
+
+ # SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+ # SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+ # SPDX-License-Identifier: MIT
+ 
+
+ #Description of primitives and functions
 
 service: 1722_avtp_alternate_service
 

@@ -1,4 +1,10 @@
-functions:
+
+ # SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+ # SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+ # SPDX-License-Identifier: MIT
+ 
+
+ functions:
   - name: "ADP_ENTITY_DATA"
     primitives:
       # Connection with the AVTP, could be something else

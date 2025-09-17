@@ -5,9 +5,14 @@
  */
  
 
- #pragma once
-#include <gtest/gtest.h>
+ #include <serializer_visitor.h>
+#include <ryml.hpp>
 
-#ifndef PARSER_TESTS_RES_PATH
-#error "Undefined PARSER_TESTS_RES_PATH"
-#endif
+class SerializerProtocol;
+
+class SerializerVisitorImpl: public SerializerVisistor {
+public:
+	int visit(SerializerProtocol& proto) {
+
+	}
+};
