@@ -3,7 +3,7 @@
  * SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
  * SPDX-License-Identifier: MIT
  */
- 
+
 
  #pragma once
 
@@ -44,7 +44,7 @@ public:
 private:
     const std::vector<std::string> mErrVector = {
         "PPOTO:ERR: SUCCESS",
-        "PROTO:ERR: UNKNOWN"
+        "PROTO:ERR: UNKNOWN",
         "PROTO:ERR: INVALID FILE",
         "PROTO:ERR: UNEXPECTED"
     };
@@ -57,75 +57,67 @@ public:
 	 * Namespace application/17221_.../name
 	 */
 	Protocol(const std::string& path);
-    Protocol(void) = delete ;
+    Protocol(void) = delete;
 
     /**
-     * @brief Parsed the basis for the protocol/service that is find.
+     * @brief Validates the protocol file without updating any database.
      */
     const ProtocolErr parseProtocolFile(void);
 
     /**
-     * @brief Parsed of the interface, will add Vars and interfaces
-     * @param [in, out] dbVars variables
-     * @param [in, out] dbIfProto interfaces
+     * @brief Parses the protocol file and populates the provided databases
+     *        with vars and interfaces found in the file.
+     * @param [in, out] dbVars      global variable database
+     * @param [in, out] dbIfproto   global interface database
      */
     const ProtocolErr parseProtocolFile(
         Database<Var>& dbVars, Database<ProtocolInterface>& dbIfproto);
 
 private:
-    /** @brief Checking nodes with expeted type and format
-     *  @param node, node to be checked
-     *
-    */
+    /** @brief Check a node against expected type and number format.
+     *  @param node    node to be checked
+     *  @param parser  parser used to retrieve error location
+     *  @param type    expected node type bits
+     *  @param checkisNumber  whether the value must be a number
+     */
     const ProtocolErr checkNodeValidity(ryml::ConstNodeRef& node,
                                         std::unique_ptr<ryml::Parser>& parser,
                                         ryml::NodeType_e type, bool checkisNumber);
+
     /**
-     * @brief Parses the variable defined in the protocol,
-     *      If there are duplicate, they will be checked.
+     * @brief Parses the variables defined in the protocol file and inserts
+     *        them into dbVars using a fully qualified name.
      */
     const ProtocolErr getParsedProtocolVars(Database<Var>& dbVars);
 
     /**
-     * @brief Parses the interface, and feed it in the global inteface.
-     *          Duplicate will not be added.
-     * @return If a same interface exists DBERR_ENTRY_ALREADY_EXISTS
+     * @brief Parses the entities/interfaces section and inserts each interface
+     *        into dbIfProto using a fully qualified name.
      */
     const ProtocolErr getParsedProtocolInterface(
                                     Database<ProtocolInterface>& dbIfProto);
-    /**
-     * @brief Parses the variable defined in the protocol
-     */
-    const ProtocolErr getParsedProtocolVars(
-                                        Database<ProtocolInterface>& dbIfProto);
 
     /**
-     * @brief Checking for the name of the function
-     * @param [in] parser, the parser used to retrieve the location of the node
-     * @param [in, out] protoName: retrieved parsed protocol name
-     * @return PROTOERR_INVALID_FILE if the necessary node are not found
-     *          otherwise it will return PROTO_SUCCESS
+     * @brief Parses the service name node.
+     * @param [in]     parser     parser used to retrieve error location
+     * @param [in,out] protoName  set to the service name node on success
+     * @return PROTOERR_INVALID_FILE if the node is missing or malformed,
+     *         PROTO_SUCCESS otherwise.
      */
-    const ProtocolErr getProtocolName(std::unique_ptr<ryml::Parser> &parser,
-                                      ryml::ConstNodeRef &protoName);
+    const ProtocolErr getProtocolName(std::unique_ptr<ryml::Parser>& parser,
+                                      ryml::ConstNodeRef& protoName);
 
-        /**
-         * This is the path of the YAML file being parsed.
-         */
-        std::string mPath;
+    /** Path of the YAML file being parsed. */
+    std::string mPath;
 
-    /*
-     * This is the Name of the protocol
-     */
-	ryml::ConstNodeRef mProtocolName;
+    /** The service name node (references mTree). */
+    ryml::ConstNodeRef mProtocolName;
 
     std::map<std::string, Entity> mEntities;
-	std::map<std::reference_wrapper<std::string>, Var&> mVar;
-
+    std::map<std::string, Var> mVar;
 
     /**
-     * Use the mTree yaml for now as a reference, once allocated we do not
-     * need the file anymore
+     * Owns the parsed YAML data; must outlive all ConstNodeRef members.
      */
     ryml::Tree mTree;
 };
