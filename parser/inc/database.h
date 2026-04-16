@@ -3,15 +3,13 @@
  * SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
  * SPDX-License-Identifier: MIT
  */
- 
+
 
  #pragma once
 
 #include <error.h>
 #include <map>
 #include <string>
-
-#include <ryml.hpp>
 
 class DatabaseErr: public Error {
 public:
@@ -37,55 +35,56 @@ public:
     }
 
 private:
-    const std::vector<std::string> mErrVector = { 
+    const std::vector<std::string> mErrVector = {
         "DB:ERR: SUCCESS",
-        "DB:ERR: UNKNOWN"
-        "DB:ERR: INVALID_INPUT"
-        "DB:ERR: UNEXPECTED"
+        "DB:ERR: UNKNOWN",
+        "DB:ERR: INVALID_INPUT",
+        "DB:ERR: UNEXPECTED",
         "DB:ERR: ALREADY EXISTS",
         "DB:ERR: ENTRY NOT FOUND",
         };
 };
 
 /**
- * @brief Database that works on the ryml liibrary to add element avoid duplicate,
- *          and notice about such issues.
+ * @brief Database that stores named elements, prevents duplicates,
+ *        and provides lookup by name.
  */
 template <typename T>
 class Database  {
 public:
     Database();
+
     /**
-     * @brief Add an element to the database based on the NodeRef's string value.
-     *          Check if the element is valid, then verify if it exists, then 
-     *          adds it.
-     * 
-     * @return DBERR_INVALID_INPUT when the NodeRef is invalid, then adds the
-     *          DBERR_ENTRY_ALREADY_EXISTS when the NodeRef already is in the 
-     *          database (shows value vs expected).
-     */         
-    const DatabaseErr addUniqueElement(ryml::NodeRef& node, T& obj);
+     * @brief Add an element to the database by name.
+     *          Checks if name is valid (non-empty), then verifies it does not
+     *          already exist, then inserts the element.
+     *
+     * @return DBERR_INVALID_INPUT when the name is empty.
+     *         DBERR_ENTRY_ALREADY_EXISTS when the name is already in the database.
+     *         DB_SUCCESS on success.
+     */
+    const DatabaseErr addUniqueElement(const std::string& name, const T& obj);
+
+    /**
+     * @brief Retrieve a pointer to an element by name. Returns nullptr if not found.
+     */
+    const T* getElement(const std::string& name) const;
+
+    /**
+     * @brief Return the number of stored elements.
+     */
+    size_t size() const;
 
 private:
-    /** 
-     * @brief Check if the node ref contains some value, if not it is invalid.
-     * @param [in] node: Reference ceon the rapidyaml ref
-     * @return DB_SUCCESS if everything is ok, DBERR_INVALID_INPUT if the node
-     *          does not contains a value.
+    /**
+     * @brief Check if the name is non-empty.
      */
-    const DatabaseErr checkIfValid(ryml::NodeRef& node);
-
-    /** 
-     * @brief Check if the key already exists, 
-     * @param [in] node: Reference ceon the rapidyaml ref
-     * @return DB_SUCCESS if everything is ok, DBERR_INVALID_INPUT if the node
-     *          does not contains a value.
-     */
-    const DatabaseErr checkIfExists(ryml::NodeRef& node);
+    const DatabaseErr checkIfValid(const std::string& name) const;
 
     /**
-     * The database object = InternalMaps[string&]
+     * @brief Check if the name already exists in the database.
      */
-    std::map<std::reference_wrapper<std::string>, T> internalMaps;
+    const DatabaseErr checkIfExists(const std::string& name) const;
 
+    std::map<std::string, T> internalMaps;
 };
