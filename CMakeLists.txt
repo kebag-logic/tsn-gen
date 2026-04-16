@@ -35,6 +35,7 @@ include_directories(external/rapidyaml/ext/c4core/src)
 
 #################### Sub directory fok
 add_subdirectory(parser)
+add_subdirectory(traffic-gen)
 
 ##################### Normal applicaiton ####
 
