@@ -3,9 +3,10 @@ cmake_policy(VERSION 3.31)
 
 ##################### BASE PROJECT INFO AND CONFIGURATIONS
 project(tsn_gen)
-cmake_policy(SET CMP0037 OLD)
+cmake_policy(SET CMP0037 NEW)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Werror -pedantic")
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
@@ -19,9 +20,9 @@ option(CONFIG "Build config, Release, Debug..." Release)
 
 #################### COMPLIANCE VAR FOR TESTING ####################
 
-set(COMP_COVERAGE_FLAGS "-fprofile-arcs -ftest-coverage")
-set(COMP_UBSAN_FLAGS "-static-libasan -fsanitize=undefined")
-set(COMP_ASAN_FLAGS "-static-libasan -fsanitize=address")
+set(COMP_COVERAGE_FLAGS "")
+set(COMP_UBSAN_FLAGS "-fsanitize=undefined")
+set(COMP_ASAN_FLAGS "-fsanitize=address")
 
 ##################### EXTERNAL DEPENDENCIES
 
