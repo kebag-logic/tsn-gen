@@ -119,6 +119,19 @@ public:
 	 */
 	const ProtocolParserErr parse(void);
 
+	/**
+	 * @brief Provide read access to the parsed variable database.
+	 */
+	const Database<Var>& getVarDatabase(void) const { return mDbVars; }
+
+	/**
+	 * @brief Provide read access to the parsed interface database.
+	 */
+	const Database<ProtocolInterface>& getInterfaceDatabase(void) const
+	{
+		return mDbIfproto;
+	}
+
 private:
 
 	/**
