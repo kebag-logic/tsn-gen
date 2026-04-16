@@ -16,15 +16,15 @@ macro(generate_test_libs BASENAME INCDIRS SOURCEFILES)
 	)
 
 	target_compile_options(${BASENAME}_asan PUBLIC
-		$<$<CONFIG:Debug>:-O0 -g3  ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
+		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
 		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
 		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
 		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
 	)
 
-	target_include_directories(protocol_parser_asan PUBLIC
-		$<BUILD_INTERFACE:${PROTO_PARSER_INC_DIRS}>
-		$<INSTALL_INTERFACE:include/protocol-parser>
+	target_include_directories(${BASENAME}_asan PUBLIC
+		$<BUILD_INTERFACE:${INCDIRS}>
+		$<INSTALL_INTERFACE:include/${BASENAME}>
 	)
 
 	target_compile_options(${BASENAME}_ubsan PUBLIC
@@ -34,9 +34,9 @@ macro(generate_test_libs BASENAME INCDIRS SOURCEFILES)
 		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS} ${COMP_UBSAN_FLAGS}>
 	)
 
-	target_include_directories(protocol_parser_ubsan PUBLIC
-		$<BUILD_INTERFACE:${PROTO_PARSER_INC_DIRS}>
-		$<INSTALL_INTERFACE:include/protocol-parser>
+	target_include_directories(${BASENAME}_ubsan PUBLIC
+		$<BUILD_INTERFACE:${INCDIRS}>
+		$<INSTALL_INTERFACE:include/${BASENAME}>
 	)
 
 endmacro(generate_test_libs)
