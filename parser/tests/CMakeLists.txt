@@ -28,7 +28,7 @@ target_link_libraries(
 
 #################### Gen for different tests ########
 
-#### First case the protocol parser
+#### Protocol parser tests
 set(PROTOCOL_PARSER_SRCS
   protocol_parser_test.cpp
 )
@@ -41,10 +41,15 @@ target_link_testlibs(
   ryml::ryml
 )
 
+#### Object serializer tests
+set(OBJECT_SERIALIZER_SRCS
+  object_serializer_test.cpp
+)
+
 target_link_testlibs(
   object_serializer-test
   protocol_parser
-  "${PROTOCOL_PARSER_SRCS}"
+  "${OBJECT_SERIALIZER_SRCS}"
   GTest::gtest_main
   ryml::ryml
 )
