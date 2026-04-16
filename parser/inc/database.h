@@ -75,6 +75,18 @@ public:
      */
     size_t size() const;
 
+    /**
+     * @brief Invoke @p fn(name, element) for every stored entry in
+     *        insertion order (i.e. std::map key order).
+     */
+    template <typename Fn>
+    void forEach(Fn&& fn) const
+    {
+        for (const auto& kv : internalMaps) {
+            fn(kv.first, kv.second);
+        }
+    }
+
 private:
     /**
      * @brief Check if the name is non-empty.
