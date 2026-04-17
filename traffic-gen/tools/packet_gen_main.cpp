@@ -183,7 +183,7 @@ int main(int argc, char* argv[])
     ProtocolParser parser(args.yamlDir);
     const auto parseErr = parser.parse();
     if (parseErr.getErrorCode() != ProtocolParserErr::PROTOPARSER_SUCCESS) {
-        std::cerr << "Parser error: " << parseErr.getMessage() << "\n";
+        std::cerr << "Parser error: " << parseErr.getErrorMsg() << "\n";
         return 2;
     }
 
