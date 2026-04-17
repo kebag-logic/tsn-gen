@@ -72,6 +72,51 @@ uint64_t PacketBuilder::pickValue(const Var& var)
     return value;
 }
 
+PacketBuilder::BuiltPacket PacketBuilder::buildWithOverrides(
+    const ProtocolInterface& iface,
+    const Database<Var>& varDb,
+    const std::unordered_map<std::string, uint64_t>& overrides)
+{
+    BuiltPacket result;
+    size_t bitOffset = 0;
+
+    for (const std::string& ref : iface.getVarRefs()) {
+        const Var* var = varDb.getElement(ref);
+        if (var == nullptr) {
+            std::cerr << "PacketBuilder: var_ref '" << ref
+                      << "' not found in database, skipping\n";
+            continue;
+        }
+
+        const uint32_t size = var->getSize();
+        if (size == 0) continue;
+
+        const auto pos = ref.rfind("::");
+        const std::string shortName =
+            (pos != std::string::npos) ? ref.substr(pos + 2) : ref;
+
+        uint64_t value;
+        if (!var->getExpectedValues().empty()) {
+            /* Hard constraint wins: always pick from the expected set. */
+            value = pickValue(*var);
+        } else {
+            auto it = overrides.find(shortName);
+            if (it != overrides.end()) {
+                /* Use the propagated value; apply mask if declared. */
+                value = it->second;
+                if (var->hasMask()) value &= var->getMask();
+            } else {
+                value = pickValue(*var);
+            }
+        }
+
+        appendBits(result.bytes, bitOffset, value, size);
+        result.fields.emplace_back(shortName, value);
+    }
+
+    return result;
+}
+
 PacketBuilder::BuiltPacket PacketBuilder::buildWithFields(
     const ProtocolInterface& iface, const Database<Var>& varDb)
 {

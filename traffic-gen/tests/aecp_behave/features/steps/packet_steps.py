@@ -47,7 +47,8 @@ def _run_tool(context, count, seed=None, transport=None):
     assert result.returncode == 0, \
         f"packet_gen failed (rc={result.returncode}):\n{result.stderr}"
 
-    lines = [l for l in result.stdout.strip().splitlines() if l]
+    # Filter to only JSON lines (parser diagnostic output goes to the same fd).
+    lines = [l for l in result.stdout.strip().splitlines() if l.startswith("{")]
     assert len(lines) == count, \
         f"Expected {count} lines of output, got {len(lines)}"
     return [json.loads(l) for l in lines]

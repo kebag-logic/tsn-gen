@@ -5,15 +5,17 @@
 import os
 import pathlib
 
-# Root of the tsn-gen repository (two levels above this file's directory).
+# __file__ is inside features/ so parents[4] is the tsn-gen repo root.
+#   parents[0] = features/
+#   parents[1] = aecp_behave/
+#   parents[2] = tests/
+#   parents[3] = traffic-gen/
+#   parents[4] = tsn-gen/ (repo root)
 _REPO_ROOT = pathlib.Path(__file__).resolve().parents[4]
 
-# Default AECP YAML directory — can be overridden via AECP_YAML_DIR env var.
 _DEFAULT_AECP_YAML_DIR = str(
     _REPO_ROOT / "protocols" / "application" / "1722_1" / "aecp"
 )
-
-# Default packet_gen binary path — set PACKET_GEN_BIN to override.
 _DEFAULT_PACKET_GEN = str(_REPO_ROOT / "build" / "traffic-gen" / "packet_gen")
 
 

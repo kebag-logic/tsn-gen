@@ -8,6 +8,8 @@
 
 #include <cstdint>
 #include <random>
+#include <string>
+#include <unordered_map>
 #include <vector>
 
 #include <database.h>
@@ -50,6 +52,32 @@ public:
      */
     BuiltPacket buildWithFields(const ProtocolInterface& iface,
                                 const Database<Var>& varDb);
+
+    /**
+     * @brief Build one packet, using @p overrides to supply field values for
+     *        fields that carry no hard constraint (expectedValues / range).
+     *
+     * Priority order for choosing a value:
+     *   1. Var has expectedValues — always respected (override ignored).
+     *   2. @p overrides contains the field short-name — use override value
+     *      (mask is still applied if the var declares one).
+     *   3. Otherwise: pick randomly according to normal constraints.
+     *
+     * This is the building block for chained-interface simulation:
+     *   - Generate packet A freely.
+     *   - Pass A's fields as overrides when generating packet B.
+     *   - Fields shared by name (e.g. sequence_id, target_entity_id) are
+     *     echoed from A into B; fields fixed by constraint are not affected.
+     *
+     * @param iface     Interface to build for.
+     * @param varDb     Global var database.
+     * @param overrides Map of short field-name → value.
+     * @return BuiltPacket with bytes and per-field values.
+     */
+    BuiltPacket buildWithOverrides(
+        const ProtocolInterface& iface,
+        const Database<Var>& varDb,
+        const std::unordered_map<std::string, uint64_t>& overrides);
 
     /**
      * @brief Build one packet for the given interface.
