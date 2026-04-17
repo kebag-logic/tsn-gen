@@ -190,6 +190,12 @@ def step_gen_stacked_random(context, count):
     context.packets = _run_stack(context, count)
 
 
+@when('I generate {count:d} stacked packets with seed {seed:d} to pcap file "{path}"')
+def step_gen_stacked_to_pcap(context, count, seed, path):
+    context.packets = _run_stack(context, count, seed=seed, transport=f"pcap:{path}")
+    context.pcap_path = path
+
+
 @then('layer {idx:d} field "{field}" always equals {value:d}')
 def step_layer_field_equals(context, idx, field, value):
     for i, pkt in enumerate(context.packets):

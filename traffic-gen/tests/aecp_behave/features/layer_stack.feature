@@ -49,6 +49,12 @@ Feature: Layer stacking — full on-wire frame assembly
     When  I generate 30 stacked packets with seed 77
     Then  layer 2 field "command_type" always equals 0
 
+  Scenario: Stacked frame can be captured to a pcap file
+    Given the interface stack "ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF:avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF:atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF"
+    When  I generate 5 stacked packets with seed 42 to pcap file "/tmp/stack_aecp_test.pcap"
+    Then  the pcap file "/tmp/stack_aecp_test.pcap" exists
+    And   the pcap file "/tmp/stack_aecp_test.pcap" contains 5 packets
+
   Scenario: Stack output is deterministic with a fixed seed
     Given the interface stack "ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF:avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF:atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF"
     When  I generate 5 stacked packets with seed 42
