@@ -9,6 +9,7 @@ include(CMakeGenTestingLibraries)
 #################### SOURCES    ####################
 set(TRAFFIC_GEN_SRCS
     src/packet_builder.cpp
+    src/pcap_sender.cpp
     src/raw_socket_sender.cpp
     src/verilator_sender.cpp
     src/traffic_generator.cpp
@@ -58,6 +59,25 @@ target_compile_options(${PROJECT_NAME} PUBLIC
     $<$<CONFIG:Release>:-O3 -g3>
     $<$<CONFIG:MinSizeRel>:-Os -g3>
     $<$<CONFIG:RelWithDebInfo>:-Os -g3>
+)
+
+#################### CLI TOOL   ####################
+add_executable(packet_gen
+    tools/packet_gen_main.cpp
+)
+
+target_include_directories(packet_gen PRIVATE
+    ${TRAFFIC_GEN_INC_DIRS}
+)
+
+target_link_libraries(packet_gen
+    ${PROJECT_NAME}
+    protocol_parser
+    ryml::ryml
+)
+
+install(TARGETS packet_gen
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
 #################### UNIT TESTS ####################

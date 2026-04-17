@@ -1,0 +1,148 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# IEEE 1722.1-2021  Section 6: AVDECC Discovery Protocol (ADP)
+#
+# PDU payload field layout (MSB-first, 532 bits = 67 bytes when byte-padded):
+#
+#   Bits   Field
+#   ────   ─────────────────────────────
+#    4     message_type
+#    5     valid_time
+#   11     control_data_length
+#   64     entity_id
+#   64     entity_model_id
+#   32     entity_capabilities
+#   16     talker_stream_sources
+#   16     talker_capabilities
+#   16     listener_stream_sinks
+#   16     listener_capabilities
+#   32     controller_capabilities
+#   32     available_index
+#   64     gptp_grandmaster_id
+#    8     gptp_domain_number
+#    8     reserved0
+#   16     current_configuration_index
+#   16     identify_control_index
+#   16     interface_index
+#   64     association_id
+#   32     reserved1
+#        = 552 bits = 69 bytes
+
+service: atdecc_adp_service
+
+vars:
+  - var: message_type
+    size: 4
+    expected:
+      values: [0, 1, 2]       # 0=ENTITY_AVAILABLE  1=ENTITY_DEPARTING  2=ENTITY_DISCOVER
+
+  - var: valid_time
+    size: 5
+    expected:
+      range: [1, 31]           # advertisement validity in 2-second units (0 is reserved)
+
+  - var: control_data_length
+    size: 11
+    expected:
+      value: 56                # ADPDU payload is always 56 octets (IEEE 1722.1-2021 §6.2.1)
+
+  - var: entity_id
+    size: 64                   # EUI-64; fuzz freely (0 and all-F excluded at runtime by DUT)
+
+  - var: entity_model_id
+    size: 64
+
+  - var: entity_capabilities
+    size: 32
+
+  - var: talker_stream_sources
+    size: 16
+
+  - var: talker_capabilities
+    size: 16
+    expected:
+      mask: [0x803F]           # defined bits: IMPLEMENTED(15) + talker-type bits [5:0]
+
+  - var: listener_stream_sinks
+    size: 16
+
+  - var: listener_capabilities
+    size: 16
+    expected:
+      mask: [0x803F]           # defined bits: IMPLEMENTED(15) + listener-type bits [5:0]
+
+  - var: controller_capabilities
+    size: 32
+    expected:
+      mask: [0x8000]           # only IMPLEMENTED bit (15) is defined
+
+  - var: available_index
+    size: 32
+    expected:
+      values: [0, 1]           # monotonically incremented; start at 0 or 1
+
+  - var: gptp_grandmaster_id
+    size: 64
+
+  - var: gptp_domain_number
+    size: 8
+
+  - var: reserved0
+    size: 8
+    expected:
+      value: 0                 # must be zero on transmit
+
+  - var: current_configuration_index
+    size: 16
+
+  - var: identify_control_index
+    size: 16
+
+  - var: interface_index
+    size: 16
+
+  - var: association_id
+    size: 64
+
+  - var: reserved1
+    size: 32
+    expected:
+      value: 0                 # must be zero on transmit
+
+entities:
+  - entity: ADP_INTERFACE
+    interfaces:
+      # Primary data-plane input: ADP PDU arriving from the network
+      - interface: ADP_IF_DATA
+        dir: in
+        vars:
+          - var_ref: message_type
+          - var_ref: valid_time
+          - var_ref: control_data_length
+          - var_ref: entity_id
+          - var_ref: entity_model_id
+          - var_ref: entity_capabilities
+          - var_ref: talker_stream_sources
+          - var_ref: talker_capabilities
+          - var_ref: listener_stream_sinks
+          - var_ref: listener_capabilities
+          - var_ref: controller_capabilities
+          - var_ref: available_index
+          - var_ref: gptp_grandmaster_id
+          - var_ref: gptp_domain_number
+          - var_ref: reserved0
+          - var_ref: current_configuration_index
+          - var_ref: identify_control_index
+          - var_ref: interface_index
+          - var_ref: association_id
+          - var_ref: reserved1
+
+      # Data-link information from the MAC layer (e.g. link-up, PTP grandmaster)
+      - interface: ADP_DLL_INFO
+        dir: in
+
+      # Entity information output toward upper layers
+      - interface: ADP_ENT_IF_DATA
+        dir: out

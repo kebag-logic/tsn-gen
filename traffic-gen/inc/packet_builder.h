@@ -32,7 +32,24 @@
  */
 class PacketBuilder {
 public:
+    /** Packet bytes together with the per-field values used to build them. */
+    struct BuiltPacket {
+        std::vector<uint8_t> bytes;
+        /** Field short-name → generated value, in declaration order. */
+        std::vector<std::pair<std::string, uint64_t>> fields;
+    };
+
     PacketBuilder();
+
+    /**
+     * @brief Build one packet and return both bytes and per-field values.
+     *
+     * @param iface   Parsed interface (carries the ordered var_ref list).
+     * @param varDb   Global var database populated by ProtocolParser.
+     * @return BuiltPacket; bytes is empty if no var_refs resolve.
+     */
+    BuiltPacket buildWithFields(const ProtocolInterface& iface,
+                                const Database<Var>& varDb);
 
     /**
      * @brief Build one packet for the given interface.

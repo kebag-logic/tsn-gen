@@ -112,21 +112,60 @@ const ProtocolErr Protocol::getParsedProtocolVars(Database<Var>& dbVars)
         }
 
         std::vector<int32_t> expectedValues;
+        std::optional<Var::Range> range;
+        uint64_t mask = 0;
+
         if (varItem.has_child("expected")) {
             ryml::ConstNodeRef expectedNode = varItem["expected"];
+
+            /* expected.values: [v0, v1, ...] — exhaustive allowed list */
             if (expectedNode.has_child("values")) {
                 ryml::ConstNodeRef valuesNode = expectedNode["values"];
                 if (valuesNode.is_seq()) {
                     for (ryml::ConstNodeRef valNode : valuesNode) {
                         std::string valStr = csubstrToString(valNode.val());
                         expectedValues.push_back(
-                            static_cast<int32_t>(std::stoi(valStr)));
+                            static_cast<int32_t>(
+                                std::stol(valStr, nullptr, 0)));
+                    }
+                }
+            }
+
+            /* expected.value: N — single fixed value */
+            if (expectedNode.has_child("value")) {
+                std::string valStr =
+                    csubstrToString(expectedNode["value"].val());
+                expectedValues.push_back(
+                    static_cast<int32_t>(std::stol(valStr, nullptr, 0)));
+            }
+
+            /* expected.range: [min, max] — inclusive integer range */
+            if (expectedNode.has_child("range")) {
+                ryml::ConstNodeRef rangeNode = expectedNode["range"];
+                if (rangeNode.is_seq() && rangeNode.num_children() == 2) {
+                    std::vector<int32_t> rvals;
+                    for (ryml::ConstNodeRef rv : rangeNode) {
+                        rvals.push_back(static_cast<int32_t>(
+                            std::stol(csubstrToString(rv.val()), nullptr, 0)));
+                    }
+                    range = Var::Range{rvals[0], rvals[1]};
+                }
+            }
+
+            /* expected.mask: [M] — only bits within M may be set */
+            if (expectedNode.has_child("mask")) {
+                ryml::ConstNodeRef maskNode = expectedNode["mask"];
+                if (maskNode.is_seq()) {
+                    for (ryml::ConstNodeRef mv : maskNode) {
+                        mask = static_cast<uint64_t>(std::stoull(
+                            csubstrToString(mv.val()), nullptr, 0));
+                        break; /* take first entry only */
                     }
                 }
             }
         }
 
-        Var var(qualifiedName, size, std::move(expectedValues));
+        Var var(qualifiedName, size, std::move(expectedValues), range, mask);
         DatabaseErr dbErr = dbVars.addUniqueElement(qualifiedName, var);
         if (dbErr.getErrorCode() == DatabaseErr::DBERR_ENTRY_ALREADY_EXISTS) {
             std::cerr << "WARN: var '" << qualifiedName
@@ -184,9 +223,25 @@ const ProtocolErr Protocol::getParsedProtocolInterface(
             if (ifItem.has_child("vars")) {
                 ryml::ConstNodeRef varsRefNode = ifItem["vars"];
                 if (varsRefNode.is_map()) {
+                    /* map form: vars: { var_ref: name, ... } */
                     for (ryml::ConstNodeRef refItem : varsRefNode) {
                         std::string refVal = csubstrToString(refItem.val());
                         varRefs.push_back(serviceName + "::" + refVal);
+                    }
+                } else if (varsRefNode.is_seq()) {
+                    /* sequence form: vars: [{ var_ref: name }, ...] */
+                    for (ryml::ConstNodeRef refItem : varsRefNode) {
+                        if (!refItem.is_map() || !refItem.has_child("var_ref")) {
+                            continue;
+                        }
+                        std::string refVal =
+                            csubstrToString(refItem["var_ref"].val());
+                        /* already qualified (contains "::") → keep as-is */
+                        if (refVal.find("::") != std::string::npos) {
+                            varRefs.push_back(refVal);
+                        } else {
+                            varRefs.push_back(serviceName + "::" + refVal);
+                        }
                     }
                 }
             }

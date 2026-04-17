@@ -24,7 +24,21 @@ target_link_testlibs(
   ryml::ryml
 )
 
+#################### ADP fuzzer tests ###############
+set(ADP_FUZZ_SRCS
+  adp_fuzz_test.cpp
+)
+
+target_link_testlibs(
+  adp_fuzz-test
+  traffic_gen
+  "${ADP_FUZZ_SRCS}"
+  GTest::gtest_main
+  ryml::ryml
+)
+
 ################### GTest discovery #################
 include(GoogleTest)
 include(CMakeGoogleDiscoverAllTests)
 gtest_discover_test_wtestlibs(traffic_gen-test)
+gtest_discover_test_wtestlibs(adp_fuzz-test)
