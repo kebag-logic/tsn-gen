@@ -16,11 +16,13 @@ _REPO_ROOT = pathlib.Path(__file__).resolve().parents[4]
 _DEFAULT_AECP_YAML_DIR = str(
     _REPO_ROOT / "protocols" / "application" / "1722_1" / "aecp"
 )
+_DEFAULT_PROTOCOLS_ROOT = str(_REPO_ROOT / "protocols")
 _DEFAULT_PACKET_GEN = str(_REPO_ROOT / "build" / "traffic-gen" / "packet_gen")
 
 
 def before_all(context):
     context.yaml_dir = os.environ.get("AECP_YAML_DIR", _DEFAULT_AECP_YAML_DIR)
+    context.protocols_dir = os.environ.get("PROTOCOLS_ROOT_DIR", _DEFAULT_PROTOCOLS_ROOT)
     context.tool = os.environ.get("PACKET_GEN_BIN", _DEFAULT_PACKET_GEN)
 
     if not os.path.isdir(context.yaml_dir):

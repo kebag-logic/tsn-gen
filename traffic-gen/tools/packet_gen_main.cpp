@@ -58,6 +58,8 @@ struct Args {
     bool        listInterfaces = false;
     /* Ordered chain of interface names supplied via --connect A:B:C */
     std::vector<std::string> chain;
+    /* Ordered layer interfaces supplied via --stack A:B:C (byte concatenation) */
+    std::vector<std::string> stack;
 };
 
 static void printUsage(const char* prog)
@@ -136,6 +138,26 @@ static void printUsage(const char* prog)
         << "                         --connect CMD_IF:RSP_IF\n"
         << "                         --connect A:B:C  (three-step chain)\n"
         << "\n"
+        << "  --stack <A:B[:C…]>   Concatenate bytes from multiple protocol layers into\n"
+        << "                       a single on-wire frame.  Each interface is generated\n"
+        << "                       independently (no field propagation) and its byte\n"
+        << "                       buffer is appended in declaration order.\n"
+        << "                       Typical use: assemble a complete Ethernet frame:\n"
+        << "                         Ethernet MAC header (14 B)\n"
+        << "                         + AVTP control header (2 B)\n"
+        << "                         + AECP PDU (39 B)\n"
+        << "                       Use --yaml-dir pointing at the protocols root so all\n"
+        << "                       layer YAMLs (data_link, application, …) are loaded.\n"
+        << "                       JSON output per round:\n"
+        << "                         {\"hex\":\"<all layers concatenated>\",\n"
+        << "                          \"layers\":[{\"iface\":\"...\",\"hex\":\"...\",\n"
+        << "                                     \"fields\":{…}}, …]}\n"
+        << "                       --stack and --connect are mutually exclusive.\n"
+        << "                       Example:\n"
+        << "                         --stack ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF\\\n"
+        << "                                :avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF\\\n"
+        << "                                :atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF\n"
+        << "\n"
         << "  --help               Print this message and exit.\n"
         << "\n"
         << "EXIT CODES\n"
@@ -177,6 +199,14 @@ static void printUsage(const char* prog)
         << "    --connect atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF\\\n"
         << "             :atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \\\n"
         << "    --count 5\n"
+        << "\n"
+        << "  # Assemble a complete on-wire IEEE 1722.1 AECP frame (Eth+AVTP+AECP = 55 bytes):\n"
+        << "  " << prog << " \\\n"
+        << "    --yaml-dir protocols \\\n"
+        << "    --stack ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF\\\n"
+        << "           :avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF\\\n"
+        << "           :atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \\\n"
+        << "    --count 3 --seed 42\n"
         << "\n";
 }
 
@@ -205,8 +235,8 @@ static bool parseArgs(int argc, char* argv[], Args& out)
         else if (a == "--output")          { out.output         = nextVal(); }
         else if (a == "--transport")       { out.transport      = nextVal(); }
         else if (a == "--list-interfaces") { out.listInterfaces = true; }
-        else if (a == "--connect") {
-            /* Split colon-separated chain and append to out.chain.
+        else if (a == "--connect" || a == "--stack") {
+            /* Split colon-separated list and append to out.chain / out.stack.
                Guard against '::' inside qualified names by splitting only on
                single colons that are NOT part of '::'. */
             std::string spec = nextVal();
@@ -215,14 +245,14 @@ static bool parseArgs(int argc, char* argv[], Args& out)
             std::string s = spec;
             for (size_t p = 0; (p = s.find("::", p)) != std::string::npos; )
                 { s.replace(p, 2, kSep); p += kSep.size(); }
+            std::vector<std::string>& target = (a == "--connect") ? out.chain : out.stack;
             std::string seg;
             for (char c : s + ":") {
                 if (c == ':') {
-                    /* Restore '::' and push segment. */
                     for (size_t p = 0;
                          (p = seg.find(kSep, p)) != std::string::npos; )
                         { seg.replace(p, kSep.size(), "::"); p += 2; }
-                    if (!seg.empty()) out.chain.push_back(seg);
+                    if (!seg.empty()) target.push_back(seg);
                     seg.clear();
                 } else {
                     seg += c;
@@ -240,14 +270,24 @@ static bool parseArgs(int argc, char* argv[], Args& out)
         std::cerr << "--yaml-dir is required\n";
         return false;
     }
-    /* --interface is optional when --connect supplies the chain. */
-    if (!out.listInterfaces && out.iface.empty() && out.chain.empty()) {
-        std::cerr << "--interface (or --connect) is required\n";
+    if (!out.chain.empty() && !out.stack.empty()) {
+        std::cerr << "--connect and --stack are mutually exclusive\n";
+        return false;
+    }
+    /* --interface is optional when --connect or --stack supplies the pipeline. */
+    if (!out.listInterfaces && out.iface.empty() &&
+        out.chain.empty() && out.stack.empty()) {
+        std::cerr << "--interface (or --connect / --stack) is required\n";
         return false;
     }
     /* If --interface is also given alongside --connect, prepend it. */
     if (!out.iface.empty() && !out.chain.empty()) {
         out.chain.insert(out.chain.begin(), out.iface);
+        out.iface.clear();
+    }
+    /* If --interface is also given alongside --stack, prepend it. */
+    if (!out.iface.empty() && !out.stack.empty()) {
+        out.stack.insert(out.stack.begin(), out.iface);
         out.iface.clear();
     }
     if (out.output != "hex" && out.output != "json") {
@@ -347,9 +387,9 @@ int main(int argc, char* argv[])
         return 0;
     }
 
-    /* Build the ordered list of interfaces to use each round. */
-    std::vector<const ProtocolInterface*> pipeline;
-    const auto resolveIface = [&](const std::string& name) -> bool {
+    /* Helper: resolve a named interface into a vector, or print error and fail. */
+    auto resolveInto = [&](const std::string& name,
+                           std::vector<const ProtocolInterface*>& vec) -> bool {
         const ProtocolInterface* p =
             parser.getInterfaceDatabase().getElement(name);
         if (!p) {
@@ -357,15 +397,23 @@ int main(int argc, char* argv[])
             std::cerr << "Run with --list-interfaces to see available names.\n";
             return false;
         }
-        pipeline.push_back(p);
+        vec.push_back(p);
         return true;
     };
 
-    if (!args.chain.empty()) {
+    /* Build the ordered list of interfaces for --connect / --interface. */
+    std::vector<const ProtocolInterface*> pipeline;
+    /* Build the ordered list of layers for --stack. */
+    std::vector<const ProtocolInterface*> stackPipeline;
+
+    if (!args.stack.empty()) {
+        for (const auto& name : args.stack)
+            if (!resolveInto(name, stackPipeline)) return 2;
+    } else if (!args.chain.empty()) {
         for (const auto& name : args.chain)
-            if (!resolveIface(name)) return 2;
+            if (!resolveInto(name, pipeline)) return 2;
     } else {
-        if (!resolveIface(args.iface)) return 2;
+        if (!resolveInto(args.iface, pipeline)) return 2;
     }
 
     /* Set up sender (optional). */
@@ -390,7 +438,47 @@ int main(int argc, char* argv[])
     const bool isChain     = pipeline.size() > 1;
     const bool jsonOut     = (args.output == "json");
 
-    /* Generate packets — one round = one packet per pipeline stage. */
+    /* --stack: generate each layer independently and concatenate bytes. */
+    if (!stackPipeline.empty()) {
+        for (size_t round = 0; round < args.count; ++round) {
+            std::vector<uint8_t> combined;
+            std::string layersJson = "[";
+
+            for (size_t i = 0; i < stackPipeline.size(); ++i) {
+                const ProtocolInterface* iface = stackPipeline[i];
+                auto pkt = builder.buildWithFields(*iface, parser.getVarDatabase());
+
+                combined.insert(combined.end(), pkt.bytes.begin(), pkt.bytes.end());
+
+                if (i) layersJson += ',';
+                layersJson += "{\"iface\":\"";
+                layersJson += iface->getName();
+                layersJson += "\",";
+                layersJson += toJson(pkt).substr(1); /* strip leading '{' */
+            }
+            layersJson += ']';
+
+            if (jsonOut) {
+                std::cout << "{\"hex\":\"" << toHex(combined)
+                          << "\",\"layers\":" << layersJson << "}\n";
+            } else {
+                std::cout << toHex(combined) << '\n';
+            }
+
+            if (sender) {
+                const auto err = sender->send(combined);
+                if (err.getErrorCode() != SenderErr::SENDER_SUCCESS) {
+                    std::cerr << "Send failed on round " << round << "\n";
+                    sender->close();
+                    return 2;
+                }
+            }
+        }
+        if (sender) sender->close();
+        return 0;
+    }
+
+    /* --connect / --interface: generate packets — one round = one packet per pipeline stage. */
     for (size_t round = 0; round < args.count; ++round) {
         std::unordered_map<std::string, uint64_t> overrides;
 

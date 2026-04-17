@@ -26,6 +26,11 @@ def step_set_iface(context, iface):
     context.current_iface = iface
 
 
+@given('the interface stack "{stack}"')
+def step_set_stack(context, stack):
+    context.current_stack = stack
+
+
 # ------------------------------------------------------------------ #
 #  When steps                                                         #
 # ------------------------------------------------------------------ #
@@ -146,6 +151,72 @@ def step_packet_size(context, size):
         actual = len(bytes.fromhex(pkt["hex"]))
         assert actual == size, \
             f"packet {i}: size = {actual}, expected {size}"
+
+
+# ------------------------------------------------------------------ #
+#  Stack (--stack) steps — layer byte concatenation                  #
+# ------------------------------------------------------------------ #
+
+def _run_stack(context, count, seed=None, transport=None):
+    cmd = [
+        context.tool,
+        "--yaml-dir", context.protocols_dir,
+        "--stack", context.current_stack,
+        "--count", str(count),
+        "--output", "json",
+    ]
+    if seed is not None:
+        cmd += ["--seed", str(seed)]
+    if transport:
+        cmd += ["--transport", transport]
+
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    assert result.returncode == 0, \
+        f"packet_gen --stack failed (rc={result.returncode}):\n{result.stderr}"
+
+    lines = [l for l in result.stdout.strip().splitlines() if l.startswith("{")]
+    assert len(lines) == count, \
+        f"Expected {count} stacked packets, got {len(lines)}"
+    return [json.loads(l) for l in lines]
+
+
+@when('I generate {count:d} stacked packets with seed {seed:d}')
+def step_gen_stacked_seed(context, count, seed):
+    context.packets = _run_stack(context, count, seed=seed)
+
+
+@when('I generate {count:d} stacked packets')
+def step_gen_stacked_random(context, count):
+    context.packets = _run_stack(context, count)
+
+
+@then('layer {idx:d} field "{field}" always equals {value:d}')
+def step_layer_field_equals(context, idx, field, value):
+    for i, pkt in enumerate(context.packets):
+        actual = pkt["layers"][idx]["fields"].get(field)
+        assert actual is not None, \
+            f"packet {i} layer {idx}: field '{field}' not present"
+        assert actual == value, \
+            f"packet {i} layer {idx}: field '{field}' = {actual}, expected {value}"
+
+
+@then('layer {idx:d} field "{field}" always equals hex {value}')
+def step_layer_field_equals_hex(context, idx, field, value):
+    expected = int(value, 16)
+    for i, pkt in enumerate(context.packets):
+        actual = pkt["layers"][idx]["fields"].get(field)
+        assert actual is not None, \
+            f"packet {i} layer {idx}: field '{field}' not present"
+        assert actual == expected, \
+            f"packet {i} layer {idx}: '{field}' = {actual:#x}, expected {expected:#x}"
+
+
+@then('the stacked packet size is always {size:d} bytes')
+def step_stacked_size(context, size):
+    for i, pkt in enumerate(context.packets):
+        actual = len(bytes.fromhex(pkt["hex"]))
+        assert actual == size, \
+            f"stacked packet {i}: size = {actual}, expected {size}"
 
 
 # ------------------------------------------------------------------ #
