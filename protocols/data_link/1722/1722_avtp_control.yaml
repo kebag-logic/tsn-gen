@@ -1,0 +1,52 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# AVTP outer header for ATDECC control messages (IEEE 1722-2016 §6.4).
+#
+# This 2-byte block precedes the AECPDU or ADPDU payload on the wire.
+# The remaining AECPDU common fields (message_type, status,
+# control_data_length, entity IDs, …) are carried in the per-message
+# application-layer YAMLs.
+#
+# Layout (MSB-first):
+#    8b  subtype   — AVTP PDU type (0xFB = AECP, 0xFA = ADP per 1722.1-2021)
+#    1b  sv        — stream valid = 0 for control messages
+#    3b  version   — AVTP version = 0
+#    4b  reserved  — padding to byte boundary (zero)
+#        ──────────
+#      = 16 bits = 2 bytes
+
+service: avtp_control_header
+
+vars:
+  - var: subtype
+    size: 8
+    expected:
+      value: 0xFB    # AECP (use 0xFA for ADP)
+
+  - var: sv
+    size: 1
+    expected:
+      value: 0
+
+  - var: version
+    size: 3
+    expected:
+      value: 0
+
+  - var: reserved
+    size: 4
+    expected:
+      value: 0
+
+entities:
+  - entity: AVTP_CONTROL
+    interfaces:
+      - interface: AVTP_CONTROL_IF
+        dir: out
+        vars:
+          - var_ref: subtype
+          - var_ref: sv
+          - var_ref: version
+          - var_ref: reserved

@@ -1,0 +1,36 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# Ethernet II frame header (14 bytes).
+#
+# Layout (MSB-first):
+#   48b  dst_mac
+#   48b  src_mac
+#   16b  ethertype  = 0x22F0 (IEEE 1722 / IEEE 1722.1 ATDECC)
+#        ──────────
+#      = 112 bits = 14 bytes
+
+service: ethernet_mac_frame
+
+vars:
+  - var: dst_mac
+    size: 48
+
+  - var: src_mac
+    size: 48
+
+  - var: ethertype
+    size: 16
+    expected:
+      value: 0x22F0    # IEEE 1722 / 1722.1 ATDECC EtherType
+
+entities:
+  - entity: ETHERNET_FRAME
+    interfaces:
+      - interface: ETHERNET_FRAME_IF
+        dir: out
+        vars:
+          - var_ref: dst_mac
+          - var_ref: src_mac
+          - var_ref: ethertype
