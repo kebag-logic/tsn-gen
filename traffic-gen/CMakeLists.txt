@@ -9,9 +9,13 @@ include(CMakeGenTestingLibraries)
 #################### SOURCES    ####################
 set(TRAFFIC_GEN_SRCS
     src/packet_builder.cpp
+    src/packet_decoder.cpp
     src/pcap_sender.cpp
+    src/pcap_receiver.cpp
     src/raw_socket_sender.cpp
+    src/raw_socket_receiver.cpp
     src/verilator_sender.cpp
+    src/verilator_receiver.cpp
     src/traffic_generator.cpp
 )
 
