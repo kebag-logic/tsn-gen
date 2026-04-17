@@ -16,6 +16,7 @@
 #include <iostream>
 #include <filesystem>
 
+#include <protocol.h>
 #include <protocol_parser.h>
 #include <version.h>
 
@@ -104,7 +105,7 @@ const ProtocolParserErr ProtocolParser::listProtocolFiles(const std::string& pat
 
 	std::cout << "Entering directory: " << path.c_str() << std::endl;
 	for (const std::filesystem::directory_entry& dir_entry :
-		std::filesystem::recursive_directory_iterator(path)) {
+		std::filesystem::directory_iterator(path)) {
 
 		/** Check if a file and parse inside of it */
 		if (std::filesystem::is_regular_file(dir_entry.path())) {
@@ -120,8 +121,11 @@ const ProtocolParserErr ProtocolParser::listProtocolFiles(const std::string& pat
 			yamlPaths.push_back(dir_entry.path());
 			err = parseProtocol(dir_entry.path());
 
-			// Exit the loop something went wrong.
-			if (err.getErrorCode()) {
+			/* Files without a 'service:' key (stubs, functional specs, etc.)
+			   are not protocol definitions — skip them rather than aborting. */
+			if (err.getErrorCode() == ProtocolErr::PROTOERR_INVALID_FILE) {
+				err.setErrorCode(ProtocolParserErr::PROTOPARSER_SUCCESS);
+			} else if (err.getErrorCode()) {
 				break;
 			}
 		}

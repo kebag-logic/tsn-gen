@@ -205,7 +205,7 @@ const ProtocolErr Protocol::getParsedProtocolInterface(
         }
 
         for (ryml::ConstNodeRef ifItem : interfacesNode) {
-            if (!ifItem.has_child("interface")) {
+            if (!ifItem.is_map() || !ifItem.has_child("interface")) {
                 continue;
             }
 
@@ -305,9 +305,9 @@ const ProtocolErr Protocol::parseProtocolFile(
 
     munmap(ptr, len);
 
-    if (mTree.empty()) {
+    if (mTree.empty() || !mTree.rootref().is_map()) {
         err.setErrorCode(ProtocolErr::PROTOERR_INVALID_FILE);
-        std::cerr << "Invalid file: " <<  mPath << std::endl;
+        std::cerr << "Invalid file (empty or not a YAML map): " <<  mPath << std::endl;
         return err;
     }
 
