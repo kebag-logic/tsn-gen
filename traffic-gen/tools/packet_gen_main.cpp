@@ -28,9 +28,13 @@
  */
 
 #include <packet_builder.h>
+#include <packet_decoder.h>
+#include <pcap_receiver.h>
 #include <pcap_sender.h>
 #include <protocol_parser.h>
+#include <raw_socket_receiver.h>
 #include <raw_socket_sender.h>
+#include <verilator_receiver.h>
 #include <verilator_sender.h>
 
 #include <cstdint>
@@ -56,6 +60,8 @@ struct Args {
     std::string output         = "json";   /* hex | json */
     std::string transport      = "none";
     bool        listInterfaces = false;
+    bool        decode         = false;    /* --decode: receive + decode mode */
+    std::string hexInput;                  /* --hex <hexstring>: direct decode */
     /* Ordered chain of interface names supplied via --connect A:B:C */
     std::vector<std::string> chain;
     /* Ordered layer interfaces supplied via --stack A:B:C (byte concatenation) */
@@ -235,6 +241,8 @@ static bool parseArgs(int argc, char* argv[], Args& out)
         else if (a == "--output")          { out.output         = nextVal(); }
         else if (a == "--transport")       { out.transport      = nextVal(); }
         else if (a == "--list-interfaces") { out.listInterfaces = true; }
+        else if (a == "--decode")          { out.decode        = true; }
+        else if (a == "--hex")             { out.hexInput      = nextVal(); }
         else if (a == "--connect" || a == "--stack") {
             /* Split colon-separated list and append to out.chain / out.stack.
                Guard against '::' inside qualified names by splitting only on
@@ -280,6 +288,8 @@ static bool parseArgs(int argc, char* argv[], Args& out)
         std::cerr << "--interface (or --connect / --stack) is required\n";
         return false;
     }
+    /* --hex implies --decode */
+    if (!out.hexInput.empty()) out.decode = true;
     /* If --interface is also given alongside --connect, prepend it. */
     if (!out.iface.empty() && !out.chain.empty()) {
         out.chain.insert(out.chain.begin(), out.iface);
@@ -317,6 +327,47 @@ static std::unique_ptr<ISender> makeSender(const std::string& spec)
 
     std::cerr << "Unknown transport kind: " << kind << "\n";
     return nullptr;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Receiver factory                                                   */
+/* ------------------------------------------------------------------ */
+
+static std::unique_ptr<IReceiver> makeReceiver(const std::string& spec)
+{
+    if (spec == "none" || spec.empty()) return nullptr;
+
+    const auto colon = spec.find(':');
+    if (colon == std::string::npos) return nullptr;
+
+    const std::string kind  = spec.substr(0, colon);
+    const std::string param = spec.substr(colon + 1);
+
+    if (kind == "raw")       return std::make_unique<RawSocketReceiver>(param);
+    if (kind == "pcap")      return std::make_unique<PcapReceiver>(param);
+    if (kind == "verilator") return std::make_unique<VerilatorReceiver>(param);
+
+    std::cerr << "Unknown receiver transport: " << kind << "\n";
+    return nullptr;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Hex decoding                                                       */
+/* ------------------------------------------------------------------ */
+
+static bool fromHex(const std::string& hexStr, std::vector<uint8_t>& out)
+{
+    if (hexStr.size() % 2 != 0) return false;
+    out.clear();
+    out.reserve(hexStr.size() / 2);
+    for (size_t i = 0; i < hexStr.size(); i += 2) {
+        const std::string byte = hexStr.substr(i, 2);
+        char* end = nullptr;
+        const unsigned long v = std::strtoul(byte.c_str(), &end, 16);
+        if (end != byte.c_str() + 2) return false;
+        out.push_back(static_cast<uint8_t>(v));
+    }
+    return true;
 }
 
 /* ------------------------------------------------------------------ */
@@ -414,6 +465,89 @@ int main(int argc, char* argv[])
             if (!resolveInto(name, pipeline)) return 2;
     } else {
         if (!resolveInto(args.iface, pipeline)) return 2;
+    }
+
+    /* --decode: receive packets and decode them against the declared interface(s). */
+    if (args.decode) {
+        const bool jsonOut = (args.output == "json");
+
+        /* Determine which interface pipeline to decode against. */
+        const std::vector<const ProtocolInterface*>& decodePipeline =
+            !stackPipeline.empty() ? stackPipeline : pipeline;
+
+        auto decodeAndPrint = [&](const std::vector<uint8_t>& pkt) {
+            PacketDecoder decoder;
+            if (!stackPipeline.empty()) {
+                /* Stacked: decode each layer at its byte offset. */
+                std::string layersJson = "[";
+                size_t offset = 0;
+                for (size_t i = 0; i < decodePipeline.size(); ++i) {
+                    auto layer = decoder.decode(*decodePipeline[i],
+                                               parser.getVarDatabase(),
+                                               pkt, offset);
+                    offset += PacketDecoder::layerBytes(*decodePipeline[i],
+                                                       parser.getVarDatabase());
+                    if (i) layersJson += ',';
+                    layersJson += "{\"iface\":\"";
+                    layersJson += decodePipeline[i]->getName();
+                    layersJson += "\",";
+                    layersJson += toJson(layer).substr(1);
+                }
+                layersJson += ']';
+                std::cout << "{\"hex\":\"" << toHex(pkt)
+                          << "\",\"layers\":" << layersJson << "}\n";
+            } else {
+                /* Single interface. */
+                auto result = decoder.decode(*decodePipeline[0],
+                                             parser.getVarDatabase(), pkt);
+                if (jsonOut) std::cout << toJson(result) << '\n';
+                else         std::cout << toHex(result.bytes) << '\n';
+            }
+        };
+
+        if (!args.hexInput.empty()) {
+            /* Decode a single hex string from the command line. */
+            std::vector<uint8_t> raw;
+            if (!fromHex(args.hexInput, raw)) {
+                std::cerr << "--hex value is not valid hex\n";
+                return 1;
+            }
+            decodeAndPrint(raw);
+            return 0;
+        }
+
+        /* Stream-based decode from a receiver transport. */
+        std::unique_ptr<IReceiver> receiver = makeReceiver(args.transport);
+        if (!receiver) {
+            std::cerr << "--decode requires --transport <pcap|raw|verilator>:<param>"
+                      << " or --hex <hexstring>\n";
+            return 1;
+        }
+        {
+            const auto err = receiver->open();
+            if (err.getErrorCode() != ReceiverErr::RECEIVER_SUCCESS) {
+                std::cerr << "Failed to open receiver: " << args.transport << "\n";
+                return 2;
+            }
+        }
+
+        size_t n = 0;
+        while (args.count == 0 || n < args.count) {
+            std::vector<uint8_t> pkt;
+            const auto err = receiver->receive(pkt);
+            if (err.getErrorCode() == ReceiverErr::RECEIVER_ERR_EOF) break;
+            if (err.getErrorCode() != ReceiverErr::RECEIVER_SUCCESS) {
+                std::cerr << "Receive error on packet " << n << "\n";
+                receiver->close();
+                return 2;
+            }
+            if (!pkt.empty()) {
+                decodeAndPrint(pkt);
+                ++n;
+            }
+        }
+        receiver->close();
+        return 0;
     }
 
     /* Set up sender (optional). */
