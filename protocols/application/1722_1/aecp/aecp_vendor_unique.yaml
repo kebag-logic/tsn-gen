@@ -1,0 +1,74 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# IEEE 1722.1-2021 §9.4  VENDOR_UNIQUE_COMMAND / VENDOR_UNIQUE_RESPONSE
+#   message_type = 6 (COMMAND)  or  7 (RESPONSE)
+#
+# There is no AEM-specific header.  The payload consists of a 6-byte
+# protocol_id (OUI-24 + 24-bit vendor sub-type) followed by 8 bytes of
+# opaque vendor data.  CDL = 32 bytes.
+#
+# PDU layout (MSB-first):
+#
+#   Bits   Field
+#   ────   ─────────────────────────────
+#    4     message_type                 = 6 or 7
+#    5     status
+#   11     control_data_length          = 32 (fixed)
+#   64     target_entity_id
+#   64     controller_entity_id
+#   16     sequence_id
+#   48     protocol_id                  OUI-24 + vendor sub-type-24
+#   64     vendor_data
+#          ─────────────────────────────
+#        = 4 + 5 + 11 + 64 + 64 + 16 + 48 + 64
+#        = 276 bits = 35 bytes (4 pad bits)
+
+service: atdecc_aecp_vendor_unique
+
+vars:
+  - var: message_type
+    size: 4
+    expected:
+      values: [6, 7]               # 6=VENDOR_UNIQUE_COMMAND  7=VENDOR_UNIQUE_RESPONSE
+
+  - var: status
+    size: 5
+    expected:
+      values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+  - var: control_data_length
+    size: 11
+    expected:
+      value: 32
+
+  - var: target_entity_id
+    size: 64
+
+  - var: controller_entity_id
+    size: 64
+
+  - var: sequence_id
+    size: 16
+
+  - var: protocol_id
+    size: 48                       # OUI-24 (bits 47:24) + vendor sub-type (bits 23:0)
+
+  - var: vendor_data
+    size: 64                       # opaque, vendor-defined
+
+entities:
+  - entity: AECP_VENDOR_UNIQUE
+    interfaces:
+      - interface: AECP_VENDOR_UNIQUE_IF
+        dir: in
+        vars:
+          - var_ref: message_type
+          - var_ref: status
+          - var_ref: control_data_length
+          - var_ref: target_entity_id
+          - var_ref: controller_entity_id
+          - var_ref: sequence_id
+          - var_ref: protocol_id
+          - var_ref: vendor_data

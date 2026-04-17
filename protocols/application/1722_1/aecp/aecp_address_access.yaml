@@ -1,0 +1,88 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# IEEE 1722.1-2021 §9.3  ADDRESS_ACCESS_COMMAND / ADDRESS_ACCESS_RESPONSE
+#   message_type = 2 (COMMAND)  or  3 (RESPONSE)
+#
+# This file models a single-TLV WRITE payload (8 bytes of data).
+# There is no AEM-specific header (no u/command_type fields).
+# CDL = 38 bytes for this payload shape.
+#
+# PDU layout (MSB-first):
+#
+#   Bits   Field
+#   ────   ─────────────────────────────
+#    4     message_type                 = 2 or 3
+#    5     status
+#   11     control_data_length          = 38 (fixed)
+#   64     target_entity_id
+#   64     controller_entity_id
+#   16     sequence_id
+#   16     tlv_count                    = 1
+#   16     tlv_length_and_mode          mode[3:0] | length[11:0]
+#   64     address
+#   64     data                         8 bytes payload
+#          ─────────────────────────────
+#        = 4 + 5 + 11 + 64 + 64 + 16 + 16 + 16 + 64 + 64
+#        = 324 bits = 41 bytes (4 pad bits)
+
+service: atdecc_aecp_address_access
+
+vars:
+  - var: message_type
+    size: 4
+    expected:
+      values: [2, 3]               # 2=ADDRESS_ACCESS_COMMAND  3=ADDRESS_ACCESS_RESPONSE
+
+  - var: status
+    size: 5
+    expected:
+      values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+  - var: control_data_length
+    size: 11
+    expected:
+      value: 38
+
+  - var: target_entity_id
+    size: 64
+
+  - var: controller_entity_id
+    size: 64
+
+  - var: sequence_id
+    size: 16
+
+  - var: tlv_count
+    size: 16
+    expected:
+      value: 1
+
+  - var: tlv_length_and_mode
+    size: 16
+    expected:
+      mask: [0xFF0F]               # upper 8 bits = length[7:0], lower nibble = mode
+
+  - var: address
+    size: 64
+
+  - var: data
+    size: 64
+
+entities:
+  - entity: AECP_ADDRESS_ACCESS
+    interfaces:
+      - interface: AECP_ADDRESS_ACCESS_IF
+        dir: in
+        vars:
+          - var_ref: message_type
+          - var_ref: status
+          - var_ref: control_data_length
+          - var_ref: target_entity_id
+          - var_ref: controller_entity_id
+          - var_ref: sequence_id
+          - var_ref: tlv_count
+          - var_ref: tlv_length_and_mode
+          - var_ref: address
+          - var_ref: data

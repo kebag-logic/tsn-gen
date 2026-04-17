@@ -1,7 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# IEEE 1722.1-2021 ATDECC base namespace placeholder.
+# No vars or entities are defined here; this file exists only as a namespace root.
 
- # SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
- # SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
- # SPDX-License-Identifier: MIT
- 
-
- name: atdecc_base
+service: atdecc_1722_1_base

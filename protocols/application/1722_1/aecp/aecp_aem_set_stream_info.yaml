@@ -1,0 +1,142 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# IEEE 1722.1-2021 §9.2.15  SET_STREAM_INFO command/response (command_type=14)
+#
+# PDU layout (MSB-first):
+#
+#   Bits   Field
+#   ────   ─────────────────────────────
+#    4     message_type
+#    5     status
+#   11     control_data_length          = 68 (fixed)
+#   64     target_entity_id
+#   64     controller_entity_id
+#   16     sequence_id
+#    1     u
+#   15     command_type                 = 14 (SET_STREAM_INFO)
+#   16     descriptor_type              in [0, 37]
+#   16     descriptor_index
+#   64     msrp_flags
+#   64     stream_format
+#   64     stream_id
+#   32     msrp_accumulated_latency
+#   48     stream_dest_mac
+#    8     msrp_failure_code
+#    8     reserved0
+#   64     msrp_failure_bridge_id
+#   16     stream_vlan_id
+#   16     reserved1
+#          ─────────────────────────────
+#        = 4 + 5 + 11 + 64 + 64 + 16 + 1 + 15 + 16 + 16 +
+#          64 + 64 + 64 + 32 + 48 + 8 + 8 + 64 + 16 + 16
+#        = 596 bits = 75 bytes (4 pad bits)
+
+service: atdecc_aecp_set_stream_info
+
+vars:
+  - var: message_type
+    size: 4
+    expected:
+      values: [0, 1]
+
+  - var: status
+    size: 5
+    expected:
+      values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+  - var: control_data_length
+    size: 11
+    expected:
+      value: 68
+
+  - var: target_entity_id
+    size: 64
+
+  - var: controller_entity_id
+    size: 64
+
+  - var: sequence_id
+    size: 16
+
+  - var: u
+    size: 1
+    expected:
+      values: [0, 1]
+
+  - var: command_type
+    size: 15
+    expected:
+      value: 14                    # SET_STREAM_INFO
+
+  - var: descriptor_type
+    size: 16
+    expected:
+      range: [0, 37]
+
+  - var: descriptor_index
+    size: 16
+
+  - var: msrp_flags
+    size: 64
+    expected:
+      mask: [0xF800000000000000]   # defined flag bits [63:59]
+
+  - var: stream_format
+    size: 64
+
+  - var: stream_id
+    size: 64
+
+  - var: msrp_accumulated_latency
+    size: 32
+
+  - var: stream_dest_mac
+    size: 48
+
+  - var: msrp_failure_code
+    size: 8
+
+  - var: reserved0
+    size: 8
+    expected:
+      value: 0
+
+  - var: msrp_failure_bridge_id
+    size: 64
+
+  - var: stream_vlan_id
+    size: 16
+
+  - var: reserved1
+    size: 16
+    expected:
+      value: 0
+
+entities:
+  - entity: AECP_SET_STREAM_INFO
+    interfaces:
+      - interface: AECP_SET_STREAM_INFO_IF
+        dir: in
+        vars:
+          - var_ref: message_type
+          - var_ref: status
+          - var_ref: control_data_length
+          - var_ref: target_entity_id
+          - var_ref: controller_entity_id
+          - var_ref: sequence_id
+          - var_ref: u
+          - var_ref: command_type
+          - var_ref: descriptor_type
+          - var_ref: descriptor_index
+          - var_ref: msrp_flags
+          - var_ref: stream_format
+          - var_ref: stream_id
+          - var_ref: msrp_accumulated_latency
+          - var_ref: stream_dest_mac
+          - var_ref: msrp_failure_code
+          - var_ref: reserved0
+          - var_ref: msrp_failure_bridge_id
+          - var_ref: stream_vlan_id
+          - var_ref: reserved1

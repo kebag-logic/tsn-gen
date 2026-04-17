@@ -1,0 +1,80 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# IEEE 1722.1-2021 §9  AECP AEM commands with no additional payload
+#
+# Covered command_type values:
+#   2  ENTITY_AVAILABLE
+#   3  CONTROLLER_AVAILABLE
+#   7  GET_CONFIGURATION
+#  36  REGISTER_UNSOLICITED_NOTIFICATION
+#  37  DEREGISTER_UNSOLICITED_NOTIFICATION
+#
+# PDU layout (MSB-first):
+#
+#   Bits   Field
+#   ────   ──────────────────────
+#    4     message_type
+#    5     status
+#   11     control_data_length      = 20 (fixed)
+#   64     target_entity_id
+#   64     controller_entity_id
+#   16     sequence_id
+#    1     u  (unsolicited flag)
+#   15     command_type
+#          ─────────────────────
+#        = 180 bits = 23 bytes (4 pad bits)
+
+service: atdecc_aecp_aem_no_payload
+
+vars:
+  - var: message_type
+    size: 4
+    expected:
+      values: [0, 1]               # 0=AEM_COMMAND  1=AEM_RESPONSE
+
+  - var: status
+    size: 5
+    expected:
+      values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                                   # 0=SUCCESS … 12=STREAM_IS_RUNNING
+
+  - var: control_data_length
+    size: 11
+    expected:
+      value: 20                    # no payload beyond AECPDU_AEM header
+
+  - var: target_entity_id
+    size: 64
+
+  - var: controller_entity_id
+    size: 64
+
+  - var: sequence_id
+    size: 16
+
+  - var: u
+    size: 1
+    expected:
+      values: [0, 1]               # 0=solicited  1=unsolicited
+
+  - var: command_type
+    size: 15
+    expected:
+      values: [2, 3, 7, 36, 37]   # see header comment
+
+entities:
+  - entity: AECP_AEM_NO_PAYLOAD
+    interfaces:
+      - interface: AECP_AEM_NO_PAYLOAD_IF
+        dir: in
+        vars:
+          - var_ref: message_type
+          - var_ref: status
+          - var_ref: control_data_length
+          - var_ref: target_entity_id
+          - var_ref: controller_entity_id
+          - var_ref: sequence_id
+          - var_ref: u
+          - var_ref: command_type

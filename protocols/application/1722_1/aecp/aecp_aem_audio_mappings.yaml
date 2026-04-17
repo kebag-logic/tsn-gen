@@ -1,0 +1,122 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# IEEE 1722.1-2021 §9.2.44-45  ADD_AUDIO_MAPPINGS / REMOVE_AUDIO_MAPPINGS
+#   command_type=44 (ADD)  command_type=45 (REMOVE)
+#
+# This file models a single-mapping payload (number_of_mappings=1).
+# CDL = 36 bytes for one mapping entry.
+#
+# PDU layout (MSB-first):
+#
+#   Bits   Field
+#   ────   ─────────────────────────────
+#    4     message_type
+#    5     status
+#   11     control_data_length          = 36 (fixed for 1 mapping)
+#   64     target_entity_id
+#   64     controller_entity_id
+#   16     sequence_id
+#    1     u
+#   15     command_type                 = 44 (ADD) or 45 (REMOVE)
+#   16     descriptor_type              in [0, 37]
+#   16     descriptor_index
+#   16     number_of_mappings           = 1
+#   16     reserved
+#   16     mapping_stream_index
+#   16     mapping_stream_channel
+#   16     mapping_cluster_offset
+#   16     mapping_cluster_channel
+#          ─────────────────────────────
+#        = 308 bits = 39 bytes (4 pad bits)
+
+service: atdecc_aecp_audio_mappings
+
+vars:
+  - var: message_type
+    size: 4
+    expected:
+      values: [0, 1]
+
+  - var: status
+    size: 5
+    expected:
+      values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+  - var: control_data_length
+    size: 11
+    expected:
+      value: 36
+
+  - var: target_entity_id
+    size: 64
+
+  - var: controller_entity_id
+    size: 64
+
+  - var: sequence_id
+    size: 16
+
+  - var: u
+    size: 1
+    expected:
+      values: [0, 1]
+
+  - var: command_type
+    size: 15
+    expected:
+      values: [44, 45]             # 44=ADD_AUDIO_MAPPINGS  45=REMOVE_AUDIO_MAPPINGS
+
+  - var: descriptor_type
+    size: 16
+    expected:
+      range: [0, 37]
+
+  - var: descriptor_index
+    size: 16
+
+  - var: number_of_mappings
+    size: 16
+    expected:
+      value: 1
+
+  - var: reserved
+    size: 16
+    expected:
+      value: 0
+
+  - var: mapping_stream_index
+    size: 16
+
+  - var: mapping_stream_channel
+    size: 16
+
+  - var: mapping_cluster_offset
+    size: 16
+
+  - var: mapping_cluster_channel
+    size: 16
+
+entities:
+  - entity: AECP_AUDIO_MAPPINGS
+    interfaces:
+      - interface: AECP_AUDIO_MAPPINGS_IF
+        dir: in
+        vars:
+          - var_ref: message_type
+          - var_ref: status
+          - var_ref: control_data_length
+          - var_ref: target_entity_id
+          - var_ref: controller_entity_id
+          - var_ref: sequence_id
+          - var_ref: u
+          - var_ref: command_type
+          - var_ref: descriptor_type
+          - var_ref: descriptor_index
+          - var_ref: number_of_mappings
+          - var_ref: reserved
+          - var_ref: mapping_stream_index
+          - var_ref: mapping_stream_channel
+          - var_ref: mapping_cluster_offset
+          - var_ref: mapping_cluster_channel

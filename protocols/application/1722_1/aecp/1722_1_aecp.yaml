@@ -1,15 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# IEEE 1722.1-2021 AECP namespace placeholder.
+# No vars or entities are defined here; this file exists only as a namespace root.
 
- # SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
- # SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
- # SPDX-License-Identifier: MIT
- 
-
- functions:
-  - name: "AECP_MESSAGE"
-    primitives:
-      request: [ "AECP_INPUT" ]
-      indication: [ "AECP_OUTPUT" ]
-    documentation:
-      - origin: "IEEE"
-        name: "IEEE Std 802.3-2022, IEEE Standard for Ethernet"
-        section: [ "35.2.1.1", "35.2.1.2" ]
+service: atdecc_aecp_base

@@ -1,0 +1,94 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# IEEE 1722.1-2021 §9.2.17  GET_NAME command/response (command_type=17)
+#
+# PDU layout (MSB-first):
+#
+#   Bits   Field
+#   ────   ─────────────────────────────
+#    4     message_type
+#    5     status
+#   11     control_data_length          = 28 (fixed; response carries name in extra payload)
+#   64     target_entity_id
+#   64     controller_entity_id
+#   16     sequence_id
+#    1     u
+#   15     command_type                 = 17 (GET_NAME)
+#   16     descriptor_type              in [0, 37]
+#   16     descriptor_index
+#   16     name_index
+#   16     configuration_index
+#          ─────────────────────────────
+#        = 244 bits = 31 bytes (4 pad bits)
+
+service: atdecc_aecp_get_name
+
+vars:
+  - var: message_type
+    size: 4
+    expected:
+      values: [0, 1]
+
+  - var: status
+    size: 5
+    expected:
+      values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+  - var: control_data_length
+    size: 11
+    expected:
+      value: 28
+
+  - var: target_entity_id
+    size: 64
+
+  - var: controller_entity_id
+    size: 64
+
+  - var: sequence_id
+    size: 16
+
+  - var: u
+    size: 1
+    expected:
+      values: [0, 1]
+
+  - var: command_type
+    size: 15
+    expected:
+      value: 17                    # GET_NAME
+
+  - var: descriptor_type
+    size: 16
+    expected:
+      range: [0, 37]
+
+  - var: descriptor_index
+    size: 16
+
+  - var: name_index
+    size: 16
+
+  - var: configuration_index
+    size: 16
+
+entities:
+  - entity: AECP_GET_NAME
+    interfaces:
+      - interface: AECP_GET_NAME_IF
+        dir: in
+        vars:
+          - var_ref: message_type
+          - var_ref: status
+          - var_ref: control_data_length
+          - var_ref: target_entity_id
+          - var_ref: controller_entity_id
+          - var_ref: sequence_id
+          - var_ref: u
+          - var_ref: command_type
+          - var_ref: descriptor_type
+          - var_ref: descriptor_index
+          - var_ref: name_index
+          - var_ref: configuration_index
