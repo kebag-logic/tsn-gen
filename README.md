@@ -26,8 +26,8 @@ YAML.
 ```
   ┌──────────────────────────────────────────────────────────────┐
   │             Protocol YAML files  (protocols/)                │
-  │   ethernet/mac_frame.yaml · 1722_avtp_control.yaml          │
-  │   aecp/aecp_aem_acquire_entity.yaml · adp/…yaml · …        │
+  │   ethernet/mac_frame.yaml · 1722_avtp_control.yaml           │
+  │   aecp/aecp_aem_acquire_entity.yaml · adp/…yaml · …          │
   └──────────────────────┬───────────────────────────────────────┘
                          │  recursive directory walk
                          ▼
@@ -36,7 +36,7 @@ YAML.
   │                                                              │
   │  ProtocolParser                                              │
   │    ├── Database<Var>          keyed "service::var_name"      │
-  │    └── Database<ProtocolIf>  keyed "svc::entity::iface"     │
+  │    └── Database<ProtocolIf>  keyed "svc::entity::iface"      │
   └──────────────────────┬───────────────────────────────────────┘
                          │  const-ref passed to traffic-gen
               ┌──────────┴──────────┐
@@ -44,7 +44,7 @@ YAML.
   ┌───────────────────┐   ┌──────────────────────────────────────┐
   │   PacketBuilder   │   │   PacketDecoder                      │
   │                   │   │                                      │
-  │  pickValue()      │   │  extractBits()   (MSB-first, sym-   │
+  │  pickValue()      │   │  extractBits()   (MSB-first, sym-    │
   │  appendBits()     │   │                   metric to Builder) │
   │  (MSB-first)      │   │  layerBytes()    (ceil(bits/8))      │
   └────────┬──────────┘   └──────────────────────────────────────┘
@@ -52,9 +52,9 @@ YAML.
            │  bytes                 │  bytes
            ▼                        │
   ┌──────────────────────────────────────────────────────────────┐
-  │              Transport layer                                  │
+  │              Transport layer                                 │
   │                                                              │
-  │  ISender (generate → DUT)         IReceiver (DUT → verify)  │
+  │  ISender (generate → DUT)         IReceiver (DUT → verify)   │
   │    ├── RawSocketSender              ├── RawSocketReceiver    │
   │    ├── PcapSender                   ├── PcapReceiver         │
   │    └── VerilatorSender              └── VerilatorReceiver    │
