@@ -1,0 +1,514 @@
+.\" SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+.\" SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+.\" SPDX-License-Identifier: MIT
+.\"
+.\" View this page without installing:
+.\"   man ./docs/man/packet_gen.1
+.\"
+.TH PACKET_GEN 1 "2026-04-18" "tsn-gen 0.0.1" "TSN Generator Tools"
+.\" ====================================================================
+.SH NAME
+.\" ====================================================================
+packet_gen \- generate, transmit, and decode IEEE 1722.1 / ADP packets
+driven by YAML protocol definitions
+.\" ====================================================================
+.SH SYNOPSIS
+.\" ====================================================================
+.B packet_gen
+\fB\-\-yaml\-dir\fR \fIdir\fR
+{ \fB\-\-interface\fR \fIname\fR | \fB\-\-connect\fR \fIA:B\fR[\fI:C\&...\fR] | \fB\-\-stack\fR \fIA:B\fR[\fI:C\&...\fR] }
+[\fIoptions\fR]
+.PP
+.B packet_gen
+\fB\-\-yaml\-dir\fR \fIdir\fR
+\fB\-\-list\-interfaces\fR
+.PP
+.B packet_gen
+\fB\-\-yaml\-dir\fR \fIdir\fR
+\fB\-\-interface\fR \fIname\fR
+\fB\-\-decode\fR
+{ \fB\-\-hex\fR \fIhexstring\fR | \fB\-\-transport\fR \fIspec\fR }
+.\" ====================================================================
+.SH DESCRIPTION
+.\" ====================================================================
+\fBpacket_gen\fR reads a directory of YAML protocol definition files,
+builds an in\-memory database of protocol variables and interfaces, then
+generates raw packet byte buffers whose field values are constrained by
+the definitions.
+.PP
+Generated packets can be written to standard output in JSON or hex
+format, and optionally delivered to a physical or simulated transport
+backend: a Linux AF_PACKET raw socket, a libpcap\-format capture file,
+or a Verilator RTL DUT via AXI\-Stream beats over a UNIX domain socket.
+.PP
+Three operating modes are available:
+.TP
+\fBGeneration mode\fR (default)
+Build one or more packets from a single interface (\fB\-\-interface\fR),
+a chained command/response exchange (\fB\-\-connect\fR), or a
+concatenated multi\-layer frame (\fB\-\-stack\fR).
+.TP
+\fBDecode mode\fR (\fB\-\-decode\fR)
+Receive raw bytes from a transport or a hex string on the command line
+and decode them back to named field values using the declared interface.
+.TP
+\fBDiscovery mode\fR (\fB\-\-list\-interfaces\fR)
+Parse the YAML directory and print all discovered interface names, then
+exit.
+.\" ====================================================================
+.SH OPTIONS
+.\" ====================================================================
+.SS Required
+.TP
+\fB\-\-yaml\-dir\fR \fIpath\fR
+Directory containing protocol YAML files.
+The directory is walked recursively; every \fI.yaml\fR file whose
+top\-level key is \fBservice:\fR is loaded.
+Subdirectories are followed up to a maximum depth of 30.
+.IP
+To load a single protocol, point at its directory:
+.br
+\fIprotocols/application/1722_1/aecp\fR
+.IP
+To load all protocols (needed for \fB\-\-stack\fR across layers):
+.br
+\fIprotocols/\fR
+.TP
+\fB\-\-interface\fR \fIqualified\-name\fR
+Fully qualified interface name of the form
+\fI<service>::<ENTITY>::<INTERFACE>\fR.
+Required unless \fB\-\-connect\fR, \fB\-\-stack\fR, or
+\fB\-\-list\-interfaces\fR is given.
+Run \fB\-\-list\-interfaces\fR to discover valid names in a directory.
+.SS Generation options
+.TP
+\fB\-\-count\fR \fIn\fR
+Number of packets (or rounds for \fB\-\-connect\fR / \fB\-\-stack\fR) to
+generate.
+Default: \fB1\fR.
+Use \fB0\fR for an unlimited stream; interrupt with Ctrl\-C.
+.TP
+\fB\-\-seed\fR \fIn\fR
+Seed the internal Mersenne\-Twister PRNG with the given 64\-bit unsigned
+integer.
+Identical seeds produce identical packet sequences, which is useful for
+reproducible fuzzing and regression tests.
+Default: seeded from \fI/dev/urandom\fR.
+.TP
+\fB\-\-output\fR \fBhex\fR|\fBjson\fR
+Format for packets written to standard output.
+Default: \fBjson\fR.
+.RS
+.TP
+\fBhex\fR
+One lower\-case hex string per line, no delimiters or whitespace.
+.TP
+\fBjson\fR
+One JSON object per line (newline\-delimited JSON).
+Single interface:
+.nf
+{"fields":{"message_type":0,"status":0,...},"hex":"1402422e..."}
+.fi
+Chained (\fB\-\-connect\fR): a JSON array, one object per stage.
+Stacked (\fB\-\-stack\fR):
+.nf
+{"hex":"<all layers>","layers":[{"iface":"...","fields":{...},"hex":"..."},...]}
+.fi
+.RE
+.TP
+\fB\-\-transport\fR \fIspec\fR
+Deliver each generated packet to the named backend in addition to
+writing to standard output.
+Default: \fBnone\fR.
+See
+.B TRANSPORT BACKENDS
+below.
+.TP
+\fB\-\-connect\fR \fIA\fR:\fIB\fR[:\fIC\fR\&...]
+Chain two or more interfaces into a single round.
+In each round, packet A is generated first; fields that B declares
+without a hard constraint (\fBexpected.values\fR) are overridden with
+A\(cqs values when they share the same name.
+This propagation continues through subsequent stages.
+.IP
+Typical use: simulate a command/response exchange where the responder
+echoes \fIsequence_id\fR, \fItarget_entity_id\fR,
+\fIcontroller_entity_id\fR, etc.
+.IP
+Multiple \fB\-\-connect\fR flags append to the same chain.
+If \fB\-\-interface\fR is also given, it is prepended as stage\~0.
+.IP
+\fB\-\-connect\fR and \fB\-\-stack\fR are mutually exclusive.
+.TP
+\fB\-\-stack\fR \fIA\fR:\fIB\fR[:\fIC\fR\&...]
+Concatenate bytes from multiple protocol layers into a single on\-wire
+frame.
+Each interface is generated independently (no field propagation) and its
+byte buffer is appended in declaration order.
+.IP
+Typical use: assemble a complete Ethernet frame with protocol layers
+stacked in network order (MAC header, AVTP control, AECP PDU).
+.IP
+JSON output includes both a top\-level \fB"hex"\fR with all layers
+combined and a \fB"layers"\fR array with per\-layer detail.
+.IP
+\fB\-\-stack\fR and \fB\-\-connect\fR are mutually exclusive.
+.SS Decode options
+.TP
+\fB\-\-decode\fR
+Switch to decode mode.
+Incoming bytes are sliced into fields using the declared interface(s)
+and printed in the format selected by \fB\-\-output\fR.
+Combine with \fB\-\-hex\fR for a single one\-shot decode, or with
+\fB\-\-transport\fR to read from a live source.
+.TP
+\fB\-\-hex\fR \fIhexstring\fR
+Decode a single packet supplied as a lower\-case hex string on the
+command line.
+Implies \fB\-\-decode\fR.
+.SS Discovery
+.TP
+\fB\-\-list\-interfaces\fR
+Parse \fB\-\-yaml\-dir\fR and print every discovered interface name with
+its direction (\fIin\fR or \fIout\fR), then exit with code 0.
+.SS Miscellaneous
+.TP
+\fB\-\-help\fR
+Print a usage summary to standard error and exit with code 0.
+.\" ====================================================================
+.SH TRANSPORT BACKENDS
+.\" ====================================================================
+Specified with \fB\-\-transport\fR \fIkind\fR:\fIparam\fR.
+.TP
+\fBnone\fR
+No transport; packets are written to standard output only.
+This is the default.
+.TP
+\fBraw:\fR\fIifname\fR
+Inject packets directly onto a network interface using a Linux
+\fBAF_PACKET\fR/\fBSOCK_RAW\fR socket.
+Requires \fBCAP_NET_RAW\fR; run as root or grant the capability with
+\fBsetcap cap_net_raw+ep\fR.
+.IP
+Example: \fBraw:eth0\fR
+.TP
+\fBpcap:\fR\fIfilepath\fR
+Write a libpcap\-format capture file (\fBLINKTYPE_ETHERNET\fR, no
+external libpcap dependency).
+The file is created or truncated on open.
+Compatible with Wireshark and tcpdump.
+.IP
+Example: \fBpcap:/tmp/aecp_capture.pcap\fR
+.TP
+\fBverilator:\fR\fIsocket\-path\fR
+Send 64\-bit AXI\-Stream beats over a UNIX domain socket to a Verilator
+DUT.
+The socket must already exist before \fBpacket_gen\fR starts
+(the simulation creates it).
+Each packet is framed as a sequence of \fIAxiStreamBeat\fR structs
+(tdata/tkeep/tlast).
+.IP
+Example: \fBverilator:/tmp/verilator_axis.sock\fR
+.IP
+For cycle\-accurate co\-simulation without a socket, use the SystemC
+integration in
+.IR sim/ .
+See
+.BR sim/README.md .
+.\" ====================================================================
+.SH OUTPUT FORMATS
+.\" ====================================================================
+.SS hex
+One lower\-case hexadecimal string per packet on standard output.
+No spacing or framing.
+Suitable for piping into other tools.
+.SS json
+One JSON object per line (newline\-delimited JSON, also called NDJSON).
+.PP
+Single interface:
+.nf
+{"fields":{"message_type":0,"status":0,"control_data_length":44},"hex":"1402002c..."}
+.fi
+.PP
+Chain (\fB\-\-connect\fR): one JSON array per round, each element is a
+stage object with an additional \fB"iface"\fR key.
+.PP
+Stack (\fB\-\-stack\fR): top\-level keys are \fB"hex"\fR (all bytes
+concatenated) and \fB"layers"\fR (array of per\-layer objects).
+.PP
+Field values are decimal integers.
+Fields appear in the order they are declared in the YAML \fBvars:\fR
+section.
+.\" ====================================================================
+.SH INTERFACE NAMES
+.\" ====================================================================
+Interface names follow the convention:
+.IP
+\fI<service>\fR::\fI<ENTITY>\fR::\fI<INTERFACE>\fR
+.PP
+where \fI<service>\fR matches the \fBservice:\fR key at the top of the
+YAML file, \fI<ENTITY>\fR is an entry under \fBentities:\fR, and
+\fI<INTERFACE>\fR is an entry under that entity\(cqs \fBinterfaces:\fR
+list.
+.PP
+Run \fB\-\-list\-interfaces\fR to enumerate all names available in a
+given \fB\-\-yaml\-dir\fR.
+.\" ====================================================================
+.SH FIELD CONSTRAINTS
+.\" ====================================================================
+When a field\(cqs value is chosen during generation, the following
+priority order applies:
+.TP
+1. \fBexpected.values\fR
+A fixed list of allowed values.
+One is chosen uniformly at random.
+.TP
+2. \fBexpected.range\fR
+An inclusive [min, max] range.
+A value is drawn uniformly.
+.TP
+3. \fBexpected.mask\fR
+A bitmask.
+A random value in [0, 2^\fIsize\fR\-1] is ANDed with the mask.
+.TP
+4. \fINo constraint\fR
+A random value in [0, 2^\fIsize\fR\-1].
+.\" ====================================================================
+.SH EXIT STATUS
+.\" ====================================================================
+.TP
+\fB0\fR
+Success.
+.TP
+\fB1\fR
+Argument error: bad option, missing required argument, or conflicting
+flags.
+.TP
+\fB2\fR
+Runtime error: YAML parse failure, interface not found, transport open
+failed, or send/receive error.
+.\" ====================================================================
+.SH EXAMPLES
+.\" ====================================================================
+.SS Discovery
+.TP
+List all interfaces in the AECP protocol directory:
+.nf
+packet_gen \\
+    --yaml-dir protocols/application/1722_1/aecp \\
+    --list-interfaces
+.fi
+.SS Single\-interface generation
+.TP
+Generate one ACQUIRE_ENTITY packet in JSON format:
+.nf
+packet_gen \\
+    --yaml-dir protocols/application/1722_1/aecp \\
+    --interface atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF
+.fi
+.TP
+Generate 1000 packets in hex format with a fixed seed (reproducible fuzzing):
+.nf
+packet_gen \\
+    --yaml-dir protocols/application/1722_1/aecp \\
+    --interface atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \\
+    --count 1000 --seed 42 --output hex
+.fi
+.TP
+Stream packets continuously until Ctrl\-C:
+.nf
+packet_gen \\
+    --yaml-dir protocols/application/1722_1/aecp \\
+    --interface atdecc_aecp_no_payload::AECP_NO_PAYLOAD::AECP_NO_PAYLOAD_IF \\
+    --count 0
+.fi
+.TP
+Extract a specific field value with jq:
+.nf
+packet_gen \\
+    --yaml-dir protocols/application/1722_1/aecp \\
+    --interface atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \\
+    --count 5 | jq '.fields.sequence_id'
+.fi
+.SS Transport delivery
+.TP
+Capture 50 VENDOR_UNIQUE PDUs to a pcap file:
+.nf
+packet_gen \\
+    --yaml-dir protocols/application/1722_1/aecp \\
+    --interface atdecc_aecp_vendor_unique::AECP_VENDOR_UNIQUE::AECP_VENDOR_UNIQUE_IF \\
+    --count 50 --transport pcap:/tmp/vendor_unique.pcap
+.fi
+.TP
+Inject 10 ADP PDUs onto eth0 (requires root or CAP_NET_RAW):
+.nf
+sudo packet_gen \\
+    --yaml-dir parser/tests/test_resources/0020_adp_protocol_test \\
+    --interface atdecc_adp_service::ADP_INTERFACE::ADP_IF_DATA \\
+    --count 10 --transport raw:eth0
+.fi
+.TP
+Send a packet to a Verilator DUT over a UNIX socket:
+.nf
+packet_gen \\
+    --yaml-dir protocols/application/1722_1/aecp \\
+    --interface atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \\
+    --transport verilator:/tmp/verilator_axis.sock
+.fi
+.SS Chained command/response (\-\-connect)
+.TP
+Simulate an ACQUIRE_ENTITY command/response exchange (5 rounds):
+.nf
+packet_gen \\
+    --yaml-dir protocols/application/1722_1/aecp \\
+    --connect \\
+        atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \\
+       :atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \\
+    --count 5
+.fi
+.IP
+Fields shared by name (e.g. \fIsequence_id\fR, \fItarget_entity_id\fR)
+are propagated from the command packet to the response.
+.TP
+Three-step chain \(em command, intermediate processing, response:
+.nf
+packet_gen \\
+    --yaml-dir protocols/application/1722_1/aecp \\
+    --connect CMD_IF:MID_IF:RSP_IF \\
+    --count 10 --seed 7
+.fi
+.TP
+Deliver chained packets to the DUT and also save a capture:
+.nf
+packet_gen \\
+    --yaml-dir protocols/application/1722_1/aecp \\
+    --connect \\
+        atdecc_aecp_lock_entity::AECP_LOCK_ENTITY::AECP_LOCK_ENTITY_IF \\
+       :atdecc_aecp_lock_entity::AECP_LOCK_ENTITY::AECP_LOCK_ENTITY_IF \\
+    --count 20 --transport pcap:/tmp/lock_exchange.pcap
+.fi
+.SS Layer stacking (\-\-stack)
+.TP
+Assemble a complete IEEE 1722.1 AECP frame (Ethernet + AVTP + AECP = 55 bytes):
+.nf
+packet_gen \\
+    --yaml-dir protocols \\
+    --stack \\
+        ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF \\
+       :avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF \\
+       :atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \\
+    --count 3 --seed 42
+.fi
+.TP
+Stack and inject onto the wire in one step:
+.nf
+sudo packet_gen \\
+    --yaml-dir protocols \\
+    --stack \\
+        ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF \\
+       :atdecc_adp_service::ADP_INTERFACE::ADP_IF_DATA \\
+    --transport raw:eth0
+.fi
+.TP
+Stack and write only the hex (no JSON envelope):
+.nf
+packet_gen \\
+    --yaml-dir protocols \\
+    --stack \\
+        ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF \\
+       :avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF \\
+       :atdecc_aecp_set_stream_format::AECP_SET_STREAM_FORMAT::AECP_SET_STREAM_FORMAT_IF \\
+    --output hex --count 100 --seed 1
+.fi
+.SS Decode mode
+.TP
+Decode a single hex packet directly on the command line:
+.nf
+packet_gen \\
+    --yaml-dir protocols/application/1722_1/aecp \\
+    --interface atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \\
+    --hex 1402002c000000000000000000000000
+.fi
+.TP
+Decode all packets in a captured pcap file:
+.nf
+packet_gen \\
+    --yaml-dir protocols/application/1722_1/aecp \\
+    --interface atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \\
+    --decode --transport pcap:/tmp/aecp_capture.pcap
+.fi
+.TP
+Decode live traffic from eth0 and filter by field with jq:
+.nf
+packet_gen \\
+    --yaml-dir protocols/application/1722_1/aecp \\
+    --interface atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \\
+    --decode --transport raw:eth0 | jq 'select(.fields.status != 0)'
+.fi
+.TP
+Round\-trip: generate a packet then immediately decode it:
+.nf
+packet_gen \\
+    --yaml-dir protocols/application/1722_1/aecp \\
+    --interface atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \\
+    --output hex --seed 99 | \\
+xargs -I{} packet_gen \\
+    --yaml-dir protocols/application/1722_1/aecp \\
+    --interface atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \\
+    --hex {}
+.fi
+.TP
+Decode a multi\-layer stacked capture (Ethernet + AVTP + AECP):
+.nf
+packet_gen \\
+    --yaml-dir protocols \\
+    --stack \\
+        ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF \\
+       :avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF \\
+       :atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \\
+    --decode --transport pcap:/tmp/full_frame.pcap
+.fi
+.\" ====================================================================
+.SH FILES
+.\" ====================================================================
+.TP
+\fIprotocols/\fR
+Default location for YAML protocol definitions shipped with tsn\-gen.
+Pass a subdirectory to \fB\-\-yaml\-dir\fR to load only a subset.
+.TP
+\fIsim/\fR
+SystemC co\-simulation integration (AxisBridge, VerilatorNetDevice,
+sc_main).
+See
+.IR sim/README.md .
+.\" ====================================================================
+.SH SEE ALSO
+.\" ====================================================================
+.BR wireshark (1),
+.BR tcpdump (1),
+.BR verilator (1),
+.BR setcap (8)
+.PP
+Project documentation:
+.IR traffic\-gen/README.md ,
+.IR parser/README.md ,
+.IR sim/README.md ,
+.IR protocols/README.md .
+.\" ====================================================================
+.SH AUTHORS
+.\" ====================================================================
+Alexandre Malki <alexandre.malki@kebag\-logic.com>
+.br
+Kebag\-Logic \(la https://kebag\-logic.com\(ra
+.\" ====================================================================
+.SH BUGS
+.\" ====================================================================
+\fB\-\-transport raw:\fR\fIifname\fR requires the interface to already be
+in promiscuous mode or the kernel to have the appropriate socket filter
+in place when used with \fB\-\-decode\fR; otherwise only packets
+addressed to the host MAC are captured.
+.PP
+\fB\-\-count 0\fR (unlimited) with \fB\-\-transport verilator:\fR will
+fill the DUT\(cqs receive FIFO if the DUT is slower than the generator.
+Backpressure is only available in the SystemC integration
+.RI ( sim/ ).

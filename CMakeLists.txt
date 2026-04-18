@@ -37,6 +37,12 @@ include_directories(external/rapidyaml/ext/c4core/src)
 add_subdirectory(parser)
 add_subdirectory(traffic-gen)
 
+##################### MAN PAGE ##############################
+
+install(FILES docs/man/packet_gen.1
+    DESTINATION ${CMAKE_INSTALL_MANDIR}/man1
+)
+
 ##################### Normal applicaiton ####
 
 # add_executable(${PROJECT_NAME}
