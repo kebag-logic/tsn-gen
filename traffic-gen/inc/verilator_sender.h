@@ -7,26 +7,8 @@
 #pragma once
 
 #include <sender.h>
-#include <cstdint>
+#include <axi_stream_beat.h>
 #include <string>
-
-/**
- * @brief AXI-Stream beat (64-bit TDATA width).
- *
- * Wire layout on the UNIX socket: a stream of packed AxiStreamBeat structs.
- * The Verilator wrapper on the other end reads beats and drives the
- * corresponding DUT input signals.
- *
- * Byte order of tdata: little-endian (first packet byte in bits [7:0]).
- */
-struct AxiStreamBeat {
-    uint64_t tdata;  ///< 8 data bytes, first byte in LSB
-    uint8_t  tkeep;  ///< byte-enable mask (bit i = byte i is valid)
-    uint8_t  tlast;  ///< 1 on the last beat of the packet
-} __attribute__((packed));
-
-static_assert(sizeof(AxiStreamBeat) == 10,
-              "AxiStreamBeat must be exactly 10 bytes");
 
 /**
  * @brief Sends packets to a Verilator DUT as 64-bit AXI-Stream beats over

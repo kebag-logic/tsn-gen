@@ -15,6 +15,9 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 option(ENABLE_PARSER_TESTS "Enable Parser Unit Tests" ON)
 option(CONFIG "Build config, Release, Debug..." Release)
+option(ENABLE_SYSTEMC_SIM
+    "Build the ns-3 + Verilator co-simulation (requires SystemC and ns-3 with --enable-systemc)"
+    OFF)
 
 ##################### VARS
 
@@ -36,6 +39,10 @@ include_directories(external/rapidyaml/ext/c4core/src)
 #################### Sub directory fok
 add_subdirectory(parser)
 add_subdirectory(traffic-gen)
+
+if(ENABLE_SYSTEMC_SIM)
+    add_subdirectory(sim)
+endif()
 
 ##################### MAN PAGE ##############################
 
