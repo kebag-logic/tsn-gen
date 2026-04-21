@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+
+stack: with_logic_stack
+layers:
+  - service: simple_service
+    entity:  SIMPLE_SERVICE_ENTITY
+  - service: protocol_with_logic
+    entity:  WITH_LOGIC_ENTITY

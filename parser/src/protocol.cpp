@@ -261,6 +261,29 @@ const ProtocolErr Protocol::getParsedProtocolInterface(
     return err;
 }
 
+const ProtocolErr Protocol::getParsedProtocolService(
+    Database<ProtocolService>& dbServices)
+{
+    ProtocolErr err(ProtocolErr::PROTO_SUCCESS);
+
+    std::string serviceName = csubstrToString(mProtocolName.val());
+
+    std::string logicName;
+    ryml::ConstNodeRef logicNode = mTree["logic"];
+    if (!logicNode.invalid() && logicNode.has_val()) {
+        logicName = csubstrToString(logicNode.val());
+    }
+
+    ProtocolService svc(serviceName, std::move(logicName));
+    DatabaseErr dbErr = dbServices.addUniqueElement(serviceName, svc);
+    if (dbErr.getErrorCode() == DatabaseErr::DBERR_ENTRY_ALREADY_EXISTS) {
+        std::cerr << "WARN: service '" << serviceName
+                  << "' already in database, skipping\n";
+    }
+
+    return err;
+}
+
 const ProtocolErr Protocol::parseProtocolFile(void)
 {
     Database<Var> tmpVars;
@@ -270,6 +293,14 @@ const ProtocolErr Protocol::parseProtocolFile(void)
 
 const ProtocolErr Protocol::parseProtocolFile(
         Database<Var>& dbVars, Database<ProtocolInterface>& dbIfproto)
+{
+    Database<ProtocolService> tmpSvc;
+    return parseProtocolFile(dbVars, dbIfproto, tmpSvc);
+}
+
+const ProtocolErr Protocol::parseProtocolFile(
+        Database<Var>& dbVars, Database<ProtocolInterface>& dbIfproto,
+        Database<ProtocolService>& dbServices)
 {
     ProtocolErr err(ProtocolErr::PROTO_SUCCESS);
     void* ptr;
@@ -322,6 +353,11 @@ const ProtocolErr Protocol::parseProtocolFile(
     }
 
     err = getParsedProtocolInterface(dbIfproto);
+    if (err.getErrorCode()) {
+        return err;
+    }
+
+    err = getParsedProtocolService(dbServices);
     if (err.getErrorCode()) {
         return err;
     }

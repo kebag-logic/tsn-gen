@@ -17,6 +17,7 @@
 #include <error.h>
 #include <entity.h>
 #include <protocol_interface.h>
+#include <service.h>
 #include <var.h>
 
 #include <ryml.hpp>
@@ -73,6 +74,15 @@ public:
     const ProtocolErr parseProtocolFile(
         Database<Var>& dbVars, Database<ProtocolInterface>& dbIfproto);
 
+    /**
+     * @brief Parses the protocol file and also records per-service metadata
+     *        (name + optional `logic:`) into @p dbServices. Vars and
+     *        interfaces go into @p dbVars / @p dbIfproto as usual.
+     */
+    const ProtocolErr parseProtocolFile(
+        Database<Var>& dbVars, Database<ProtocolInterface>& dbIfproto,
+        Database<ProtocolService>& dbServices);
+
 private:
     /** @brief Check a node against expected type and number format.
      *  @param node    node to be checked
@@ -96,6 +106,13 @@ private:
      */
     const ProtocolErr getParsedProtocolInterface(
                                     Database<ProtocolInterface>& dbIfProto);
+
+    /**
+     * @brief Registers the service under its name, carrying the optional
+     *        `logic:` module name if present in the YAML.
+     */
+    const ProtocolErr getParsedProtocolService(
+                                    Database<ProtocolService>& dbServices);
 
     /**
      * @brief Parses the service name node.

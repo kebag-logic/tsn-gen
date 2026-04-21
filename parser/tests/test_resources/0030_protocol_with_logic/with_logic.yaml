@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+
+service: protocol_with_logic
+logic: with_logic_module
+
+vars:
+  - var: some_field
+    size: 8
+
+entities:
+  - entity: WITH_LOGIC_ENTITY
+    interfaces:
+      - interface: WITH_LOGIC_IF
+        dir: out
+        vars:
+          - var_ref: some_field

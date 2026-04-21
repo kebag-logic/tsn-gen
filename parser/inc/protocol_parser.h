@@ -34,6 +34,7 @@
 #include <entity.h>
 #include <protocol.h>
 #include <protocol_interface.h>
+#include <service.h>
 #include <var.h>
 
 
@@ -132,6 +133,16 @@ public:
 		return mDbIfproto;
 	}
 
+	/**
+	 * @brief Provide read access to the parsed service database.
+	 *        Each entry carries the optional `logic:` name declared in
+	 *        the service YAML.
+	 */
+	const Database<ProtocolService>& getServiceDatabase(void) const
+	{
+		return mDbServices;
+	}
+
 private:
 
 	/**
@@ -185,5 +196,6 @@ private:
 	Database<Var> mProtocols;
 	Database<Var> mDbVars;
 	Database<ProtocolInterface> mDbIfproto;
+	Database<ProtocolService> mDbServices;
 	int mCurrentDepthPathListing ;
 };

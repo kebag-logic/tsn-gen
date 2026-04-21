@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# The service declares `logic: __never_registered_in_tests__`, which
+# would normally be an error. With bypass-logic: true the builder must
+# not consult the registry at all -> binds PassthroughLogic cleanly.
+
+stack: bypass_unknown_logic_stack
+layers:
+  - service: protocol_with_unknown_logic
+    entity:  UNKNOWN_LOGIC_ENTITY
+    bypass-logic: true

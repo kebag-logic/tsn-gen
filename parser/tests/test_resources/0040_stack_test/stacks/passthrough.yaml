@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# Two layers of simple_service — declares no logic -> all Passthrough.
+
+stack: passthrough_stack
+layers:
+  - service: simple_service
+    entity:  SIMPLE_SERVICE_ENTITY
+  - service: simple_service
+    entity:  SIMPLE_SERVICE_ENTITY

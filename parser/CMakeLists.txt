@@ -13,7 +13,11 @@ set(PROTO_PARSER_SRCS
 	src/protocol.cpp
 	src/db_proto_if_impl.cpp
 	src/db_proto_impl.cpp
+	src/db_proto_service_impl.cpp
 	src/db_var_impl.cpp
+	src/logic_registry.cpp
+	src/stack.cpp
+	src/stack_builder.cpp
 )
 
 set(PROTO_PARSER_INC_DIRS

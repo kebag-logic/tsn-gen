@@ -1,0 +1,28 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+
+service: ethernet_mac_frame
+logic: ethernet_mac_frame
+
+vars:
+  - var: dst_mac
+    size: 48
+
+  - var: src_mac
+    size: 48
+
+  - var: ethertype
+    size: 16
+    expected:
+      value: 0x22F0
+
+entities:
+  - entity: ETHERNET_FRAME
+    interfaces:
+      - interface: ETHERNET_FRAME_IF
+        dir: out
+        vars:
+          - var_ref: dst_mac
+          - var_ref: src_mac
+          - var_ref: ethertype

@@ -38,6 +38,7 @@ include_directories(external/rapidyaml/ext/c4core/src)
 
 #################### Sub directory fok
 add_subdirectory(parser)
+add_subdirectory(logic)
 add_subdirectory(traffic-gen)
 
 if(ENABLE_SYSTEMC_SIM)

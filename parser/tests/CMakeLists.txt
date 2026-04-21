@@ -54,9 +54,37 @@ target_link_testlibs(
   ryml::ryml
 )
 
+#### Logic registry tests
+set(LOGIC_REGISTRY_SRCS
+  logic_registry_test.cpp
+)
+
+target_link_testlibs(
+  logic_registry-test
+  protocol_parser
+  "${LOGIC_REGISTRY_SRCS}"
+  GTest::gtest_main
+  ryml::ryml
+)
+
+#### Stack builder tests
+set(STACK_BUILDER_SRCS
+  stack_builder_test.cpp
+)
+
+target_link_testlibs(
+  stack_builder-test
+  protocol_parser
+  "${STACK_BUILDER_SRCS}"
+  GTest::gtest_main
+  ryml::ryml
+)
+
 ################### Make google discover tests ######
 include(GoogleTest)
 include(CMakeGoogleDiscoverAllTests)
 gtest_discover_test_wtestlibs(protocol_parser-test)
 gtest_discover_test_wtestlibs(object_serializer-test)
+gtest_discover_test_wtestlibs(logic_registry-test)
+gtest_discover_test_wtestlibs(stack_builder-test)
 gtest_discover_tests(gtest_parser-test)

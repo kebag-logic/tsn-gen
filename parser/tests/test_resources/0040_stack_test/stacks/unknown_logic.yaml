@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+
+stack: unknown_logic_stack
+layers:
+  - service: protocol_with_unknown_logic
+    entity:  UNKNOWN_LOGIC_ENTITY

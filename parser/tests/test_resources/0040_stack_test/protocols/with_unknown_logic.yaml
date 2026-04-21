@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+
+service: protocol_with_unknown_logic
+logic: __never_registered_in_tests__
+
+vars:
+  - var: x_field
+    size: 8
+
+entities:
+  - entity: UNKNOWN_LOGIC_ENTITY
+    interfaces:
+      - interface: UNKNOWN_LOGIC_IF
+        dir: out
+        vars:
+          - var_ref: x_field

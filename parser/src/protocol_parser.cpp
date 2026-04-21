@@ -89,7 +89,8 @@ const ProtocolParserErr ProtocolParser::parseProtocol(const std::string& path)
 {
 	ProtocolParserErr err(ProtocolParserErr::PROTOPARSERERR_UNKNOWN);
 	Protocol proto (path);
-	ProtocolErr errorProto = proto.parseProtocolFile(mDbVars, mDbIfproto);
+	ProtocolErr errorProto = proto.parseProtocolFile(
+		mDbVars, mDbIfproto, mDbServices);
 	if (errorProto.getErrorCode()) {
 		err.setErrorCode(errorProto.getErrorCode());
 	} else {

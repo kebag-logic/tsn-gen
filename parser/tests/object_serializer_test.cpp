@@ -8,6 +8,7 @@
  #include <parser_common_test.h>
 #include <protocol_parser.h>
 #include <protocol.h>
+#include <service.h>
 #include <var.h>
 #include <protocol_interface.h>
 
@@ -131,4 +132,33 @@ TEST(ObjectSerializer, ParseSimpleProtocolIfaceVarRef)
     const std::vector<std::string>& refs = iface->getVarRefs();
     ASSERT_EQ(refs.size(), 1u);
     EXPECT_EQ(refs[0], "simple_service::simple_var");
+}
+
+TEST(ObjectSerializer, ParseSimpleProtocolServiceNoLogic)
+{
+    const std::string path(PARSER_TESTS_RES_PATH
+            "/0010_simple_protocol_test/");
+    ProtocolParser parser(path);
+    parser.parse();
+
+    const ProtocolService* svc =
+        parser.getServiceDatabase().getElement("simple_service");
+    ASSERT_NE(svc, nullptr);
+    EXPECT_EQ(svc->getName(), "simple_service");
+    EXPECT_FALSE(svc->hasLogic());
+    EXPECT_EQ(svc->getLogicName(), "");
+}
+
+TEST(ObjectSerializer, ParseProtocolWithLogicName)
+{
+    const std::string path(PARSER_TESTS_RES_PATH
+            "/0030_protocol_with_logic/");
+    ProtocolParser parser(path);
+    parser.parse();
+
+    const ProtocolService* svc =
+        parser.getServiceDatabase().getElement("protocol_with_logic");
+    ASSERT_NE(svc, nullptr);
+    EXPECT_TRUE(svc->hasLogic());
+    EXPECT_EQ(svc->getLogicName(), "with_logic_module");
 }
