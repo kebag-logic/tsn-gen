@@ -4,9 +4,12 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <packet_decoder.h>
+#include <tsn/packet_decoder.h>
+#include <tsn/log.h>
 
 #include <iostream>
+
+namespace tsn {
 
 size_t PacketDecoder::layerBytes(const ProtocolInterface& iface,
                                   const Database<Var>& varDb)
@@ -27,7 +30,10 @@ uint64_t PacketDecoder::extractBits(const std::vector<uint8_t>& buf,
     for (int i = static_cast<int>(numBits) - 1; i >= 0; --i) {
         const size_t byteIdx   = bitOffset / 8;
         const size_t bitInByte = 7 - (bitOffset % 8);
-        if (byteIdx < buf.size()) {
+        /* Only the low 64 bits of a wider field are representable in the
+         * returned value; higher bits are consumed but not accumulated
+         * (shifting a uint64 by >= 64 is UB). */
+        if (byteIdx < buf.size() && i < 64) {
             const int bit =
                 static_cast<int>((buf[byteIdx] >> bitInByte) & 1u);
             value |= static_cast<uint64_t>(bit) << i;
@@ -49,7 +55,7 @@ PacketBuilder::BuiltPacket PacketDecoder::decode(
     for (const std::string& ref : iface.getVarRefs()) {
         const Var* var = varDb.getElement(ref);
         if (var == nullptr) {
-            std::cerr << "PacketDecoder: var_ref '" << ref
+            log(LogLevel::warn) << "PacketDecoder: var_ref '" << ref
                       << "' not found in database, skipping\n";
             continue;
         }
@@ -76,3 +82,5 @@ PacketBuilder::BuiltPacket PacketDecoder::decode(
 
     return result;
 }
+
+} /* namespace tsn */

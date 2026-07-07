@@ -5,18 +5,19 @@
  */
 
 
- #include <ethernet_frame_logic.h>
+ #include <tsn/ethernet_frame_logic.h>
 
-#include <layer_context.h>
-#include <logic_registry.h>
+#include <tsn/layer_context.h>
+#include <tsn/logic_registry.h>
+
+namespace tsn {
 
 void EthernetFrameLogic::onEncode(LayerContext& ctx)
 {
     ++mEncodeCalls;
 
-    /* When the serializer backs LayerContext::setValue, unwritten
-     * ethertype fields get the default 1722 value here. Until then
-     * this call is a best-effort no-op. */
+    /* Fill the ethertype with the ATDECC value when the caller left it
+     * unset (or zero). A YAML-fixed ethertype is kept as-is. */
     uint64_t current = 0;
     if (!ctx.getValue("ethertype", current) || current == 0) {
         ctx.setValue("ethertype", kEthertype1722);
@@ -31,13 +32,16 @@ void EthernetFrameLogic::onDecode(LayerContext& ctx)
 
 std::string EthernetFrameLogic::nextLayer(const LayerContext& ctx) const
 {
-    uint64_t eth = 0;
-    if (ctx.getValue("ethertype", eth) && eth == kEthertype1722) {
-        return "1722_avtp_common_stream";
+    /* EtherType 0x22F0 covers the whole 1722 family; the streaming vs
+     * control split lives in the AVTP subtype one layer up. In a bound
+     * stack the concrete upper service is known, so predict it directly;
+     * standalone (no upper) we fall back to the streaming default. */
+    if (ctx.upper() != nullptr) {
+        return ctx.upper()->getServiceName();
     }
-    /* Default on unknown / unreadable ethertype so static stacks still
-     * chain deterministically during the v1 LayerContext stubs. */
     return "1722_avtp_common_stream";
 }
 
 REGISTER_LOGIC("ethernet_mac_frame", EthernetFrameLogic)
+
+} /* namespace tsn */

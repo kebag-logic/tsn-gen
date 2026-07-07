@@ -79,7 +79,7 @@ tsn-gen/
 
 ## Building
 
-Requirements: CMake >= 3.31, a C++17-capable compiler (GCC or Clang).
+Requirements: CMake >= 3.21, a C++17-capable compiler (GCC or Clang).
 
 ```bash
 cmake -B build -DCMAKE_BUILD_TYPE=Debug

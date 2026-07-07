@@ -4,10 +4,10 @@
 #
 # Full on-wire frame tests for IEEE 1722.1 ADP (AVDECC Discovery Protocol).
 #
-# Only ADP_IF_DATA is tested here — it carries the single message_type field.
+# Only ADP_IF_DATA is tested here — it carries the full ADPDU payload.
 #
 # Frame size:
-#   Eth 14 B + AVTP 2 B + ADP_IF_DATA 1 B = 17 B
+#   Eth 14 B + AVTP 2 B + ADP_IF_DATA 67 B = 83 B
 
 Feature: ADP — full on-wire frame assembly via layer stacking
 
@@ -17,7 +17,7 @@ Feature: ADP — full on-wire frame assembly via layer stacking
   Scenario: ADP_IF_DATA stacked frame has correct total size
     Given the application interface "atdecc_adp_service::ADP_INTERFACE::ADP_IF_DATA"
     When  I generate 20 stacked packets with seed 1
-    Then  the stacked packet size is always 17 bytes
+    Then  the stacked packet size is always 83 bytes
 
   Scenario: ADP_IF_DATA — ethertype is always 0x22F0
     Given the application interface "atdecc_adp_service::ADP_INTERFACE::ADP_IF_DATA"

@@ -10,7 +10,11 @@
  * sanitiser flags without re-instantiating every database specialisation.
  */
 
-#include <protocol_interface.h>
-#include <database.cpp>
+#include <tsn/protocol_interface.h>
+#include <tsn/database.cpp>
+
+namespace tsn {
 
 template class Database<ProtocolInterface>;
+
+} /* namespace tsn */

@@ -23,7 +23,7 @@ module — the StackBuilder binds `PassthroughLogic` automatically.
 
 ### Writing a module
 
-1. Subclass `ILogicModule` (`parser/inc/logic_module.h`), override any
+1. Subclass `ILogicModule` (`parser/inc/tsn/logic_module.h`), override any
    of `onEncode`, `onDecode`, `nextLayer`.
 2. Register it with `REGISTER_LOGIC("<logic-name>", MyLogic)` in a
    `.cpp` that ends up in this shared library.
@@ -32,9 +32,9 @@ module — the StackBuilder binds `PassthroughLogic` automatically.
 Minimal skeleton:
 
 ```cpp
-#include <logic_module.h>
-#include <logic_registry.h>
-#include <layer_context.h>
+#include <tsn/logic_module.h>
+#include <tsn/logic_registry.h>
+#include <tsn/layer_context.h>
 
 class MyLogic final : public ILogicModule {
 public:
@@ -92,7 +92,7 @@ of the `Stack`. Per-packet, the runtime calls `onEncode` (tx) or
 
 ### The `ILogicModule` contract
 
-Defined in `parser/inc/logic_module.h`:
+Defined in `parser/inc/tsn/logic_module.h`:
 
 ```cpp
 class ILogicModule {
@@ -173,7 +173,7 @@ Patterns:
 
 ### `LayerContext` — what's there, what isn't
 
-Defined in `parser/inc/layer_context.h`. What the module sees:
+Defined in `parser/inc/tsn/layer_context.h`. What the module sees:
 
 ```cpp
 const std::string& getServiceName() const;
@@ -473,7 +473,7 @@ include it when you add a new module.
 
 `REGISTER_LOGIC(name, Class)` expands to a file-scope
 `static const bool _logic_reg_Class = LogicRegistry::instance().add(...)`
-(`parser/inc/logic_registry.h`). Two consequences:
+(`parser/inc/tsn/logic_registry.h`). Two consequences:
 
 - Registration happens at **static initialization**, before `main`.
   You can't pass runtime values.

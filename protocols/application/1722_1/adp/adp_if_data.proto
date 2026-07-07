@@ -1,5 +1,0 @@
-syntax = "proto2"
-
-message ADP_IF_DATA {
-        
-}

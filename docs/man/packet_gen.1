@@ -5,7 +5,7 @@
 .\" View this page without installing:
 .\"   man ./docs/man/packet_gen.1
 .\"
-.TH PACKET_GEN 1 "2026-04-18" "tsn-gen 0.0.1" "TSN Generator Tools"
+.TH PACKET_GEN 1 "2026-04-18" "tsn-gen 0.1.0" "TSN Generator Tools"
 .\" ====================================================================
 .SH NAME
 .\" ====================================================================
@@ -64,7 +64,7 @@ exit.
 Directory containing protocol YAML files.
 The directory is walked recursively; every \fI.yaml\fR file whose
 top\-level key is \fBservice:\fR is loaded.
-Subdirectories are followed up to a maximum depth of 30.
+Subdirectories are followed up to a maximum depth of 16.
 .IP
 To load a single protocol, point at its directory:
 .br
@@ -153,6 +153,21 @@ JSON output includes both a top\-level \fB"hex"\fR with all layers
 combined and a \fB"layers"\fR array with per\-layer detail.
 .IP
 \fB\-\-stack\fR and \fB\-\-connect\fR are mutually exclusive.
+.TP
+\fB\-\-stack\-file\fR \fIpath\fR
+Assemble (or, with \fB\-\-decode\fR, dissect) a frame through a stack YAML
+and its per\-layer logic modules.
+Unlike \fB\-\-stack\fR, each layer's logic runs: derived fields such as
+lengths and demux selectors (EtherType, AVTP subtype, AECP
+control_data_length) are filled on encode and validated on decode, so the
+assembled frame is semantically valid rather than a raw concatenation.
+.IP
+The stack YAML lists services bottom\-up; each service's logic module is
+declared by its \fBlogic:\fR key. See the \fBstacks/\fR directory for
+examples.
+.IP
+\fB\-\-stack\-file\fR is mutually exclusive with \fB\-\-stack\fR and
+\fB\-\-connect\fR.
 .SS Decode options
 .TP
 \fB\-\-decode\fR
@@ -171,7 +186,27 @@ Implies \fB\-\-decode\fR.
 \fB\-\-list\-interfaces\fR
 Parse \fB\-\-yaml\-dir\fR and print every discovered interface name with
 its direction (\fIin\fR or \fIout\fR), then exit with code 0.
+.TP
+\fB\-\-validate\fR
+Schema\-check every YAML under \fB\-\-yaml\-dir\fR (and the
+\fB\-\-stack\-file\fR when given) against the protocol/stack schema, then
+exit.
+Diagnostics are printed to standard error as
+\fIfile\fR:\fIline\fR:\fIcol\fR: \fBerror\fR: \fImessage\fR.
+Exit code 0 means every file conforms; 2 means at least one does not.
+Unknown top\-level keys, a missing \fBservice:\fR, a service without
+\fBvars:\fR or \fBentities:\fR, out\-of\-range field sizes, and bad
+\fBdir:\fR values are all reported.
 .SS Miscellaneous
+.TP
+\fB\-\-log\-level\fR \fIlevel\fR
+Diagnostic verbosity on standard error: \fIquiet\fR, \fIerror\fR,
+\fIwarn\fR (default), \fIinfo\fR or \fIdebug\fR.
+Standard output stays reserved for packet output in every mode, so the
+NDJSON / hex stream is always safe to pipe.
+.TP
+\fB\-\-version\fR
+Print the tool version to standard output and exit with code 0.
 .TP
 \fB\-\-help\fR
 Print a usage summary to standard error and exit with code 0.

@@ -27,6 +27,7 @@
 #        = 180 bits = 23 bytes (4 pad bits)
 
 service: atdecc_aecp_aem_no_payload
+logic: aecp_aem
 
 vars:
   - var: message_type

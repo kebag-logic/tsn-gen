@@ -3,48 +3,34 @@
  * SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
  * SPDX-License-Identifier: MIT
  *
- * packet_gen — generate AECP / ADP packets from YAML protocol definitions.
+ * packet_gen — generate and decode packets from YAML protocol definitions.
  *
- * Usage:
- *   packet_gen --yaml-dir <dir> --interface <qualified_name> [options]
- *
- * Options:
- *   --yaml-dir  <path>   Directory containing protocol YAML files (required)
- *   --interface <name>   Fully qualified interface name (required)
- *                        e.g. "atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF"
- *   --count     <n>      Number of packets to generate (default: 1)
- *   --seed      <n>      PRNG seed (default: random)
- *   --output    hex|json Output format written to stdout (default: json)
- *                        json: one JSON object per line with "hex" and "fields" keys
- *                        hex:  one hex string per line
- *   --transport <spec>   Where to also deliver packets (default: none)
- *                        none
- *                        raw:<ifname>       Linux AF_PACKET raw socket
- *                        pcap:<filepath>    Write libpcap-format capture file
- *                        verilator:<socket> AXI-Stream over UNIX socket
- *   --help               Print this help
+ * Thin CLI over tsn::Session (generation/decode/serialisation) and the
+ * ISender / IReceiver transports. All diagnostics go to stderr (see
+ * --log-level); stdout carries only NDJSON or hex packet lines.
  *
  * Exit codes: 0 = success, 1 = argument error, 2 = parse/send error.
  */
 
-#include <packet_builder.h>
-#include <packet_decoder.h>
-#include <pcap_receiver.h>
-#include <pcap_sender.h>
-#include <protocol_parser.h>
-#include <raw_socket_receiver.h>
-#include <raw_socket_sender.h>
-#include <verilator_receiver.h>
-#include <verilator_sender.h>
+#include <tsn/log.h>
+#include <tsn/pcap_receiver.h>
+#include <tsn/pcap_sender.h>
+#include <tsn/raw_socket_receiver.h>
+#include <tsn/raw_socket_sender.h>
+#include <tsn/session.h>
+#include <tsn/validator.h>
+#include <tsn/verilator_receiver.h>
+#include <tsn/verilator_sender.h>
+#include <tsn/version.h>
+
+using namespace tsn;
 
 #include <cstdint>
 #include <cstdlib>
-#include <cstring>
 #include <iostream>
 #include <memory>
 #include <random>
 #include <string>
-#include <unordered_map>
 #include <vector>
 
 /* ------------------------------------------------------------------ */
@@ -59,13 +45,17 @@ struct Args {
     bool        seedSet        = false;
     std::string output         = "json";   /* hex | json */
     std::string transport      = "none";
+    std::string logLevel       = "warn";
     bool        listInterfaces = false;
+    bool        validate       = false;    /* --validate: schema-check YAML */
     bool        decode         = false;    /* --decode: receive + decode mode */
     std::string hexInput;                  /* --hex <hexstring>: direct decode */
     /* Ordered chain of interface names supplied via --connect A:B:C */
     std::vector<std::string> chain;
     /* Ordered layer interfaces supplied via --stack A:B:C (byte concatenation) */
     std::vector<std::string> stack;
+    /* Path to a stack YAML supplied via --stack-file (logic-driven codec) */
+    std::string stackFile;
 };
 
 static void printUsage(const char* prog)
@@ -127,6 +117,11 @@ static void printUsage(const char* prog)
         << "                       names, then exit.  Useful for discovering what\n"
         << "                       --interface values are valid in a given directory.\n"
         << "\n"
+        << "  --validate           Schema-check every YAML under --yaml-dir (and the\n"
+        << "                       --stack-file if given) against the protocol/stack\n"
+        << "                       schema, report file:line:col diagnostics on stderr,\n"
+        << "                       then exit.  Exit code 0 = clean, 2 = errors found.\n"
+        << "\n"
         << "  --connect <A:B[:C…]> Chain two or more interfaces into a single round.\n"
         << "                       Each round generates one packet per interface in\n"
         << "                       the declared order.  Fields shared by name between\n"
@@ -163,6 +158,27 @@ static void printUsage(const char* prog)
         << "                         --stack ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF\\\n"
         << "                                :avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF\\\n"
         << "                                :atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF\n"
+        << "\n"
+        << "  --stack-file <path>  Assemble (or decode) a frame through a stack YAML and\n"
+        << "                       its per-layer logic modules. Unlike --stack, each\n"
+        << "                       layer's logic runs: derived fields (lengths, demux\n"
+        << "                       selectors) are filled on encode and validated on\n"
+        << "                       decode, producing semantically valid frames.\n"
+        << "                       The stack YAML lists services bottom-up; see\n"
+        << "                       stacks/ for examples.  Mutually exclusive with\n"
+        << "                       --stack / --connect.\n"
+        << "\n"
+        << "  --decode             Receive packets (see --transport) or decode --hex, and\n"
+        << "                       print the fields recovered against the declared\n"
+        << "                       interface or stack layout.\n"
+        << "\n"
+        << "  --hex <hexstring>    Decode a single hex string and exit (implies --decode).\n"
+        << "\n"
+        << "  --log-level <lvl>    Diagnostic verbosity on stderr: quiet, error, warn,\n"
+        << "                       info, debug.  Default: warn.  stdout stays reserved\n"
+        << "                       for packet output in every mode.\n"
+        << "\n"
+        << "  --version            Print the tool version and exit.\n"
         << "\n"
         << "  --help               Print this message and exit.\n"
         << "\n"
@@ -240,7 +256,10 @@ static bool parseArgs(int argc, char* argv[], Args& out)
         }
         else if (a == "--output")          { out.output         = nextVal(); }
         else if (a == "--transport")       { out.transport      = nextVal(); }
+        else if (a == "--stack-file")      { out.stackFile      = nextVal(); }
+        else if (a == "--log-level")       { out.logLevel       = nextVal(); }
         else if (a == "--list-interfaces") { out.listInterfaces = true; }
+        else if (a == "--validate")        { out.validate       = true; }
         else if (a == "--decode")          { out.decode        = true; }
         else if (a == "--hex")             { out.hexInput      = nextVal(); }
         else if (a == "--connect" || a == "--stack") {
@@ -267,6 +286,10 @@ static bool parseArgs(int argc, char* argv[], Args& out)
                 }
             }
         }
+        else if (a == "--version") {
+            std::cout << "packet_gen " << PROTOCOL_PARSER_VERSION << "\n";
+            std::exit(0);
+        }
         else if (a == "--help") { printUsage(argv[0]); std::exit(0); }
         else {
             std::cerr << "Unknown option: " << a << "\n";
@@ -274,18 +297,30 @@ static bool parseArgs(int argc, char* argv[], Args& out)
         }
     }
 
+    if (!tsn::setLogLevel(out.logLevel)) {
+        std::cerr << "--log-level must be quiet|error|warn|info|debug\n";
+        return false;
+    }
     if (out.yamlDir.empty()) {
         std::cerr << "--yaml-dir is required\n";
         return false;
     }
-    if (!out.chain.empty() && !out.stack.empty()) {
-        std::cerr << "--connect and --stack are mutually exclusive\n";
+    /* --stack-file drives its own logic-based pipeline; it does not mix
+       with the interface-list flags. */
+    const int pipelineFlags = (!out.chain.empty() ? 1 : 0) +
+                              (!out.stack.empty() ? 1 : 0) +
+                              (!out.stackFile.empty() ? 1 : 0);
+    if (pipelineFlags > 1) {
+        std::cerr << "--connect, --stack and --stack-file are mutually "
+                     "exclusive\n";
         return false;
     }
-    /* --interface is optional when --connect or --stack supplies the pipeline. */
-    if (!out.listInterfaces && out.iface.empty() &&
-        out.chain.empty() && out.stack.empty()) {
-        std::cerr << "--interface (or --connect / --stack) is required\n";
+    /* --interface is optional when a pipeline flag supplies the layers,
+       or in list/validate modes that consume the directory directly. */
+    if (!out.listInterfaces && !out.validate && out.iface.empty() &&
+        out.chain.empty() && out.stack.empty() && out.stackFile.empty()) {
+        std::cerr << "--interface (or --connect / --stack / --stack-file) "
+                     "is required\n";
         return false;
     }
     /* --hex implies --decode */
@@ -308,7 +343,7 @@ static bool parseArgs(int argc, char* argv[], Args& out)
 }
 
 /* ------------------------------------------------------------------ */
-/*  Transport factory                                                  */
+/*  Transport factories                                                */
 /* ------------------------------------------------------------------ */
 
 static std::unique_ptr<ISender> makeSender(const std::string& spec)
@@ -329,10 +364,6 @@ static std::unique_ptr<ISender> makeSender(const std::string& spec)
     return nullptr;
 }
 
-/* ------------------------------------------------------------------ */
-/*  Receiver factory                                                   */
-/* ------------------------------------------------------------------ */
-
 static std::unique_ptr<IReceiver> makeReceiver(const std::string& spec)
 {
     if (spec == "none" || spec.empty()) return nullptr;
@@ -352,61 +383,6 @@ static std::unique_ptr<IReceiver> makeReceiver(const std::string& spec)
 }
 
 /* ------------------------------------------------------------------ */
-/*  Hex decoding                                                       */
-/* ------------------------------------------------------------------ */
-
-static bool fromHex(const std::string& hexStr, std::vector<uint8_t>& out)
-{
-    if (hexStr.size() % 2 != 0) return false;
-    out.clear();
-    out.reserve(hexStr.size() / 2);
-    for (size_t i = 0; i < hexStr.size(); i += 2) {
-        const std::string byte = hexStr.substr(i, 2);
-        char* end = nullptr;
-        const unsigned long v = std::strtoul(byte.c_str(), &end, 16);
-        if (end != byte.c_str() + 2) return false;
-        out.push_back(static_cast<uint8_t>(v));
-    }
-    return true;
-}
-
-/* ------------------------------------------------------------------ */
-/*  Hex encoding                                                       */
-/* ------------------------------------------------------------------ */
-
-static std::string toHex(const std::vector<uint8_t>& b)
-{
-    static const char kHex[] = "0123456789abcdef";
-    std::string s;
-    s.reserve(b.size() * 2);
-    for (uint8_t byte : b) {
-        s += kHex[byte >> 4];
-        s += kHex[byte & 0xF];
-    }
-    return s;
-}
-
-/* ------------------------------------------------------------------ */
-/*  JSON serialisation (no external library)                          */
-/* ------------------------------------------------------------------ */
-
-static std::string toJson(const PacketBuilder::BuiltPacket& pkt)
-{
-    std::string s = "{\"fields\":{";
-    for (size_t i = 0; i < pkt.fields.size(); ++i) {
-        if (i) s += ',';
-        s += '"';
-        s += pkt.fields[i].first;
-        s += "\":";
-        s += std::to_string(pkt.fields[i].second);
-    }
-    s += "},\"hex\":\"";
-    s += toHex(pkt.bytes);
-    s += "\"}";
-    return s;
-}
-
-/* ------------------------------------------------------------------ */
 /*  main                                                               */
 /* ------------------------------------------------------------------ */
 
@@ -418,18 +394,39 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    /* Parse YAML directory. */
-    ProtocolParser parser(args.yamlDir);
-    const auto parseErr = parser.parse();
-    if (parseErr.getErrorCode() != ProtocolParserErr::PROTOPARSER_SUCCESS) {
-        std::cerr << "Parser error: " << parseErr.getErrorMsg() << "\n";
+    /* --validate: schema-check the corpus (and stack file) and exit. Runs
+       before parsing so a non-conforming file is reported, not skipped. */
+    if (args.validate) {
+        ProtocolValidator validator;
+        std::vector<ValidationFinding> findings;
+        validator.validateDirectory(args.yamlDir, findings);
+        if (!args.stackFile.empty()) {
+            validator.validateStackFile(args.stackFile, findings);
+        }
+
+        size_t errors = 0;
+        for (const ValidationFinding& f : findings) {
+            const char* sev =
+                (f.severity == ValidationFinding::ERROR) ? "error" : "warning";
+            if (f.severity == ValidationFinding::ERROR) ++errors;
+            std::cerr << f.file << ':' << f.line << ':' << f.col << ": "
+                      << sev << ": " << f.message << '\n';
+        }
+        std::cerr << "validate: " << errors << " error(s) in '"
+                  << args.yamlDir << "'"
+                  << (args.stackFile.empty() ? "" : " + stack file") << '\n';
+        return errors == 0 ? 0 : 2;
+    }
+
+    Session session(args.yamlDir);
+    if (!session.parse()) {
         return 2;
     }
 
     /* --list-interfaces: dump all known interface names and exit. */
     if (args.listInterfaces) {
         std::cout << "Available interfaces in '" << args.yamlDir << "':\n";
-        parser.getInterfaceDatabase().forEach(
+        session.parser().getInterfaceDatabase().forEach(
             [](const std::string& name, const ProtocolInterface& ifc) {
                 const char* dir =
                     (ifc.getDirection() == ProtocolInterface::IN) ? "in" : "out";
@@ -438,11 +435,95 @@ int main(int argc, char* argv[])
         return 0;
     }
 
+    /* --stack-file: logic-driven encode/decode through a bound Stack. */
+    if (!args.stackFile.empty()) {
+        std::unique_ptr<Stack> stack;
+        const StackBuilderErr serr = session.loadStack(args.stackFile, stack);
+        if (serr.getErrorCode() != StackBuilderErr::STACK_SUCCESS) {
+            std::cerr << "Failed to build stack '" << args.stackFile
+                      << "': " << serr.getErrorMsg() << "\n";
+            return 2;
+        }
+
+        const bool jsonOut = (args.output == "json");
+
+        /* Decode path: --hex one frame, or stream from a receiver. */
+        if (args.decode) {
+            auto decodeAndPrint = [&](const std::vector<uint8_t>& pkt) {
+                const Session::StackedPacket d = session.decodeStack(*stack, pkt);
+                std::cout << Session::toJson(d) << '\n';
+            };
+
+            if (!args.hexInput.empty()) {
+                std::vector<uint8_t> raw;
+                if (!Session::fromHex(args.hexInput, raw)) {
+                    std::cerr << "--hex value is not valid hex\n";
+                    return 1;
+                }
+                decodeAndPrint(raw);
+                return 0;
+            }
+
+            std::unique_ptr<IReceiver> receiver = makeReceiver(args.transport);
+            if (!receiver) {
+                std::cerr << "--decode --stack-file requires --transport or --hex\n";
+                return 1;
+            }
+            if (receiver->open().getErrorCode() != ReceiverErr::RECEIVER_SUCCESS) {
+                std::cerr << "Failed to open receiver: " << args.transport << "\n";
+                return 2;
+            }
+            size_t n = 0;
+            while (args.count == 0 || n < args.count) {
+                std::vector<uint8_t> pkt;
+                const auto err = receiver->receive(pkt);
+                if (err.getErrorCode() == ReceiverErr::RECEIVER_ERR_EOF) break;
+                if (err.getErrorCode() != ReceiverErr::RECEIVER_SUCCESS) {
+                    std::cerr << "Receive error on packet " << n << "\n";
+                    receiver->close();
+                    return 2;
+                }
+                if (!pkt.empty()) { decodeAndPrint(pkt); ++n; }
+            }
+            receiver->close();
+            return 0;
+        }
+
+        /* Generate path. */
+        std::unique_ptr<ISender> sender = makeSender(args.transport);
+        if (sender &&
+            sender->open().getErrorCode() != SenderErr::SENDER_SUCCESS) {
+            std::cerr << "Failed to open transport: " << args.transport << "\n";
+            return 2;
+        }
+        if (args.seedSet) {
+            session.seed(args.seed);
+        } else {
+            std::random_device rd;
+            session.seed(rd());
+        }
+
+        for (size_t round = 0; args.count == 0 || round < args.count; ++round) {
+            const Session::StackedPacket pkt = session.generateStack(*stack);
+            if (jsonOut) std::cout << Session::toJson(pkt) << '\n';
+            else         std::cout << Session::toHex(pkt.bytes) << '\n';
+
+            if (sender &&
+                sender->send(pkt.bytes).getErrorCode() !=
+                    SenderErr::SENDER_SUCCESS) {
+                std::cerr << "Send failed on round " << round << "\n";
+                sender->close();
+                return 2;
+            }
+        }
+        if (sender) sender->close();
+        return 0;
+    }
+
     /* Helper: resolve a named interface into a vector, or print error and fail. */
     auto resolveInto = [&](const std::string& name,
                            std::vector<const ProtocolInterface*>& vec) -> bool {
-        const ProtocolInterface* p =
-            parser.getInterfaceDatabase().getElement(name);
+        const ProtocolInterface* p = session.findInterface(name);
         if (!p) {
             std::cerr << "Interface not found: " << name << "\n";
             std::cerr << "Run with --list-interfaces to see available names.\n";
@@ -467,48 +548,26 @@ int main(int argc, char* argv[])
         if (!resolveInto(args.iface, pipeline)) return 2;
     }
 
-    /* --decode: receive packets and decode them against the declared interface(s). */
+    const bool jsonOut = (args.output == "json");
+
+    /* --decode: receive packets and decode against the declared interface(s). */
     if (args.decode) {
-        const bool jsonOut = (args.output == "json");
-
-        /* Determine which interface pipeline to decode against. */
-        const std::vector<const ProtocolInterface*>& decodePipeline =
-            !stackPipeline.empty() ? stackPipeline : pipeline;
-
         auto decodeAndPrint = [&](const std::vector<uint8_t>& pkt) {
-            PacketDecoder decoder;
             if (!stackPipeline.empty()) {
-                /* Stacked: decode each layer at its byte offset. */
-                std::string layersJson = "[";
-                size_t offset = 0;
-                for (size_t i = 0; i < decodePipeline.size(); ++i) {
-                    auto layer = decoder.decode(*decodePipeline[i],
-                                               parser.getVarDatabase(),
-                                               pkt, offset);
-                    offset += PacketDecoder::layerBytes(*decodePipeline[i],
-                                                       parser.getVarDatabase());
-                    if (i) layersJson += ',';
-                    layersJson += "{\"iface\":\"";
-                    layersJson += decodePipeline[i]->getName();
-                    layersJson += "\",";
-                    layersJson += toJson(layer).substr(1);
-                }
-                layersJson += ']';
-                std::cout << "{\"hex\":\"" << toHex(pkt)
-                          << "\",\"layers\":" << layersJson << "}\n";
+                const Session::StackedPacket decoded =
+                    session.decodeStack(stackPipeline, pkt);
+                std::cout << Session::toJson(decoded) << '\n';
             } else {
-                /* Single interface. */
-                auto result = decoder.decode(*decodePipeline[0],
-                                             parser.getVarDatabase(), pkt);
-                if (jsonOut) std::cout << toJson(result) << '\n';
-                else         std::cout << toHex(result.bytes) << '\n';
+                const auto result = session.decode(*pipeline[0], pkt);
+                if (jsonOut) std::cout << Session::toJson(result) << '\n';
+                else         std::cout << Session::toHex(result.bytes) << '\n';
             }
         };
 
         if (!args.hexInput.empty()) {
             /* Decode a single hex string from the command line. */
             std::vector<uint8_t> raw;
-            if (!fromHex(args.hexInput, raw)) {
+            if (!Session::fromHex(args.hexInput, raw)) {
                 std::cerr << "--hex value is not valid hex\n";
                 return 1;
             }
@@ -560,106 +619,67 @@ int main(int argc, char* argv[])
         }
     }
 
-    /* Set up builder. */
-    PacketBuilder builder;
     if (args.seedSet) {
-        builder.seed(args.seed);
+        session.seed(args.seed);
     } else {
         std::random_device rd;
-        builder.seed(rd());
+        session.seed(rd());
     }
 
-    const bool isChain     = pipeline.size() > 1;
-    const bool jsonOut     = (args.output == "json");
+    auto sendOrFail = [&](const std::vector<uint8_t>& bytes,
+                          size_t round) -> bool {
+        if (!sender) return true;
+        const auto err = sender->send(bytes);
+        if (err.getErrorCode() != SenderErr::SENDER_SUCCESS) {
+            std::cerr << "Send failed on round " << round << "\n";
+            return false;
+        }
+        return true;
+    };
 
-    /* --stack: generate each layer independently and concatenate bytes. */
+    /* --stack: generate each layer independently and concatenate bytes.
+       count == 0 streams until interrupted, as documented. */
     if (!stackPipeline.empty()) {
-        for (size_t round = 0; round < args.count; ++round) {
-            std::vector<uint8_t> combined;
-            std::string layersJson = "[";
+        for (size_t round = 0; args.count == 0 || round < args.count; ++round) {
+            const Session::StackedPacket pkt =
+                session.generateStack(stackPipeline);
 
-            for (size_t i = 0; i < stackPipeline.size(); ++i) {
-                const ProtocolInterface* iface = stackPipeline[i];
-                auto pkt = builder.buildWithFields(*iface, parser.getVarDatabase());
+            if (jsonOut) std::cout << Session::toJson(pkt) << '\n';
+            else         std::cout << Session::toHex(pkt.bytes) << '\n';
 
-                combined.insert(combined.end(), pkt.bytes.begin(), pkt.bytes.end());
-
-                if (i) layersJson += ',';
-                layersJson += "{\"iface\":\"";
-                layersJson += iface->getName();
-                layersJson += "\",";
-                layersJson += toJson(pkt).substr(1); /* strip leading '{' */
-            }
-            layersJson += ']';
-
-            if (jsonOut) {
-                std::cout << "{\"hex\":\"" << toHex(combined)
-                          << "\",\"layers\":" << layersJson << "}\n";
-            } else {
-                std::cout << toHex(combined) << '\n';
-            }
-
-            if (sender) {
-                const auto err = sender->send(combined);
-                if (err.getErrorCode() != SenderErr::SENDER_SUCCESS) {
-                    std::cerr << "Send failed on round " << round << "\n";
-                    sender->close();
-                    return 2;
-                }
+            if (!sendOrFail(pkt.bytes, round)) {
+                sender->close();
+                return 2;
             }
         }
         if (sender) sender->close();
         return 0;
     }
 
-    /* --connect / --interface: generate packets — one round = one packet per pipeline stage. */
-    for (size_t round = 0; round < args.count; ++round) {
-        std::unordered_map<std::string, uint64_t> overrides;
+    /* --connect / --interface: one round = one packet per pipeline stage. */
+    const bool isChain = pipeline.size() > 1;
 
-        if (isChain && jsonOut) std::cout << "[";
+    for (size_t round = 0; args.count == 0 || round < args.count; ++round) {
+        const std::vector<Session::Layer> stages =
+            session.generateChain(pipeline);
 
-        for (size_t stage = 0; stage < pipeline.size(); ++stage) {
-            const ProtocolInterface* iface = pipeline[stage];
-
-            PacketBuilder::BuiltPacket pkt =
-                (stage == 0)
-                ? builder.buildWithFields(*iface, parser.getVarDatabase())
-                : builder.buildWithOverrides(*iface, parser.getVarDatabase(),
-                                             overrides);
-
-            /* Build overrides for the next stage from this packet's fields. */
-            overrides.clear();
-            for (const auto& f : pkt.fields)
-                overrides[f.first] = f.second;
-
-            /* Output. */
-            if (jsonOut) {
-                if (isChain) {
-                    /* Embed iface name so caller can tell stages apart. */
-                    std::string s = "{\"iface\":\"";
-                    s += iface->getName();
-                    s += "\",";
-                    s += toJson(pkt).substr(1); /* strip leading '{' */
-                    std::cout << (stage ? "," : "") << s;
-                } else {
-                    std::cout << toJson(pkt) << '\n';
-                }
-            } else {
-                std::cout << toHex(pkt.bytes) << '\n';
-            }
-
-            if (sender) {
-                const auto err = sender->send(pkt.bytes);
-                if (err.getErrorCode() != SenderErr::SENDER_SUCCESS) {
-                    std::cerr << "Send failed on round " << round
-                              << " stage " << stage << "\n";
-                    sender->close();
-                    return 2;
-                }
-            }
+        if (isChain && jsonOut) {
+            std::cout << Session::toJson(stages) << '\n';
         }
 
-        if (isChain && jsonOut) std::cout << "]\n";
+        for (const Session::Layer& stage : stages) {
+            const PacketBuilder::BuiltPacket& pkt = stage.second;
+
+            if (!isChain || !jsonOut) {
+                if (jsonOut) std::cout << Session::toJson(pkt) << '\n';
+                else         std::cout << Session::toHex(pkt.bytes) << '\n';
+            }
+
+            if (!sendOrFail(pkt.bytes, round)) {
+                sender->close();
+                return 2;
+            }
+        }
     }
 
     if (sender) sender->close();

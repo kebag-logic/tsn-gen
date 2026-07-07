@@ -32,6 +32,7 @@
 #        = 308 bits = 39 bytes (4 pad bits)
 
 service: atdecc_aecp_audio_mappings
+logic: aecp_aem
 
 vars:
   - var: message_type

@@ -18,6 +18,7 @@
 #      = 16 bits = 2 bytes
 
 service: avtp_control_header
+logic: avtp_control
 
 vars:
   - var: subtype

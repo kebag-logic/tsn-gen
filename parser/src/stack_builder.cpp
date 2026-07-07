@@ -5,8 +5,9 @@
  */
 
 
- #include <stack_builder.h>
-#include <utils.h>
+ #include <tsn/stack_builder.h>
+#include <tsn/log.h>
+#include <tsn/utils.h>
 
 #include <cstdint>
 #include <cstring>
@@ -20,6 +21,8 @@
 #include <unistd.h>
 
 #include <ryml.hpp>
+
+namespace tsn {
 
 namespace {
 
@@ -53,7 +56,7 @@ StackBuilderErr StackBuilder::build(const std::string& path,
 
     ScopedFD fd(open(path.c_str(), O_RDONLY));
     if (fd < 0) {
-        std::cerr << "ERR: could not open stack file " << path << std::endl;
+        log(LogLevel::error) << "ERR: could not open stack file " << path << std::endl;
         err.setErrorCode(StackBuilderErr::STACK_ERR_INVALID_FILE);
         return err;
     }
@@ -77,14 +80,14 @@ StackBuilderErr StackBuilder::build(const std::string& path,
     munmap(ptr, len);
 
     if (tree.empty() || !tree.rootref().is_map()) {
-        std::cerr << "ERR: stack file not a YAML map: " << path << std::endl;
+        log(LogLevel::error) << "ERR: stack file not a YAML map: " << path << std::endl;
         err.setErrorCode(StackBuilderErr::STACK_ERR_INVALID_FILE);
         return err;
     }
 
     ryml::ConstNodeRef nameNode = tree["stack"];
     if (nameNode.invalid() || !nameNode.has_val()) {
-        std::cerr << "ERR: stack file missing 'stack:' key: "
+        log(LogLevel::error) << "ERR: stack file missing 'stack:' key: "
                   << path << std::endl;
         err.setErrorCode(StackBuilderErr::STACK_ERR_MISSING_KEY);
         return err;
@@ -92,7 +95,7 @@ StackBuilderErr StackBuilder::build(const std::string& path,
 
     ryml::ConstNodeRef layersNode = tree["layers"];
     if (layersNode.invalid() || !layersNode.is_seq()) {
-        std::cerr << "ERR: stack file missing 'layers:' sequence: "
+        log(LogLevel::error) << "ERR: stack file missing 'layers:' sequence: "
                   << path << std::endl;
         err.setErrorCode(StackBuilderErr::STACK_ERR_MISSING_KEY);
         return err;
@@ -111,6 +114,10 @@ StackBuilderErr StackBuilder::build(const std::string& path,
         if (layerNode.has_child("entity")) {
             layer->entityName = csubstrToString(layerNode["entity"].val());
         }
+        if (layerNode.has_child("interface")) {
+            layer->interfaceName =
+                csubstrToString(layerNode["interface"].val());
+        }
         if (layerNode.has_child("bypass-logic")) {
             layer->bypassLogic = readBool(layerNode["bypass-logic"]);
         }
@@ -118,7 +125,7 @@ StackBuilderErr StackBuilder::build(const std::string& path,
         const ProtocolService* svc =
             mDbServices.getElement(layer->serviceName);
         if (!svc) {
-            std::cerr << "ERR: unknown service '" << layer->serviceName
+            log(LogLevel::error) << "ERR: unknown service '" << layer->serviceName
                       << "' referenced by stack " << path << std::endl;
             err.setErrorCode(StackBuilderErr::STACK_ERR_UNKNOWN_SERVICE);
             return err;
@@ -132,7 +139,7 @@ StackBuilderErr StackBuilder::build(const std::string& path,
         } else {
             layer->logic = mRegistry.create(svc->getLogicName());
             if (!layer->logic) {
-                std::cerr << "ERR: logic module '" << svc->getLogicName()
+                log(LogLevel::error) << "ERR: logic module '" << svc->getLogicName()
                           << "' not registered (service "
                           << layer->serviceName << ")" << std::endl;
                 err.setErrorCode(StackBuilderErr::STACK_ERR_UNKNOWN_LOGIC);
@@ -149,3 +156,5 @@ StackBuilderErr StackBuilder::build(const std::string& path,
     err.setErrorCode(StackBuilderErr::STACK_SUCCESS);
     return err;
 }
+
+} /* namespace tsn */

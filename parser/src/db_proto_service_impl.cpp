@@ -5,7 +5,11 @@
  */
 
 
- #include <service.h>
-#include <database.cpp>
+ #include <tsn/service.h>
+#include <tsn/database.cpp>
+
+namespace tsn {
 
 template class Database<ProtocolService>;
+
+} /* namespace tsn */

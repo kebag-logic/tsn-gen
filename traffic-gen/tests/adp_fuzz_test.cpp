@@ -6,10 +6,12 @@
 
 #include <gtest/gtest.h>
 
-#include <packet_builder.h>
-#include <protocol_interface.h>
-#include <protocol_parser.h>
-#include <var.h>
+#include <tsn/packet_builder.h>
+#include <tsn/protocol_interface.h>
+#include <tsn/protocol_parser.h>
+#include <tsn/var.h>
+
+using namespace tsn;
 
 #include <cstdint>
 #include <string>

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kebag-logic.com/tsn-gen/stack.schema.json",
+  "title": "tsn-gen stack definition",
+  "description": "A stack YAML lists protocol layers bottom-up for the logic-driven codec (packet_gen --stack-file). Enforced by `packet_gen --validate --stack-file`.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["stack", "layers"],
+  "properties": {
+    "stack": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Name of the stack."
+    },
+    "layers": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Layers in wire order, lowest first.",
+      "items": { "$ref": "#/$defs/layer" }
+    }
+  },
+  "$defs": {
+    "layer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["service"],
+      "properties": {
+        "service": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Service name of the layer; must exist in the parsed corpus."
+        },
+        "entity": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Entity within the service (selects which interfaces are available)."
+        },
+        "interface": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Explicit interface; when omitted the runtime picks the entity's first interface in key order."
+        },
+        "bypass-logic": {
+          "type": "boolean",
+          "description": "Force PassthroughLogic on this layer (fuzzing escape hatch)."
+        }
+      }
+    }
+  }
+}

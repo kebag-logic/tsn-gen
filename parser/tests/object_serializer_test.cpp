@@ -6,11 +6,13 @@
 
 
  #include <parser_common_test.h>
-#include <protocol_parser.h>
-#include <protocol.h>
-#include <service.h>
-#include <var.h>
-#include <protocol_interface.h>
+#include <tsn/protocol_parser.h>
+#include <tsn/protocol.h>
+#include <tsn/service.h>
+#include <tsn/var.h>
+#include <tsn/protocol_interface.h>
+
+using namespace tsn;
 
 #include <string>
 
@@ -74,7 +76,7 @@ TEST(ObjectSerializer, ParseSimpleProtocolVarExpectedValues)
                         "simple_service::simple_var");
     ASSERT_NE(var, nullptr);
 
-    const std::vector<int32_t>& expected = var->getExpectedValues();
+    const std::vector<uint64_t>& expected = var->getExpectedValues();
     ASSERT_EQ(expected.size(), 3u);
     EXPECT_EQ(expected[0], 0);
     EXPECT_EQ(expected[1], 1);

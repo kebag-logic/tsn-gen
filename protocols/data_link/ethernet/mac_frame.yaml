@@ -12,6 +12,7 @@
 #      = 112 bits = 14 bytes
 
 service: ethernet_mac_frame
+logic: ethernet_mac_frame
 
 vars:
   - var: dst_mac

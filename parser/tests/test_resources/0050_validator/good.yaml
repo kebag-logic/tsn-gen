@@ -1,0 +1,19 @@
+service: good_service
+logic: some_module
+vars:
+  - var: a
+    size: 8
+    expected:
+      value: 0x2A
+  - var: b
+    size: 16
+    expected:
+      range: [0, 100]
+entities:
+  - entity: E
+    interfaces:
+      - interface: IF
+        dir: out
+        vars:
+          - var_ref: a
+          - var_ref: b

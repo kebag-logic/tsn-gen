@@ -5,7 +5,9 @@
  */
 
 
- #include <stack.h>
+ #include <tsn/stack.h>
+
+namespace tsn {
 
 void Stack::wireAdjacency()
 {
@@ -17,3 +19,5 @@ void Stack::wireAdjacency()
         mLayers[i]->context.setUpper(upper);
     }
 }
+
+} /* namespace tsn */

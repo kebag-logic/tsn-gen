@@ -4,9 +4,12 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <traffic_generator.h>
+#include <tsn/traffic_generator.h>
+#include <tsn/log.h>
 
 #include <iostream>
+
+namespace tsn {
 
 TrafficGenerator::TrafficGenerator(const ProtocolParser& parser,
                                    std::unique_ptr<ISender> sender)
@@ -21,7 +24,7 @@ const TrafficGeneratorErr TrafficGenerator::open()
 {
     const SenderErr err = mSender->open();
     if (err.getErrorCode() != SenderErr::SENDER_SUCCESS) {
-        std::cerr << "TrafficGenerator: sender open failed\n";
+        log(LogLevel::error) << "TrafficGenerator: sender open failed\n";
         return TrafficGeneratorErr(TrafficGeneratorErr::TGEN_ERR_NOT_OPEN);
     }
     mOpen = true;
@@ -48,14 +51,14 @@ const TrafficGeneratorErr TrafficGenerator::sendOne(
         mBuilder.build(iface, mParser.getVarDatabase());
 
     if (pkt.empty()) {
-        std::cerr << "TrafficGenerator: empty packet for interface '"
+        log(LogLevel::error) << "TrafficGenerator: empty packet for interface '"
                   << iface.getName() << "', skipping\n";
         return TrafficGeneratorErr(TrafficGeneratorErr::TGEN_ERR_EMPTY_PACKET);
     }
 
     const SenderErr err = mSender->send(pkt);
     if (err.getErrorCode() != SenderErr::SENDER_SUCCESS) {
-        std::cerr << "TrafficGenerator: send failed for interface '"
+        log(LogLevel::error) << "TrafficGenerator: send failed for interface '"
                   << iface.getName() << "'\n";
         return TrafficGeneratorErr(TrafficGeneratorErr::TGEN_ERR_SEND_FAILED);
     }
@@ -73,7 +76,7 @@ const TrafficGeneratorErr TrafficGenerator::send(
     const ProtocolInterface* iface =
         mParser.getInterfaceDatabase().getElement(qualifiedName);
     if (iface == nullptr) {
-        std::cerr << "TrafficGenerator: interface '" << qualifiedName
+        log(LogLevel::error) << "TrafficGenerator: interface '" << qualifiedName
                   << "' not found\n";
         return TrafficGeneratorErr(
             TrafficGeneratorErr::TGEN_ERR_IFACE_NOT_FOUND);
@@ -152,3 +155,5 @@ const TrafficGeneratorErr TrafficGenerator::sendLoop(
 
     return TrafficGeneratorErr(TrafficGeneratorErr::TGEN_SUCCESS);
 }
+
+} /* namespace tsn */

@@ -4,12 +4,14 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <pcap_sender.h>
+#include <tsn/pcap_sender.h>
 
 #include <cstring>
 #include <ctime>
 #include <fcntl.h>
 #include <unistd.h>
+
+namespace tsn {
 
 /* ------------------------------------------------------------------ */
 /*  Raw pcap format helpers (no libpcap required)                     */
@@ -111,3 +113,5 @@ void PcapSender::close() noexcept
         mFd = -1;
     }
 }
+
+} /* namespace tsn */

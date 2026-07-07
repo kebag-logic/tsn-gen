@@ -5,13 +5,15 @@
  */
 
 
- #include <ethernet_frame_logic.h>
-#include <layer_context.h>
-#include <logic_module.h>
-#include <logic_registry.h>
-#include <protocol_parser.h>
-#include <stack.h>
-#include <stack_builder.h>
+ #include <tsn/ethernet_frame_logic.h>
+#include <tsn/layer_context.h>
+#include <tsn/logic_module.h>
+#include <tsn/logic_registry.h>
+#include <tsn/protocol_parser.h>
+#include <tsn/stack.h>
+#include <tsn/stack_builder.h>
+
+using namespace tsn;
 
 #include <gtest/gtest.h>
 

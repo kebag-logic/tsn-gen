@@ -4,7 +4,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <raw_socket_sender.h>
+#include <tsn/raw_socket_sender.h>
+#include <tsn/log.h>
 
 #include <cerrno>
 #include <cstring>
@@ -18,6 +19,8 @@
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <unistd.h>
+
+namespace tsn {
 
 RawSocketSender::RawSocketSender(const std::string& ifName)
     : mIfName(ifName), mSockFd(-1), mIfIndex(-1)
@@ -33,7 +36,7 @@ const SenderErr RawSocketSender::open()
 {
     mSockFd = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ALL));
     if (mSockFd < 0) {
-        std::cerr << "RawSocketSender: socket() failed: "
+        log(LogLevel::error) << "RawSocketSender: socket() failed: "
                   << std::strerror(errno) << "\n";
         return SenderErr(SenderErr::SENDER_ERR_OPEN_FAILED);
     }
@@ -41,7 +44,7 @@ const SenderErr RawSocketSender::open()
     struct ifreq ifr = {};
     std::strncpy(ifr.ifr_name, mIfName.c_str(), IFNAMSIZ - 1);
     if (ioctl(mSockFd, SIOCGIFINDEX, &ifr) < 0) {
-        std::cerr << "RawSocketSender: ioctl(SIOCGIFINDEX) on '"
+        log(LogLevel::error) << "RawSocketSender: ioctl(SIOCGIFINDEX) on '"
                   << mIfName << "' failed: " << std::strerror(errno) << "\n";
         ::close(mSockFd);
         mSockFd = -1;
@@ -56,7 +59,7 @@ const SenderErr RawSocketSender::open()
 
     if (bind(mSockFd, reinterpret_cast<struct sockaddr*>(&sll),
              sizeof(sll)) < 0) {
-        std::cerr << "RawSocketSender: bind() failed: "
+        log(LogLevel::error) << "RawSocketSender: bind() failed: "
                   << std::strerror(errno) << "\n";
         ::close(mSockFd);
         mSockFd = -1;
@@ -83,7 +86,7 @@ const SenderErr RawSocketSender::send(const std::vector<uint8_t>& packet)
                                 reinterpret_cast<struct sockaddr*>(&sll),
                                 sizeof(sll));
     if (sent < 0) {
-        std::cerr << "RawSocketSender: sendto() failed: "
+        log(LogLevel::error) << "RawSocketSender: sendto() failed: "
                   << std::strerror(errno) << "\n";
         return SenderErr(SenderErr::SENDER_ERR_SEND_FAILED);
     }
@@ -99,3 +102,5 @@ void RawSocketSender::close() noexcept
         mIfIndex = -1;
     }
 }
+
+} /* namespace tsn */

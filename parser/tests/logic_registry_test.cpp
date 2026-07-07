@@ -6,9 +6,11 @@
 
 
  #include <parser_common_test.h>
-#include <layer_context.h>
-#include <logic_module.h>
-#include <logic_registry.h>
+#include <tsn/layer_context.h>
+#include <tsn/logic_module.h>
+#include <tsn/logic_registry.h>
+
+using namespace tsn;
 
 #include <memory>
 #include <string>

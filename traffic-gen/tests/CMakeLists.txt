@@ -6,7 +6,7 @@ include(CMakeLinkToTestlibs)
 
 #################### Compile definitions ############
 add_compile_options(
-  -DTRAFFIC_GEN_TESTS_RES_PATH="${CMAKE_SOURCE_DIR}/parser/tests/test_resources"
+  -DTRAFFIC_GEN_TESTS_RES_PATH="${tsn-gen_SOURCE_DIR}/parser/tests/test_resources"
 )
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
@@ -42,3 +42,13 @@ include(GoogleTest)
 include(CMakeGoogleDiscoverAllTests)
 gtest_discover_test_wtestlibs(traffic_gen-test)
 gtest_discover_test_wtestlibs(adp_fuzz-test)
+
+################### Corpus conformance ##############
+# The shipped protocols/ and stacks/ must pass `packet_gen --validate`, so a
+# non-conforming file added later fails CI. Uses the just-built CLI.
+add_test(NAME corpus_validates
+    COMMAND packet_gen
+            --yaml-dir ${tsn-gen_SOURCE_DIR}/protocols
+            --stack-file ${tsn-gen_SOURCE_DIR}/stacks/aecp_acquire_entity.yaml
+            --validate
+)

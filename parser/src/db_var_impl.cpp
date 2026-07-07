@@ -12,7 +12,11 @@
  */
  
 
- #include <var.h>
-#include <database.cpp>
+ #include <tsn/var.h>
+#include <tsn/database.cpp>
+
+namespace tsn {
 
 template class Database<Var>;
+
+} /* namespace tsn */

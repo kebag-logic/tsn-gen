@@ -1,7 +1,3 @@
-cmake_minimum_required(VERSION 3.31)
-project(tsn_sim VERSION 0.0.1
-    DESCRIPTION "ns-3 + Verilator co-simulation via SystemC")
-
 ##################### DEPENDENCIES #########################
 
 # SystemC — requires a system install or SYSTEMC_ROOT hint.
@@ -20,11 +16,8 @@ find_package(ns3 REQUIRED COMPONENTS
 
 set(SIM_INC_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}/inc
-    # tsn-gen headers required by VerilatorNetDevice and sc_main
-    ${CMAKE_SOURCE_DIR}/traffic-gen/inc
-    ${CMAKE_SOURCE_DIR}/parser/inc
     # Verilator-generated DUT headers (obj_dir produced by verilator --sc)
-    ${CMAKE_SOURCE_DIR}/obj_dir
+    ${tsn-gen_SOURCE_DIR}/obj_dir
 )
 
 add_library(tsn_sim_lib STATIC
@@ -36,6 +29,7 @@ target_include_directories(tsn_sim_lib PUBLIC
     ${SIM_INC_DIRS}
 )
 
+# tsn-gen headers propagate from the traffic_gen / protocol_parser targets.
 target_link_libraries(tsn_sim_lib PUBLIC
     SystemC::systemc
     ns3::libcore
@@ -64,7 +58,7 @@ target_link_libraries(tsn_cosim PRIVATE
     tsn_sim_lib
     # Verilator runtime and generated DUT — adjust library name to match your
     # top module (e.g. VTsnEndpoint → libVTsnEndpoint.a from obj_dir).
-    ${CMAKE_SOURCE_DIR}/obj_dir/libVTsnEndpoint.a
+    ${tsn-gen_SOURCE_DIR}/obj_dir/libVTsnEndpoint.a
     ${VERILATOR_ROOT}/include/verilated.cpp
 )
 

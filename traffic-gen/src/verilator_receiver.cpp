@@ -4,7 +4,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <verilator_receiver.h>
+#include <tsn/verilator_receiver.h>
+#include <tsn/log.h>
 
 #include <cerrno>
 #include <cstring>
@@ -13,6 +14,8 @@
 #include <sys/socket.h>
 #include <sys/un.h>
 #include <unistd.h>
+
+namespace tsn {
 
 VerilatorReceiver::VerilatorReceiver(const std::string& socketPath)
     : mSocketPath(socketPath), mSockFd(-1)
@@ -28,7 +31,7 @@ ReceiverErr VerilatorReceiver::open()
 {
     mSockFd = ::socket(AF_UNIX, SOCK_STREAM, 0);
     if (mSockFd < 0) {
-        std::cerr << "VerilatorReceiver: socket() failed: "
+        log(LogLevel::error) << "VerilatorReceiver: socket() failed: "
                   << std::strerror(errno) << "\n";
         return ReceiverErr(ReceiverErr::RECEIVER_ERR_OPEN_FAILED);
     }
@@ -39,7 +42,7 @@ ReceiverErr VerilatorReceiver::open()
 
     if (::connect(mSockFd, reinterpret_cast<struct sockaddr*>(&addr),
                   sizeof(addr)) < 0) {
-        std::cerr << "VerilatorReceiver: connect('" << mSocketPath
+        log(LogLevel::error) << "VerilatorReceiver: connect('" << mSocketPath
                   << "') failed: " << std::strerror(errno) << "\n";
         ::close(mSockFd);
         mSockFd = -1;
@@ -58,7 +61,7 @@ ReceiverErr VerilatorReceiver::readAll(void* buf, size_t len)
         if (n == 0) return ReceiverErr(ReceiverErr::RECEIVER_ERR_EOF);
         if (n < 0) {
             if (errno == EINTR) continue;
-            std::cerr << "VerilatorReceiver: read() failed: "
+            log(LogLevel::error) << "VerilatorReceiver: read() failed: "
                       << std::strerror(errno) << "\n";
             return ReceiverErr(ReceiverErr::RECEIVER_ERR_RECV_FAILED);
         }
@@ -101,3 +104,5 @@ void VerilatorReceiver::close() noexcept
         mSockFd = -1;
     }
 }
+
+} /* namespace tsn */

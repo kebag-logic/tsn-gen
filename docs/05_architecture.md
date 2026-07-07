@@ -127,10 +127,10 @@ PacketBuilder
 in every translation unit, the project uses **explicit instantiation**:
 
 ```
-parser/inc/database.cpp     ← full template implementation (NOT compiled directly)
-parser/src/db_var_impl.cpp  ← #include <database.cpp>
+parser/inc/tsn/database.cpp     ← full template implementation (NOT compiled directly)
+parser/src/db_var_impl.cpp  ← #include <tsn/database.cpp>
                                template class Database<Var>;
-parser/src/db_proto_if_impl.cpp ← #include <database.cpp>
+parser/src/db_proto_if_impl.cpp ← #include <tsn/database.cpp>
                                template class Database<ProtocolInterface>;
 ```
 

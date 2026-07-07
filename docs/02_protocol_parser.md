@@ -216,7 +216,9 @@ this behaviour.
 ## Example usage
 
 ```cpp
-#include <protocol_parser.h>
+#include <tsn/protocol_parser.h>
+
+using namespace tsn;
 
 ProtocolParser parser("/path/to/protocols");
 

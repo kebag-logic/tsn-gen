@@ -4,7 +4,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <verilator_sender.h>
+#include <tsn/verilator_sender.h>
+#include <tsn/log.h>
 
 #include <cerrno>
 #include <cstring>
@@ -13,6 +14,8 @@
 #include <sys/socket.h>
 #include <sys/un.h>
 #include <unistd.h>
+
+namespace tsn {
 
 VerilatorSender::VerilatorSender(const std::string& socketPath)
     : mSocketPath(socketPath), mSockFd(-1)
@@ -28,7 +31,7 @@ const SenderErr VerilatorSender::open()
 {
     mSockFd = socket(AF_UNIX, SOCK_STREAM, 0);
     if (mSockFd < 0) {
-        std::cerr << "VerilatorSender: socket() failed: "
+        log(LogLevel::error) << "VerilatorSender: socket() failed: "
                   << std::strerror(errno) << "\n";
         return SenderErr(SenderErr::SENDER_ERR_OPEN_FAILED);
     }
@@ -41,7 +44,7 @@ const SenderErr VerilatorSender::open()
     if (connect(mSockFd,
                 reinterpret_cast<struct sockaddr*>(&addr),
                 sizeof(addr)) < 0) {
-        std::cerr << "VerilatorSender: connect() to '" << mSocketPath
+        log(LogLevel::error) << "VerilatorSender: connect() to '" << mSocketPath
                   << "' failed: " << std::strerror(errno) << "\n";
         ::close(mSockFd);
         mSockFd = -1;
@@ -60,7 +63,7 @@ const SenderErr VerilatorSender::writeAll(const void* data, size_t len)
         const ssize_t n = write(mSockFd, ptr, remaining);
         if (n < 0) {
             if (errno == EINTR) continue;
-            std::cerr << "VerilatorSender: write() failed: "
+            log(LogLevel::error) << "VerilatorSender: write() failed: "
                       << std::strerror(errno) << "\n";
             return SenderErr(SenderErr::SENDER_ERR_SEND_FAILED);
         }
@@ -119,3 +122,5 @@ void VerilatorSender::close() noexcept
         mSockFd = -1;
     }
 }
+
+} /* namespace tsn */

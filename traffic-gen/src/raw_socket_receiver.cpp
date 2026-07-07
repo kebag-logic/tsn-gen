@@ -4,7 +4,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <raw_socket_receiver.h>
+#include <tsn/raw_socket_receiver.h>
+#include <tsn/log.h>
 
 #include <cerrno>
 #include <cstring>
@@ -18,6 +19,8 @@
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <unistd.h>
+
+namespace tsn {
 
 RawSocketReceiver::RawSocketReceiver(const std::string& ifName)
     : mIfName(ifName), mSockFd(-1)
@@ -33,7 +36,7 @@ ReceiverErr RawSocketReceiver::open()
 {
     mSockFd = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ALL));
     if (mSockFd < 0) {
-        std::cerr << "RawSocketReceiver: socket() failed: "
+        log(LogLevel::error) << "RawSocketReceiver: socket() failed: "
                   << std::strerror(errno) << "\n";
         return ReceiverErr(ReceiverErr::RECEIVER_ERR_OPEN_FAILED);
     }
@@ -41,7 +44,7 @@ ReceiverErr RawSocketReceiver::open()
     struct ifreq ifr = {};
     std::strncpy(ifr.ifr_name, mIfName.c_str(), IFNAMSIZ - 1);
     if (ioctl(mSockFd, SIOCGIFINDEX, &ifr) < 0) {
-        std::cerr << "RawSocketReceiver: ioctl(SIOCGIFINDEX) on '"
+        log(LogLevel::error) << "RawSocketReceiver: ioctl(SIOCGIFINDEX) on '"
                   << mIfName << "' failed: " << std::strerror(errno) << "\n";
         ::close(mSockFd);
         mSockFd = -1;
@@ -55,7 +58,7 @@ ReceiverErr RawSocketReceiver::open()
 
     if (bind(mSockFd, reinterpret_cast<struct sockaddr*>(&sll),
              sizeof(sll)) < 0) {
-        std::cerr << "RawSocketReceiver: bind() failed: "
+        log(LogLevel::error) << "RawSocketReceiver: bind() failed: "
                   << std::strerror(errno) << "\n";
         ::close(mSockFd);
         mSockFd = -1;
@@ -77,7 +80,7 @@ ReceiverErr RawSocketReceiver::receive(std::vector<uint8_t>& packet)
             packet.clear();
             return ReceiverErr(ReceiverErr::RECEIVER_ERR_EOF);
         }
-        std::cerr << "RawSocketReceiver: recvfrom() failed: "
+        log(LogLevel::error) << "RawSocketReceiver: recvfrom() failed: "
                   << std::strerror(errno) << "\n";
         return ReceiverErr(ReceiverErr::RECEIVER_ERR_RECV_FAILED);
     }
@@ -93,3 +96,5 @@ void RawSocketReceiver::close() noexcept
         mSockFd = -1;
     }
 }
+
+} /* namespace tsn */

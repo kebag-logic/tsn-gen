@@ -1,0 +1,11 @@
+service: s
+entities:
+  - entity: E
+    interfaces:
+      - interface: IF
+        dir: sideways
+        vars:
+          - var_ref: a
+vars:
+  - var: a
+    size: 8

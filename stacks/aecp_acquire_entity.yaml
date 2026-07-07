@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2026 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2026 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# Complete IEEE 1722.1 ATDECC AECP ACQUIRE_ENTITY frame, bottom-up:
+#
+#   ethernet_mac_frame        14 B  MAC header, ethertype 0x22F0
+#   avtp_control_header        2 B  subtype 0xFB (AECP), sv/version 0
+#   atdecc_aecp_acquire_entity 39 B AEM ACQUIRE_ENTITY PDU
+#
+# Each layer names a service; its logic module (declared in the service
+# YAML) runs during --stack-file encode/decode. The AVTP subtype and the
+# AECP control_data_length / status are derived by those modules rather
+# than hard-coded, so the assembled frame is semantically valid.
+
+stack: aecp_acquire_entity
+layers:
+  - service: ethernet_mac_frame
+    entity:  ETHERNET_FRAME
+  - service: avtp_control_header
+    entity:  AVTP_CONTROL
+  - service: atdecc_aecp_acquire_entity
+    entity:  AECP_ACQUIRE_ENTITY

@@ -5,8 +5,9 @@
  */
 
 
- #include <protocol.h>
-#include <utils.h>
+ #include <tsn/protocol.h>
+#include <tsn/log.h>
+#include <tsn/utils.h>
 
 #include <cstdint>
 #include <iostream>
@@ -17,6 +18,8 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+
+namespace tsn {
 
 
 Protocol::Protocol(const std::string& path) :
@@ -39,7 +42,6 @@ const ProtocolErr Protocol::checkNodeValidity(ryml::ConstNodeRef &node,
         err.setmExtMsg("Key is null and Invalid");
         err.setErrorCode(ProtocolErr::PROTOERR_INVALID_FILE);
     } else {
-        std::cout << "INF: " << "Parsing protocol " << std::endl;
         if (!node.type_has_any(type)) {
             err.setmExtMsg("un-expected type");
             err.setErrorCode(ProtocolErr::PROTOERR_UNEXPECTED);
@@ -52,10 +54,10 @@ const ProtocolErr Protocol::checkNodeValidity(ryml::ConstNodeRef &node,
 
         if (err.getErrorCode()) {
             ryml::Location loc = parser->location(node);
-            std::cerr << "ERR: YAML " << node.key() << " L:" << loc.line <<
+            log(LogLevel::error) << "ERR: YAML " << node.key() << " L:" << loc.line <<
                         " C:" << loc.col << std::endl;
 
-            std::cerr << "     " << node.key() <<
+            log(LogLevel::error) << "     " << node.key() <<
                     err.getmExtMsg() << std::endl;
         }
     }
@@ -86,6 +88,27 @@ static std::string csubstrToString(ryml::csubstr s)
     return std::string(s.str, s.len);
 }
 
+/* Parse a YAML scalar as an unsigned 64-bit integer, honouring 0x / 0
+ * prefixes (base 0). Malformed numbers do not abort parsing: they log a
+ * warning and yield @p fallback so one bad field cannot crash a run. */
+static uint64_t parseU64(const std::string& text, uint64_t fallback,
+                         const std::string& context)
+{
+    try {
+        size_t consumed = 0;
+        const uint64_t v = std::stoull(text, &consumed, 0);
+        if (consumed != text.size()) {
+            log(LogLevel::warn) << "WARN: trailing characters in numeric '"
+                                << text << "' for " << context << "\n";
+        }
+        return v;
+    } catch (const std::exception&) {
+        log(LogLevel::warn) << "WARN: invalid number '" << text << "' for "
+                            << context << ", using " << fallback << "\n";
+        return fallback;
+    }
+}
+
 const ProtocolErr Protocol::getParsedProtocolVars(Database<Var>& dbVars)
 {
     ProtocolErr err(ProtocolErr::PROTO_SUCCESS);
@@ -108,10 +131,11 @@ const ProtocolErr Protocol::getParsedProtocolVars(Database<Var>& dbVars)
         uint32_t size = 0;
         if (varItem.has_child("size")) {
             std::string sizeStr = csubstrToString(varItem["size"].val());
-            size = static_cast<uint32_t>(std::stoul(sizeStr));
+            size = static_cast<uint32_t>(
+                parseU64(sizeStr, 0, qualifiedName + ".size"));
         }
 
-        std::vector<int32_t> expectedValues;
+        std::vector<uint64_t> expectedValues;
         std::optional<Var::Range> range;
         uint64_t mask = 0;
 
@@ -123,30 +147,29 @@ const ProtocolErr Protocol::getParsedProtocolVars(Database<Var>& dbVars)
                 ryml::ConstNodeRef valuesNode = expectedNode["values"];
                 if (valuesNode.is_seq()) {
                     for (ryml::ConstNodeRef valNode : valuesNode) {
-                        std::string valStr = csubstrToString(valNode.val());
-                        expectedValues.push_back(
-                            static_cast<int32_t>(
-                                std::stol(valStr, nullptr, 0)));
+                        expectedValues.push_back(parseU64(
+                            csubstrToString(valNode.val()), 0,
+                            qualifiedName + ".expected.values"));
                     }
                 }
             }
 
             /* expected.value: N — single fixed value */
             if (expectedNode.has_child("value")) {
-                std::string valStr =
-                    csubstrToString(expectedNode["value"].val());
-                expectedValues.push_back(
-                    static_cast<int32_t>(std::stol(valStr, nullptr, 0)));
+                expectedValues.push_back(parseU64(
+                    csubstrToString(expectedNode["value"].val()), 0,
+                    qualifiedName + ".expected.value"));
             }
 
             /* expected.range: [min, max] — inclusive integer range */
             if (expectedNode.has_child("range")) {
                 ryml::ConstNodeRef rangeNode = expectedNode["range"];
                 if (rangeNode.is_seq() && rangeNode.num_children() == 2) {
-                    std::vector<int32_t> rvals;
+                    std::vector<uint64_t> rvals;
                     for (ryml::ConstNodeRef rv : rangeNode) {
-                        rvals.push_back(static_cast<int32_t>(
-                            std::stol(csubstrToString(rv.val()), nullptr, 0)));
+                        rvals.push_back(parseU64(
+                            csubstrToString(rv.val()), 0,
+                            qualifiedName + ".expected.range"));
                     }
                     range = Var::Range{rvals[0], rvals[1]};
                 }
@@ -157,8 +180,8 @@ const ProtocolErr Protocol::getParsedProtocolVars(Database<Var>& dbVars)
                 ryml::ConstNodeRef maskNode = expectedNode["mask"];
                 if (maskNode.is_seq()) {
                     for (ryml::ConstNodeRef mv : maskNode) {
-                        mask = static_cast<uint64_t>(std::stoull(
-                            csubstrToString(mv.val()), nullptr, 0));
+                        mask = parseU64(csubstrToString(mv.val()), 0,
+                                        qualifiedName + ".expected.mask");
                         break; /* take first entry only */
                     }
                 }
@@ -168,7 +191,7 @@ const ProtocolErr Protocol::getParsedProtocolVars(Database<Var>& dbVars)
         Var var(qualifiedName, size, std::move(expectedValues), range, mask);
         DatabaseErr dbErr = dbVars.addUniqueElement(qualifiedName, var);
         if (dbErr.getErrorCode() == DatabaseErr::DBERR_ENTRY_ALREADY_EXISTS) {
-            std::cerr << "WARN: var '" << qualifiedName
+            log(LogLevel::warn) << "WARN: var '" << qualifiedName
                       << "' already in database, skipping\n";
         }
     }
@@ -252,7 +275,7 @@ const ProtocolErr Protocol::getParsedProtocolInterface(
             ProtocolInterface iface(qualifiedName, dir, std::move(varRefs));
             DatabaseErr dbErr = dbIfProto.addUniqueElement(qualifiedName, iface);
             if (dbErr.getErrorCode() == DatabaseErr::DBERR_ENTRY_ALREADY_EXISTS) {
-                std::cerr << "WARN: interface '" << qualifiedName
+                log(LogLevel::warn) << "WARN: interface '" << qualifiedName
                           << "' already in database, skipping\n";
             }
         }
@@ -277,7 +300,7 @@ const ProtocolErr Protocol::getParsedProtocolService(
     ProtocolService svc(serviceName, std::move(logicName));
     DatabaseErr dbErr = dbServices.addUniqueElement(serviceName, svc);
     if (dbErr.getErrorCode() == DatabaseErr::DBERR_ENTRY_ALREADY_EXISTS) {
-        std::cerr << "WARN: service '" << serviceName
+        log(LogLevel::warn) << "WARN: service '" << serviceName
                   << "' already in database, skipping\n";
     }
 
@@ -307,20 +330,20 @@ const ProtocolErr Protocol::parseProtocolFile(
 
     ScopedFD fd (open(mPath.c_str(), O_RDONLY));
     if (fd < 0) {
-        std::cerr << "ERR: Could not open file " << mPath << std::endl;
+        log(LogLevel::error) << "ERR: Could not open file " << mPath << std::endl;
         return err;
     }
 
     off_t len = lseek(fd, 0, SEEK_END);
     if (len < 0) {
-        std::cerr << "ERR: lseek for the end of the file " << mPath <<
+        log(LogLevel::error) << "ERR: lseek for the end of the file " << mPath <<
                      " of size " << (uint64_t)len << std::endl;
         return err;
     }
 
     ptr = (char *) mmap(0, len, PROT_READ|PROT_WRITE, MAP_PRIVATE, fd, 0);
     if (ptr == NULL) {
-        std::cerr << "ERR: mmap fd=" << fd << " for file " << mPath
+        log(LogLevel::error) << "ERR: mmap fd=" << fd << " for file " << mPath
                     << " of size " << len << std::endl;
         return err;
     }
@@ -338,7 +361,7 @@ const ProtocolErr Protocol::parseProtocolFile(
 
     if (mTree.empty() || !mTree.rootref().is_map()) {
         err.setErrorCode(ProtocolErr::PROTOERR_INVALID_FILE);
-        std::cerr << "Invalid file (empty or not a YAML map): " <<  mPath << std::endl;
+        log(LogLevel::warn) << "Invalid file (empty or not a YAML map): " <<  mPath << std::endl;
         return err;
     }
 
@@ -364,3 +387,5 @@ const ProtocolErr Protocol::parseProtocolFile(
 
     return err;
 }
+
+} /* namespace tsn */

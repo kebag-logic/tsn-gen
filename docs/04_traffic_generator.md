@@ -274,9 +274,11 @@ All three are interchangeable: pass any of them to `TrafficGenerator` via
 ## Full example
 
 ```cpp
-#include <protocol_parser.h>
-#include <traffic_generator.h>
-#include <verilator_sender.h>
+#include <tsn/protocol_parser.h>
+#include <tsn/traffic_generator.h>
+#include <tsn/verilator_sender.h>
+
+using namespace tsn;
 
 int main() {
     // 1. Parse protocols

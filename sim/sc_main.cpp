@@ -51,8 +51,10 @@
 #include <ns3/applications-module.h>
 
 /* tsn-gen headers */
-#include <protocol_parser.h>
-#include <traffic_generator.h>
+#include <tsn/protocol_parser.h>
+#include <tsn/traffic_generator.h>
+
+using namespace tsn;
 
 /* -----------------------------------------------------------------------
  * Helper: build a minimal ns-3 topology with one VerilatorNetDevice node.

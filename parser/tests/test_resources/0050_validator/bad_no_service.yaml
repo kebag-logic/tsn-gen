@@ -1,0 +1,3 @@
+vars:
+  - var: a
+    size: 8

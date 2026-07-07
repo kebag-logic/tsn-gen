@@ -80,6 +80,19 @@ target_link_testlibs(
   ryml::ryml
 )
 
+#### Validator tests
+set(VALIDATOR_SRCS
+  validator_test.cpp
+)
+
+target_link_testlibs(
+  validator-test
+  protocol_parser
+  "${VALIDATOR_SRCS}"
+  GTest::gtest_main
+  ryml::ryml
+)
+
 ################### Make google discover tests ######
 include(GoogleTest)
 include(CMakeGoogleDiscoverAllTests)
@@ -87,4 +100,5 @@ gtest_discover_test_wtestlibs(protocol_parser-test)
 gtest_discover_test_wtestlibs(object_serializer-test)
 gtest_discover_test_wtestlibs(logic_registry-test)
 gtest_discover_test_wtestlibs(stack_builder-test)
+gtest_discover_test_wtestlibs(validator-test)
 gtest_discover_tests(gtest_parser-test)

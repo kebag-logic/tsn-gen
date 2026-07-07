@@ -1,0 +1,10 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+# Public headers (tsn/protocol.h) expose ryml types, so consumers need it.
+find_dependency(ryml)
+
+include("${CMAKE_CURRENT_LIST_DIR}/tsn-genTargets.cmake")
+
+check_required_components(tsn-gen)

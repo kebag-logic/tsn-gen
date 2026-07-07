@@ -13,12 +13,15 @@
  
 
  #include <algorithm>
+#include <tsn/log.h>
 #include <iostream>
 #include <filesystem>
 
-#include <protocol.h>
-#include <protocol_parser.h>
-#include <version.h>
+#include <tsn/protocol.h>
+#include <tsn/protocol_parser.h>
+#include <tsn/version.h>
+
+namespace tsn {
 
 
 
@@ -44,7 +47,7 @@ const ProtocolParserErr ProtocolParser::parse(void)
 	ProtocolParserErr err(ProtocolParserErr::PROTOPARSERERR_UNKNOWN);
 
 	if (!std::filesystem::exists(mProtocolBasePath)) {
-		std::cerr << "ERROR: " << "Path Provided is incorrect " <<
+		log(LogLevel::error) << "ERROR: " << "Path Provided is incorrect " <<
 					mProtocolBasePath << std::endl;
 		err.setErrorCode(ProtocolParserErr::PROTOPARSERERR_INVALID_INPUT);
 
@@ -57,11 +60,19 @@ const ProtocolParserErr ProtocolParser::parse(void)
 	}
 
 	if (!yamlPaths.size()) {
-		std::cerr << "ERROR: " << "No yaml files found in directory" <<
+		log(LogLevel::error) << "ERROR: " << "No yaml files found in directory" <<
 					mProtocolBasePath << std::endl;
 		err.setErrorCode(ProtocolParserErr::PROTOPARSERERR_INVALID_INPUT);
 
 		return err;
+	}
+
+	/* Invalid files are skipped during listing; a directory that yields
+	 * zero usable protocol definitions is still an input error. */
+	if (mDbServices.size() == 0) {
+		log(LogLevel::error) << "ERROR: " << "No valid protocol definition found in " <<
+					mProtocolBasePath << std::endl;
+		err.setErrorCode(ProtocolParserErr::PROTOPARSERERR_INVALID_INPUT);
 	}
 
 	return err;
@@ -104,21 +115,20 @@ const ProtocolParserErr ProtocolParser::listProtocolFiles(const std::string& pat
 {
 	ProtocolParserErr err(ProtocolParserErr::PROTOPARSER_SUCCESS);
 
-	std::cout << "Entering directory: " << path.c_str() << std::endl;
+	log(LogLevel::debug) << "Entering directory: " << path << std::endl;
 	for (const std::filesystem::directory_entry& dir_entry :
 		std::filesystem::directory_iterator(path)) {
 
 		/** Check if a file and parse inside of it */
 		if (std::filesystem::is_regular_file(dir_entry.path())) {
-			std::cout << "  found file" << dir_entry.path() << std::endl;
-			std::cout << "      YAML? ";
 			if (dir_entry.path().extension() != ".yaml") {
-				std::cout << " No" << std::endl;
-				// The .yaml file is not found
+				log(LogLevel::debug) << "Skipping non-YAML file "
+							<< dir_entry.path() << std::endl;
 				continue;
 			}
 
-			std::cout << " Yes- Checking Validity" << std::endl;
+			log(LogLevel::debug) << "Parsing YAML file "
+						<< dir_entry.path() << std::endl;
 			yamlPaths.push_back(dir_entry.path());
 			err = parseProtocol(dir_entry.path());
 
@@ -133,7 +143,7 @@ const ProtocolParserErr ProtocolParser::listProtocolFiles(const std::string& pat
 		else if (std::filesystem::is_directory(dir_entry.path())) {
 			mCurrentDepthPathListing++;
 			if (mCurrentDepthPathListing > MAX_CURRENT_DEPTH_PATH) {
-				std::cerr << "Error " << "File hierarchy too deep max Allowed "
+				log(LogLevel::error) << "Error " << "File hierarchy too deep max Allowed "
 							<< MAX_CURRENT_DEPTH_PATH << " at " << path
 							<< std::endl;
 
@@ -152,3 +162,5 @@ const ProtocolParserErr ProtocolParser::listProtocolFiles(const std::string& pat
 
 	return err;
 }
+
+} /* namespace tsn */

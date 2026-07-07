@@ -34,6 +34,7 @@
 #        = 596 bits = 75 bytes (4 pad bits)
 
 service: atdecc_aecp_set_stream_info
+logic: aecp_aem
 
 vars:
   - var: message_type

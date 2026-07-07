@@ -6,11 +6,16 @@
 
 #include <gtest/gtest.h>
 
-#include <packet_builder.h>
-#include <protocol_parser.h>
-#include <sender.h>
-#include <traffic_generator.h>
-#include <var.h>
+#include <tsn/database.h>
+#include <tsn/packet_builder.h>
+#include <tsn/packet_decoder.h>
+#include <tsn/protocol_interface.h>
+#include <tsn/protocol_parser.h>
+#include <tsn/sender.h>
+#include <tsn/traffic_generator.h>
+#include <tsn/var.h>
+
+using namespace tsn;
 
 #include <cstdint>
 #include <memory>
@@ -290,7 +295,7 @@ TEST_F(TrafficGenTest, SendWithoutOpenReturnsNotOpen)
 /*  VerilatorSender AXI-Stream framing unit test (no socket needed)  */
 /* ------------------------------------------------------------------ */
 
-#include <verilator_sender.h>
+#include <tsn/verilator_sender.h>
 
 TEST(VerilatorSenderBeat, FullBeat)
 {
@@ -325,4 +330,38 @@ TEST(VerilatorSenderBeat, PartialLastBeat)
     const uint8_t tkeep =
         static_cast<uint8_t>((1u << remBytes) - 1u);
     EXPECT_EQ(tkeep, 0x07u);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Wide fields (> 64 bits): must not shift a uint64 out of range.     */
+/*  Built under ASan/UBSan variants, so this pins the fix for the      */
+/*  512-bit AVDECC-string field the validator surfaced.                */
+/* ------------------------------------------------------------------ */
+
+TEST(WideField, Emits512BitFieldWithoutUB)
+{
+    Database<Var> varDb;
+    varDb.addUniqueElement("wide::blob", Var("wide::blob", 512));
+
+    ProtocolInterface iface("wide::E::IF", ProtocolInterface::IN,
+                            {"wide::blob"});
+
+    PacketBuilder builder;
+    builder.seed(7);
+    PacketBuilder::BuiltPacket pkt = builder.buildWithFields(iface, varDb);
+
+    /* 512 bits = 64 bytes on the wire. */
+    EXPECT_EQ(pkt.bytes.size(), 64u);
+    ASSERT_EQ(pkt.fields.size(), 1u);
+
+    /* The value lives in the low 64 bits, i.e. the last 8 bytes; higher
+     * bytes are zero. Decode recovers exactly that value. */
+    PacketDecoder decoder;
+    PacketBuilder::BuiltPacket decoded = decoder.decode(iface, varDb, pkt.bytes);
+    ASSERT_EQ(decoded.fields.size(), 1u);
+    EXPECT_EQ(decoded.fields[0].second, pkt.fields[0].second);
+
+    for (size_t i = 0; i < 56; ++i) {
+        EXPECT_EQ(pkt.bytes[i], 0u) << "high byte " << i << " must be zero";
+    }
 }

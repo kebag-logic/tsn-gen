@@ -5,7 +5,9 @@
  */
 
 
- #include <logic_registry.h>
+ #include <tsn/logic_registry.h>
+
+namespace tsn {
 
 LogicRegistry& LogicRegistry::instance()
 {
@@ -40,3 +42,5 @@ size_t LogicRegistry::size() const
 {
     return mFactories.size();
 }
+
+} /* namespace tsn */

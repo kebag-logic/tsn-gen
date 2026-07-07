@@ -22,6 +22,7 @@
 #        = 212 bits = 27 bytes (4 pad bits)
 
 service: atdecc_aecp_set_configuration
+logic: aecp_aem
 
 vars:
   - var: message_type

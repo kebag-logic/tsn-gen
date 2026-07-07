@@ -1,9 +1,7 @@
+# Callers gate on ENABLE_PARSER_TESTS themselves; no guard here — a
+# return() inside a macro would abort the *calling* CMakeLists mid-file.
 macro(generate_test_libs BASENAME INCDIRS SOURCEFILES)
 	set(_SOURCEFILES ${SOURCEFILES} ${ARGN})
-	if (NOT ${TEST_ENABLED})
-		message(WARNING "Test are disable for ${BASENAME}")
-		return()
-	endif()
 
 	message(STATUS "Generating Multi-library ${COMP_UBSAN_FLAGS}")
 

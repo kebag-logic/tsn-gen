@@ -4,11 +4,14 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <packet_builder.h>
+#include <tsn/packet_builder.h>
+#include <tsn/log.h>
 
 #include <cassert>
 #include <iostream>
 #include <limits>
+
+namespace tsn {
 
 PacketBuilder::PacketBuilder()
     : mRng(std::random_device{}())
@@ -24,7 +27,9 @@ void PacketBuilder::appendBits(std::vector<uint8_t>& buf, size_t& bitOffset,
                                 uint64_t value, uint32_t numBits)
 {
     for (int i = static_cast<int>(numBits) - 1; i >= 0; --i) {
-        const int bit = static_cast<int>((value >> i) & 1u);
+        /* Fields wider than 64 bits carry the picked value in their low
+         * 64 bits; higher bits are zero (shifting a uint64 by >= 64 is UB). */
+        const int bit = (i < 64) ? static_cast<int>((value >> i) & 1u) : 0;
         const size_t byteIdx = bitOffset / 8;
         const size_t bitInByte = 7 - (bitOffset % 8);  // MSB of byte first
 
@@ -43,14 +48,16 @@ uint64_t PacketBuilder::pickValue(const Var& var)
     /* Exhaustive list takes priority over all other constraints. */
     if (!expected.empty()) {
         std::uniform_int_distribution<size_t> dist(0, expected.size() - 1);
-        return static_cast<uint64_t>(expected[dist(mRng)]);
+        return expected[dist(mRng)];
     }
 
     /* Inclusive [min, max] range. */
     if (var.hasRange()) {
         const auto& r = var.getRange();
-        std::uniform_int_distribution<int32_t> dist(r.min, r.max);
-        return static_cast<uint64_t>(dist(mRng));
+        const uint64_t lo = (r.min <= r.max) ? r.min : r.max;
+        const uint64_t hi = (r.min <= r.max) ? r.max : r.min;
+        std::uniform_int_distribution<uint64_t> dist(lo, hi);
+        return dist(mRng);
     }
 
     const uint32_t size = var.getSize();
@@ -83,7 +90,7 @@ PacketBuilder::BuiltPacket PacketBuilder::buildWithOverrides(
     for (const std::string& ref : iface.getVarRefs()) {
         const Var* var = varDb.getElement(ref);
         if (var == nullptr) {
-            std::cerr << "PacketBuilder: var_ref '" << ref
+            log(LogLevel::warn) << "PacketBuilder: var_ref '" << ref
                       << "' not found in database, skipping\n";
             continue;
         }
@@ -126,7 +133,7 @@ PacketBuilder::BuiltPacket PacketBuilder::buildWithFields(
     for (const std::string& ref : iface.getVarRefs()) {
         const Var* var = varDb.getElement(ref);
         if (var == nullptr) {
-            std::cerr << "PacketBuilder: var_ref '" << ref
+            log(LogLevel::warn) << "PacketBuilder: var_ref '" << ref
                       << "' not found in database, skipping\n";
             continue;
         }
@@ -151,3 +158,5 @@ std::vector<uint8_t> PacketBuilder::build(const ProtocolInterface& iface,
 {
     return buildWithFields(iface, varDb).bytes;
 }
+
+} /* namespace tsn */

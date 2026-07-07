@@ -13,8 +13,10 @@
  
 
  #include <parser_common_test.h>
-#include <protocol_parser.h>
-#include <protocol.h>
+#include <tsn/protocol_parser.h>
+#include <tsn/protocol.h>
+
+using namespace tsn;
 
 #include <string>
 

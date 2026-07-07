@@ -37,6 +37,7 @@
 #        = 212 bits = 27 bytes (4 pad bits)
 
 service: atdecc_aecp_aem_descriptor_query
+logic: aecp_aem
 
 vars:
   - var: message_type

@@ -7,7 +7,7 @@
 #pragma once
 
 #include <systemc>
-#include <axi_stream_beat.h>
+#include <tsn/axi_stream_beat.h>
 
 #include <cstdint>
 #include <functional>

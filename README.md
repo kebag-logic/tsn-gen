@@ -110,7 +110,7 @@ tsn-gen/
 │   └── tests/                    Unit tests + YAML test resources
 ├── protocols/                    Curated protocol YAML definitions
 │   ├── application/1722_1/
-│   │   ├── aecp/                 ATDECC AECP PDUs (18 message types)
+│   │   ├── aecp/                 ATDECC AECP PDUs (20 message types)
 │   │   └── adp/                  ATDECC Discovery Protocol
 │   ├── data_link/
 │   │   ├── 1722/                 AVTP control header
@@ -130,7 +130,7 @@ tsn-gen/
 
 ## Building
 
-Requirements: CMake ≥ 3.31, GCC or Clang with C++17 support.
+Requirements: CMake ≥ 3.21, GCC or Clang with C++17 support.
 
 ```bash
 # Debug build with tests
@@ -143,6 +143,54 @@ cmake --build build -j$(nproc)
 ```
 
 The `packet_gen` binary is produced at `build/traffic-gen/packet_gen`.
+
+---
+
+## Using tsn-gen as a library
+
+All library code lives in the `tsn::` namespace and headers are included
+with a `tsn/` prefix. Three ways to consume it:
+
+**1. Installed package (`find_package`)**
+
+```bash
+cmake -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build -j$(nproc)
+cmake --install build --prefix /opt/tsn-gen
+```
+
+```cmake
+find_package(tsn-gen 0.1 REQUIRED)          # CMAKE_PREFIX_PATH=/opt/tsn-gen
+target_link_libraries(app tsn::traffic_gen) # or tsn::protocol_parser / tsn::protocol_logic
+```
+
+**2. Embedded (`add_subdirectory` / FetchContent)**
+
+```cmake
+add_subdirectory(third_party/tsn-gen)       # tests/gtest auto-disabled when embedded
+target_link_libraries(app tsn::traffic_gen)
+```
+
+**3. From C++ — the `tsn::Session` facade**
+
+```cpp
+#include <tsn/session.h>
+
+tsn::Session session("/usr/share/tsn-gen/protocols");
+if (!session.parse()) return 1;
+
+session.seed(42);
+auto frame = session.generateStack({
+    session.findInterface("ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF"),
+    session.findInterface("avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF"),
+    session.findInterface("atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF"),
+});
+// frame.bytes = on-wire frame; tsn::Session::toJson(frame) = NDJSON line
+```
+
+Library diagnostics go to stderr through `tsn::log()` (`tsn/log.h`,
+levels quiet/error/warn/info/debug); stdout stays machine-readable.
+The curated `protocols/` corpus installs to `share/tsn-gen/protocols`.
 
 ---
 
@@ -208,14 +256,17 @@ python3 -m venv .venv
 
 ## Documentation
 
-| Document | Description |
-|----------|-------------|
-| [docs/00_introduction.md](docs/00_introduction.md) | Project goals and design principles |
-| [docs/01_testing.md](docs/01_testing.md) | Testing layers: GTest, sanitisers, Behave BDD |
-| [docs/02_protocol_parser.md](docs/02_protocol_parser.md) | `ProtocolParser` API and internals |
-| [docs/03_protocol_yaml_reference.md](docs/03_protocol_yaml_reference.md) | YAML schema for defining protocols |
-| [docs/04_traffic_generator.md](docs/04_traffic_generator.md) | `PacketBuilder`, `ISender`, transports |
-| [docs/05_architecture.md](docs/05_architecture.md) | Full component diagram, class relationships, data flow |
+Start at **[docs/INDEX.md](docs/INDEX.md)** — the documentation is organised
+in three tiers by what you want to do:
+
+| Tier | For | Pages |
+|------|-----|-------|
+| **High level** | evaluating the project | [overview](docs/high-level/overview.md) |
+| **Mid level** | using the tools | [CLI](docs/mid-level/using-the-cli.md) · [writing protocols](docs/mid-level/writing-protocols.md) · [embedding the library](docs/mid-level/embedding-the-library.md) |
+| **Low level** | changing the code | [architecture](docs/low-level/architecture.md) · [logic modules](docs/low-level/logic-modules.md) · [testing & CI](docs/low-level/testing-and-ci.md) |
+
+The original flat docs (`docs/00`–`05`) remain as reference; where they
+disagree with the tier pages, the tier pages follow the current code.
 
 ---
 

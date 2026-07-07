@@ -4,7 +4,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <pcap_receiver.h>
+#include <tsn/pcap_receiver.h>
+#include <tsn/log.h>
 
 #include <cerrno>
 #include <cstring>
@@ -12,6 +13,8 @@
 
 #include <fcntl.h>
 #include <unistd.h>
+
+namespace tsn {
 
 namespace {
 
@@ -57,7 +60,7 @@ ReceiverErr PcapReceiver::open()
 {
     mFd = ::open(mFilePath.c_str(), O_RDONLY);
     if (mFd < 0) {
-        std::cerr << "PcapReceiver: open('" << mFilePath
+        log(LogLevel::error) << "PcapReceiver: open('" << mFilePath
                   << "') failed: " << std::strerror(errno) << "\n";
         return ReceiverErr(ReceiverErr::RECEIVER_ERR_OPEN_FAILED);
     }
@@ -66,7 +69,7 @@ ReceiverErr PcapReceiver::open()
     struct { uint32_t magic, ver_maj, ver_min, thiszone,
                       sigfigs, snaplen, network; } gh{};
     if (!readAll(mFd, &gh, 24)) {
-        std::cerr << "PcapReceiver: file too short for global header\n";
+        log(LogLevel::error) << "PcapReceiver: file too short for global header\n";
         ::close(mFd);
         mFd = -1;
         return ReceiverErr(ReceiverErr::RECEIVER_ERR_OPEN_FAILED);
@@ -75,7 +78,7 @@ ReceiverErr PcapReceiver::open()
     if (gh.magic == PCAP_MAGIC_BE) {
         mSwap = true;
     } else if (gh.magic != PCAP_MAGIC_LE) {
-        std::cerr << "PcapReceiver: not a pcap file (magic="
+        log(LogLevel::error) << "PcapReceiver: not a pcap file (magic="
                   << std::hex << gh.magic << ")\n";
         ::close(mFd);
         mFd = -1;
@@ -103,7 +106,7 @@ ReceiverErr PcapReceiver::receive(std::vector<uint8_t>& packet)
 
     packet.resize(inclLen);
     if (!readAll(mFd, packet.data(), inclLen)) {
-        std::cerr << "PcapReceiver: truncated packet record\n";
+        log(LogLevel::error) << "PcapReceiver: truncated packet record\n";
         return ReceiverErr(ReceiverErr::RECEIVER_ERR_RECV_FAILED);
     }
 
@@ -117,3 +120,5 @@ void PcapReceiver::close() noexcept
         mFd = -1;
     }
 }
+
+} /* namespace tsn */

@@ -1,206 +1,148 @@
+# SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# IEEE 1722.1-2021  Section 6: AVDECC Discovery Protocol (ADP)
+#
+# PDU payload field layout (MSB-first, 532 bits = 67 bytes when byte-padded):
+#
+#   Bits   Field
+#   ────   ─────────────────────────────
+#    4     message_type
+#    5     valid_time
+#   11     control_data_length
+#   64     entity_id
+#   64     entity_model_id
+#   32     entity_capabilities
+#   16     talker_stream_sources
+#   16     talker_capabilities
+#   16     listener_stream_sinks
+#   16     listener_capabilities
+#   32     controller_capabilities
+#   32     available_index
+#   64     gptp_grandmaster_id
+#    8     gptp_domain_number
+#    8     reserved0
+#   16     current_configuration_index
+#   16     identify_control_index
+#   16     interface_index
+#   64     association_id
+#   32     reserved1
+#        = 552 bits = 69 bytes
 
- # SPDX-FileCopyrightText: 2025 Kebag-Logic (https://kebag-logic.com)
- # SPDX-FileCopyrightText: 2025 Alexandre Malki <alexandre.malki@kebag-logic.com>
- # SPDX-License-Identifier: MIT
- 
-
- #Description of primitives and functions
-
-#TODO add information for dependencies
-# Sucha s controller or not controoler 
-# Such as stream info sink/source
-# Such as ptp etc...
-# Generate the dependency such as 1722_1/protocol/vars/var_name
-
-type: protocol
 service: atdecc_adp_service
 
-# Keep the message in the order they would arrive for pdu, defined the PDU
 vars:
   - var: message_type
-    size: 4  # Type of message (e.g., control, data)
-    expected: 
-      values: [ 0, 1, 2 ]
+    size: 4
+    expected:
+      values: [0, 1, 2]       # 0=ENTITY_AVAILABLE  1=ENTITY_DEPARTING  2=ENTITY_DISCOVER
+
   - var: valid_time
-    size: 5  # Time validity window (e.g., in TSN)
+    size: 5
     expected:
-      range: [ 1, 31 ]
-      steps: 1
+      range: [1, 31]           # advertisement validity in 2-second units (0 is reserved)
+
   - var: control_data_length
-    size: 11  # Length of control data payload
+    size: 11
     expected:
-      value: 56  
+      value: 56                # ADPDU payload is always 56 octets (IEEE 1722.1-2021 §6.2.1)
+
   - var: entity_id
-    size: 64  # Unique identifier for the entity
-    expected:
-      not:
-        exact: [ 0xFFFFFFFFFFFFFFFF, 0x0000000000000000 ]
+    size: 64                   # EUI-64; fuzz freely (0 and all-F excluded at runtime by DUT)
+
   - var: entity_model_id
-    size: 64  # Model identifier (e.g., hardware/software version)
+    size: 64
+
   - var: entity_capabilities
-    size: 32  # Bitmask of entity capabilities
+    size: 32
+
   - var: talker_stream_sources
-    size: 16  # Number of talker stream sources
+    size: 16
+
   - var: talker_capabilities
-    size: 16  # Capabilities of talker streams
+    size: 16
     expected:
-      mask: [ 0x803F ]
+      mask: [0x803F]           # defined bits: IMPLEMENTED(15) + talker-type bits [5:0]
+
   - var: listener_stream_sinks
-    size: 16  # Number of listener stream sinks
+    size: 16
+
   - var: listener_capabilities
-    size: 16  # Capabilities of listener sinks
+    size: 16
     expected:
-      mask: [ 0x803F ]
+      mask: [0x803F]           # defined bits: IMPLEMENTED(15) + listener-type bits [5:0]
+
   - var: controller_capabilities
-    size: 32  # Bitmask of controller capabilities
+    size: 32
     expected:
-      mask: [ 0x8000 ]
+      mask: [0x8000]           # only IMPLEMENTED bit (15) is defined
+
   - var: available_index
-    size: 32  # Index for available resources or configurations
+    size: 32
     expected:
-      values: [ 0, 1 ] 
+      values: [0, 1]           # monotonically incremented; start at 0 or 1
+
   - var: gptp_grandmaster_id
-    size: 64  # Identifier for the gPTP grandmaster clock
+    size: 64
+
   - var: gptp_domain_number
-    size: 8  # Domain number for gPTP synchronization
+    size: 8
+
   - var: reserved0
-    size: 8  # Reserved for future use
+    size: 8
     expected:
-      value: 0
+      value: 0                 # must be zero on transmit
+
   - var: current_configuration_index
-    size: 16  # Index of the current configuration
+    size: 16
+
   - var: identify_control_index
-    size: 16  # Index for control identification
+    size: 16
+
   - var: interface_index
-    size: 16  # Index of the network interface
+    size: 16
+
   - var: association_id
-    size: 64  # Identifier for associations (e.g., TSN streams)
+    size: 64
+
   - var: reserved1
-    size: 32  # Reserved for future use
+    size: 32
     expected:
-      value: 0
-  - var_ref: system::time::curentTime
-  - var_ref: entityInfo
-  - var_ref: reannounceTimerTimeout
-  - var_ref: system::needsAdvertise
-  - var_ref: system::doTerminate
-  - var_ref: delayTimerTimeout
+      value: 0                 # must be zero on transmit
 
-typedefs:
-  - typedef: ADPMessage:
-    type: structure:
-    vars:
-      - var_ref: message_type
-      - var_ref: valid_time
-      - var_ref: control_data_length
-      - var_ref: entity_id
-      - var_ref: entity_model_id
-      - var_ref: entity_capabilities
-      - var_ref: talker_stream_sources
-      - var_ref: talker_capabilities
-      - var_ref: listener_stream_sinks
-      - var_ref: listener_capabilities
-      - var_ref: controller_capabilities
-      - var_ref: available_index
-      - var_ref: gptp_grandmaster_id
-      - var_ref: gptp_domain_number
-      - var_ref: reserved0
-      - var_ref: current_configuration_index
-      - var_ref: identify_control_index
-      - var_ref: interface_index
-      - var_ref: association_id
-      - var_ref: reserved1
-  - typedef: entityInfoTypeDef
-    type: structure
-    vars:
-      - var_ref: valid_time
-      - var_ref: control_data_length
-      - var_ref: entity_id
-      - var_ref: entity_model_id
-      - var_ref: entity_capabilities
-      - var_ref: talker_stream_sources
-      - var_ref: talker_capabilities
-      - var_ref: listener_stream_sinks
-      - var_ref: listener_capabilities
-      - var_ref: controller_capabilities
-      - var_ref: available_index
-      - var_ref: gptp_grandmaster_id
-      - var_ref: gptp_domain_number
-      - var_ref: current_configuration_index
-      - var_ref: identify_control_index
-      - var_ref: interface_index
-      - var_ref: association_id
-  - typedef: advertiseEntityFSMEnum
-    type: enum
-    size: 8
-    expected:
-      values: 
-        - INITIALIZE: 0
-        - DELAY: 1
-        - ADVERTISE : 2
-        - WAITING: 3
-  - typedef: advertiseInterfaceFSMEnum
-    type: enum
-    size: 8
-    expected:
-      values: 
-        - INITIALIZE: 0
-        - WAITING: 1 
-        - DEPARTING: 2
-        - ADVERTISE : 3
-  - typedef: discoverEntityFSMEnum
-    type: enum
-    size: 8
-    expected:
-      values: 
-        - WAITING: 0
-        - DISCOVER: 1 
-        - AVAILABLE: 2
-        - DEPARTING: 3
-        - TIMEOUT : 4
-  - typedef: discoverInterfaceFSMEnum
-    type: enum
-    size: 8
-    expected:
-      values:
-        - INITIALIZE: 0
-        - WAITING: 1
-        - RECEIVED_DISCOVER: 2
-        - UPDATE_GM: 3
-        - LINK_STATE_CHANGE : 4
-        - UPDATE_CONFIGURATION : 5
-
-# Entities that can be in the ADP service
 entities:
   - entity: ADP_INTERFACE
     interfaces:
-      # Connection with the lower level interfaces
+      # Primary data-plane input: ADP PDU arriving from the network
       - interface: ADP_IF_DATA
         dir: in
         vars:
           - var_ref: message_type
-      # Connection with Date link layer to get info such as PTP link up mac aet
+          - var_ref: valid_time
+          - var_ref: control_data_length
+          - var_ref: entity_id
+          - var_ref: entity_model_id
+          - var_ref: entity_capabilities
+          - var_ref: talker_stream_sources
+          - var_ref: talker_capabilities
+          - var_ref: listener_stream_sinks
+          - var_ref: listener_capabilities
+          - var_ref: controller_capabilities
+          - var_ref: available_index
+          - var_ref: gptp_grandmaster_id
+          - var_ref: gptp_domain_number
+          - var_ref: reserved0
+          - var_ref: current_configuration_index
+          - var_ref: identify_control_index
+          - var_ref: interface_index
+          - var_ref: association_id
+          - var_ref: reserved1
+
+      # Data-link information from the MAC layer (e.g. link-up, PTP grandmaster)
       - interface: ADP_DLL_INFO
         dir: in
-      - interface: ADP_ENT_IF_DATA # Connection with the entity interfacing
-        dir: out
-    introspection:
-      interfaces: 
-        - interface: ADP_IF_ADVERTIS_INTROSPECTION
-          dir: out
-        - interface: ADP_IF_ANNOUNCE_INTROSPECTION
-          dir: out
-  - entity: ADP_ENTITY
-    interfaces:
-      - ADP_ENTITY_INTERFACE
-    introspection:
-      interfaces: 
-        - interface: ADP_ENTITY_ADVERTISE_INTROSPECTION
-          dir: out
-        - interface: ADP_ENTITY_ANNOUNCE_INTROSPECTION
-          dir: out
 
-documentation:
-  - origin: "IEEE"
-    name: "IEEE Std 1722-1-2021"
-    section: [ "6" ]
+      # Entity information output toward upper layers
+      - interface: ADP_ENT_IF_DATA
+        dir: out

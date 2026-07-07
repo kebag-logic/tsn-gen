@@ -12,5 +12,5 @@
  * db_proto_if_impl.cpp.
  */
 
-#include <protocol.h>
-#include <database.h>
+#include <tsn/protocol.h>
+#include <tsn/database.h>
