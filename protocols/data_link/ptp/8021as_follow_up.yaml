@@ -66,7 +66,10 @@ vars:
   # here. 802.1AS-2020 Table 10-9 confirms that reading by re-scoping
   # ptpTimescale to Announce only. Deployed stacks (this project's included)
   # nonetheless set it, so BOTH are accepted: an oracle that pinned one would
-  # fail a conformant device for the other's choice.
+  # fail a conformant device for the other's choice. The three Pdelay messages
+  # keep a single strict pin because no deployed practice sets ptpTimescale on
+  # them (this project's own engine emits 0x0000 / 0x0200 / 0x0000); if one
+  # appears, the same relaxation applies there for the same reason.
   - var: flags
     size: 16
     expected:

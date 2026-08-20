@@ -68,15 +68,24 @@ vars:
     expected:
       value: 0
 
+  # Table 10-6 puts SIX defined bits in this octet for Announce: leap61
+  # (0x0001), leap59 (0x0002), currentUtcOffsetValid (0x0004), ptpTimescale
+  # (0x0008, reserved TRUE), timeTraceable (0x0010) and frequencyTraceable
+  # (0x0020) -- each "the value of the global variable" per 10.3.13.2(d). A
+  # GPS-locked grandmaster legitimately transmits 0x0038, so pinning 0x0008
+  # would fail a conformant device and make those five bits unreachable as
+  # stimulus. The mask accepts any combination of the defined bits and still
+  # rejects the undefined ones; that ptpTimescale is required TRUE is not
+  # expressible here and belongs in the consuming harness.
   - var: flags
     size: 16
     expected:
-      value: 0x0008            # ptpTimescale
+      mask: [0x003F]           # Table 10-6 defined Announce bits
 
   - var: correction_field
     size: 64
     expected:
-      value: 0                 # 10.5.3: transmitted as zero
+      value: 0                 # 10.5.2.2.7 via Table 10-7 header
 
   - var: reserved2
     size: 32

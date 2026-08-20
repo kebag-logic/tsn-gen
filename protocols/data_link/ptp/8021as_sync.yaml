@@ -20,7 +20,9 @@
 # the interface width before trusting any field (a 44-byte Sync decoded
 # against the 76-byte Follow_Up interface yields plausible zeros and exit 0),
 # and sign-extend the fields the standard types as Integer (correctionField,
-# currentUtcOffset, cumulativeScaledRateOffset, scaledLastGmFreqChange) --
+# currentUtcOffset, cumulativeScaledRateOffset, scaledLastGmFreqChange, and
+# lastGmPhaseChange -- a signed Integer96 ScaledNs per 6.3.3.1, carried here
+# as a hi/lo pair, so reassemble hi<<64 | lo and sign-extend from bit 95) --
 # the schema carries unsigned widths only.
 #
 #   Bits  Field                        802.1AS-2011 reference
@@ -87,7 +89,10 @@ vars:
   # here. 802.1AS-2020 Table 10-9 confirms that reading by re-scoping
   # ptpTimescale to Announce only. Deployed stacks (this project's included)
   # nonetheless set it, so BOTH are accepted: an oracle that pinned one would
-  # fail a conformant device for the other's choice.
+  # fail a conformant device for the other's choice. The three Pdelay messages
+  # keep a single strict pin because no deployed practice sets ptpTimescale on
+  # them (this project's own engine emits 0x0000 / 0x0200 / 0x0000); if one
+  # appears, the same relaxation applies there for the same reason.
   - var: flags
     size: 16
     expected:

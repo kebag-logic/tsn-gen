@@ -6,9 +6,9 @@
 #
 #   Bits  Field                          802.1AS-2011 reference
 #   34-byte common header                10.5.2 / Table 10-4
-#   48    request_receipt_seconds        11.4.6.4 (t2, egress truncated)
+#   48    request_receipt_seconds        11.4.6.2.1 (t2, egress truncated)
 #   32    request_receipt_ns
-#   64    requesting_clock_identity      11.4.6.5 (echoes the requestor)
+#   64    requesting_clock_identity      11.4.6.2.2 (echoes the requestor)
 #   16    requesting_port_number
 #        ──────────
 #      = 432 bits = 54 bytes
