@@ -1,0 +1,128 @@
+# SPDX-FileCopyrightText: 2026 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2026 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# IEEE 802.1AS-2011  11.4.7: Pdelay_Resp_Follow_Up message, 54 bytes.
+#
+#   Bits  Field                          802.1AS-2011 reference
+#   34-byte common header                10.5.2 / Table 10-4
+#   48    response_origin_seconds        11.4.7.2.1 (t3, precise egress)
+#   32    response_origin_ns
+#   64    requesting_clock_identity      11.4.7.2.2 (echoes the requestor)
+#   16    requesting_port_number
+#        ──────────
+#      = 432 bits = 54 bytes
+
+service: as_pdelay_resp_fu
+
+vars:
+  - var: transport_specific
+    size: 4
+    expected:
+      value: 1
+
+  - var: message_type
+    size: 4
+    expected:
+      value: 0xA
+
+  - var: reserved0
+    size: 4
+    expected:
+      value: 0
+
+  - var: version_ptp
+    size: 4
+    expected:
+      value: 2
+
+  - var: message_length
+    size: 16
+    expected:
+      value: 54
+
+  - var: domain_number
+    size: 8
+    expected:
+      value: 0
+
+  - var: reserved1
+    size: 8
+    expected:
+      value: 0
+
+  - var: flags
+    size: 16
+    expected:
+      value: 0x0000
+
+  - var: correction_field
+    size: 64
+
+  - var: reserved2
+    size: 32
+    expected:
+      value: 0
+
+  - var: source_clock_identity
+    size: 64
+
+  - var: source_port_number
+    size: 16
+    expected:
+      range: [1, 65534]   # 1588-2008 7.5.2.3 reserves 0 and 0xFFFF
+
+  - var: sequence_id
+    size: 16
+
+  - var: control
+    size: 8
+    expected:
+      value: 0x05              # Table 11-7 (11.4.2.7)
+
+  - var: log_message_interval
+    size: 8
+    expected:
+      value: 0x7F              # 11.4.2.8: transmitted as 0x7F
+
+  - var: response_origin_seconds
+    size: 48
+
+  - var: response_origin_ns
+    size: 32
+    expected:
+      range: [0, 999999999]
+
+  - var: requesting_clock_identity
+    size: 64
+
+  - var: requesting_port_number
+    size: 16
+    expected:
+      range: [1, 65534]   # 1588-2008 7.5.2.3 reserves 0 and 0xFFFF
+
+entities:
+  - entity: AS_PDELAY_RESP_FU
+    interfaces:
+      - interface: AS_PDELAY_RESP_FU_IF
+        dir: out
+        vars:
+          - var_ref: transport_specific
+          - var_ref: message_type
+          - var_ref: reserved0
+          - var_ref: version_ptp
+          - var_ref: message_length
+          - var_ref: domain_number
+          - var_ref: reserved1
+          - var_ref: flags
+          - var_ref: correction_field
+          - var_ref: reserved2
+          - var_ref: source_clock_identity
+          - var_ref: source_port_number
+          - var_ref: sequence_id
+          - var_ref: control
+          - var_ref: log_message_interval
+          - var_ref: response_origin_seconds
+          - var_ref: response_origin_ns
+          - var_ref: requesting_clock_identity
+          - var_ref: requesting_port_number

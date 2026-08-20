@@ -1,0 +1,158 @@
+# SPDX-FileCopyrightText: 2026 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2026 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# IEEE 802.1AS-2011  11.4.3: Sync message (two-step), 44 bytes.
+#
+# Common header (34 bytes, 10.5.2 / Table 10-4) then the body. The pinned
+# constants are the values 802.1AS-2011 requires on the wire for a two-step
+# Sync in gPTP domain 0 at the Milan v1.2 Table 4.1 cadence
+# (logSyncInterval -3), with the flags field the one documented exception
+# (see its comment below).
+#
+# WHAT `expected` DOES AND DOES NOT DO: it constrains GENERATION. The decoder
+# does not read it -- `--decode` returns the recovered fields and never
+# compares them against these values, so a frame with versionPTP 1 and a
+# nonsense messageLength decodes cleanly and exits 0. This model is a field
+# and offset dictionary plus a generator constraint set; the COMPARATOR that
+# turns a decode into a verdict has to live in the consuming harness.
+# Two things that harness must do for itself: assert the frame length equals
+# the interface width before trusting any field (a 44-byte Sync decoded
+# against the 76-byte Follow_Up interface yields plausible zeros and exit 0),
+# and sign-extend the fields the standard types as Integer (correctionField,
+# currentUtcOffset, cumulativeScaledRateOffset, scaledLastGmFreqChange, and
+# lastGmPhaseChange -- a signed Integer96 ScaledNs per 6.3.3.1, carried here
+# as a hi/lo pair, so reassemble hi<<64 | lo and sign-extend from bit 95) --
+# the schema carries unsigned widths only.
+#
+#   Bits  Field                        802.1AS-2011 reference
+#    4    transport_specific = 1       10.5.2.2.1
+#    4    message_type       = 0x0     Table 11-3 (10-5 is Announce/Signaling)
+#    4    reserved0          = 0       10.5.2.2.2 NOTE
+#    4    version_ptp        = 2       10.5.2.2.3
+#   16    message_length     = 44      11.4.2.2
+#    8    domain_number      = 0       8.1 (gPTP: single domain 0)
+#    8    reserved1          = 0
+#   16    flags       0x0200|0x0208    11.4.2.3 / Table 11-4 (see below)
+#   64    correction_field   = 0       10.5.2.2.7 (Sync absent from Table 11-5)
+#   32    reserved2          = 0
+#   64    source_clock_identity
+#   16    source_port_number
+#   16    sequence_id
+#    8    control            = 0x00    Table 11-7 (11.4.2.7)
+#    8    log_message_interval = 0xFD  Milan v1.2 Table 4.1 (125 ms)
+#   80    origin_timestamp   = 0       11.4.3 / Table 11-8: RESERVED, 11.4.1
+#        ──────────
+#      = 352 bits = 44 bytes
+
+service: as_sync
+
+vars:
+  - var: transport_specific
+    size: 4
+    expected:
+      value: 1
+
+  - var: message_type
+    size: 4
+    expected:
+      value: 0x0
+
+  - var: reserved0
+    size: 4
+    expected:
+      value: 0
+
+  - var: version_ptp
+    size: 4
+    expected:
+      value: 2
+
+  - var: message_length
+    size: 16
+    expected:
+      value: 44
+
+  - var: domain_number
+    size: 8
+    expected:
+      value: 0
+
+  - var: reserved1
+    size: 8
+    expected:
+      value: 0
+
+  # 11.4.2.3 overrides 10.5.2.2.6 for the five media-dependent messages, and
+  # Table 11-4 defines ONLY twoStepFlag for them: "for message types where the
+  # bit is not defined ... the value of the bit is set to FALSE" gives 0x0200
+  # here. 802.1AS-2020 Table 10-9 confirms that reading by re-scoping
+  # ptpTimescale to Announce only. Deployed stacks (this project's included)
+  # nonetheless set it, so BOTH are accepted: an oracle that pinned one would
+  # fail a conformant device for the other's choice. The three Pdelay messages
+  # keep a single strict pin because no deployed practice sets ptpTimescale on
+  # them (this project's own engine emits 0x0000 / 0x0200 / 0x0000); if one
+  # appears, the same relaxation applies there for the same reason.
+  - var: flags
+    size: 16
+    expected:
+      values: [0x0200, 0x0208]  # twoStep; ptpTimescale per 11.4.2.3 vs 10.5.2.2.6
+
+  - var: correction_field
+    size: 64
+    expected:
+      value: 0
+
+  - var: reserved2
+    size: 32
+    expected:
+      value: 0
+
+  - var: source_clock_identity
+    size: 64
+
+  - var: source_port_number
+    size: 16
+    expected:
+      range: [1, 65534]   # 1588-2008 7.5.2.3 reserves 0 and 0xFFFF
+
+  - var: sequence_id
+    size: 16
+
+  - var: control
+    size: 8
+    expected:
+      value: 0x00
+
+  - var: log_message_interval
+    size: 8
+    expected:
+      value: 0xFD              # -3: 8 per second
+
+  - var: origin_timestamp
+    size: 80
+    expected:
+      value: 0                 # two-step: the Follow_Up carries time
+
+entities:
+  - entity: AS_SYNC
+    interfaces:
+      - interface: AS_SYNC_IF
+        dir: out
+        vars:
+          - var_ref: transport_specific
+          - var_ref: message_type
+          - var_ref: reserved0
+          - var_ref: version_ptp
+          - var_ref: message_length
+          - var_ref: domain_number
+          - var_ref: reserved1
+          - var_ref: flags
+          - var_ref: correction_field
+          - var_ref: reserved2
+          - var_ref: source_clock_identity
+          - var_ref: source_port_number
+          - var_ref: sequence_id
+          - var_ref: control
+          - var_ref: log_message_interval
+          - var_ref: origin_timestamp

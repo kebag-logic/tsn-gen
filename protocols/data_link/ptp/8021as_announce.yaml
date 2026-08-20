@@ -1,0 +1,234 @@
+# SPDX-FileCopyrightText: 2026 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2026 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# IEEE 802.1AS-2011  10.5.3: Announce message.
+#
+# Two interfaces share the layout:
+#   AS_ANNOUNCE_IF      the 64-byte body without a path trace TLV
+#   AS_ANNOUNCE_PT1_IF  with the 10.5.3.3 path trace TLV carrying ONE
+#                       clockIdentity hop (the shape a grandmaster
+#                       endpoint transmits; message_length 76)
+#
+#   Bits  Field                          802.1AS-2011 reference
+#   34-byte common header                10.5.2 / Table 10-4
+#   80    reserved3            = 0       10.5.3.1 (was originTimestamp)
+#   16    current_utc_offset             10.5.3.2.1
+#    8    reserved4            = 0
+#    8    gm_priority1                   10.5.3.2.2
+#   32    gm_clock_quality               10.5.3.2.3
+#    8    gm_priority2                   10.5.3.2.4
+#   64    gm_identity                    10.5.3.2.5
+#   16    steps_removed                  10.5.3.2.6
+#    8    time_source                    10.5.3.2.7
+#   [16   pt_tlv_type          = 0x0008  10.5.3.3.2]
+#   [16   pt_tlv_length        = 8       10.5.3.3.3 (one hop)]
+#   [64   path0                          10.5.3.3.4]
+
+service: as_announce
+
+vars:
+  - var: transport_specific
+    size: 4
+    expected:
+      value: 1
+
+  - var: message_type
+    size: 4
+    expected:
+      value: 0xB
+
+  - var: reserved0
+    size: 4
+    expected:
+      value: 0
+
+  - var: version_ptp
+    size: 4
+    expected:
+      value: 2
+
+  - var: message_length
+    size: 16
+    expected:
+      value: 64
+
+  - var: message_length_pt1
+    size: 16
+    expected:
+      value: 76
+
+  - var: domain_number
+    size: 8
+    expected:
+      value: 0
+
+  - var: reserved1
+    size: 8
+    expected:
+      value: 0
+
+  # Table 10-6 puts SIX defined bits in this octet for Announce: leap61
+  # (0x0001), leap59 (0x0002), currentUtcOffsetValid (0x0004), ptpTimescale
+  # (0x0008) and timeTraceable (0x0010) / frequencyTraceable (0x0020) -- each
+  # "the value of the global variable" per 10.3.13.2(d). A GPS-locked
+  # grandmaster legitimately transmits 0x0038, so a single pinned value would
+  # fail a conformant device and make five bits unreachable as stimulus.
+  #
+  # NOT a mask: tsn-gen generates a mask constraint as a random value ANDed
+  # with the mask, which clears ptpTimescale on about half the frames and so
+  # emits INVALID Announce stimulus (measured: 16 of 32 at seed 42). Table 10-6
+  # reserves that bit as TRUE, so the legal set is exactly the 32 combinations
+  # with 0x0008 set and the other five free -- enumerated here, which both
+  # generates only conformant frames and keeps an executable assertion for the
+  # invariant in any consumer that grades `values`.
+  - var: flags
+    size: 16
+    expected:
+      values: [0x0008, 0x0009, 0x000A, 0x000B, 0x000C, 0x000D, 0x000E,
+               0x000F, 0x0018, 0x0019, 0x001A, 0x001B, 0x001C, 0x001D,
+               0x001E, 0x001F, 0x0028, 0x0029, 0x002A, 0x002B, 0x002C,
+               0x002D, 0x002E, 0x002F, 0x0038, 0x0039, 0x003A, 0x003B,
+               0x003C, 0x003D, 0x003E, 0x003F]
+
+  - var: correction_field
+    size: 64
+    expected:
+      value: 0                 # 10.5.2.2.7 via Table 10-7 header
+
+  - var: reserved2
+    size: 32
+    expected:
+      value: 0
+
+  - var: source_clock_identity
+    size: 64
+
+  - var: source_port_number
+    size: 16
+    expected:
+      range: [1, 65534]   # 1588-2008 7.5.2.3 reserves 0 and 0xFFFF
+
+  - var: sequence_id
+    size: 16
+
+  - var: control
+    size: 8
+    expected:
+      value: 0x05              # Table 11-7 (11.4.2.7)
+
+  - var: log_message_interval
+    size: 8
+    expected:
+      value: 0x00              # Milan v1.2 Table 4.1: 1 s
+
+  - var: reserved3
+    size: 80
+    expected:
+      value: 0
+
+  - var: current_utc_offset
+    size: 16
+
+  - var: reserved4
+    size: 8
+    expected:
+      value: 0
+
+  - var: gm_priority1
+    size: 8
+
+  - var: gm_clock_quality
+    size: 32
+
+  - var: gm_priority2
+    size: 8
+
+  - var: gm_identity
+    size: 64
+
+  # Deliberately UNCONSTRAINED. 10.3.10.2.1(b) makes stepsRemoved >= 255 an
+  # unqualified Announce, but that is a RECEIVER rule; 10.5.3.2.6 puts no bound
+  # on the transmitted UInteger16. Bounding it here would encode a receive-side
+  # law into a transmit model and, worse, make the >= 255 case unreachable --
+  # which is exactly the stimulus a receiver's qualification path needs tested.
+  - var: steps_removed
+    size: 16
+
+  - var: time_source
+    size: 8
+
+  - var: pt_tlv_type
+    size: 16
+    expected:
+      value: 0x0008
+
+  - var: pt_tlv_length
+    size: 16
+    expected:
+      value: 8                 # one 8-byte clockIdentity hop
+
+  - var: path0
+    size: 64
+
+entities:
+  - entity: AS_ANNOUNCE
+    interfaces:
+      - interface: AS_ANNOUNCE_IF
+        dir: out
+        vars:
+          - var_ref: transport_specific
+          - var_ref: message_type
+          - var_ref: reserved0
+          - var_ref: version_ptp
+          - var_ref: message_length
+          - var_ref: domain_number
+          - var_ref: reserved1
+          - var_ref: flags
+          - var_ref: correction_field
+          - var_ref: reserved2
+          - var_ref: source_clock_identity
+          - var_ref: source_port_number
+          - var_ref: sequence_id
+          - var_ref: control
+          - var_ref: log_message_interval
+          - var_ref: reserved3
+          - var_ref: current_utc_offset
+          - var_ref: reserved4
+          - var_ref: gm_priority1
+          - var_ref: gm_clock_quality
+          - var_ref: gm_priority2
+          - var_ref: gm_identity
+          - var_ref: steps_removed
+          - var_ref: time_source
+
+      - interface: AS_ANNOUNCE_PT1_IF
+        dir: out
+        vars:
+          - var_ref: transport_specific
+          - var_ref: message_type
+          - var_ref: reserved0
+          - var_ref: version_ptp
+          - var_ref: message_length_pt1
+          - var_ref: domain_number
+          - var_ref: reserved1
+          - var_ref: flags
+          - var_ref: correction_field
+          - var_ref: reserved2
+          - var_ref: source_clock_identity
+          - var_ref: source_port_number
+          - var_ref: sequence_id
+          - var_ref: control
+          - var_ref: log_message_interval
+          - var_ref: reserved3
+          - var_ref: current_utc_offset
+          - var_ref: reserved4
+          - var_ref: gm_priority1
+          - var_ref: gm_clock_quality
+          - var_ref: gm_priority2
+          - var_ref: gm_identity
+          - var_ref: steps_removed
+          - var_ref: time_source
+          - var_ref: pt_tlv_type
+          - var_ref: pt_tlv_length
+          - var_ref: path0

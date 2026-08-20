@@ -1,0 +1,39 @@
+# SPDX-FileCopyrightText: 2026 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2026 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# Ethernet II header for IEEE 802.1AS-2011 gPTP frames (14 bytes).
+#
+# Layout (MSB-first):
+#   48b  dst_mac    = 01-80-C2-00-00-0E (802.1AS-2011 11.3.4 / Table 11-1: all gPTP
+#                     messages use the reserved non-forwarding multicast)
+#   48b  src_mac
+#   16b  ethertype  = 0x88F7 (PTP over IEEE 802.3 / Ethernet)
+#        ──────────
+#      = 112 bits = 14 bytes
+
+service: as_ethernet_header
+
+vars:
+  - var: dst_mac
+    size: 48
+    expected:
+      value: 0x0180C200000E    # 802.1AS-2011 11.3.4 / Table 11-1
+
+  - var: src_mac
+    size: 48
+
+  - var: ethertype
+    size: 16
+    expected:
+      value: 0x88F7            # 802.1AS-2011 11.3.5 / Table 11-2
+
+entities:
+  - entity: AS_ETH
+    interfaces:
+      - interface: AS_ETH_IF
+        dir: out
+        vars:
+          - var_ref: dst_mac
+          - var_ref: src_mac
+          - var_ref: ethertype
