@@ -1,0 +1,133 @@
+# SPDX-FileCopyrightText: 2026 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2026 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# IEEE 802.1AS-2011  11.4.3: Sync message (two-step), 44 bytes.
+#
+# Common header (34 bytes, 10.5.2 / Table 10-6) then the body. Every
+# constant below is the value 802.1AS-2011 REQUIRES on the wire for a
+# two-step Sync in gPTP domain 0 at the Milan v1.2 Table 4.1 cadence
+# (logSyncInterval -3), so decoding a captured frame against this
+# interface IS the bit-level conformance check.
+#
+#   Bits  Field                        802.1AS-2011 reference
+#    4    transport_specific = 1       10.5.2.2.1
+#    4    message_type       = 0x0     Table 10-5
+#    4    reserved0          = 0       10.5.2.2.3
+#    4    version_ptp        = 2       10.5.2.2.4
+#   16    message_length     = 44      11.4.2.3
+#    8    domain_number      = 0       8.1 (gPTP: single domain 0)
+#    8    reserved1          = 0
+#   16    flags              = 0x0208  10.5.2.2.6 (twoStep | ptpTimescale)
+#   64    correction_field   = 0       11.4.3.2 (transmitted as zero)
+#   32    reserved2          = 0
+#   64    source_clock_identity
+#   16    source_port_number
+#   16    sequence_id
+#    8    control            = 0x00    Table 10-6 (1588-2008 Table 23)
+#    8    log_message_interval = 0xFD  Milan v1.2 Table 4.1 (125 ms)
+#   80    origin_timestamp   = 0       11.4.3.2.1 (two-step: zero)
+#        ──────────
+#      = 352 bits = 44 bytes
+
+service: as_sync
+
+vars:
+  - var: transport_specific
+    size: 4
+    expected:
+      value: 1
+
+  - var: message_type
+    size: 4
+    expected:
+      value: 0x0
+
+  - var: reserved0
+    size: 4
+    expected:
+      value: 0
+
+  - var: version_ptp
+    size: 4
+    expected:
+      value: 2
+
+  - var: message_length
+    size: 16
+    expected:
+      value: 44
+
+  - var: domain_number
+    size: 8
+    expected:
+      value: 0
+
+  - var: reserved1
+    size: 8
+    expected:
+      value: 0
+
+  - var: flags
+    size: 16
+    expected:
+      value: 0x0208            # twoStep + ptpTimescale
+
+  - var: correction_field
+    size: 64
+    expected:
+      value: 0
+
+  - var: reserved2
+    size: 32
+    expected:
+      value: 0
+
+  - var: source_clock_identity
+    size: 64
+
+  - var: source_port_number
+    size: 16
+    expected:
+      range: [1, 65535]
+
+  - var: sequence_id
+    size: 16
+
+  - var: control
+    size: 8
+    expected:
+      value: 0x00
+
+  - var: log_message_interval
+    size: 8
+    expected:
+      value: 0xFD              # -3: 8 per second
+
+  - var: origin_timestamp
+    size: 80
+    expected:
+      value: 0                 # two-step: the Follow_Up carries time
+
+entities:
+  - entity: AS_SYNC
+    interfaces:
+      - interface: AS_SYNC_IF
+        dir: out
+        vars:
+          - var_ref: transport_specific
+          - var_ref: message_type
+          - var_ref: reserved0
+          - var_ref: version_ptp
+          - var_ref: message_length
+          - var_ref: domain_number
+          - var_ref: reserved1
+          - var_ref: flags
+          - var_ref: correction_field
+          - var_ref: reserved2
+          - var_ref: source_clock_identity
+          - var_ref: source_port_number
+          - var_ref: sequence_id
+          - var_ref: control
+          - var_ref: log_message_interval
+          - var_ref: origin_timestamp

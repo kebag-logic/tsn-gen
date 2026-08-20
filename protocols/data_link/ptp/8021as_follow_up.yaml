@@ -1,0 +1,166 @@
+# SPDX-FileCopyrightText: 2026 Kebag-Logic (https://kebag-logic.com)
+# SPDX-FileCopyrightText: 2026 Alexandre Malki <alexandre.malki@kebag-logic.com>
+# SPDX-License-Identifier: MIT
+#
+# IEEE 802.1AS-2011  11.4.4: Follow_Up message, 76 bytes — the common
+# header, preciseOriginTimestamp, and the MANDATORY Follow_Up
+# information TLV (11.4.4.3).
+#
+#   Bits  Field                          802.1AS-2011 reference
+#   34-byte common header                10.5.2 / Table 10-6
+#   48    precise_origin_seconds         11.4.4.2.1
+#   32    precise_origin_ns
+#   16    tlv_type            = 0x0003   11.4.4.3.2 (ORGANIZATION_EXTENSION)
+#   16    tlv_length          = 28       11.4.4.3.3
+#   24    tlv_org_id          = 0x0080C2 11.4.4.3.4
+#   24    tlv_org_subtype     = 1        11.4.4.3.5
+#   32    cumulative_scaled_rate_offset  11.4.4.3.6
+#   16    gm_time_base_indicator         11.4.4.3.7
+#   96    last_gm_phase_change           11.4.4.3.8
+#   32    scaled_last_gm_freq_change     11.4.4.3.9
+#        ──────────
+#      = 608 bits = 76 bytes
+
+service: as_follow_up
+
+vars:
+  - var: transport_specific
+    size: 4
+    expected:
+      value: 1
+
+  - var: message_type
+    size: 4
+    expected:
+      value: 0x8
+
+  - var: reserved0
+    size: 4
+    expected:
+      value: 0
+
+  - var: version_ptp
+    size: 4
+    expected:
+      value: 2
+
+  - var: message_length
+    size: 16
+    expected:
+      value: 76
+
+  - var: domain_number
+    size: 8
+    expected:
+      value: 0
+
+  - var: reserved1
+    size: 8
+    expected:
+      value: 0
+
+  - var: flags
+    size: 16
+    expected:
+      value: 0x0008            # ptpTimescale
+
+  - var: correction_field
+    size: 64
+
+  - var: reserved2
+    size: 32
+    expected:
+      value: 0
+
+  - var: source_clock_identity
+    size: 64
+
+  - var: source_port_number
+    size: 16
+    expected:
+      range: [1, 65535]
+
+  - var: sequence_id
+    size: 16
+
+  - var: control
+    size: 8
+    expected:
+      value: 0x02              # Table 10-6 (1588-2008 Table 23)
+
+  - var: log_message_interval
+    size: 8
+    expected:
+      value: 0xFD              # carries the sync interval, Milan -3
+
+  - var: precise_origin_seconds
+    size: 48
+
+  - var: precise_origin_ns
+    size: 32
+    expected:
+      range: [0, 999999999]
+
+  - var: tlv_type
+    size: 16
+    expected:
+      value: 0x0003
+
+  - var: tlv_length
+    size: 16
+    expected:
+      value: 28
+
+  - var: tlv_org_id
+    size: 24
+    expected:
+      value: 0x0080C2
+
+  - var: tlv_org_subtype
+    size: 24
+    expected:
+      value: 1
+
+  - var: cumulative_scaled_rate_offset
+    size: 32
+
+  - var: gm_time_base_indicator
+    size: 16
+
+  - var: last_gm_phase_change
+    size: 96
+
+  - var: scaled_last_gm_freq_change
+    size: 32
+
+entities:
+  - entity: AS_FOLLOW_UP
+    interfaces:
+      - interface: AS_FOLLOW_UP_IF
+        dir: out
+        vars:
+          - var_ref: transport_specific
+          - var_ref: message_type
+          - var_ref: reserved0
+          - var_ref: version_ptp
+          - var_ref: message_length
+          - var_ref: domain_number
+          - var_ref: reserved1
+          - var_ref: flags
+          - var_ref: correction_field
+          - var_ref: reserved2
+          - var_ref: source_clock_identity
+          - var_ref: source_port_number
+          - var_ref: sequence_id
+          - var_ref: control
+          - var_ref: log_message_interval
+          - var_ref: precise_origin_seconds
+          - var_ref: precise_origin_ns
+          - var_ref: tlv_type
+          - var_ref: tlv_length
+          - var_ref: tlv_org_id
+          - var_ref: tlv_org_subtype
+          - var_ref: cumulative_scaled_rate_offset
+          - var_ref: gm_time_base_indicator
+          - var_ref: last_gm_phase_change
+          - var_ref: scaled_last_gm_freq_change
