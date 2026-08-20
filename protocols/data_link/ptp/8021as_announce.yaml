@@ -131,6 +131,8 @@ vars:
 
   - var: steps_removed
     size: 16
+    expected:
+      range: [0, 254]          # 10.3.10: >= 255 is not qualified
 
   - var: time_source
     size: 8
