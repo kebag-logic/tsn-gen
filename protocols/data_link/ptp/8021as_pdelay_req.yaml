@@ -5,9 +5,9 @@
 # IEEE 802.1AS-2011  11.4.5: Pdelay_Req message, 54 bytes.
 #
 #   Bits  Field                          802.1AS-2011 reference
-#   34-byte common header                10.5.2 / Table 10-6
-#   80    reserved3            = 0       11.4.5.2 (originTimestamp: zero)
-#   80    reserved4            = 0       11.4.5.3
+#   34-byte common header                10.5.2 / Table 10-4
+#   80    reserved3            = 0       11.4.5 / Table 11-11 (reserved)
+#   80    reserved4            = 0       11.4.5 / Table 11-11 (reserved)
 #        ──────────
 #      = 432 bits = 54 bytes
 
@@ -54,10 +54,12 @@ vars:
     expected:
       value: 0x0000
 
+  # NOT pinned to zero: Table 11-5 explicitly assigns Pdelay_Req the
+  # "corrections for fractional nanoseconds" role, so a conformant requester
+  # may carry a nonzero correctionField. (Sync pins 0 because Sync is absent
+  # from Table 11-5, leaving 10.5.2.2.7 "The value is 0" to govern.)
   - var: correction_field
     size: 64
-    expected:
-      value: 0
 
   - var: reserved2
     size: 32
@@ -70,7 +72,7 @@ vars:
   - var: source_port_number
     size: 16
     expected:
-      range: [1, 65535]
+      range: [1, 65534]   # 1588-2008 7.5.2.3 reserves 0 and 0xFFFF
 
   - var: sequence_id
     size: 16
@@ -78,7 +80,7 @@ vars:
   - var: control
     size: 8
     expected:
-      value: 0x05              # Table 10-6 (1588-2008 Table 23: other)
+      value: 0x05              # Table 11-7 (11.4.2.7)
 
   - var: log_message_interval
     size: 8

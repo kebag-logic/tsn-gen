@@ -5,7 +5,7 @@
 # IEEE 802.1AS-2011  11.4.7: Pdelay_Resp_Follow_Up message, 54 bytes.
 #
 #   Bits  Field                          802.1AS-2011 reference
-#   34-byte common header                10.5.2 / Table 10-6
+#   34-byte common header                10.5.2 / Table 10-4
 #   48    response_origin_seconds        11.4.7.4 (t3, precise egress)
 #   32    response_origin_ns
 #   64    requesting_clock_identity      11.4.7.5 (echoes the requestor)
@@ -70,7 +70,7 @@ vars:
   - var: source_port_number
     size: 16
     expected:
-      range: [1, 65535]
+      range: [1, 65534]   # 1588-2008 7.5.2.3 reserves 0 and 0xFFFF
 
   - var: sequence_id
     size: 16
@@ -78,12 +78,12 @@ vars:
   - var: control
     size: 8
     expected:
-      value: 0x05              # Table 10-6 (1588-2008 Table 23: other)
+      value: 0x05              # Table 11-7 (11.4.2.7)
 
   - var: log_message_interval
     size: 8
     expected:
-      value: 0x7F              # 11.4.7.3: transmitted as 0x7F
+      value: 0x7F              # 11.4.2.8: transmitted as 0x7F
 
   - var: response_origin_seconds
     size: 48
@@ -99,7 +99,7 @@ vars:
   - var: requesting_port_number
     size: 16
     expected:
-      range: [1, 65535]
+      range: [1, 65534]   # 1588-2008 7.5.2.3 reserves 0 and 0xFFFF
 
 entities:
   - entity: AS_PDELAY_RESP_FU

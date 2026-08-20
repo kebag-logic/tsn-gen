@@ -11,7 +11,7 @@
 #                       endpoint transmits; message_length 76)
 #
 #   Bits  Field                          802.1AS-2011 reference
-#   34-byte common header                10.5.2 / Table 10-6
+#   34-byte common header                10.5.2 / Table 10-4
 #   80    reserved3            = 0       10.5.3.1 (was originTimestamp)
 #   16    current_utc_offset             10.5.3.2.1
 #    8    reserved4            = 0
@@ -89,7 +89,7 @@ vars:
   - var: source_port_number
     size: 16
     expected:
-      range: [1, 65535]
+      range: [1, 65534]   # 1588-2008 7.5.2.3 reserves 0 and 0xFFFF
 
   - var: sequence_id
     size: 16
@@ -97,7 +97,7 @@ vars:
   - var: control
     size: 8
     expected:
-      value: 0x05              # Table 10-6 (1588-2008 Table 23: other)
+      value: 0x05              # Table 11-7 (11.4.2.7)
 
   - var: log_message_interval
     size: 8
@@ -129,10 +129,13 @@ vars:
   - var: gm_identity
     size: 64
 
+  # Deliberately UNCONSTRAINED. 10.3.10.2.1(b) makes stepsRemoved >= 255 an
+  # unqualified Announce, but that is a RECEIVER rule; 10.5.3.2.6 puts no bound
+  # on the transmitted UInteger16. Bounding it here would encode a receive-side
+  # law into a transmit model and, worse, make the >= 255 case unreachable --
+  # which is exactly the stimulus a receiver's qualification path needs tested.
   - var: steps_removed
     size: 16
-    expected:
-      range: [0, 254]          # 10.3.10: >= 255 is not qualified
 
   - var: time_source
     size: 8
