@@ -70,17 +70,26 @@ vars:
 
   # Table 10-6 puts SIX defined bits in this octet for Announce: leap61
   # (0x0001), leap59 (0x0002), currentUtcOffsetValid (0x0004), ptpTimescale
-  # (0x0008, reserved TRUE), timeTraceable (0x0010) and frequencyTraceable
-  # (0x0020) -- each "the value of the global variable" per 10.3.13.2(d). A
-  # GPS-locked grandmaster legitimately transmits 0x0038, so pinning 0x0008
-  # would fail a conformant device and make those five bits unreachable as
-  # stimulus. The mask accepts any combination of the defined bits and still
-  # rejects the undefined ones; that ptpTimescale is required TRUE is not
-  # expressible here and belongs in the consuming harness.
+  # (0x0008) and timeTraceable (0x0010) / frequencyTraceable (0x0020) -- each
+  # "the value of the global variable" per 10.3.13.2(d). A GPS-locked
+  # grandmaster legitimately transmits 0x0038, so a single pinned value would
+  # fail a conformant device and make five bits unreachable as stimulus.
+  #
+  # NOT a mask: tsn-gen generates a mask constraint as a random value ANDed
+  # with the mask, which clears ptpTimescale on about half the frames and so
+  # emits INVALID Announce stimulus (measured: 16 of 32 at seed 42). Table 10-6
+  # reserves that bit as TRUE, so the legal set is exactly the 32 combinations
+  # with 0x0008 set and the other five free -- enumerated here, which both
+  # generates only conformant frames and keeps an executable assertion for the
+  # invariant in any consumer that grades `values`.
   - var: flags
     size: 16
     expected:
-      mask: [0x003F]           # Table 10-6 defined Announce bits
+      values: [0x0008, 0x0009, 0x000A, 0x000B, 0x000C, 0x000D, 0x000E, 
+               0x000F, 0x0018, 0x0019, 0x001A, 0x001B, 0x001C, 0x001D, 
+               0x001E, 0x001F, 0x0028, 0x0029, 0x002A, 0x002B, 0x002C, 
+               0x002D, 0x002E, 0x002F, 0x0038, 0x0039, 0x003A, 0x003B, 
+               0x003C, 0x003D, 0x003E, 0x003F]
 
   - var: correction_field
     size: 64
