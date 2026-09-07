@@ -34,6 +34,7 @@ Current suites:
 | parser | `stack_builder-test` | stack YAML parsing, logic binding rules, bypass |
 | traffic-gen | `traffic_gen-test` | PacketBuilder determinism, TrafficGenerator lifecycle, Verilator beat framing |
 | traffic-gen | `adp_fuzz-test` | constraint-respecting fuzz generation |
+| traffic-gen | `ptp_flags-test` | 802.1AS media-dependent TX flag oracle (see below) |
 | logic | `ethernet_frame_logic-test` | reference module bound via StackBuilder |
 | logic | `stack_codec-test` | logic-driven stack encode/decode golden tests (see below) |
 
@@ -64,6 +65,32 @@ An optional `stack_codec_tshark` CTest cross-checks a generated frame
 against Wireshark's ATDECC dissector (`logic/tests/validate_with_tshark.sh`).
 It is registered only when `find_program(tshark)` succeeds, so a host
 without tshark skips it instead of failing.
+
+### 802.1AS TX flag oracle
+
+`traffic-gen/tests/ptp_flags_test.cpp` is the pattern to copy when a model
+encodes a normative *transmit* value. It takes the corpus path as
+`PROTOCOLS_ROOT_DIR` and grades the shipped
+`protocols/data_link/ptp/` models (not a fixture copy) from two independent
+directions: what each `expected` set **permits** (IEEE 802.1AS-2011 11.4.2.3
+/ Table 11-4 with Cor1 leaves Sync and Pdelay_Resp `0x0200` and the other
+three media-dependent messages `0x0000`), and what `PacketBuilder`
+**emits**, read straight out of the built frame at the common-header flags
+offset.
+
+It also pins the distinction that makes a transmit oracle safe to tighten:
+`expected` constrains generation only, so the decoder still recovers an
+out-of-profile flags word verbatim, with every other field unchanged.
+Tightening a model therefore never narrows what can be decoded, and a
+decode is not a verdict: the consuming harness has to compare recovered
+fields against the model itself (see
+[writing-protocols.md](../mid-level/writing-protocols.md)).
+
+Because the permitted-value assertions are exact,
+`NoMediaDependentModelPermitsPtpTimescale` fails outright if a relaxed
+alternative (`values: [0x0200, 0x0208]`, `values: [0x0000, 0x0008]`) is
+reintroduced into any of the five models. A one-line edit is enough to
+confirm the gate still bites.
 
 ### Test resources
 

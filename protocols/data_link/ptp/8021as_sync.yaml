@@ -7,8 +7,7 @@
 # Common header (34 bytes, 10.5.2 / Table 10-4) then the body. The pinned
 # constants are the values 802.1AS-2011 requires on the wire for a two-step
 # Sync in gPTP domain 0 at the Milan v1.2 Table 4.1 cadence
-# (logSyncInterval -3), with the flags field the one documented exception
-# (see its comment below).
+# (logSyncInterval -3).
 #
 # WHAT `expected` DOES AND DOES NOT DO: it constrains GENERATION. The decoder
 # does not read it -- `--decode` returns the recovered fields and never
@@ -33,7 +32,7 @@
 #   16    message_length     = 44      11.4.2.2
 #    8    domain_number      = 0       8.1 (gPTP: single domain 0)
 #    8    reserved1          = 0
-#   16    flags       0x0200|0x0208    11.4.2.3 / Table 11-4 (see below)
+#   16    flags              = 0x0200  11.4.2.3 / Table 11-4 +Cor1 (see below)
 #   64    correction_field   = 0       10.5.2.2.7 (Sync absent from Table 11-5)
 #   32    reserved2          = 0
 #   64    source_clock_identity
@@ -83,20 +82,30 @@ vars:
     expected:
       value: 0
 
-  # 11.4.2.3 overrides 10.5.2.2.6 for the five media-dependent messages, and
-  # Table 11-4 defines ONLY twoStepFlag for them: "for message types where the
-  # bit is not defined ... the value of the bit is set to FALSE" gives 0x0200
-  # here. 802.1AS-2020 Table 10-9 confirms that reading by re-scoping
-  # ptpTimescale to Announce only. Deployed stacks (this project's included)
-  # nonetheless set it, so BOTH are accepted: an oracle that pinned one would
-  # fail a conformant device for the other's choice. The three Pdelay messages
-  # keep a single strict pin because no deployed practice sets ptpTimescale on
-  # them (this project's own engine emits 0x0000 / 0x0200 / 0x0000); if one
-  # appears, the same relaxation applies there for the same reason.
+  # 11.4.2 inherits the common header "except as noted in the following
+  # subclauses", and 11.4.2.3 is exactly such an exception for the whole flags
+  # field of the five media-dependent messages: the bits are those of Table
+  # 11-4, and "for message types where the bit is not defined in Table 11-4,
+  # the value of the bit is set to FALSE". Table 11-4 defines ONE bit for Sync
+  # -- twoStepFlag, octet 0 bit 2 once Cor1-2013 renumbers it from bit 1, i.e.
+  # 0x0200 with 6.3.4.2 numbering bits 1 (LSB) to 8 (MSB). Every other bit is
+  # FALSE on transmission, so 0x0200 is the only conforming value. The
+  # all-message ptpTimescale entry of the common Table 10-6 (0x0008 after the
+  # same Cor1) does not survive this explicit field override, and Milan v1.2
+  # 4.2.6 adopts 802.1AS-2011 with Cor1/Cor2 without adding a flag exception.
+  #
+  # One pinned value, not a list. Deployed stacks that also set 0x0008 here
+  # transmit a nonconforming Sync; listing their value as an alternative would
+  # make this oracle grade that defect as a pass. It buys no receive tolerance
+  # either: `expected` constrains GENERATION only (see the note at the top of
+  # this file), so a consumer's receive path is free to keep ignoring the bit
+  # per 11.4.1 -- and 0x0208 stays available as an explicit out-of-profile
+  # stimulus, decoded verbatim, without being labelled a conforming
+  # transmission. traffic-gen/tests/ptp_flags_test.cpp asserts both halves.
   - var: flags
     size: 16
     expected:
-      values: [0x0200, 0x0208]  # twoStep; ptpTimescale per 11.4.2.3 vs 10.5.2.2.6
+      value: 0x0200            # twoStepFlag TRUE, every other bit FALSE
 
   - var: correction_field
     size: 64

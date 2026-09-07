@@ -37,11 +37,35 @@ target_link_testlibs(
   ryml::ryml
 )
 
+#################### 802.1AS PTP flag tests #########
+# Grades the shipped protocols/ corpus itself (PROTOCOLS_ROOT_DIR, as the
+# logic stack_codec-test does) rather than a fixture copy, so the models the
+# TX flag oracle asserts are the ones a consumer loads.
+set(PTP_FLAGS_SRCS
+  ptp_flags_test.cpp
+)
+
+target_link_testlibs(
+  ptp_flags-test
+  traffic_gen
+  "${PTP_FLAGS_SRCS}"
+  GTest::gtest_main
+  ryml::ryml
+)
+
+# target_link_testlibs emits the plain, ASan and UBSan executables.
+foreach(_target ptp_flags-test ptp_flags-test_ASAN ptp_flags-test_UBSAN)
+  target_compile_definitions(${_target} PRIVATE
+    PROTOCOLS_ROOT_DIR="${tsn-gen_SOURCE_DIR}/protocols"
+  )
+endforeach()
+
 ################### GTest discovery #################
 include(GoogleTest)
 include(CMakeGoogleDiscoverAllTests)
 gtest_discover_test_wtestlibs(traffic_gen-test)
 gtest_discover_test_wtestlibs(adp_fuzz-test)
+gtest_discover_test_wtestlibs(ptp_flags-test)
 
 ################### Corpus conformance ##############
 # The shipped protocols/ and stacks/ must pass `packet_gen --validate`, so a
