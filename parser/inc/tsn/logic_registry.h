@@ -25,7 +25,10 @@ namespace tsn {
  *  registry when wiring a stack.
  *
  *  Notes on linkage: static init in a SHARED library runs only when
- *  that library is loaded. For a STATIC library, ensure the linker
+ *  that library is loaded; --as-needed can discard a library used only
+ *  for registration. The tsn::protocol_logic CMake target retains the
+ *  shipped shared library on Linux with GNU/Clang. For a STATIC library,
+ *  ensure the linker
  *  does not drop the registration TU (e.g. --whole-archive on GCC/ld).
  */
 class LogicRegistry {

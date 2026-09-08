@@ -496,8 +496,16 @@ Rules:
 
 Linkage pitfalls:
 
-- **Shared (recommended)** — just link and go.
+- **Shared (recommended)**: registration runs only when the library loads.
+  A linker using `--as-needed` can drop a library with no referenced symbols.
+  Link the `tsn::protocol_logic` CMake target for the shipped modules: on
+  Linux with GNU/Clang it retains that library with a scoped linker option,
+  including for installed consumers, and restores the caller's linker state.
+  A manual link needs
+  `-Wl,--push-state,--no-as-needed -lmy_logic -Wl,--pop-state`.
   `LogicRegistry::has("your_name")` returns true after first load.
+  All three shipped tsn-gen libraries remain shared with `BUILD_SHARED_LIBS=OFF`;
+  that option affects dependencies, not these explicit shared targets.
 - **Static** — add `-Wl,--whole-archive libmy_logic.a -Wl,--no-whole-archive`
   or the TU with the registration gets dropped and your module is
   silently absent. Test this by asserting `LogicRegistry::has(...)`

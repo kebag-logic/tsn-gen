@@ -16,6 +16,18 @@ add_library(protocol_logic SHARED
 )
 add_library(tsn::protocol_logic ALIAS protocol_logic)
 
+# Consumers may use only registry names, leaving no symbol reference that
+# retains this DSO under --as-needed. Keep just this library loaded, restoring
+# the caller's linker state immediately afterwards. The grouped option avoids
+# CMake reordering/deduplicating the library away from its retention flags.
+# TARGET_NAME keeps the reference valid in the installed CMake export too.
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux" AND
+   CMAKE_CXX_COMPILER_ID MATCHES "^(GNU|Clang)$")
+    target_link_options(protocol_logic INTERFACE
+        "SHELL:-Wl,--push-state,--no-as-needed \"$<TARGET_FILE:$<TARGET_NAME:protocol_logic>>\" -Wl,--pop-state"
+    )
+endif()
+
 target_link_libraries(protocol_logic PUBLIC
     protocol_parser
 )

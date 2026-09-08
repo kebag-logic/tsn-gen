@@ -74,9 +74,8 @@ add_executable(packet_gen
     tools/packet_gen_main.cpp
 )
 
-# protocol_logic is linked so its REGISTER_LOGIC static initialisers run and
-# the stack runtime (--stack-file) can resolve modules by name. Whole-archive
-# is only needed for a static build; the library is SHARED here.
+# protocol_logic retains its shared registration library so the stack runtime
+# (--stack-file) can resolve modules by name, including under --as-needed.
 target_link_libraries(packet_gen
     traffic_gen
     protocol_logic
