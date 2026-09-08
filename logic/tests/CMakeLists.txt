@@ -8,8 +8,8 @@ add_compile_options(
     -DLOGIC_TESTS_RES_PATH="${CMAKE_CURRENT_SOURCE_DIR}/test_resources"
 )
 
-#### Ethernet frame logic tests. Links the shared protocol_logic so the
-#### REGISTER_LOGIC static init runs, plus protocol_parser for the
+#### Ethernet frame logic tests. The protocol_logic target retains its
+#### registration library, plus protocol_parser for the
 #### StackBuilder machinery. Sanitized variants are already covered at
 #### the parser layer.
 add_executable(ethernet_frame_logic-test
@@ -40,6 +40,13 @@ target_link_libraries(stack_codec-test
     GTest::gtest_main
     ryml::ryml
 )
+
+# Exercise registry-only use even on hosts whose linker keeps unused DSOs by
+# default. The unchanged golden fixture must fail if retention is removed.
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux" AND
+   CMAKE_CXX_COMPILER_ID MATCHES "^(GNU|Clang)$")
+    target_link_options(stack_codec-test PRIVATE "LINKER:--as-needed")
+endif()
 
 target_compile_definitions(stack_codec-test PRIVATE
     PROTOCOLS_ROOT_DIR="${tsn-gen_SOURCE_DIR}/protocols"

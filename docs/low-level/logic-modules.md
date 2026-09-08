@@ -107,10 +107,15 @@ initialization. Consequences:
 - The class must be default-constructible.
 - Duplicates are rejected: first registration wins, the second `add` returns
   `false`, silently. Keep names unique.
-- Registration only happens if the translation unit is linked. Shared
-  library: just link. **Static library: the linker drops the TU** unless you
-  force it (`-Wl,--whole-archive liblogic.a -Wl,--no-whole-archive`). Always
-  pair a new module with a registry test (below).
+- Registration only happens if the library loads. On Linux with GNU/Clang,
+  the `tsn::protocol_logic` CMake target retains the shipped shared library
+  under `--as-needed`, saving and restoring the caller's linker state around
+  that library only. When linking a registration-only shared library manually,
+  use `-Wl,--push-state,--no-as-needed -lmy_logic -Wl,--pop-state`.
+  **Custom static libraries:** force the registration translation units into
+  the link (`-Wl,--whole-archive liblogic.a -Wl,--no-whole-archive`).
+  The shipped tsn-gen libraries are shared even with `BUILD_SHARED_LIBS=OFF`.
+  Always pair a new module with a registry test (below).
 
 ## Binding: stack YAML and the rules table
 

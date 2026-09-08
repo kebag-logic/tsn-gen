@@ -59,9 +59,14 @@ FetchContent_MakeAvailable(tsn-gen)
 target_link_libraries(app PRIVATE tsn::traffic_gen)
 ```
 
-Libraries build static unless `BUILD_SHARED_LIBS=ON`. If you link
-`tsn::protocol_logic` statically, mind the registration-TU pitfall described
-in [../low-level/logic-modules.md](../low-level/logic-modules.md).
+The three tsn-gen libraries are explicitly shared, including when
+`BUILD_SHARED_LIBS=OFF`; that option controls dependencies such as rapidyaml.
+Link `tsn::protocol_logic` when using the shipped logic modules. On Linux
+with GNU/Clang its CMake usage requirements retain that shared library even
+under `--as-needed`, for both embedded and installed consumers. The linker
+state is saved and restored around that library only. No initialization call
+is required. Custom static logic archives have a separate retention requirement
+described in [../low-level/logic-modules.md](../low-level/logic-modules.md).
 
 ## The `tsn::Session` facade
 
