@@ -1,0 +1,10 @@
+{
+  "merge": "6a93f63d76339b269fe172aff9171d935a045bf6",
+  "tree": "a34065c39ea41aeb5daae9ecae3763f632f27484",
+  "expected_parents": [
+    "deca300c9eb4863fa13383b45ba6cb6fd0828671",
+    "76906b83eb54ac29040fe72fd910d34727188694"
+  ],
+  "actual_tree_equals_validated_candidate": true,
+  "observed": "2026-09-22T11:40:18.343118+02:00"
+}

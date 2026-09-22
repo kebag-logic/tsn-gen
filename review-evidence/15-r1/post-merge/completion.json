@@ -1,0 +1,16 @@
+{
+  "observed": "2026-09-22T11:44:41.435547+02:00",
+  "merge": "6a93f63d76339b269fe172aff9171d935a045bf6",
+  "reviewed_head": "76906b83eb54ac29040fe72fd910d34727188694",
+  "branch_stopped": true,
+  "current_containment": "PASS",
+  "historical_containment": "PASS all4 mergedPRs",
+  "review_integrity": "PASS all4 mergedPRs",
+  "postmerge_hosted": "Both workflows SUCCESS",
+  "issue": {
+    "closedAt": "2026-09-22T09:40:18Z",
+    "state": "CLOSED",
+    "url": "https://github.com/kebag-logic/tsn-gen/issues/15"
+  },
+  "project_status": "Done"
+}

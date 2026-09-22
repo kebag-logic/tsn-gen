@@ -1,0 +1,27 @@
+{
+  "cwd": "$VALIDATION",
+  "head": "6a93f63d76339b269fe172aff9171d935a045bf6",
+  "base": "deca300c9eb4863fa13383b45ba6cb6fd0828671",
+  "commands": [
+    [
+      "python3",
+      "$TRUSTED_DEV/scripts/check_merge_containment.py",
+      "--base",
+      "origin/main",
+      "origin/15-instrument-sanitizer-targets"
+    ],
+    [
+      "python3",
+      "$TRUSTED_DEV/scripts/check_merge_containment.py",
+      "--base",
+      "origin/main",
+      "--merged-prs"
+    ],
+    [
+      "python3",
+      "$TRUSTED_DEV/scripts/check_merge_review_integrity.py",
+      "--base",
+      "main"
+    ]
+  ]
+}

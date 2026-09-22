@@ -1,0 +1,89 @@
+{
+  "total_count": 1,
+  "jobs": [
+    {
+      "id": 106693596512,
+      "run_id": 35711702135,
+      "workflow_name": "Behave-Testing",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/kebag-logic/tsn-gen/actions/runs/35711702135",
+      "run_attempt": 1,
+      "node_id": "CR_kwDON_EMBM8AAAAY128VYA",
+      "head_sha": "6a93f63d76339b269fe172aff9171d935a045bf6",
+      "url": "https://api.github.com/repos/kebag-logic/tsn-gen/actions/jobs/106693596512",
+      "html_url": "https://github.com/kebag-logic/tsn-gen/actions/runs/35711702135/job/106693596512",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-09-22T09:40:21Z",
+      "started_at": "2026-09-22T09:40:23Z",
+      "completed_at": "2026-09-22T09:41:45Z",
+      "name": "behave-testing",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-09-22T09:40:24Z",
+          "completed_at": "2026-09-22T09:40:25Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-09-22T09:40:25Z",
+          "completed_at": "2026-09-22T09:40:25Z"
+        },
+        {
+          "name": "Retrieve Submodules",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-09-22T09:40:25Z",
+          "completed_at": "2026-09-22T09:40:40Z"
+        },
+        {
+          "name": "Setup, Configure and Build",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-09-22T09:40:40Z",
+          "completed_at": "2026-09-22T09:41:34Z"
+        },
+        {
+          "name": "Execute tests",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-09-22T09:41:34Z",
+          "completed_at": "2026-09-22T09:41:43Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-09-22T09:41:43Z",
+          "completed_at": "2026-09-22T09:41:43Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-09-22T09:41:43Z",
+          "completed_at": "2026-09-22T09:41:43Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/kebag-logic/tsn-gen/check-runs/106693596512",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000017553,
+      "runner_name": "GitHub Actions 1000017553",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}
