@@ -1,0 +1,21 @@
+diff -ru cand-pristine/cmake/CMakeLinkToTestlibs.cmake mut/M8-plain-library-linked-empty/cmake/CMakeLinkToTestlibs.cmake
+--- cand-pristine/cmake/CMakeLinkToTestlibs.cmake	2026-09-22 09:21:04.000000000 +0200
++++ mut/M8-plain-library-linked-empty/cmake/CMakeLinkToTestlibs.cmake	2026-09-22 11:26:06.638955051 +0200
+@@ -11,7 +11,7 @@
+ 	target_link_libraries(
+ 		${TARGETEX}_UBSAN
+ 		${COMP_UBSAN_FLAGS}
+-		${INSTRLIB}_ubsan
++		${INSTRLIB}
+ 		${_LIBS}
+ 
+ 	)
+@@ -24,7 +24,7 @@
+ 	target_link_libraries(
+ 		${TARGETEX}_ASAN
+ 		${COMP_ASAN_FLAGS}
+-		${INSTRLIB}_asan
++		${INSTRLIB}
+ 		${_LIBS}
+ 	)
+ 

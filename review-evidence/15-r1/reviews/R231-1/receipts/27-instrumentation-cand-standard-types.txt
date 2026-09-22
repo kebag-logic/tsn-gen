@@ -1,0 +1,4 @@
+Debug: objects 131 | asan 31 / 31 | ubsan 30 / 31 missing ['db_proto_impl.cpp.o'] | plain/other with any refs 0 | exes with sanitizer NEEDED 18
+Release: objects 131 | asan 31 / 31 | ubsan 30 / 31 missing ['db_proto_impl.cpp.o'] | plain/other with any refs 0 | exes with sanitizer NEEDED 18
+MinSizeRel: objects 131 | asan 31 / 31 | ubsan 30 / 31 missing ['db_proto_impl.cpp.o'] | plain/other with any refs 0 | exes with sanitizer NEEDED 18
+RelWithDebInfo: objects 131 | asan 31 / 31 | ubsan 30 / 31 missing ['db_proto_impl.cpp.o'] | plain/other with any refs 0 | exes with sanitizer NEEDED 18

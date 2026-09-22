@@ -1,0 +1,10 @@
+== $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r231/receipts/24-LastTest-base-default.log: 285 test blocks; passed 285; failed 0
+   blocks with sanitizer markers:
+   passing blocks retain output (non-empty between Output and <end of output>): 285
+== $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r231/receipts/24-LastTest-cand-default.log: 292 test blocks; passed 292; failed 0
+   blocks with sanitizer markers:
+     ('sanitizer_probe-test_ASAN.library-heap-overflow', 'cmake', 'Passed', ['AddressSanitizer', 'Sanitizer'])
+     ('sanitizer_probe-test_ASAN.consumer-heap-overflow', 'cmake', 'Passed', ['AddressSanitizer', 'Sanitizer'])
+     ('sanitizer_probe-test_UBSAN.library-signed-overflow', 'cmake', 'Passed', ['runtime error:'])
+     ('sanitizer_probe-test_UBSAN.consumer-signed-overflow', 'cmake', 'Passed', ['runtime error:'])
+   passing blocks retain output (non-empty between Output and <end of output>): 292

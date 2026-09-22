@@ -1,0 +1,53 @@
+{
+ "objects": {
+  "tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o": {
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o": {
+   "asan_refs": 11,
+   "ubsan_refs": 0
+  },
+  "tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o": {
+   "asan_refs": 0,
+   "ubsan_refs": 4
+  },
+  "tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o": {
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o": {
+   "asan_refs": 3,
+   "ubsan_refs": 0
+  },
+  "tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o": {
+   "asan_refs": 0,
+   "ubsan_refs": 3
+  }
+ },
+ "exes": {
+  "sanitizer_probe-test": [],
+  "sanitizer_probe-test_ASAN": [
+   "libasan.so.8"
+  ],
+  "sanitizer_probe-test_UBSAN": [
+   "libubsan.so.1"
+  ]
+ },
+ "probe_compile_flags": {
+  "sanitizer_probe_lib.cpp @ sanitizer_probe": [],
+  "sanitizer_probe_lib.cpp @ sanitizer_probe_ubsan": [
+   "-fsanitize=undefined"
+  ],
+  "sanitizer_probe_lib.cpp @ sanitizer_probe_asan": [
+   "-fsanitize=address"
+  ],
+  "sanitizer_probe_test.cpp @ sanitizer_probe-test_UBSAN": [
+   "-fsanitize=undefined"
+  ],
+  "sanitizer_probe_test.cpp @ sanitizer_probe-test_ASAN": [
+   "-fsanitize=address"
+  ],
+  "sanitizer_probe_test.cpp @ sanitizer_probe-test": []
+ }
+}

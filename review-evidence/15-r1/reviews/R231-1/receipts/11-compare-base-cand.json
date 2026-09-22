@@ -1,0 +1,5898 @@
+{
+ "Debug-sharedON": {
+  "base_compile": 125,
+  "cand_compile": 131,
+  "only_base_compile": [],
+  "only_cand_compile_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "only_cand_compile_count": 6,
+  "identical_compile": 125,
+  "changed_compile": [],
+  "bad_changes": [],
+  "flagged_base": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "flagged_cand": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe_asan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe_ubsan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "unexpected_flagged_cand": [],
+  "links_base": 41,
+  "links_cand": 47,
+  "flags_base": 41,
+  "flags_cand": 47,
+  "only_base_files": [],
+  "only_cand_files_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "identical_link": 41,
+  "changed_link": [],
+  "identical_flags": 41,
+  "changed_flags": [],
+  "sanitize_in_link_cand": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "sanitize_in_link_base": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "flagged_base_total": 58,
+  "flagged_cand_total": 62
+ },
+ "Debug-sharedUnset": {
+  "base_compile": 125,
+  "cand_compile": 131,
+  "only_base_compile": [],
+  "only_cand_compile_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "only_cand_compile_count": 6,
+  "identical_compile": 125,
+  "changed_compile": [],
+  "bad_changes": [],
+  "flagged_base": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "flagged_cand": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe_asan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe_ubsan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "unexpected_flagged_cand": [],
+  "links_base": 41,
+  "links_cand": 47,
+  "flags_base": 41,
+  "flags_cand": 47,
+  "only_base_files": [],
+  "only_cand_files_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "identical_link": 41,
+  "changed_link": [],
+  "identical_flags": 41,
+  "changed_flags": [],
+  "sanitize_in_link_cand": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "sanitize_in_link_base": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "flagged_base_total": 58,
+  "flagged_cand_total": 62
+ },
+ "MinSizeRel-sharedON": {
+  "base_compile": 125,
+  "cand_compile": 131,
+  "only_base_compile": [],
+  "only_cand_compile_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "only_cand_compile_count": 6,
+  "identical_compile": 125,
+  "changed_compile": [],
+  "bad_changes": [],
+  "flagged_base": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "flagged_cand": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe_asan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe_ubsan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "unexpected_flagged_cand": [],
+  "links_base": 41,
+  "links_cand": 47,
+  "flags_base": 41,
+  "flags_cand": 47,
+  "only_base_files": [],
+  "only_cand_files_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "identical_link": 41,
+  "changed_link": [],
+  "identical_flags": 41,
+  "changed_flags": [],
+  "sanitize_in_link_cand": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "sanitize_in_link_base": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "flagged_base_total": 58,
+  "flagged_cand_total": 62
+ },
+ "MinSizeRel-sharedUnset": {
+  "base_compile": 125,
+  "cand_compile": 131,
+  "only_base_compile": [],
+  "only_cand_compile_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "only_cand_compile_count": 6,
+  "identical_compile": 125,
+  "changed_compile": [],
+  "bad_changes": [],
+  "flagged_base": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "flagged_cand": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe_asan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe_ubsan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "unexpected_flagged_cand": [],
+  "links_base": 41,
+  "links_cand": 47,
+  "flags_base": 41,
+  "flags_cand": 47,
+  "only_base_files": [],
+  "only_cand_files_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "identical_link": 41,
+  "changed_link": [],
+  "identical_flags": 41,
+  "changed_flags": [],
+  "sanitize_in_link_cand": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "sanitize_in_link_base": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "flagged_base_total": 58,
+  "flagged_cand_total": 62
+ },
+ "RelWithDebInfo-sharedON": {
+  "base_compile": 125,
+  "cand_compile": 131,
+  "only_base_compile": [],
+  "only_cand_compile_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "only_cand_compile_count": 6,
+  "identical_compile": 125,
+  "changed_compile": [],
+  "bad_changes": [],
+  "flagged_base": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "flagged_cand": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe_asan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe_ubsan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "unexpected_flagged_cand": [],
+  "links_base": 41,
+  "links_cand": 47,
+  "flags_base": 41,
+  "flags_cand": 47,
+  "only_base_files": [],
+  "only_cand_files_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "identical_link": 41,
+  "changed_link": [],
+  "identical_flags": 41,
+  "changed_flags": [],
+  "sanitize_in_link_cand": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "sanitize_in_link_base": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "flagged_base_total": 58,
+  "flagged_cand_total": 62
+ },
+ "RelWithDebInfo-sharedUnset": {
+  "base_compile": 125,
+  "cand_compile": 131,
+  "only_base_compile": [],
+  "only_cand_compile_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "only_cand_compile_count": 6,
+  "identical_compile": 125,
+  "changed_compile": [],
+  "bad_changes": [],
+  "flagged_base": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "flagged_cand": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe_asan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe_ubsan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "unexpected_flagged_cand": [],
+  "links_base": 41,
+  "links_cand": 47,
+  "flags_base": 41,
+  "flags_cand": 47,
+  "only_base_files": [],
+  "only_cand_files_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "identical_link": 41,
+  "changed_link": [],
+  "identical_flags": 41,
+  "changed_flags": [],
+  "sanitize_in_link_cand": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "sanitize_in_link_base": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "flagged_base_total": 58,
+  "flagged_cand_total": 62
+ },
+ "Release-sharedON": {
+  "base_compile": 125,
+  "cand_compile": 131,
+  "only_base_compile": [],
+  "only_cand_compile_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "only_cand_compile_count": 6,
+  "identical_compile": 125,
+  "changed_compile": [],
+  "bad_changes": [],
+  "flagged_base": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "flagged_cand": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe_asan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe_ubsan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "unexpected_flagged_cand": [],
+  "links_base": 41,
+  "links_cand": 47,
+  "flags_base": 41,
+  "flags_cand": 47,
+  "only_base_files": [],
+  "only_cand_files_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "identical_link": 41,
+  "changed_link": [],
+  "identical_flags": 41,
+  "changed_flags": [],
+  "sanitize_in_link_cand": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "sanitize_in_link_base": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "flagged_base_total": 58,
+  "flagged_cand_total": 62
+ },
+ "Release-sharedUnset": {
+  "base_compile": 125,
+  "cand_compile": 131,
+  "only_base_compile": [],
+  "only_cand_compile_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "only_cand_compile_count": 6,
+  "identical_compile": 125,
+  "changed_compile": [],
+  "bad_changes": [],
+  "flagged_base": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "flagged_cand": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe_asan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe_ubsan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "unexpected_flagged_cand": [],
+  "links_base": 41,
+  "links_cand": 47,
+  "flags_base": 41,
+  "flags_cand": 47,
+  "only_base_files": [],
+  "only_cand_files_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "identical_link": 41,
+  "changed_link": [],
+  "identical_flags": 41,
+  "changed_flags": [],
+  "sanitize_in_link_cand": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "sanitize_in_link_base": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "flagged_base_total": 58,
+  "flagged_cand_total": 62
+ },
+ "empty-sharedON": {
+  "base_compile": 125,
+  "cand_compile": 131,
+  "only_base_compile": [],
+  "only_cand_compile_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "only_cand_compile_count": 6,
+  "identical_compile": 67,
+  "changed_compile": [
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+    "target": "logic_registry-test_ASAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+    "target": "logic_registry-test_UBSAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+    "target": "object_serializer-test_ASAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+    "target": "object_serializer-test_UBSAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+    "target": "protocol_parser-test_ASAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+    "target": "protocol_parser-test_UBSAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+    "target": "stack_builder-test_ASAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+    "target": "stack_builder-test_UBSAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+    "target": "validator-test_ASAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+    "target": "validator-test_UBSAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+    "target": "adp_fuzz-test_ASAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+    "target": "adp_fuzz-test_UBSAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+    "target": "ptp_flags-test_ASAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+    "target": "ptp_flags-test_UBSAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o",
+    "target": "traffic_gen-test_ASAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o",
+    "target": "traffic_gen-test_UBSAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   }
+  ],
+  "bad_changes": [],
+  "flagged_base": {},
+  "flagged_cand": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe_asan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe_ubsan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "unexpected_flagged_cand": [],
+  "links_base": 41,
+  "links_cand": 47,
+  "flags_base": 41,
+  "flags_cand": 47,
+  "only_base_files": [],
+  "only_cand_files_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "identical_link": 41,
+  "changed_link": [],
+  "identical_flags": 21,
+  "changed_flags": [
+   {
+    "key": "<BUILD>/parser/CMakeFiles/protocol_parser_asan.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIC",
+     "+CXX_FLAGS = -std=gnu++17 -fPIC -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/CMakeFiles/protocol_parser_ubsan.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIC",
+     "+CXX_FLAGS = -std=gnu++17 -fPIC -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/validator-test_ASAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/validator-test_UBSAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/traffic-gen/CMakeFiles/traffic_gen_asan.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIC",
+     "+CXX_FLAGS = -std=gnu++17 -fPIC -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIC",
+     "+CXX_FLAGS = -std=gnu++17 -fPIC -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=undefined"
+    ]
+   }
+  ],
+  "sanitize_in_link_cand": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "sanitize_in_link_base": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "flagged_base_total": 0,
+  "flagged_cand_total": 62
+ },
+ "empty-sharedUnset": {
+  "base_compile": 125,
+  "cand_compile": 131,
+  "only_base_compile": [],
+  "only_cand_compile_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "only_cand_compile_count": 6,
+  "identical_compile": 67,
+  "changed_compile": [
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+    "target": "protocol_parser_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+    "target": "protocol_parser_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+    "target": "logic_registry-test_ASAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+    "target": "logic_registry-test_UBSAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+    "target": "object_serializer-test_ASAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+    "target": "object_serializer-test_UBSAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+    "target": "protocol_parser-test_ASAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+    "target": "protocol_parser-test_UBSAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+    "target": "stack_builder-test_ASAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+    "target": "stack_builder-test_UBSAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+    "target": "validator-test_ASAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/parser/tests/parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+    "target": "validator-test_UBSAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+    "target": "adp_fuzz-test_ASAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+    "target": "adp_fuzz-test_UBSAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+    "target": "ptp_flags-test_ASAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+    "target": "ptp_flags-test_UBSAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o",
+    "target": "traffic_gen-test_ASAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o",
+    "target": "traffic_gen-test_UBSAN",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+    "target": "traffic_gen_asan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=address"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   },
+   {
+    "key": "<BUILD>/traffic-gen/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+    "target": "traffic_gen_ubsan",
+    "ops": [
+     [
+      "insert",
+      [],
+      [
+       "-fsanitize=undefined"
+      ]
+     ]
+    ],
+    "exactly_one_expected_flag_added": true
+   }
+  ],
+  "bad_changes": [],
+  "flagged_base": {},
+  "flagged_cand": {
+   "adp_fuzz-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "adp_fuzz-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "logic_registry-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "logic_registry-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "object_serializer-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "object_serializer-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "protocol_parser_asan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "protocol_parser_ubsan": {
+    "count": 11,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "ptp_flags-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "ptp_flags-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "sanitizer_probe_asan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "sanitizer_probe_ubsan": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "stack_builder-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "stack_builder-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "traffic_gen_asan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "traffic_gen_ubsan": {
+    "count": 10,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   },
+   "validator-test_ASAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=address"
+    ]
+   },
+   "validator-test_UBSAN": {
+    "count": 1,
+    "flags": [
+     "-fsanitize=undefined"
+    ]
+   }
+  },
+  "unexpected_flagged_cand": [],
+  "links_base": 41,
+  "links_cand": 47,
+  "flags_base": 41,
+  "flags_cand": 47,
+  "only_base_files": [],
+  "only_cand_files_targets": [
+   "sanitizer_probe",
+   "sanitizer_probe-test",
+   "sanitizer_probe-test_ASAN",
+   "sanitizer_probe-test_UBSAN",
+   "sanitizer_probe_asan",
+   "sanitizer_probe_ubsan"
+  ],
+  "identical_link": 41,
+  "changed_link": [],
+  "identical_flags": 21,
+  "changed_flags": [
+   {
+    "key": "<BUILD>/parser/CMakeFiles/protocol_parser_asan.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIC",
+     "+CXX_FLAGS = -std=gnu++17 -fPIC -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/CMakeFiles/protocol_parser_ubsan.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIC",
+     "+CXX_FLAGS = -std=gnu++17 -fPIC -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/validator-test_ASAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/parser/tests/CMakeFiles/validator-test_UBSAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/traffic-gen/CMakeFiles/traffic_gen_asan.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIC",
+     "+CXX_FLAGS = -std=gnu++17 -fPIC -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIC",
+     "+CXX_FLAGS = -std=gnu++17 -fPIC -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=undefined"
+    ]
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=address"
+    ]
+   },
+   {
+    "key": "<BUILD>/traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/flags.make",
+    "diff": [
+     "--- ",
+     "+++ ",
+     "@@ -9 +9 @@",
+     "-CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\"",
+     "+CXX_FLAGS = -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SRC>/parser/tests/test_resources\\\" -fsanitize=undefined"
+    ]
+   }
+  ],
+  "sanitize_in_link_cand": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "sanitizer_probe-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "sanitize_in_link_base": {
+   "validator-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "object_serializer-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "validator-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "object_serializer-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "protocol_parser-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "stack_builder-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "protocol_parser-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "logic_registry-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "traffic_gen-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "traffic_gen-test_ASAN": [
+    "-fsanitize=address"
+   ],
+   "ptp_flags-test_UBSAN": [
+    "-fsanitize=undefined"
+   ],
+   "adp_fuzz-test_UBSAN": [
+    "-fsanitize=undefined"
+   ]
+  },
+  "flagged_base_total": 0,
+  "flagged_cand_total": 62
+ }
+}

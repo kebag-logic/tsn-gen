@@ -1,0 +1,7 @@
+{
+  "head": "76906b83eb54ac29040fe72fd910d34727188694",
+  "base": "deca300c9eb4863fa13383b45ba6cb6fd0828671",
+  "head_tree": "a34065c39ea41aeb5daae9ecae3763f632f27484",
+  "candidate_tree": "a34065c39ea41aeb5daae9ecae3763f632f27484",
+  "method": "Head descends directly from unchanged main; candidate tree equals head tree"
+}

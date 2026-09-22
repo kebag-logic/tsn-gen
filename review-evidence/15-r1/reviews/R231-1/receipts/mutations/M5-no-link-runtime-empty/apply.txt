@@ -1,0 +1,2 @@
+applied M5-no-link-runtime
+diff exit 1

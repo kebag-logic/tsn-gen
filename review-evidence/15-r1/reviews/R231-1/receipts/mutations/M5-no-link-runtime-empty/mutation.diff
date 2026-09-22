@@ -1,0 +1,19 @@
+diff -ru cand-pristine/cmake/CMakeLinkToTestlibs.cmake mut/M5-no-link-runtime-empty/cmake/CMakeLinkToTestlibs.cmake
+--- cand-pristine/cmake/CMakeLinkToTestlibs.cmake	2026-09-22 09:21:04.000000000 +0200
++++ mut/M5-no-link-runtime-empty/cmake/CMakeLinkToTestlibs.cmake	2026-09-22 11:20:01.348597176 +0200
+@@ -10,7 +10,6 @@
+ 	)
+ 	target_link_libraries(
+ 		${TARGETEX}_UBSAN
+-		${COMP_UBSAN_FLAGS}
+ 		${INSTRLIB}_ubsan
+ 		${_LIBS}
+ 
+@@ -23,7 +22,6 @@
+ 	)
+ 	target_link_libraries(
+ 		${TARGETEX}_ASAN
+-		${COMP_ASAN_FLAGS}
+ 		${INSTRLIB}_asan
+ 		${_LIBS}
+ 	)

@@ -1,0 +1,2 @@
+applied M4-no-ubsan-halt
+diff exit 1

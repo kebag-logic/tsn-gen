@@ -1,0 +1,577 @@
+Executing software test suite
+Test location: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/base/tests/../build
+Test project $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/base/build
+        Start   1: ParserUsingTest.Version
+  1/285 Test   #1: ParserUsingTest.Version .................................   Passed    0.00 sec
+        Start   2: ParserUsingTest.BasePath
+  2/285 Test   #2: ParserUsingTest.BasePath ................................   Passed    0.00 sec
+        Start   3: Parser.InvalidPathInt
+  3/285 Test   #3: Parser.InvalidPathInt ...................................   Passed    0.00 sec
+        Start   4: Parser.VarCreation
+  4/285 Test   #4: Parser.VarCreation ......................................   Passed    0.00 sec
+        Start   5: Parser.VarCreationTooSmall
+  5/285 Test   #5: Parser.VarCreationTooSmall ..............................   Passed    0.00 sec
+        Start   6: Parser.listFiles
+  6/285 Test   #6: Parser.listFiles ........................................   Passed    0.00 sec
+        Start   7: Parser.VerifyDepth
+  7/285 Test   #7: Parser.VerifyDepth ......................................   Passed    0.00 sec
+        Start   8: Parser.DivergingPath
+  8/285 Test   #8: Parser.DivergingPath ....................................   Passed    0.01 sec
+        Start   9: Parser.ParsingProtocolNameInvalid
+  9/285 Test   #9: Parser.ParsingProtocolNameInvalid .......................   Passed    0.00 sec
+        Start  10: ParserUsingTest.Version
+ 10/285 Test  #10: ParserUsingTest.Version .................................   Passed    0.01 sec
+        Start  11: ParserUsingTest.BasePath
+ 11/285 Test  #11: ParserUsingTest.BasePath ................................   Passed    0.01 sec
+        Start  12: Parser.InvalidPathInt
+ 12/285 Test  #12: Parser.InvalidPathInt ...................................   Passed    0.02 sec
+        Start  13: Parser.VarCreation
+ 13/285 Test  #13: Parser.VarCreation ......................................   Passed    0.02 sec
+        Start  14: Parser.VarCreationTooSmall
+ 14/285 Test  #14: Parser.VarCreationTooSmall ..............................   Passed    0.02 sec
+        Start  15: Parser.listFiles
+ 15/285 Test  #15: Parser.listFiles ........................................   Passed    0.02 sec
+        Start  16: Parser.VerifyDepth
+ 16/285 Test  #16: Parser.VerifyDepth ......................................   Passed    0.02 sec
+        Start  17: Parser.DivergingPath
+ 17/285 Test  #17: Parser.DivergingPath ....................................   Passed    0.02 sec
+        Start  18: Parser.ParsingProtocolNameInvalid
+ 18/285 Test  #18: Parser.ParsingProtocolNameInvalid .......................   Passed    0.02 sec
+        Start  19: ParserUsingTest.Version
+ 19/285 Test  #19: ParserUsingTest.Version .................................   Passed    0.00 sec
+        Start  20: ParserUsingTest.BasePath
+ 20/285 Test  #20: ParserUsingTest.BasePath ................................   Passed    0.00 sec
+        Start  21: Parser.InvalidPathInt
+ 21/285 Test  #21: Parser.InvalidPathInt ...................................   Passed    0.00 sec
+        Start  22: Parser.VarCreation
+ 22/285 Test  #22: Parser.VarCreation ......................................   Passed    0.00 sec
+        Start  23: Parser.VarCreationTooSmall
+ 23/285 Test  #23: Parser.VarCreationTooSmall ..............................   Passed    0.00 sec
+        Start  24: Parser.listFiles
+ 24/285 Test  #24: Parser.listFiles ........................................   Passed    0.00 sec
+        Start  25: Parser.VerifyDepth
+ 25/285 Test  #25: Parser.VerifyDepth ......................................   Passed    0.00 sec
+        Start  26: Parser.DivergingPath
+ 26/285 Test  #26: Parser.DivergingPath ....................................   Passed    0.01 sec
+        Start  27: Parser.ParsingProtocolNameInvalid
+ 27/285 Test  #27: Parser.ParsingProtocolNameInvalid .......................   Passed    0.00 sec
+        Start  28: ObjectSerializer.ParseSimpleProtocol
+ 28/285 Test  #28: ObjectSerializer.ParseSimpleProtocol ....................   Passed    0.00 sec
+        Start  29: ObjectSerializer.ParseSimpleProtocolVarCount
+ 29/285 Test  #29: ObjectSerializer.ParseSimpleProtocolVarCount ............   Passed    0.01 sec
+        Start  30: ObjectSerializer.ParseSimpleProtocolVarName
+ 30/285 Test  #30: ObjectSerializer.ParseSimpleProtocolVarName .............   Passed    0.00 sec
+        Start  31: ObjectSerializer.ParseSimpleProtocolVarSize
+ 31/285 Test  #31: ObjectSerializer.ParseSimpleProtocolVarSize .............   Passed    0.00 sec
+        Start  32: ObjectSerializer.ParseSimpleProtocolVarExpectedValues
+ 32/285 Test  #32: ObjectSerializer.ParseSimpleProtocolVarExpectedValues ...   Passed    0.00 sec
+        Start  33: ObjectSerializer.ParseSimpleProtocolIfaceCount
+ 33/285 Test  #33: ObjectSerializer.ParseSimpleProtocolIfaceCount ..........   Passed    0.00 sec
+        Start  34: ObjectSerializer.ParseSimpleProtocolIfaceName
+ 34/285 Test  #34: ObjectSerializer.ParseSimpleProtocolIfaceName ...........   Passed    0.00 sec
+        Start  35: ObjectSerializer.ParseSimpleProtocolIfaceDirection
+ 35/285 Test  #35: ObjectSerializer.ParseSimpleProtocolIfaceDirection ......   Passed    0.00 sec
+        Start  36: ObjectSerializer.ParseSimpleProtocolIfaceVarRef
+ 36/285 Test  #36: ObjectSerializer.ParseSimpleProtocolIfaceVarRef .........   Passed    0.00 sec
+        Start  37: ObjectSerializer.ParseSimpleProtocolServiceNoLogic
+ 37/285 Test  #37: ObjectSerializer.ParseSimpleProtocolServiceNoLogic ......   Passed    0.00 sec
+        Start  38: ObjectSerializer.ParseProtocolWithLogicName
+ 38/285 Test  #38: ObjectSerializer.ParseProtocolWithLogicName .............   Passed    0.00 sec
+        Start  39: ObjectSerializer.ParseSimpleProtocol
+ 39/285 Test  #39: ObjectSerializer.ParseSimpleProtocol ....................   Passed    0.02 sec
+        Start  40: ObjectSerializer.ParseSimpleProtocolVarCount
+ 40/285 Test  #40: ObjectSerializer.ParseSimpleProtocolVarCount ............   Passed    0.02 sec
+        Start  41: ObjectSerializer.ParseSimpleProtocolVarName
+ 41/285 Test  #41: ObjectSerializer.ParseSimpleProtocolVarName .............   Passed    0.02 sec
+        Start  42: ObjectSerializer.ParseSimpleProtocolVarSize
+ 42/285 Test  #42: ObjectSerializer.ParseSimpleProtocolVarSize .............   Passed    0.02 sec
+        Start  43: ObjectSerializer.ParseSimpleProtocolVarExpectedValues
+ 43/285 Test  #43: ObjectSerializer.ParseSimpleProtocolVarExpectedValues ...   Passed    0.02 sec
+        Start  44: ObjectSerializer.ParseSimpleProtocolIfaceCount
+ 44/285 Test  #44: ObjectSerializer.ParseSimpleProtocolIfaceCount ..........   Passed    0.02 sec
+        Start  45: ObjectSerializer.ParseSimpleProtocolIfaceName
+ 45/285 Test  #45: ObjectSerializer.ParseSimpleProtocolIfaceName ...........   Passed    0.02 sec
+        Start  46: ObjectSerializer.ParseSimpleProtocolIfaceDirection
+ 46/285 Test  #46: ObjectSerializer.ParseSimpleProtocolIfaceDirection ......   Passed    0.02 sec
+        Start  47: ObjectSerializer.ParseSimpleProtocolIfaceVarRef
+ 47/285 Test  #47: ObjectSerializer.ParseSimpleProtocolIfaceVarRef .........   Passed    0.02 sec
+        Start  48: ObjectSerializer.ParseSimpleProtocolServiceNoLogic
+ 48/285 Test  #48: ObjectSerializer.ParseSimpleProtocolServiceNoLogic ......   Passed    0.02 sec
+        Start  49: ObjectSerializer.ParseProtocolWithLogicName
+ 49/285 Test  #49: ObjectSerializer.ParseProtocolWithLogicName .............   Passed    0.02 sec
+        Start  50: ObjectSerializer.ParseSimpleProtocol
+ 50/285 Test  #50: ObjectSerializer.ParseSimpleProtocol ....................   Passed    0.00 sec
+        Start  51: ObjectSerializer.ParseSimpleProtocolVarCount
+ 51/285 Test  #51: ObjectSerializer.ParseSimpleProtocolVarCount ............   Passed    0.01 sec
+        Start  52: ObjectSerializer.ParseSimpleProtocolVarName
+ 52/285 Test  #52: ObjectSerializer.ParseSimpleProtocolVarName .............   Passed    0.00 sec
+        Start  53: ObjectSerializer.ParseSimpleProtocolVarSize
+ 53/285 Test  #53: ObjectSerializer.ParseSimpleProtocolVarSize .............   Passed    0.00 sec
+        Start  54: ObjectSerializer.ParseSimpleProtocolVarExpectedValues
+ 54/285 Test  #54: ObjectSerializer.ParseSimpleProtocolVarExpectedValues ...   Passed    0.00 sec
+        Start  55: ObjectSerializer.ParseSimpleProtocolIfaceCount
+ 55/285 Test  #55: ObjectSerializer.ParseSimpleProtocolIfaceCount ..........   Passed    0.00 sec
+        Start  56: ObjectSerializer.ParseSimpleProtocolIfaceName
+ 56/285 Test  #56: ObjectSerializer.ParseSimpleProtocolIfaceName ...........   Passed    0.00 sec
+        Start  57: ObjectSerializer.ParseSimpleProtocolIfaceDirection
+ 57/285 Test  #57: ObjectSerializer.ParseSimpleProtocolIfaceDirection ......   Passed    0.00 sec
+        Start  58: ObjectSerializer.ParseSimpleProtocolIfaceVarRef
+ 58/285 Test  #58: ObjectSerializer.ParseSimpleProtocolIfaceVarRef .........   Passed    0.00 sec
+        Start  59: ObjectSerializer.ParseSimpleProtocolServiceNoLogic
+ 59/285 Test  #59: ObjectSerializer.ParseSimpleProtocolServiceNoLogic ......   Passed    0.00 sec
+        Start  60: ObjectSerializer.ParseProtocolWithLogicName
+ 60/285 Test  #60: ObjectSerializer.ParseProtocolWithLogicName .............   Passed    0.00 sec
+        Start  61: LogicRegistry.RegisterAndCreate
+ 61/285 Test  #61: LogicRegistry.RegisterAndCreate .........................   Passed    0.00 sec
+        Start  62: LogicRegistry.UnknownNameReturnsNull
+ 62/285 Test  #62: LogicRegistry.UnknownNameReturnsNull ....................   Passed    0.00 sec
+        Start  63: LogicRegistry.DuplicateRegistrationRejected
+ 63/285 Test  #63: LogicRegistry.DuplicateRegistrationRejected .............   Passed    0.00 sec
+        Start  64: LogicRegistry.EmptyNameRejected
+ 64/285 Test  #64: LogicRegistry.EmptyNameRejected .........................   Passed    0.00 sec
+        Start  65: LogicRegistry.NullFactoryRejected
+ 65/285 Test  #65: LogicRegistry.NullFactoryRejected .......................   Passed    0.00 sec
+        Start  66: PassthroughLogic.IsNoOp
+ 66/285 Test  #66: PassthroughLogic.IsNoOp .................................   Passed    0.00 sec
+        Start  67: LayerContext.AdjacencyAndDefaults
+ 67/285 Test  #67: LayerContext.AdjacencyAndDefaults .......................   Passed    0.00 sec
+        Start  68: LogicRegistry.RegisterAndCreate
+ 68/285 Test  #68: LogicRegistry.RegisterAndCreate .........................   Passed    0.02 sec
+        Start  69: LogicRegistry.UnknownNameReturnsNull
+ 69/285 Test  #69: LogicRegistry.UnknownNameReturnsNull ....................   Passed    0.01 sec
+        Start  70: LogicRegistry.DuplicateRegistrationRejected
+ 70/285 Test  #70: LogicRegistry.DuplicateRegistrationRejected .............   Passed    0.02 sec
+        Start  71: LogicRegistry.EmptyNameRejected
+ 71/285 Test  #71: LogicRegistry.EmptyNameRejected .........................   Passed    0.01 sec
+        Start  72: LogicRegistry.NullFactoryRejected
+ 72/285 Test  #72: LogicRegistry.NullFactoryRejected .......................   Passed    0.01 sec
+        Start  73: PassthroughLogic.IsNoOp
+ 73/285 Test  #73: PassthroughLogic.IsNoOp .................................   Passed    0.02 sec
+        Start  74: LayerContext.AdjacencyAndDefaults
+ 74/285 Test  #74: LayerContext.AdjacencyAndDefaults .......................   Passed    0.02 sec
+        Start  75: LogicRegistry.RegisterAndCreate
+ 75/285 Test  #75: LogicRegistry.RegisterAndCreate .........................   Passed    0.00 sec
+        Start  76: LogicRegistry.UnknownNameReturnsNull
+ 76/285 Test  #76: LogicRegistry.UnknownNameReturnsNull ....................   Passed    0.00 sec
+        Start  77: LogicRegistry.DuplicateRegistrationRejected
+ 77/285 Test  #77: LogicRegistry.DuplicateRegistrationRejected .............   Passed    0.00 sec
+        Start  78: LogicRegistry.EmptyNameRejected
+ 78/285 Test  #78: LogicRegistry.EmptyNameRejected .........................   Passed    0.00 sec
+        Start  79: LogicRegistry.NullFactoryRejected
+ 79/285 Test  #79: LogicRegistry.NullFactoryRejected .......................   Passed    0.00 sec
+        Start  80: PassthroughLogic.IsNoOp
+ 80/285 Test  #80: PassthroughLogic.IsNoOp .................................   Passed    0.00 sec
+        Start  81: LayerContext.AdjacencyAndDefaults
+ 81/285 Test  #81: LayerContext.AdjacencyAndDefaults .......................   Passed    0.00 sec
+        Start  82: StackBuilder.BuildsAllPassthroughStack
+ 82/285 Test  #82: StackBuilder.BuildsAllPassthroughStack ..................   Passed    0.00 sec
+        Start  83: StackBuilder.ResolvesRegisteredLogic
+ 83/285 Test  #83: StackBuilder.ResolvesRegisteredLogic ....................   Passed    0.00 sec
+        Start  84: StackBuilder.AdjacencyWiredBottomUp
+ 84/285 Test  #84: StackBuilder.AdjacencyWiredBottomUp .....................   Passed    0.00 sec
+        Start  85: StackBuilder.UnknownLogicFailsBuild
+ 85/285 Test  #85: StackBuilder.UnknownLogicFailsBuild .....................   Passed    0.00 sec
+        Start  86: StackBuilder.UnknownServiceFailsBuild
+ 86/285 Test  #86: StackBuilder.UnknownServiceFailsBuild ...................   Passed    0.00 sec
+        Start  87: StackBuilder.BypassLogicForcesPassthrough
+ 87/285 Test  #87: StackBuilder.BypassLogicForcesPassthrough ...............   Passed    0.01 sec
+        Start  88: StackBuilder.BypassLogicSkipsRegistryLookup
+ 88/285 Test  #88: StackBuilder.BypassLogicSkipsRegistryLookup .............   Passed    0.00 sec
+        Start  89: StackBuilder.InvalidPathFailsBuild
+ 89/285 Test  #89: StackBuilder.InvalidPathFailsBuild ......................   Passed    0.00 sec
+        Start  90: StackBuilder.BuildsAllPassthroughStack
+ 90/285 Test  #90: StackBuilder.BuildsAllPassthroughStack ..................   Passed    0.02 sec
+        Start  91: StackBuilder.ResolvesRegisteredLogic
+ 91/285 Test  #91: StackBuilder.ResolvesRegisteredLogic ....................   Passed    0.02 sec
+        Start  92: StackBuilder.AdjacencyWiredBottomUp
+ 92/285 Test  #92: StackBuilder.AdjacencyWiredBottomUp .....................   Passed    0.02 sec
+        Start  93: StackBuilder.UnknownLogicFailsBuild
+ 93/285 Test  #93: StackBuilder.UnknownLogicFailsBuild .....................   Passed    0.02 sec
+        Start  94: StackBuilder.UnknownServiceFailsBuild
+ 94/285 Test  #94: StackBuilder.UnknownServiceFailsBuild ...................   Passed    0.02 sec
+        Start  95: StackBuilder.BypassLogicForcesPassthrough
+ 95/285 Test  #95: StackBuilder.BypassLogicForcesPassthrough ...............   Passed    0.02 sec
+        Start  96: StackBuilder.BypassLogicSkipsRegistryLookup
+ 96/285 Test  #96: StackBuilder.BypassLogicSkipsRegistryLookup .............   Passed    0.02 sec
+        Start  97: StackBuilder.InvalidPathFailsBuild
+ 97/285 Test  #97: StackBuilder.InvalidPathFailsBuild ......................   Passed    0.02 sec
+        Start  98: StackBuilder.BuildsAllPassthroughStack
+ 98/285 Test  #98: StackBuilder.BuildsAllPassthroughStack ..................   Passed    0.01 sec
+        Start  99: StackBuilder.ResolvesRegisteredLogic
+ 99/285 Test  #99: StackBuilder.ResolvesRegisteredLogic ....................   Passed    0.00 sec
+        Start 100: StackBuilder.AdjacencyWiredBottomUp
+100/285 Test #100: StackBuilder.AdjacencyWiredBottomUp .....................   Passed    0.00 sec
+        Start 101: StackBuilder.UnknownLogicFailsBuild
+101/285 Test #101: StackBuilder.UnknownLogicFailsBuild .....................   Passed    0.01 sec
+        Start 102: StackBuilder.UnknownServiceFailsBuild
+102/285 Test #102: StackBuilder.UnknownServiceFailsBuild ...................   Passed    0.01 sec
+        Start 103: StackBuilder.BypassLogicForcesPassthrough
+103/285 Test #103: StackBuilder.BypassLogicForcesPassthrough ...............   Passed    0.00 sec
+        Start 104: StackBuilder.BypassLogicSkipsRegistryLookup
+104/285 Test #104: StackBuilder.BypassLogicSkipsRegistryLookup .............   Passed    0.00 sec
+        Start 105: StackBuilder.InvalidPathFailsBuild
+105/285 Test #105: StackBuilder.InvalidPathFailsBuild ......................   Passed    0.00 sec
+        Start 106: Validator.ConformingFilePasses
+106/285 Test #106: Validator.ConformingFilePasses ..........................   Passed    0.00 sec
+        Start 107: Validator.ForeignTopLevelKeyRejected
+107/285 Test #107: Validator.ForeignTopLevelKeyRejected ....................   Passed    0.00 sec
+        Start 108: Validator.MissingServiceRejected
+108/285 Test #108: Validator.MissingServiceRejected ........................   Passed    0.00 sec
+        Start 109: Validator.OversizeFieldRejected
+109/285 Test #109: Validator.OversizeFieldRejected .........................   Passed    0.00 sec
+        Start 110: Validator.BadDirectionRejected
+110/285 Test #110: Validator.BadDirectionRejected ..........................   Passed    0.00 sec
+        Start 111: Validator.ServiceWithoutVarsOrEntitiesRejected
+111/285 Test #111: Validator.ServiceWithoutVarsOrEntitiesRejected ..........   Passed    0.00 sec
+        Start 112: Validator.FindingsCarryLineNumbers
+112/285 Test #112: Validator.FindingsCarryLineNumbers ......................   Passed    0.00 sec
+        Start 113: Validator.MissingDirectoryReported
+113/285 Test #113: Validator.MissingDirectoryReported ......................   Passed    0.00 sec
+        Start 114: Validator.ConformingFilePasses
+114/285 Test #114: Validator.ConformingFilePasses ..........................   Passed    0.02 sec
+        Start 115: Validator.ForeignTopLevelKeyRejected
+115/285 Test #115: Validator.ForeignTopLevelKeyRejected ....................   Passed    0.02 sec
+        Start 116: Validator.MissingServiceRejected
+116/285 Test #116: Validator.MissingServiceRejected ........................   Passed    0.01 sec
+        Start 117: Validator.OversizeFieldRejected
+117/285 Test #117: Validator.OversizeFieldRejected .........................   Passed    0.02 sec
+        Start 118: Validator.BadDirectionRejected
+118/285 Test #118: Validator.BadDirectionRejected ..........................   Passed    0.02 sec
+        Start 119: Validator.ServiceWithoutVarsOrEntitiesRejected
+119/285 Test #119: Validator.ServiceWithoutVarsOrEntitiesRejected ..........   Passed    0.02 sec
+        Start 120: Validator.FindingsCarryLineNumbers
+120/285 Test #120: Validator.FindingsCarryLineNumbers ......................   Passed    0.02 sec
+        Start 121: Validator.MissingDirectoryReported
+121/285 Test #121: Validator.MissingDirectoryReported ......................   Passed    0.02 sec
+        Start 122: Validator.ConformingFilePasses
+122/285 Test #122: Validator.ConformingFilePasses ..........................   Passed    0.00 sec
+        Start 123: Validator.ForeignTopLevelKeyRejected
+123/285 Test #123: Validator.ForeignTopLevelKeyRejected ....................   Passed    0.00 sec
+        Start 124: Validator.MissingServiceRejected
+124/285 Test #124: Validator.MissingServiceRejected ........................   Passed    0.00 sec
+        Start 125: Validator.OversizeFieldRejected
+125/285 Test #125: Validator.OversizeFieldRejected .........................   Passed    0.00 sec
+        Start 126: Validator.BadDirectionRejected
+126/285 Test #126: Validator.BadDirectionRejected ..........................   Passed    0.00 sec
+        Start 127: Validator.ServiceWithoutVarsOrEntitiesRejected
+127/285 Test #127: Validator.ServiceWithoutVarsOrEntitiesRejected ..........   Passed    0.00 sec
+        Start 128: Validator.FindingsCarryLineNumbers
+128/285 Test #128: Validator.FindingsCarryLineNumbers ......................   Passed    0.00 sec
+        Start 129: Validator.MissingDirectoryReported
+129/285 Test #129: Validator.MissingDirectoryReported ......................   Passed    0.00 sec
+        Start 130: HelloTest.BasicAssertions
+130/285 Test #130: HelloTest.BasicAssertions ...............................   Passed    0.00 sec
+        Start 131: EthernetFrameLogic.RegisteredUnderExpectedName
+131/285 Test #131: EthernetFrameLogic.RegisteredUnderExpectedName ..........   Passed    0.00 sec
+        Start 132: EthernetFrameLogic.BoundByStackBuilder
+132/285 Test #132: EthernetFrameLogic.BoundByStackBuilder ..................   Passed    0.01 sec
+        Start 133: EthernetFrameLogic.BypassLogicSwapsInPassthrough
+133/285 Test #133: EthernetFrameLogic.BypassLogicSwapsInPassthrough ........   Passed    0.01 sec
+        Start 134: EthernetFrameLogic.EncodeDecodeCountersAdvance
+134/285 Test #134: EthernetFrameLogic.EncodeDecodeCountersAdvance ..........   Passed    0.00 sec
+        Start 135: EthernetFrameLogic.NextLayerDefaults1722
+135/285 Test #135: EthernetFrameLogic.NextLayerDefaults1722 ................   Passed    0.00 sec
+        Start 136: StackCodec.FrameHasExpectedSize
+136/285 Test #136: StackCodec.FrameHasExpectedSize .........................   Passed    0.01 sec
+        Start 137: StackCodec.DerivedFieldsAreValid
+137/285 Test #137: StackCodec.DerivedFieldsAreValid ........................   Passed    0.01 sec
+        Start 138: StackCodec.CommandStatusForcedToZero
+138/285 Test #138: StackCodec.CommandStatusForcedToZero ....................   Passed    0.03 sec
+        Start 139: StackCodec.DecodeRoundTripsFields
+139/285 Test #139: StackCodec.DecodeRoundTripsFields .......................   Passed    0.01 sec
+        Start 140: StackCodec.DeterministicForFixedSeed
+140/285 Test #140: StackCodec.DeterministicForFixedSeed ....................   Passed    0.01 sec
+        Start 141: TrafficGenTest.EmptyInterfaceProducesEmptyPacket
+141/285 Test #141: TrafficGenTest.EmptyInterfaceProducesEmptyPacket ........   Passed    0.01 sec
+        Start 142: TrafficGenTest.SimpleVarProducesOneByte
+142/285 Test #142: TrafficGenTest.SimpleVarProducesOneByte .................   Passed    0.00 sec
+        Start 143: TrafficGenTest.SimpleVarValueInExpectedSet
+143/285 Test #143: TrafficGenTest.SimpleVarValueInExpectedSet ..............   Passed    0.00 sec
+        Start 144: TrafficGenTest.DeterministicWithSameSeed
+144/285 Test #144: TrafficGenTest.DeterministicWithSameSeed ................   Passed    0.01 sec
+        Start 145: TrafficGenTest.DifferentSeedsDifferentPackets
+145/285 Test #145: TrafficGenTest.DifferentSeedsDifferentPackets ...........   Passed    0.00 sec
+        Start 146: TrafficGenTest.OpenClose
+146/285 Test #146: TrafficGenTest.OpenClose ................................   Passed    0.00 sec
+        Start 147: TrafficGenTest.SendNamedInterface
+147/285 Test #147: TrafficGenTest.SendNamedInterface .......................   Passed    0.00 sec
+        Start 148: TrafficGenTest.SendUnknownInterfaceReturnsError
+148/285 Test #148: TrafficGenTest.SendUnknownInterfaceReturnsError .........   Passed    0.00 sec
+        Start 149: TrafficGenTest.SendAllSendsOnePacketPerInterface
+149/285 Test #149: TrafficGenTest.SendAllSendsOnePacketPerInterface ........   Passed    0.00 sec
+        Start 150: TrafficGenTest.SendFilteredInDirection
+150/285 Test #150: TrafficGenTest.SendFilteredInDirection ..................   Passed    0.00 sec
+        Start 151: TrafficGenTest.SendFilteredOutDirectionProducesNone
+151/285 Test #151: TrafficGenTest.SendFilteredOutDirectionProducesNone .....   Passed    0.00 sec
+        Start 152: TrafficGenTest.SendLoopProducesNPackets
+152/285 Test #152: TrafficGenTest.SendLoopProducesNPackets .................   Passed    0.00 sec
+        Start 153: TrafficGenTest.SendWithoutOpenReturnsNotOpen
+153/285 Test #153: TrafficGenTest.SendWithoutOpenReturnsNotOpen ............   Passed    0.00 sec
+        Start 154: VerilatorSenderBeat.FullBeat
+154/285 Test #154: VerilatorSenderBeat.FullBeat ............................   Passed    0.00 sec
+        Start 155: VerilatorSenderBeat.PartialLastBeat
+155/285 Test #155: VerilatorSenderBeat.PartialLastBeat .....................   Passed    0.00 sec
+        Start 156: WideField.Emits512BitFieldWithoutUB
+156/285 Test #156: WideField.Emits512BitFieldWithoutUB .....................   Passed    0.01 sec
+        Start 157: TrafficGenTest.EmptyInterfaceProducesEmptyPacket
+157/285 Test #157: TrafficGenTest.EmptyInterfaceProducesEmptyPacket ........   Passed    0.02 sec
+        Start 158: TrafficGenTest.SimpleVarProducesOneByte
+158/285 Test #158: TrafficGenTest.SimpleVarProducesOneByte .................   Passed    0.02 sec
+        Start 159: TrafficGenTest.SimpleVarValueInExpectedSet
+159/285 Test #159: TrafficGenTest.SimpleVarValueInExpectedSet ..............   Passed    0.02 sec
+        Start 160: TrafficGenTest.DeterministicWithSameSeed
+160/285 Test #160: TrafficGenTest.DeterministicWithSameSeed ................   Passed    0.02 sec
+        Start 161: TrafficGenTest.DifferentSeedsDifferentPackets
+161/285 Test #161: TrafficGenTest.DifferentSeedsDifferentPackets ...........   Passed    0.02 sec
+        Start 162: TrafficGenTest.OpenClose
+162/285 Test #162: TrafficGenTest.OpenClose ................................   Passed    0.02 sec
+        Start 163: TrafficGenTest.SendNamedInterface
+163/285 Test #163: TrafficGenTest.SendNamedInterface .......................   Passed    0.02 sec
+        Start 164: TrafficGenTest.SendUnknownInterfaceReturnsError
+164/285 Test #164: TrafficGenTest.SendUnknownInterfaceReturnsError .........   Passed    0.02 sec
+        Start 165: TrafficGenTest.SendAllSendsOnePacketPerInterface
+165/285 Test #165: TrafficGenTest.SendAllSendsOnePacketPerInterface ........   Passed    0.02 sec
+        Start 166: TrafficGenTest.SendFilteredInDirection
+166/285 Test #166: TrafficGenTest.SendFilteredInDirection ..................   Passed    0.02 sec
+        Start 167: TrafficGenTest.SendFilteredOutDirectionProducesNone
+167/285 Test #167: TrafficGenTest.SendFilteredOutDirectionProducesNone .....   Passed    0.02 sec
+        Start 168: TrafficGenTest.SendLoopProducesNPackets
+168/285 Test #168: TrafficGenTest.SendLoopProducesNPackets .................   Passed    0.02 sec
+        Start 169: TrafficGenTest.SendWithoutOpenReturnsNotOpen
+169/285 Test #169: TrafficGenTest.SendWithoutOpenReturnsNotOpen ............   Passed    0.02 sec
+        Start 170: VerilatorSenderBeat.FullBeat
+170/285 Test #170: VerilatorSenderBeat.FullBeat ............................   Passed    0.02 sec
+        Start 171: VerilatorSenderBeat.PartialLastBeat
+171/285 Test #171: VerilatorSenderBeat.PartialLastBeat .....................   Passed    0.02 sec
+        Start 172: WideField.Emits512BitFieldWithoutUB
+172/285 Test #172: WideField.Emits512BitFieldWithoutUB .....................   Passed    0.02 sec
+        Start 173: TrafficGenTest.EmptyInterfaceProducesEmptyPacket
+173/285 Test #173: TrafficGenTest.EmptyInterfaceProducesEmptyPacket ........   Passed    0.01 sec
+        Start 174: TrafficGenTest.SimpleVarProducesOneByte
+174/285 Test #174: TrafficGenTest.SimpleVarProducesOneByte .................   Passed    0.01 sec
+        Start 175: TrafficGenTest.SimpleVarValueInExpectedSet
+175/285 Test #175: TrafficGenTest.SimpleVarValueInExpectedSet ..............   Passed    0.01 sec
+        Start 176: TrafficGenTest.DeterministicWithSameSeed
+176/285 Test #176: TrafficGenTest.DeterministicWithSameSeed ................   Passed    0.00 sec
+        Start 177: TrafficGenTest.DifferentSeedsDifferentPackets
+177/285 Test #177: TrafficGenTest.DifferentSeedsDifferentPackets ...........   Passed    0.00 sec
+        Start 178: TrafficGenTest.OpenClose
+178/285 Test #178: TrafficGenTest.OpenClose ................................   Passed    0.00 sec
+        Start 179: TrafficGenTest.SendNamedInterface
+179/285 Test #179: TrafficGenTest.SendNamedInterface .......................   Passed    0.00 sec
+        Start 180: TrafficGenTest.SendUnknownInterfaceReturnsError
+180/285 Test #180: TrafficGenTest.SendUnknownInterfaceReturnsError .........   Passed    0.00 sec
+        Start 181: TrafficGenTest.SendAllSendsOnePacketPerInterface
+181/285 Test #181: TrafficGenTest.SendAllSendsOnePacketPerInterface ........   Passed    0.00 sec
+        Start 182: TrafficGenTest.SendFilteredInDirection
+182/285 Test #182: TrafficGenTest.SendFilteredInDirection ..................   Passed    0.00 sec
+        Start 183: TrafficGenTest.SendFilteredOutDirectionProducesNone
+183/285 Test #183: TrafficGenTest.SendFilteredOutDirectionProducesNone .....   Passed    0.00 sec
+        Start 184: TrafficGenTest.SendLoopProducesNPackets
+184/285 Test #184: TrafficGenTest.SendLoopProducesNPackets .................   Passed    0.00 sec
+        Start 185: TrafficGenTest.SendWithoutOpenReturnsNotOpen
+185/285 Test #185: TrafficGenTest.SendWithoutOpenReturnsNotOpen ............   Passed    0.00 sec
+        Start 186: VerilatorSenderBeat.FullBeat
+186/285 Test #186: VerilatorSenderBeat.FullBeat ............................   Passed    0.00 sec
+        Start 187: VerilatorSenderBeat.PartialLastBeat
+187/285 Test #187: VerilatorSenderBeat.PartialLastBeat .....................   Passed    0.00 sec
+        Start 188: WideField.Emits512BitFieldWithoutUB
+188/285 Test #188: WideField.Emits512BitFieldWithoutUB .....................   Passed    0.00 sec
+        Start 189: AdpFuzzTest.VarCount
+189/285 Test #189: AdpFuzzTest.VarCount ....................................   Passed    0.00 sec
+        Start 190: AdpFuzzTest.MessageTypeConstraints
+190/285 Test #190: AdpFuzzTest.MessageTypeConstraints ......................   Passed    0.01 sec
+        Start 191: AdpFuzzTest.ValidTimeRangeConstraint
+191/285 Test #191: AdpFuzzTest.ValidTimeRangeConstraint ....................   Passed    0.00 sec
+        Start 192: AdpFuzzTest.ControlDataLengthFixed
+192/285 Test #192: AdpFuzzTest.ControlDataLengthFixed ......................   Passed    0.01 sec
+        Start 193: AdpFuzzTest.TalkerCapabilitiesMask
+193/285 Test #193: AdpFuzzTest.TalkerCapabilitiesMask ......................   Passed    0.00 sec
+        Start 194: AdpFuzzTest.ListenerCapabilitiesMask
+194/285 Test #194: AdpFuzzTest.ListenerCapabilitiesMask ....................   Passed    0.00 sec
+        Start 195: AdpFuzzTest.ControllerCapabilitiesMask
+195/285 Test #195: AdpFuzzTest.ControllerCapabilitiesMask ..................   Passed    0.01 sec
+        Start 196: AdpFuzzTest.ReservedFieldsAreFixed
+196/285 Test #196: AdpFuzzTest.ReservedFieldsAreFixed ......................   Passed    0.00 sec
+        Start 197: AdpFuzzTest.InterfaceCount
+197/285 Test #197: AdpFuzzTest.InterfaceCount ..............................   Passed    0.01 sec
+        Start 198: AdpFuzzTest.IfDataDirection
+198/285 Test #198: AdpFuzzTest.IfDataDirection .............................   Passed    0.00 sec
+        Start 199: AdpFuzzTest.IfDataHas20VarRefs
+199/285 Test #199: AdpFuzzTest.IfDataHas20VarRefs ..........................   Passed    0.00 sec
+        Start 200: AdpFuzzTest.IfDataFirstVarRefIsMessageType
+200/285 Test #200: AdpFuzzTest.IfDataFirstVarRefIsMessageType ..............   Passed    0.00 sec
+        Start 201: AdpFuzzTest.IfDataLastVarRefIsReserved1
+201/285 Test #201: AdpFuzzTest.IfDataLastVarRefIsReserved1 .................   Passed    0.00 sec
+        Start 202: AdpFuzzTest.FullAdpPacketIs67Bytes
+202/285 Test #202: AdpFuzzTest.FullAdpPacketIs67Bytes ......................   Passed    0.01 sec
+        Start 203: AdpFuzzTest.MessageTypeAlwaysValid
+203/285 Test #203: AdpFuzzTest.MessageTypeAlwaysValid ......................   Passed    0.01 sec
+        Start 204: AdpFuzzTest.ValidTimeAlwaysInRange
+204/285 Test #204: AdpFuzzTest.ValidTimeAlwaysInRange ......................   Passed    0.01 sec
+        Start 205: AdpFuzzTest.ControlDataLengthAlways56
+205/285 Test #205: AdpFuzzTest.ControlDataLengthAlways56 ...................   Passed    0.00 sec
+        Start 206: AdpFuzzTest.TalkerCapsRespectMask
+206/285 Test #206: AdpFuzzTest.TalkerCapsRespectMask .......................   Passed    0.01 sec
+        Start 207: AdpFuzzTest.ListenerCapsRespectMask
+207/285 Test #207: AdpFuzzTest.ListenerCapsRespectMask .....................   Passed    0.01 sec
+        Start 208: AdpFuzzTest.ControllerCapsRespectMask
+208/285 Test #208: AdpFuzzTest.ControllerCapsRespectMask ...................   Passed    0.01 sec
+        Start 209: AdpFuzzTest.ReservedFieldsAlwaysZero
+209/285 Test #209: AdpFuzzTest.ReservedFieldsAlwaysZero ....................   Passed    0.01 sec
+        Start 210: AdpFuzzTest.AvailableIndexAlwaysValid
+210/285 Test #210: AdpFuzzTest.AvailableIndexAlwaysValid ...................   Passed    0.01 sec
+        Start 211: AdpFuzzTest.VarCount
+211/285 Test #211: AdpFuzzTest.VarCount ....................................   Passed    0.02 sec
+        Start 212: AdpFuzzTest.MessageTypeConstraints
+212/285 Test #212: AdpFuzzTest.MessageTypeConstraints ......................   Passed    0.02 sec
+        Start 213: AdpFuzzTest.ValidTimeRangeConstraint
+213/285 Test #213: AdpFuzzTest.ValidTimeRangeConstraint ....................   Passed    0.02 sec
+        Start 214: AdpFuzzTest.ControlDataLengthFixed
+214/285 Test #214: AdpFuzzTest.ControlDataLengthFixed ......................   Passed    0.02 sec
+        Start 215: AdpFuzzTest.TalkerCapabilitiesMask
+215/285 Test #215: AdpFuzzTest.TalkerCapabilitiesMask ......................   Passed    0.02 sec
+        Start 216: AdpFuzzTest.ListenerCapabilitiesMask
+216/285 Test #216: AdpFuzzTest.ListenerCapabilitiesMask ....................   Passed    0.02 sec
+        Start 217: AdpFuzzTest.ControllerCapabilitiesMask
+217/285 Test #217: AdpFuzzTest.ControllerCapabilitiesMask ..................   Passed    0.02 sec
+        Start 218: AdpFuzzTest.ReservedFieldsAreFixed
+218/285 Test #218: AdpFuzzTest.ReservedFieldsAreFixed ......................   Passed    0.02 sec
+        Start 219: AdpFuzzTest.InterfaceCount
+219/285 Test #219: AdpFuzzTest.InterfaceCount ..............................   Passed    0.02 sec
+        Start 220: AdpFuzzTest.IfDataDirection
+220/285 Test #220: AdpFuzzTest.IfDataDirection .............................   Passed    0.02 sec
+        Start 221: AdpFuzzTest.IfDataHas20VarRefs
+221/285 Test #221: AdpFuzzTest.IfDataHas20VarRefs ..........................   Passed    0.02 sec
+        Start 222: AdpFuzzTest.IfDataFirstVarRefIsMessageType
+222/285 Test #222: AdpFuzzTest.IfDataFirstVarRefIsMessageType ..............   Passed    0.02 sec
+        Start 223: AdpFuzzTest.IfDataLastVarRefIsReserved1
+223/285 Test #223: AdpFuzzTest.IfDataLastVarRefIsReserved1 .................   Passed    0.02 sec
+        Start 224: AdpFuzzTest.FullAdpPacketIs67Bytes
+224/285 Test #224: AdpFuzzTest.FullAdpPacketIs67Bytes ......................   Passed    0.02 sec
+        Start 225: AdpFuzzTest.MessageTypeAlwaysValid
+225/285 Test #225: AdpFuzzTest.MessageTypeAlwaysValid ......................   Passed    0.02 sec
+        Start 226: AdpFuzzTest.ValidTimeAlwaysInRange
+226/285 Test #226: AdpFuzzTest.ValidTimeAlwaysInRange ......................   Passed    0.02 sec
+        Start 227: AdpFuzzTest.ControlDataLengthAlways56
+227/285 Test #227: AdpFuzzTest.ControlDataLengthAlways56 ...................   Passed    0.02 sec
+        Start 228: AdpFuzzTest.TalkerCapsRespectMask
+228/285 Test #228: AdpFuzzTest.TalkerCapsRespectMask .......................   Passed    0.03 sec
+        Start 229: AdpFuzzTest.ListenerCapsRespectMask
+229/285 Test #229: AdpFuzzTest.ListenerCapsRespectMask .....................   Passed    0.02 sec
+        Start 230: AdpFuzzTest.ControllerCapsRespectMask
+230/285 Test #230: AdpFuzzTest.ControllerCapsRespectMask ...................   Passed    0.02 sec
+        Start 231: AdpFuzzTest.ReservedFieldsAlwaysZero
+231/285 Test #231: AdpFuzzTest.ReservedFieldsAlwaysZero ....................   Passed    0.02 sec
+        Start 232: AdpFuzzTest.AvailableIndexAlwaysValid
+232/285 Test #232: AdpFuzzTest.AvailableIndexAlwaysValid ...................   Passed    0.02 sec
+        Start 233: AdpFuzzTest.VarCount
+233/285 Test #233: AdpFuzzTest.VarCount ....................................   Passed    0.01 sec
+        Start 234: AdpFuzzTest.MessageTypeConstraints
+234/285 Test #234: AdpFuzzTest.MessageTypeConstraints ......................   Passed    0.01 sec
+        Start 235: AdpFuzzTest.ValidTimeRangeConstraint
+235/285 Test #235: AdpFuzzTest.ValidTimeRangeConstraint ....................   Passed    0.00 sec
+        Start 236: AdpFuzzTest.ControlDataLengthFixed
+236/285 Test #236: AdpFuzzTest.ControlDataLengthFixed ......................   Passed    0.01 sec
+        Start 237: AdpFuzzTest.TalkerCapabilitiesMask
+237/285 Test #237: AdpFuzzTest.TalkerCapabilitiesMask ......................   Passed    0.00 sec
+        Start 238: AdpFuzzTest.ListenerCapabilitiesMask
+238/285 Test #238: AdpFuzzTest.ListenerCapabilitiesMask ....................   Passed    0.01 sec
+        Start 239: AdpFuzzTest.ControllerCapabilitiesMask
+239/285 Test #239: AdpFuzzTest.ControllerCapabilitiesMask ..................   Passed    0.00 sec
+        Start 240: AdpFuzzTest.ReservedFieldsAreFixed
+240/285 Test #240: AdpFuzzTest.ReservedFieldsAreFixed ......................   Passed    0.00 sec
+        Start 241: AdpFuzzTest.InterfaceCount
+241/285 Test #241: AdpFuzzTest.InterfaceCount ..............................   Passed    0.00 sec
+        Start 242: AdpFuzzTest.IfDataDirection
+242/285 Test #242: AdpFuzzTest.IfDataDirection .............................   Passed    0.00 sec
+        Start 243: AdpFuzzTest.IfDataHas20VarRefs
+243/285 Test #243: AdpFuzzTest.IfDataHas20VarRefs ..........................   Passed    0.00 sec
+        Start 244: AdpFuzzTest.IfDataFirstVarRefIsMessageType
+244/285 Test #244: AdpFuzzTest.IfDataFirstVarRefIsMessageType ..............   Passed    0.01 sec
+        Start 245: AdpFuzzTest.IfDataLastVarRefIsReserved1
+245/285 Test #245: AdpFuzzTest.IfDataLastVarRefIsReserved1 .................   Passed    0.01 sec
+        Start 246: AdpFuzzTest.FullAdpPacketIs67Bytes
+246/285 Test #246: AdpFuzzTest.FullAdpPacketIs67Bytes ......................   Passed    0.01 sec
+        Start 247: AdpFuzzTest.MessageTypeAlwaysValid
+247/285 Test #247: AdpFuzzTest.MessageTypeAlwaysValid ......................   Passed    0.01 sec
+        Start 248: AdpFuzzTest.ValidTimeAlwaysInRange
+248/285 Test #248: AdpFuzzTest.ValidTimeAlwaysInRange ......................   Passed    0.01 sec
+        Start 249: AdpFuzzTest.ControlDataLengthAlways56
+249/285 Test #249: AdpFuzzTest.ControlDataLengthAlways56 ...................   Passed    0.00 sec
+        Start 250: AdpFuzzTest.TalkerCapsRespectMask
+250/285 Test #250: AdpFuzzTest.TalkerCapsRespectMask .......................   Passed    0.01 sec
+        Start 251: AdpFuzzTest.ListenerCapsRespectMask
+251/285 Test #251: AdpFuzzTest.ListenerCapsRespectMask .....................   Passed    0.01 sec
+        Start 252: AdpFuzzTest.ControllerCapsRespectMask
+252/285 Test #252: AdpFuzzTest.ControllerCapsRespectMask ...................   Passed    0.01 sec
+        Start 253: AdpFuzzTest.ReservedFieldsAlwaysZero
+253/285 Test #253: AdpFuzzTest.ReservedFieldsAlwaysZero ....................   Passed    0.01 sec
+        Start 254: AdpFuzzTest.AvailableIndexAlwaysValid
+254/285 Test #254: AdpFuzzTest.AvailableIndexAlwaysValid ...................   Passed    0.01 sec
+        Start 255: PtpFlags.SyncModelPermitsOnlyTwoStepFlag
+255/285 Test #255: PtpFlags.SyncModelPermitsOnlyTwoStepFlag ................   Passed    0.01 sec
+        Start 256: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear
+256/285 Test #256: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear ..........   Passed    0.01 sec
+        Start 257: PtpFlags.PdelayModelsKeepTheirStrictFlags
+257/285 Test #257: PtpFlags.PdelayModelsKeepTheirStrictFlags ...............   Passed    0.01 sec
+        Start 258: PtpFlags.NoMediaDependentModelPermitsPtpTimescale
+258/285 Test #258: PtpFlags.NoMediaDependentModelPermitsPtpTimescale .......   Passed    0.01 sec
+        Start 259: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly
+259/285 Test #259: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly ........   Passed    0.02 sec
+        Start 260: PtpFlags.GeneratedFollowUpFramesCarryNoFlags
+260/285 Test #260: PtpFlags.GeneratedFollowUpFramesCarryNoFlags ............   Passed    0.02 sec
+        Start 261: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags
+261/285 Test #261: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags ......   Passed    0.04 sec
+        Start 262: PtpFlags.GeneratedFramesMatchTheirModelsFlags
+262/285 Test #262: PtpFlags.GeneratedFramesMatchTheirModelsFlags ...........   Passed    0.04 sec
+        Start 263: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim
+263/285 Test #263: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim .......   Passed    0.01 sec
+        Start 264: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint
+264/285 Test #264: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint ......   Passed    0.01 sec
+        Start 265: PtpFlags.SyncModelPermitsOnlyTwoStepFlag
+265/285 Test #265: PtpFlags.SyncModelPermitsOnlyTwoStepFlag ................   Passed    0.04 sec
+        Start 266: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear
+266/285 Test #266: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear ..........   Passed    0.04 sec
+        Start 267: PtpFlags.PdelayModelsKeepTheirStrictFlags
+267/285 Test #267: PtpFlags.PdelayModelsKeepTheirStrictFlags ...............   Passed    0.04 sec
+        Start 268: PtpFlags.NoMediaDependentModelPermitsPtpTimescale
+268/285 Test #268: PtpFlags.NoMediaDependentModelPermitsPtpTimescale .......   Passed    0.04 sec
+        Start 269: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly
+269/285 Test #269: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly ........   Passed    0.05 sec
+        Start 270: PtpFlags.GeneratedFollowUpFramesCarryNoFlags
+270/285 Test #270: PtpFlags.GeneratedFollowUpFramesCarryNoFlags ............   Passed    0.05 sec
+        Start 271: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags
+271/285 Test #271: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags ......   Passed    0.07 sec
+        Start 272: PtpFlags.GeneratedFramesMatchTheirModelsFlags
+272/285 Test #272: PtpFlags.GeneratedFramesMatchTheirModelsFlags ...........   Passed    0.09 sec
+        Start 273: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim
+273/285 Test #273: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim .......   Passed    0.04 sec
+        Start 274: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint
+274/285 Test #274: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint ......   Passed    0.04 sec
+        Start 275: PtpFlags.SyncModelPermitsOnlyTwoStepFlag
+275/285 Test #275: PtpFlags.SyncModelPermitsOnlyTwoStepFlag ................   Passed    0.01 sec
+        Start 276: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear
+276/285 Test #276: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear ..........   Passed    0.01 sec
+        Start 277: PtpFlags.PdelayModelsKeepTheirStrictFlags
+277/285 Test #277: PtpFlags.PdelayModelsKeepTheirStrictFlags ...............   Passed    0.01 sec
+        Start 278: PtpFlags.NoMediaDependentModelPermitsPtpTimescale
+278/285 Test #278: PtpFlags.NoMediaDependentModelPermitsPtpTimescale .......   Passed    0.01 sec
+        Start 279: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly
+279/285 Test #279: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly ........   Passed    0.03 sec
+        Start 280: PtpFlags.GeneratedFollowUpFramesCarryNoFlags
+280/285 Test #280: PtpFlags.GeneratedFollowUpFramesCarryNoFlags ............   Passed    0.02 sec
+        Start 281: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags
+281/285 Test #281: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags ......   Passed    0.04 sec
+        Start 282: PtpFlags.GeneratedFramesMatchTheirModelsFlags
+282/285 Test #282: PtpFlags.GeneratedFramesMatchTheirModelsFlags ...........   Passed    0.04 sec
+        Start 283: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim
+283/285 Test #283: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim .......   Passed    0.01 sec
+        Start 284: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint
+284/285 Test #284: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint ......   Passed    0.02 sec
+        Start 285: corpus_validates
+285/285 Test #285: corpus_validates ........................................   Passed    0.01 sec
+
+100% tests passed out of 285
+
+Total Test time (real) =   3.28 sec

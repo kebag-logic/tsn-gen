@@ -1,0 +1,20 @@
+diff -ru cand-pristine/tests/sanitizer/CMakeLists.txt mut/M7-faults-under-clean-policy-empty/tests/sanitizer/CMakeLists.txt
+--- cand-pristine/tests/sanitizer/CMakeLists.txt	2026-09-22 09:21:04.000000000 +0200
++++ mut/M7-faults-under-clean-policy-empty/tests/sanitizer/CMakeLists.txt	2026-09-22 11:19:41.674501168 +0200
+@@ -77,3 +77,16 @@
+ 	sanitizer_probe-test_UBSAN.consumer-signed-overflow
+ 	PROPERTIES ENVIRONMENT "UBSAN_OPTIONS=halt_on_error=1"
+ )
++
++# R231 mutation M7: faulting modes judged by the clean controls' policy.
++foreach(_case sanitizer_probe-test_ASAN:library-heap-overflow
++		sanitizer_probe-test_ASAN:consumer-heap-overflow
++		sanitizer_probe-test_UBSAN:library-signed-overflow
++		sanitizer_probe-test_UBSAN:consumer-signed-overflow)
++	string(REPLACE ":" ";" _pm "${_case}")
++	list(GET _pm 0 _p)
++	list(GET _pm 1 _m)
++	add_test(NAME r231-${_p}.${_m}.as-clean COMMAND ${_p} ${_m})
++	set_tests_properties(r231-${_p}.${_m}.as-clean PROPERTIES
++		FAIL_REGULAR_EXPRESSION "Sanitizer|runtime error")
++endforeach()

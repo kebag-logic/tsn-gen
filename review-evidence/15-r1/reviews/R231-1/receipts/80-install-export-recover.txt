@@ -1,0 +1,10 @@
+installed files base 179 cand 179 | same file set: True
+  files only in cand: [] | only in base: []
+  sanitizer_probe/_asan/_ubsan in cand install: []
+  non-binary installed files (cmake/yaml/json/headers/man) byte-identical: True
+base export files ['tsn-genTargets-noconfig.cmake', 'tsn-genTargets.cmake']
+cand export files ['tsn-genTargets-noconfig.cmake', 'tsn-genTargets.cmake']
+generated export (tsn-genTargets) files identical base vs cand: True 2
+recovery/trap flags in any compile command, and *SAN_OPTIONS in any CTestTestfile: [('cand', 'src/cand/build/tests/sanitizer/CTestTestfile.cmake', 'UBSAN_OPTIONS=halt_on_error=1'), ('cand', 'src/cand/build/tests/sanitizer/CTestTestfile.cmake', 'UBSAN_OPTIONS=halt_on_error=1')]
+cand default cache: CMAKE_BUILD_TYPE='' CMAKE_CXX_FLAGS=''
+git diff --check exit 0

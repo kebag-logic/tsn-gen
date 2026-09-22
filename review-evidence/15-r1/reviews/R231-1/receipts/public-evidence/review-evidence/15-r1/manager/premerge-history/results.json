@@ -1,0 +1,29 @@
+{
+  "head": "76906b83eb54ac29040fe72fd910d34727188694",
+  "base": "deca300c9eb4863fa13383b45ba6cb6fd0828671",
+  "results": [
+    {
+      "command": [
+        "python3",
+        "$TRUSTED_DEV/scripts/check_merge_containment.py",
+        "--base",
+        "origin/main",
+        "--merged-prs"
+      ],
+      "exit_code": 0,
+      "seconds": 7.144,
+      "log": "$VALIDATION_STORAGE/tsngen15-manager-r1/premerge-history/01.log"
+    },
+    {
+      "command": [
+        "python3",
+        "$TRUSTED_DEV/scripts/check_merge_review_integrity.py",
+        "--base",
+        "main"
+      ],
+      "exit_code": 0,
+      "seconds": 7.603,
+      "log": "$VALIDATION_STORAGE/tsngen15-manager-r1/premerge-history/02.log"
+    }
+  ]
+}

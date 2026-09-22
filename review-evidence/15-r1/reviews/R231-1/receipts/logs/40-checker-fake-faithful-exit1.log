@@ -1,0 +1,11 @@
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS is unset
+-- child: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/fake-children/faithful-exit1.sh library-heap-overflow
+-- child exit status: 1
+-- child stdout:
+sanitizer_probe: library-heap-overflow started
+
+-- child stderr:
+==1==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x0
+
+-- the sanitizer stopped the probe at its fault, as expected

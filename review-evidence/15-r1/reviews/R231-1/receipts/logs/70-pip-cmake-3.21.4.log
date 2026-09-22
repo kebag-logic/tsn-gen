@@ -1,0 +1,6 @@
+Collecting cmake==3.21.4
+  Downloading cmake-3.21.4-py2.py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.whl.metadata (7.3 kB)
+Downloading cmake-3.21.4-py2.py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (21.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 21.5/21.5 MB 8.9 MB/s  0:00:02
+Installing collected packages: cmake
+Successfully installed cmake-3.21.4

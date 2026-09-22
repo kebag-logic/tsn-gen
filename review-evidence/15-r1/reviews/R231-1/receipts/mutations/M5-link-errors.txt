@@ -1,0 +1,3 @@
+undefined references (unique): 12
+  sample: ['__asan_handle_no_return', '__asan_init', '__asan_option_detect_stack_use_after_return', '__asan_register_globals', '__asan_report_load4', '__asan_report_load8', '__asan_report_store4', '__asan_report_store8']
+failed link targets: ['sanitizer_probe-test_ASAN']

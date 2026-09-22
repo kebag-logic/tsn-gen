@@ -1,0 +1,15 @@
+== tests-off: ENABLE_PARSER_TESTS base=OFF cand=OFF; CMAKE_BUILD_TYPE=''
+   compile entries base 52 cand 52; identical: True
+   link.txt+flags.make files base 12 cand 12; identical: True
+   registered tests base 0 cand 0; any -fsanitize in cand commands/files: 0
+   cand targets: ['c4core', 'packet_gen', 'protocol_logic', 'protocol_parser', 'ryml', 'traffic_gen']
+== embedded-empty: ENABLE_PARSER_TESTS base=OFF cand=OFF; CMAKE_BUILD_TYPE=''
+   compile entries base 53 cand 53; identical: True
+   link.txt+flags.make files base 14 cand 14; identical: True
+   registered tests base 0 cand 0; any -fsanitize in cand commands/files: 0
+   cand targets: ['app', 'c4core', 'packet_gen', 'protocol_logic', 'protocol_parser', 'ryml', 'traffic_gen']
+== embedded-Debug: ENABLE_PARSER_TESTS base=OFF cand=OFF; CMAKE_BUILD_TYPE='Debug'
+   compile entries base 53 cand 53; identical: True
+   link.txt+flags.make files base 14 cand 14; identical: True
+   registered tests base 0 cand 0; any -fsanitize in cand commands/files: 0
+   cand targets: ['app', 'c4core', 'packet_gen', 'protocol_logic', 'protocol_parser', 'ryml', 'traffic_gen']

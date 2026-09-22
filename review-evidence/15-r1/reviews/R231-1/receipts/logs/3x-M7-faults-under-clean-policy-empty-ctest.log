@@ -1,0 +1,367 @@
+UpdateCTestConfiguration  from :$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/DartConfiguration.tcl
+Test project $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 29
+      Start 29: sanitizer_probe-test.clean
+
+29: Test command: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test "clean"
+29: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer
+29: Test timeout computed to be: 10000000
+29: sanitizer_probe: clean started
+29: sanitizer_probe: clean completed (value 4)
+ 1/11 Test #29: sanitizer_probe-test.clean ..........................................   Passed    0.00 sec
+test 30
+      Start 30: sanitizer_probe-test_ASAN.clean
+
+30: Test command: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN "clean"
+30: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer
+30: Test timeout computed to be: 10000000
+30: sanitizer_probe: clean started
+30: sanitizer_probe: clean completed (value 4)
+ 2/11 Test #30: sanitizer_probe-test_ASAN.clean .....................................   Passed    0.01 sec
+test 31
+      Start 31: sanitizer_probe-test_UBSAN.clean
+
+31: Test command: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_UBSAN "clean"
+31: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer
+31: Test timeout computed to be: 10000000
+31: sanitizer_probe: clean started
+31: sanitizer_probe: clean completed (value 4)
+ 3/11 Test #31: sanitizer_probe-test_UBSAN.clean ....................................   Passed    0.00 sec
+test 32
+      Start 32: sanitizer_probe-test_ASAN.library-heap-overflow
+
+32: Test command: /usr/bin/cmake "-DCHILD=$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN" "-DMODE=library-heap-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=ERROR: AddressSanitizer: heap-buffer-overflow" "-P" "$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/check_sanitizer_child.cmake"
+32: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer
+32: Test timeout computed to be: 10000000
+32: -- ASAN_OPTIONS is unset
+32: -- UBSAN_OPTIONS is unset
+32: -- child: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN library-heap-overflow
+32: -- child exit status: 1
+32: -- child stdout:
+32: sanitizer_probe: library-heap-overflow started
+32: 
+32: -- child stderr:
+32: =================================================================
+32: ==2428190==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7bf8bd3e0020 at pc 0x7fd8bf2c6184 bp 0x7fffb138c2c0 sp 0x7fffb138c2b0
+32: READ of size 4 at 0x7bf8bd3e0020 thread T0
+32:     #0 0x7fd8bf2c6183 in sanitizer_probe::libraryRead(int const*, unsigned long) ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/libsanitizer_probe_asan.so+0x1183) (BuildId: 49f17f5dbcf136743381dec21321fbeed2394ddd)
+32:     #1 0x557699971667 in main ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x2667) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+32:     #2 0x7fd8be227780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+32:     #3 0x7fd8be2278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+32:     #4 0x5576999711b4 in _start ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x21b4) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+32: 
+32: 0x7bf8bd3e0020 is located 0 bytes after 16-byte region [0x7bf8bd3e0010,0x7bf8bd3e0020)
+32: allocated by thread T0 here:
+32:     #0 0x7fd8beb2d431 in operator new[](unsigned long) (/usr/lib/libasan.so.8+0x12d431) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+32:     #1 0x5576999714a9 in main ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x24a9) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+32:     #2 0x7fd8be227780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+32:     #3 0x7fd8be2278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+32:     #4 0x5576999711b4 in _start ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x21b4) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+32: 
+32: SUMMARY: AddressSanitizer: heap-buffer-overflow ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/libsanitizer_probe_asan.so+0x1183) (BuildId: 49f17f5dbcf136743381dec21321fbeed2394ddd) in sanitizer_probe::libraryRead(int const*, unsigned long)
+32: Shadow bytes around the buggy address:
+32:   0x7bf8bd3dfd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+32:   0x7bf8bd3dfe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+32:   0x7bf8bd3dfe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+32:   0x7bf8bd3dff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+32:   0x7bf8bd3dff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+32: =>0x7bf8bd3e0000: fa fa 00 00[fa]fa fa fa fa fa fa fa fa fa fa fa
+32:   0x7bf8bd3e0080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+32:   0x7bf8bd3e0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+32:   0x7bf8bd3e0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+32:   0x7bf8bd3e0200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+32:   0x7bf8bd3e0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+32: Shadow byte legend (one shadow byte represents 8 application bytes):
+32:   Addressable:           00
+32:   Partially addressable: 01 02 03 04 05 06 07 
+32:   Heap left redzone:       fa
+32:   Freed heap region:       fd
+32:   Stack left redzone:      f1
+32:   Stack mid redzone:       f2
+32:   Stack right redzone:     f3
+32:   Stack after return:      f5
+32:   Stack use after scope:   f8
+32:   Global redzone:          f9
+32:   Global init order:       f6
+32:   Poisoned by user:        f7
+32:   Container overflow:      fc
+32:   Array cookie:            ac
+32:   Intra object redzone:    bb
+32:   ASan internal:           fe
+32:   Left alloca redzone:     ca
+32:   Right alloca redzone:    cb
+32: ==2428190==ABORTING
+32: 
+32: -- the sanitizer stopped the probe at its fault, as expected
+ 4/11 Test #32: sanitizer_probe-test_ASAN.library-heap-overflow .....................   Passed    0.02 sec
+test 33
+      Start 33: sanitizer_probe-test_ASAN.consumer-heap-overflow
+
+33: Test command: /usr/bin/cmake "-DCHILD=$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN" "-DMODE=consumer-heap-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=ERROR: AddressSanitizer: heap-buffer-overflow" "-P" "$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/check_sanitizer_child.cmake"
+33: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer
+33: Test timeout computed to be: 10000000
+33: -- ASAN_OPTIONS is unset
+33: -- UBSAN_OPTIONS is unset
+33: -- child: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN consumer-heap-overflow
+33: -- child exit status: 1
+33: -- child stdout:
+33: sanitizer_probe: consumer-heap-overflow started
+33: 
+33: -- child stderr:
+33: =================================================================
+33: ==2428192==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7b89965e0020 at pc 0x55def4a262e4 bp 0x7ffe5724b820 sp 0x7ffe5724b810
+33: READ of size 4 at 0x7b89965e0020 thread T0
+33:     #0 0x55def4a262e3 in (anonymous namespace)::consumerRead(int const*, unsigned long) ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x22e3) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+33:     #1 0x55def4a266aa in main ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x26aa) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+33:     #2 0x7f6997427780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+33:     #3 0x7f69974278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+33:     #4 0x55def4a261b4 in _start ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x21b4) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+33: 
+33: 0x7b89965e0020 is located 0 bytes after 16-byte region [0x7b89965e0010,0x7b89965e0020)
+33: allocated by thread T0 here:
+33:     #0 0x7f6997d2d431 in operator new[](unsigned long) (/usr/lib/libasan.so.8+0x12d431) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+33:     #1 0x55def4a264a9 in main ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x24a9) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+33:     #2 0x7f6997427780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+33:     #3 0x7f69974278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+33:     #4 0x55def4a261b4 in _start ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x21b4) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+33: 
+33: SUMMARY: AddressSanitizer: heap-buffer-overflow ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x22e3) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea) in (anonymous namespace)::consumerRead(int const*, unsigned long)
+33: Shadow bytes around the buggy address:
+33:   0x7b89965dfd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+33:   0x7b89965dfe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+33:   0x7b89965dfe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+33:   0x7b89965dff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+33:   0x7b89965dff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+33: =>0x7b89965e0000: fa fa 00 00[fa]fa fa fa fa fa fa fa fa fa fa fa
+33:   0x7b89965e0080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+33:   0x7b89965e0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+33:   0x7b89965e0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+33:   0x7b89965e0200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+33:   0x7b89965e0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+33: Shadow byte legend (one shadow byte represents 8 application bytes):
+33:   Addressable:           00
+33:   Partially addressable: 01 02 03 04 05 06 07 
+33:   Heap left redzone:       fa
+33:   Freed heap region:       fd
+33:   Stack left redzone:      f1
+33:   Stack mid redzone:       f2
+33:   Stack right redzone:     f3
+33:   Stack after return:      f5
+33:   Stack use after scope:   f8
+33:   Global redzone:          f9
+33:   Global init order:       f6
+33:   Poisoned by user:        f7
+33:   Container overflow:      fc
+33:   Array cookie:            ac
+33:   Intra object redzone:    bb
+33:   ASan internal:           fe
+33:   Left alloca redzone:     ca
+33:   Right alloca redzone:    cb
+33: ==2428192==ABORTING
+33: 
+33: -- the sanitizer stopped the probe at its fault, as expected
+ 5/11 Test #33: sanitizer_probe-test_ASAN.consumer-heap-overflow ....................   Passed    0.02 sec
+test 34
+      Start 34: sanitizer_probe-test_UBSAN.library-signed-overflow
+
+34: Test command: /usr/bin/cmake "-DCHILD=$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_UBSAN" "-DMODE=library-signed-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=sanitizer_probe_lib[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow" "-P" "$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/check_sanitizer_child.cmake"
+34: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer
+34: Environment variables: 
+34:  UBSAN_OPTIONS=halt_on_error=1
+34: Test timeout computed to be: 10000000
+34: -- ASAN_OPTIONS is unset
+34: -- UBSAN_OPTIONS=halt_on_error=1
+34: -- child: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_UBSAN library-signed-overflow
+34: -- child exit status: 1
+34: -- child stdout:
+34: sanitizer_probe: library-signed-overflow started
+34: 
+34: -- child stderr:
+34: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe_lib.cpp:18:18: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+34: 
+34: -- the sanitizer stopped the probe at its fault, as expected
+ 6/11 Test #34: sanitizer_probe-test_UBSAN.library-signed-overflow ..................   Passed    0.01 sec
+test 35
+      Start 35: sanitizer_probe-test_UBSAN.consumer-signed-overflow
+
+35: Test command: /usr/bin/cmake "-DCHILD=$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_UBSAN" "-DMODE=consumer-signed-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=sanitizer_probe_test[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow" "-P" "$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/check_sanitizer_child.cmake"
+35: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer
+35: Environment variables: 
+35:  UBSAN_OPTIONS=halt_on_error=1
+35: Test timeout computed to be: 10000000
+35: -- ASAN_OPTIONS is unset
+35: -- UBSAN_OPTIONS=halt_on_error=1
+35: -- child: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_UBSAN consumer-signed-overflow
+35: -- child exit status: 1
+35: -- child stdout:
+35: sanitizer_probe: consumer-signed-overflow started
+35: 
+35: -- child stderr:
+35: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe_test.cpp:34:18: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+35: 
+35: -- the sanitizer stopped the probe at its fault, as expected
+ 7/11 Test #35: sanitizer_probe-test_UBSAN.consumer-signed-overflow .................   Passed    0.01 sec
+test 36
+      Start 36: r231-sanitizer_probe-test_ASAN.library-heap-overflow.as-clean
+
+36: Test command: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN "library-heap-overflow"
+36: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer
+36: Test timeout computed to be: 10000000
+36: sanitizer_probe: library-heap-overflow started
+36: =================================================================
+36: ==2428197==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7b33873e0020 at pc 0x7f1389255184 bp 0x7fff0b767330 sp 0x7fff0b767320
+36: READ of size 4 at 0x7b33873e0020 thread T0
+36:     #0 0x7f1389255183 in sanitizer_probe::libraryRead(int const*, unsigned long) ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/libsanitizer_probe_asan.so+0x1183) (BuildId: 49f17f5dbcf136743381dec21321fbeed2394ddd)
+36:     #1 0x55d10aae4667 in main ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x2667) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+36:     #2 0x7f1388227780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+36:     #3 0x7f13882278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+36:     #4 0x55d10aae41b4 in _start ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x21b4) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+36: 
+36: 0x7b33873e0020 is located 0 bytes after 16-byte region [0x7b33873e0010,0x7b33873e0020)
+36: allocated by thread T0 here:
+36:     #0 0x7f1388b2d431 in operator new[](unsigned long) (/usr/lib/libasan.so.8+0x12d431) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+36:     #1 0x55d10aae44a9 in main ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x24a9) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+36:     #2 0x7f1388227780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+36:     #3 0x7f13882278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+36:     #4 0x55d10aae41b4 in _start ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x21b4) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+36: 
+36: SUMMARY: AddressSanitizer: heap-buffer-overflow ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/libsanitizer_probe_asan.so+0x1183) (BuildId: 49f17f5dbcf136743381dec21321fbeed2394ddd) in sanitizer_probe::libraryRead(int const*, unsigned long)
+36: Shadow bytes around the buggy address:
+36:   0x7b33873dfd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+36:   0x7b33873dfe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+36:   0x7b33873dfe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+36:   0x7b33873dff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+36:   0x7b33873dff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+36: =>0x7b33873e0000: fa fa 00 00[fa]fa fa fa fa fa fa fa fa fa fa fa
+36:   0x7b33873e0080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+36:   0x7b33873e0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+36:   0x7b33873e0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+36:   0x7b33873e0200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+36:   0x7b33873e0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+36: Shadow byte legend (one shadow byte represents 8 application bytes):
+36:   Addressable:           00
+36:   Partially addressable: 01 02 03 04 05 06 07 
+36:   Heap left redzone:       fa
+36:   Freed heap region:       fd
+36:   Stack left redzone:      f1
+36:   Stack mid redzone:       f2
+36:   Stack right redzone:     f3
+36:   Stack after return:      f5
+36:   Stack use after scope:   f8
+36:   Global redzone:          f9
+36:   Global init order:       f6
+36:   Poisoned by user:        f7
+36:   Container overflow:      fc
+36:   Array cookie:            ac
+36:   Intra object redzone:    bb
+36:   ASan internal:           fe
+36:   Left alloca redzone:     ca
+36:   Right alloca redzone:    cb
+36: ==2428197==ABORTING
+ 8/11 Test #36: r231-sanitizer_probe-test_ASAN.library-heap-overflow.as-clean .......***Failed  Error regular expression found in output. Regex=[Sanitizer|runtime error]  0.01 sec
+test 37
+      Start 37: r231-sanitizer_probe-test_ASAN.consumer-heap-overflow.as-clean
+
+37: Test command: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN "consumer-heap-overflow"
+37: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer
+37: Test timeout computed to be: 10000000
+37: sanitizer_probe: consumer-heap-overflow started
+37: =================================================================
+37: ==2428198==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7b46c2fe0020 at pc 0x564d7ef552e4 bp 0x7ffd5a71fc40 sp 0x7ffd5a71fc30
+37: READ of size 4 at 0x7b46c2fe0020 thread T0
+37:     #0 0x564d7ef552e3 in (anonymous namespace)::consumerRead(int const*, unsigned long) ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x22e3) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+37:     #1 0x564d7ef556aa in main ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x26aa) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+37:     #2 0x7f26c3e27780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+37:     #3 0x7f26c3e278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+37:     #4 0x564d7ef551b4 in _start ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x21b4) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+37: 
+37: 0x7b46c2fe0020 is located 0 bytes after 16-byte region [0x7b46c2fe0010,0x7b46c2fe0020)
+37: allocated by thread T0 here:
+37:     #0 0x7f26c472d431 in operator new[](unsigned long) (/usr/lib/libasan.so.8+0x12d431) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+37:     #1 0x564d7ef554a9 in main ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x24a9) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+37:     #2 0x7f26c3e27780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+37:     #3 0x7f26c3e278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+37:     #4 0x564d7ef551b4 in _start ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x21b4) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea)
+37: 
+37: SUMMARY: AddressSanitizer: heap-buffer-overflow ($VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x22e3) (BuildId: 717d2b4161c255f527f2c2e995fe412c101763ea) in (anonymous namespace)::consumerRead(int const*, unsigned long)
+37: Shadow bytes around the buggy address:
+37:   0x7b46c2fdfd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+37:   0x7b46c2fdfe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+37:   0x7b46c2fdfe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+37:   0x7b46c2fdff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+37:   0x7b46c2fdff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+37: =>0x7b46c2fe0000: fa fa 00 00[fa]fa fa fa fa fa fa fa fa fa fa fa
+37:   0x7b46c2fe0080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+37:   0x7b46c2fe0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+37:   0x7b46c2fe0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+37:   0x7b46c2fe0200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+37:   0x7b46c2fe0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+37: Shadow byte legend (one shadow byte represents 8 application bytes):
+37:   Addressable:           00
+37:   Partially addressable: 01 02 03 04 05 06 07 
+37:   Heap left redzone:       fa
+37:   Freed heap region:       fd
+37:   Stack left redzone:      f1
+37:   Stack mid redzone:       f2
+37:   Stack right redzone:     f3
+37:   Stack after return:      f5
+37:   Stack use after scope:   f8
+37:   Global redzone:          f9
+37:   Global init order:       f6
+37:   Poisoned by user:        f7
+37:   Container overflow:      fc
+37:   Array cookie:            ac
+37:   Intra object redzone:    bb
+37:   ASan internal:           fe
+37:   Left alloca redzone:     ca
+37:   Right alloca redzone:    cb
+37: ==2428198==ABORTING
+ 9/11 Test #37: r231-sanitizer_probe-test_ASAN.consumer-heap-overflow.as-clean ......***Failed  Error regular expression found in output. Regex=[Sanitizer|runtime error]  0.01 sec
+test 38
+      Start 38: r231-sanitizer_probe-test_UBSAN.library-signed-overflow.as-clean
+
+38: Test command: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_UBSAN "library-signed-overflow"
+38: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer
+38: Test timeout computed to be: 10000000
+38: sanitizer_probe: library-signed-overflow started
+38: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe_lib.cpp:18:18: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+38: sanitizer_probe: library-signed-overflow completed (value -2147483648)
+10/11 Test #38: r231-sanitizer_probe-test_UBSAN.library-signed-overflow.as-clean ....***Failed  Error regular expression found in output. Regex=[Sanitizer|runtime error]  0.00 sec
+test 39
+      Start 39: r231-sanitizer_probe-test_UBSAN.consumer-signed-overflow.as-clean
+
+39: Test command: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe-test_UBSAN "consumer-signed-overflow"
+39: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/tests/sanitizer
+39: Test timeout computed to be: 10000000
+39: sanitizer_probe: consumer-signed-overflow started
+39: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe_test.cpp:34:18: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+39: sanitizer_probe: consumer-signed-overflow completed (value -2147483648)
+11/11 Test #39: r231-sanitizer_probe-test_UBSAN.consumer-signed-overflow.as-clean ...***Failed  Error regular expression found in output. Regex=[Sanitizer|runtime error]  0.00 sec
+
+The following tests passed:
+	sanitizer_probe-test.clean
+	sanitizer_probe-test_ASAN.clean
+	sanitizer_probe-test_UBSAN.clean
+	sanitizer_probe-test_ASAN.library-heap-overflow
+	sanitizer_probe-test_ASAN.consumer-heap-overflow
+	sanitizer_probe-test_UBSAN.library-signed-overflow
+	sanitizer_probe-test_UBSAN.consumer-signed-overflow
+
+64% tests passed, 4 tests failed out of 11
+
+Total Test time (real) =   0.11 sec
+
+The following tests FAILED:
+	 36 - r231-sanitizer_probe-test_ASAN.library-heap-overflow.as-clean (Failed)
+	 37 - r231-sanitizer_probe-test_ASAN.consumer-heap-overflow.as-clean (Failed)
+	 38 - r231-sanitizer_probe-test_UBSAN.library-signed-overflow.as-clean (Failed)
+	 39 - r231-sanitizer_probe-test_UBSAN.consumer-signed-overflow.as-clean (Failed)
+Errors while running CTest
+Output from these tests are in: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M7-faults-under-clean-policy-empty/Testing/Temporary/LastTest.log
+Use "--rerun-failed --output-on-failure" to re-run the failed cases verbosely.

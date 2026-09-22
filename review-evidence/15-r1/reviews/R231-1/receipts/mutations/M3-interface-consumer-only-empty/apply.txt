@@ -1,0 +1,2 @@
+applied M3-interface-consumer-only
+diff exit 1

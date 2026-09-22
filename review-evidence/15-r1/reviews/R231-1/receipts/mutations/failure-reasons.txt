@@ -1,0 +1,74 @@
+== M1-base-helper-empty :: sanitizer_probe-test_ASAN.library-heap-overflow
+   Command: "/usr/bin/cmake" "-DCHILD=$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer/sanitizer_probe-test_ASAN" "-DMODE=library-heap-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=ERROR: AddressSanitizer: heap-buffer-overflow" "-P" "$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M1-base-helper-empty/tests/sanitizer/check_sanitizer_child.cmake"
+   -- UBSAN_OPTIONS is unset
+   -- child exit status: 0
+   sanitizer_probe: library-heap-overflow started
+   sanitizer_probe: library-heap-overflow completed (value 0)
+     sanitizer diagnostic control failed:
+     exit status 0, expected 1
+     no report matching "ERROR: AddressSanitizer: heap-buffer-overflow" on
+     the probe continued past its faulting operation
+   Test Failed.
+== M1-base-helper-empty :: sanitizer_probe-test_UBSAN.consumer-signed-overflow
+   Command: "/usr/bin/cmake" "-DCHILD=$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer/sanitizer_probe-test_UBSAN" "-DMODE=consumer-signed-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=sanitizer_probe_test[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow" "-P" "$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M1-base-helper-empty/tests/sanitizer/check_sanitizer_child.cmake"
+   -- UBSAN_OPTIONS=halt_on_error=1
+   -- child exit status: 0
+   sanitizer_probe: consumer-signed-overflow started
+   sanitizer_probe: consumer-signed-overflow completed (value -2147483648)
+     sanitizer diagnostic control failed:
+     exit status 0, expected 1
+     no report matching "sanitizer_probe_test[.]cpp:[0-9]+:[0-9]+: runtime
+     the probe continued past its faulting operation
+   Test Failed.
+   probe objects: {'sanitizer_probe-test': {'asan_refs': 0, 'ubsan_refs': 0}, 'sanitizer_probe-test_ASAN': {'asan_refs': 0, 'ubsan_refs': 0}, 'sanitizer_probe-test_UBSAN': {'asan_refs': 0, 'ubsan_refs': 0}, 'sanitizer_probe': {'asan_refs': 0, 'ubsan_refs': 0}, 'sanitizer_probe_asan': {'asan_refs': 0, 'ubsan_refs': 0}, 'sanitizer_probe_ubsan': {'asan_refs': 0, 'ubsan_refs': 0}}
+   exe runtime NEEDED: {'sanitizer_probe-test': [], 'sanitizer_probe-test_ASAN': ['libasan.so.8'], 'sanitizer_probe-test_UBSAN': ['libubsan.so.1']}
+== M2-private-library-only-empty :: sanitizer_probe-test_ASAN.consumer-heap-overflow
+   Command: "/usr/bin/cmake" "-DCHILD=$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M2-private-library-only-empty/tests/sanitizer/sanitizer_probe-test_ASAN" "-DMODE=consumer-heap-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=ERROR: AddressSanitizer: heap-buffer-overflow" "-P" "$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M2-private-library-only-empty/tests/sanitizer/check_sanitizer_child.cmake"
+   -- UBSAN_OPTIONS is unset
+   -- child exit status: 0
+   sanitizer_probe: consumer-heap-overflow started
+   sanitizer_probe: consumer-heap-overflow completed (value 0)
+     sanitizer diagnostic control failed:
+     exit status 0, expected 1
+     no report matching "ERROR: AddressSanitizer: heap-buffer-overflow" on
+     the probe continued past its faulting operation
+   Test Failed.
+   probe objects: {'sanitizer_probe-test': {'asan_refs': 0, 'ubsan_refs': 0}, 'sanitizer_probe-test_ASAN': {'asan_refs': 0, 'ubsan_refs': 0}, 'sanitizer_probe-test_UBSAN': {'asan_refs': 0, 'ubsan_refs': 0}, 'sanitizer_probe': {'asan_refs': 0, 'ubsan_refs': 0}, 'sanitizer_probe_asan': {'asan_refs': 3, 'ubsan_refs': 0}, 'sanitizer_probe_ubsan': {'asan_refs': 0, 'ubsan_refs': 3}}
+   exe runtime NEEDED: {'sanitizer_probe-test': [], 'sanitizer_probe-test_ASAN': ['libasan.so.8'], 'sanitizer_probe-test_UBSAN': ['libubsan.so.1']}
+== M3-interface-consumer-only-empty :: sanitizer_probe-test_UBSAN.library-signed-overflow
+   Command: "/usr/bin/cmake" "-DCHILD=$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M3-interface-consumer-only-empty/tests/sanitizer/sanitizer_probe-test_UBSAN" "-DMODE=library-signed-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=sanitizer_probe_lib[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow" "-P" "$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M3-interface-consumer-only-empty/tests/sanitizer/check_sanitizer_child.cmake"
+   -- UBSAN_OPTIONS=halt_on_error=1
+   -- child exit status: 0
+   sanitizer_probe: library-signed-overflow started
+   sanitizer_probe: library-signed-overflow completed (value -2147483648)
+     sanitizer diagnostic control failed:
+     exit status 0, expected 1
+     no report matching "sanitizer_probe_lib[.]cpp:[0-9]+:[0-9]+: runtime error:
+     the probe continued past its faulting operation
+   Test Failed.
+   probe objects: {'sanitizer_probe-test': {'asan_refs': 0, 'ubsan_refs': 0}, 'sanitizer_probe-test_ASAN': {'asan_refs': 12, 'ubsan_refs': 0}, 'sanitizer_probe-test_UBSAN': {'asan_refs': 0, 'ubsan_refs': 5}, 'sanitizer_probe': {'asan_refs': 0, 'ubsan_refs': 0}, 'sanitizer_probe_asan': {'asan_refs': 0, 'ubsan_refs': 0}, 'sanitizer_probe_ubsan': {'asan_refs': 0, 'ubsan_refs': 0}}
+   exe runtime NEEDED: {'sanitizer_probe-test': [], 'sanitizer_probe-test_ASAN': ['libasan.so.8'], 'sanitizer_probe-test_UBSAN': ['libubsan.so.1']}
+== M4-no-ubsan-halt-empty :: sanitizer_probe-test_UBSAN.library-signed-overflow
+   Command: "/usr/bin/cmake" "-DCHILD=$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M4-no-ubsan-halt-empty/tests/sanitizer/sanitizer_probe-test_UBSAN" "-DMODE=library-signed-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=sanitizer_probe_lib[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow" "-P" "$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M4-no-ubsan-halt-empty/tests/sanitizer/check_sanitizer_child.cmake"
+   -- UBSAN_OPTIONS is unset
+   -- child exit status: 0
+   sanitizer_probe: library-signed-overflow started
+   sanitizer_probe: library-signed-overflow completed (value -2147483648)
+   $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M4-no-ubsan-halt-empty/tests/sanitizer/sanitizer_probe_lib.cpp:18:18: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+     sanitizer diagnostic control failed:
+     exit status 0, expected 1
+     the probe continued past its faulting operation
+   Test Failed.
+   probe objects: {'sanitizer_probe-test': {'asan_refs': 0, 'ubsan_refs': 0}, 'sanitizer_probe-test_ASAN': {'asan_refs': 12, 'ubsan_refs': 0}, 'sanitizer_probe-test_UBSAN': {'asan_refs': 0, 'ubsan_refs': 5}, 'sanitizer_probe': {'asan_refs': 0, 'ubsan_refs': 0}, 'sanitizer_probe_asan': {'asan_refs': 3, 'ubsan_refs': 0}, 'sanitizer_probe_ubsan': {'asan_refs': 0, 'ubsan_refs': 3}}
+   exe runtime NEEDED: {'sanitizer_probe-test': [], 'sanitizer_probe-test_ASAN': ['libasan.so.8'], 'sanitizer_probe-test_UBSAN': ['libubsan.so.1']}
+== M7-faults-under-clean-policy-empty :: r231-sanitizer_probe-test_UBSAN.consumer-signed-overflow.as-clean
+   sanitizer_probe: consumer-signed-overflow started
+   $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M7-faults-under-clean-policy-empty/tests/sanitizer/sanitizer_probe_test.cpp:34:18: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+   sanitizer_probe: consumer-signed-overflow completed (value -2147483648)
+   Error regular expression found in output. Regex=[Sanitizer|runtime error]
+== M7-faults-under-clean-policy-empty :: r231-sanitizer_probe-test_ASAN.library-heap-overflow.as-clean
+   sanitizer_probe: library-heap-overflow started
+   ==2428197==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7b33873e0020 at pc 0x7f1389255184 bp 0x7fff0b767330 sp 0x7fff0b767320
+   Error regular expression found in output. Regex=[Sanitizer|runtime error]
+   probe objects: {'sanitizer_probe-test': {'asan_refs': 0, 'ubsan_refs': 0}, 'sanitizer_probe-test_ASAN': {'asan_refs': 12, 'ubsan_refs': 0}, 'sanitizer_probe-test_UBSAN': {'asan_refs': 0, 'ubsan_refs': 5}, 'sanitizer_probe': {'asan_refs': 0, 'ubsan_refs': 0}, 'sanitizer_probe_asan': {'asan_refs': 3, 'ubsan_refs': 0}, 'sanitizer_probe_ubsan': {'asan_refs': 0, 'ubsan_refs': 3}}
+   exe runtime NEEDED: {'sanitizer_probe-test': [], 'sanitizer_probe-test_ASAN': ['libasan.so.8'], 'sanitizer_probe-test_UBSAN': ['libubsan.so.1']}

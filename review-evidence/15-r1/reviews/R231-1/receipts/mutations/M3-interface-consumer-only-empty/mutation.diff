@@ -1,0 +1,23 @@
+diff -ru cand-pristine/cmake/CMakeGenTestingLibraries.cmake mut/M3-interface-consumer-only-empty/cmake/CMakeGenTestingLibraries.cmake
+--- cand-pristine/cmake/CMakeGenTestingLibraries.cmake	2026-09-22 09:21:04.000000000 +0200
++++ mut/M3-interface-consumer-only-empty/cmake/CMakeGenTestingLibraries.cmake	2026-09-22 11:19:31.482022698 +0200
+@@ -21,8 +21,8 @@
+ 		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS}>
+ 		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS}>
+ 		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS}>
+-		${COMP_ASAN_FLAGS}
+ 	)
++	target_compile_options(${BASENAME}_asan INTERFACE ${COMP_ASAN_FLAGS})
+ 
+ 	target_include_directories(${BASENAME}_asan PUBLIC
+ 		$<BUILD_INTERFACE:${INCDIRS}>
+@@ -34,8 +34,8 @@
+ 		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS}>
+ 		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS}>
+ 		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS}>
+-		${COMP_UBSAN_FLAGS}
+ 	)
++	target_compile_options(${BASENAME}_ubsan INTERFACE ${COMP_UBSAN_FLAGS})
+ 
+ 	target_include_directories(${BASENAME}_ubsan PUBLIC
+ 		$<BUILD_INTERFACE:${INCDIRS}>

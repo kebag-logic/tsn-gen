@@ -1,0 +1,3 @@
+Submodule 'external/googletest' (https://github.com/google/googletest.git) registered for path 'external/googletest'
+Cloning into '$VALIDATION_STORAGE/reviews/r231-18-r1/external/googletest'...
+Submodule path 'external/googletest': checked out '0bdccf4aa2f5c67af967193caf31d42d5c49bde2'

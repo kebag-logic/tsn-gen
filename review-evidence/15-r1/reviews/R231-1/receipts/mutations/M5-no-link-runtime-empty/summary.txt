@@ -1,0 +1,8 @@
+      Passed  sanitizer_probe-test.clean
+  ***Not Run  sanitizer_probe-test_ASAN.clean
+  ***Not Run  sanitizer_probe-test_UBSAN.clean
+   ***Failed  sanitizer_probe-test_ASAN.library-heap-overflow
+   ***Failed  sanitizer_probe-test_ASAN.consumer-heap-overflow
+   ***Failed  sanitizer_probe-test_UBSAN.library-signed-overflow
+   ***Failed  sanitizer_probe-test_UBSAN.consumer-signed-overflow
+14% tests passed, 6 tests failed out of 7

@@ -1,0 +1,39 @@
+diff -ru cand-pristine/cmake/CMakeGenTestingLibraries.cmake mut/M1-base-helper-Debug/cmake/CMakeGenTestingLibraries.cmake
+--- cand-pristine/cmake/CMakeGenTestingLibraries.cmake	2026-09-22 09:21:04.000000000 +0200
++++ mut/M1-base-helper-Debug/cmake/CMakeGenTestingLibraries.cmake	2026-09-22 11:19:23.511000000 +0200
+@@ -13,15 +13,11 @@
+ 		${_SOURCEFILES}
+ 	)
+ 
+-	# Only optimisation/debug levels follow the configuration. The sanitizer
+-	# flag applies under every build type, including the empty default, and
+-	# as a PUBLIC option it also instruments each test TU linking the variant.
+ 	target_compile_options(${BASENAME}_asan PUBLIC
+-		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS}>
+-		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS}>
+-		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS}>
+-		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS}>
+-		${COMP_ASAN_FLAGS}
++		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
++		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
++		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
++		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
+ 	)
+ 
+ 	target_include_directories(${BASENAME}_asan PUBLIC
+@@ -30,11 +26,10 @@
+ 	)
+ 
+ 	target_compile_options(${BASENAME}_ubsan PUBLIC
+-		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS}>
+-		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS}>
+-		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS}>
+-		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS}>
+-		${COMP_UBSAN_FLAGS}
++		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS} ${COMP_UBSAN_FLAGS}>
++		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS} ${COMP_UBSAN_FLAGS}>
++		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS} ${COMP_UBSAN_FLAGS}>
++		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS} ${COMP_UBSAN_FLAGS}>
+ 	)
+ 
+ 	target_include_directories(${BASENAME}_ubsan PUBLIC

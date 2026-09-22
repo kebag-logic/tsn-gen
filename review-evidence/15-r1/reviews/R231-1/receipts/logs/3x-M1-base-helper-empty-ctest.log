@@ -1,0 +1,173 @@
+UpdateCTestConfiguration  from :$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/DartConfiguration.tcl
+Test project $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 29
+    Start 29: sanitizer_probe-test.clean
+
+29: Test command: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer/sanitizer_probe-test "clean"
+29: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer
+29: Test timeout computed to be: 10000000
+29: sanitizer_probe: clean started
+29: sanitizer_probe: clean completed (value 4)
+1/7 Test #29: sanitizer_probe-test.clean ............................   Passed    0.00 sec
+test 30
+    Start 30: sanitizer_probe-test_ASAN.clean
+
+30: Test command: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer/sanitizer_probe-test_ASAN "clean"
+30: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer
+30: Test timeout computed to be: 10000000
+30: sanitizer_probe: clean started
+30: sanitizer_probe: clean completed (value 4)
+2/7 Test #30: sanitizer_probe-test_ASAN.clean .......................   Passed    0.01 sec
+test 31
+    Start 31: sanitizer_probe-test_UBSAN.clean
+
+31: Test command: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer/sanitizer_probe-test_UBSAN "clean"
+31: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer
+31: Test timeout computed to be: 10000000
+31: sanitizer_probe: clean started
+31: sanitizer_probe: clean completed (value 4)
+3/7 Test #31: sanitizer_probe-test_UBSAN.clean ......................   Passed    0.00 sec
+test 32
+    Start 32: sanitizer_probe-test_ASAN.library-heap-overflow
+
+32: Test command: /usr/bin/cmake "-DCHILD=$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer/sanitizer_probe-test_ASAN" "-DMODE=library-heap-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=ERROR: AddressSanitizer: heap-buffer-overflow" "-P" "$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M1-base-helper-empty/tests/sanitizer/check_sanitizer_child.cmake"
+32: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer
+32: Test timeout computed to be: 10000000
+32: -- ASAN_OPTIONS is unset
+32: -- UBSAN_OPTIONS is unset
+32: -- child: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer/sanitizer_probe-test_ASAN library-heap-overflow
+32: -- child exit status: 0
+32: -- child stdout:
+32: sanitizer_probe: library-heap-overflow started
+32: sanitizer_probe: library-heap-overflow completed (value 0)
+32: 
+32: -- child stderr:
+32: 
+32: CMake Error at $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M1-base-helper-empty/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+32:   sanitizer diagnostic control failed:
+32: 
+32:   exit status 0, expected 1
+32: 
+32:   no report matching "ERROR: AddressSanitizer: heap-buffer-overflow" on
+32:   stderr
+32: 
+32:   the probe continued past its faulting operation
+32: 
+32: 
+32: 
+4/7 Test #32: sanitizer_probe-test_ASAN.library-heap-overflow .......***Failed    0.02 sec
+test 33
+    Start 33: sanitizer_probe-test_ASAN.consumer-heap-overflow
+
+33: Test command: /usr/bin/cmake "-DCHILD=$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer/sanitizer_probe-test_ASAN" "-DMODE=consumer-heap-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=ERROR: AddressSanitizer: heap-buffer-overflow" "-P" "$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M1-base-helper-empty/tests/sanitizer/check_sanitizer_child.cmake"
+33: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer
+33: Test timeout computed to be: 10000000
+33: -- ASAN_OPTIONS is unset
+33: -- UBSAN_OPTIONS is unset
+33: -- child: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer/sanitizer_probe-test_ASAN consumer-heap-overflow
+33: -- child exit status: 0
+33: -- child stdout:
+33: sanitizer_probe: consumer-heap-overflow started
+33: sanitizer_probe: consumer-heap-overflow completed (value 0)
+33: 
+33: -- child stderr:
+33: 
+33: CMake Error at $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M1-base-helper-empty/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+33:   sanitizer diagnostic control failed:
+33: 
+33:   exit status 0, expected 1
+33: 
+33:   no report matching "ERROR: AddressSanitizer: heap-buffer-overflow" on
+33:   stderr
+33: 
+33:   the probe continued past its faulting operation
+33: 
+33: 
+33: 
+5/7 Test #33: sanitizer_probe-test_ASAN.consumer-heap-overflow ......***Failed    0.02 sec
+test 34
+    Start 34: sanitizer_probe-test_UBSAN.library-signed-overflow
+
+34: Test command: /usr/bin/cmake "-DCHILD=$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer/sanitizer_probe-test_UBSAN" "-DMODE=library-signed-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=sanitizer_probe_lib[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow" "-P" "$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M1-base-helper-empty/tests/sanitizer/check_sanitizer_child.cmake"
+34: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer
+34: Environment variables: 
+34:  UBSAN_OPTIONS=halt_on_error=1
+34: Test timeout computed to be: 10000000
+34: -- ASAN_OPTIONS is unset
+34: -- UBSAN_OPTIONS=halt_on_error=1
+34: -- child: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer/sanitizer_probe-test_UBSAN library-signed-overflow
+34: -- child exit status: 0
+34: -- child stdout:
+34: sanitizer_probe: library-signed-overflow started
+34: sanitizer_probe: library-signed-overflow completed (value -2147483648)
+34: 
+34: -- child stderr:
+34: 
+34: CMake Error at $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M1-base-helper-empty/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+34:   sanitizer diagnostic control failed:
+34: 
+34:   exit status 0, expected 1
+34: 
+34:   no report matching "sanitizer_probe_lib[.]cpp:[0-9]+:[0-9]+: runtime error:
+34:   signed integer overflow" on stderr
+34: 
+34:   the probe continued past its faulting operation
+34: 
+34: 
+34: 
+6/7 Test #34: sanitizer_probe-test_UBSAN.library-signed-overflow ....***Failed    0.01 sec
+test 35
+    Start 35: sanitizer_probe-test_UBSAN.consumer-signed-overflow
+
+35: Test command: /usr/bin/cmake "-DCHILD=$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer/sanitizer_probe-test_UBSAN" "-DMODE=consumer-signed-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=sanitizer_probe_test[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow" "-P" "$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M1-base-helper-empty/tests/sanitizer/check_sanitizer_child.cmake"
+35: Working Directory: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer
+35: Environment variables: 
+35:  UBSAN_OPTIONS=halt_on_error=1
+35: Test timeout computed to be: 10000000
+35: -- ASAN_OPTIONS is unset
+35: -- UBSAN_OPTIONS=halt_on_error=1
+35: -- child: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/tests/sanitizer/sanitizer_probe-test_UBSAN consumer-signed-overflow
+35: -- child exit status: 0
+35: -- child stdout:
+35: sanitizer_probe: consumer-signed-overflow started
+35: sanitizer_probe: consumer-signed-overflow completed (value -2147483648)
+35: 
+35: -- child stderr:
+35: 
+35: CMake Error at $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/mut/M1-base-helper-empty/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+35:   sanitizer diagnostic control failed:
+35: 
+35:   exit status 0, expected 1
+35: 
+35:   no report matching "sanitizer_probe_test[.]cpp:[0-9]+:[0-9]+: runtime
+35:   error: signed integer overflow" on stderr
+35: 
+35:   the probe continued past its faulting operation
+35: 
+35: 
+35: 
+7/7 Test #35: sanitizer_probe-test_UBSAN.consumer-signed-overflow ...***Failed    0.01 sec
+
+The following tests passed:
+	sanitizer_probe-test.clean
+	sanitizer_probe-test_ASAN.clean
+	sanitizer_probe-test_UBSAN.clean
+
+43% tests passed, 4 tests failed out of 7
+
+Total Test time (real) =   0.09 sec
+
+The following tests FAILED:
+	 32 - sanitizer_probe-test_ASAN.library-heap-overflow (Failed)
+	 33 - sanitizer_probe-test_ASAN.consumer-heap-overflow (Failed)
+	 34 - sanitizer_probe-test_UBSAN.library-signed-overflow (Failed)
+	 35 - sanitizer_probe-test_UBSAN.consumer-signed-overflow (Failed)
+Errors while running CTest
+Output from these tests are in: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/build/mut/M1-base-helper-empty/Testing/Temporary/LastTest.log
+Use "--rerun-failed --output-on-failure" to re-run the failed cases verbosely.

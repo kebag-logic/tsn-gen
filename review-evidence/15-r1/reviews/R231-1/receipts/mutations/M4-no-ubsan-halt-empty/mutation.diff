@@ -1,0 +1,10 @@
+diff -ru cand-pristine/tests/sanitizer/CMakeLists.txt mut/M4-no-ubsan-halt-empty/tests/sanitizer/CMakeLists.txt
+--- cand-pristine/tests/sanitizer/CMakeLists.txt	2026-09-22 09:21:04.000000000 +0200
++++ mut/M4-no-ubsan-halt-empty/tests/sanitizer/CMakeLists.txt	2026-09-22 11:19:33.963075155 +0200
+@@ -75,5 +75,5 @@
+ set_tests_properties(
+ 	sanitizer_probe-test_UBSAN.library-signed-overflow
+ 	sanitizer_probe-test_UBSAN.consumer-signed-overflow
+-	PROPERTIES ENVIRONMENT "UBSAN_OPTIONS=halt_on_error=1"
++	PROPERTIES LABELS "r231-no-halt"
+ )

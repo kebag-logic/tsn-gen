@@ -1,0 +1,52 @@
+== unit-tests pull_request run 35702733614 job 106664335640 log sha256 0c246cfd57ecede512b1d3d6f6421d13bcf62379b144184b5a511d20f1ea91e8
+    The CXX compiler identification is GNU 13.3.0
+    Image: ubuntu-24.04
+    HEAD is now at 60be6b6 Merge 76906b83eb54ac29040fe72fd910d34727188694 into deca300c9eb4863fa13383b45ba6cb6fd0828671
+    Generating Multi-library -fsanitize=undefined
+    Generating Multi-library -fsanitize=undefined
+    Generating Multi-library -fsanitize=undefined
+    ##[group]Run actions/checkout@v4
+    ##[group]Run git submodule update --init --recursive
+    ##[group]Run ./setup.sh d
+    ##[group]Run ./tests/run-tests.sh
+    100% tests passed, 0 tests failed out of 292
+    100% tests passed, 0 tests failed out of 292
+== unit-tests push run 35702728202 job 106664318693 log sha256 32ecc1a3654c5d9b1c009107f1413499107a99f7b5abd71c0349948e618bd3de
+    The CXX compiler identification is GNU 13.3.0
+    Image: ubuntu-24.04
+    Generating Multi-library -fsanitize=undefined
+    Generating Multi-library -fsanitize=undefined
+    Generating Multi-library -fsanitize=undefined
+    ##[group]Run actions/checkout@v4
+    ##[group]Run git submodule update --init --recursive
+    ##[group]Run ./setup.sh d
+    ##[group]Run ./tests/run-tests.sh
+    100% tests passed, 0 tests failed out of 292
+    100% tests passed, 0 tests failed out of 292
+== behave-testing pull_request run 35702733560 job 106664335400 log sha256 473ec86d96080987562b5180d2aaf967461eb2e6be2199ef366899050e54eaba
+    The CXX compiler identification is GNU 13.3.0
+    Image: ubuntu-24.04
+    HEAD is now at 60be6b6 Merge 76906b83eb54ac29040fe72fd910d34727188694 into deca300c9eb4863fa13383b45ba6cb6fd0828671
+    Generating Multi-library -fsanitize=undefined
+    Generating Multi-library -fsanitize=undefined
+    Generating Multi-library -fsanitize=undefined
+    ##[group]Run actions/checkout@v4
+    ##[group]Run git submodule update --init --recursive
+    ##[group]Run ./setup.sh d
+    ##[group]Run ./tests/run-tests-behave.sh
+    100% tests passed, 0 tests failed out of 292
+    96 scenarios passed, 0 failed, 2 skipped
+    115 scenarios passed, 0 failed, 0 skipped
+== behave-testing push run 35702728177 job 106664318369 log sha256 4bceb799885e4a178cd6baa9e566b79dd24894af659738b793d6c6d094986d41
+    The CXX compiler identification is GNU 13.3.0
+    Image: ubuntu-24.04
+    Generating Multi-library -fsanitize=undefined
+    Generating Multi-library -fsanitize=undefined
+    Generating Multi-library -fsanitize=undefined
+    ##[group]Run actions/checkout@v4
+    ##[group]Run git submodule update --init --recursive
+    ##[group]Run ./setup.sh d
+    ##[group]Run ./tests/run-tests-behave.sh
+    100% tests passed, 0 tests failed out of 292
+    96 scenarios passed, 0 failed, 2 skipped
+    115 scenarios passed, 0 failed, 0 skipped

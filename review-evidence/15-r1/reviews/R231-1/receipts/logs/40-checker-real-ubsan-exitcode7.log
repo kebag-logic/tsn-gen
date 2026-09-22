@@ -1,0 +1,17 @@
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS=halt_on_error=1:exitcode=7
+-- child: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/cand/build/tests/sanitizer/sanitizer_probe-test_UBSAN library-signed-overflow
+-- child exit status: 7
+-- child stdout:
+sanitizer_probe: library-signed-overflow started
+
+-- child stderr:
+$VALIDATION_STORAGE/reviews/r231-18-r1-scratch/src/cand/tests/sanitizer/sanitizer_probe_lib.cpp:18:18: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+
+CMake Error at src/cand/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+  sanitizer diagnostic control failed:
+
+  exit status 7, expected 1
+
+
+

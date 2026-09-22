@@ -1,0 +1,17 @@
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS is unset
+-- child: $VALIDATION_STORAGE/reviews/r231-18-r1-scratch/fake-children/exit1-noreport.sh library-heap-overflow
+-- child exit status: 1
+-- child stdout:
+sanitizer_probe: library-heap-overflow started
+
+-- child stderr:
+
+CMake Error at src/cand/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+  sanitizer diagnostic control failed:
+
+  no report matching "ERROR: AddressSanitizer: heap-buffer-overflow" on
+  stderr
+
+
+

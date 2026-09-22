@@ -1,0 +1,15 @@
+g++ (GCC) 16.2.1 20260810
+---- signed-overflow (UBSAN_OPTIONS unset)
+mode signed-overflow started
+u.cpp:10:62: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+-2147483648
+mode signed-overflow completed
+exit status: 0
+---- missing-return (UBSAN_OPTIONS unset)
+mode missing-return started
+u.cpp:5:12: runtime error: execution reached the end of a value-returning function without returning a value
+exit status: 1
+---- unreachable (UBSAN_OPTIONS unset)
+mode unreachable started
+u.cpp:12:84: runtime error: execution reached an unreachable program point
+exit status: 1

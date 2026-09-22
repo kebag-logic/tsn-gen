@@ -1,0 +1,15 @@
+g++ (GCC) 16.2.1 20260810
+---- ASan build, leak at exit (ASAN_OPTIONS unset)
+
+=================================================================
+==2474249==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 64 byte(s) in 1 object(s) allocated from:
+    #0 0x7f51acb2c0c1 in malloc (/usr/lib/libasan.so.8+0x12c0c1) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x5641e2c46196 in main (<SCRATCH>/ubsan-semantics/leak+0x1196) (BuildId: ad8addbf0051fadfa0296d2f126c311cf11eeedb)
+    #2 0x7f51ac227780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #3 0x7f51ac2278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #4 0x5641e2c460b4 in _start (<SCRATCH>/ubsan-semantics/leak+0x10b4) (BuildId: ad8addbf0051fadfa0296d2f126c311cf11eeedb)
+
+SUMMARY: AddressSanitizer: 64 byte(s) leaked in 1 allocation(s).
+exit status: 1

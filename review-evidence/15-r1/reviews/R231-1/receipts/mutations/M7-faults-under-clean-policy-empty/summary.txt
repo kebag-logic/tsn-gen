@@ -1,0 +1,12 @@
+      Passed  sanitizer_probe-test.clean
+      Passed  sanitizer_probe-test_ASAN.clean
+      Passed  sanitizer_probe-test_UBSAN.clean
+      Passed  sanitizer_probe-test_ASAN.library-heap-overflow
+      Passed  sanitizer_probe-test_ASAN.consumer-heap-overflow
+      Passed  sanitizer_probe-test_UBSAN.library-signed-overflow
+      Passed  sanitizer_probe-test_UBSAN.consumer-signed-overflow
+   ***Failed  r231-sanitizer_probe-test_ASAN.library-heap-overflow.as-clean
+   ***Failed  r231-sanitizer_probe-test_ASAN.consumer-heap-overflow.as-clean
+   ***Failed  r231-sanitizer_probe-test_UBSAN.library-signed-overflow.as-clean
+   ***Failed  r231-sanitizer_probe-test_UBSAN.consumer-signed-overflow.as-clean
+64% tests passed, 4 tests failed out of 11

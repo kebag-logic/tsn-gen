@@ -1,0 +1,2 @@
+applied M7-faults-under-clean-policy
+diff exit 1

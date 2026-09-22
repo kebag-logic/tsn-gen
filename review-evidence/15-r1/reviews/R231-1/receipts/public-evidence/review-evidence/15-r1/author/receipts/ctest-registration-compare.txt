@@ -1,0 +1,10 @@
+base tests 285 candidate tests 292
+candidate starts with the identical base registrations, in order: True
+added registrations:
+   sanitizer_probe-test.clean 
+   sanitizer_probe-test_ASAN.clean 
+   sanitizer_probe-test_UBSAN.clean 
+   sanitizer_probe-test_ASAN.library-heap-overflow 
+   sanitizer_probe-test_ASAN.consumer-heap-overflow 
+   sanitizer_probe-test_UBSAN.library-signed-overflow ENVIRONMENT=[['UBSAN_OPTIONS=halt_on_error=1']]
+   sanitizer_probe-test_UBSAN.consumer-signed-overflow ENVIRONMENT=[['UBSAN_OPTIONS=halt_on_error=1']]

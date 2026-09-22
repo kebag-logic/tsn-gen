@@ -1,0 +1,99 @@
+{
+ "objects": 131,
+ "by_kind": {
+  "asan": {
+   "objects": 31,
+   "with_asan_refs": 31,
+   "with_ubsan_refs": 0,
+   "without_expected_refs": [],
+   "with_any_refs": null
+  },
+  "ubsan": {
+   "objects": 31,
+   "with_asan_refs": 0,
+   "with_ubsan_refs": 30,
+   "without_expected_refs": [
+    "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o"
+   ],
+   "with_any_refs": null
+  },
+  "plain": {
+   "objects": 69,
+   "with_asan_refs": 0,
+   "with_ubsan_refs": 0,
+   "without_expected_refs": [],
+   "with_any_refs": []
+  },
+  "other": {
+   "objects": 0,
+   "with_asan_refs": 0,
+   "with_ubsan_refs": 0,
+   "without_expected_refs": [],
+   "with_any_refs": []
+  }
+ },
+ "artifacts_with_sanitizer_needed": {
+  "parser/tests/logic_registry-test_ASAN": [
+   "libasan.so.8"
+  ],
+  "parser/tests/logic_registry-test_UBSAN": [
+   "libubsan.so.1"
+  ],
+  "parser/tests/object_serializer-test_ASAN": [
+   "libasan.so.8"
+  ],
+  "parser/tests/object_serializer-test_UBSAN": [
+   "libubsan.so.1"
+  ],
+  "parser/tests/protocol_parser-test_ASAN": [
+   "libasan.so.8"
+  ],
+  "parser/tests/protocol_parser-test_UBSAN": [
+   "libubsan.so.1"
+  ],
+  "parser/tests/stack_builder-test_ASAN": [
+   "libasan.so.8"
+  ],
+  "parser/tests/stack_builder-test_UBSAN": [
+   "libubsan.so.1"
+  ],
+  "parser/tests/validator-test_ASAN": [
+   "libasan.so.8"
+  ],
+  "parser/tests/validator-test_UBSAN": [
+   "libubsan.so.1"
+  ],
+  "tests/sanitizer/sanitizer_probe-test_ASAN": [
+   "libasan.so.8"
+  ],
+  "tests/sanitizer/sanitizer_probe-test_UBSAN": [
+   "libubsan.so.1"
+  ],
+  "traffic-gen/tests/adp_fuzz-test_ASAN": [
+   "libasan.so.8"
+  ],
+  "traffic-gen/tests/adp_fuzz-test_UBSAN": [
+   "libubsan.so.1"
+  ],
+  "traffic-gen/tests/ptp_flags-test_ASAN": [
+   "libasan.so.8"
+  ],
+  "traffic-gen/tests/ptp_flags-test_UBSAN": [
+   "libubsan.so.1"
+  ],
+  "traffic-gen/tests/traffic_gen-test_ASAN": [
+   "libasan.so.8"
+  ],
+  "traffic-gen/tests/traffic_gen-test_UBSAN": [
+   "libubsan.so.1"
+  ]
+ },
+ "artifacts_with_undef_sanitizer_syms_but_no_needed": [
+  "parser/libprotocol_parser_asan.so",
+  "parser/libprotocol_parser_ubsan.so",
+  "tests/sanitizer/libsanitizer_probe_asan.so",
+  "tests/sanitizer/libsanitizer_probe_ubsan.so",
+  "traffic-gen/libtraffic_gen_asan.so",
+  "traffic-gen/libtraffic_gen_ubsan.so"
+ ]
+}

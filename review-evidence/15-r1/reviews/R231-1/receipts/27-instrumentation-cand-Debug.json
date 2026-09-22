@@ -1,0 +1,1031 @@
+{
+ "summary": {
+  "objects": 131,
+  "by_kind": {
+   "asan": {
+    "objects": 31,
+    "with_asan_refs": 31,
+    "with_ubsan_refs": 0,
+    "without_expected_refs": [],
+    "with_any_refs": null
+   },
+   "ubsan": {
+    "objects": 31,
+    "with_asan_refs": 0,
+    "with_ubsan_refs": 30,
+    "without_expected_refs": [
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o"
+    ],
+    "with_any_refs": null
+   },
+   "plain": {
+    "objects": 69,
+    "with_asan_refs": 0,
+    "with_ubsan_refs": 0,
+    "without_expected_refs": [],
+    "with_any_refs": []
+   },
+   "other": {
+    "objects": 0,
+    "with_asan_refs": 0,
+    "with_ubsan_refs": 0,
+    "without_expected_refs": [],
+    "with_any_refs": []
+   }
+  },
+  "artifacts_with_sanitizer_needed": {
+   "parser/tests/logic_registry-test_ASAN": [
+    "libasan.so.8"
+   ],
+   "parser/tests/logic_registry-test_UBSAN": [
+    "libubsan.so.1"
+   ],
+   "parser/tests/object_serializer-test_ASAN": [
+    "libasan.so.8"
+   ],
+   "parser/tests/object_serializer-test_UBSAN": [
+    "libubsan.so.1"
+   ],
+   "parser/tests/protocol_parser-test_ASAN": [
+    "libasan.so.8"
+   ],
+   "parser/tests/protocol_parser-test_UBSAN": [
+    "libubsan.so.1"
+   ],
+   "parser/tests/stack_builder-test_ASAN": [
+    "libasan.so.8"
+   ],
+   "parser/tests/stack_builder-test_UBSAN": [
+    "libubsan.so.1"
+   ],
+   "parser/tests/validator-test_ASAN": [
+    "libasan.so.8"
+   ],
+   "parser/tests/validator-test_UBSAN": [
+    "libubsan.so.1"
+   ],
+   "tests/sanitizer/sanitizer_probe-test_ASAN": [
+    "libasan.so.8"
+   ],
+   "tests/sanitizer/sanitizer_probe-test_UBSAN": [
+    "libubsan.so.1"
+   ],
+   "traffic-gen/tests/adp_fuzz-test_ASAN": [
+    "libasan.so.8"
+   ],
+   "traffic-gen/tests/adp_fuzz-test_UBSAN": [
+    "libubsan.so.1"
+   ],
+   "traffic-gen/tests/ptp_flags-test_ASAN": [
+    "libasan.so.8"
+   ],
+   "traffic-gen/tests/ptp_flags-test_UBSAN": [
+    "libubsan.so.1"
+   ],
+   "traffic-gen/tests/traffic_gen-test_ASAN": [
+    "libasan.so.8"
+   ],
+   "traffic-gen/tests/traffic_gen-test_UBSAN": [
+    "libubsan.so.1"
+   ]
+  },
+  "artifacts_with_undef_sanitizer_syms_but_no_needed": [
+   "parser/libprotocol_parser_asan.so",
+   "parser/libprotocol_parser_ubsan.so",
+   "tests/sanitizer/libsanitizer_probe_asan.so",
+   "tests/sanitizer/libsanitizer_probe_ubsan.so",
+   "traffic-gen/libtraffic_gen_asan.so",
+   "traffic-gen/libtraffic_gen_ubsan.so"
+  ]
+ },
+ "objects": {
+  "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o": {
+   "target": "protocol_parser_asan",
+   "asan_refs": 22,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o": {
+   "target": "protocol_parser_asan",
+   "asan_refs": 29,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o": {
+   "target": "protocol_parser_asan",
+   "asan_refs": 27,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o": {
+   "target": "protocol_parser_asan",
+   "asan_refs": 10,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o": {
+   "target": "protocol_parser_asan",
+   "asan_refs": 21,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o": {
+   "target": "protocol_parser_asan",
+   "asan_refs": 18,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o": {
+   "target": "protocol_parser_asan",
+   "asan_refs": 7,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o": {
+   "target": "protocol_parser_asan",
+   "asan_refs": 17,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o": {
+   "target": "protocol_parser_asan",
+   "asan_refs": 19,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o": {
+   "target": "protocol_parser_asan",
+   "asan_refs": 4,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o": {
+   "target": "protocol_parser_asan",
+   "asan_refs": 19,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o": {
+   "target": "protocol_parser_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 6
+  },
+  "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o": {
+   "target": "protocol_parser_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 7
+  },
+  "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o": {
+   "target": "protocol_parser_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 7
+  },
+  "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o": {
+   "target": "protocol_parser_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 5
+  },
+  "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o": {
+   "target": "protocol_parser_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 5
+  },
+  "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o": {
+   "target": "protocol_parser_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 7
+  },
+  "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o": {
+   "target": "protocol_parser_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 4
+  },
+  "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o": {
+   "target": "protocol_parser_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 6
+  },
+  "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o": {
+   "target": "protocol_parser_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 5
+  },
+  "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o": {
+   "target": "protocol_parser_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o": {
+   "target": "protocol_parser_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 5
+  },
+  "parser/CMakeFiles/protocol_parser.dir/src/stack_builder.cpp.o": {
+   "target": "protocol_parser",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser.dir/src/protocol.cpp.o": {
+   "target": "protocol_parser",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser.dir/src/validator.cpp.o": {
+   "target": "protocol_parser",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser.dir/src/log.cpp.o": {
+   "target": "protocol_parser",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser.dir/src/db_var_impl.cpp.o": {
+   "target": "protocol_parser",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser.dir/src/protocol_parser.cpp.o": {
+   "target": "protocol_parser",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser.dir/src/stack.cpp.o": {
+   "target": "protocol_parser",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser.dir/src/logic_registry.cpp.o": {
+   "target": "protocol_parser",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser.dir/src/db_proto_service_impl.cpp.o": {
+   "target": "protocol_parser",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser.dir/src/db_proto_impl.cpp.o": {
+   "target": "protocol_parser",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/CMakeFiles/protocol_parser.dir/src/db_proto_if_impl.cpp.o": {
+   "target": "protocol_parser",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o": {
+   "target": "validator-test_UBSAN",
+   "asan_refs": 0,
+   "ubsan_refs": 6
+  },
+  "parser/tests/CMakeFiles/validator-test.dir/validator_test.cpp.o": {
+   "target": "validator-test",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/tests/CMakeFiles/logic_registry-test.dir/logic_registry_test.cpp.o": {
+   "target": "logic_registry-test",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o": {
+   "target": "stack_builder-test_UBSAN",
+   "asan_refs": 0,
+   "ubsan_refs": 6
+  },
+  "parser/tests/CMakeFiles/gtest_parser-test.dir/gtest.cpp.o": {
+   "target": "gtest_parser-test",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/tests/CMakeFiles/object_serializer-test.dir/object_serializer_test.cpp.o": {
+   "target": "object_serializer-test",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o": {
+   "target": "object_serializer-test_ASAN",
+   "asan_refs": 24,
+   "ubsan_refs": 0
+  },
+  "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o": {
+   "target": "validator-test_ASAN",
+   "asan_refs": 21,
+   "ubsan_refs": 0
+  },
+  "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o": {
+   "target": "object_serializer-test_UBSAN",
+   "asan_refs": 0,
+   "ubsan_refs": 6
+  },
+  "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o": {
+   "target": "protocol_parser-test_UBSAN",
+   "asan_refs": 0,
+   "ubsan_refs": 6
+  },
+  "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o": {
+   "target": "stack_builder-test_ASAN",
+   "asan_refs": 25,
+   "ubsan_refs": 0
+  },
+  "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o": {
+   "target": "logic_registry-test_ASAN",
+   "asan_refs": 22,
+   "ubsan_refs": 0
+  },
+  "parser/tests/CMakeFiles/stack_builder-test.dir/stack_builder_test.cpp.o": {
+   "target": "stack_builder-test",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/tests/CMakeFiles/protocol_parser-test.dir/protocol_parser_test.cpp.o": {
+   "target": "protocol_parser-test",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o": {
+   "target": "protocol_parser-test_ASAN",
+   "asan_refs": 24,
+   "ubsan_refs": 0
+  },
+  "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o": {
+   "target": "logic_registry-test_UBSAN",
+   "asan_refs": 0,
+   "ubsan_refs": 7
+  },
+  "logic/CMakeFiles/protocol_logic.dir/src/aecp_aem_logic.cpp.o": {
+   "target": "protocol_logic",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "logic/CMakeFiles/protocol_logic.dir/src/avtp_control_logic.cpp.o": {
+   "target": "protocol_logic",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "logic/CMakeFiles/protocol_logic.dir/src/ethernet_frame_logic.cpp.o": {
+   "target": "protocol_logic",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "logic/tests/CMakeFiles/ethernet_frame_logic-test.dir/ethernet_frame_logic_test.cpp.o": {
+   "target": "ethernet_frame_logic-test",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "logic/tests/CMakeFiles/stack_codec-test.dir/stack_codec_test.cpp.o": {
+   "target": "stack_codec-test",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/base64.cpp.o": {
+   "target": "c4core",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/format.cpp.o": {
+   "target": "c4core",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/memory_util.cpp.o": {
+   "target": "c4core",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/version.cpp.o": {
+   "target": "c4core",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/utf.cpp.o": {
+   "target": "c4core",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/language.cpp.o": {
+   "target": "c4core",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/char_traits.cpp.o": {
+   "target": "c4core",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/memory_resource.cpp.o": {
+   "target": "c4core",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/error.cpp.o": {
+   "target": "c4core",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/base64.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/format.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_util.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/version.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/utf.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/language.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/char_traits.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_resource.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/error.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/node_type.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/reference_resolver.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/tree.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/version.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/tag.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/common.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/parse.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/node.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/preprocess.cpp.o": {
+   "target": "ryml",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o": {
+   "target": "gtest_main",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o": {
+   "target": "gtest",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o": {
+   "target": "gmock",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "external/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o": {
+   "target": "gmock_main",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o": {
+   "target": "sanitizer_probe-test_UBSAN",
+   "asan_refs": 0,
+   "ubsan_refs": 5
+  },
+  "tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o": {
+   "target": "sanitizer_probe",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o": {
+   "target": "sanitizer_probe-test",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o": {
+   "target": "sanitizer_probe_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 3
+  },
+  "tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o": {
+   "target": "sanitizer_probe_asan",
+   "asan_refs": 3,
+   "ubsan_refs": 0
+  },
+  "tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o": {
+   "target": "sanitizer_probe-test_ASAN",
+   "asan_refs": 12,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o": {
+   "target": "traffic_gen_asan",
+   "asan_refs": 15,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o": {
+   "target": "traffic_gen_asan",
+   "asan_refs": 15,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o": {
+   "target": "traffic_gen_asan",
+   "asan_refs": 16,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o": {
+   "target": "traffic_gen_asan",
+   "asan_refs": 17,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o": {
+   "target": "traffic_gen_asan",
+   "asan_refs": 17,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o": {
+   "target": "traffic_gen_asan",
+   "asan_refs": 17,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o": {
+   "target": "traffic_gen_asan",
+   "asan_refs": 17,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o": {
+   "target": "traffic_gen_asan",
+   "asan_refs": 17,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o": {
+   "target": "traffic_gen_asan",
+   "asan_refs": 17,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o": {
+   "target": "traffic_gen_asan",
+   "asan_refs": 19,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen.dir/src/packet_decoder.cpp.o": {
+   "target": "traffic_gen",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen.dir/src/traffic_generator.cpp.o": {
+   "target": "traffic_gen",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen.dir/src/pcap_receiver.cpp.o": {
+   "target": "traffic_gen",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen.dir/src/raw_socket_receiver.cpp.o": {
+   "target": "traffic_gen",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen.dir/src/verilator_receiver.cpp.o": {
+   "target": "traffic_gen",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen.dir/src/pcap_sender.cpp.o": {
+   "target": "traffic_gen",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen.dir/src/raw_socket_sender.cpp.o": {
+   "target": "traffic_gen",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen.dir/src/verilator_sender.cpp.o": {
+   "target": "traffic_gen",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen.dir/src/packet_builder.cpp.o": {
+   "target": "traffic_gen",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen.dir/src/session.cpp.o": {
+   "target": "traffic_gen",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/packet_gen.dir/tools/packet_gen_main.cpp.o": {
+   "target": "packet_gen",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o": {
+   "target": "traffic_gen_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 6
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o": {
+   "target": "traffic_gen_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 6
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o": {
+   "target": "traffic_gen_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 6
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o": {
+   "target": "traffic_gen_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 5
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o": {
+   "target": "traffic_gen_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 8
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o": {
+   "target": "traffic_gen_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 5
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o": {
+   "target": "traffic_gen_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 5
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o": {
+   "target": "traffic_gen_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 6
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o": {
+   "target": "traffic_gen_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 9
+  },
+  "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o": {
+   "target": "traffic_gen_ubsan",
+   "asan_refs": 0,
+   "ubsan_refs": 10
+  },
+  "traffic-gen/tests/CMakeFiles/ptp_flags-test.dir/ptp_flags_test.cpp.o": {
+   "target": "ptp_flags-test",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o": {
+   "target": "adp_fuzz-test_ASAN",
+   "asan_refs": 24,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/tests/CMakeFiles/traffic_gen-test.dir/traffic_gen_test.cpp.o": {
+   "target": "traffic_gen-test",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o": {
+   "target": "ptp_flags-test_ASAN",
+   "asan_refs": 26,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o": {
+   "target": "traffic_gen-test_UBSAN",
+   "asan_refs": 0,
+   "ubsan_refs": 8
+  },
+  "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o": {
+   "target": "traffic_gen-test_ASAN",
+   "asan_refs": 26,
+   "ubsan_refs": 0
+  },
+  "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o": {
+   "target": "ptp_flags-test_UBSAN",
+   "asan_refs": 0,
+   "ubsan_refs": 8
+  },
+  "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o": {
+   "target": "adp_fuzz-test_UBSAN",
+   "asan_refs": 0,
+   "ubsan_refs": 9
+  },
+  "traffic-gen/tests/CMakeFiles/adp_fuzz-test.dir/adp_fuzz_test.cpp.o": {
+   "target": "adp_fuzz-test",
+   "asan_refs": 0,
+   "ubsan_refs": 0
+  }
+ },
+ "artifacts": {
+  "parser/libprotocol_parser_asan.so": {
+   "sanitizer_needed": [],
+   "undef_asan": 33,
+   "undef_ubsan": 0
+  },
+  "parser/libprotocol_parser_ubsan.so": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 9
+  },
+  "parser/libprotocol_parser.so.0.1.0": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "parser/tests/stack_builder-test_ASAN": {
+   "sanitizer_needed": [
+    "libasan.so.8"
+   ],
+   "undef_asan": 24,
+   "undef_ubsan": 0
+  },
+  "parser/tests/protocol_parser-test": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "parser/tests/protocol_parser-test_ASAN": {
+   "sanitizer_needed": [
+    "libasan.so.8"
+   ],
+   "undef_asan": 23,
+   "undef_ubsan": 0
+  },
+  "parser/tests/stack_builder-test_UBSAN": {
+   "sanitizer_needed": [
+    "libubsan.so.1"
+   ],
+   "undef_asan": 0,
+   "undef_ubsan": 6
+  },
+  "parser/tests/logic_registry-test_UBSAN": {
+   "sanitizer_needed": [
+    "libubsan.so.1"
+   ],
+   "undef_asan": 0,
+   "undef_ubsan": 7
+  },
+  "parser/tests/object_serializer-test_ASAN": {
+   "sanitizer_needed": [
+    "libasan.so.8"
+   ],
+   "undef_asan": 23,
+   "undef_ubsan": 0
+  },
+  "parser/tests/object_serializer-test": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "parser/tests/validator-test_UBSAN": {
+   "sanitizer_needed": [
+    "libubsan.so.1"
+   ],
+   "undef_asan": 0,
+   "undef_ubsan": 6
+  },
+  "parser/tests/validator-test_ASAN": {
+   "sanitizer_needed": [
+    "libasan.so.8"
+   ],
+   "undef_asan": 20,
+   "undef_ubsan": 0
+  },
+  "parser/tests/protocol_parser-test_UBSAN": {
+   "sanitizer_needed": [
+    "libubsan.so.1"
+   ],
+   "undef_asan": 0,
+   "undef_ubsan": 6
+  },
+  "parser/tests/gtest_parser-test": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "parser/tests/object_serializer-test_UBSAN": {
+   "sanitizer_needed": [
+    "libubsan.so.1"
+   ],
+   "undef_asan": 0,
+   "undef_ubsan": 6
+  },
+  "parser/tests/validator-test": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "parser/tests/logic_registry-test_ASAN": {
+   "sanitizer_needed": [
+    "libasan.so.8"
+   ],
+   "undef_asan": 21,
+   "undef_ubsan": 0
+  },
+  "parser/tests/logic_registry-test": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "parser/tests/stack_builder-test": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "lib/libgtest.so.1.16.0": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "lib/libgtest_main.so.1.16.0": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "lib/libgmock_main.so.1.16.0": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "lib/libgmock.so.1.16.0": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "logic/libprotocol_logic.so.0.1.0": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "logic/tests/stack_codec-test": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "logic/tests/ethernet_frame_logic-test": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "external/rapidyaml/libryml.so.0.8.0": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "external/rapidyaml/subprojects/c4core/build/libc4core.so.0.2.5": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "tests/sanitizer/libsanitizer_probe_ubsan.so": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 3
+  },
+  "tests/sanitizer/sanitizer_probe-test_UBSAN": {
+   "sanitizer_needed": [
+    "libubsan.so.1"
+   ],
+   "undef_asan": 0,
+   "undef_ubsan": 5
+  },
+  "tests/sanitizer/libsanitizer_probe.so": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "tests/sanitizer/sanitizer_probe-test_ASAN": {
+   "sanitizer_needed": [
+    "libasan.so.8"
+   ],
+   "undef_asan": 11,
+   "undef_ubsan": 0
+  },
+  "tests/sanitizer/sanitizer_probe-test": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "tests/sanitizer/libsanitizer_probe_asan.so": {
+   "sanitizer_needed": [],
+   "undef_asan": 3,
+   "undef_ubsan": 0
+  },
+  "traffic-gen/libtraffic_gen_ubsan.so": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 13
+  },
+  "traffic-gen/libtraffic_gen_asan.so": {
+   "sanitizer_needed": [],
+   "undef_asan": 22,
+   "undef_ubsan": 0
+  },
+  "traffic-gen/libtraffic_gen.so.0.1.0": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "traffic-gen/packet_gen": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "traffic-gen/tests/adp_fuzz-test": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "traffic-gen/tests/ptp_flags-test_ASAN": {
+   "sanitizer_needed": [
+    "libasan.so.8"
+   ],
+   "undef_asan": 25,
+   "undef_ubsan": 0
+  },
+  "traffic-gen/tests/adp_fuzz-test_UBSAN": {
+   "sanitizer_needed": [
+    "libubsan.so.1"
+   ],
+   "undef_asan": 0,
+   "undef_ubsan": 9
+  },
+  "traffic-gen/tests/traffic_gen-test_UBSAN": {
+   "sanitizer_needed": [
+    "libubsan.so.1"
+   ],
+   "undef_asan": 0,
+   "undef_ubsan": 8
+  },
+  "traffic-gen/tests/ptp_flags-test": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "traffic-gen/tests/traffic_gen-test": {
+   "sanitizer_needed": [],
+   "undef_asan": 0,
+   "undef_ubsan": 0
+  },
+  "traffic-gen/tests/ptp_flags-test_UBSAN": {
+   "sanitizer_needed": [
+    "libubsan.so.1"
+   ],
+   "undef_asan": 0,
+   "undef_ubsan": 8
+  },
+  "traffic-gen/tests/traffic_gen-test_ASAN": {
+   "sanitizer_needed": [
+    "libasan.so.8"
+   ],
+   "undef_asan": 25,
+   "undef_ubsan": 0
+  },
+  "traffic-gen/tests/adp_fuzz-test_ASAN": {
+   "sanitizer_needed": [
+    "libasan.so.8"
+   ],
+   "undef_asan": 23,
+   "undef_ubsan": 0
+  }
+ }
+}

@@ -1,0 +1,16 @@
+base custom CMAKE_BUILD_TYPE=Profile: compile entries 125; with -fsanitize=address 0; with -fsanitize=undefined 0
+cand custom CMAKE_BUILD_TYPE=Profile: compile entries 131; with -fsanitize=address 31; with -fsanitize=undefined 31
+base Ninja Multi-Config Debug: {'asan': 0, 'ubsan': 0, 'other_flagged': 0, 'total': 0}
+base Ninja Multi-Config Release: {'asan': 0, 'ubsan': 0, 'other_flagged': 0, 'total': 0}
+base Ninja Multi-Config RelWithDebInfo: {'asan': 0, 'ubsan': 0, 'other_flagged': 0, 'total': 0}
+cand Ninja Multi-Config Debug: {'asan': 0, 'ubsan': 0, 'other_flagged': 0, 'total': 0}
+cand Ninja Multi-Config Release: {'asan': 0, 'ubsan': 0, 'other_flagged': 0, 'total': 0}
+cand Ninja Multi-Config RelWithDebInfo: {'asan': 0, 'ubsan': 0, 'other_flagged': 0, 'total': 0}
+cand embedded with ENABLE_PARSER_TESTS=ON: compile entries 132 asan 31 ubsan 31 ; configure-time probe tests []
+base Ninja Multi-Config (configure-only) Debug: {'objects': 125, 'asan': 29, 'ubsan': 29, 'flag_outside_variants': 0}
+base Ninja Multi-Config (configure-only) Release: {'objects': 125, 'asan': 29, 'ubsan': 29, 'flag_outside_variants': 0}
+base Ninja Multi-Config (configure-only) RelWithDebInfo: {'objects': 125, 'asan': 29, 'ubsan': 29, 'flag_outside_variants': 0}
+cand Ninja Multi-Config (configure-only) Debug: {'objects': 131, 'asan': 31, 'ubsan': 31, 'flag_outside_variants': 0}
+cand Ninja Multi-Config (configure-only) Release: {'objects': 131, 'asan': 31, 'ubsan': 31, 'flag_outside_variants': 0}
+cand Ninja Multi-Config (configure-only) RelWithDebInfo: {'objects': 131, 'asan': 31, 'ubsan': 31, 'flag_outside_variants': 0}
+cand embedded with ENABLE_PARSER_TESTS=ON (configure-only): configure-time probe tests ['sanitizer_probe-test.clean', 'sanitizer_probe-test_ASAN.clean', 'sanitizer_probe-test_ASAN.consumer-heap-overflow', 'sanitizer_probe-test_ASAN.library-heap-overflow', 'sanitizer_probe-test_UBSAN.clean', 'sanitizer_probe-test_UBSAN.consumer-signed-overflow', 'sanitizer_probe-test_UBSAN.library-signed-overflow']
