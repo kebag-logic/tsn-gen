@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.21...3.31)
+project(r232_consumer LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+add_subdirectory("$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/head" tsn-gen)
+add_executable(app main.cpp)
+target_link_libraries(app PRIVATE tsn::traffic_gen tsn::protocol_logic)
+target_compile_options(app PRIVATE -DR232_PARENT_OPTION)
+target_compile_definitions(app PRIVATE CORPUS="$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/head/protocols")

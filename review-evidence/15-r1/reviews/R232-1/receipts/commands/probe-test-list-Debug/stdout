@@ -1,0 +1,571 @@
+{
+  "backtraceGraph" : 
+  {
+    "commands" : 
+    [
+      "add_test",
+      "add_sanitizer_diagnostic_test"
+    ],
+    "files" : 
+    [
+      "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/head/traffic-gen/tests/CMakeLists.txt",
+      "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/head/tests/sanitizer/CMakeLists.txt"
+    ],
+    "nodes" : 
+    [
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 73,
+        "parent" : 0
+      },
+      {
+        "file" : 1
+      },
+      {
+        "command" : 0,
+        "file" : 1,
+        "line" : 42,
+        "parent" : 2
+      },
+      {
+        "file" : 1
+      },
+      {
+        "command" : 0,
+        "file" : 1,
+        "line" : 42,
+        "parent" : 4
+      },
+      {
+        "file" : 1
+      },
+      {
+        "command" : 0,
+        "file" : 1,
+        "line" : 42,
+        "parent" : 6
+      },
+      {
+        "file" : 1
+      },
+      {
+        "command" : 1,
+        "file" : 1,
+        "line" : 61,
+        "parent" : 8
+      },
+      {
+        "command" : 0,
+        "file" : 1,
+        "line" : 51,
+        "parent" : 9
+      },
+      {
+        "file" : 1
+      },
+      {
+        "command" : 1,
+        "file" : 1,
+        "line" : 63,
+        "parent" : 11
+      },
+      {
+        "command" : 0,
+        "file" : 1,
+        "line" : 51,
+        "parent" : 12
+      },
+      {
+        "file" : 1
+      },
+      {
+        "command" : 1,
+        "file" : 1,
+        "line" : 67,
+        "parent" : 14
+      },
+      {
+        "command" : 0,
+        "file" : 1,
+        "line" : 51,
+        "parent" : 15
+      },
+      {
+        "file" : 1
+      },
+      {
+        "command" : 1,
+        "file" : 1,
+        "line" : 69,
+        "parent" : 17
+      },
+      {
+        "command" : 0,
+        "file" : 1,
+        "line" : 51,
+        "parent" : 18
+      }
+    ]
+  },
+  "kind" : "ctestInfo",
+  "tests" : 
+  [
+    {
+      "name" : "protocol_parser-test_UBSAN_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/parser/tests"
+        }
+      ]
+    },
+    {
+      "name" : "protocol_parser-test_ASAN_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/parser/tests"
+        }
+      ]
+    },
+    {
+      "name" : "protocol_parser-test_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/parser/tests"
+        }
+      ]
+    },
+    {
+      "name" : "object_serializer-test_UBSAN_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/parser/tests"
+        }
+      ]
+    },
+    {
+      "name" : "object_serializer-test_ASAN_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/parser/tests"
+        }
+      ]
+    },
+    {
+      "name" : "object_serializer-test_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/parser/tests"
+        }
+      ]
+    },
+    {
+      "name" : "logic_registry-test_UBSAN_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/parser/tests"
+        }
+      ]
+    },
+    {
+      "name" : "logic_registry-test_ASAN_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/parser/tests"
+        }
+      ]
+    },
+    {
+      "name" : "logic_registry-test_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/parser/tests"
+        }
+      ]
+    },
+    {
+      "name" : "stack_builder-test_UBSAN_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/parser/tests"
+        }
+      ]
+    },
+    {
+      "name" : "stack_builder-test_ASAN_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/parser/tests"
+        }
+      ]
+    },
+    {
+      "name" : "stack_builder-test_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/parser/tests"
+        }
+      ]
+    },
+    {
+      "name" : "validator-test_UBSAN_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/parser/tests"
+        }
+      ]
+    },
+    {
+      "name" : "validator-test_ASAN_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/parser/tests"
+        }
+      ]
+    },
+    {
+      "name" : "validator-test_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/parser/tests"
+        }
+      ]
+    },
+    {
+      "name" : "gtest_parser-test_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/parser/tests"
+        }
+      ]
+    },
+    {
+      "name" : "ethernet_frame_logic-test_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/logic/tests"
+        }
+      ]
+    },
+    {
+      "name" : "stack_codec-test_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/logic/tests"
+        }
+      ]
+    },
+    {
+      "name" : "traffic_gen-test_UBSAN_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/traffic-gen/tests"
+        }
+      ]
+    },
+    {
+      "name" : "traffic_gen-test_ASAN_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/traffic-gen/tests"
+        }
+      ]
+    },
+    {
+      "name" : "traffic_gen-test_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/traffic-gen/tests"
+        }
+      ]
+    },
+    {
+      "name" : "adp_fuzz-test_UBSAN_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/traffic-gen/tests"
+        }
+      ]
+    },
+    {
+      "name" : "adp_fuzz-test_ASAN_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/traffic-gen/tests"
+        }
+      ]
+    },
+    {
+      "name" : "adp_fuzz-test_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/traffic-gen/tests"
+        }
+      ]
+    },
+    {
+      "name" : "ptp_flags-test_UBSAN_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/traffic-gen/tests"
+        }
+      ]
+    },
+    {
+      "name" : "ptp_flags-test_ASAN_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/traffic-gen/tests"
+        }
+      ]
+    },
+    {
+      "name" : "ptp_flags-test_NOT_BUILT",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/traffic-gen/tests"
+        }
+      ]
+    },
+    {
+      "backtrace" : 1,
+      "name" : "corpus_validates",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/traffic-gen/tests"
+        }
+      ]
+    },
+    {
+      "backtrace" : 3,
+      "command" : 
+      [
+        "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/tests/sanitizer/sanitizer_probe-test",
+        "clean"
+      ],
+      "name" : "sanitizer_probe-test.clean",
+      "properties" : 
+      [
+        {
+          "name" : "FAIL_REGULAR_EXPRESSION",
+          "value" : 
+          [
+            "Sanitizer|runtime error"
+          ]
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/tests/sanitizer"
+        }
+      ]
+    },
+    {
+      "backtrace" : 5,
+      "command" : 
+      [
+        "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/tests/sanitizer/sanitizer_probe-test_ASAN",
+        "clean"
+      ],
+      "name" : "sanitizer_probe-test_ASAN.clean",
+      "properties" : 
+      [
+        {
+          "name" : "FAIL_REGULAR_EXPRESSION",
+          "value" : 
+          [
+            "Sanitizer|runtime error"
+          ]
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/tests/sanitizer"
+        }
+      ]
+    },
+    {
+      "backtrace" : 7,
+      "command" : 
+      [
+        "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/tests/sanitizer/sanitizer_probe-test_UBSAN",
+        "clean"
+      ],
+      "name" : "sanitizer_probe-test_UBSAN.clean",
+      "properties" : 
+      [
+        {
+          "name" : "FAIL_REGULAR_EXPRESSION",
+          "value" : 
+          [
+            "Sanitizer|runtime error"
+          ]
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/tests/sanitizer"
+        }
+      ]
+    },
+    {
+      "backtrace" : 10,
+      "command" : 
+      [
+        "/usr/bin/cmake",
+        "-DCHILD=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/tests/sanitizer/sanitizer_probe-test_ASAN",
+        "-DMODE=library-heap-overflow",
+        "-DEXPECT_EXIT=1",
+        "-DEXPECT_REPORT=ERROR: AddressSanitizer: heap-buffer-overflow",
+        "-P",
+        "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/head/tests/sanitizer/check_sanitizer_child.cmake"
+      ],
+      "name" : "sanitizer_probe-test_ASAN.library-heap-overflow",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/tests/sanitizer"
+        }
+      ]
+    },
+    {
+      "backtrace" : 13,
+      "command" : 
+      [
+        "/usr/bin/cmake",
+        "-DCHILD=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/tests/sanitizer/sanitizer_probe-test_ASAN",
+        "-DMODE=consumer-heap-overflow",
+        "-DEXPECT_EXIT=1",
+        "-DEXPECT_REPORT=ERROR: AddressSanitizer: heap-buffer-overflow",
+        "-P",
+        "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/head/tests/sanitizer/check_sanitizer_child.cmake"
+      ],
+      "name" : "sanitizer_probe-test_ASAN.consumer-heap-overflow",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/tests/sanitizer"
+        }
+      ]
+    },
+    {
+      "backtrace" : 16,
+      "command" : 
+      [
+        "/usr/bin/cmake",
+        "-DCHILD=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/tests/sanitizer/sanitizer_probe-test_UBSAN",
+        "-DMODE=library-signed-overflow",
+        "-DEXPECT_EXIT=1",
+        "-DEXPECT_REPORT=sanitizer_probe_lib[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow",
+        "-P",
+        "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/head/tests/sanitizer/check_sanitizer_child.cmake"
+      ],
+      "name" : "sanitizer_probe-test_UBSAN.library-signed-overflow",
+      "properties" : 
+      [
+        {
+          "name" : "ENVIRONMENT",
+          "value" : 
+          [
+            "UBSAN_OPTIONS=halt_on_error=1"
+          ]
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/tests/sanitizer"
+        }
+      ]
+    },
+    {
+      "backtrace" : 19,
+      "command" : 
+      [
+        "/usr/bin/cmake",
+        "-DCHILD=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/tests/sanitizer/sanitizer_probe-test_UBSAN",
+        "-DMODE=consumer-signed-overflow",
+        "-DEXPECT_EXIT=1",
+        "-DEXPECT_REPORT=sanitizer_probe_test[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow",
+        "-P",
+        "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/head/tests/sanitizer/check_sanitizer_child.cmake"
+      ],
+      "name" : "sanitizer_probe-test_UBSAN.consumer-signed-overflow",
+      "properties" : 
+      [
+        {
+          "name" : "ENVIRONMENT",
+          "value" : 
+          [
+            "UBSAN_OPTIONS=halt_on_error=1"
+          ]
+        },
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-Debug/tests/sanitizer"
+        }
+      ]
+    }
+  ],
+  "version" : 
+  {
+    "major" : 1,
+    "minor" : 0
+  }
+}

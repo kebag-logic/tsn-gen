@@ -1,0 +1,54 @@
+CMake Warning (author) at external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2056 (elseif):
+  ELSEIF called with no arguments, it will be skipped.
+Call Stack (most recent call first):
+  external/rapidyaml/ext/c4core/cmake/c4Project.cmake:1889 (c4_add_target)
+  external/rapidyaml/ext/c4core/CMakeLists.txt:94 (c4_add_library)
+This warning is for project developers.  Use -Wno-author to suppress it.
+
+CMake Warning (policy) at external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2694 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+Call Stack (most recent call first):
+  external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2777 (__c4_install_exports)
+  external/rapidyaml/ext/c4core/CMakeLists.txt:112 (c4_install_exports)
+This warning is for project developers.  Use -Wno-author or -Wno-policy to
+suppress it.
+
+CMake Warning (policy) at external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2746 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+Call Stack (most recent call first):
+  external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2777 (__c4_install_exports)
+  external/rapidyaml/ext/c4core/CMakeLists.txt:112 (c4_install_exports)
+This warning is for project developers.  Use -Wno-author or -Wno-policy to
+suppress it.
+
+CMake Warning (author) at external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2056 (elseif):
+  ELSEIF called with no arguments, it will be skipped.
+Call Stack (most recent call first):
+  external/rapidyaml/ext/c4core/cmake/c4Project.cmake:1889 (c4_add_target)
+  external/rapidyaml/CMakeLists.txt:35 (c4_add_library)
+This warning is for project developers.  Use -Wno-author to suppress it.
+
+CMake Warning (policy) at external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2694 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+Call Stack (most recent call first):
+  external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2777 (__c4_install_exports)
+  external/rapidyaml/CMakeLists.txt:118 (c4_install_exports)
+This warning is for project developers.  Use -Wno-author or -Wno-policy to
+suppress it.
+
+CMake Warning (policy) at external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2746 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+Call Stack (most recent call first):
+  external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2777 (__c4_install_exports)
+  external/rapidyaml/CMakeLists.txt:118 (c4_install_exports)
+This warning is for project developers.  Use -Wno-author or -Wno-policy to
+suppress it.
+

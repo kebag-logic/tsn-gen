@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g -shared -Wl,--dependency-file=CMakeFiles/sanitizer_probe_ubsan.dir/link.d -Wl,-soname,libsanitizer_probe_ubsan.so -o libsanitizer_probe_ubsan.so CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o

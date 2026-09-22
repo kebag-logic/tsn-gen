@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "cmake",
+    "--build",
+    "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-RelWithDebInfo",
+    "--parallel",
+    "8",
+    "--target",
+    "sanitizer_probe-test",
+    "sanitizer_probe-test_ASAN",
+    "sanitizer_probe-test_UBSAN"
+  ],
+  "shell": "rtk proxy cmake --build $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-RelWithDebInfo --parallel 8 --target sanitizer_probe-test sanitizer_probe-test_ASAN sanitizer_probe-test_UBSAN",
+  "cwd": "$VALIDATION_STORAGE/reviews/r232-18-r1",
+  "environment": {
+    "unset": [
+      "ASAN_OPTIONS",
+      "UBSAN_OPTIONS"
+    ],
+    "CMAKE_BUILD_PARALLEL_LEVEL": "8"
+  },
+  "exit": 0,
+  "seconds": 1.378
+}

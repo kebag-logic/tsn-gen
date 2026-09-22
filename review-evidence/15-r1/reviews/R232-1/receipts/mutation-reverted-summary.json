@@ -1,0 +1,14 @@
+{
+  "expected_failing_tests": [
+    "sanitizer_probe-test_ASAN.library-heap-overflow",
+    "sanitizer_probe-test_ASAN.consumer-heap-overflow",
+    "sanitizer_probe-test_UBSAN.library-signed-overflow",
+    "sanitizer_probe-test_UBSAN.consumer-signed-overflow"
+  ],
+  "actual_failing_tests": [
+    "sanitizer_probe-test_ASAN.library-heap-overflow",
+    "sanitizer_probe-test_ASAN.consumer-heap-overflow",
+    "sanitizer_probe-test_UBSAN.library-signed-overflow",
+    "sanitizer_probe-test_UBSAN.consumer-signed-overflow"
+  ]
+}

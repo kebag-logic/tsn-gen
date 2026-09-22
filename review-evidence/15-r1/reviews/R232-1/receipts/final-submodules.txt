@@ -1,0 +1,11 @@
+-d75108e96058b6e00da6306a7d99c9555f645434 external/FTXUI
+-bc5c08d3df37e9d725656c345d3991ab0c982717 external/PcapPlusPlus
+ 0bdccf4aa2f5c67af967193caf31d42d5c49bde2 external/googletest (release-1.8.0-3529-g0bdccf4a)
+-88f14e946a05cd0895e1a127bf89da9b3fb1d98b external/mininet
+-8c201f6e47a53feaab773922a743091eb6c8972a external/protobuf-c
+ e65999dc4d65368e1b3eb770e28d775885b0f525 external/rapidyaml (v0.8.0)
+ 6c876ec05a4387c25068cdbd58724828dad1d217 external/rapidyaml/ext/c4core (v0.2.5)
+ b8e95acb1bdd564e47ac57d903a483604d90cbfa external/rapidyaml/ext/c4core/cmake (b8e95ac)
+ 328e4abca3384cbd0a69e70f263cc7b2794bff09 external/rapidyaml/ext/c4core/src/c4/ext/debugbreak (heads/master)
+ d28a3320c2de0963b6e469b8ca3bbc36496de684 external/rapidyaml/ext/c4core/src/c4/ext/fast_float (v6.1.0-146-gd28a332)
+-eb46e8aa5a23f99c76be4a53413a856d6b236145 tests/act

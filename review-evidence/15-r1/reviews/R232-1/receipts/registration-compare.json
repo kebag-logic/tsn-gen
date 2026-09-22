@@ -1,0 +1,148 @@
+{
+  "base_count": 285,
+  "head_count": 292,
+  "all_original_names_commands_properties_identical_in_order": true,
+  "added": [
+    {
+      "command": [
+        "<BUILD>/tests/sanitizer/sanitizer_probe-test",
+        "clean"
+      ],
+      "name": "sanitizer_probe-test.clean",
+      "properties": [
+        {
+          "name": "FAIL_REGULAR_EXPRESSION",
+          "value": [
+            "Sanitizer|runtime error"
+          ]
+        },
+        {
+          "name": "WORKING_DIRECTORY",
+          "value": "<BUILD>/tests/sanitizer"
+        }
+      ]
+    },
+    {
+      "command": [
+        "<BUILD>/tests/sanitizer/sanitizer_probe-test_ASAN",
+        "clean"
+      ],
+      "name": "sanitizer_probe-test_ASAN.clean",
+      "properties": [
+        {
+          "name": "FAIL_REGULAR_EXPRESSION",
+          "value": [
+            "Sanitizer|runtime error"
+          ]
+        },
+        {
+          "name": "WORKING_DIRECTORY",
+          "value": "<BUILD>/tests/sanitizer"
+        }
+      ]
+    },
+    {
+      "command": [
+        "<BUILD>/tests/sanitizer/sanitizer_probe-test_UBSAN",
+        "clean"
+      ],
+      "name": "sanitizer_probe-test_UBSAN.clean",
+      "properties": [
+        {
+          "name": "FAIL_REGULAR_EXPRESSION",
+          "value": [
+            "Sanitizer|runtime error"
+          ]
+        },
+        {
+          "name": "WORKING_DIRECTORY",
+          "value": "<BUILD>/tests/sanitizer"
+        }
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/cmake",
+        "-DCHILD=<BUILD>/tests/sanitizer/sanitizer_probe-test_ASAN",
+        "-DMODE=library-heap-overflow",
+        "-DEXPECT_EXIT=1",
+        "-DEXPECT_REPORT=ERROR: AddressSanitizer: heap-buffer-overflow",
+        "-P",
+        "<SOURCE>/tests/sanitizer/check_sanitizer_child.cmake"
+      ],
+      "name": "sanitizer_probe-test_ASAN.library-heap-overflow",
+      "properties": [
+        {
+          "name": "WORKING_DIRECTORY",
+          "value": "<BUILD>/tests/sanitizer"
+        }
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/cmake",
+        "-DCHILD=<BUILD>/tests/sanitizer/sanitizer_probe-test_ASAN",
+        "-DMODE=consumer-heap-overflow",
+        "-DEXPECT_EXIT=1",
+        "-DEXPECT_REPORT=ERROR: AddressSanitizer: heap-buffer-overflow",
+        "-P",
+        "<SOURCE>/tests/sanitizer/check_sanitizer_child.cmake"
+      ],
+      "name": "sanitizer_probe-test_ASAN.consumer-heap-overflow",
+      "properties": [
+        {
+          "name": "WORKING_DIRECTORY",
+          "value": "<BUILD>/tests/sanitizer"
+        }
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/cmake",
+        "-DCHILD=<BUILD>/tests/sanitizer/sanitizer_probe-test_UBSAN",
+        "-DMODE=library-signed-overflow",
+        "-DEXPECT_EXIT=1",
+        "-DEXPECT_REPORT=sanitizer_probe_lib[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow",
+        "-P",
+        "<SOURCE>/tests/sanitizer/check_sanitizer_child.cmake"
+      ],
+      "name": "sanitizer_probe-test_UBSAN.library-signed-overflow",
+      "properties": [
+        {
+          "name": "ENVIRONMENT",
+          "value": [
+            "UBSAN_OPTIONS=halt_on_error=1"
+          ]
+        },
+        {
+          "name": "WORKING_DIRECTORY",
+          "value": "<BUILD>/tests/sanitizer"
+        }
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/cmake",
+        "-DCHILD=<BUILD>/tests/sanitizer/sanitizer_probe-test_UBSAN",
+        "-DMODE=consumer-signed-overflow",
+        "-DEXPECT_EXIT=1",
+        "-DEXPECT_REPORT=sanitizer_probe_test[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow",
+        "-P",
+        "<SOURCE>/tests/sanitizer/check_sanitizer_child.cmake"
+      ],
+      "name": "sanitizer_probe-test_UBSAN.consumer-signed-overflow",
+      "properties": [
+        {
+          "name": "ENVIRONMENT",
+          "value": [
+            "UBSAN_OPTIONS=halt_on_error=1"
+          ]
+        },
+        {
+          "name": "WORKING_DIRECTORY",
+          "value": "<BUILD>/tests/sanitizer"
+        }
+      ]
+    }
+  ]
+}

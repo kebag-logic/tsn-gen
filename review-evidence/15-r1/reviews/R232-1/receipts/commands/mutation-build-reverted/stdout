@@ -1,0 +1,6 @@
+[ 16%] Built target sanitizer_probe_ubsan
+[ 33%] Built target sanitizer_probe_asan
+[ 50%] Built target sanitizer_probe
+[ 66%] Built target sanitizer_probe-test_UBSAN
+[ 83%] Built target sanitizer_probe-test_ASAN
+[100%] Built target sanitizer_probe-test

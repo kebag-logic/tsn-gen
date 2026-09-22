@@ -1,0 +1,12 @@
+direct-ubsan-library-recover exit 0
+direct-ubsan-library-fatal exit 1
+checker-rejects-recovery-library exit 1
+direct-ubsan-consumer-recover exit 0
+direct-ubsan-consumer-fatal exit 1
+checker-rejects-recovery-consumer exit 1
+direct-asan-library-heap-overflow exit 1
+direct-asan-consumer-heap-overflow exit 1
+direct-runner-preserves-ctest-failure exit 8
+no-runtime-configure exit 0
+no-runtime-link-ASAN exit 2
+no-runtime-link-UBSAN exit 2

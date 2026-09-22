@@ -1,0 +1,5 @@
+[A10] Archival scope for R232-1
+
+The reviewer report is published verbatim. This packet retains its factual receipts, raw generated commands, object/link inspection output, public API/job snapshots, reproducible probe scripts, ledger and source archives. The two source tar files were independently compared byte for byte with `git archive --format=tar` at the stated base/head before publication; their bytes are preserved. Text workspace paths are neutralized, with original and published hashes in the outer MANIFEST.
+
+Disposable `work/` builds and Python caches are excluded. The locally downloaded `public/archive/` mirror is not duplicated: it is already public at https://github.com/kebag-logic/tsn-gen/tree/0be5bf0dc34bd7924b4227c1c2a2602849db4c52/review-evidence/15-r1 . The reviewer's SHA256SUMS includes that original downloaded mirror; its original integrity is recorded in public-integrity.json and public-blob-verification.json. The outer MANIFEST names exactly the files published here and their published hashes. No private agent transcript is included.

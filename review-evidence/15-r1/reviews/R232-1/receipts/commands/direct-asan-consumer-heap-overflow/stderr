@@ -1,0 +1,50 @@
+=================================================================
+==2428527==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7c09cd1e0020 at pc 0x55dad67212e4 bp 0x7ffd244add70 sp 0x7ffd244add60
+READ of size 4 at 0x7c09cd1e0020 thread T0
+    #0 0x55dad67212e3 in (anonymous namespace)::consumerRead(int const*, unsigned long) ($WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x22e3) (BuildId: 6fbfbb33dcb91bacdf514cb4b2d3ecd2dd413f8c)
+    #1 0x55dad67216aa in main ($WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x26aa) (BuildId: 6fbfbb33dcb91bacdf514cb4b2d3ecd2dd413f8c)
+    #2 0x7fe9ce027780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #3 0x7fe9ce0278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #4 0x55dad67211b4 in _start ($WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x21b4) (BuildId: 6fbfbb33dcb91bacdf514cb4b2d3ecd2dd413f8c)
+
+0x7c09cd1e0020 is located 0 bytes after 16-byte region [0x7c09cd1e0010,0x7c09cd1e0020)
+allocated by thread T0 here:
+    #0 0x7fe9ce92d431 in operator new[](unsigned long) (/usr/lib/libasan.so.8+0x12d431) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x55dad67214a9 in main ($WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x24a9) (BuildId: 6fbfbb33dcb91bacdf514cb4b2d3ecd2dd413f8c)
+    #2 0x7fe9ce027780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #3 0x7fe9ce0278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #4 0x55dad67211b4 in _start ($WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x21b4) (BuildId: 6fbfbb33dcb91bacdf514cb4b2d3ecd2dd413f8c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow ($WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x22e3) (BuildId: 6fbfbb33dcb91bacdf514cb4b2d3ecd2dd413f8c) in (anonymous namespace)::consumerRead(int const*, unsigned long)
+Shadow bytes around the buggy address:
+  0x7c09cd1dfd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c09cd1dfe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c09cd1dfe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c09cd1dff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7c09cd1dff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x7c09cd1e0000: fa fa 00 00[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x7c09cd1e0080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c09cd1e0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c09cd1e0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c09cd1e0200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7c09cd1e0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2428527==ABORTING

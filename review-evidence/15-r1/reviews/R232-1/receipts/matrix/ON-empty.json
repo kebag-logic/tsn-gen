@@ -1,0 +1,1093 @@
+{
+  "summary": {
+    "shared": "ON",
+    "type": "empty",
+    "base_compile_count": 125,
+    "head_compile_count": 131,
+    "changed_existing_compile_count": 58,
+    "unchanged_existing_compile_count": 67,
+    "existing_targets": {
+      "ryml": 18,
+      "c4core": 9,
+      "gmock": 1,
+      "gmock_main": 1,
+      "gtest": 1,
+      "gtest_main": 1,
+      "protocol_parser": 11,
+      "protocol_parser_ubsan": 11,
+      "protocol_parser_asan": 11,
+      "gtest_parser-test": 1,
+      "protocol_parser-test_UBSAN": 1,
+      "protocol_parser-test_ASAN": 1,
+      "protocol_parser-test": 1,
+      "object_serializer-test_UBSAN": 1,
+      "object_serializer-test_ASAN": 1,
+      "object_serializer-test": 1,
+      "logic_registry-test_UBSAN": 1,
+      "logic_registry-test_ASAN": 1,
+      "logic_registry-test": 1,
+      "stack_builder-test_UBSAN": 1,
+      "stack_builder-test_ASAN": 1,
+      "stack_builder-test": 1,
+      "validator-test_UBSAN": 1,
+      "validator-test_ASAN": 1,
+      "validator-test": 1,
+      "protocol_logic": 3,
+      "ethernet_frame_logic-test": 1,
+      "stack_codec-test": 1,
+      "traffic_gen": 10,
+      "traffic_gen_ubsan": 10,
+      "traffic_gen_asan": 10,
+      "packet_gen": 1,
+      "traffic_gen-test_UBSAN": 1,
+      "traffic_gen-test_ASAN": 1,
+      "traffic_gen-test": 1,
+      "adp_fuzz-test_UBSAN": 1,
+      "adp_fuzz-test_ASAN": 1,
+      "adp_fuzz-test": 1,
+      "ptp_flags-test_UBSAN": 1,
+      "ptp_flags-test_ASAN": 1,
+      "ptp_flags-test": 1
+    },
+    "additions": [
+      "tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o",
+      "tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o",
+      "tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o",
+      "tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o",
+      "tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o",
+      "tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o"
+    ],
+    "generated_files_compared": {
+      "link.txt": 41,
+      "flags.make": 41
+    }
+  },
+  "entries": [
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/common.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/src/c4/yml/common.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/common.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/common.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/common.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/common.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/node.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/src/c4/yml/node.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/node.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/node.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/node.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/node.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/node_type.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/src/c4/yml/node_type.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/node_type.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/node_type.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/node_type.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/node_type.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/parse.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/src/c4/yml/parse.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/parse.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/parse.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/parse.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/parse.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/preprocess.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/src/c4/yml/preprocess.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/preprocess.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/preprocess.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/preprocess.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/preprocess.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/reference_resolver.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/src/c4/yml/reference_resolver.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/reference_resolver.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/reference_resolver.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/reference_resolver.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/reference_resolver.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/tag.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/src/c4/yml/tag.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/tag.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/tag.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/tag.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/tag.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/tree.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/src/c4/yml/tree.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/tree.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/tree.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/tree.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/tree.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/version.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/src/c4/yml/version.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/version.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/version.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/version.cpp.o -c <SOURCE>/external/rapidyaml/src/c4/yml/version.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/base64.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/base64.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/base64.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/base64.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/base64.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/base64.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/char_traits.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/char_traits.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/char_traits.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/char_traits.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/char_traits.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/char_traits.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/error.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/error.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/error.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/error.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/error.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/error.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/format.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/format.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/format.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/format.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/format.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/format.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/language.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/language.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/language.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/language.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/language.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/language.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_resource.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/memory_resource.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_resource.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/memory_resource.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_resource.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/memory_resource.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_util.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/memory_util.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_util.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/memory_util.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_util.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/memory_util.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/utf.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/utf.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/utf.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/utf.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/utf.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/utf.cpp"
+    },
+    {
+      "object": "external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/version.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/version.cpp",
+      "target": "ryml",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/version.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/version.cpp",
+      "after": "/usr/bin/c++ -Dryml_EXPORTS -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/version.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/version.cpp"
+    },
+    {
+      "object": "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/base64.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/base64.cpp",
+      "target": "c4core",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/base64.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/base64.cpp",
+      "after": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/base64.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/base64.cpp"
+    },
+    {
+      "object": "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/char_traits.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/char_traits.cpp",
+      "target": "c4core",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/char_traits.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/char_traits.cpp",
+      "after": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/char_traits.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/char_traits.cpp"
+    },
+    {
+      "object": "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/error.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/error.cpp",
+      "target": "c4core",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/error.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/error.cpp",
+      "after": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/error.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/error.cpp"
+    },
+    {
+      "object": "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/format.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/format.cpp",
+      "target": "c4core",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/format.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/format.cpp",
+      "after": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/format.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/format.cpp"
+    },
+    {
+      "object": "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/language.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/language.cpp",
+      "target": "c4core",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/language.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/language.cpp",
+      "after": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/language.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/language.cpp"
+    },
+    {
+      "object": "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/memory_resource.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/memory_resource.cpp",
+      "target": "c4core",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/memory_resource.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/memory_resource.cpp",
+      "after": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/memory_resource.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/memory_resource.cpp"
+    },
+    {
+      "object": "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/memory_util.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/memory_util.cpp",
+      "target": "c4core",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/memory_util.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/memory_util.cpp",
+      "after": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/memory_util.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/memory_util.cpp"
+    },
+    {
+      "object": "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/utf.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/utf.cpp",
+      "target": "c4core",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/utf.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/utf.cpp",
+      "after": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/utf.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/utf.cpp"
+    },
+    {
+      "object": "external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/version.cpp.o",
+      "source": "<SOURCE>/external/rapidyaml/ext/c4core/src/c4/version.cpp",
+      "target": "c4core",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/version.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/version.cpp",
+      "after": "/usr/bin/c++ -Dc4core_EXPORTS -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/version.cpp.o -c <SOURCE>/external/rapidyaml/ext/c4core/src/c4/version.cpp"
+    },
+    {
+      "object": "external/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o",
+      "source": "<SOURCE>/external/googletest/googlemock/src/gmock-all.cc",
+      "target": "gmock",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_EXPORTS -I<SOURCE>/external/googletest/googlemock/include -I<SOURCE>/external/googletest/googlemock -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=c++17 -fPIC -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c <SOURCE>/external/googletest/googlemock/src/gmock-all.cc",
+      "after": "/usr/bin/c++ -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_EXPORTS -I<SOURCE>/external/googletest/googlemock/include -I<SOURCE>/external/googletest/googlemock -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=c++17 -fPIC -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c <SOURCE>/external/googletest/googlemock/src/gmock-all.cc"
+    },
+    {
+      "object": "external/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o",
+      "source": "<SOURCE>/external/googletest/googlemock/src/gmock_main.cc",
+      "target": "gmock_main",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_main_EXPORTS -isystem <SOURCE>/external/googletest/googlemock/include -isystem <SOURCE>/external/googletest/googlemock -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=c++17 -fPIC -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c <SOURCE>/external/googletest/googlemock/src/gmock_main.cc",
+      "after": "/usr/bin/c++ -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_main_EXPORTS -isystem <SOURCE>/external/googletest/googlemock/include -isystem <SOURCE>/external/googletest/googlemock -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=c++17 -fPIC -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c <SOURCE>/external/googletest/googlemock/src/gmock_main.cc"
+    },
+    {
+      "object": "external/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o",
+      "source": "<SOURCE>/external/googletest/googletest/src/gtest-all.cc",
+      "target": "gtest",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgtest_EXPORTS -I<SOURCE>/external/googletest/googletest/include -I<SOURCE>/external/googletest/googletest -std=c++17 -fPIC -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c <SOURCE>/external/googletest/googletest/src/gtest-all.cc",
+      "after": "/usr/bin/c++ -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgtest_EXPORTS -I<SOURCE>/external/googletest/googletest/include -I<SOURCE>/external/googletest/googletest -std=c++17 -fPIC -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c <SOURCE>/external/googletest/googletest/src/gtest-all.cc"
+    },
+    {
+      "object": "external/googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o",
+      "source": "<SOURCE>/external/googletest/googletest/src/gtest_main.cc",
+      "target": "gtest_main",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgtest_main_EXPORTS -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=c++17 -fPIC -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c <SOURCE>/external/googletest/googletest/src/gtest_main.cc",
+      "after": "/usr/bin/c++ -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgtest_main_EXPORTS -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=c++17 -fPIC -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c <SOURCE>/external/googletest/googletest/src/gtest_main.cc"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser.dir/src/log.cpp.o",
+      "source": "<SOURCE>/parser/src/log.cpp",
+      "target": "protocol_parser",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/log.cpp.o -c <SOURCE>/parser/src/log.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/log.cpp.o -c <SOURCE>/parser/src/log.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser.dir/src/validator.cpp.o",
+      "source": "<SOURCE>/parser/src/validator.cpp",
+      "target": "protocol_parser",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/validator.cpp.o -c <SOURCE>/parser/src/validator.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/validator.cpp.o -c <SOURCE>/parser/src/validator.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser.dir/src/protocol_parser.cpp.o",
+      "source": "<SOURCE>/parser/src/protocol_parser.cpp",
+      "target": "protocol_parser",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/protocol_parser.cpp.o -c <SOURCE>/parser/src/protocol_parser.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/protocol_parser.cpp.o -c <SOURCE>/parser/src/protocol_parser.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser.dir/src/protocol.cpp.o",
+      "source": "<SOURCE>/parser/src/protocol.cpp",
+      "target": "protocol_parser",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/protocol.cpp.o -c <SOURCE>/parser/src/protocol.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/protocol.cpp.o -c <SOURCE>/parser/src/protocol.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser.dir/src/db_proto_if_impl.cpp.o",
+      "source": "<SOURCE>/parser/src/db_proto_if_impl.cpp",
+      "target": "protocol_parser",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/db_proto_if_impl.cpp.o -c <SOURCE>/parser/src/db_proto_if_impl.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/db_proto_if_impl.cpp.o -c <SOURCE>/parser/src/db_proto_if_impl.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser.dir/src/db_proto_impl.cpp.o",
+      "source": "<SOURCE>/parser/src/db_proto_impl.cpp",
+      "target": "protocol_parser",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/db_proto_impl.cpp.o -c <SOURCE>/parser/src/db_proto_impl.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/db_proto_impl.cpp.o -c <SOURCE>/parser/src/db_proto_impl.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser.dir/src/db_proto_service_impl.cpp.o",
+      "source": "<SOURCE>/parser/src/db_proto_service_impl.cpp",
+      "target": "protocol_parser",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/db_proto_service_impl.cpp.o -c <SOURCE>/parser/src/db_proto_service_impl.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/db_proto_service_impl.cpp.o -c <SOURCE>/parser/src/db_proto_service_impl.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser.dir/src/db_var_impl.cpp.o",
+      "source": "<SOURCE>/parser/src/db_var_impl.cpp",
+      "target": "protocol_parser",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/db_var_impl.cpp.o -c <SOURCE>/parser/src/db_var_impl.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/db_var_impl.cpp.o -c <SOURCE>/parser/src/db_var_impl.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser.dir/src/logic_registry.cpp.o",
+      "source": "<SOURCE>/parser/src/logic_registry.cpp",
+      "target": "protocol_parser",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/logic_registry.cpp.o -c <SOURCE>/parser/src/logic_registry.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/logic_registry.cpp.o -c <SOURCE>/parser/src/logic_registry.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser.dir/src/stack.cpp.o",
+      "source": "<SOURCE>/parser/src/stack.cpp",
+      "target": "protocol_parser",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/stack.cpp.o -c <SOURCE>/parser/src/stack.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/stack.cpp.o -c <SOURCE>/parser/src/stack.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser.dir/src/stack_builder.cpp.o",
+      "source": "<SOURCE>/parser/src/stack_builder.cpp",
+      "target": "protocol_parser",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/stack_builder.cpp.o -c <SOURCE>/parser/src/stack_builder.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser.dir/src/stack_builder.cpp.o -c <SOURCE>/parser/src/stack_builder.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "source": "<SOURCE>/parser/src/log.cpp",
+      "target": "protocol_parser_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o -c <SOURCE>/parser/src/log.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o -c <SOURCE>/parser/src/log.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "source": "<SOURCE>/parser/src/validator.cpp",
+      "target": "protocol_parser_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o -c <SOURCE>/parser/src/validator.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o -c <SOURCE>/parser/src/validator.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "source": "<SOURCE>/parser/src/protocol_parser.cpp",
+      "target": "protocol_parser_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o -c <SOURCE>/parser/src/protocol_parser.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o -c <SOURCE>/parser/src/protocol_parser.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "source": "<SOURCE>/parser/src/protocol.cpp",
+      "target": "protocol_parser_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o -c <SOURCE>/parser/src/protocol.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o -c <SOURCE>/parser/src/protocol.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "source": "<SOURCE>/parser/src/db_proto_if_impl.cpp",
+      "target": "protocol_parser_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o -c <SOURCE>/parser/src/db_proto_if_impl.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o -c <SOURCE>/parser/src/db_proto_if_impl.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "source": "<SOURCE>/parser/src/db_proto_impl.cpp",
+      "target": "protocol_parser_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o -c <SOURCE>/parser/src/db_proto_impl.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o -c <SOURCE>/parser/src/db_proto_impl.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "source": "<SOURCE>/parser/src/db_proto_service_impl.cpp",
+      "target": "protocol_parser_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o -c <SOURCE>/parser/src/db_proto_service_impl.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o -c <SOURCE>/parser/src/db_proto_service_impl.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "source": "<SOURCE>/parser/src/db_var_impl.cpp",
+      "target": "protocol_parser_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o -c <SOURCE>/parser/src/db_var_impl.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o -c <SOURCE>/parser/src/db_var_impl.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "source": "<SOURCE>/parser/src/logic_registry.cpp",
+      "target": "protocol_parser_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o -c <SOURCE>/parser/src/logic_registry.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o -c <SOURCE>/parser/src/logic_registry.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "source": "<SOURCE>/parser/src/stack.cpp",
+      "target": "protocol_parser_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o -c <SOURCE>/parser/src/stack.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o -c <SOURCE>/parser/src/stack.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "source": "<SOURCE>/parser/src/stack_builder.cpp",
+      "target": "protocol_parser_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o -c <SOURCE>/parser/src/stack_builder.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_ubsan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o -c <SOURCE>/parser/src/stack_builder.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "source": "<SOURCE>/parser/src/log.cpp",
+      "target": "protocol_parser_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o -c <SOURCE>/parser/src/log.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o -c <SOURCE>/parser/src/log.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "source": "<SOURCE>/parser/src/validator.cpp",
+      "target": "protocol_parser_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o -c <SOURCE>/parser/src/validator.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o -c <SOURCE>/parser/src/validator.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "source": "<SOURCE>/parser/src/protocol_parser.cpp",
+      "target": "protocol_parser_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o -c <SOURCE>/parser/src/protocol_parser.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o -c <SOURCE>/parser/src/protocol_parser.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "source": "<SOURCE>/parser/src/protocol.cpp",
+      "target": "protocol_parser_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o -c <SOURCE>/parser/src/protocol.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o -c <SOURCE>/parser/src/protocol.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "source": "<SOURCE>/parser/src/db_proto_if_impl.cpp",
+      "target": "protocol_parser_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o -c <SOURCE>/parser/src/db_proto_if_impl.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o -c <SOURCE>/parser/src/db_proto_if_impl.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "source": "<SOURCE>/parser/src/db_proto_impl.cpp",
+      "target": "protocol_parser_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o -c <SOURCE>/parser/src/db_proto_impl.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o -c <SOURCE>/parser/src/db_proto_impl.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "source": "<SOURCE>/parser/src/db_proto_service_impl.cpp",
+      "target": "protocol_parser_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o -c <SOURCE>/parser/src/db_proto_service_impl.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o -c <SOURCE>/parser/src/db_proto_service_impl.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "source": "<SOURCE>/parser/src/db_var_impl.cpp",
+      "target": "protocol_parser_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o -c <SOURCE>/parser/src/db_var_impl.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o -c <SOURCE>/parser/src/db_var_impl.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "source": "<SOURCE>/parser/src/logic_registry.cpp",
+      "target": "protocol_parser_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o -c <SOURCE>/parser/src/logic_registry.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o -c <SOURCE>/parser/src/logic_registry.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "source": "<SOURCE>/parser/src/stack.cpp",
+      "target": "protocol_parser_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o -c <SOURCE>/parser/src/stack.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o -c <SOURCE>/parser/src/stack.cpp"
+    },
+    {
+      "object": "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "source": "<SOURCE>/parser/src/stack_builder.cpp",
+      "target": "protocol_parser_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o -c <SOURCE>/parser/src/stack_builder.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_parser_asan_EXPORTS -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o -c <SOURCE>/parser/src/stack_builder.cpp"
+    },
+    {
+      "object": "parser/tests/CMakeFiles/gtest_parser-test.dir/gtest.cpp.o",
+      "source": "<SOURCE>/parser/tests/gtest.cpp",
+      "target": "gtest_parser-test",
+      "sanitizer": null,
+      "before": "/usr/bin/c++  -I<SOURCE>/parser/tests -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/gtest_parser-test.dir/gtest.cpp.o -c <SOURCE>/parser/tests/gtest.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/parser/tests -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/gtest_parser-test.dir/gtest.cpp.o -c <SOURCE>/parser/tests/gtest.cpp"
+    },
+    {
+      "object": "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "source": "<SOURCE>/parser/tests/protocol_parser_test.cpp",
+      "target": "protocol_parser-test_UBSAN",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o -c <SOURCE>/parser/tests/protocol_parser_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -fsanitize=undefined -o CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o -c <SOURCE>/parser/tests/protocol_parser_test.cpp"
+    },
+    {
+      "object": "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "source": "<SOURCE>/parser/tests/protocol_parser_test.cpp",
+      "target": "protocol_parser-test_ASAN",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o -c <SOURCE>/parser/tests/protocol_parser_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -fsanitize=address -o CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o -c <SOURCE>/parser/tests/protocol_parser_test.cpp"
+    },
+    {
+      "object": "parser/tests/CMakeFiles/protocol_parser-test.dir/protocol_parser_test.cpp.o",
+      "source": "<SOURCE>/parser/tests/protocol_parser_test.cpp",
+      "target": "protocol_parser-test",
+      "sanitizer": null,
+      "before": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/protocol_parser-test.dir/protocol_parser_test.cpp.o -c <SOURCE>/parser/tests/protocol_parser_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/protocol_parser-test.dir/protocol_parser_test.cpp.o -c <SOURCE>/parser/tests/protocol_parser_test.cpp"
+    },
+    {
+      "object": "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "source": "<SOURCE>/parser/tests/object_serializer_test.cpp",
+      "target": "object_serializer-test_UBSAN",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o -c <SOURCE>/parser/tests/object_serializer_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -fsanitize=undefined -o CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o -c <SOURCE>/parser/tests/object_serializer_test.cpp"
+    },
+    {
+      "object": "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "source": "<SOURCE>/parser/tests/object_serializer_test.cpp",
+      "target": "object_serializer-test_ASAN",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o -c <SOURCE>/parser/tests/object_serializer_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -fsanitize=address -o CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o -c <SOURCE>/parser/tests/object_serializer_test.cpp"
+    },
+    {
+      "object": "parser/tests/CMakeFiles/object_serializer-test.dir/object_serializer_test.cpp.o",
+      "source": "<SOURCE>/parser/tests/object_serializer_test.cpp",
+      "target": "object_serializer-test",
+      "sanitizer": null,
+      "before": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/object_serializer-test.dir/object_serializer_test.cpp.o -c <SOURCE>/parser/tests/object_serializer_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/object_serializer-test.dir/object_serializer_test.cpp.o -c <SOURCE>/parser/tests/object_serializer_test.cpp"
+    },
+    {
+      "object": "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "source": "<SOURCE>/parser/tests/logic_registry_test.cpp",
+      "target": "logic_registry-test_UBSAN",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o -c <SOURCE>/parser/tests/logic_registry_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -fsanitize=undefined -o CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o -c <SOURCE>/parser/tests/logic_registry_test.cpp"
+    },
+    {
+      "object": "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "source": "<SOURCE>/parser/tests/logic_registry_test.cpp",
+      "target": "logic_registry-test_ASAN",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o -c <SOURCE>/parser/tests/logic_registry_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -fsanitize=address -o CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o -c <SOURCE>/parser/tests/logic_registry_test.cpp"
+    },
+    {
+      "object": "parser/tests/CMakeFiles/logic_registry-test.dir/logic_registry_test.cpp.o",
+      "source": "<SOURCE>/parser/tests/logic_registry_test.cpp",
+      "target": "logic_registry-test",
+      "sanitizer": null,
+      "before": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/logic_registry-test.dir/logic_registry_test.cpp.o -c <SOURCE>/parser/tests/logic_registry_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/logic_registry-test.dir/logic_registry_test.cpp.o -c <SOURCE>/parser/tests/logic_registry_test.cpp"
+    },
+    {
+      "object": "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "source": "<SOURCE>/parser/tests/stack_builder_test.cpp",
+      "target": "stack_builder-test_UBSAN",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o -c <SOURCE>/parser/tests/stack_builder_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -fsanitize=undefined -o CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o -c <SOURCE>/parser/tests/stack_builder_test.cpp"
+    },
+    {
+      "object": "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "source": "<SOURCE>/parser/tests/stack_builder_test.cpp",
+      "target": "stack_builder-test_ASAN",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o -c <SOURCE>/parser/tests/stack_builder_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -fsanitize=address -o CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o -c <SOURCE>/parser/tests/stack_builder_test.cpp"
+    },
+    {
+      "object": "parser/tests/CMakeFiles/stack_builder-test.dir/stack_builder_test.cpp.o",
+      "source": "<SOURCE>/parser/tests/stack_builder_test.cpp",
+      "target": "stack_builder-test",
+      "sanitizer": null,
+      "before": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/stack_builder-test.dir/stack_builder_test.cpp.o -c <SOURCE>/parser/tests/stack_builder_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/stack_builder-test.dir/stack_builder_test.cpp.o -c <SOURCE>/parser/tests/stack_builder_test.cpp"
+    },
+    {
+      "object": "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "source": "<SOURCE>/parser/tests/validator_test.cpp",
+      "target": "validator-test_UBSAN",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o -c <SOURCE>/parser/tests/validator_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -fsanitize=undefined -o CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o -c <SOURCE>/parser/tests/validator_test.cpp"
+    },
+    {
+      "object": "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "source": "<SOURCE>/parser/tests/validator_test.cpp",
+      "target": "validator-test_ASAN",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o -c <SOURCE>/parser/tests/validator_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -fsanitize=address -o CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o -c <SOURCE>/parser/tests/validator_test.cpp"
+    },
+    {
+      "object": "parser/tests/CMakeFiles/validator-test.dir/validator_test.cpp.o",
+      "source": "<SOURCE>/parser/tests/validator_test.cpp",
+      "target": "validator-test",
+      "sanitizer": null,
+      "before": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/validator-test.dir/validator_test.cpp.o -c <SOURCE>/parser/tests/validator_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/parser/tests -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DPARSER_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/validator-test.dir/validator_test.cpp.o -c <SOURCE>/parser/tests/validator_test.cpp"
+    },
+    {
+      "object": "logic/CMakeFiles/protocol_logic.dir/src/ethernet_frame_logic.cpp.o",
+      "source": "<SOURCE>/logic/src/ethernet_frame_logic.cpp",
+      "target": "protocol_logic",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dprotocol_logic_EXPORTS -I<SOURCE>/logic/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_logic.dir/src/ethernet_frame_logic.cpp.o -c <SOURCE>/logic/src/ethernet_frame_logic.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_logic_EXPORTS -I<SOURCE>/logic/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_logic.dir/src/ethernet_frame_logic.cpp.o -c <SOURCE>/logic/src/ethernet_frame_logic.cpp"
+    },
+    {
+      "object": "logic/CMakeFiles/protocol_logic.dir/src/avtp_control_logic.cpp.o",
+      "source": "<SOURCE>/logic/src/avtp_control_logic.cpp",
+      "target": "protocol_logic",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dprotocol_logic_EXPORTS -I<SOURCE>/logic/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_logic.dir/src/avtp_control_logic.cpp.o -c <SOURCE>/logic/src/avtp_control_logic.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_logic_EXPORTS -I<SOURCE>/logic/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_logic.dir/src/avtp_control_logic.cpp.o -c <SOURCE>/logic/src/avtp_control_logic.cpp"
+    },
+    {
+      "object": "logic/CMakeFiles/protocol_logic.dir/src/aecp_aem_logic.cpp.o",
+      "source": "<SOURCE>/logic/src/aecp_aem_logic.cpp",
+      "target": "protocol_logic",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dprotocol_logic_EXPORTS -I<SOURCE>/logic/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_logic.dir/src/aecp_aem_logic.cpp.o -c <SOURCE>/logic/src/aecp_aem_logic.cpp",
+      "after": "/usr/bin/c++ -Dprotocol_logic_EXPORTS -I<SOURCE>/logic/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/protocol_logic.dir/src/aecp_aem_logic.cpp.o -c <SOURCE>/logic/src/aecp_aem_logic.cpp"
+    },
+    {
+      "object": "logic/tests/CMakeFiles/ethernet_frame_logic-test.dir/ethernet_frame_logic_test.cpp.o",
+      "source": "<SOURCE>/logic/tests/ethernet_frame_logic_test.cpp",
+      "target": "ethernet_frame_logic-test",
+      "sanitizer": null,
+      "before": "/usr/bin/c++  -I<SOURCE>/logic/tests -I<SOURCE>/logic/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DLOGIC_TESTS_RES_PATH=\\\"<SOURCE>/logic/tests/test_resources\\\" -o CMakeFiles/ethernet_frame_logic-test.dir/ethernet_frame_logic_test.cpp.o -c <SOURCE>/logic/tests/ethernet_frame_logic_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/logic/tests -I<SOURCE>/logic/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DLOGIC_TESTS_RES_PATH=\\\"<SOURCE>/logic/tests/test_resources\\\" -o CMakeFiles/ethernet_frame_logic-test.dir/ethernet_frame_logic_test.cpp.o -c <SOURCE>/logic/tests/ethernet_frame_logic_test.cpp"
+    },
+    {
+      "object": "logic/tests/CMakeFiles/stack_codec-test.dir/stack_codec_test.cpp.o",
+      "source": "<SOURCE>/logic/tests/stack_codec_test.cpp",
+      "target": "stack_codec-test",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -DPROTOCOLS_ROOT_DIR=\\\"<SOURCE>/protocols\\\" -DSTACKS_ROOT_DIR=\\\"<SOURCE>/stacks\\\" -I<SOURCE>/logic/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -I<SOURCE>/logic/inc -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DLOGIC_TESTS_RES_PATH=\\\"<SOURCE>/logic/tests/test_resources\\\" -o CMakeFiles/stack_codec-test.dir/stack_codec_test.cpp.o -c <SOURCE>/logic/tests/stack_codec_test.cpp",
+      "after": "/usr/bin/c++ -DPROTOCOLS_ROOT_DIR=\\\"<SOURCE>/protocols\\\" -DSTACKS_ROOT_DIR=\\\"<SOURCE>/stacks\\\" -I<SOURCE>/logic/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -I<SOURCE>/logic/inc -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DLOGIC_TESTS_RES_PATH=\\\"<SOURCE>/logic/tests/test_resources\\\" -o CMakeFiles/stack_codec-test.dir/stack_codec_test.cpp.o -c <SOURCE>/logic/tests/stack_codec_test.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen.dir/src/packet_builder.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/packet_builder.cpp",
+      "target": "traffic_gen",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/packet_builder.cpp.o -c <SOURCE>/traffic-gen/src/packet_builder.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/packet_builder.cpp.o -c <SOURCE>/traffic-gen/src/packet_builder.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen.dir/src/packet_decoder.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/packet_decoder.cpp",
+      "target": "traffic_gen",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/packet_decoder.cpp.o -c <SOURCE>/traffic-gen/src/packet_decoder.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/packet_decoder.cpp.o -c <SOURCE>/traffic-gen/src/packet_decoder.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen.dir/src/pcap_sender.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/pcap_sender.cpp",
+      "target": "traffic_gen",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/pcap_sender.cpp.o -c <SOURCE>/traffic-gen/src/pcap_sender.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/pcap_sender.cpp.o -c <SOURCE>/traffic-gen/src/pcap_sender.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen.dir/src/pcap_receiver.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/pcap_receiver.cpp",
+      "target": "traffic_gen",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/pcap_receiver.cpp.o -c <SOURCE>/traffic-gen/src/pcap_receiver.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/pcap_receiver.cpp.o -c <SOURCE>/traffic-gen/src/pcap_receiver.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen.dir/src/raw_socket_sender.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/raw_socket_sender.cpp",
+      "target": "traffic_gen",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/raw_socket_sender.cpp.o -c <SOURCE>/traffic-gen/src/raw_socket_sender.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/raw_socket_sender.cpp.o -c <SOURCE>/traffic-gen/src/raw_socket_sender.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen.dir/src/raw_socket_receiver.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/raw_socket_receiver.cpp",
+      "target": "traffic_gen",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/raw_socket_receiver.cpp.o -c <SOURCE>/traffic-gen/src/raw_socket_receiver.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/raw_socket_receiver.cpp.o -c <SOURCE>/traffic-gen/src/raw_socket_receiver.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen.dir/src/verilator_sender.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/verilator_sender.cpp",
+      "target": "traffic_gen",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/verilator_sender.cpp.o -c <SOURCE>/traffic-gen/src/verilator_sender.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/verilator_sender.cpp.o -c <SOURCE>/traffic-gen/src/verilator_sender.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen.dir/src/verilator_receiver.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/verilator_receiver.cpp",
+      "target": "traffic_gen",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/verilator_receiver.cpp.o -c <SOURCE>/traffic-gen/src/verilator_receiver.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/verilator_receiver.cpp.o -c <SOURCE>/traffic-gen/src/verilator_receiver.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen.dir/src/traffic_generator.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/traffic_generator.cpp",
+      "target": "traffic_gen",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/traffic_generator.cpp.o -c <SOURCE>/traffic-gen/src/traffic_generator.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/traffic_generator.cpp.o -c <SOURCE>/traffic-gen/src/traffic_generator.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen.dir/src/session.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/session.cpp",
+      "target": "traffic_gen",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/session.cpp.o -c <SOURCE>/traffic-gen/src/session.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen.dir/src/session.cpp.o -c <SOURCE>/traffic-gen/src/session.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/packet_builder.cpp",
+      "target": "traffic_gen_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o -c <SOURCE>/traffic-gen/src/packet_builder.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o -c <SOURCE>/traffic-gen/src/packet_builder.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/packet_decoder.cpp",
+      "target": "traffic_gen_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o -c <SOURCE>/traffic-gen/src/packet_decoder.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o -c <SOURCE>/traffic-gen/src/packet_decoder.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/pcap_sender.cpp",
+      "target": "traffic_gen_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o -c <SOURCE>/traffic-gen/src/pcap_sender.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o -c <SOURCE>/traffic-gen/src/pcap_sender.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/pcap_receiver.cpp",
+      "target": "traffic_gen_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o -c <SOURCE>/traffic-gen/src/pcap_receiver.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o -c <SOURCE>/traffic-gen/src/pcap_receiver.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/raw_socket_sender.cpp",
+      "target": "traffic_gen_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o -c <SOURCE>/traffic-gen/src/raw_socket_sender.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o -c <SOURCE>/traffic-gen/src/raw_socket_sender.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/raw_socket_receiver.cpp",
+      "target": "traffic_gen_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o -c <SOURCE>/traffic-gen/src/raw_socket_receiver.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o -c <SOURCE>/traffic-gen/src/raw_socket_receiver.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/verilator_sender.cpp",
+      "target": "traffic_gen_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o -c <SOURCE>/traffic-gen/src/verilator_sender.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o -c <SOURCE>/traffic-gen/src/verilator_sender.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/verilator_receiver.cpp",
+      "target": "traffic_gen_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o -c <SOURCE>/traffic-gen/src/verilator_receiver.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o -c <SOURCE>/traffic-gen/src/verilator_receiver.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/traffic_generator.cpp",
+      "target": "traffic_gen_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o -c <SOURCE>/traffic-gen/src/traffic_generator.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o -c <SOURCE>/traffic-gen/src/traffic_generator.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/session.cpp",
+      "target": "traffic_gen_ubsan",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o -c <SOURCE>/traffic-gen/src/session.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_ubsan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o -c <SOURCE>/traffic-gen/src/session.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/packet_builder.cpp",
+      "target": "traffic_gen_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o -c <SOURCE>/traffic-gen/src/packet_builder.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o -c <SOURCE>/traffic-gen/src/packet_builder.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/packet_decoder.cpp",
+      "target": "traffic_gen_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o -c <SOURCE>/traffic-gen/src/packet_decoder.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o -c <SOURCE>/traffic-gen/src/packet_decoder.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/pcap_sender.cpp",
+      "target": "traffic_gen_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o -c <SOURCE>/traffic-gen/src/pcap_sender.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o -c <SOURCE>/traffic-gen/src/pcap_sender.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/pcap_receiver.cpp",
+      "target": "traffic_gen_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o -c <SOURCE>/traffic-gen/src/pcap_receiver.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o -c <SOURCE>/traffic-gen/src/pcap_receiver.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/raw_socket_sender.cpp",
+      "target": "traffic_gen_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o -c <SOURCE>/traffic-gen/src/raw_socket_sender.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o -c <SOURCE>/traffic-gen/src/raw_socket_sender.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/raw_socket_receiver.cpp",
+      "target": "traffic_gen_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o -c <SOURCE>/traffic-gen/src/raw_socket_receiver.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o -c <SOURCE>/traffic-gen/src/raw_socket_receiver.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/verilator_sender.cpp",
+      "target": "traffic_gen_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o -c <SOURCE>/traffic-gen/src/verilator_sender.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o -c <SOURCE>/traffic-gen/src/verilator_sender.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/verilator_receiver.cpp",
+      "target": "traffic_gen_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o -c <SOURCE>/traffic-gen/src/verilator_receiver.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o -c <SOURCE>/traffic-gen/src/verilator_receiver.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/traffic_generator.cpp",
+      "target": "traffic_gen_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o -c <SOURCE>/traffic-gen/src/traffic_generator.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o -c <SOURCE>/traffic-gen/src/traffic_generator.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "source": "<SOURCE>/traffic-gen/src/session.cpp",
+      "target": "traffic_gen_asan",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -o CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o -c <SOURCE>/traffic-gen/src/session.cpp",
+      "after": "/usr/bin/c++ -Dtraffic_gen_asan_EXPORTS -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o -c <SOURCE>/traffic-gen/src/session.cpp"
+    },
+    {
+      "object": "traffic-gen/CMakeFiles/packet_gen.dir/tools/packet_gen_main.cpp.o",
+      "source": "<SOURCE>/traffic-gen/tools/packet_gen_main.cpp",
+      "target": "packet_gen",
+      "sanitizer": null,
+      "before": "/usr/bin/c++  -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -I<SOURCE>/logic/inc -std=gnu++17 -fPIE -o CMakeFiles/packet_gen.dir/tools/packet_gen_main.cpp.o -c <SOURCE>/traffic-gen/tools/packet_gen_main.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -I<SOURCE>/logic/inc -std=gnu++17 -fPIE -o CMakeFiles/packet_gen.dir/tools/packet_gen_main.cpp.o -c <SOURCE>/traffic-gen/tools/packet_gen_main.cpp"
+    },
+    {
+      "object": "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o",
+      "source": "<SOURCE>/traffic-gen/tests/traffic_gen_test.cpp",
+      "target": "traffic_gen-test_UBSAN",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++  -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o -c <SOURCE>/traffic-gen/tests/traffic_gen_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -fsanitize=undefined -o CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o -c <SOURCE>/traffic-gen/tests/traffic_gen_test.cpp"
+    },
+    {
+      "object": "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o",
+      "source": "<SOURCE>/traffic-gen/tests/traffic_gen_test.cpp",
+      "target": "traffic_gen-test_ASAN",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++  -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o -c <SOURCE>/traffic-gen/tests/traffic_gen_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -fsanitize=address -o CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o -c <SOURCE>/traffic-gen/tests/traffic_gen_test.cpp"
+    },
+    {
+      "object": "traffic-gen/tests/CMakeFiles/traffic_gen-test.dir/traffic_gen_test.cpp.o",
+      "source": "<SOURCE>/traffic-gen/tests/traffic_gen_test.cpp",
+      "target": "traffic_gen-test",
+      "sanitizer": null,
+      "before": "/usr/bin/c++  -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/traffic_gen-test.dir/traffic_gen_test.cpp.o -c <SOURCE>/traffic-gen/tests/traffic_gen_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/traffic_gen-test.dir/traffic_gen_test.cpp.o -c <SOURCE>/traffic-gen/tests/traffic_gen_test.cpp"
+    },
+    {
+      "object": "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "source": "<SOURCE>/traffic-gen/tests/adp_fuzz_test.cpp",
+      "target": "adp_fuzz-test_UBSAN",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++  -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o -c <SOURCE>/traffic-gen/tests/adp_fuzz_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -fsanitize=undefined -o CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o -c <SOURCE>/traffic-gen/tests/adp_fuzz_test.cpp"
+    },
+    {
+      "object": "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "source": "<SOURCE>/traffic-gen/tests/adp_fuzz_test.cpp",
+      "target": "adp_fuzz-test_ASAN",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++  -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o -c <SOURCE>/traffic-gen/tests/adp_fuzz_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -fsanitize=address -o CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o -c <SOURCE>/traffic-gen/tests/adp_fuzz_test.cpp"
+    },
+    {
+      "object": "traffic-gen/tests/CMakeFiles/adp_fuzz-test.dir/adp_fuzz_test.cpp.o",
+      "source": "<SOURCE>/traffic-gen/tests/adp_fuzz_test.cpp",
+      "target": "adp_fuzz-test",
+      "sanitizer": null,
+      "before": "/usr/bin/c++  -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/adp_fuzz-test.dir/adp_fuzz_test.cpp.o -c <SOURCE>/traffic-gen/tests/adp_fuzz_test.cpp",
+      "after": "/usr/bin/c++  -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/adp_fuzz-test.dir/adp_fuzz_test.cpp.o -c <SOURCE>/traffic-gen/tests/adp_fuzz_test.cpp"
+    },
+    {
+      "object": "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "source": "<SOURCE>/traffic-gen/tests/ptp_flags_test.cpp",
+      "target": "ptp_flags-test_UBSAN",
+      "sanitizer": "undefined",
+      "before": "/usr/bin/c++ -DPROTOCOLS_ROOT_DIR=\\\"<SOURCE>/protocols\\\" -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o -c <SOURCE>/traffic-gen/tests/ptp_flags_test.cpp",
+      "after": "/usr/bin/c++ -DPROTOCOLS_ROOT_DIR=\\\"<SOURCE>/protocols\\\" -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -fsanitize=undefined -o CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o -c <SOURCE>/traffic-gen/tests/ptp_flags_test.cpp"
+    },
+    {
+      "object": "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "source": "<SOURCE>/traffic-gen/tests/ptp_flags_test.cpp",
+      "target": "ptp_flags-test_ASAN",
+      "sanitizer": "address",
+      "before": "/usr/bin/c++ -DPROTOCOLS_ROOT_DIR=\\\"<SOURCE>/protocols\\\" -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o -c <SOURCE>/traffic-gen/tests/ptp_flags_test.cpp",
+      "after": "/usr/bin/c++ -DPROTOCOLS_ROOT_DIR=\\\"<SOURCE>/protocols\\\" -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -fsanitize=address -o CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o -c <SOURCE>/traffic-gen/tests/ptp_flags_test.cpp"
+    },
+    {
+      "object": "traffic-gen/tests/CMakeFiles/ptp_flags-test.dir/ptp_flags_test.cpp.o",
+      "source": "<SOURCE>/traffic-gen/tests/ptp_flags_test.cpp",
+      "target": "ptp_flags-test",
+      "sanitizer": null,
+      "before": "/usr/bin/c++ -DPROTOCOLS_ROOT_DIR=\\\"<SOURCE>/protocols\\\" -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/ptp_flags-test.dir/ptp_flags_test.cpp.o -c <SOURCE>/traffic-gen/tests/ptp_flags_test.cpp",
+      "after": "/usr/bin/c++ -DPROTOCOLS_ROOT_DIR=\\\"<SOURCE>/protocols\\\" -I<SOURCE>/traffic-gen/tests -I<SOURCE>/traffic-gen/inc -I<SOURCE>/parser/inc -I<SOURCE>/external/rapidyaml/src -I<SOURCE>/external/rapidyaml/ext/c4core/src -isystem <SOURCE>/external/googletest/googletest/include -isystem <SOURCE>/external/googletest/googletest -std=gnu++17 -fPIE -DTRAFFIC_GEN_TESTS_RES_PATH=\\\"<SOURCE>/parser/tests/test_resources\\\" -o CMakeFiles/ptp_flags-test.dir/ptp_flags_test.cpp.o -c <SOURCE>/traffic-gen/tests/ptp_flags_test.cpp"
+    }
+  ],
+  "new_entries": {
+    "tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o": {
+      "file": "<SOURCE>/tests/sanitizer/sanitizer_probe_test.cpp",
+      "command": "/usr/bin/c++  -I<SOURCE>/tests/sanitizer -std=gnu++17 -fPIE -o CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o -c <SOURCE>/tests/sanitizer/sanitizer_probe_test.cpp"
+    },
+    "tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o": {
+      "file": "<SOURCE>/tests/sanitizer/sanitizer_probe_test.cpp",
+      "command": "/usr/bin/c++  -I<SOURCE>/tests/sanitizer -std=gnu++17 -fPIE -fsanitize=address -o CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o -c <SOURCE>/tests/sanitizer/sanitizer_probe_test.cpp"
+    },
+    "tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o": {
+      "file": "<SOURCE>/tests/sanitizer/sanitizer_probe_test.cpp",
+      "command": "/usr/bin/c++  -I<SOURCE>/tests/sanitizer -std=gnu++17 -fPIE -fsanitize=undefined -o CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o -c <SOURCE>/tests/sanitizer/sanitizer_probe_test.cpp"
+    },
+    "tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o": {
+      "file": "<SOURCE>/tests/sanitizer/sanitizer_probe_lib.cpp",
+      "command": "/usr/bin/c++ -Dsanitizer_probe_EXPORTS -I<SOURCE>/tests/sanitizer -std=gnu++17 -fPIC -o CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o -c <SOURCE>/tests/sanitizer/sanitizer_probe_lib.cpp"
+    },
+    "tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o": {
+      "file": "<SOURCE>/tests/sanitizer/sanitizer_probe_lib.cpp",
+      "command": "/usr/bin/c++ -Dsanitizer_probe_asan_EXPORTS -I<SOURCE>/tests/sanitizer -std=gnu++17 -fPIC -fsanitize=address -o CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o -c <SOURCE>/tests/sanitizer/sanitizer_probe_lib.cpp"
+    },
+    "tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o": {
+      "file": "<SOURCE>/tests/sanitizer/sanitizer_probe_lib.cpp",
+      "command": "/usr/bin/c++ -Dsanitizer_probe_ubsan_EXPORTS -I<SOURCE>/tests/sanitizer -std=gnu++17 -fPIC -fsanitize=undefined -o CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o -c <SOURCE>/tests/sanitizer/sanitizer_probe_lib.cpp"
+    }
+  }
+}

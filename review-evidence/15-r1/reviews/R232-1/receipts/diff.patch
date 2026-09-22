@@ -1,0 +1,439 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index dbce195..8269085 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -60,6 +60,11 @@ add_subdirectory(parser)
+ add_subdirectory(logic)
+ add_subdirectory(traffic-gen)
+ 
++# Checks that the sanitizer helpers instrument what they build.
++if(ENABLE_PARSER_TESTS)
++    add_subdirectory(tests/sanitizer)
++endif()
++
+ if(ENABLE_SYSTEMC_SIM)
+     add_subdirectory(sim)
+ endif()
+diff --git a/cmake/CMakeGenTestingLibraries.cmake b/cmake/CMakeGenTestingLibraries.cmake
+index b8a1c3b..5efb0b9 100644
+--- a/cmake/CMakeGenTestingLibraries.cmake
++++ b/cmake/CMakeGenTestingLibraries.cmake
+@@ -13,11 +13,15 @@ macro(generate_test_libs BASENAME INCDIRS SOURCEFILES)
+ 		${_SOURCEFILES}
+ 	)
+ 
++	# Only optimisation/debug levels follow the configuration. The sanitizer
++	# flag applies under every build type, including the empty default, and
++	# as a PUBLIC option it also instruments each test TU linking the variant.
+ 	target_compile_options(${BASENAME}_asan PUBLIC
+-		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
+-		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
+-		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
+-		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
++		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS}>
++		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS}>
++		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS}>
++		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS}>
++		${COMP_ASAN_FLAGS}
+ 	)
+ 
+ 	target_include_directories(${BASENAME}_asan PUBLIC
+@@ -26,10 +30,11 @@ macro(generate_test_libs BASENAME INCDIRS SOURCEFILES)
+ 	)
+ 
+ 	target_compile_options(${BASENAME}_ubsan PUBLIC
+-		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS} ${COMP_UBSAN_FLAGS}>
+-		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS} ${COMP_UBSAN_FLAGS}>
+-		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS} ${COMP_UBSAN_FLAGS}>
+-		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS} ${COMP_UBSAN_FLAGS}>
++		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS}>
++		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS}>
++		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS}>
++		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS}>
++		${COMP_UBSAN_FLAGS}
+ 	)
+ 
+ 	target_include_directories(${BASENAME}_ubsan PUBLIC
+diff --git a/docs/low-level/architecture.md b/docs/low-level/architecture.md
+index 0ea8007..91b4fce 100644
+--- a/docs/low-level/architecture.md
++++ b/docs/low-level/architecture.md
+@@ -184,11 +184,19 @@ protocol_logic      x          (intentionally not built — mirror
+ `target_link_testlibs` (`cmake/CMakeLinkToTestlibs.cmake`) then produces
+ three executables per test source — `<name>`, `<name>_ASAN`,
+ `<name>_UBSAN` — each linked against the matching library variant, and
+-`gtest_discover_test_wtestlibs` registers all three with CTest. A sanitizer
+-report makes the binary exit non-zero, which CTest reports as a failure.
++`gtest_discover_test_wtestlibs` registers all three with CTest.
+ Never mix sanitized and unsanitized libraries in one binary — the runtimes
+ must match.
+ 
++The per-configuration part of a variant is only its `-O`/`-g` level. The
++sanitizer flag is a PUBLIC compile option under every build type, including
++the empty default, so the variant and each test TU linking it are
++instrumented, while the `_ASAN`/`_UBSAN` link lines add the runtime. An
++ASan report stops the binary with exit status 1, which CTest reports as a
++failure; UBSan recovers by default, printing its report and carrying on.
++See [testing-and-ci.md](testing-and-ci.md) for these semantics and for the
++`tests/sanitizer/` check of the helpers.
++
+ ## Directory layout
+ 
+ ```
+@@ -220,7 +228,8 @@ tsn-gen/
+ │   └── tests/                gtest + aecp_behave/ + stack_behave/ BDD suites
+ ├── sim/                      SystemC + ns-3 + Verilator co-simulation (opt-in)
+ └── tests/                    runner scripts (run-tests.sh, run-tests-behave.sh,
+-                              exec-local-test.sh) + pre-commit hook installer
++                              exec-local-test.sh) + pre-commit hook installer;
++                              sanitizer/ checks the sanitizer helpers
+ ```
+ 
+ ## Extension points
+diff --git a/docs/low-level/testing-and-ci.md b/docs/low-level/testing-and-ci.md
+index 3685c79..b5fb2db 100644
+--- a/docs/low-level/testing-and-ci.md
++++ b/docs/low-level/testing-and-ci.md
+@@ -37,6 +37,7 @@ Current suites:
+ | traffic-gen | `ptp_flags-test` | 802.1AS media-dependent TX flag oracle (see below) |
+ | logic | `ethernet_frame_logic-test` | reference module bound via StackBuilder |
+ | logic | `stack_codec-test` | logic-driven stack encode/decode golden tests (see below) |
++| tests/sanitizer | `sanitizer_probe-test` | the sanitizer helpers instrument what they build (see below) |
+ 
+ ### Sanitizer variants
+ 
+@@ -45,11 +46,49 @@ Current suites:
+ `target_link_testlibs` emits three executables per test — `<name>`,
+ `<name>_ASAN`, `<name>_UBSAN` — linked against the matching variant, and
+ `gtest_discover_test_wtestlibs` registers all three. So one `ctest` run
+-covers plain, ASan, and UBSan. A sanitizer report exits non-zero and fails
+-the test. The logic library intentionally has no sanitized variant today;
++covers plain, ASan, and UBSan.
++The logic library intentionally has no sanitized variant today;
+ its test links the plain libraries (sanitizer coverage of the shared
+ machinery comes from the parser suites).
+ 
++Only the `-O`/`-g` levels of a variant follow the build type. Its sanitizer
++flag is a PUBLIC compile option applied under every build type, including
++the empty default that `setup.sh` and CI configure, so the variant and each
++test TU linking it are compiled with instrumentation; the `_ASAN`/`_UBSAN`
++link lines add the sanitizer runtime. Plain libraries and executables,
++`protocol_logic`, `packet_gen` and the vendored rapidyaml and googletest
++targets are not instrumented.
++
++The two sanitizers end a run differently. An ASan report stops the process
++with exit status 1, which fails the test. UBSan recovers by default from
++most checks: it prints the report to stderr and the program carries on, so
++a UBSan report fails a test only when the test fails for another reason.
++Look for `runtime error:` in the output (CTest keeps passing tests' output
++in `Testing/Temporary/LastTest.log`), or run the binary with
++`UBSAN_OPTIONS=halt_on_error=1` to stop at the first report.
++
++### Sanitizer helper check
++
++`tests/sanitizer/` tests the helpers themselves under whatever build type
++is configured. A fixture library built by `generate_test_libs` and a probe
++built by `target_link_testlibs` give seven CTest cases:
++
++- `sanitizer_probe-test.clean`, `sanitizer_probe-test_ASAN.clean` and
++  `sanitizer_probe-test_UBSAN.clean`: a clean run exits 0 with no report.
++- `sanitizer_probe-test_ASAN.library-heap-overflow`,
++  `sanitizer_probe-test_ASAN.consumer-heap-overflow`,
++  `sanitizer_probe-test_UBSAN.library-signed-overflow` and
++  `sanitizer_probe-test_UBSAN.consumer-signed-overflow`: each puts one
++  defect either in the fixture library or in the probe's own TU. A linked
++  runtime alone cannot catch it; only compiling that TU with the sanitizer
++  does. `check_sanitizer_child.cmake` prints the child's exit status and
++  output, and passes only for status 1, the expected report, and no
++  progress past the fault.
++
++The two UBSan cases set `UBSAN_OPTIONS=halt_on_error=1` in their test
++properties, because otherwise UBSan recovers and the child exits 0. No other
++test changes the default.
++
+ ### Stack codec golden tests
+ 
+ `logic/tests/stack_codec_test.cpp` drives the logic-based encode/decode
+diff --git a/tests/sanitizer/CMakeLists.txt b/tests/sanitizer/CMakeLists.txt
+new file mode 100644
+index 0000000..236e1c7
+--- /dev/null
++++ b/tests/sanitizer/CMakeLists.txt
+@@ -0,0 +1,79 @@
++# Checks the sanitizer helpers themselves. The fixture library and the probe
++# are built by generate_test_libs and target_link_testlibs, as the component
++# tests are, so a variant library or a consuming test TU left uninstrumented
++# under the current build type fails a diagnostic control below.
++
++##################### MODULES   ####################
++include(CMakeGenTestingLibraries)
++include(CMakeLinkToTestlibs)
++
++#################### FIXTURE LIBRARY ###############
++set(SANITIZER_PROBE_LIB_SRCS
++	sanitizer_probe_lib.cpp
++)
++
++add_library(sanitizer_probe SHARED
++	${SANITIZER_PROBE_LIB_SRCS}
++)
++
++target_include_directories(sanitizer_probe PUBLIC
++	${CMAKE_CURRENT_SOURCE_DIR}
++)
++
++generate_test_libs(
++	sanitizer_probe
++	"${CMAKE_CURRENT_SOURCE_DIR}"
++	${SANITIZER_PROBE_LIB_SRCS}
++)
++
++#################### PROBE ##########################
++# Emits sanitizer_probe-test, _ASAN and _UBSAN; no other library is needed.
++target_link_testlibs(
++	sanitizer_probe-test
++	sanitizer_probe
++	sanitizer_probe_test.cpp
++	""
++)
++
++#################### CONTROLS #######################
++# Passing controls: each executable exits 0 from a clean run, with no report.
++foreach(_probe sanitizer_probe-test sanitizer_probe-test_ASAN
++		sanitizer_probe-test_UBSAN)
++	add_test(NAME ${_probe}.clean COMMAND ${_probe} clean)
++	set_tests_properties(${_probe}.clean PROPERTIES
++		FAIL_REGULAR_EXPRESSION "Sanitizer|runtime error"
++	)
++endforeach()
++
++# Diagnostic controls: the checker keeps the child's exit status and output,
++# and requires status 1, the expected report, and no progress past the fault.
++function(add_sanitizer_diagnostic_test PROBE MODE REPORT)
++	add_test(NAME ${PROBE}.${MODE}
++		COMMAND ${CMAKE_COMMAND}
++			-DCHILD=$<TARGET_FILE:${PROBE}>
++			-DMODE=${MODE}
++			-DEXPECT_EXIT=1
++			"-DEXPECT_REPORT=${REPORT}"
++			-P ${CMAKE_CURRENT_SOURCE_DIR}/check_sanitizer_child.cmake
++	)
++endfunction()
++
++add_sanitizer_diagnostic_test(sanitizer_probe-test_ASAN library-heap-overflow
++	"ERROR: AddressSanitizer: heap-buffer-overflow")
++add_sanitizer_diagnostic_test(sanitizer_probe-test_ASAN consumer-heap-overflow
++	"ERROR: AddressSanitizer: heap-buffer-overflow")
++
++# UBSan names the faulting source line; it matches the TU holding the defect.
++add_sanitizer_diagnostic_test(sanitizer_probe-test_UBSAN library-signed-overflow
++	"sanitizer_probe_lib[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow")
++add_sanitizer_diagnostic_test(sanitizer_probe-test_UBSAN consumer-signed-overflow
++	"sanitizer_probe_test[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow")
++
++# An ASan report stops the process by default, but UBSan reports and carries
++# on. These two controls alone make UBSan fatal; every other test keeps the
++# default recovery.
++set_tests_properties(
++	sanitizer_probe-test_UBSAN.library-signed-overflow
++	sanitizer_probe-test_UBSAN.consumer-signed-overflow
++	PROPERTIES ENVIRONMENT "UBSAN_OPTIONS=halt_on_error=1"
++)
+diff --git a/tests/sanitizer/check_sanitizer_child.cmake b/tests/sanitizer/check_sanitizer_child.cmake
+new file mode 100644
+index 0000000..2670a38
+--- /dev/null
++++ b/tests/sanitizer/check_sanitizer_child.cmake
+@@ -0,0 +1,53 @@
++# Runs one sanitizer probe child and checks that its sanitizer stopped it at
++# the fault. CTest judges this script, so the child's own exit status and
++# output are printed first and the test log keeps them unchanged.
++#
++#   cmake -DCHILD=<probe> -DMODE=<mode> -DEXPECT_EXIT=<status>
++#         -DEXPECT_REPORT=<regex> -P check_sanitizer_child.cmake
++cmake_minimum_required(VERSION 3.21)
++
++foreach(_var CHILD MODE EXPECT_EXIT EXPECT_REPORT)
++	if(NOT DEFINED ${_var})
++		message(FATAL_ERROR "${_var} is not set")
++	endif()
++endforeach()
++
++# Record the runtime options the child inherits; the test sets any it needs.
++foreach(_var ASAN_OPTIONS UBSAN_OPTIONS)
++	if(DEFINED ENV{${_var}})
++		message(STATUS "${_var}=$ENV{${_var}}")
++	else()
++		message(STATUS "${_var} is unset")
++	endif()
++endforeach()
++
++execute_process(
++	COMMAND "${CHILD}" "${MODE}"
++	RESULT_VARIABLE _exit
++	OUTPUT_VARIABLE _out
++	ERROR_VARIABLE _err
++)
++
++message(STATUS "child: ${CHILD} ${MODE}")
++message(STATUS "child exit status: ${_exit}")
++message(STATUS "child stdout:\n${_out}")
++message(STATUS "child stderr:\n${_err}")
++
++set(_failures "")
++if(NOT _exit STREQUAL EXPECT_EXIT)
++	string(APPEND _failures "exit status ${_exit}, expected ${EXPECT_EXIT}\n")
++endif()
++if(NOT _err MATCHES "${EXPECT_REPORT}")
++	string(APPEND _failures "no report matching \"${EXPECT_REPORT}\" on stderr\n")
++endif()
++if(NOT _out MATCHES "${MODE} started")
++	string(APPEND _failures "the probe never reached its faulting operation\n")
++endif()
++if(_out MATCHES "${MODE} completed")
++	string(APPEND _failures "the probe continued past its faulting operation\n")
++endif()
++
++if(_failures)
++	message(FATAL_ERROR "sanitizer diagnostic control failed:\n${_failures}")
++endif()
++message(STATUS "the sanitizer stopped the probe at its fault, as expected")
+diff --git a/tests/sanitizer/sanitizer_probe.h b/tests/sanitizer/sanitizer_probe.h
+new file mode 100644
+index 0000000..0acaf62
+--- /dev/null
++++ b/tests/sanitizer/sanitizer_probe.h
+@@ -0,0 +1,22 @@
++/*
++ * SPDX-FileCopyrightText: 2026 Kebag-Logic (https://kebag-logic.com)
++ * SPDX-FileCopyrightText: 2026 Alexandre Malki <alexandre.malki@kebag-logic.com>
++ * SPDX-License-Identifier: MIT
++ *
++ * Fixture library of the sanitizer helper check. generate_test_libs builds
++ * it, so its _asan/_ubsan variants carry exactly the helpers' instrumentation.
++ */
++
++#pragma once
++
++#include <cstddef>
++
++namespace sanitizer_probe {
++
++/* values[index]: out of bounds when index is past the allocation. */
++int libraryRead(const int* values, std::size_t index);
++
++/* lhs + rhs in int: undefined when the sum leaves int's range. */
++int libraryAdd(int lhs, int rhs);
++
++} // namespace sanitizer_probe
+diff --git a/tests/sanitizer/sanitizer_probe_lib.cpp b/tests/sanitizer/sanitizer_probe_lib.cpp
+new file mode 100644
+index 0000000..a210df6
+--- /dev/null
++++ b/tests/sanitizer/sanitizer_probe_lib.cpp
+@@ -0,0 +1,21 @@
++/*
++ * SPDX-FileCopyrightText: 2026 Kebag-Logic (https://kebag-logic.com)
++ * SPDX-FileCopyrightText: 2026 Alexandre Malki <alexandre.malki@kebag-logic.com>
++ * SPDX-License-Identifier: MIT
++ */
++
++#include "sanitizer_probe.h"
++
++namespace sanitizer_probe {
++
++int libraryRead(const int* values, std::size_t index)
++{
++    return values[index];
++}
++
++int libraryAdd(int lhs, int rhs)
++{
++    return lhs + rhs;
++}
++
++} // namespace sanitizer_probe
+diff --git a/tests/sanitizer/sanitizer_probe_test.cpp b/tests/sanitizer/sanitizer_probe_test.cpp
+new file mode 100644
+index 0000000..bd8537c
+--- /dev/null
++++ b/tests/sanitizer/sanitizer_probe_test.cpp
+@@ -0,0 +1,78 @@
++/*
++ * SPDX-FileCopyrightText: 2026 Kebag-Logic (https://kebag-logic.com)
++ * SPDX-FileCopyrightText: 2026 Alexandre Malki <alexandre.malki@kebag-logic.com>
++ * SPDX-License-Identifier: MIT
++ *
++ * Probe of the sanitizer helpers. target_link_testlibs builds this TU as the
++ * plain, _ASAN and _UBSAN executables, the sanitized ones taking their
++ * instrumentation from the fixture variant's PUBLIC compile options, as every
++ * component test does.
++ *
++ * Each faulting mode puts its defect in exactly one TU: the fixture library
++ * (library-*) or this consuming TU (consumer-*). Only compiler
++ * instrumentation of that TU can report it; linking the sanitizer runtime
++ * alone cannot. Every mode prints "started" before its operation and
++ * "completed" after it, so a run that went on past a fault is visible.
++ */
++
++#include "sanitizer_probe.h"
++
++#include <cstdio>
++#include <cstring>
++#include <limits>
++#include <memory>
++
++namespace {
++
++int consumerRead(const int* values, std::size_t index)
++{
++    return values[index];
++}
++
++int consumerAdd(int lhs, int rhs)
++{
++    return lhs + rhs;
++}
++
++} // namespace
++
++int main(int argc, char** argv)
++{
++    if (argc != 2) {
++        std::fprintf(stderr, "usage: %s clean|library-heap-overflow|"
++                             "consumer-heap-overflow|library-signed-overflow|"
++                             "consumer-signed-overflow\n", argv[0]);
++        return 2;
++    }
++    const char* mode = argv[1];
++
++    /* volatile, so no optimisation level can fold the index or operands. */
++    volatile std::size_t count = 4;
++    volatile int maxInt = std::numeric_limits<int>::max();
++    volatile int one = 1;
++    std::unique_ptr<int[]> values(new int[count]());
++
++    std::printf("sanitizer_probe: %s started\n", mode);
++    std::fflush(stdout);
++
++    int value = 0;
++    if (std::strcmp(mode, "clean") == 0) {
++        value = sanitizer_probe::libraryRead(values.get(), count - 1) +
++                consumerRead(values.get(), count - 1) +
++                sanitizer_probe::libraryAdd(one, one) + consumerAdd(one, one);
++    } else if (std::strcmp(mode, "library-heap-overflow") == 0) {
++        value = sanitizer_probe::libraryRead(values.get(), count);
++    } else if (std::strcmp(mode, "consumer-heap-overflow") == 0) {
++        value = consumerRead(values.get(), count);
++    } else if (std::strcmp(mode, "library-signed-overflow") == 0) {
++        value = sanitizer_probe::libraryAdd(maxInt, one);
++    } else if (std::strcmp(mode, "consumer-signed-overflow") == 0) {
++        value = consumerAdd(maxInt, one);
++    } else {
++        std::fprintf(stderr, "unknown mode: %s\n", mode);
++        return 2;
++    }
++
++    std::printf("sanitizer_probe: %s completed (value %d)\n", mode, value);
++    return 0;
++}

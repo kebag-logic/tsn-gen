@@ -1,0 +1,15 @@
+probe-build-empty exit 0
+probe-ctest-empty exit 0
+probe-test-list-empty exit 0
+probe-build-Debug exit 0
+probe-ctest-Debug exit 0
+probe-test-list-Debug exit 0
+probe-build-Release exit 0
+probe-ctest-Release exit 0
+probe-test-list-Release exit 0
+probe-build-MinSizeRel exit 0
+probe-ctest-MinSizeRel exit 0
+probe-test-list-MinSizeRel exit 0
+probe-build-RelWithDebInfo exit 0
+probe-ctest-RelWithDebInfo exit 0
+probe-test-list-RelWithDebInfo exit 0

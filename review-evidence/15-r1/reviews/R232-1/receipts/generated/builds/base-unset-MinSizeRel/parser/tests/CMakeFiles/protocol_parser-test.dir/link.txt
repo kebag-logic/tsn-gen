@@ -1,0 +1,1 @@
+/usr/bin/c++ -Os -DNDEBUG -Wl,--dependency-file=CMakeFiles/protocol_parser-test.dir/link.d "CMakeFiles/protocol_parser-test.dir/protocol_parser_test.cpp.o" -o protocol_parser-test  -Wl,-rpath,"\$ORIGIN/../" ../libprotocol_parser.so.0.1.0 ../../lib/libgtest_main.a ../../external/rapidyaml/libryml.a ../../lib/libgtest.a

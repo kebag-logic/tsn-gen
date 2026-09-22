@@ -1,0 +1,7 @@
+commit 76906b83eb54ac29040fe72fd910d34727188694
+Author:     hackerman-kl <hackerman-kl@kebag-logic.com>
+AuthorDate: Tue Sep 22 09:21:04 2026 +0200
+Commit:     hackerman-kl <hackerman-kl@kebag-logic.com>
+CommitDate: Tue Sep 22 09:21:04 2026 +0200
+
+    Instrument sanitizer variants and their test TUs under every build type

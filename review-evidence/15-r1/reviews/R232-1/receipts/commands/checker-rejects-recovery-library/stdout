@@ -1,0 +1,11 @@
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS is unset
+-- child: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-empty/tests/sanitizer/sanitizer_probe-test_UBSAN library-signed-overflow
+-- child exit status: 0
+-- child stdout:
+sanitizer_probe: library-signed-overflow started
+sanitizer_probe: library-signed-overflow completed (value -2147483648)
+
+-- child stderr:
+$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/head/tests/sanitizer/sanitizer_probe_lib.cpp:18:18: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+

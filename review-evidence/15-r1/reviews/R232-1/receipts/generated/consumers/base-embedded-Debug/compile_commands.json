@@ -1,0 +1,320 @@
+[
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug",
+  "command": "/usr/bin/c++ -DCORPUS=\\\"$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/protocols\\\" -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/logic/inc -g -std=gnu++17 -DR232_PARENT_OPTION -o CMakeFiles/app.dir/main.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-source/main.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-source/main.cpp",
+  "output": "CMakeFiles/app.dir/main.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/common.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/common.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/common.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/common.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/node.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/node.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/node.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/node.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/node_type.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/node_type.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/node_type.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/node_type.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/parse.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/parse.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/parse.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/parse.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/preprocess.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/preprocess.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/preprocess.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/preprocess.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/reference_resolver.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/reference_resolver.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/reference_resolver.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/reference_resolver.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/tag.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/tag.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/tag.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/tag.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/tree.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/tree.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/tree.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/tree.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/src/c4/yml/version.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/version.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src/c4/yml/version.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/version.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/base64.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/base64.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/base64.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/base64.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/char_traits.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/char_traits.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/char_traits.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/char_traits.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/error.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/error.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/error.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/error.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/format.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/format.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/format.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/format.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/language.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/language.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/language.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/language.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_resource.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/memory_resource.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/memory_resource.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_resource.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_util.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/memory_util.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/memory_util.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_util.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/utf.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/utf.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/utf.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/utf.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml",
+  "command": "/usr/bin/c++ -Dryml_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/ryml.dir/ext/c4core/src/c4/version.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/version.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/version.cpp",
+  "output": "tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/version.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml/subprojects/c4core/build",
+  "command": "/usr/bin/c++ -Dc4core_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/base64.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/base64.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/base64.cpp",
+  "output": "tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/base64.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml/subprojects/c4core/build",
+  "command": "/usr/bin/c++ -Dc4core_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/char_traits.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/char_traits.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/char_traits.cpp",
+  "output": "tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/char_traits.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml/subprojects/c4core/build",
+  "command": "/usr/bin/c++ -Dc4core_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/error.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/error.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/error.cpp",
+  "output": "tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/error.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml/subprojects/c4core/build",
+  "command": "/usr/bin/c++ -Dc4core_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/format.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/format.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/format.cpp",
+  "output": "tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/format.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml/subprojects/c4core/build",
+  "command": "/usr/bin/c++ -Dc4core_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/language.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/language.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/language.cpp",
+  "output": "tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/language.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml/subprojects/c4core/build",
+  "command": "/usr/bin/c++ -Dc4core_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/memory_resource.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/memory_resource.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/memory_resource.cpp",
+  "output": "tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/memory_resource.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml/subprojects/c4core/build",
+  "command": "/usr/bin/c++ -Dc4core_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/memory_util.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/memory_util.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/memory_util.cpp",
+  "output": "tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/memory_util.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml/subprojects/c4core/build",
+  "command": "/usr/bin/c++ -Dc4core_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/utf.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/utf.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/utf.cpp",
+  "output": "tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/utf.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/external/rapidyaml/subprojects/c4core/build",
+  "command": "/usr/bin/c++ -Dc4core_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=c++17 -fPIC -o CMakeFiles/c4core.dir/src/c4/version.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/version.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src/c4/version.cpp",
+  "output": "tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/version.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/parser",
+  "command": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/protocol_parser.dir/src/log.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/log.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/log.cpp",
+  "output": "tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/log.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/parser",
+  "command": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/protocol_parser.dir/src/validator.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/validator.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/validator.cpp",
+  "output": "tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/validator.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/parser",
+  "command": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/protocol_parser.dir/src/protocol_parser.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/protocol_parser.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/protocol_parser.cpp",
+  "output": "tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/protocol_parser.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/parser",
+  "command": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/protocol_parser.dir/src/protocol.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/protocol.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/protocol.cpp",
+  "output": "tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/protocol.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/parser",
+  "command": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/protocol_parser.dir/src/db_proto_if_impl.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/db_proto_if_impl.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/db_proto_if_impl.cpp",
+  "output": "tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/db_proto_if_impl.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/parser",
+  "command": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/protocol_parser.dir/src/db_proto_impl.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/db_proto_impl.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/db_proto_impl.cpp",
+  "output": "tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/db_proto_impl.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/parser",
+  "command": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/protocol_parser.dir/src/db_proto_service_impl.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/db_proto_service_impl.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/db_proto_service_impl.cpp",
+  "output": "tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/db_proto_service_impl.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/parser",
+  "command": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/protocol_parser.dir/src/db_var_impl.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/db_var_impl.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/db_var_impl.cpp",
+  "output": "tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/db_var_impl.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/parser",
+  "command": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/protocol_parser.dir/src/logic_registry.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/logic_registry.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/logic_registry.cpp",
+  "output": "tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/logic_registry.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/parser",
+  "command": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/protocol_parser.dir/src/stack.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/stack.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/stack.cpp",
+  "output": "tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/stack.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/parser",
+  "command": "/usr/bin/c++ -Dprotocol_parser_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/protocol_parser.dir/src/stack_builder.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/stack_builder.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/src/stack_builder.cpp",
+  "output": "tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/stack_builder.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/logic",
+  "command": "/usr/bin/c++ -Dprotocol_logic_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/logic/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/protocol_logic.dir/src/ethernet_frame_logic.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/logic/src/ethernet_frame_logic.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/logic/src/ethernet_frame_logic.cpp",
+  "output": "tsn-gen/logic/CMakeFiles/protocol_logic.dir/src/ethernet_frame_logic.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/logic",
+  "command": "/usr/bin/c++ -Dprotocol_logic_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/logic/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/protocol_logic.dir/src/avtp_control_logic.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/logic/src/avtp_control_logic.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/logic/src/avtp_control_logic.cpp",
+  "output": "tsn-gen/logic/CMakeFiles/protocol_logic.dir/src/avtp_control_logic.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/logic",
+  "command": "/usr/bin/c++ -Dprotocol_logic_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/logic/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/protocol_logic.dir/src/aecp_aem_logic.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/logic/src/aecp_aem_logic.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/logic/src/aecp_aem_logic.cpp",
+  "output": "tsn-gen/logic/CMakeFiles/protocol_logic.dir/src/aecp_aem_logic.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/traffic-gen",
+  "command": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/traffic_gen.dir/src/packet_builder.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/packet_builder.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/packet_builder.cpp",
+  "output": "tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/packet_builder.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/traffic-gen",
+  "command": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/traffic_gen.dir/src/packet_decoder.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/packet_decoder.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/packet_decoder.cpp",
+  "output": "tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/packet_decoder.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/traffic-gen",
+  "command": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/traffic_gen.dir/src/pcap_sender.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/pcap_sender.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/pcap_sender.cpp",
+  "output": "tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/pcap_sender.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/traffic-gen",
+  "command": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/traffic_gen.dir/src/pcap_receiver.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/pcap_receiver.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/pcap_receiver.cpp",
+  "output": "tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/pcap_receiver.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/traffic-gen",
+  "command": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/traffic_gen.dir/src/raw_socket_sender.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/raw_socket_sender.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/raw_socket_sender.cpp",
+  "output": "tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/raw_socket_sender.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/traffic-gen",
+  "command": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/traffic_gen.dir/src/raw_socket_receiver.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/raw_socket_receiver.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/raw_socket_receiver.cpp",
+  "output": "tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/raw_socket_receiver.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/traffic-gen",
+  "command": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/traffic_gen.dir/src/verilator_sender.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/verilator_sender.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/verilator_sender.cpp",
+  "output": "tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/verilator_sender.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/traffic-gen",
+  "command": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/traffic_gen.dir/src/verilator_receiver.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/verilator_receiver.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/verilator_receiver.cpp",
+  "output": "tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/verilator_receiver.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/traffic-gen",
+  "command": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/traffic_gen.dir/src/traffic_generator.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/traffic_generator.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/traffic_generator.cpp",
+  "output": "tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/traffic_generator.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/traffic-gen",
+  "command": "/usr/bin/c++ -Dtraffic_gen_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -g -std=gnu++17 -fPIC -O0 -g3 -o CMakeFiles/traffic_gen.dir/src/session.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/session.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/src/session.cpp",
+  "output": "tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/session.cpp.o"
+},
+{
+  "directory": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/base-embedded-Debug/tsn-gen/traffic-gen",
+  "command": "/usr/bin/c++  -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/parser/inc -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/external/rapidyaml/ext/c4core/src -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/logic/inc -g -std=gnu++17 -fPIE -o CMakeFiles/packet_gen.dir/tools/packet_gen_main.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/tools/packet_gen_main.cpp",
+  "file": "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/base/traffic-gen/tools/packet_gen_main.cpp",
+  "output": "tsn-gen/traffic-gen/CMakeFiles/packet_gen.dir/tools/packet_gen_main.cpp.o"
+}
+]

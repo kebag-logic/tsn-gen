@@ -1,0 +1,2 @@
+sanitizer_probe: consumer-signed-overflow started
+sanitizer_probe: consumer-signed-overflow completed (value -2147483648)

@@ -1,0 +1,169 @@
+
+packet_gen — IEEE 1722.1 / ADP packet generator driven by YAML protocol definitions
+
+USAGE
+  $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/head-tests-off-Debug/traffic-gen/packet_gen --yaml-dir <dir> --interface <name> [options]
+
+REQUIRED
+  --yaml-dir <path>
+      Directory (searched recursively) containing protocol YAML files.
+      Every .yaml file must declare a 'service:' key at the top level.
+      Example: protocols/application/1722_1/aecp
+
+  --interface <qualified-name>
+      Fully qualified interface name in the form:
+        <service>::<ENTITY>::<INTERFACE>
+      Example: atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF
+      Tip: run with --list-interfaces to discover available names.
+
+OPTIONS
+  --count <n>          Number of packets to generate.  Default: 1.
+                       Use 0 for an unlimited stream (Ctrl-C to stop).
+
+  --seed <n>           Seed the internal Mersenne-Twister PRNG with the
+                       given 64-bit integer.  Identical seeds produce
+                       identical packet sequences — useful for reproducible
+                       fuzzing and regression tests.  Default: random.
+
+  --output hex|json    Format for packets written to stdout.  Default: json.
+    hex                One lower-case hex string per line, no delimiters.
+                       Example: 1402422e2c43f8a1...
+    json               One JSON object per line (newline-delimited JSON):
+                         {"fields":{"message_type":0,"status":0,...},
+                          "hex":"1402422e..."}
+                       Fields appear in YAML declaration order.
+                       Integer field values are decimal.
+
+  --transport <spec>   Deliver each generated packet via the named transport
+                       in addition to writing to stdout.  Default: none.
+    none               Stdout only — no hardware or file I/O.
+    raw:<ifname>       Inject directly onto a network interface using a
+                       Linux AF_PACKET/SOCK_RAW socket.  Requires
+                       CAP_NET_RAW (run as root or grant the capability).
+                       Example: raw:eth0
+    pcap:<filepath>    Write a libpcap-format capture file (LINKTYPE_ETHERNET,
+                       no libpcap dependency).  Compatible with Wireshark and
+                       tcpdump.  The file is created or truncated on open.
+                       Example: pcap:/tmp/aecp_capture.pcap
+    verilator:<socket> Send AXI-Stream beats over a UNIX domain socket to a
+                       Verilator DUT.  The socket path must already exist
+                       (started by the simulation).
+                       Example: verilator:/tmp/verilator_axis.sock
+
+  --list-interfaces    Parse --yaml-dir and print all available interface
+                       names, then exit.  Useful for discovering what
+                       --interface values are valid in a given directory.
+
+  --validate           Schema-check every YAML under --yaml-dir (and the
+                       --stack-file if given) against the protocol/stack
+                       schema, report file:line:col diagnostics on stderr,
+                       then exit.  Exit code 0 = clean, 2 = errors found.
+
+  --connect <A:B[:C…]> Chain two or more interfaces into a single round.
+                       Each round generates one packet per interface in
+                       the declared order.  Fields shared by name between
+                       consecutive packets are propagated forward:
+                         • B receives A's field values for any field name
+                           that B does not fix via 'expected.value/values'.
+                         • C receives B's field values the same way.
+                       Typical use: simulate a command/response exchange
+                       where the responder echoes sequence_id,
+                       target_entity_id, controller_entity_id, etc.
+                       When --connect is given, --interface is optional
+                       (the chain defines all interfaces to use).
+                       Multiple --connect flags append to the same chain.
+                       Example:
+                         --connect CMD_IF:RSP_IF
+                         --connect A:B:C  (three-step chain)
+
+  --stack <A:B[:C…]>   Concatenate bytes from multiple protocol layers into
+                       a single on-wire frame.  Each interface is generated
+                       independently (no field propagation) and its byte
+                       buffer is appended in declaration order.
+                       Typical use: assemble a complete Ethernet frame:
+                         Ethernet MAC header (14 B)
+                         + AVTP control header (2 B)
+                         + AECP PDU (39 B)
+                       Use --yaml-dir pointing at the protocols root so all
+                       layer YAMLs (data_link, application, …) are loaded.
+                       JSON output per round:
+                         {"hex":"<all layers concatenated>",
+                          "layers":[{"iface":"...","hex":"...",
+                                     "fields":{…}}, …]}
+                       --stack and --connect are mutually exclusive.
+                       Example:
+                         --stack ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF\
+                                :avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF\
+                                :atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF
+
+  --stack-file <path>  Assemble (or decode) a frame through a stack YAML and
+                       its per-layer logic modules. Unlike --stack, each
+                       layer's logic runs: derived fields (lengths, demux
+                       selectors) are filled on encode and validated on
+                       decode, producing semantically valid frames.
+                       The stack YAML lists services bottom-up; see
+                       stacks/ for examples.  Mutually exclusive with
+                       --stack / --connect.
+
+  --decode             Receive packets (see --transport) or decode --hex, and
+                       print the fields recovered against the declared
+                       interface or stack layout.
+
+  --hex <hexstring>    Decode a single hex string and exit (implies --decode).
+
+  --log-level <lvl>    Diagnostic verbosity on stderr: quiet, error, warn,
+                       info, debug.  Default: warn.  stdout stays reserved
+                       for packet output in every mode.
+
+  --version            Print the tool version and exit.
+
+  --help               Print this message and exit.
+
+EXIT CODES
+  0  Success.
+  1  Argument error (bad option, missing required argument).
+  2  Runtime error (parse failure, interface not found, send error).
+
+EXAMPLES
+  # Generate 1 JSON packet from the ACQUIRE_ENTITY YAML:
+  $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/head-tests-off-Debug/traffic-gen/packet_gen \
+    --yaml-dir protocols/application/1722_1/aecp \
+    --interface atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF
+
+  # Reproducible fuzz run — 1000 hex packets, seed 42:
+  $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/head-tests-off-Debug/traffic-gen/packet_gen \
+    --yaml-dir protocols/application/1722_1/aecp \
+    --interface atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \
+    --count 1000 --seed 42 --output hex
+
+  # Capture 50 VENDOR_UNIQUE PDUs into a pcap file:
+  $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/head-tests-off-Debug/traffic-gen/packet_gen \
+    --yaml-dir protocols/application/1722_1/aecp \
+    --interface atdecc_aecp_vendor_unique::AECP_VENDOR_UNIQUE::AECP_VENDOR_UNIQUE_IF \
+    --count 50 --transport pcap:/tmp/vendor_unique.pcap
+
+  # Inject 10 ADP PDUs onto eth0 (requires root):
+  $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/head-tests-off-Debug/traffic-gen/packet_gen \
+    --yaml-dir parser/tests/test_resources/0020_adp_protocol_test \
+    --interface atdecc_adp_service::ADP_INTERFACE::ADP_IF_DATA \
+    --count 10 --transport raw:eth0
+
+  # List all interfaces defined in the AECP YAML directory:
+  $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/head-tests-off-Debug/traffic-gen/packet_gen \
+    --yaml-dir protocols/application/1722_1/aecp --list-interfaces
+
+  # Simulate an ACQUIRE_ENTITY command/response exchange (5 rounds):
+  $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/head-tests-off-Debug/traffic-gen/packet_gen \
+    --yaml-dir protocols/application/1722_1/aecp \
+    --connect atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF\
+             :atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \
+    --count 5
+
+  # Assemble a complete on-wire IEEE 1722.1 AECP frame (Eth+AVTP+AECP = 55 bytes):
+  $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/consumers/head-tests-off-Debug/traffic-gen/packet_gen \
+    --yaml-dir protocols \
+    --stack ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF\
+           :avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF\
+           :atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF \
+    --count 3 --seed 42
+

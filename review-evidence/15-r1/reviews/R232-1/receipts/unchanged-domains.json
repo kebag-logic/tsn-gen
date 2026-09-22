@@ -1,0 +1,37 @@
+[
+  {
+    "prefix": "protocols/",
+    "files": 33,
+    "all_bytes_and_modes_equal": true
+  },
+  {
+    "prefix": "stacks/",
+    "files": 1,
+    "all_bytes_and_modes_equal": true
+  },
+  {
+    "prefix": "parser/",
+    "files": 67,
+    "all_bytes_and_modes_equal": true
+  },
+  {
+    "prefix": "traffic-gen/",
+    "files": 48,
+    "all_bytes_and_modes_equal": true
+  },
+  {
+    "prefix": "logic/",
+    "files": 15,
+    "all_bytes_and_modes_equal": true
+  },
+  {
+    "prefix": "external/",
+    "files": 1001,
+    "all_bytes_and_modes_equal": true
+  },
+  {
+    "prefix": ".github/",
+    "files": 2,
+    "all_bytes_and_modes_equal": true
+  }
+]

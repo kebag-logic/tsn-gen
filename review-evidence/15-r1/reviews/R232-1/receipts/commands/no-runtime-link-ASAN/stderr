@@ -1,0 +1,39 @@
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o: warning: relocation against `__asan_option_detect_stack_use_after_return' in read-only section `.text._ZNSt15__uniq_ptr_dataIiSt14default_deleteIA_iELb1ELb1EECI2St15__uniq_ptr_implIiS2_EEPi[_ZNSt15__uniq_ptr_dataIiSt14default_deleteIA_iELb1ELb1EECI5St15__uniq_ptr_implIiS2_EEPi]'
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o: in function `(anonymous namespace)::consumerRead(int const*, unsigned long)':
+sanitizer_probe_test.cpp:(.text+0x57): undefined reference to `__asan_report_load4'
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o: in function `main':
+sanitizer_probe_test.cpp:(.text+0xa4): undefined reference to `__asan_option_detect_stack_use_after_return'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0xb1): undefined reference to `__asan_stack_malloc_1'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x153): undefined reference to `__asan_report_load8'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x181): undefined reference to `__asan_report_load8'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x1d2): undefined reference to `__asan_report_load8'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x22e): undefined reference to `__asan_handle_no_return'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x282): undefined reference to `__asan_report_store4'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x2fa): undefined reference to `__asan_report_load8'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x4b8): undefined reference to `__asan_report_load8'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x540): undefined reference to `__asan_handle_no_return'
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o: in function `_sub_D_00099_0':
+sanitizer_probe_test.cpp:(.text+0x5d0): undefined reference to `__asan_unregister_globals'
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o: in function `_sub_I_00099_1':
+sanitizer_probe_test.cpp:(.text+0x5db): undefined reference to `__asan_init'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x5e0): undefined reference to `__asan_version_mismatch_check_v8'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x5f4): undefined reference to `__asan_register_globals'
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o: in function `std::__uniq_ptr_data<int, std::default_delete<int []>, true, true>::__uniq_ptr_impl(int*)':
+sanitizer_probe_test.cpp:(.text._ZNSt15__uniq_ptr_dataIiSt14default_deleteIA_iELb1ELb1EECI2St15__uniq_ptr_implIiS2_EEPi[_ZNSt15__uniq_ptr_dataIiSt14default_deleteIA_iELb1ELb1EECI5St15__uniq_ptr_implIiS2_EEPi]+0x24): undefined reference to `__asan_option_detect_stack_use_after_return'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text._ZNSt15__uniq_ptr_dataIiSt14default_deleteIA_iELb1ELb1EECI2St15__uniq_ptr_implIiS2_EEPi[_ZNSt15__uniq_ptr_dataIiSt14default_deleteIA_iELb1ELb1EECI5St15__uniq_ptr_implIiS2_EEPi]+0x31): undefined reference to `__asan_stack_malloc_0'
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o: in function `std::unique_ptr<int [], std::default_delete<int []> >::~unique_ptr()':
+sanitizer_probe_test.cpp:(.text._ZNSt10unique_ptrIA_iSt14default_deleteIS0_EED2Ev[_ZNSt10unique_ptrIA_iSt14default_deleteIS0_EED5Ev]+0x39): undefined reference to `__asan_report_load8'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text._ZNSt10unique_ptrIA_iSt14default_deleteIS0_EED2Ev[_ZNSt10unique_ptrIA_iSt14default_deleteIS0_EED5Ev]+0x75): undefined reference to `__asan_report_load8'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text._ZNSt10unique_ptrIA_iSt14default_deleteIS0_EED2Ev[_ZNSt10unique_ptrIA_iSt14default_deleteIS0_EED5Ev]+0xa8): undefined reference to `__asan_report_store8'
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o: in function `std::__uniq_ptr_impl<int, std::default_delete<int []> >::__uniq_ptr_impl(int*)':
+sanitizer_probe_test.cpp:(.text._ZNSt15__uniq_ptr_implIiSt14default_deleteIA_iEEC2EPi[_ZNSt15__uniq_ptr_implIiSt14default_deleteIA_iEEC5EPi]+0x49): undefined reference to `__asan_report_store8'
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o: in function `std::__uniq_ptr_impl<int, std::default_delete<int []> >::_M_ptr() const':
+sanitizer_probe_test.cpp:(.text._ZNKSt15__uniq_ptr_implIiSt14default_deleteIA_iEE6_M_ptrEv[_ZNKSt15__uniq_ptr_implIiSt14default_deleteIA_iEE6_M_ptrEv]+0x34): undefined reference to `__asan_report_load8'
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o: in function `std::_Head_base<0ul, int*, false>::_Head_base()':
+sanitizer_probe_test.cpp:(.text._ZNSt10_Head_baseILm0EPiLb0EEC2Ev[_ZNSt10_Head_baseILm0EPiLb0EEC5Ev]+0x29): undefined reference to `__asan_report_store8'
+/usr/bin/ld: warning: creating DT_TEXTREL in a PIE
+collect2: error: ld returned 1 exit status
+make[3]: *** [tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/build.make:102: tests/sanitizer/sanitizer_probe-test_ASAN] Error 1
+make[2]: *** [CMakeFiles/Makefile2:249: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/all] Error 2
+make[1]: *** [CMakeFiles/Makefile2:256: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/rule] Error 2
+make: *** [Makefile:193: sanitizer_probe-test_ASAN] Error 2

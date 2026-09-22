@@ -1,0 +1,12 @@
+mutation-configure-reverted exit 0
+mutation-build-reverted exit 0
+mutation-test-reverted exit 8
+mutation-configure-private exit 0
+mutation-build-private exit 0
+mutation-test-private exit 8
+mutation-configure-interface exit 0
+mutation-build-interface exit 0
+mutation-test-interface exit 8
+mutation-configure-reverted-Debug exit 0
+mutation-build-reverted-Debug exit 0
+mutation-test-reverted-Debug exit 0

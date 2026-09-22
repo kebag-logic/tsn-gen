@@ -1,0 +1,42 @@
+[
+  {
+    "mode": "tests-off",
+    "type": "empty",
+    "existing_compile_count": 52,
+    "links": 6,
+    "flags": 6,
+    "base_head_commands_identical": true,
+    "sanitizers_absent": true,
+    "build_and_run": 0
+  },
+  {
+    "mode": "tests-off",
+    "type": "Debug",
+    "existing_compile_count": 52,
+    "links": 6,
+    "flags": 6,
+    "base_head_commands_identical": true,
+    "sanitizers_absent": true,
+    "build_and_run": 0
+  },
+  {
+    "mode": "embedded",
+    "type": "empty",
+    "existing_compile_count": 53,
+    "links": 7,
+    "flags": 7,
+    "base_head_commands_identical": true,
+    "sanitizers_absent": true,
+    "build_and_run": 0
+  },
+  {
+    "mode": "embedded",
+    "type": "Debug",
+    "existing_compile_count": 53,
+    "links": 7,
+    "flags": 7,
+    "base_head_commands_identical": true,
+    "sanitizers_absent": true,
+    "build_and_run": 0
+  }
+]

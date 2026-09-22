@@ -1,0 +1,9 @@
+CMake Error at $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/head/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+  sanitizer diagnostic control failed:
+
+  exit status 0, expected 1
+
+  the probe continued past its faulting operation
+
+
+

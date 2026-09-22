@@ -1,0 +1,1694 @@
+﻿2026-09-22T08:03:21.6960131Z Current runner version: '2.337.0'
+2026-09-22T08:03:21.6987166Z ##[group]Runner Image Provisioner
+2026-09-22T08:03:21.6988168Z Hosted Compute Agent
+2026-09-22T08:03:21.6988821Z Version: 20260828.587
+2026-09-22T08:03:21.6989517Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-22T08:03:21.6990353Z Build Date: 2026-08-28T16:44:25Z
+2026-09-22T08:03:21.6991123Z Worker ID: {675e10d0-529d-4958-8739-ddab1a21c142}
+2026-09-22T08:03:21.6991976Z Azure Region: eastus
+2026-09-22T08:03:21.6992682Z ##[endgroup]
+2026-09-22T08:03:21.6994980Z ##[group]Operating System
+2026-09-22T08:03:21.6995792Z Ubuntu
+2026-09-22T08:03:21.6996332Z 24.04.5
+2026-09-22T08:03:21.6996952Z LTS
+2026-09-22T08:03:21.6997519Z ##[endgroup]
+2026-09-22T08:03:21.6998086Z ##[group]Runner Image
+2026-09-22T08:03:21.6998764Z Image: ubuntu-24.04
+2026-09-22T08:03:21.6999358Z Version: 20260907.300.1
+2026-09-22T08:03:21.7000690Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260907.300/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-22T08:03:21.7002339Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260907.300
+2026-09-22T08:03:21.7003416Z ##[endgroup]
+2026-09-22T08:03:21.7005065Z ##[group]GITHUB_TOKEN Permissions
+2026-09-22T08:03:21.7007476Z Contents: read
+2026-09-22T08:03:21.7008135Z Metadata: read
+2026-09-22T08:03:21.7009137Z Packages: read
+2026-09-22T08:03:21.7009770Z ##[endgroup]
+2026-09-22T08:03:21.7011913Z Secret source: Actions
+2026-09-22T08:03:21.7013089Z Cache mode: write
+2026-09-22T08:03:21.7014287Z Prepare workflow directory
+2026-09-22T08:03:21.7360843Z Prepare all required actions
+2026-09-22T08:03:21.7409928Z Getting action download info
+2026-09-22T08:03:21.9558224Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-09-22T08:03:22.1668330Z Complete job name: unit-tests
+2026-09-22T08:03:22.2637918Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-22T08:03:22.2647193Z ##[group]Run actions/checkout@v4
+2026-09-22T08:03:22.2647992Z with:
+2026-09-22T08:03:22.2648447Z   repository: kebag-logic/tsn-gen
+2026-09-22T08:03:22.2652471Z   token: ***
+2026-09-22T08:03:22.2652905Z   ssh-strict: true
+2026-09-22T08:03:22.2653348Z   ssh-user: git
+2026-09-22T08:03:22.2654032Z   persist-credentials: true
+2026-09-22T08:03:22.2654538Z   clean: true
+2026-09-22T08:03:22.2654993Z   sparse-checkout-cone-mode: true
+2026-09-22T08:03:22.2655530Z   fetch-depth: 1
+2026-09-22T08:03:22.2655969Z   fetch-tags: false
+2026-09-22T08:03:22.2656417Z   show-progress: true
+2026-09-22T08:03:22.2656869Z   lfs: false
+2026-09-22T08:03:22.2657344Z   submodules: false
+2026-09-22T08:03:22.2657802Z   set-safe-directory: true
+2026-09-22T08:03:22.2658320Z   allow-unsafe-pr-checkout: false
+2026-09-22T08:03:22.2659203Z ##[endgroup]
+2026-09-22T08:03:22.3678910Z Syncing repository: kebag-logic/tsn-gen
+2026-09-22T08:03:22.3681594Z ##[group]Getting Git version info
+2026-09-22T08:03:22.3682723Z Working directory is '/home/runner/work/tsn-gen/tsn-gen'
+2026-09-22T08:03:22.3684799Z [command]/usr/bin/git version
+2026-09-22T08:03:22.3778697Z git version 2.55.0
+2026-09-22T08:03:22.3805958Z ##[endgroup]
+2026-09-22T08:03:22.3821724Z Temporarily overriding HOME='/home/runner/work/_temp/669f8e2e-0fc9-49b3-9c62-4d5d6c8ddc79' before making global git config changes
+2026-09-22T08:03:22.3824912Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-22T08:03:22.3828657Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/tsn-gen/tsn-gen
+2026-09-22T08:03:22.3889237Z Deleting the contents of '/home/runner/work/tsn-gen/tsn-gen'
+2026-09-22T08:03:22.3895989Z ##[group]Initializing the repository
+2026-09-22T08:03:22.3901077Z [command]/usr/bin/git init /home/runner/work/tsn-gen/tsn-gen
+2026-09-22T08:03:22.4044445Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-22T08:03:22.4046234Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-22T08:03:22.4048264Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-22T08:03:22.4049537Z hint: call:
+2026-09-22T08:03:22.4050228Z hint:
+2026-09-22T08:03:22.4051111Z hint: 	git config --global init.defaultBranch <name>
+2026-09-22T08:03:22.4052215Z hint:
+2026-09-22T08:03:22.4053211Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-22T08:03:22.4055104Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-22T08:03:22.4056403Z hint:
+2026-09-22T08:03:22.4057137Z hint: 	git branch -m <name>
+2026-09-22T08:03:22.4057948Z hint:
+2026-09-22T08:03:22.4059068Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-22T08:03:22.4060850Z Initialized empty Git repository in /home/runner/work/tsn-gen/tsn-gen/.git/
+2026-09-22T08:03:22.4063603Z [command]/usr/bin/git remote add origin https://github.com/kebag-logic/tsn-gen
+2026-09-22T08:03:22.4117836Z ##[endgroup]
+2026-09-22T08:03:22.4119277Z ##[group]Disabling automatic garbage collection
+2026-09-22T08:03:22.4123008Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-22T08:03:22.4163693Z ##[endgroup]
+2026-09-22T08:03:22.4165858Z ##[group]Setting up auth
+2026-09-22T08:03:22.4176491Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-22T08:03:22.4222506Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-22T08:03:22.4677341Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-22T08:03:22.4714875Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-22T08:03:22.4945672Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-22T08:03:22.4985014Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-22T08:03:22.5212947Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-22T08:03:22.5253436Z ##[endgroup]
+2026-09-22T08:03:22.5254727Z ##[group]Fetching the repository
+2026-09-22T08:03:22.5264187Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +76906b83eb54ac29040fe72fd910d34727188694:refs/remotes/origin/15-instrument-sanitizer-targets
+2026-09-22T08:03:22.8588252Z From https://github.com/kebag-logic/tsn-gen
+2026-09-22T08:03:22.8590688Z  * [new ref]         76906b83eb54ac29040fe72fd910d34727188694 -> origin/15-instrument-sanitizer-targets
+2026-09-22T08:03:22.8595443Z ##[endgroup]
+2026-09-22T08:03:22.8597398Z ##[group]Determining the checkout info
+2026-09-22T08:03:22.8599889Z ##[endgroup]
+2026-09-22T08:03:22.8605754Z [command]/usr/bin/git sparse-checkout disable
+2026-09-22T08:03:22.8666230Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-22T08:03:22.8702376Z ##[group]Checking out the ref
+2026-09-22T08:03:22.8709767Z [command]/usr/bin/git checkout --progress --force -B 15-instrument-sanitizer-targets refs/remotes/origin/15-instrument-sanitizer-targets
+2026-09-22T08:03:22.8916414Z Switched to a new branch '15-instrument-sanitizer-targets'
+2026-09-22T08:03:22.8921978Z branch '15-instrument-sanitizer-targets' set up to track 'origin/15-instrument-sanitizer-targets'.
+2026-09-22T08:03:22.8928543Z ##[endgroup]
+2026-09-22T08:03:22.8979167Z [command]/usr/bin/git log -1 --format=%H
+2026-09-22T08:03:22.9009561Z 76906b83eb54ac29040fe72fd910d34727188694
+2026-09-22T08:03:22.9247349Z ##[group]Run git submodule update --init --recursive
+2026-09-22T08:03:22.9248503Z [36;1mgit submodule update --init --recursive[0m
+2026-09-22T08:03:22.9289718Z shell: /usr/bin/bash -e {0}
+2026-09-22T08:03:22.9290314Z ##[endgroup]
+2026-09-22T08:03:22.9592657Z Submodule 'external/FTXUI' (https://github.com/ArthurSonzogni/FTXUI.git) registered for path 'external/FTXUI'
+2026-09-22T08:03:22.9596454Z Submodule 'external/PcapPlusPlus' (https://github.com/seladb/PcapPlusPlus.git) registered for path 'external/PcapPlusPlus'
+2026-09-22T08:03:22.9601005Z Submodule 'external/googletest' (https://github.com/google/googletest.git) registered for path 'external/googletest'
+2026-09-22T08:03:22.9606307Z Submodule 'external/mininet' (https://github.com/mininet/mininet.git) registered for path 'external/mininet'
+2026-09-22T08:03:22.9611835Z Submodule 'external/protobuf-c' (https://github.com/protobuf-c/protobuf-c.git) registered for path 'external/protobuf-c'
+2026-09-22T08:03:22.9618108Z Submodule 'external/rapidyaml' (https://github.com/biojppm/rapidyaml.git) registered for path 'external/rapidyaml'
+2026-09-22T08:03:22.9622955Z Submodule 'tests/act' (https://github.com/nektos/act.git) registered for path 'tests/act'
+2026-09-22T08:03:22.9649688Z Cloning into '/home/runner/work/tsn-gen/tsn-gen/external/FTXUI'...
+2026-09-22T08:03:27.0584894Z Cloning into '/home/runner/work/tsn-gen/tsn-gen/external/PcapPlusPlus'...
+2026-09-22T08:03:29.7977785Z Cloning into '/home/runner/work/tsn-gen/tsn-gen/external/googletest'...
+2026-09-22T08:03:31.3861376Z Cloning into '/home/runner/work/tsn-gen/tsn-gen/external/mininet'...
+2026-09-22T08:03:31.8830799Z Cloning into '/home/runner/work/tsn-gen/tsn-gen/external/protobuf-c'...
+2026-09-22T08:03:32.2832088Z Cloning into '/home/runner/work/tsn-gen/tsn-gen/external/rapidyaml'...
+2026-09-22T08:03:34.2647439Z Cloning into '/home/runner/work/tsn-gen/tsn-gen/tests/act'...
+2026-09-22T08:03:35.4347991Z Submodule path 'external/FTXUI': checked out 'd75108e96058b6e00da6306a7d99c9555f645434'
+2026-09-22T08:03:35.8605090Z Submodule path 'external/PcapPlusPlus': checked out 'bc5c08d3df37e9d725656c345d3991ab0c982717'
+2026-09-22T08:03:35.9082231Z Submodule path 'external/googletest': checked out '0bdccf4aa2f5c67af967193caf31d42d5c49bde2'
+2026-09-22T08:03:35.9285112Z Submodule path 'external/mininet': checked out '88f14e946a05cd0895e1a127bf89da9b3fb1d98b'
+2026-09-22T08:03:35.9455334Z Submodule path 'external/protobuf-c': checked out '8c201f6e47a53feaab773922a743091eb6c8972a'
+2026-09-22T08:03:36.0728537Z Submodule path 'external/rapidyaml': checked out 'e65999dc4d65368e1b3eb770e28d775885b0f525'
+2026-09-22T08:03:36.0748945Z Submodule 'extern/c4core' (https://github.com/biojppm/c4core) registered for path 'external/rapidyaml/ext/c4core'
+2026-09-22T08:03:36.0776026Z Cloning into '/home/runner/work/tsn-gen/tsn-gen/external/rapidyaml/ext/c4core'...
+2026-09-22T08:03:36.6530285Z Submodule path 'external/rapidyaml/ext/c4core': checked out '6c876ec05a4387c25068cdbd58724828dad1d217'
+2026-09-22T08:03:36.6550709Z Submodule 'cmake' (https://github.com/biojppm/cmake) registered for path 'external/rapidyaml/ext/c4core/cmake'
+2026-09-22T08:03:36.6555045Z Submodule 'extern/debugbreak' (https://github.com/biojppm/debugbreak) registered for path 'external/rapidyaml/ext/c4core/src/c4/ext/debugbreak'
+2026-09-22T08:03:36.6560121Z Submodule 'src/c4/ext/fast_float' (https://github.com/fastfloat/fast_float) registered for path 'external/rapidyaml/ext/c4core/src/c4/ext/fast_float'
+2026-09-22T08:03:36.6593288Z Cloning into '/home/runner/work/tsn-gen/tsn-gen/external/rapidyaml/ext/c4core/cmake'...
+2026-09-22T08:03:36.9558443Z Cloning into '/home/runner/work/tsn-gen/tsn-gen/external/rapidyaml/ext/c4core/src/c4/ext/debugbreak'...
+2026-09-22T08:03:37.2358000Z Cloning into '/home/runner/work/tsn-gen/tsn-gen/external/rapidyaml/ext/c4core/src/c4/ext/fast_float'...
+2026-09-22T08:03:37.6198456Z Submodule path 'external/rapidyaml/ext/c4core/cmake': checked out 'b8e95acb1bdd564e47ac57d903a483604d90cbfa'
+2026-09-22T08:03:37.6303626Z Submodule path 'external/rapidyaml/ext/c4core/src/c4/ext/debugbreak': checked out '328e4abca3384cbd0a69e70f263cc7b2794bff09'
+2026-09-22T08:03:37.6535298Z Submodule path 'external/rapidyaml/ext/c4core/src/c4/ext/fast_float': checked out 'd28a3320c2de0963b6e469b8ca3bbc36496de684'
+2026-09-22T08:03:37.8852790Z Submodule path 'tests/act': checked out 'eb46e8aa5a23f99c76be4a53413a856d6b236145'
+2026-09-22T08:03:37.8935106Z ##[group]Run ./setup.sh d
+2026-09-22T08:03:37.8935426Z [36;1m./setup.sh d[0m
+2026-09-22T08:03:37.8973262Z shell: /usr/bin/bash -e {0}
+2026-09-22T08:03:37.8973529Z ##[endgroup]
+2026-09-22T08:03:37.9084417Z rm: cannot remove './build': No such file or directory
+2026-09-22T08:03:38.7261828Z -- The CXX compiler identification is GNU 13.3.0
+2026-09-22T08:03:38.8478021Z -- Detecting CXX compiler ABI info
+2026-09-22T08:03:39.0617940Z -- Detecting CXX compiler ABI info - done
+2026-09-22T08:03:39.0805746Z -- Check for working CXX compiler: /usr/bin/c++ - skipped
+2026-09-22T08:03:39.0857650Z -- Detecting CXX compile features
+2026-09-22T08:03:39.0870950Z -- Detecting CXX compile features - done
+2026-09-22T08:03:39.1335025Z -- ryml: using C++ standard: C++17
+2026-09-22T08:03:39.1359136Z -- ryml: importing subproject c4core (SUBDIRECTORY)... /home/runner/work/tsn-gen/tsn-gen/external/rapidyaml/ext/c4core
+2026-09-22T08:03:39.1410780Z -- c4core: using C++ standard: C++17
+2026-09-22T08:03:39.1631209Z CMake Warning (dev) at external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2694 (install):
+2026-09-22T08:03:39.1632142Z   Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+2026-09-22T08:03:39.1632937Z   "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+2026-09-22T08:03:39.1633603Z   command to set the policy and suppress this warning.
+2026-09-22T08:03:39.1634391Z Call Stack (most recent call first):
+2026-09-22T08:03:39.1635016Z   external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2777 (__c4_install_exports)
+2026-09-22T08:03:39.1635813Z   external/rapidyaml/ext/c4core/CMakeLists.txt:112 (c4_install_exports)
+2026-09-22T08:03:39.1636598Z This warning is for project developers.  Use -Wno-dev to suppress it.
+2026-09-22T08:03:39.1637049Z 
+2026-09-22T08:03:39.1742148Z CMake Warning (dev) at external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2746 (install):
+2026-09-22T08:03:39.1743122Z   Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+2026-09-22T08:03:39.1744377Z   "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+2026-09-22T08:03:39.1745107Z   command to set the policy and suppress this warning.
+2026-09-22T08:03:39.1745634Z Call Stack (most recent call first):
+2026-09-22T08:03:39.1746294Z   external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2777 (__c4_install_exports)
+2026-09-22T08:03:39.1747171Z   external/rapidyaml/ext/c4core/CMakeLists.txt:112 (c4_install_exports)
+2026-09-22T08:03:39.1747949Z This warning is for project developers.  Use -Wno-dev to suppress it.
+2026-09-22T08:03:39.1748410Z 
+2026-09-22T08:03:39.1809945Z -- ryml: -----> target ryml PUBLIC incorporating lib c4core
+2026-09-22T08:03:39.1926941Z CMake Warning (dev) at external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2694 (install):
+2026-09-22T08:03:39.1928292Z   Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+2026-09-22T08:03:39.1929246Z   "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+2026-09-22T08:03:39.1930200Z   command to set the policy and suppress this warning.
+2026-09-22T08:03:39.1930825Z Call Stack (most recent call first):
+2026-09-22T08:03:39.1931342Z   external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2777 (__c4_install_exports)
+2026-09-22T08:03:39.1931956Z   external/rapidyaml/CMakeLists.txt:118 (c4_install_exports)
+2026-09-22T08:03:39.1932525Z This warning is for project developers.  Use -Wno-dev to suppress it.
+2026-09-22T08:03:39.1932827Z 
+2026-09-22T08:03:39.1940011Z CMake Warning (dev) at external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2746 (install):
+2026-09-22T08:03:39.1940639Z   Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+2026-09-22T08:03:39.1941435Z   "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+2026-09-22T08:03:39.1941893Z   command to set the policy and suppress this warning.
+2026-09-22T08:03:39.1942244Z Call Stack (most recent call first):
+2026-09-22T08:03:39.1942927Z   external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2777 (__c4_install_exports)
+2026-09-22T08:03:39.1943490Z   external/rapidyaml/CMakeLists.txt:118 (c4_install_exports)
+2026-09-22T08:03:39.1944277Z This warning is for project developers.  Use -Wno-dev to suppress it.
+2026-09-22T08:03:39.1944596Z 
+2026-09-22T08:03:39.3264314Z -- The C compiler identification is GNU 13.3.0
+2026-09-22T08:03:39.3486510Z -- Detecting C compiler ABI info
+2026-09-22T08:03:39.4169427Z -- Detecting C compiler ABI info - done
+2026-09-22T08:03:39.4348509Z -- Check for working C compiler: /usr/bin/cc - skipped
+2026-09-22T08:03:39.4354892Z -- Detecting C compile features
+2026-09-22T08:03:39.4362096Z -- Detecting C compile features - done
+2026-09-22T08:03:39.4688335Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+2026-09-22T08:03:39.5535562Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+2026-09-22T08:03:39.5633045Z -- Found Threads: TRUE
+2026-09-22T08:03:39.5670691Z -- Generating Multi-library -fsanitize=undefined
+2026-09-22T08:03:39.5793617Z -- tshark not found — skipping stack_codec_tshark validation
+2026-09-22T08:03:39.5800406Z -- Generating Multi-library -fsanitize=undefined
+2026-09-22T08:03:39.5910277Z -- Generating Multi-library -fsanitize=undefined
+2026-09-22T08:03:39.5939090Z -- Configuring done (1.3s)
+2026-09-22T08:03:39.7152279Z -- Generating done (0.1s)
+2026-09-22T08:03:39.7157317Z -- Build files have been written to: /home/runner/work/tsn-gen/tsn-gen/build
+2026-09-22T08:03:39.7515999Z [  0%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/common.cpp.o
+2026-09-22T08:03:39.7522833Z [  0%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/base64.cpp.o
+2026-09-22T08:03:39.7524820Z [  2%] Building CXX object external/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+2026-09-22T08:03:39.7546006Z [  1%] Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o
+2026-09-22T08:03:39.7879858Z [  2%] Linking CXX shared library libsanitizer_probe.so
+2026-09-22T08:03:39.8168402Z [  2%] Built target sanitizer_probe
+2026-09-22T08:03:39.8257461Z [  2%] Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o
+2026-09-22T08:03:39.8844059Z [  3%] Linking CXX shared library libsanitizer_probe_ubsan.so
+2026-09-22T08:03:39.9161694Z [  3%] Built target sanitizer_probe_ubsan
+2026-09-22T08:03:39.9250227Z [  3%] Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o
+2026-09-22T08:03:39.9745119Z [  4%] Linking CXX shared library libsanitizer_probe_asan.so
+2026-09-22T08:03:40.0164631Z [  4%] Built target sanitizer_probe_asan
+2026-09-22T08:03:40.0282274Z [  4%] Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o
+2026-09-22T08:03:40.3000389Z [  5%] Linking CXX executable sanitizer_probe-test_UBSAN
+2026-09-22T08:03:40.4236122Z [  5%] Built target sanitizer_probe-test_UBSAN
+2026-09-22T08:03:40.4358947Z [  6%] Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o
+2026-09-22T08:03:40.5710854Z [  7%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/char_traits.cpp.o
+2026-09-22T08:03:40.6735258Z [  8%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/node.cpp.o
+2026-09-22T08:03:40.6805140Z [  9%] Linking CXX executable sanitizer_probe-test_ASAN
+2026-09-22T08:03:40.8055603Z [ 10%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/error.cpp.o
+2026-09-22T08:03:40.8404870Z [ 10%] Built target sanitizer_probe-test_ASAN
+2026-09-22T08:03:40.8424999Z [ 10%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/node_type.cpp.o
+2026-09-22T08:03:40.8976659Z [ 10%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/format.cpp.o
+2026-09-22T08:03:41.6135153Z [ 11%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/language.cpp.o
+2026-09-22T08:03:41.6380756Z [ 11%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/memory_resource.cpp.o
+2026-09-22T08:03:41.7105462Z [ 12%] Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o
+2026-09-22T08:03:41.8835395Z [ 13%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/memory_util.cpp.o
+2026-09-22T08:03:41.9105140Z [ 14%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/parse.cpp.o
+2026-09-22T08:03:41.9529243Z [ 14%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/utf.cpp.o
+2026-09-22T08:03:41.9583678Z [ 14%] Linking CXX executable sanitizer_probe-test
+2026-09-22T08:03:42.0316314Z [ 14%] Built target sanitizer_probe-test
+2026-09-22T08:03:42.0364876Z [ 14%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/preprocess.cpp.o
+2026-09-22T08:03:42.6995332Z [ 15%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/version.cpp.o
+2026-09-22T08:03:42.7254903Z [ 15%] Linking CXX shared library libc4core.so
+2026-09-22T08:03:42.8128640Z [ 15%] Built target c4core
+2026-09-22T08:03:42.8165740Z [ 16%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/reference_resolver.cpp.o
+2026-09-22T08:03:42.8355063Z [ 16%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/tag.cpp.o
+2026-09-22T08:03:43.7775241Z [ 17%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/tree.cpp.o
+2026-09-22T08:03:43.8455119Z [ 18%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/version.cpp.o
+2026-09-22T08:03:43.9365294Z [ 18%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/base64.cpp.o
+2026-09-22T08:03:44.6745274Z [ 19%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/char_traits.cpp.o
+2026-09-22T08:03:44.9085299Z [ 19%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/error.cpp.o
+2026-09-22T08:03:44.9955078Z [ 20%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/format.cpp.o
+2026-09-22T08:03:45.2806991Z [ 20%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/language.cpp.o
+2026-09-22T08:03:45.3055414Z [ 21%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_resource.cpp.o
+2026-09-22T08:03:45.4415001Z [ 21%] Linking CXX shared library ../../../lib/libgtest.so
+2026-09-22T08:03:45.5665388Z [ 22%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_util.cpp.o
+2026-09-22T08:03:45.5805182Z [ 22%] Built target gtest
+2026-09-22T08:03:45.5894876Z [ 23%] Building CXX object external/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+2026-09-22T08:03:45.6466497Z [ 24%] Building CXX object external/googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+2026-09-22T08:03:45.7725365Z [ 24%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/utf.cpp.o
+2026-09-22T08:03:45.8625213Z [ 25%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/version.cpp.o
+2026-09-22T08:03:46.5316625Z [ 25%] Linking CXX shared library libryml.so
+2026-09-22T08:03:46.6340528Z [ 25%] Built target ryml
+2026-09-22T08:03:46.6456665Z [ 25%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/log.cpp.o
+2026-09-22T08:03:46.6470225Z [ 25%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o
+2026-09-22T08:03:46.7805149Z [ 26%] Linking CXX shared library ../../../lib/libgtest_main.so
+2026-09-22T08:03:46.8751260Z [ 26%] Built target gtest_main
+2026-09-22T08:03:46.8786211Z [ 27%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o
+2026-09-22T08:03:46.9863696Z [ 28%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/validator.cpp.o
+2026-09-22T08:03:47.0458396Z [ 28%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o
+2026-09-22T08:03:47.3975656Z [ 29%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o
+2026-09-22T08:03:47.8463172Z [ 29%] Linking CXX shared library ../../../lib/libgmock.so
+2026-09-22T08:03:47.9585109Z [ 29%] Built target gmock
+2026-09-22T08:03:47.9708975Z [ 29%] Building CXX object parser/tests/CMakeFiles/gtest_parser-test.dir/gtest.cpp.o
+2026-09-22T08:03:49.1396211Z [ 29%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/protocol_parser.cpp.o
+2026-09-22T08:03:49.1894794Z [ 30%] Linking CXX executable gtest_parser-test
+2026-09-22T08:03:49.3013315Z [ 30%] Built target gtest_parser-test
+2026-09-22T08:03:49.3074977Z [ 31%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/protocol.cpp.o
+2026-09-22T08:03:49.8335341Z [ 31%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o
+2026-09-22T08:03:50.5805427Z [ 31%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o
+2026-09-22T08:03:51.0678192Z [ 32%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o
+2026-09-22T08:03:52.0025082Z [ 33%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o
+2026-09-22T08:03:52.2905182Z [ 34%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/db_proto_if_impl.cpp.o
+2026-09-22T08:03:52.8491141Z [ 35%] Building CXX object external/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
+2026-09-22T08:03:52.8865207Z [ 35%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/db_proto_impl.cpp.o
+2026-09-22T08:03:54.1812449Z [ 36%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/db_proto_service_impl.cpp.o
+2026-09-22T08:03:54.2903556Z [ 37%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o
+2026-09-22T08:03:54.3205084Z [ 37%] Linking CXX shared library ../../../lib/libgmock_main.so
+2026-09-22T08:03:54.4014976Z [ 37%] Built target gmock_main
+2026-09-22T08:03:54.4044843Z [ 37%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o
+2026-09-22T08:03:54.7495365Z [ 37%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/db_var_impl.cpp.o
+2026-09-22T08:03:54.9465317Z [ 38%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/logic_registry.cpp.o
+2026-09-22T08:03:55.2306183Z [ 38%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o
+2026-09-22T08:03:55.3875530Z [ 39%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o
+2026-09-22T08:03:55.5575457Z [ 39%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/stack.cpp.o
+2026-09-22T08:03:55.7975459Z [ 40%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o
+2026-09-22T08:03:55.9510338Z [ 41%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/stack_builder.cpp.o
+2026-09-22T08:03:55.9760938Z [ 41%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o
+2026-09-22T08:03:56.0485093Z [ 42%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o
+2026-09-22T08:03:56.6795364Z [ 42%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o
+2026-09-22T08:03:56.7185081Z [ 42%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o
+2026-09-22T08:03:57.1105475Z [ 43%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o
+2026-09-22T08:03:57.1945189Z [ 44%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o
+2026-09-22T08:03:57.4185134Z [ 45%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o
+2026-09-22T08:03:57.7164954Z [ 45%] Linking CXX shared library libprotocol_parser.so
+2026-09-22T08:03:57.8378704Z [ 45%] Built target protocol_parser
+2026-09-22T08:03:57.8413207Z [ 45%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o
+2026-09-22T08:03:58.0145869Z [ 46%] Building CXX object parser/tests/CMakeFiles/protocol_parser-test.dir/protocol_parser_test.cpp.o
+2026-09-22T08:03:58.1327437Z [ 47%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o
+2026-09-22T08:03:58.2486763Z [ 48%] Building CXX object parser/tests/CMakeFiles/object_serializer-test.dir/object_serializer_test.cpp.o
+2026-09-22T08:03:59.1934868Z [ 49%] Linking CXX shared library libprotocol_parser_asan.so
+2026-09-22T08:03:59.3074726Z [ 49%] Built target protocol_parser_asan
+2026-09-22T08:03:59.3185134Z [ 49%] Building CXX object parser/tests/CMakeFiles/logic_registry-test.dir/logic_registry_test.cpp.o
+2026-09-22T08:04:00.2484967Z [ 50%] Linking CXX executable protocol_parser-test
+2026-09-22T08:04:00.3516267Z [ 50%] Linking CXX shared library libprotocol_parser_ubsan.so
+2026-09-22T08:04:00.3714836Z [ 50%] Built target protocol_parser-test
+2026-09-22T08:04:00.3805161Z [ 51%] Building CXX object parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o
+2026-09-22T08:04:00.4808712Z [ 51%] Built target protocol_parser_ubsan
+2026-09-22T08:04:00.4934740Z [ 51%] Building CXX object parser/tests/CMakeFiles/stack_builder-test.dir/stack_builder_test.cpp.o
+2026-09-22T08:04:00.6693440Z [ 51%] Linking CXX executable object_serializer-test
+2026-09-22T08:04:00.7855160Z [ 51%] Built target object_serializer-test
+2026-09-22T08:04:00.7964949Z [ 52%] Building CXX object parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o
+2026-09-22T08:04:00.9174882Z [ 53%] Linking CXX executable logic_registry-test
+2026-09-22T08:04:01.0324722Z [ 53%] Built target logic_registry-test
+2026-09-22T08:04:01.0424988Z [ 54%] Building CXX object parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o
+2026-09-22T08:04:02.3944806Z [ 55%] Linking CXX executable validator-test_UBSAN
+2026-09-22T08:04:02.5205204Z [ 55%] Built target validator-test_UBSAN
+2026-09-22T08:04:02.5224866Z [ 55%] Linking CXX executable validator-test_ASAN
+2026-09-22T08:04:02.5298290Z [ 56%] Building CXX object parser/tests/CMakeFiles/validator-test.dir/validator_test.cpp.o
+2026-09-22T08:04:02.7305042Z [ 56%] Built target validator-test_ASAN
+2026-09-22T08:04:02.7465401Z [ 56%] Building CXX object logic/CMakeFiles/protocol_logic.dir/src/ethernet_frame_logic.cpp.o
+2026-09-22T08:04:03.0494844Z [ 57%] Linking CXX executable stack_builder-test
+2026-09-22T08:04:03.1729267Z [ 57%] Built target stack_builder-test
+2026-09-22T08:04:03.1847312Z [ 58%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/packet_builder.cpp.o
+2026-09-22T08:04:03.1885479Z [ 58%] Linking CXX executable stack_builder-test_ASAN
+2026-09-22T08:04:03.2945458Z [ 59%] Building CXX object logic/CMakeFiles/protocol_logic.dir/src/avtp_control_logic.cpp.o
+2026-09-22T08:04:03.3695410Z [ 59%] Built target stack_builder-test_ASAN
+2026-09-22T08:04:03.3845316Z [ 60%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o
+2026-09-22T08:04:03.8635428Z [ 60%] Building CXX object logic/CMakeFiles/protocol_logic.dir/src/aecp_aem_logic.cpp.o
+2026-09-22T08:04:03.8814972Z [ 60%] Linking CXX executable validator-test
+2026-09-22T08:04:04.0003043Z [ 60%] Built target validator-test
+2026-09-22T08:04:04.0033114Z [ 60%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o
+2026-09-22T08:04:04.1365148Z [ 60%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/packet_decoder.cpp.o
+2026-09-22T08:04:04.4475416Z [ 61%] Linking CXX shared library libprotocol_logic.so
+2026-09-22T08:04:04.5374991Z [ 61%] Built target protocol_logic
+2026-09-22T08:04:04.5394858Z [ 62%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/pcap_sender.cpp.o
+2026-09-22T08:04:04.5695304Z [ 63%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o
+2026-09-22T08:04:04.8835316Z [ 63%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o
+2026-09-22T08:04:04.9615615Z [ 63%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o
+2026-09-22T08:04:04.9684304Z [ 64%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o
+2026-09-22T08:04:04.9805500Z [ 65%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/pcap_receiver.cpp.o
+2026-09-22T08:04:05.4552331Z [ 65%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/raw_socket_sender.cpp.o
+2026-09-22T08:04:05.4648189Z [ 66%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o
+2026-09-22T08:04:05.8415308Z [ 66%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o
+2026-09-22T08:04:05.9569009Z [ 67%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/raw_socket_receiver.cpp.o
+2026-09-22T08:04:05.9885136Z [ 68%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o
+2026-09-22T08:04:06.0238163Z [ 68%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/verilator_sender.cpp.o
+2026-09-22T08:04:06.3552196Z [ 68%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o
+2026-09-22T08:04:06.4195190Z [ 69%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o
+2026-09-22T08:04:06.4386809Z [ 70%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o
+2026-09-22T08:04:06.5045355Z [ 71%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/verilator_receiver.cpp.o
+2026-09-22T08:04:06.8735230Z [ 71%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/traffic_generator.cpp.o
+2026-09-22T08:04:06.9265292Z [ 71%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o
+2026-09-22T08:04:06.9825248Z [ 71%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o
+2026-09-22T08:04:06.9955219Z [ 72%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o
+2026-09-22T08:04:07.4365413Z [ 73%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o
+2026-09-22T08:04:07.4965489Z [ 73%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o
+2026-09-22T08:04:07.6054973Z [ 74%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/session.cpp.o
+2026-09-22T08:04:08.0455574Z [ 75%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o
+2026-09-22T08:04:08.4795108Z [ 75%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o
+2026-09-22T08:04:09.2310805Z [ 76%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o
+2026-09-22T08:04:09.7252797Z [ 77%] Linking CXX shared library libtraffic_gen.so
+2026-09-22T08:04:09.7909066Z [ 77%] Built target traffic_gen
+2026-09-22T08:04:09.8001967Z [ 77%] Building CXX object parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o
+2026-09-22T08:04:09.8045979Z [ 77%] Building CXX object parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o
+2026-09-22T08:04:10.9090014Z [ 78%] Linking CXX shared library libtraffic_gen_asan.so
+2026-09-22T08:04:11.0214758Z [ 78%] Built target traffic_gen_asan
+2026-09-22T08:04:11.0335284Z [ 79%] Building CXX object parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o
+2026-09-22T08:04:12.0536763Z [ 79%] Linking CXX shared library libtraffic_gen_ubsan.so
+2026-09-22T08:04:12.1624902Z [ 79%] Built target traffic_gen_ubsan
+2026-09-22T08:04:12.1735128Z [ 80%] Building CXX object parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o
+2026-09-22T08:04:12.2034929Z [ 81%] Linking CXX executable protocol_parser-test_ASAN
+2026-09-22T08:04:12.3306995Z [ 82%] Linking CXX executable protocol_parser-test_UBSAN
+2026-09-22T08:04:12.3374490Z [ 82%] Built target protocol_parser-test_ASAN
+2026-09-22T08:04:12.3602380Z [ 82%] Building CXX object parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o
+2026-09-22T08:04:12.4364998Z [ 82%] Built target protocol_parser-test_UBSAN
+2026-09-22T08:04:12.4485105Z [ 82%] Building CXX object parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o
+2026-09-22T08:04:13.9485010Z [ 82%] Linking CXX executable object_serializer-test_UBSAN
+2026-09-22T08:04:14.0689089Z [ 82%] Built target object_serializer-test_UBSAN
+2026-09-22T08:04:14.0801284Z [ 83%] Building CXX object parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o
+2026-09-22T08:04:14.2366597Z [ 84%] Linking CXX executable logic_registry-test_ASAN
+2026-09-22T08:04:14.3701023Z [ 85%] Linking CXX executable logic_registry-test_UBSAN
+2026-09-22T08:04:14.3990130Z [ 85%] Built target logic_registry-test_ASAN
+2026-09-22T08:04:14.4119658Z [ 86%] Building CXX object logic/tests/CMakeFiles/ethernet_frame_logic-test.dir/ethernet_frame_logic_test.cpp.o
+2026-09-22T08:04:14.5054861Z [ 86%] Built target logic_registry-test_UBSAN
+2026-09-22T08:04:14.5175162Z [ 87%] Building CXX object logic/tests/CMakeFiles/stack_codec-test.dir/stack_codec_test.cpp.o
+2026-09-22T08:04:14.8555044Z [ 87%] Linking CXX executable object_serializer-test_ASAN
+2026-09-22T08:04:15.0424962Z [ 87%] Built target object_serializer-test_ASAN
+2026-09-22T08:04:15.0545436Z [ 88%] Building CXX object traffic-gen/CMakeFiles/packet_gen.dir/tools/packet_gen_main.cpp.o
+2026-09-22T08:04:16.8313301Z [ 88%] Linking CXX executable ethernet_frame_logic-test
+2026-09-22T08:04:16.9454870Z [ 88%] Built target ethernet_frame_logic-test
+2026-09-22T08:04:16.9545219Z [ 88%] Building CXX object traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o
+2026-09-22T08:04:17.2225290Z [ 88%] Linking CXX executable stack_builder-test_UBSAN
+2026-09-22T08:04:17.2785021Z [ 88%] Linking CXX executable stack_codec-test
+2026-09-22T08:04:17.2852747Z [ 89%] Linking CXX executable packet_gen
+2026-09-22T08:04:17.3704693Z [ 89%] Built target stack_builder-test_UBSAN
+2026-09-22T08:04:17.3825202Z [ 89%] Building CXX object traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o
+2026-09-22T08:04:17.4009238Z [ 89%] Built target packet_gen
+2026-09-22T08:04:17.4145705Z [ 89%] Building CXX object traffic-gen/tests/CMakeFiles/traffic_gen-test.dir/traffic_gen_test.cpp.o
+2026-09-22T08:04:17.4214107Z [ 89%] Built target stack_codec-test
+2026-09-22T08:04:17.4365343Z [ 89%] Building CXX object traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o
+2026-09-22T08:04:20.1805091Z [ 90%] Linking CXX executable traffic_gen-test
+2026-09-22T08:04:20.3085034Z [ 90%] Built target traffic_gen-test
+2026-09-22T08:04:20.3185002Z [ 90%] Building CXX object traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o
+2026-09-22T08:04:20.3694854Z [ 91%] Linking CXX executable traffic_gen-test_UBSAN
+2026-09-22T08:04:20.4045006Z [ 92%] Linking CXX executable traffic_gen-test_ASAN
+2026-09-22T08:04:20.5065080Z [ 92%] Built target traffic_gen-test_UBSAN
+2026-09-22T08:04:20.5163107Z [ 92%] Building CXX object traffic-gen/tests/CMakeFiles/adp_fuzz-test.dir/adp_fuzz_test.cpp.o
+2026-09-22T08:04:20.5667380Z [ 92%] Built target traffic_gen-test_ASAN
+2026-09-22T08:04:20.5783345Z [ 93%] Building CXX object traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o
+2026-09-22T08:04:20.8544912Z [ 94%] Linking CXX executable adp_fuzz-test_UBSAN
+2026-09-22T08:04:21.0044812Z [ 94%] Built target adp_fuzz-test_UBSAN
+2026-09-22T08:04:21.0135127Z [ 95%] Building CXX object traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o
+2026-09-22T08:04:23.2358974Z [ 96%] Linking CXX executable adp_fuzz-test
+2026-09-22T08:04:23.3675174Z [ 96%] Built target adp_fuzz-test
+2026-09-22T08:04:23.3725018Z [ 97%] Linking CXX executable adp_fuzz-test_ASAN
+2026-09-22T08:04:23.3760420Z [ 98%] Building CXX object traffic-gen/tests/CMakeFiles/ptp_flags-test.dir/ptp_flags_test.cpp.o
+2026-09-22T08:04:23.5415407Z [ 98%] Built target adp_fuzz-test_ASAN
+2026-09-22T08:04:23.6508644Z [100%] Linking CXX executable ptp_flags-test_UBSAN
+2026-09-22T08:04:23.7311989Z [100%] Built target ptp_flags-test_UBSAN
+2026-09-22T08:04:23.8393589Z [100%] Linking CXX executable ptp_flags-test_ASAN
+2026-09-22T08:04:23.9297929Z [100%] Built target ptp_flags-test_ASAN
+2026-09-22T08:04:25.1872043Z [100%] Linking CXX executable ptp_flags-test
+2026-09-22T08:04:25.2630829Z [100%] Built target ptp_flags-test
+2026-09-22T08:04:25.4330618Z Executing software test suite
+2026-09-22T08:04:25.4331286Z Test location: /home/runner/work/tsn-gen/tsn-gen/tests/../build
+2026-09-22T08:04:26.4156686Z Test project /home/runner/work/tsn-gen/tsn-gen/build
+2026-09-22T08:04:26.4930761Z         Start   1: ParserUsingTest.Version
+2026-09-22T08:04:26.5327645Z   1/292 Test   #1: ParserUsingTest.Version .................................   Passed    0.00 sec
+2026-09-22T08:04:26.5387184Z         Start   2: ParserUsingTest.BasePath
+2026-09-22T08:04:26.5427593Z   2/292 Test   #2: ParserUsingTest.BasePath ................................   Passed    0.00 sec
+2026-09-22T08:04:26.5429010Z         Start   3: Parser.InvalidPathInt
+2026-09-22T08:04:26.5465955Z   3/292 Test   #3: Parser.InvalidPathInt ...................................   Passed    0.00 sec
+2026-09-22T08:04:26.5467646Z         Start   4: Parser.VarCreation
+2026-09-22T08:04:26.5502920Z   4/292 Test   #4: Parser.VarCreation ......................................   Passed    0.00 sec
+2026-09-22T08:04:26.5504606Z         Start   5: Parser.VarCreationTooSmall
+2026-09-22T08:04:26.5539332Z   5/292 Test   #5: Parser.VarCreationTooSmall ..............................   Passed    0.00 sec
+2026-09-22T08:04:26.5540714Z         Start   6: Parser.listFiles
+2026-09-22T08:04:26.5583620Z   6/292 Test   #6: Parser.listFiles ........................................   Passed    0.00 sec
+2026-09-22T08:04:26.5585168Z         Start   7: Parser.VerifyDepth
+2026-09-22T08:04:26.5625762Z   7/292 Test   #7: Parser.VerifyDepth ......................................   Passed    0.00 sec
+2026-09-22T08:04:26.5627372Z         Start   8: Parser.DivergingPath
+2026-09-22T08:04:26.5690453Z   8/292 Test   #8: Parser.DivergingPath ....................................   Passed    0.01 sec
+2026-09-22T08:04:26.5691746Z         Start   9: Parser.ParsingProtocolNameInvalid
+2026-09-22T08:04:26.5735016Z   9/292 Test   #9: Parser.ParsingProtocolNameInvalid .......................   Passed    0.00 sec
+2026-09-22T08:04:26.5736017Z         Start  10: ParserUsingTest.Version
+2026-09-22T08:04:26.5881320Z  10/292 Test  #10: ParserUsingTest.Version .................................   Passed    0.01 sec
+2026-09-22T08:04:26.5882596Z         Start  11: ParserUsingTest.BasePath
+2026-09-22T08:04:26.6041491Z  11/292 Test  #11: ParserUsingTest.BasePath ................................   Passed    0.02 sec
+2026-09-22T08:04:26.6042660Z         Start  12: Parser.InvalidPathInt
+2026-09-22T08:04:26.6187296Z  12/292 Test  #12: Parser.InvalidPathInt ...................................   Passed    0.01 sec
+2026-09-22T08:04:26.6188224Z         Start  13: Parser.VarCreation
+2026-09-22T08:04:26.6334882Z  13/292 Test  #13: Parser.VarCreation ......................................   Passed    0.01 sec
+2026-09-22T08:04:26.6335808Z         Start  14: Parser.VarCreationTooSmall
+2026-09-22T08:04:26.6479240Z  14/292 Test  #14: Parser.VarCreationTooSmall ..............................   Passed    0.01 sec
+2026-09-22T08:04:26.6480302Z         Start  15: Parser.listFiles
+2026-09-22T08:04:26.6617020Z  15/292 Test  #15: Parser.listFiles ........................................   Passed    0.01 sec
+2026-09-22T08:04:26.6618307Z         Start  16: Parser.VerifyDepth
+2026-09-22T08:04:26.6782979Z  16/292 Test  #16: Parser.VerifyDepth ......................................   Passed    0.02 sec
+2026-09-22T08:04:26.6784557Z         Start  17: Parser.DivergingPath
+2026-09-22T08:04:26.6993207Z  17/292 Test  #17: Parser.DivergingPath ....................................   Passed    0.02 sec
+2026-09-22T08:04:26.6995040Z         Start  18: Parser.ParsingProtocolNameInvalid
+2026-09-22T08:04:26.7145234Z  18/292 Test  #18: Parser.ParsingProtocolNameInvalid .......................   Passed    0.01 sec
+2026-09-22T08:04:26.7146720Z         Start  19: ParserUsingTest.Version
+2026-09-22T08:04:26.7195309Z  19/292 Test  #19: ParserUsingTest.Version .................................   Passed    0.00 sec
+2026-09-22T08:04:26.7196179Z         Start  20: ParserUsingTest.BasePath
+2026-09-22T08:04:26.7240464Z  20/292 Test  #20: ParserUsingTest.BasePath ................................   Passed    0.00 sec
+2026-09-22T08:04:26.7241688Z         Start  21: Parser.InvalidPathInt
+2026-09-22T08:04:26.7276576Z  21/292 Test  #21: Parser.InvalidPathInt ...................................   Passed    0.00 sec
+2026-09-22T08:04:26.7277592Z         Start  22: Parser.VarCreation
+2026-09-22T08:04:26.7309249Z  22/292 Test  #22: Parser.VarCreation ......................................   Passed    0.00 sec
+2026-09-22T08:04:26.7310330Z         Start  23: Parser.VarCreationTooSmall
+2026-09-22T08:04:26.7341265Z  23/292 Test  #23: Parser.VarCreationTooSmall ..............................   Passed    0.00 sec
+2026-09-22T08:04:26.7342336Z         Start  24: Parser.listFiles
+2026-09-22T08:04:26.7376373Z  24/292 Test  #24: Parser.listFiles ........................................   Passed    0.00 sec
+2026-09-22T08:04:26.7377549Z         Start  25: Parser.VerifyDepth
+2026-09-22T08:04:26.7412238Z  25/292 Test  #25: Parser.VerifyDepth ......................................   Passed    0.00 sec
+2026-09-22T08:04:26.7413423Z         Start  26: Parser.DivergingPath
+2026-09-22T08:04:26.7464851Z  26/292 Test  #26: Parser.DivergingPath ....................................   Passed    0.00 sec
+2026-09-22T08:04:26.7466303Z         Start  27: Parser.ParsingProtocolNameInvalid
+2026-09-22T08:04:26.7500981Z  27/292 Test  #27: Parser.ParsingProtocolNameInvalid .......................   Passed    0.00 sec
+2026-09-22T08:04:26.7502070Z         Start  28: ObjectSerializer.ParseSimpleProtocol
+2026-09-22T08:04:26.7547798Z  28/292 Test  #28: ObjectSerializer.ParseSimpleProtocol ....................   Passed    0.00 sec
+2026-09-22T08:04:26.7549078Z         Start  29: ObjectSerializer.ParseSimpleProtocolVarCount
+2026-09-22T08:04:26.7593059Z  29/292 Test  #29: ObjectSerializer.ParseSimpleProtocolVarCount ............   Passed    0.00 sec
+2026-09-22T08:04:26.7594536Z         Start  30: ObjectSerializer.ParseSimpleProtocolVarName
+2026-09-22T08:04:26.7637190Z  30/292 Test  #30: ObjectSerializer.ParseSimpleProtocolVarName .............   Passed    0.00 sec
+2026-09-22T08:04:26.7638488Z         Start  31: ObjectSerializer.ParseSimpleProtocolVarSize
+2026-09-22T08:04:26.7680418Z  31/292 Test  #31: ObjectSerializer.ParseSimpleProtocolVarSize .............   Passed    0.00 sec
+2026-09-22T08:04:26.7681690Z         Start  32: ObjectSerializer.ParseSimpleProtocolVarExpectedValues
+2026-09-22T08:04:26.7724261Z  32/292 Test  #32: ObjectSerializer.ParseSimpleProtocolVarExpectedValues ...   Passed    0.00 sec
+2026-09-22T08:04:26.7725476Z         Start  33: ObjectSerializer.ParseSimpleProtocolIfaceCount
+2026-09-22T08:04:26.7767249Z  33/292 Test  #33: ObjectSerializer.ParseSimpleProtocolIfaceCount ..........   Passed    0.00 sec
+2026-09-22T08:04:26.7768498Z         Start  34: ObjectSerializer.ParseSimpleProtocolIfaceName
+2026-09-22T08:04:26.7810534Z  34/292 Test  #34: ObjectSerializer.ParseSimpleProtocolIfaceName ...........   Passed    0.00 sec
+2026-09-22T08:04:26.7811915Z         Start  35: ObjectSerializer.ParseSimpleProtocolIfaceDirection
+2026-09-22T08:04:26.7853698Z  35/292 Test  #35: ObjectSerializer.ParseSimpleProtocolIfaceDirection ......   Passed    0.00 sec
+2026-09-22T08:04:26.7855139Z         Start  36: ObjectSerializer.ParseSimpleProtocolIfaceVarRef
+2026-09-22T08:04:26.7897260Z  36/292 Test  #36: ObjectSerializer.ParseSimpleProtocolIfaceVarRef .........   Passed    0.00 sec
+2026-09-22T08:04:26.7898483Z         Start  37: ObjectSerializer.ParseSimpleProtocolServiceNoLogic
+2026-09-22T08:04:26.7940328Z  37/292 Test  #37: ObjectSerializer.ParseSimpleProtocolServiceNoLogic ......   Passed    0.00 sec
+2026-09-22T08:04:26.7941327Z         Start  38: ObjectSerializer.ParseProtocolWithLogicName
+2026-09-22T08:04:26.7982840Z  38/292 Test  #38: ObjectSerializer.ParseProtocolWithLogicName .............   Passed    0.00 sec
+2026-09-22T08:04:26.7984240Z         Start  39: ObjectSerializer.ParseSimpleProtocol
+2026-09-22T08:04:26.8138840Z  39/292 Test  #39: ObjectSerializer.ParseSimpleProtocol ....................   Passed    0.02 sec
+2026-09-22T08:04:26.8140183Z         Start  40: ObjectSerializer.ParseSimpleProtocolVarCount
+2026-09-22T08:04:26.8298302Z  40/292 Test  #40: ObjectSerializer.ParseSimpleProtocolVarCount ............   Passed    0.02 sec
+2026-09-22T08:04:26.8299659Z         Start  41: ObjectSerializer.ParseSimpleProtocolVarName
+2026-09-22T08:04:26.8465373Z  41/292 Test  #41: ObjectSerializer.ParseSimpleProtocolVarName .............   Passed    0.02 sec
+2026-09-22T08:04:26.8466502Z         Start  42: ObjectSerializer.ParseSimpleProtocolVarSize
+2026-09-22T08:04:26.8627865Z  42/292 Test  #42: ObjectSerializer.ParseSimpleProtocolVarSize .............   Passed    0.02 sec
+2026-09-22T08:04:26.8629144Z         Start  43: ObjectSerializer.ParseSimpleProtocolVarExpectedValues
+2026-09-22T08:04:26.8776227Z  43/292 Test  #43: ObjectSerializer.ParseSimpleProtocolVarExpectedValues ...   Passed    0.01 sec
+2026-09-22T08:04:26.8777592Z         Start  44: ObjectSerializer.ParseSimpleProtocolIfaceCount
+2026-09-22T08:04:26.8936380Z  44/292 Test  #44: ObjectSerializer.ParseSimpleProtocolIfaceCount ..........   Passed    0.02 sec
+2026-09-22T08:04:26.8937874Z         Start  45: ObjectSerializer.ParseSimpleProtocolIfaceName
+2026-09-22T08:04:26.9118496Z  45/292 Test  #45: ObjectSerializer.ParseSimpleProtocolIfaceName ...........   Passed    0.02 sec
+2026-09-22T08:04:26.9120000Z         Start  46: ObjectSerializer.ParseSimpleProtocolIfaceDirection
+2026-09-22T08:04:26.9271430Z  46/292 Test  #46: ObjectSerializer.ParseSimpleProtocolIfaceDirection ......   Passed    0.01 sec
+2026-09-22T08:04:26.9272736Z         Start  47: ObjectSerializer.ParseSimpleProtocolIfaceVarRef
+2026-09-22T08:04:26.9447056Z  47/292 Test  #47: ObjectSerializer.ParseSimpleProtocolIfaceVarRef .........   Passed    0.02 sec
+2026-09-22T08:04:26.9448754Z         Start  48: ObjectSerializer.ParseSimpleProtocolServiceNoLogic
+2026-09-22T08:04:26.9610421Z  48/292 Test  #48: ObjectSerializer.ParseSimpleProtocolServiceNoLogic ......   Passed    0.02 sec
+2026-09-22T08:04:26.9611411Z         Start  49: ObjectSerializer.ParseProtocolWithLogicName
+2026-09-22T08:04:26.9790986Z  49/292 Test  #49: ObjectSerializer.ParseProtocolWithLogicName .............   Passed    0.02 sec
+2026-09-22T08:04:26.9792044Z         Start  50: ObjectSerializer.ParseSimpleProtocol
+2026-09-22T08:04:26.9843050Z  50/292 Test  #50: ObjectSerializer.ParseSimpleProtocol ....................   Passed    0.00 sec
+2026-09-22T08:04:26.9844939Z         Start  51: ObjectSerializer.ParseSimpleProtocolVarCount
+2026-09-22T08:04:26.9885450Z  51/292 Test  #51: ObjectSerializer.ParseSimpleProtocolVarCount ............   Passed    0.00 sec
+2026-09-22T08:04:26.9886396Z         Start  52: ObjectSerializer.ParseSimpleProtocolVarName
+2026-09-22T08:04:26.9919783Z  52/292 Test  #52: ObjectSerializer.ParseSimpleProtocolVarName .............   Passed    0.00 sec
+2026-09-22T08:04:26.9921088Z         Start  53: ObjectSerializer.ParseSimpleProtocolVarSize
+2026-09-22T08:04:26.9954238Z  53/292 Test  #53: ObjectSerializer.ParseSimpleProtocolVarSize .............   Passed    0.00 sec
+2026-09-22T08:04:26.9955409Z         Start  54: ObjectSerializer.ParseSimpleProtocolVarExpectedValues
+2026-09-22T08:04:26.9989199Z  54/292 Test  #54: ObjectSerializer.ParseSimpleProtocolVarExpectedValues ...   Passed    0.00 sec
+2026-09-22T08:04:26.9990782Z         Start  55: ObjectSerializer.ParseSimpleProtocolIfaceCount
+2026-09-22T08:04:27.0024664Z  55/292 Test  #55: ObjectSerializer.ParseSimpleProtocolIfaceCount ..........   Passed    0.00 sec
+2026-09-22T08:04:27.0026172Z         Start  56: ObjectSerializer.ParseSimpleProtocolIfaceName
+2026-09-22T08:04:27.0059319Z  56/292 Test  #56: ObjectSerializer.ParseSimpleProtocolIfaceName ...........   Passed    0.00 sec
+2026-09-22T08:04:27.0060467Z         Start  57: ObjectSerializer.ParseSimpleProtocolIfaceDirection
+2026-09-22T08:04:27.0094100Z  57/292 Test  #57: ObjectSerializer.ParseSimpleProtocolIfaceDirection ......   Passed    0.00 sec
+2026-09-22T08:04:27.0095499Z         Start  58: ObjectSerializer.ParseSimpleProtocolIfaceVarRef
+2026-09-22T08:04:27.0129506Z  58/292 Test  #58: ObjectSerializer.ParseSimpleProtocolIfaceVarRef .........   Passed    0.00 sec
+2026-09-22T08:04:27.0130615Z         Start  59: ObjectSerializer.ParseSimpleProtocolServiceNoLogic
+2026-09-22T08:04:27.0164163Z  59/292 Test  #59: ObjectSerializer.ParseSimpleProtocolServiceNoLogic ......   Passed    0.00 sec
+2026-09-22T08:04:27.0165875Z         Start  60: ObjectSerializer.ParseProtocolWithLogicName
+2026-09-22T08:04:27.0200057Z  60/292 Test  #60: ObjectSerializer.ParseProtocolWithLogicName .............   Passed    0.00 sec
+2026-09-22T08:04:27.0201026Z         Start  61: LogicRegistry.RegisterAndCreate
+2026-09-22T08:04:27.0239994Z  61/292 Test  #61: LogicRegistry.RegisterAndCreate .........................   Passed    0.00 sec
+2026-09-22T08:04:27.0241433Z         Start  62: LogicRegistry.UnknownNameReturnsNull
+2026-09-22T08:04:27.0277776Z  62/292 Test  #62: LogicRegistry.UnknownNameReturnsNull ....................   Passed    0.00 sec
+2026-09-22T08:04:27.0278881Z         Start  63: LogicRegistry.DuplicateRegistrationRejected
+2026-09-22T08:04:27.0316563Z  63/292 Test  #63: LogicRegistry.DuplicateRegistrationRejected .............   Passed    0.00 sec
+2026-09-22T08:04:27.0317551Z         Start  64: LogicRegistry.EmptyNameRejected
+2026-09-22T08:04:27.0353830Z  64/292 Test  #64: LogicRegistry.EmptyNameRejected .........................   Passed    0.00 sec
+2026-09-22T08:04:27.0355175Z         Start  65: LogicRegistry.NullFactoryRejected
+2026-09-22T08:04:27.0390951Z  65/292 Test  #65: LogicRegistry.NullFactoryRejected .......................   Passed    0.00 sec
+2026-09-22T08:04:27.0391995Z         Start  66: PassthroughLogic.IsNoOp
+2026-09-22T08:04:27.0427515Z  66/292 Test  #66: PassthroughLogic.IsNoOp .................................   Passed    0.00 sec
+2026-09-22T08:04:27.0428645Z         Start  67: LayerContext.AdjacencyAndDefaults
+2026-09-22T08:04:27.0464485Z  67/292 Test  #67: LayerContext.AdjacencyAndDefaults .......................   Passed    0.00 sec
+2026-09-22T08:04:27.0465947Z         Start  68: LogicRegistry.RegisterAndCreate
+2026-09-22T08:04:27.0599967Z  68/292 Test  #68: LogicRegistry.RegisterAndCreate .........................   Passed    0.01 sec
+2026-09-22T08:04:27.0600992Z         Start  69: LogicRegistry.UnknownNameReturnsNull
+2026-09-22T08:04:27.0739557Z  69/292 Test  #69: LogicRegistry.UnknownNameReturnsNull ....................   Passed    0.01 sec
+2026-09-22T08:04:27.0740685Z         Start  70: LogicRegistry.DuplicateRegistrationRejected
+2026-09-22T08:04:27.0883088Z  70/292 Test  #70: LogicRegistry.DuplicateRegistrationRejected .............   Passed    0.01 sec
+2026-09-22T08:04:27.0884565Z         Start  71: LogicRegistry.EmptyNameRejected
+2026-09-22T08:04:27.1026147Z  71/292 Test  #71: LogicRegistry.EmptyNameRejected .........................   Passed    0.01 sec
+2026-09-22T08:04:27.1027138Z         Start  72: LogicRegistry.NullFactoryRejected
+2026-09-22T08:04:27.1153737Z  72/292 Test  #72: LogicRegistry.NullFactoryRejected .......................   Passed    0.01 sec
+2026-09-22T08:04:27.1157421Z         Start  73: PassthroughLogic.IsNoOp
+2026-09-22T08:04:27.1303224Z  73/292 Test  #73: PassthroughLogic.IsNoOp .................................   Passed    0.01 sec
+2026-09-22T08:04:27.1304879Z         Start  74: LayerContext.AdjacencyAndDefaults
+2026-09-22T08:04:27.1450535Z  74/292 Test  #74: LayerContext.AdjacencyAndDefaults .......................   Passed    0.01 sec
+2026-09-22T08:04:27.1452036Z         Start  75: LogicRegistry.RegisterAndCreate
+2026-09-22T08:04:27.1490144Z  75/292 Test  #75: LogicRegistry.RegisterAndCreate .........................   Passed    0.00 sec
+2026-09-22T08:04:27.1491925Z         Start  76: LogicRegistry.UnknownNameReturnsNull
+2026-09-22T08:04:27.1531456Z  76/292 Test  #76: LogicRegistry.UnknownNameReturnsNull ....................   Passed    0.00 sec
+2026-09-22T08:04:27.1532569Z         Start  77: LogicRegistry.DuplicateRegistrationRejected
+2026-09-22T08:04:27.1566040Z  77/292 Test  #77: LogicRegistry.DuplicateRegistrationRejected .............   Passed    0.00 sec
+2026-09-22T08:04:27.1567118Z         Start  78: LogicRegistry.EmptyNameRejected
+2026-09-22T08:04:27.1608807Z  78/292 Test  #78: LogicRegistry.EmptyNameRejected .........................   Passed    0.00 sec
+2026-09-22T08:04:27.1610242Z         Start  79: LogicRegistry.NullFactoryRejected
+2026-09-22T08:04:27.1641769Z  79/292 Test  #79: LogicRegistry.NullFactoryRejected .......................   Passed    0.00 sec
+2026-09-22T08:04:27.1647947Z         Start  80: PassthroughLogic.IsNoOp
+2026-09-22T08:04:27.1684755Z  80/292 Test  #80: PassthroughLogic.IsNoOp .................................   Passed    0.00 sec
+2026-09-22T08:04:27.1686018Z         Start  81: LayerContext.AdjacencyAndDefaults
+2026-09-22T08:04:27.1716512Z  81/292 Test  #81: LayerContext.AdjacencyAndDefaults .......................   Passed    0.00 sec
+2026-09-22T08:04:27.1717591Z         Start  82: StackBuilder.BuildsAllPassthroughStack
+2026-09-22T08:04:27.1772172Z  82/292 Test  #82: StackBuilder.BuildsAllPassthroughStack ..................   Passed    0.01 sec
+2026-09-22T08:04:27.1773029Z         Start  83: StackBuilder.ResolvesRegisteredLogic
+2026-09-22T08:04:27.1822182Z  83/292 Test  #83: StackBuilder.ResolvesRegisteredLogic ....................   Passed    0.00 sec
+2026-09-22T08:04:27.1823150Z         Start  84: StackBuilder.AdjacencyWiredBottomUp
+2026-09-22T08:04:27.1870558Z  84/292 Test  #84: StackBuilder.AdjacencyWiredBottomUp .....................   Passed    0.00 sec
+2026-09-22T08:04:27.1871680Z         Start  85: StackBuilder.UnknownLogicFailsBuild
+2026-09-22T08:04:27.1917619Z  85/292 Test  #85: StackBuilder.UnknownLogicFailsBuild .....................   Passed    0.00 sec
+2026-09-22T08:04:27.1918766Z         Start  86: StackBuilder.UnknownServiceFailsBuild
+2026-09-22T08:04:27.1965663Z  86/292 Test  #86: StackBuilder.UnknownServiceFailsBuild ...................   Passed    0.00 sec
+2026-09-22T08:04:27.1966783Z         Start  87: StackBuilder.BypassLogicForcesPassthrough
+2026-09-22T08:04:27.2014428Z  87/292 Test  #87: StackBuilder.BypassLogicForcesPassthrough ...............   Passed    0.00 sec
+2026-09-22T08:04:27.2015812Z         Start  88: StackBuilder.BypassLogicSkipsRegistryLookup
+2026-09-22T08:04:27.2064250Z  88/292 Test  #88: StackBuilder.BypassLogicSkipsRegistryLookup .............   Passed    0.00 sec
+2026-09-22T08:04:27.2065499Z         Start  89: StackBuilder.InvalidPathFailsBuild
+2026-09-22T08:04:27.2111582Z  89/292 Test  #89: StackBuilder.InvalidPathFailsBuild ......................   Passed    0.00 sec
+2026-09-22T08:04:27.2112794Z         Start  90: StackBuilder.BuildsAllPassthroughStack
+2026-09-22T08:04:27.2270995Z  90/292 Test  #90: StackBuilder.BuildsAllPassthroughStack ..................   Passed    0.02 sec
+2026-09-22T08:04:27.2272181Z         Start  91: StackBuilder.ResolvesRegisteredLogic
+2026-09-22T08:04:27.2461023Z  91/292 Test  #91: StackBuilder.ResolvesRegisteredLogic ....................   Passed    0.02 sec
+2026-09-22T08:04:27.2462019Z         Start  92: StackBuilder.AdjacencyWiredBottomUp
+2026-09-22T08:04:27.2622188Z  92/292 Test  #92: StackBuilder.AdjacencyWiredBottomUp .....................   Passed    0.02 sec
+2026-09-22T08:04:27.2623546Z         Start  93: StackBuilder.UnknownLogicFailsBuild
+2026-09-22T08:04:27.2794167Z  93/292 Test  #93: StackBuilder.UnknownLogicFailsBuild .....................   Passed    0.02 sec
+2026-09-22T08:04:27.2795257Z         Start  94: StackBuilder.UnknownServiceFailsBuild
+2026-09-22T08:04:27.2966472Z  94/292 Test  #94: StackBuilder.UnknownServiceFailsBuild ...................   Passed    0.02 sec
+2026-09-22T08:04:27.2967400Z         Start  95: StackBuilder.BypassLogicForcesPassthrough
+2026-09-22T08:04:27.3149818Z  95/292 Test  #95: StackBuilder.BypassLogicForcesPassthrough ...............   Passed    0.02 sec
+2026-09-22T08:04:27.3150898Z         Start  96: StackBuilder.BypassLogicSkipsRegistryLookup
+2026-09-22T08:04:27.3336963Z  96/292 Test  #96: StackBuilder.BypassLogicSkipsRegistryLookup .............   Passed    0.02 sec
+2026-09-22T08:04:27.3338028Z         Start  97: StackBuilder.InvalidPathFailsBuild
+2026-09-22T08:04:27.3512622Z  97/292 Test  #97: StackBuilder.InvalidPathFailsBuild ......................   Passed    0.02 sec
+2026-09-22T08:04:27.3513982Z         Start  98: StackBuilder.BuildsAllPassthroughStack
+2026-09-22T08:04:27.3573170Z  98/292 Test  #98: StackBuilder.BuildsAllPassthroughStack ..................   Passed    0.01 sec
+2026-09-22T08:04:27.3581725Z         Start  99: StackBuilder.ResolvesRegisteredLogic
+2026-09-22T08:04:27.3631064Z  99/292 Test  #99: StackBuilder.ResolvesRegisteredLogic ....................   Passed    0.01 sec
+2026-09-22T08:04:27.3632302Z         Start 100: StackBuilder.AdjacencyWiredBottomUp
+2026-09-22T08:04:27.3670641Z 100/292 Test #100: StackBuilder.AdjacencyWiredBottomUp .....................   Passed    0.00 sec
+2026-09-22T08:04:27.3671985Z         Start 101: StackBuilder.UnknownLogicFailsBuild
+2026-09-22T08:04:27.3710642Z 101/292 Test #101: StackBuilder.UnknownLogicFailsBuild .....................   Passed    0.00 sec
+2026-09-22T08:04:27.3711855Z         Start 102: StackBuilder.UnknownServiceFailsBuild
+2026-09-22T08:04:27.3748817Z 102/292 Test #102: StackBuilder.UnknownServiceFailsBuild ...................   Passed    0.00 sec
+2026-09-22T08:04:27.3750170Z         Start 103: StackBuilder.BypassLogicForcesPassthrough
+2026-09-22T08:04:27.3786242Z 103/292 Test #103: StackBuilder.BypassLogicForcesPassthrough ...............   Passed    0.00 sec
+2026-09-22T08:04:27.3787455Z         Start 104: StackBuilder.BypassLogicSkipsRegistryLookup
+2026-09-22T08:04:27.3822857Z 104/292 Test #104: StackBuilder.BypassLogicSkipsRegistryLookup .............   Passed    0.00 sec
+2026-09-22T08:04:27.3824137Z         Start 105: StackBuilder.InvalidPathFailsBuild
+2026-09-22T08:04:27.3859355Z 105/292 Test #105: StackBuilder.InvalidPathFailsBuild ......................   Passed    0.00 sec
+2026-09-22T08:04:27.3860311Z         Start 106: Validator.ConformingFilePasses
+2026-09-22T08:04:27.3899393Z 106/292 Test #106: Validator.ConformingFilePasses ..........................   Passed    0.00 sec
+2026-09-22T08:04:27.3900325Z         Start 107: Validator.ForeignTopLevelKeyRejected
+2026-09-22T08:04:27.3937952Z 107/292 Test #107: Validator.ForeignTopLevelKeyRejected ....................   Passed    0.00 sec
+2026-09-22T08:04:27.3938969Z         Start 108: Validator.MissingServiceRejected
+2026-09-22T08:04:27.3976580Z 108/292 Test #108: Validator.MissingServiceRejected ........................   Passed    0.00 sec
+2026-09-22T08:04:27.3977622Z         Start 109: Validator.OversizeFieldRejected
+2026-09-22T08:04:27.4016118Z 109/292 Test #109: Validator.OversizeFieldRejected .........................   Passed    0.00 sec
+2026-09-22T08:04:27.4017038Z         Start 110: Validator.BadDirectionRejected
+2026-09-22T08:04:27.4056167Z 110/292 Test #110: Validator.BadDirectionRejected ..........................   Passed    0.00 sec
+2026-09-22T08:04:27.4057161Z         Start 111: Validator.ServiceWithoutVarsOrEntitiesRejected
+2026-09-22T08:04:27.4095306Z 111/292 Test #111: Validator.ServiceWithoutVarsOrEntitiesRejected ..........   Passed    0.00 sec
+2026-09-22T08:04:27.4096376Z         Start 112: Validator.FindingsCarryLineNumbers
+2026-09-22T08:04:27.4134659Z 112/292 Test #112: Validator.FindingsCarryLineNumbers ......................   Passed    0.00 sec
+2026-09-22T08:04:27.4135808Z         Start 113: Validator.MissingDirectoryReported
+2026-09-22T08:04:27.4171680Z 113/292 Test #113: Validator.MissingDirectoryReported ......................   Passed    0.00 sec
+2026-09-22T08:04:27.4172465Z         Start 114: Validator.ConformingFilePasses
+2026-09-22T08:04:27.4335546Z 114/292 Test #114: Validator.ConformingFilePasses ..........................   Passed    0.02 sec
+2026-09-22T08:04:27.4336739Z         Start 115: Validator.ForeignTopLevelKeyRejected
+2026-09-22T08:04:27.4488382Z 115/292 Test #115: Validator.ForeignTopLevelKeyRejected ....................   Passed    0.01 sec
+2026-09-22T08:04:27.4489427Z         Start 116: Validator.MissingServiceRejected
+2026-09-22T08:04:27.4640193Z 116/292 Test #116: Validator.MissingServiceRejected ........................   Passed    0.01 sec
+2026-09-22T08:04:27.4641143Z         Start 117: Validator.OversizeFieldRejected
+2026-09-22T08:04:27.4786399Z 117/292 Test #117: Validator.OversizeFieldRejected .........................   Passed    0.01 sec
+2026-09-22T08:04:27.4787517Z         Start 118: Validator.BadDirectionRejected
+2026-09-22T08:04:27.4929714Z 118/292 Test #118: Validator.BadDirectionRejected ..........................   Passed    0.01 sec
+2026-09-22T08:04:27.4930964Z         Start 119: Validator.ServiceWithoutVarsOrEntitiesRejected
+2026-09-22T08:04:27.5075364Z 119/292 Test #119: Validator.ServiceWithoutVarsOrEntitiesRejected ..........   Passed    0.01 sec
+2026-09-22T08:04:27.5076454Z         Start 120: Validator.FindingsCarryLineNumbers
+2026-09-22T08:04:27.5231503Z 120/292 Test #120: Validator.FindingsCarryLineNumbers ......................   Passed    0.02 sec
+2026-09-22T08:04:27.5232697Z         Start 121: Validator.MissingDirectoryReported
+2026-09-22T08:04:27.5368351Z 121/292 Test #121: Validator.MissingDirectoryReported ......................   Passed    0.01 sec
+2026-09-22T08:04:27.5369339Z         Start 122: Validator.ConformingFilePasses
+2026-09-22T08:04:27.5411699Z 122/292 Test #122: Validator.ConformingFilePasses ..........................   Passed    0.00 sec
+2026-09-22T08:04:27.5412736Z         Start 123: Validator.ForeignTopLevelKeyRejected
+2026-09-22T08:04:27.5449600Z 123/292 Test #123: Validator.ForeignTopLevelKeyRejected ....................   Passed    0.00 sec
+2026-09-22T08:04:27.5450608Z         Start 124: Validator.MissingServiceRejected
+2026-09-22T08:04:27.5489961Z 124/292 Test #124: Validator.MissingServiceRejected ........................   Passed    0.00 sec
+2026-09-22T08:04:27.5491217Z         Start 125: Validator.OversizeFieldRejected
+2026-09-22T08:04:27.5541096Z 125/292 Test #125: Validator.OversizeFieldRejected .........................   Passed    0.00 sec
+2026-09-22T08:04:27.5542309Z         Start 126: Validator.BadDirectionRejected
+2026-09-22T08:04:27.5580729Z 126/292 Test #126: Validator.BadDirectionRejected ..........................   Passed    0.00 sec
+2026-09-22T08:04:27.5581930Z         Start 127: Validator.ServiceWithoutVarsOrEntitiesRejected
+2026-09-22T08:04:27.5617291Z 127/292 Test #127: Validator.ServiceWithoutVarsOrEntitiesRejected ..........   Passed    0.00 sec
+2026-09-22T08:04:27.5618229Z         Start 128: Validator.FindingsCarryLineNumbers
+2026-09-22T08:04:27.5650266Z 128/292 Test #128: Validator.FindingsCarryLineNumbers ......................   Passed    0.00 sec
+2026-09-22T08:04:27.5651230Z         Start 129: Validator.MissingDirectoryReported
+2026-09-22T08:04:27.5680460Z 129/292 Test #129: Validator.MissingDirectoryReported ......................   Passed    0.00 sec
+2026-09-22T08:04:27.5681545Z         Start 130: HelloTest.BasicAssertions
+2026-09-22T08:04:27.5705995Z 130/292 Test #130: HelloTest.BasicAssertions ...............................   Passed    0.00 sec
+2026-09-22T08:04:27.5707302Z         Start 131: EthernetFrameLogic.RegisteredUnderExpectedName
+2026-09-22T08:04:27.5737955Z 131/292 Test #131: EthernetFrameLogic.RegisteredUnderExpectedName ..........   Passed    0.00 sec
+2026-09-22T08:04:27.5739122Z         Start 132: EthernetFrameLogic.BoundByStackBuilder
+2026-09-22T08:04:27.5776412Z 132/292 Test #132: EthernetFrameLogic.BoundByStackBuilder ..................   Passed    0.00 sec
+2026-09-22T08:04:27.5777799Z         Start 133: EthernetFrameLogic.BypassLogicSwapsInPassthrough
+2026-09-22T08:04:27.5817732Z 133/292 Test #133: EthernetFrameLogic.BypassLogicSwapsInPassthrough ........   Passed    0.00 sec
+2026-09-22T08:04:27.5819025Z         Start 134: EthernetFrameLogic.EncodeDecodeCountersAdvance
+2026-09-22T08:04:27.5851425Z 134/292 Test #134: EthernetFrameLogic.EncodeDecodeCountersAdvance ..........   Passed    0.00 sec
+2026-09-22T08:04:27.5852433Z         Start 135: EthernetFrameLogic.NextLayerDefaults1722
+2026-09-22T08:04:27.5882993Z 135/292 Test #135: EthernetFrameLogic.NextLayerDefaults1722 ................   Passed    0.00 sec
+2026-09-22T08:04:27.5884249Z         Start 136: StackCodec.FrameHasExpectedSize
+2026-09-22T08:04:27.6020142Z 136/292 Test #136: StackCodec.FrameHasExpectedSize .........................   Passed    0.01 sec
+2026-09-22T08:04:27.6021390Z         Start 137: StackCodec.DerivedFieldsAreValid
+2026-09-22T08:04:27.6158536Z 137/292 Test #137: StackCodec.DerivedFieldsAreValid ........................   Passed    0.01 sec
+2026-09-22T08:04:27.6159595Z         Start 138: StackCodec.CommandStatusForcedToZero
+2026-09-22T08:04:27.6456126Z 138/292 Test #138: StackCodec.CommandStatusForcedToZero ....................   Passed    0.03 sec
+2026-09-22T08:04:27.6457132Z         Start 139: StackCodec.DecodeRoundTripsFields
+2026-09-22T08:04:27.6597878Z 139/292 Test #139: StackCodec.DecodeRoundTripsFields .......................   Passed    0.01 sec
+2026-09-22T08:04:27.6598894Z         Start 140: StackCodec.DeterministicForFixedSeed
+2026-09-22T08:04:27.6737942Z 140/292 Test #140: StackCodec.DeterministicForFixedSeed ....................   Passed    0.01 sec
+2026-09-22T08:04:27.6739032Z         Start 141: TrafficGenTest.EmptyInterfaceProducesEmptyPacket
+2026-09-22T08:04:27.6794363Z 141/292 Test #141: TrafficGenTest.EmptyInterfaceProducesEmptyPacket ........   Passed    0.01 sec
+2026-09-22T08:04:27.6795506Z         Start 142: TrafficGenTest.SimpleVarProducesOneByte
+2026-09-22T08:04:27.6847029Z 142/292 Test #142: TrafficGenTest.SimpleVarProducesOneByte .................   Passed    0.01 sec
+2026-09-22T08:04:27.6848106Z         Start 143: TrafficGenTest.SimpleVarValueInExpectedSet
+2026-09-22T08:04:27.6903049Z 143/292 Test #143: TrafficGenTest.SimpleVarValueInExpectedSet ..............   Passed    0.01 sec
+2026-09-22T08:04:27.6904334Z         Start 144: TrafficGenTest.DeterministicWithSameSeed
+2026-09-22T08:04:27.6959285Z 144/292 Test #144: TrafficGenTest.DeterministicWithSameSeed ................   Passed    0.01 sec
+2026-09-22T08:04:27.6960406Z         Start 145: TrafficGenTest.DifferentSeedsDifferentPackets
+2026-09-22T08:04:27.7011559Z 145/292 Test #145: TrafficGenTest.DifferentSeedsDifferentPackets ...........   Passed    0.00 sec
+2026-09-22T08:04:27.7012614Z         Start 146: TrafficGenTest.OpenClose
+2026-09-22T08:04:27.7064499Z 146/292 Test #146: TrafficGenTest.OpenClose ................................   Passed    0.01 sec
+2026-09-22T08:04:27.7065511Z         Start 147: TrafficGenTest.SendNamedInterface
+2026-09-22T08:04:27.7116680Z 147/292 Test #147: TrafficGenTest.SendNamedInterface .......................   Passed    0.00 sec
+2026-09-22T08:04:27.7117876Z         Start 148: TrafficGenTest.SendUnknownInterfaceReturnsError
+2026-09-22T08:04:27.7168234Z 148/292 Test #148: TrafficGenTest.SendUnknownInterfaceReturnsError .........   Passed    0.00 sec
+2026-09-22T08:04:27.7169445Z         Start 149: TrafficGenTest.SendAllSendsOnePacketPerInterface
+2026-09-22T08:04:27.7219869Z 149/292 Test #149: TrafficGenTest.SendAllSendsOnePacketPerInterface ........   Passed    0.00 sec
+2026-09-22T08:04:27.7220912Z         Start 150: TrafficGenTest.SendFilteredInDirection
+2026-09-22T08:04:27.7271493Z 150/292 Test #150: TrafficGenTest.SendFilteredInDirection ..................   Passed    0.00 sec
+2026-09-22T08:04:27.7272648Z         Start 151: TrafficGenTest.SendFilteredOutDirectionProducesNone
+2026-09-22T08:04:27.7325235Z 151/292 Test #151: TrafficGenTest.SendFilteredOutDirectionProducesNone .....   Passed    0.01 sec
+2026-09-22T08:04:27.7326701Z         Start 152: TrafficGenTest.SendLoopProducesNPackets
+2026-09-22T08:04:27.7379567Z 152/292 Test #152: TrafficGenTest.SendLoopProducesNPackets .................   Passed    0.01 sec
+2026-09-22T08:04:27.7380554Z         Start 153: TrafficGenTest.SendWithoutOpenReturnsNotOpen
+2026-09-22T08:04:27.7433088Z 153/292 Test #153: TrafficGenTest.SendWithoutOpenReturnsNotOpen ............   Passed    0.01 sec
+2026-09-22T08:04:27.7434219Z         Start 154: VerilatorSenderBeat.FullBeat
+2026-09-22T08:04:27.7477396Z 154/292 Test #154: VerilatorSenderBeat.FullBeat ............................   Passed    0.00 sec
+2026-09-22T08:04:27.7478346Z         Start 155: VerilatorSenderBeat.PartialLastBeat
+2026-09-22T08:04:27.7522470Z 155/292 Test #155: VerilatorSenderBeat.PartialLastBeat .....................   Passed    0.00 sec
+2026-09-22T08:04:27.7523624Z         Start 156: WideField.Emits512BitFieldWithoutUB
+2026-09-22T08:04:27.7569331Z 156/292 Test #156: WideField.Emits512BitFieldWithoutUB .....................   Passed    0.00 sec
+2026-09-22T08:04:27.7570671Z         Start 157: TrafficGenTest.EmptyInterfaceProducesEmptyPacket
+2026-09-22T08:04:27.7739796Z 157/292 Test #157: TrafficGenTest.EmptyInterfaceProducesEmptyPacket ........   Passed    0.02 sec
+2026-09-22T08:04:27.7741311Z         Start 158: TrafficGenTest.SimpleVarProducesOneByte
+2026-09-22T08:04:27.7911920Z 158/292 Test #158: TrafficGenTest.SimpleVarProducesOneByte .................   Passed    0.02 sec
+2026-09-22T08:04:27.7913322Z         Start 159: TrafficGenTest.SimpleVarValueInExpectedSet
+2026-09-22T08:04:27.8095136Z 159/292 Test #159: TrafficGenTest.SimpleVarValueInExpectedSet ..............   Passed    0.02 sec
+2026-09-22T08:04:27.8096278Z         Start 160: TrafficGenTest.DeterministicWithSameSeed
+2026-09-22T08:04:27.8281444Z 160/292 Test #160: TrafficGenTest.DeterministicWithSameSeed ................   Passed    0.02 sec
+2026-09-22T08:04:27.8282486Z         Start 161: TrafficGenTest.DifferentSeedsDifferentPackets
+2026-09-22T08:04:27.8457705Z 161/292 Test #161: TrafficGenTest.DifferentSeedsDifferentPackets ...........   Passed    0.02 sec
+2026-09-22T08:04:27.8459087Z         Start 162: TrafficGenTest.OpenClose
+2026-09-22T08:04:27.8644040Z 162/292 Test #162: TrafficGenTest.OpenClose ................................   Passed    0.02 sec
+2026-09-22T08:04:27.8647636Z         Start 163: TrafficGenTest.SendNamedInterface
+2026-09-22T08:04:27.8826435Z 163/292 Test #163: TrafficGenTest.SendNamedInterface .......................   Passed    0.02 sec
+2026-09-22T08:04:27.8827580Z         Start 164: TrafficGenTest.SendUnknownInterfaceReturnsError
+2026-09-22T08:04:27.8994833Z 164/292 Test #164: TrafficGenTest.SendUnknownInterfaceReturnsError .........   Passed    0.02 sec
+2026-09-22T08:04:27.8996466Z         Start 165: TrafficGenTest.SendAllSendsOnePacketPerInterface
+2026-09-22T08:04:27.9182396Z 165/292 Test #165: TrafficGenTest.SendAllSendsOnePacketPerInterface ........   Passed    0.02 sec
+2026-09-22T08:04:27.9186889Z         Start 166: TrafficGenTest.SendFilteredInDirection
+2026-09-22T08:04:27.9353458Z 166/292 Test #166: TrafficGenTest.SendFilteredInDirection ..................   Passed    0.02 sec
+2026-09-22T08:04:27.9355238Z         Start 167: TrafficGenTest.SendFilteredOutDirectionProducesNone
+2026-09-22T08:04:27.9540623Z 167/292 Test #167: TrafficGenTest.SendFilteredOutDirectionProducesNone .....   Passed    0.02 sec
+2026-09-22T08:04:27.9544555Z         Start 168: TrafficGenTest.SendLoopProducesNPackets
+2026-09-22T08:04:27.9713489Z 168/292 Test #168: TrafficGenTest.SendLoopProducesNPackets .................   Passed    0.02 sec
+2026-09-22T08:04:27.9715031Z         Start 169: TrafficGenTest.SendWithoutOpenReturnsNotOpen
+2026-09-22T08:04:27.9889520Z 169/292 Test #169: TrafficGenTest.SendWithoutOpenReturnsNotOpen ............   Passed    0.02 sec
+2026-09-22T08:04:27.9890954Z         Start 170: VerilatorSenderBeat.FullBeat
+2026-09-22T08:04:28.0062014Z 170/292 Test #170: VerilatorSenderBeat.FullBeat ............................   Passed    0.02 sec
+2026-09-22T08:04:28.0063023Z         Start 171: VerilatorSenderBeat.PartialLastBeat
+2026-09-22T08:04:28.0208840Z 171/292 Test #171: VerilatorSenderBeat.PartialLastBeat .....................   Passed    0.01 sec
+2026-09-22T08:04:28.0209924Z         Start 172: WideField.Emits512BitFieldWithoutUB
+2026-09-22T08:04:28.0357510Z 172/292 Test #172: WideField.Emits512BitFieldWithoutUB .....................   Passed    0.01 sec
+2026-09-22T08:04:28.0358969Z         Start 173: TrafficGenTest.EmptyInterfaceProducesEmptyPacket
+2026-09-22T08:04:28.0423421Z 173/292 Test #173: TrafficGenTest.EmptyInterfaceProducesEmptyPacket ........   Passed    0.01 sec
+2026-09-22T08:04:28.0424692Z         Start 174: TrafficGenTest.SimpleVarProducesOneByte
+2026-09-22T08:04:28.0464425Z 174/292 Test #174: TrafficGenTest.SimpleVarProducesOneByte .................   Passed    0.00 sec
+2026-09-22T08:04:28.0465379Z         Start 175: TrafficGenTest.SimpleVarValueInExpectedSet
+2026-09-22T08:04:28.0505120Z 175/292 Test #175: TrafficGenTest.SimpleVarValueInExpectedSet ..............   Passed    0.00 sec
+2026-09-22T08:04:28.0506144Z         Start 176: TrafficGenTest.DeterministicWithSameSeed
+2026-09-22T08:04:28.0545417Z 176/292 Test #176: TrafficGenTest.DeterministicWithSameSeed ................   Passed    0.00 sec
+2026-09-22T08:04:28.0546408Z         Start 177: TrafficGenTest.DifferentSeedsDifferentPackets
+2026-09-22T08:04:28.0583477Z 177/292 Test #177: TrafficGenTest.DifferentSeedsDifferentPackets ...........   Passed    0.00 sec
+2026-09-22T08:04:28.0584537Z         Start 178: TrafficGenTest.OpenClose
+2026-09-22T08:04:28.0620242Z 178/292 Test #178: TrafficGenTest.OpenClose ................................   Passed    0.00 sec
+2026-09-22T08:04:28.0621010Z         Start 179: TrafficGenTest.SendNamedInterface
+2026-09-22T08:04:28.0657924Z 179/292 Test #179: TrafficGenTest.SendNamedInterface .......................   Passed    0.00 sec
+2026-09-22T08:04:28.0658906Z         Start 180: TrafficGenTest.SendUnknownInterfaceReturnsError
+2026-09-22T08:04:28.0694753Z 180/292 Test #180: TrafficGenTest.SendUnknownInterfaceReturnsError .........   Passed    0.00 sec
+2026-09-22T08:04:28.0695994Z         Start 181: TrafficGenTest.SendAllSendsOnePacketPerInterface
+2026-09-22T08:04:28.0732901Z 181/292 Test #181: TrafficGenTest.SendAllSendsOnePacketPerInterface ........   Passed    0.00 sec
+2026-09-22T08:04:28.0734004Z         Start 182: TrafficGenTest.SendFilteredInDirection
+2026-09-22T08:04:28.0770198Z 182/292 Test #182: TrafficGenTest.SendFilteredInDirection ..................   Passed    0.00 sec
+2026-09-22T08:04:28.0771147Z         Start 183: TrafficGenTest.SendFilteredOutDirectionProducesNone
+2026-09-22T08:04:28.0807918Z 183/292 Test #183: TrafficGenTest.SendFilteredOutDirectionProducesNone .....   Passed    0.00 sec
+2026-09-22T08:04:28.0808851Z         Start 184: TrafficGenTest.SendLoopProducesNPackets
+2026-09-22T08:04:28.0845121Z 184/292 Test #184: TrafficGenTest.SendLoopProducesNPackets .................   Passed    0.00 sec
+2026-09-22T08:04:28.0846231Z         Start 185: TrafficGenTest.SendWithoutOpenReturnsNotOpen
+2026-09-22T08:04:28.0881629Z 185/292 Test #185: TrafficGenTest.SendWithoutOpenReturnsNotOpen ............   Passed    0.00 sec
+2026-09-22T08:04:28.0882570Z         Start 186: VerilatorSenderBeat.FullBeat
+2026-09-22T08:04:28.0913954Z 186/292 Test #186: VerilatorSenderBeat.FullBeat ............................   Passed    0.00 sec
+2026-09-22T08:04:28.0915362Z         Start 187: VerilatorSenderBeat.PartialLastBeat
+2026-09-22T08:04:28.0946437Z 187/292 Test #187: VerilatorSenderBeat.PartialLastBeat .....................   Passed    0.00 sec
+2026-09-22T08:04:28.0947723Z         Start 188: WideField.Emits512BitFieldWithoutUB
+2026-09-22T08:04:28.0980074Z 188/292 Test #188: WideField.Emits512BitFieldWithoutUB .....................   Passed    0.00 sec
+2026-09-22T08:04:28.0981298Z         Start 189: AdpFuzzTest.VarCount
+2026-09-22T08:04:28.1035725Z 189/292 Test #189: AdpFuzzTest.VarCount ....................................   Passed    0.01 sec
+2026-09-22T08:04:28.1036667Z         Start 190: AdpFuzzTest.MessageTypeConstraints
+2026-09-22T08:04:28.1091655Z 190/292 Test #190: AdpFuzzTest.MessageTypeConstraints ......................   Passed    0.01 sec
+2026-09-22T08:04:28.1092928Z         Start 191: AdpFuzzTest.ValidTimeRangeConstraint
+2026-09-22T08:04:28.1148679Z 191/292 Test #191: AdpFuzzTest.ValidTimeRangeConstraint ....................   Passed    0.01 sec
+2026-09-22T08:04:28.1149849Z         Start 192: AdpFuzzTest.ControlDataLengthFixed
+2026-09-22T08:04:28.1205732Z 192/292 Test #192: AdpFuzzTest.ControlDataLengthFixed ......................   Passed    0.01 sec
+2026-09-22T08:04:28.1206774Z         Start 193: AdpFuzzTest.TalkerCapabilitiesMask
+2026-09-22T08:04:28.1261509Z 193/292 Test #193: AdpFuzzTest.TalkerCapabilitiesMask ......................   Passed    0.01 sec
+2026-09-22T08:04:28.1262620Z         Start 194: AdpFuzzTest.ListenerCapabilitiesMask
+2026-09-22T08:04:28.1316987Z 194/292 Test #194: AdpFuzzTest.ListenerCapabilitiesMask ....................   Passed    0.01 sec
+2026-09-22T08:04:28.1318145Z         Start 195: AdpFuzzTest.ControllerCapabilitiesMask
+2026-09-22T08:04:28.1371945Z 195/292 Test #195: AdpFuzzTest.ControllerCapabilitiesMask ..................   Passed    0.01 sec
+2026-09-22T08:04:28.1373034Z         Start 196: AdpFuzzTest.ReservedFieldsAreFixed
+2026-09-22T08:04:28.1427782Z 196/292 Test #196: AdpFuzzTest.ReservedFieldsAreFixed ......................   Passed    0.01 sec
+2026-09-22T08:04:28.1428813Z         Start 197: AdpFuzzTest.InterfaceCount
+2026-09-22T08:04:28.1484688Z 197/292 Test #197: AdpFuzzTest.InterfaceCount ..............................   Passed    0.01 sec
+2026-09-22T08:04:28.1485690Z         Start 198: AdpFuzzTest.IfDataDirection
+2026-09-22T08:04:28.1540258Z 198/292 Test #198: AdpFuzzTest.IfDataDirection .............................   Passed    0.01 sec
+2026-09-22T08:04:28.1541290Z         Start 199: AdpFuzzTest.IfDataHas20VarRefs
+2026-09-22T08:04:28.1596265Z 199/292 Test #199: AdpFuzzTest.IfDataHas20VarRefs ..........................   Passed    0.01 sec
+2026-09-22T08:04:28.1597476Z         Start 200: AdpFuzzTest.IfDataFirstVarRefIsMessageType
+2026-09-22T08:04:28.1651681Z 200/292 Test #200: AdpFuzzTest.IfDataFirstVarRefIsMessageType ..............   Passed    0.01 sec
+2026-09-22T08:04:28.1652917Z         Start 201: AdpFuzzTest.IfDataLastVarRefIsReserved1
+2026-09-22T08:04:28.1707222Z 201/292 Test #201: AdpFuzzTest.IfDataLastVarRefIsReserved1 .................   Passed    0.01 sec
+2026-09-22T08:04:28.1708285Z         Start 202: AdpFuzzTest.FullAdpPacketIs67Bytes
+2026-09-22T08:04:28.1781019Z 202/292 Test #202: AdpFuzzTest.FullAdpPacketIs67Bytes ......................   Passed    0.01 sec
+2026-09-22T08:04:28.1782140Z         Start 203: AdpFuzzTest.MessageTypeAlwaysValid
+2026-09-22T08:04:28.1857481Z 203/292 Test #203: AdpFuzzTest.MessageTypeAlwaysValid ......................   Passed    0.01 sec
+2026-09-22T08:04:28.1858579Z         Start 204: AdpFuzzTest.ValidTimeAlwaysInRange
+2026-09-22T08:04:28.1933151Z 204/292 Test #204: AdpFuzzTest.ValidTimeAlwaysInRange ......................   Passed    0.01 sec
+2026-09-22T08:04:28.1934541Z         Start 205: AdpFuzzTest.ControlDataLengthAlways56
+2026-09-22T08:04:28.1996701Z 205/292 Test #205: AdpFuzzTest.ControlDataLengthAlways56 ...................   Passed    0.01 sec
+2026-09-22T08:04:28.1997840Z         Start 206: AdpFuzzTest.TalkerCapsRespectMask
+2026-09-22T08:04:28.2072804Z 206/292 Test #206: AdpFuzzTest.TalkerCapsRespectMask .......................   Passed    0.01 sec
+2026-09-22T08:04:28.2074114Z         Start 207: AdpFuzzTest.ListenerCapsRespectMask
+2026-09-22T08:04:28.2150770Z 207/292 Test #207: AdpFuzzTest.ListenerCapsRespectMask .....................   Passed    0.01 sec
+2026-09-22T08:04:28.2151936Z         Start 208: AdpFuzzTest.ControllerCapsRespectMask
+2026-09-22T08:04:28.2231792Z 208/292 Test #208: AdpFuzzTest.ControllerCapsRespectMask ...................   Passed    0.01 sec
+2026-09-22T08:04:28.2232910Z         Start 209: AdpFuzzTest.ReservedFieldsAlwaysZero
+2026-09-22T08:04:28.2298337Z 209/292 Test #209: AdpFuzzTest.ReservedFieldsAlwaysZero ....................   Passed    0.01 sec
+2026-09-22T08:04:28.2299681Z         Start 210: AdpFuzzTest.AvailableIndexAlwaysValid
+2026-09-22T08:04:28.2365152Z 210/292 Test #210: AdpFuzzTest.AvailableIndexAlwaysValid ...................   Passed    0.01 sec
+2026-09-22T08:04:28.2366331Z         Start 211: AdpFuzzTest.VarCount
+2026-09-22T08:04:28.2549242Z 211/292 Test #211: AdpFuzzTest.VarCount ....................................   Passed    0.02 sec
+2026-09-22T08:04:28.2550160Z         Start 212: AdpFuzzTest.MessageTypeConstraints
+2026-09-22T08:04:28.2725470Z 212/292 Test #212: AdpFuzzTest.MessageTypeConstraints ......................   Passed    0.02 sec
+2026-09-22T08:04:28.2727076Z         Start 213: AdpFuzzTest.ValidTimeRangeConstraint
+2026-09-22T08:04:28.2905942Z 213/292 Test #213: AdpFuzzTest.ValidTimeRangeConstraint ....................   Passed    0.02 sec
+2026-09-22T08:04:28.2907391Z         Start 214: AdpFuzzTest.ControlDataLengthFixed
+2026-09-22T08:04:28.3105202Z 214/292 Test #214: AdpFuzzTest.ControlDataLengthFixed ......................   Passed    0.02 sec
+2026-09-22T08:04:28.3106599Z         Start 215: AdpFuzzTest.TalkerCapabilitiesMask
+2026-09-22T08:04:28.3281689Z 215/292 Test #215: AdpFuzzTest.TalkerCapabilitiesMask ......................   Passed    0.02 sec
+2026-09-22T08:04:28.3282998Z         Start 216: AdpFuzzTest.ListenerCapabilitiesMask
+2026-09-22T08:04:28.3485975Z 216/292 Test #216: AdpFuzzTest.ListenerCapabilitiesMask ....................   Passed    0.02 sec
+2026-09-22T08:04:28.3486989Z         Start 217: AdpFuzzTest.ControllerCapabilitiesMask
+2026-09-22T08:04:28.3688361Z 217/292 Test #217: AdpFuzzTest.ControllerCapabilitiesMask ..................   Passed    0.02 sec
+2026-09-22T08:04:28.3689464Z         Start 218: AdpFuzzTest.ReservedFieldsAreFixed
+2026-09-22T08:04:28.3885324Z 218/292 Test #218: AdpFuzzTest.ReservedFieldsAreFixed ......................   Passed    0.02 sec
+2026-09-22T08:04:28.3886366Z         Start 219: AdpFuzzTest.InterfaceCount
+2026-09-22T08:04:28.4078372Z 219/292 Test #219: AdpFuzzTest.InterfaceCount ..............................   Passed    0.02 sec
+2026-09-22T08:04:28.4079517Z         Start 220: AdpFuzzTest.IfDataDirection
+2026-09-22T08:04:28.4264125Z 220/292 Test #220: AdpFuzzTest.IfDataDirection .............................   Passed    0.02 sec
+2026-09-22T08:04:28.4285000Z         Start 221: AdpFuzzTest.IfDataHas20VarRefs
+2026-09-22T08:04:28.4449713Z 221/292 Test #221: AdpFuzzTest.IfDataHas20VarRefs ..........................   Passed    0.02 sec
+2026-09-22T08:04:28.4450821Z         Start 222: AdpFuzzTest.IfDataFirstVarRefIsMessageType
+2026-09-22T08:04:28.4653116Z 222/292 Test #222: AdpFuzzTest.IfDataFirstVarRefIsMessageType ..............   Passed    0.02 sec
+2026-09-22T08:04:28.4654496Z         Start 223: AdpFuzzTest.IfDataLastVarRefIsReserved1
+2026-09-22T08:04:28.4837131Z 223/292 Test #223: AdpFuzzTest.IfDataLastVarRefIsReserved1 .................   Passed    0.02 sec
+2026-09-22T08:04:28.4838451Z         Start 224: AdpFuzzTest.FullAdpPacketIs67Bytes
+2026-09-22T08:04:28.5074142Z 224/292 Test #224: AdpFuzzTest.FullAdpPacketIs67Bytes ......................   Passed    0.02 sec
+2026-09-22T08:04:28.5075378Z         Start 225: AdpFuzzTest.MessageTypeAlwaysValid
+2026-09-22T08:04:28.5334755Z 225/292 Test #225: AdpFuzzTest.MessageTypeAlwaysValid ......................   Passed    0.03 sec
+2026-09-22T08:04:28.5335884Z         Start 226: AdpFuzzTest.ValidTimeAlwaysInRange
+2026-09-22T08:04:28.5540056Z 226/292 Test #226: AdpFuzzTest.ValidTimeAlwaysInRange ......................   Passed    0.02 sec
+2026-09-22T08:04:28.5541068Z         Start 227: AdpFuzzTest.ControlDataLengthAlways56
+2026-09-22T08:04:28.5712067Z 227/292 Test #227: AdpFuzzTest.ControlDataLengthAlways56 ...................   Passed    0.02 sec
+2026-09-22T08:04:28.5713179Z         Start 228: AdpFuzzTest.TalkerCapsRespectMask
+2026-09-22T08:04:28.5932548Z 228/292 Test #228: AdpFuzzTest.TalkerCapsRespectMask .......................   Passed    0.02 sec
+2026-09-22T08:04:28.5933584Z         Start 229: AdpFuzzTest.ListenerCapsRespectMask
+2026-09-22T08:04:28.6172916Z 229/292 Test #229: AdpFuzzTest.ListenerCapsRespectMask .....................   Passed    0.02 sec
+2026-09-22T08:04:28.6174221Z         Start 230: AdpFuzzTest.ControllerCapsRespectMask
+2026-09-22T08:04:28.6435547Z 230/292 Test #230: AdpFuzzTest.ControllerCapsRespectMask ...................   Passed    0.03 sec
+2026-09-22T08:04:28.6436566Z         Start 231: AdpFuzzTest.ReservedFieldsAlwaysZero
+2026-09-22T08:04:28.6656669Z 231/292 Test #231: AdpFuzzTest.ReservedFieldsAlwaysZero ....................   Passed    0.02 sec
+2026-09-22T08:04:28.6657455Z         Start 232: AdpFuzzTest.AvailableIndexAlwaysValid
+2026-09-22T08:04:28.6887553Z 232/292 Test #232: AdpFuzzTest.AvailableIndexAlwaysValid ...................   Passed    0.02 sec
+2026-09-22T08:04:28.6888561Z         Start 233: AdpFuzzTest.VarCount
+2026-09-22T08:04:28.6946460Z 233/292 Test #233: AdpFuzzTest.VarCount ....................................   Passed    0.01 sec
+2026-09-22T08:04:28.6947343Z         Start 234: AdpFuzzTest.MessageTypeConstraints
+2026-09-22T08:04:28.6990746Z 234/292 Test #234: AdpFuzzTest.MessageTypeConstraints ......................   Passed    0.00 sec
+2026-09-22T08:04:28.6991739Z         Start 235: AdpFuzzTest.ValidTimeRangeConstraint
+2026-09-22T08:04:28.7033310Z 235/292 Test #235: AdpFuzzTest.ValidTimeRangeConstraint ....................   Passed    0.00 sec
+2026-09-22T08:04:28.7034814Z         Start 236: AdpFuzzTest.ControlDataLengthFixed
+2026-09-22T08:04:28.7074429Z 236/292 Test #236: AdpFuzzTest.ControlDataLengthFixed ......................   Passed    0.00 sec
+2026-09-22T08:04:28.7075326Z         Start 237: AdpFuzzTest.TalkerCapabilitiesMask
+2026-09-22T08:04:28.7114435Z 237/292 Test #237: AdpFuzzTest.TalkerCapabilitiesMask ......................   Passed    0.00 sec
+2026-09-22T08:04:28.7115732Z         Start 238: AdpFuzzTest.ListenerCapabilitiesMask
+2026-09-22T08:04:28.7154372Z 238/292 Test #238: AdpFuzzTest.ListenerCapabilitiesMask ....................   Passed    0.00 sec
+2026-09-22T08:04:28.7155513Z         Start 239: AdpFuzzTest.ControllerCapabilitiesMask
+2026-09-22T08:04:28.7194385Z 239/292 Test #239: AdpFuzzTest.ControllerCapabilitiesMask ..................   Passed    0.00 sec
+2026-09-22T08:04:28.7195584Z         Start 240: AdpFuzzTest.ReservedFieldsAreFixed
+2026-09-22T08:04:28.7234029Z 240/292 Test #240: AdpFuzzTest.ReservedFieldsAreFixed ......................   Passed    0.00 sec
+2026-09-22T08:04:28.7235214Z         Start 241: AdpFuzzTest.InterfaceCount
+2026-09-22T08:04:28.7273990Z 241/292 Test #241: AdpFuzzTest.InterfaceCount ..............................   Passed    0.00 sec
+2026-09-22T08:04:28.7275165Z         Start 242: AdpFuzzTest.IfDataDirection
+2026-09-22T08:04:28.7312847Z 242/292 Test #242: AdpFuzzTest.IfDataDirection .............................   Passed    0.00 sec
+2026-09-22T08:04:28.7314005Z         Start 243: AdpFuzzTest.IfDataHas20VarRefs
+2026-09-22T08:04:28.7352529Z 243/292 Test #243: AdpFuzzTest.IfDataHas20VarRefs ..........................   Passed    0.00 sec
+2026-09-22T08:04:28.7353766Z         Start 244: AdpFuzzTest.IfDataFirstVarRefIsMessageType
+2026-09-22T08:04:28.7393398Z 244/292 Test #244: AdpFuzzTest.IfDataFirstVarRefIsMessageType ..............   Passed    0.00 sec
+2026-09-22T08:04:28.7394550Z         Start 245: AdpFuzzTest.IfDataLastVarRefIsReserved1
+2026-09-22T08:04:28.7431802Z 245/292 Test #245: AdpFuzzTest.IfDataLastVarRefIsReserved1 .................   Passed    0.00 sec
+2026-09-22T08:04:28.7432874Z         Start 246: AdpFuzzTest.FullAdpPacketIs67Bytes
+2026-09-22T08:04:28.7481254Z 246/292 Test #246: AdpFuzzTest.FullAdpPacketIs67Bytes ......................   Passed    0.00 sec
+2026-09-22T08:04:28.7482209Z         Start 247: AdpFuzzTest.MessageTypeAlwaysValid
+2026-09-22T08:04:28.7529197Z 247/292 Test #247: AdpFuzzTest.MessageTypeAlwaysValid ......................   Passed    0.00 sec
+2026-09-22T08:04:28.7530205Z         Start 248: AdpFuzzTest.ValidTimeAlwaysInRange
+2026-09-22T08:04:28.7578025Z 248/292 Test #248: AdpFuzzTest.ValidTimeAlwaysInRange ......................   Passed    0.00 sec
+2026-09-22T08:04:28.7579230Z         Start 249: AdpFuzzTest.ControlDataLengthAlways56
+2026-09-22T08:04:28.7619395Z 249/292 Test #249: AdpFuzzTest.ControlDataLengthAlways56 ...................   Passed    0.00 sec
+2026-09-22T08:04:28.7620322Z         Start 250: AdpFuzzTest.TalkerCapsRespectMask
+2026-09-22T08:04:28.7668570Z 250/292 Test #250: AdpFuzzTest.TalkerCapsRespectMask .......................   Passed    0.00 sec
+2026-09-22T08:04:28.7669525Z         Start 251: AdpFuzzTest.ListenerCapsRespectMask
+2026-09-22T08:04:28.7719424Z 251/292 Test #251: AdpFuzzTest.ListenerCapsRespectMask .....................   Passed    0.00 sec
+2026-09-22T08:04:28.7720337Z         Start 252: AdpFuzzTest.ControllerCapsRespectMask
+2026-09-22T08:04:28.7771284Z 252/292 Test #252: AdpFuzzTest.ControllerCapsRespectMask ...................   Passed    0.00 sec
+2026-09-22T08:04:28.7772123Z         Start 253: AdpFuzzTest.ReservedFieldsAlwaysZero
+2026-09-22T08:04:28.7816680Z 253/292 Test #253: AdpFuzzTest.ReservedFieldsAlwaysZero ....................   Passed    0.00 sec
+2026-09-22T08:04:28.7817597Z         Start 254: AdpFuzzTest.AvailableIndexAlwaysValid
+2026-09-22T08:04:28.7860114Z 254/292 Test #254: AdpFuzzTest.AvailableIndexAlwaysValid ...................   Passed    0.00 sec
+2026-09-22T08:04:28.7861025Z         Start 255: PtpFlags.SyncModelPermitsOnlyTwoStepFlag
+2026-09-22T08:04:28.8019386Z 255/292 Test #255: PtpFlags.SyncModelPermitsOnlyTwoStepFlag ................   Passed    0.02 sec
+2026-09-22T08:04:28.8020302Z         Start 256: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear
+2026-09-22T08:04:28.8180921Z 256/292 Test #256: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear ..........   Passed    0.02 sec
+2026-09-22T08:04:28.8182054Z         Start 257: PtpFlags.PdelayModelsKeepTheirStrictFlags
+2026-09-22T08:04:28.8342047Z 257/292 Test #257: PtpFlags.PdelayModelsKeepTheirStrictFlags ...............   Passed    0.02 sec
+2026-09-22T08:04:28.8343215Z         Start 258: PtpFlags.NoMediaDependentModelPermitsPtpTimescale
+2026-09-22T08:04:28.8503372Z 258/292 Test #258: PtpFlags.NoMediaDependentModelPermitsPtpTimescale .......   Passed    0.02 sec
+2026-09-22T08:04:28.8504692Z         Start 259: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly
+2026-09-22T08:04:28.8754347Z 259/292 Test #259: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly ........   Passed    0.02 sec
+2026-09-22T08:04:28.8755447Z         Start 260: PtpFlags.GeneratedFollowUpFramesCarryNoFlags
+2026-09-22T08:04:28.9033045Z 260/292 Test #260: PtpFlags.GeneratedFollowUpFramesCarryNoFlags ............   Passed    0.03 sec
+2026-09-22T08:04:28.9034269Z         Start 261: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags
+2026-09-22T08:04:28.9478069Z 261/292 Test #261: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags ......   Passed    0.04 sec
+2026-09-22T08:04:28.9478998Z         Start 262: PtpFlags.GeneratedFramesMatchTheirModelsFlags
+2026-09-22T08:04:28.9992069Z 262/292 Test #262: PtpFlags.GeneratedFramesMatchTheirModelsFlags ...........   Passed    0.05 sec
+2026-09-22T08:04:28.9993333Z         Start 263: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim
+2026-09-22T08:04:29.0161028Z 263/292 Test #263: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim .......   Passed    0.02 sec
+2026-09-22T08:04:29.0161998Z         Start 264: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint
+2026-09-22T08:04:29.0326288Z 264/292 Test #264: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint ......   Passed    0.02 sec
+2026-09-22T08:04:29.0327579Z         Start 265: PtpFlags.SyncModelPermitsOnlyTwoStepFlag
+2026-09-22T08:04:29.0789766Z 265/292 Test #265: PtpFlags.SyncModelPermitsOnlyTwoStepFlag ................   Passed    0.05 sec
+2026-09-22T08:04:29.0790827Z         Start 266: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear
+2026-09-22T08:04:29.1265395Z 266/292 Test #266: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear ..........   Passed    0.05 sec
+2026-09-22T08:04:29.1266742Z         Start 267: PtpFlags.PdelayModelsKeepTheirStrictFlags
+2026-09-22T08:04:29.1699190Z 267/292 Test #267: PtpFlags.PdelayModelsKeepTheirStrictFlags ...............   Passed    0.04 sec
+2026-09-22T08:04:29.1700169Z         Start 268: PtpFlags.NoMediaDependentModelPermitsPtpTimescale
+2026-09-22T08:04:29.2133653Z 268/292 Test #268: PtpFlags.NoMediaDependentModelPermitsPtpTimescale .......   Passed    0.04 sec
+2026-09-22T08:04:29.2135166Z         Start 269: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly
+2026-09-22T08:04:29.2730232Z 269/292 Test #269: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly ........   Passed    0.06 sec
+2026-09-22T08:04:29.2731040Z         Start 270: PtpFlags.GeneratedFollowUpFramesCarryNoFlags
+2026-09-22T08:04:29.3373138Z 270/292 Test #270: PtpFlags.GeneratedFollowUpFramesCarryNoFlags ............   Passed    0.06 sec
+2026-09-22T08:04:29.3374271Z         Start 271: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags
+2026-09-22T08:04:29.4307390Z 271/292 Test #271: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags ......   Passed    0.09 sec
+2026-09-22T08:04:29.4308468Z         Start 272: PtpFlags.GeneratedFramesMatchTheirModelsFlags
+2026-09-22T08:04:29.5419417Z 272/292 Test #272: PtpFlags.GeneratedFramesMatchTheirModelsFlags ...........   Passed    0.11 sec
+2026-09-22T08:04:29.5420504Z         Start 273: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim
+2026-09-22T08:04:29.5854643Z 273/292 Test #273: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim .......   Passed    0.04 sec
+2026-09-22T08:04:29.5855807Z         Start 274: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint
+2026-09-22T08:04:29.6292282Z 274/292 Test #274: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint ......   Passed    0.04 sec
+2026-09-22T08:04:29.6292911Z         Start 275: PtpFlags.SyncModelPermitsOnlyTwoStepFlag
+2026-09-22T08:04:29.6421719Z 275/292 Test #275: PtpFlags.SyncModelPermitsOnlyTwoStepFlag ................   Passed    0.01 sec
+2026-09-22T08:04:29.6422880Z         Start 276: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear
+2026-09-22T08:04:29.6549009Z 276/292 Test #276: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear ..........   Passed    0.01 sec
+2026-09-22T08:04:29.6550167Z         Start 277: PtpFlags.PdelayModelsKeepTheirStrictFlags
+2026-09-22T08:04:29.6674419Z 277/292 Test #277: PtpFlags.PdelayModelsKeepTheirStrictFlags ...............   Passed    0.01 sec
+2026-09-22T08:04:29.6675556Z         Start 278: PtpFlags.NoMediaDependentModelPermitsPtpTimescale
+2026-09-22T08:04:29.6801079Z 278/292 Test #278: PtpFlags.NoMediaDependentModelPermitsPtpTimescale .......   Passed    0.01 sec
+2026-09-22T08:04:29.6802333Z         Start 279: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly
+2026-09-22T08:04:29.6983262Z 279/292 Test #279: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly ........   Passed    0.02 sec
+2026-09-22T08:04:29.6984299Z         Start 280: PtpFlags.GeneratedFollowUpFramesCarryNoFlags
+2026-09-22T08:04:29.7184388Z 280/292 Test #280: PtpFlags.GeneratedFollowUpFramesCarryNoFlags ............   Passed    0.02 sec
+2026-09-22T08:04:29.7185477Z         Start 281: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags
+2026-09-22T08:04:29.7497409Z 281/292 Test #281: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags ......   Passed    0.03 sec
+2026-09-22T08:04:29.7498358Z         Start 282: PtpFlags.GeneratedFramesMatchTheirModelsFlags
+2026-09-22T08:04:29.7828831Z 282/292 Test #282: PtpFlags.GeneratedFramesMatchTheirModelsFlags ...........   Passed    0.03 sec
+2026-09-22T08:04:29.7830117Z         Start 283: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim
+2026-09-22T08:04:29.7958883Z 283/292 Test #283: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim .......   Passed    0.01 sec
+2026-09-22T08:04:29.7960111Z         Start 284: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint
+2026-09-22T08:04:29.8087535Z 284/292 Test #284: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint ......   Passed    0.01 sec
+2026-09-22T08:04:29.8089168Z         Start 285: corpus_validates
+2026-09-22T08:04:29.8186997Z 285/292 Test #285: corpus_validates ........................................   Passed    0.01 sec
+2026-09-22T08:04:29.8187975Z         Start 286: sanitizer_probe-test.clean
+2026-09-22T08:04:29.8207137Z 286/292 Test #286: sanitizer_probe-test.clean ..............................   Passed    0.00 sec
+2026-09-22T08:04:29.8208125Z         Start 287: sanitizer_probe-test_ASAN.clean
+2026-09-22T08:04:29.8276909Z 287/292 Test #287: sanitizer_probe-test_ASAN.clean .........................   Passed    0.01 sec
+2026-09-22T08:04:29.8277949Z         Start 288: sanitizer_probe-test_UBSAN.clean
+2026-09-22T08:04:29.8302028Z 288/292 Test #288: sanitizer_probe-test_UBSAN.clean ........................   Passed    0.00 sec
+2026-09-22T08:04:29.8304356Z         Start 289: sanitizer_probe-test_ASAN.library-heap-overflow
+2026-09-22T08:04:30.0242744Z 289/292 Test #289: sanitizer_probe-test_ASAN.library-heap-overflow .........   Passed    0.19 sec
+2026-09-22T08:04:30.0511452Z         Start 290: sanitizer_probe-test_ASAN.consumer-heap-overflow
+2026-09-22T08:04:30.0762714Z 290/292 Test #290: sanitizer_probe-test_ASAN.consumer-heap-overflow ........   Passed    0.02 sec
+2026-09-22T08:04:30.0764176Z         Start 291: sanitizer_probe-test_UBSAN.library-signed-overflow
+2026-09-22T08:04:30.0941631Z 291/292 Test #291: sanitizer_probe-test_UBSAN.library-signed-overflow ......   Passed    0.02 sec
+2026-09-22T08:04:30.0942666Z         Start 292: sanitizer_probe-test_UBSAN.consumer-signed-overflow
+2026-09-22T08:04:30.0993188Z 292/292 Test #292: sanitizer_probe-test_UBSAN.consumer-signed-overflow .....   Passed    0.00 sec
+2026-09-22T08:04:30.0999650Z 
+2026-09-22T08:04:30.1000032Z 100% tests passed, 0 tests failed out of 292
+2026-09-22T08:04:30.1000303Z 
+2026-09-22T08:04:30.1000418Z Total Test time (real) =   3.68 sec
+2026-09-22T08:04:30.1542822Z ##[group]Run ./tests/run-tests.sh
+2026-09-22T08:04:30.1543162Z [36;1m./tests/run-tests.sh[0m
+2026-09-22T08:04:30.1579673Z shell: /usr/bin/bash -e {0}
+2026-09-22T08:04:30.1579935Z ##[endgroup]
+2026-09-22T08:04:30.1671403Z Executing software test suite
+2026-09-22T08:04:30.1672018Z Test location: /home/runner/work/tsn-gen/tsn-gen/tests/../build
+2026-09-22T08:04:30.1688082Z Internal ctest changing into directory: /home/runner/work/tsn-gen/tsn-gen/build
+2026-09-22T08:04:30.1690347Z Test project /home/runner/work/tsn-gen/tsn-gen/build
+2026-09-22T08:04:30.1789074Z         Start   1: ParserUsingTest.Version
+2026-09-22T08:04:30.1830780Z   1/292 Test   #1: ParserUsingTest.Version .................................   Passed    0.00 sec
+2026-09-22T08:04:30.1832534Z         Start   2: ParserUsingTest.BasePath
+2026-09-22T08:04:30.1867453Z   2/292 Test   #2: ParserUsingTest.BasePath ................................   Passed    0.00 sec
+2026-09-22T08:04:30.1868928Z         Start   3: Parser.InvalidPathInt
+2026-09-22T08:04:30.1903424Z   3/292 Test   #3: Parser.InvalidPathInt ...................................   Passed    0.00 sec
+2026-09-22T08:04:30.1904801Z         Start   4: Parser.VarCreation
+2026-09-22T08:04:30.1941323Z   4/292 Test   #4: Parser.VarCreation ......................................   Passed    0.00 sec
+2026-09-22T08:04:30.1942999Z         Start   5: Parser.VarCreationTooSmall
+2026-09-22T08:04:30.1978213Z   5/292 Test   #5: Parser.VarCreationTooSmall ..............................   Passed    0.00 sec
+2026-09-22T08:04:30.1979431Z         Start   6: Parser.listFiles
+2026-09-22T08:04:30.2018080Z   6/292 Test   #6: Parser.listFiles ........................................   Passed    0.00 sec
+2026-09-22T08:04:30.2019353Z         Start   7: Parser.VerifyDepth
+2026-09-22T08:04:30.2059272Z   7/292 Test   #7: Parser.VerifyDepth ......................................   Passed    0.00 sec
+2026-09-22T08:04:30.2060830Z         Start   8: Parser.DivergingPath
+2026-09-22T08:04:30.2119407Z   8/292 Test   #8: Parser.DivergingPath ....................................   Passed    0.01 sec
+2026-09-22T08:04:30.2120786Z         Start   9: Parser.ParsingProtocolNameInvalid
+2026-09-22T08:04:30.2161152Z   9/292 Test   #9: Parser.ParsingProtocolNameInvalid .......................   Passed    0.00 sec
+2026-09-22T08:04:30.2162545Z         Start  10: ParserUsingTest.Version
+2026-09-22T08:04:30.2291715Z  10/292 Test  #10: ParserUsingTest.Version .................................   Passed    0.01 sec
+2026-09-22T08:04:30.2293285Z         Start  11: ParserUsingTest.BasePath
+2026-09-22T08:04:30.2442770Z  11/292 Test  #11: ParserUsingTest.BasePath ................................   Passed    0.01 sec
+2026-09-22T08:04:30.2444303Z         Start  12: Parser.InvalidPathInt
+2026-09-22T08:04:30.2583941Z  12/292 Test  #12: Parser.InvalidPathInt ...................................   Passed    0.01 sec
+2026-09-22T08:04:30.2585314Z         Start  13: Parser.VarCreation
+2026-09-22T08:04:30.2720901Z  13/292 Test  #13: Parser.VarCreation ......................................   Passed    0.01 sec
+2026-09-22T08:04:30.2722228Z         Start  14: Parser.VarCreationTooSmall
+2026-09-22T08:04:30.2863995Z  14/292 Test  #14: Parser.VarCreationTooSmall ..............................   Passed    0.01 sec
+2026-09-22T08:04:30.2864896Z         Start  15: Parser.listFiles
+2026-09-22T08:04:30.3019039Z  15/292 Test  #15: Parser.listFiles ........................................   Passed    0.02 sec
+2026-09-22T08:04:30.3020259Z         Start  16: Parser.VerifyDepth
+2026-09-22T08:04:30.3198227Z  16/292 Test  #16: Parser.VerifyDepth ......................................   Passed    0.02 sec
+2026-09-22T08:04:30.3199445Z         Start  17: Parser.DivergingPath
+2026-09-22T08:04:30.3442552Z  17/292 Test  #17: Parser.DivergingPath ....................................   Passed    0.02 sec
+2026-09-22T08:04:30.3443580Z         Start  18: Parser.ParsingProtocolNameInvalid
+2026-09-22T08:04:30.3589391Z  18/292 Test  #18: Parser.ParsingProtocolNameInvalid .......................   Passed    0.01 sec
+2026-09-22T08:04:30.3590984Z         Start  19: ParserUsingTest.Version
+2026-09-22T08:04:30.3634832Z  19/292 Test  #19: ParserUsingTest.Version .................................   Passed    0.00 sec
+2026-09-22T08:04:30.3636256Z         Start  20: ParserUsingTest.BasePath
+2026-09-22T08:04:30.3660994Z  20/292 Test  #20: ParserUsingTest.BasePath ................................   Passed    0.00 sec
+2026-09-22T08:04:30.3662340Z         Start  21: Parser.InvalidPathInt
+2026-09-22T08:04:30.3693569Z  21/292 Test  #21: Parser.InvalidPathInt ...................................   Passed    0.00 sec
+2026-09-22T08:04:30.3695414Z         Start  22: Parser.VarCreation
+2026-09-22T08:04:30.3729172Z  22/292 Test  #22: Parser.VarCreation ......................................   Passed    0.00 sec
+2026-09-22T08:04:30.3754657Z         Start  23: Parser.VarCreationTooSmall
+2026-09-22T08:04:30.3795598Z  23/292 Test  #23: Parser.VarCreationTooSmall ..............................   Passed    0.00 sec
+2026-09-22T08:04:30.3796658Z         Start  24: Parser.listFiles
+2026-09-22T08:04:30.3823571Z  24/292 Test  #24: Parser.listFiles ........................................   Passed    0.00 sec
+2026-09-22T08:04:30.3828898Z         Start  25: Parser.VerifyDepth
+2026-09-22T08:04:30.3863137Z  25/292 Test  #25: Parser.VerifyDepth ......................................   Passed    0.00 sec
+2026-09-22T08:04:30.3864664Z         Start  26: Parser.DivergingPath
+2026-09-22T08:04:30.3918144Z  26/292 Test  #26: Parser.DivergingPath ....................................   Passed    0.01 sec
+2026-09-22T08:04:30.3919446Z         Start  27: Parser.ParsingProtocolNameInvalid
+2026-09-22T08:04:30.3951937Z  27/292 Test  #27: Parser.ParsingProtocolNameInvalid .......................   Passed    0.00 sec
+2026-09-22T08:04:30.3953227Z         Start  28: ObjectSerializer.ParseSimpleProtocol
+2026-09-22T08:04:30.3995848Z  28/292 Test  #28: ObjectSerializer.ParseSimpleProtocol ....................   Passed    0.00 sec
+2026-09-22T08:04:30.3997205Z         Start  29: ObjectSerializer.ParseSimpleProtocolVarCount
+2026-09-22T08:04:30.4039707Z  29/292 Test  #29: ObjectSerializer.ParseSimpleProtocolVarCount ............   Passed    0.00 sec
+2026-09-22T08:04:30.4041180Z         Start  30: ObjectSerializer.ParseSimpleProtocolVarName
+2026-09-22T08:04:30.4081801Z  30/292 Test  #30: ObjectSerializer.ParseSimpleProtocolVarName .............   Passed    0.00 sec
+2026-09-22T08:04:30.4083057Z         Start  31: ObjectSerializer.ParseSimpleProtocolVarSize
+2026-09-22T08:04:30.4123174Z  31/292 Test  #31: ObjectSerializer.ParseSimpleProtocolVarSize .............   Passed    0.00 sec
+2026-09-22T08:04:30.4124712Z         Start  32: ObjectSerializer.ParseSimpleProtocolVarExpectedValues
+2026-09-22T08:04:30.4164836Z  32/292 Test  #32: ObjectSerializer.ParseSimpleProtocolVarExpectedValues ...   Passed    0.00 sec
+2026-09-22T08:04:30.4166217Z         Start  33: ObjectSerializer.ParseSimpleProtocolIfaceCount
+2026-09-22T08:04:30.4210411Z  33/292 Test  #33: ObjectSerializer.ParseSimpleProtocolIfaceCount ..........   Passed    0.00 sec
+2026-09-22T08:04:30.4224812Z         Start  34: ObjectSerializer.ParseSimpleProtocolIfaceName
+2026-09-22T08:04:30.4255357Z  34/292 Test  #34: ObjectSerializer.ParseSimpleProtocolIfaceName ...........   Passed    0.00 sec
+2026-09-22T08:04:30.4256859Z         Start  35: ObjectSerializer.ParseSimpleProtocolIfaceDirection
+2026-09-22T08:04:30.4299170Z  35/292 Test  #35: ObjectSerializer.ParseSimpleProtocolIfaceDirection ......   Passed    0.00 sec
+2026-09-22T08:04:30.4300409Z         Start  36: ObjectSerializer.ParseSimpleProtocolIfaceVarRef
+2026-09-22T08:04:30.4343710Z  36/292 Test  #36: ObjectSerializer.ParseSimpleProtocolIfaceVarRef .........   Passed    0.00 sec
+2026-09-22T08:04:30.4348006Z         Start  37: ObjectSerializer.ParseSimpleProtocolServiceNoLogic
+2026-09-22T08:04:30.4401310Z  37/292 Test  #37: ObjectSerializer.ParseSimpleProtocolServiceNoLogic ......   Passed    0.01 sec
+2026-09-22T08:04:30.4402705Z         Start  38: ObjectSerializer.ParseProtocolWithLogicName
+2026-09-22T08:04:30.4443704Z  38/292 Test  #38: ObjectSerializer.ParseProtocolWithLogicName .............   Passed    0.00 sec
+2026-09-22T08:04:30.4445032Z         Start  39: ObjectSerializer.ParseSimpleProtocol
+2026-09-22T08:04:30.4606556Z  39/292 Test  #39: ObjectSerializer.ParseSimpleProtocol ....................   Passed    0.02 sec
+2026-09-22T08:04:30.4607656Z         Start  40: ObjectSerializer.ParseSimpleProtocolVarCount
+2026-09-22T08:04:30.4746063Z  40/292 Test  #40: ObjectSerializer.ParseSimpleProtocolVarCount ............   Passed    0.01 sec
+2026-09-22T08:04:30.4747505Z         Start  41: ObjectSerializer.ParseSimpleProtocolVarName
+2026-09-22T08:04:30.4900442Z  41/292 Test  #41: ObjectSerializer.ParseSimpleProtocolVarName .............   Passed    0.01 sec
+2026-09-22T08:04:30.4903032Z         Start  42: ObjectSerializer.ParseSimpleProtocolVarSize
+2026-09-22T08:04:30.5063240Z  42/292 Test  #42: ObjectSerializer.ParseSimpleProtocolVarSize .............   Passed    0.02 sec
+2026-09-22T08:04:30.5064966Z         Start  43: ObjectSerializer.ParseSimpleProtocolVarExpectedValues
+2026-09-22T08:04:30.5229312Z  43/292 Test  #43: ObjectSerializer.ParseSimpleProtocolVarExpectedValues ...   Passed    0.02 sec
+2026-09-22T08:04:30.5230417Z         Start  44: ObjectSerializer.ParseSimpleProtocolIfaceCount
+2026-09-22T08:04:30.5376920Z  44/292 Test  #44: ObjectSerializer.ParseSimpleProtocolIfaceCount ..........   Passed    0.01 sec
+2026-09-22T08:04:30.5377998Z         Start  45: ObjectSerializer.ParseSimpleProtocolIfaceName
+2026-09-22T08:04:30.5539204Z  45/292 Test  #45: ObjectSerializer.ParseSimpleProtocolIfaceName ...........   Passed    0.02 sec
+2026-09-22T08:04:30.5540455Z         Start  46: ObjectSerializer.ParseSimpleProtocolIfaceDirection
+2026-09-22T08:04:30.5715164Z  46/292 Test  #46: ObjectSerializer.ParseSimpleProtocolIfaceDirection ......   Passed    0.02 sec
+2026-09-22T08:04:30.5716311Z         Start  47: ObjectSerializer.ParseSimpleProtocolIfaceVarRef
+2026-09-22T08:04:30.5880706Z  47/292 Test  #47: ObjectSerializer.ParseSimpleProtocolIfaceVarRef .........   Passed    0.02 sec
+2026-09-22T08:04:30.5882361Z         Start  48: ObjectSerializer.ParseSimpleProtocolServiceNoLogic
+2026-09-22T08:04:30.6010665Z  48/292 Test  #48: ObjectSerializer.ParseSimpleProtocolServiceNoLogic ......   Passed    0.01 sec
+2026-09-22T08:04:30.6012417Z         Start  49: ObjectSerializer.ParseProtocolWithLogicName
+2026-09-22T08:04:30.6195170Z  49/292 Test  #49: ObjectSerializer.ParseProtocolWithLogicName .............   Passed    0.02 sec
+2026-09-22T08:04:30.6205653Z         Start  50: ObjectSerializer.ParseSimpleProtocol
+2026-09-22T08:04:30.6234260Z  50/292 Test  #50: ObjectSerializer.ParseSimpleProtocol ....................   Passed    0.01 sec
+2026-09-22T08:04:30.6238574Z         Start  51: ObjectSerializer.ParseSimpleProtocolVarCount
+2026-09-22T08:04:30.6279038Z  51/292 Test  #51: ObjectSerializer.ParseSimpleProtocolVarCount ............   Passed    0.00 sec
+2026-09-22T08:04:30.6280414Z         Start  52: ObjectSerializer.ParseSimpleProtocolVarName
+2026-09-22T08:04:30.6315857Z  52/292 Test  #52: ObjectSerializer.ParseSimpleProtocolVarName .............   Passed    0.00 sec
+2026-09-22T08:04:30.6316911Z         Start  53: ObjectSerializer.ParseSimpleProtocolVarSize
+2026-09-22T08:04:30.6350771Z  53/292 Test  #53: ObjectSerializer.ParseSimpleProtocolVarSize .............   Passed    0.00 sec
+2026-09-22T08:04:30.6351970Z         Start  54: ObjectSerializer.ParseSimpleProtocolVarExpectedValues
+2026-09-22T08:04:30.6385400Z  54/292 Test  #54: ObjectSerializer.ParseSimpleProtocolVarExpectedValues ...   Passed    0.00 sec
+2026-09-22T08:04:30.6386469Z         Start  55: ObjectSerializer.ParseSimpleProtocolIfaceCount
+2026-09-22T08:04:30.6419761Z  55/292 Test  #55: ObjectSerializer.ParseSimpleProtocolIfaceCount ..........   Passed    0.00 sec
+2026-09-22T08:04:30.6420763Z         Start  56: ObjectSerializer.ParseSimpleProtocolIfaceName
+2026-09-22T08:04:30.6453484Z  56/292 Test  #56: ObjectSerializer.ParseSimpleProtocolIfaceName ...........   Passed    0.00 sec
+2026-09-22T08:04:30.6454796Z         Start  57: ObjectSerializer.ParseSimpleProtocolIfaceDirection
+2026-09-22T08:04:30.6487507Z  57/292 Test  #57: ObjectSerializer.ParseSimpleProtocolIfaceDirection ......   Passed    0.00 sec
+2026-09-22T08:04:30.6488609Z         Start  58: ObjectSerializer.ParseSimpleProtocolIfaceVarRef
+2026-09-22T08:04:30.6521438Z  58/292 Test  #58: ObjectSerializer.ParseSimpleProtocolIfaceVarRef .........   Passed    0.00 sec
+2026-09-22T08:04:30.6522506Z         Start  59: ObjectSerializer.ParseSimpleProtocolServiceNoLogic
+2026-09-22T08:04:30.6555036Z  59/292 Test  #59: ObjectSerializer.ParseSimpleProtocolServiceNoLogic ......   Passed    0.00 sec
+2026-09-22T08:04:30.6556080Z         Start  60: ObjectSerializer.ParseProtocolWithLogicName
+2026-09-22T08:04:30.6589242Z  60/292 Test  #60: ObjectSerializer.ParseProtocolWithLogicName .............   Passed    0.00 sec
+2026-09-22T08:04:30.6590382Z         Start  61: LogicRegistry.RegisterAndCreate
+2026-09-22T08:04:30.6628191Z  61/292 Test  #61: LogicRegistry.RegisterAndCreate .........................   Passed    0.00 sec
+2026-09-22T08:04:30.6629393Z         Start  62: LogicRegistry.UnknownNameReturnsNull
+2026-09-22T08:04:30.6664172Z  62/292 Test  #62: LogicRegistry.UnknownNameReturnsNull ....................   Passed    0.00 sec
+2026-09-22T08:04:30.6667573Z         Start  63: LogicRegistry.DuplicateRegistrationRejected
+2026-09-22T08:04:30.6703119Z  63/292 Test  #63: LogicRegistry.DuplicateRegistrationRejected .............   Passed    0.00 sec
+2026-09-22T08:04:30.6704519Z         Start  64: LogicRegistry.EmptyNameRejected
+2026-09-22T08:04:30.6739632Z  64/292 Test  #64: LogicRegistry.EmptyNameRejected .........................   Passed    0.00 sec
+2026-09-22T08:04:30.6740610Z         Start  65: LogicRegistry.NullFactoryRejected
+2026-09-22T08:04:30.6776344Z  65/292 Test  #65: LogicRegistry.NullFactoryRejected .......................   Passed    0.00 sec
+2026-09-22T08:04:30.6777434Z         Start  66: PassthroughLogic.IsNoOp
+2026-09-22T08:04:30.6812330Z  66/292 Test  #66: PassthroughLogic.IsNoOp .................................   Passed    0.00 sec
+2026-09-22T08:04:30.6813500Z         Start  67: LayerContext.AdjacencyAndDefaults
+2026-09-22T08:04:30.6847650Z  67/292 Test  #67: LayerContext.AdjacencyAndDefaults .......................   Passed    0.00 sec
+2026-09-22T08:04:30.6848601Z         Start  68: LogicRegistry.RegisterAndCreate
+2026-09-22T08:04:30.6986366Z  68/292 Test  #68: LogicRegistry.RegisterAndCreate .........................   Passed    0.01 sec
+2026-09-22T08:04:30.6987401Z         Start  69: LogicRegistry.UnknownNameReturnsNull
+2026-09-22T08:04:30.7121313Z  69/292 Test  #69: LogicRegistry.UnknownNameReturnsNull ....................   Passed    0.01 sec
+2026-09-22T08:04:30.7122515Z         Start  70: LogicRegistry.DuplicateRegistrationRejected
+2026-09-22T08:04:30.7265748Z  70/292 Test  #70: LogicRegistry.DuplicateRegistrationRejected .............   Passed    0.01 sec
+2026-09-22T08:04:30.7266811Z         Start  71: LogicRegistry.EmptyNameRejected
+2026-09-22T08:04:30.7396622Z  71/292 Test  #71: LogicRegistry.EmptyNameRejected .........................   Passed    0.01 sec
+2026-09-22T08:04:30.7397700Z         Start  72: LogicRegistry.NullFactoryRejected
+2026-09-22T08:04:30.7530840Z  72/292 Test  #72: LogicRegistry.NullFactoryRejected .......................   Passed    0.01 sec
+2026-09-22T08:04:30.7531780Z         Start  73: PassthroughLogic.IsNoOp
+2026-09-22T08:04:30.7646941Z  73/292 Test  #73: PassthroughLogic.IsNoOp .................................   Passed    0.01 sec
+2026-09-22T08:04:30.7647995Z         Start  74: LayerContext.AdjacencyAndDefaults
+2026-09-22T08:04:30.7774052Z  74/292 Test  #74: LayerContext.AdjacencyAndDefaults .......................   Passed    0.01 sec
+2026-09-22T08:04:30.7775024Z         Start  75: LogicRegistry.RegisterAndCreate
+2026-09-22T08:04:30.7817824Z  75/292 Test  #75: LogicRegistry.RegisterAndCreate .........................   Passed    0.00 sec
+2026-09-22T08:04:30.7819211Z         Start  76: LogicRegistry.UnknownNameReturnsNull
+2026-09-22T08:04:30.7848681Z  76/292 Test  #76: LogicRegistry.UnknownNameReturnsNull ....................   Passed    0.00 sec
+2026-09-22T08:04:30.7849780Z         Start  77: LogicRegistry.DuplicateRegistrationRejected
+2026-09-22T08:04:30.7879324Z  77/292 Test  #77: LogicRegistry.DuplicateRegistrationRejected .............   Passed    0.00 sec
+2026-09-22T08:04:30.7880363Z         Start  78: LogicRegistry.EmptyNameRejected
+2026-09-22T08:04:30.7908934Z  78/292 Test  #78: LogicRegistry.EmptyNameRejected .........................   Passed    0.00 sec
+2026-09-22T08:04:30.7909993Z         Start  79: LogicRegistry.NullFactoryRejected
+2026-09-22T08:04:30.7938145Z  79/292 Test  #79: LogicRegistry.NullFactoryRejected .......................   Passed    0.00 sec
+2026-09-22T08:04:30.7939121Z         Start  80: PassthroughLogic.IsNoOp
+2026-09-22T08:04:30.7966366Z  80/292 Test  #80: PassthroughLogic.IsNoOp .................................   Passed    0.00 sec
+2026-09-22T08:04:30.7967328Z         Start  81: LayerContext.AdjacencyAndDefaults
+2026-09-22T08:04:30.7995364Z  81/292 Test  #81: LayerContext.AdjacencyAndDefaults .......................   Passed    0.00 sec
+2026-09-22T08:04:30.7996385Z         Start  82: StackBuilder.BuildsAllPassthroughStack
+2026-09-22T08:04:30.8045838Z  82/292 Test  #82: StackBuilder.BuildsAllPassthroughStack ..................   Passed    0.00 sec
+2026-09-22T08:04:30.8046818Z         Start  83: StackBuilder.ResolvesRegisteredLogic
+2026-09-22T08:04:30.8092632Z  83/292 Test  #83: StackBuilder.ResolvesRegisteredLogic ....................   Passed    0.00 sec
+2026-09-22T08:04:30.8093849Z         Start  84: StackBuilder.AdjacencyWiredBottomUp
+2026-09-22T08:04:30.8141050Z  84/292 Test  #84: StackBuilder.AdjacencyWiredBottomUp .....................   Passed    0.00 sec
+2026-09-22T08:04:30.8142070Z         Start  85: StackBuilder.UnknownLogicFailsBuild
+2026-09-22T08:04:30.8189205Z  85/292 Test  #85: StackBuilder.UnknownLogicFailsBuild .....................   Passed    0.00 sec
+2026-09-22T08:04:30.8190314Z         Start  86: StackBuilder.UnknownServiceFailsBuild
+2026-09-22T08:04:30.8236640Z  86/292 Test  #86: StackBuilder.UnknownServiceFailsBuild ...................   Passed    0.00 sec
+2026-09-22T08:04:30.8237779Z         Start  87: StackBuilder.BypassLogicForcesPassthrough
+2026-09-22T08:04:30.8284900Z  87/292 Test  #87: StackBuilder.BypassLogicForcesPassthrough ...............   Passed    0.00 sec
+2026-09-22T08:04:30.8286057Z         Start  88: StackBuilder.BypassLogicSkipsRegistryLookup
+2026-09-22T08:04:30.8332292Z  88/292 Test  #88: StackBuilder.BypassLogicSkipsRegistryLookup .............   Passed    0.00 sec
+2026-09-22T08:04:30.8333468Z         Start  89: StackBuilder.InvalidPathFailsBuild
+2026-09-22T08:04:30.8378625Z  89/292 Test  #89: StackBuilder.InvalidPathFailsBuild ......................   Passed    0.00 sec
+2026-09-22T08:04:30.8379839Z         Start  90: StackBuilder.BuildsAllPassthroughStack
+2026-09-22T08:04:30.8555818Z  90/292 Test  #90: StackBuilder.BuildsAllPassthroughStack ..................   Passed    0.02 sec
+2026-09-22T08:04:30.8556869Z         Start  91: StackBuilder.ResolvesRegisteredLogic
+2026-09-22T08:04:30.8721114Z  91/292 Test  #91: StackBuilder.ResolvesRegisteredLogic ....................   Passed    0.02 sec
+2026-09-22T08:04:30.8722265Z         Start  92: StackBuilder.AdjacencyWiredBottomUp
+2026-09-22T08:04:30.8912178Z  92/292 Test  #92: StackBuilder.AdjacencyWiredBottomUp .....................   Passed    0.02 sec
+2026-09-22T08:04:30.8918132Z         Start  93: StackBuilder.UnknownLogicFailsBuild
+2026-09-22T08:04:30.9063637Z  93/292 Test  #93: StackBuilder.UnknownLogicFailsBuild .....................   Passed    0.01 sec
+2026-09-22T08:04:30.9065029Z         Start  94: StackBuilder.UnknownServiceFailsBuild
+2026-09-22T08:04:30.9232086Z  94/292 Test  #94: StackBuilder.UnknownServiceFailsBuild ...................   Passed    0.02 sec
+2026-09-22T08:04:30.9233489Z         Start  95: StackBuilder.BypassLogicForcesPassthrough
+2026-09-22T08:04:30.9416418Z  95/292 Test  #95: StackBuilder.BypassLogicForcesPassthrough ...............   Passed    0.02 sec
+2026-09-22T08:04:30.9417736Z         Start  96: StackBuilder.BypassLogicSkipsRegistryLookup
+2026-09-22T08:04:30.9584533Z  96/292 Test  #96: StackBuilder.BypassLogicSkipsRegistryLookup .............   Passed    0.02 sec
+2026-09-22T08:04:30.9585687Z         Start  97: StackBuilder.InvalidPathFailsBuild
+2026-09-22T08:04:30.9760546Z  97/292 Test  #97: StackBuilder.InvalidPathFailsBuild ......................   Passed    0.02 sec
+2026-09-22T08:04:30.9761690Z         Start  98: StackBuilder.BuildsAllPassthroughStack
+2026-09-22T08:04:30.9820567Z  98/292 Test  #98: StackBuilder.BuildsAllPassthroughStack ..................   Passed    0.01 sec
+2026-09-22T08:04:30.9821411Z         Start  99: StackBuilder.ResolvesRegisteredLogic
+2026-09-22T08:04:30.9867120Z  99/292 Test  #99: StackBuilder.ResolvesRegisteredLogic ....................   Passed    0.00 sec
+2026-09-22T08:04:30.9867981Z         Start 100: StackBuilder.AdjacencyWiredBottomUp
+2026-09-22T08:04:30.9909598Z 100/292 Test #100: StackBuilder.AdjacencyWiredBottomUp .....................   Passed    0.00 sec
+2026-09-22T08:04:30.9910576Z         Start 101: StackBuilder.UnknownLogicFailsBuild
+2026-09-22T08:04:30.9950469Z 101/292 Test #101: StackBuilder.UnknownLogicFailsBuild .....................   Passed    0.00 sec
+2026-09-22T08:04:30.9951472Z         Start 102: StackBuilder.UnknownServiceFailsBuild
+2026-09-22T08:04:30.9988599Z 102/292 Test #102: StackBuilder.UnknownServiceFailsBuild ...................   Passed    0.00 sec
+2026-09-22T08:04:30.9989937Z         Start 103: StackBuilder.BypassLogicForcesPassthrough
+2026-09-22T08:04:31.0028139Z 103/292 Test #103: StackBuilder.BypassLogicForcesPassthrough ...............   Passed    0.00 sec
+2026-09-22T08:04:31.0029405Z         Start 104: StackBuilder.BypassLogicSkipsRegistryLookup
+2026-09-22T08:04:31.0068123Z 104/292 Test #104: StackBuilder.BypassLogicSkipsRegistryLookup .............   Passed    0.00 sec
+2026-09-22T08:04:31.0068968Z         Start 105: StackBuilder.InvalidPathFailsBuild
+2026-09-22T08:04:31.0105766Z 105/292 Test #105: StackBuilder.InvalidPathFailsBuild ......................   Passed    0.00 sec
+2026-09-22T08:04:31.0106889Z         Start 106: Validator.ConformingFilePasses
+2026-09-22T08:04:31.0149068Z 106/292 Test #106: Validator.ConformingFilePasses ..........................   Passed    0.00 sec
+2026-09-22T08:04:31.0150483Z         Start 107: Validator.ForeignTopLevelKeyRejected
+2026-09-22T08:04:31.0189980Z 107/292 Test #107: Validator.ForeignTopLevelKeyRejected ....................   Passed    0.00 sec
+2026-09-22T08:04:31.0191088Z         Start 108: Validator.MissingServiceRejected
+2026-09-22T08:04:31.0231079Z 108/292 Test #108: Validator.MissingServiceRejected ........................   Passed    0.00 sec
+2026-09-22T08:04:31.0232061Z         Start 109: Validator.OversizeFieldRejected
+2026-09-22T08:04:31.0271238Z 109/292 Test #109: Validator.OversizeFieldRejected .........................   Passed    0.00 sec
+2026-09-22T08:04:31.0272253Z         Start 110: Validator.BadDirectionRejected
+2026-09-22T08:04:31.0311399Z 110/292 Test #110: Validator.BadDirectionRejected ..........................   Passed    0.00 sec
+2026-09-22T08:04:31.0312544Z         Start 111: Validator.ServiceWithoutVarsOrEntitiesRejected
+2026-09-22T08:04:31.0350754Z 111/292 Test #111: Validator.ServiceWithoutVarsOrEntitiesRejected ..........   Passed    0.00 sec
+2026-09-22T08:04:31.0354771Z         Start 112: Validator.FindingsCarryLineNumbers
+2026-09-22T08:04:31.0406686Z 112/292 Test #112: Validator.FindingsCarryLineNumbers ......................   Passed    0.01 sec
+2026-09-22T08:04:31.0407814Z         Start 113: Validator.MissingDirectoryReported
+2026-09-22T08:04:31.0446722Z 113/292 Test #113: Validator.MissingDirectoryReported ......................   Passed    0.00 sec
+2026-09-22T08:04:31.0447886Z         Start 114: Validator.ConformingFilePasses
+2026-09-22T08:04:31.0620389Z 114/292 Test #114: Validator.ConformingFilePasses ..........................   Passed    0.02 sec
+2026-09-22T08:04:31.0621799Z         Start 115: Validator.ForeignTopLevelKeyRejected
+2026-09-22T08:04:31.0783258Z 115/292 Test #115: Validator.ForeignTopLevelKeyRejected ....................   Passed    0.02 sec
+2026-09-22T08:04:31.0784879Z         Start 116: Validator.MissingServiceRejected
+2026-09-22T08:04:31.0939088Z 116/292 Test #116: Validator.MissingServiceRejected ........................   Passed    0.02 sec
+2026-09-22T08:04:31.0940131Z         Start 117: Validator.OversizeFieldRejected
+2026-09-22T08:04:31.1095582Z 117/292 Test #117: Validator.OversizeFieldRejected .........................   Passed    0.02 sec
+2026-09-22T08:04:31.1096786Z         Start 118: Validator.BadDirectionRejected
+2026-09-22T08:04:31.1243889Z 118/292 Test #118: Validator.BadDirectionRejected ..........................   Passed    0.01 sec
+2026-09-22T08:04:31.1245024Z         Start 119: Validator.ServiceWithoutVarsOrEntitiesRejected
+2026-09-22T08:04:31.1399401Z 119/292 Test #119: Validator.ServiceWithoutVarsOrEntitiesRejected ..........   Passed    0.02 sec
+2026-09-22T08:04:31.1400707Z         Start 120: Validator.FindingsCarryLineNumbers
+2026-09-22T08:04:31.1569855Z 120/292 Test #120: Validator.FindingsCarryLineNumbers ......................   Passed    0.02 sec
+2026-09-22T08:04:31.1570955Z         Start 121: Validator.MissingDirectoryReported
+2026-09-22T08:04:31.1686969Z 121/292 Test #121: Validator.MissingDirectoryReported ......................   Passed    0.01 sec
+2026-09-22T08:04:31.1687923Z         Start 122: Validator.ConformingFilePasses
+2026-09-22T08:04:31.1734518Z 122/292 Test #122: Validator.ConformingFilePasses ..........................   Passed    0.00 sec
+2026-09-22T08:04:31.1735650Z         Start 123: Validator.ForeignTopLevelKeyRejected
+2026-09-22T08:04:31.1771789Z 123/292 Test #123: Validator.ForeignTopLevelKeyRejected ....................   Passed    0.00 sec
+2026-09-22T08:04:31.1775405Z         Start 124: Validator.MissingServiceRejected
+2026-09-22T08:04:31.1814659Z 124/292 Test #124: Validator.MissingServiceRejected ........................   Passed    0.00 sec
+2026-09-22T08:04:31.1816050Z         Start 125: Validator.OversizeFieldRejected
+2026-09-22T08:04:31.1862173Z 125/292 Test #125: Validator.OversizeFieldRejected .........................   Passed    0.00 sec
+2026-09-22T08:04:31.1863108Z         Start 126: Validator.BadDirectionRejected
+2026-09-22T08:04:31.1909118Z 126/292 Test #126: Validator.BadDirectionRejected ..........................   Passed    0.00 sec
+2026-09-22T08:04:31.1910205Z         Start 127: Validator.ServiceWithoutVarsOrEntitiesRejected
+2026-09-22T08:04:31.1944513Z 127/292 Test #127: Validator.ServiceWithoutVarsOrEntitiesRejected ..........   Passed    0.00 sec
+2026-09-22T08:04:31.1945706Z         Start 128: Validator.FindingsCarryLineNumbers
+2026-09-22T08:04:31.1978822Z 128/292 Test #128: Validator.FindingsCarryLineNumbers ......................   Passed    0.00 sec
+2026-09-22T08:04:31.1979921Z         Start 129: Validator.MissingDirectoryReported
+2026-09-22T08:04:31.2014947Z 129/292 Test #129: Validator.MissingDirectoryReported ......................   Passed    0.00 sec
+2026-09-22T08:04:31.2016072Z         Start 130: HelloTest.BasicAssertions
+2026-09-22T08:04:31.2042694Z 130/292 Test #130: HelloTest.BasicAssertions ...............................   Passed    0.00 sec
+2026-09-22T08:04:31.2043984Z         Start 131: EthernetFrameLogic.RegisteredUnderExpectedName
+2026-09-22T08:04:31.2076209Z 131/292 Test #131: EthernetFrameLogic.RegisteredUnderExpectedName ..........   Passed    0.00 sec
+2026-09-22T08:04:31.2077436Z         Start 132: EthernetFrameLogic.BoundByStackBuilder
+2026-09-22T08:04:31.2115349Z 132/292 Test #132: EthernetFrameLogic.BoundByStackBuilder ..................   Passed    0.00 sec
+2026-09-22T08:04:31.2116625Z         Start 133: EthernetFrameLogic.BypassLogicSwapsInPassthrough
+2026-09-22T08:04:31.2154344Z 133/292 Test #133: EthernetFrameLogic.BypassLogicSwapsInPassthrough ........   Passed    0.00 sec
+2026-09-22T08:04:31.2156074Z         Start 134: EthernetFrameLogic.EncodeDecodeCountersAdvance
+2026-09-22T08:04:31.2186341Z 134/292 Test #134: EthernetFrameLogic.EncodeDecodeCountersAdvance ..........   Passed    0.00 sec
+2026-09-22T08:04:31.2187569Z         Start 135: EthernetFrameLogic.NextLayerDefaults1722
+2026-09-22T08:04:31.2217612Z 135/292 Test #135: EthernetFrameLogic.NextLayerDefaults1722 ................   Passed    0.00 sec
+2026-09-22T08:04:31.2219008Z         Start 136: StackCodec.FrameHasExpectedSize
+2026-09-22T08:04:31.2353691Z 136/292 Test #136: StackCodec.FrameHasExpectedSize .........................   Passed    0.01 sec
+2026-09-22T08:04:31.2407395Z         Start 137: StackCodec.DerivedFieldsAreValid
+2026-09-22T08:04:31.2500373Z 137/292 Test #137: StackCodec.DerivedFieldsAreValid ........................   Passed    0.01 sec
+2026-09-22T08:04:31.2501407Z         Start 138: StackCodec.CommandStatusForcedToZero
+2026-09-22T08:04:31.2798751Z 138/292 Test #138: StackCodec.CommandStatusForcedToZero ....................   Passed    0.03 sec
+2026-09-22T08:04:31.2800250Z         Start 139: StackCodec.DecodeRoundTripsFields
+2026-09-22T08:04:31.2937710Z 139/292 Test #139: StackCodec.DecodeRoundTripsFields .......................   Passed    0.01 sec
+2026-09-22T08:04:31.2938594Z         Start 140: StackCodec.DeterministicForFixedSeed
+2026-09-22T08:04:31.3075290Z 140/292 Test #140: StackCodec.DeterministicForFixedSeed ....................   Passed    0.01 sec
+2026-09-22T08:04:31.3075954Z         Start 141: TrafficGenTest.EmptyInterfaceProducesEmptyPacket
+2026-09-22T08:04:31.3131223Z 141/292 Test #141: TrafficGenTest.EmptyInterfaceProducesEmptyPacket ........   Passed    0.01 sec
+2026-09-22T08:04:31.3132252Z         Start 142: TrafficGenTest.SimpleVarProducesOneByte
+2026-09-22T08:04:31.3183119Z 142/292 Test #142: TrafficGenTest.SimpleVarProducesOneByte .................   Passed    0.00 sec
+2026-09-22T08:04:31.3184447Z         Start 143: TrafficGenTest.SimpleVarValueInExpectedSet
+2026-09-22T08:04:31.3238589Z 143/292 Test #143: TrafficGenTest.SimpleVarValueInExpectedSet ..............   Passed    0.01 sec
+2026-09-22T08:04:31.3239979Z         Start 144: TrafficGenTest.DeterministicWithSameSeed
+2026-09-22T08:04:31.3291845Z 144/292 Test #144: TrafficGenTest.DeterministicWithSameSeed ................   Passed    0.01 sec
+2026-09-22T08:04:31.3293080Z         Start 145: TrafficGenTest.DifferentSeedsDifferentPackets
+2026-09-22T08:04:31.3342700Z 145/292 Test #145: TrafficGenTest.DifferentSeedsDifferentPackets ...........   Passed    0.00 sec
+2026-09-22T08:04:31.3343637Z         Start 146: TrafficGenTest.OpenClose
+2026-09-22T08:04:31.3394166Z 146/292 Test #146: TrafficGenTest.OpenClose ................................   Passed    0.00 sec
+2026-09-22T08:04:31.3395203Z         Start 147: TrafficGenTest.SendNamedInterface
+2026-09-22T08:04:31.3445319Z 147/292 Test #147: TrafficGenTest.SendNamedInterface .......................   Passed    0.00 sec
+2026-09-22T08:04:31.3446347Z         Start 148: TrafficGenTest.SendUnknownInterfaceReturnsError
+2026-09-22T08:04:31.3494652Z 148/292 Test #148: TrafficGenTest.SendUnknownInterfaceReturnsError .........   Passed    0.00 sec
+2026-09-22T08:04:31.3495784Z         Start 149: TrafficGenTest.SendAllSendsOnePacketPerInterface
+2026-09-22T08:04:31.3545523Z 149/292 Test #149: TrafficGenTest.SendAllSendsOnePacketPerInterface ........   Passed    0.00 sec
+2026-09-22T08:04:31.3546743Z         Start 150: TrafficGenTest.SendFilteredInDirection
+2026-09-22T08:04:31.3595278Z 150/292 Test #150: TrafficGenTest.SendFilteredInDirection ..................   Passed    0.00 sec
+2026-09-22T08:04:31.3596534Z         Start 151: TrafficGenTest.SendFilteredOutDirectionProducesNone
+2026-09-22T08:04:31.3652304Z 151/292 Test #151: TrafficGenTest.SendFilteredOutDirectionProducesNone .....   Passed    0.01 sec
+2026-09-22T08:04:31.3653467Z         Start 152: TrafficGenTest.SendLoopProducesNPackets
+2026-09-22T08:04:31.3705295Z 152/292 Test #152: TrafficGenTest.SendLoopProducesNPackets .................   Passed    0.00 sec
+2026-09-22T08:04:31.3706900Z         Start 153: TrafficGenTest.SendWithoutOpenReturnsNotOpen
+2026-09-22T08:04:31.3755718Z 153/292 Test #153: TrafficGenTest.SendWithoutOpenReturnsNotOpen ............   Passed    0.00 sec
+2026-09-22T08:04:31.3756891Z         Start 154: VerilatorSenderBeat.FullBeat
+2026-09-22T08:04:31.3798660Z 154/292 Test #154: VerilatorSenderBeat.FullBeat ............................   Passed    0.00 sec
+2026-09-22T08:04:31.3799818Z         Start 155: VerilatorSenderBeat.PartialLastBeat
+2026-09-22T08:04:31.3841537Z 155/292 Test #155: VerilatorSenderBeat.PartialLastBeat .....................   Passed    0.00 sec
+2026-09-22T08:04:31.3842945Z         Start 156: WideField.Emits512BitFieldWithoutUB
+2026-09-22T08:04:31.3886959Z 156/292 Test #156: WideField.Emits512BitFieldWithoutUB .....................   Passed    0.00 sec
+2026-09-22T08:04:31.3888284Z         Start 157: TrafficGenTest.EmptyInterfaceProducesEmptyPacket
+2026-09-22T08:04:31.4072083Z 157/292 Test #157: TrafficGenTest.EmptyInterfaceProducesEmptyPacket ........   Passed    0.02 sec
+2026-09-22T08:04:31.4074059Z         Start 158: TrafficGenTest.SimpleVarProducesOneByte
+2026-09-22T08:04:31.4275384Z 158/292 Test #158: TrafficGenTest.SimpleVarProducesOneByte .................   Passed    0.02 sec
+2026-09-22T08:04:31.4278235Z         Start 159: TrafficGenTest.SimpleVarValueInExpectedSet
+2026-09-22T08:04:31.4448250Z 159/292 Test #159: TrafficGenTest.SimpleVarValueInExpectedSet ..............   Passed    0.02 sec
+2026-09-22T08:04:31.4449511Z         Start 160: TrafficGenTest.DeterministicWithSameSeed
+2026-09-22T08:04:31.4603399Z 160/292 Test #160: TrafficGenTest.DeterministicWithSameSeed ................   Passed    0.02 sec
+2026-09-22T08:04:31.4604899Z         Start 161: TrafficGenTest.DifferentSeedsDifferentPackets
+2026-09-22T08:04:31.4770379Z 161/292 Test #161: TrafficGenTest.DifferentSeedsDifferentPackets ...........   Passed    0.02 sec
+2026-09-22T08:04:31.4776104Z         Start 162: TrafficGenTest.OpenClose
+2026-09-22T08:04:31.4926028Z 162/292 Test #162: TrafficGenTest.OpenClose ................................   Passed    0.02 sec
+2026-09-22T08:04:31.4927237Z         Start 163: TrafficGenTest.SendNamedInterface
+2026-09-22T08:04:31.5131404Z 163/292 Test #163: TrafficGenTest.SendNamedInterface .......................   Passed    0.02 sec
+2026-09-22T08:04:31.5132473Z         Start 164: TrafficGenTest.SendUnknownInterfaceReturnsError
+2026-09-22T08:04:31.5293052Z 164/292 Test #164: TrafficGenTest.SendUnknownInterfaceReturnsError .........   Passed    0.02 sec
+2026-09-22T08:04:31.5294753Z         Start 165: TrafficGenTest.SendAllSendsOnePacketPerInterface
+2026-09-22T08:04:31.5472199Z 165/292 Test #165: TrafficGenTest.SendAllSendsOnePacketPerInterface ........   Passed    0.02 sec
+2026-09-22T08:04:31.5473507Z         Start 166: TrafficGenTest.SendFilteredInDirection
+2026-09-22T08:04:31.5646272Z 166/292 Test #166: TrafficGenTest.SendFilteredInDirection ..................   Passed    0.02 sec
+2026-09-22T08:04:31.5647814Z         Start 167: TrafficGenTest.SendFilteredOutDirectionProducesNone
+2026-09-22T08:04:31.5814617Z 167/292 Test #167: TrafficGenTest.SendFilteredOutDirectionProducesNone .....   Passed    0.02 sec
+2026-09-22T08:04:31.5818872Z         Start 168: TrafficGenTest.SendLoopProducesNPackets
+2026-09-22T08:04:31.5977379Z 168/292 Test #168: TrafficGenTest.SendLoopProducesNPackets .................   Passed    0.02 sec
+2026-09-22T08:04:31.5978385Z         Start 169: TrafficGenTest.SendWithoutOpenReturnsNotOpen
+2026-09-22T08:04:31.6161632Z 169/292 Test #169: TrafficGenTest.SendWithoutOpenReturnsNotOpen ............   Passed    0.02 sec
+2026-09-22T08:04:31.6162739Z         Start 170: VerilatorSenderBeat.FullBeat
+2026-09-22T08:04:31.6307332Z 170/292 Test #170: VerilatorSenderBeat.FullBeat ............................   Passed    0.01 sec
+2026-09-22T08:04:31.6308384Z         Start 171: VerilatorSenderBeat.PartialLastBeat
+2026-09-22T08:04:31.6449458Z 171/292 Test #171: VerilatorSenderBeat.PartialLastBeat .....................   Passed    0.01 sec
+2026-09-22T08:04:31.6450847Z         Start 172: WideField.Emits512BitFieldWithoutUB
+2026-09-22T08:04:31.6578147Z 172/292 Test #172: WideField.Emits512BitFieldWithoutUB .....................   Passed    0.01 sec
+2026-09-22T08:04:31.6579391Z         Start 173: TrafficGenTest.EmptyInterfaceProducesEmptyPacket
+2026-09-22T08:04:31.6626188Z 173/292 Test #173: TrafficGenTest.EmptyInterfaceProducesEmptyPacket ........   Passed    0.00 sec
+2026-09-22T08:04:31.6627250Z         Start 174: TrafficGenTest.SimpleVarProducesOneByte
+2026-09-22T08:04:31.6668264Z 174/292 Test #174: TrafficGenTest.SimpleVarProducesOneByte .................   Passed    0.00 sec
+2026-09-22T08:04:31.6669337Z         Start 175: TrafficGenTest.SimpleVarValueInExpectedSet
+2026-09-22T08:04:31.6724283Z 175/292 Test #175: TrafficGenTest.SimpleVarValueInExpectedSet ..............   Passed    0.01 sec
+2026-09-22T08:04:31.6730157Z         Start 176: TrafficGenTest.DeterministicWithSameSeed
+2026-09-22T08:04:31.6786473Z 176/292 Test #176: TrafficGenTest.DeterministicWithSameSeed ................   Passed    0.01 sec
+2026-09-22T08:04:31.6787567Z         Start 177: TrafficGenTest.DifferentSeedsDifferentPackets
+2026-09-22T08:04:31.6831414Z 177/292 Test #177: TrafficGenTest.DifferentSeedsDifferentPackets ...........   Passed    0.00 sec
+2026-09-22T08:04:31.6832603Z         Start 178: TrafficGenTest.OpenClose
+2026-09-22T08:04:31.6873059Z 178/292 Test #178: TrafficGenTest.OpenClose ................................   Passed    0.00 sec
+2026-09-22T08:04:31.6874607Z         Start 179: TrafficGenTest.SendNamedInterface
+2026-09-22T08:04:31.6912300Z 179/292 Test #179: TrafficGenTest.SendNamedInterface .......................   Passed    0.00 sec
+2026-09-22T08:04:31.6913234Z         Start 180: TrafficGenTest.SendUnknownInterfaceReturnsError
+2026-09-22T08:04:31.6952178Z 180/292 Test #180: TrafficGenTest.SendUnknownInterfaceReturnsError .........   Passed    0.00 sec
+2026-09-22T08:04:31.6953294Z         Start 181: TrafficGenTest.SendAllSendsOnePacketPerInterface
+2026-09-22T08:04:31.6992639Z 181/292 Test #181: TrafficGenTest.SendAllSendsOnePacketPerInterface ........   Passed    0.00 sec
+2026-09-22T08:04:31.6994243Z         Start 182: TrafficGenTest.SendFilteredInDirection
+2026-09-22T08:04:31.7032656Z 182/292 Test #182: TrafficGenTest.SendFilteredInDirection ..................   Passed    0.00 sec
+2026-09-22T08:04:31.7033812Z         Start 183: TrafficGenTest.SendFilteredOutDirectionProducesNone
+2026-09-22T08:04:31.7072079Z 183/292 Test #183: TrafficGenTest.SendFilteredOutDirectionProducesNone .....   Passed    0.00 sec
+2026-09-22T08:04:31.7073325Z         Start 184: TrafficGenTest.SendLoopProducesNPackets
+2026-09-22T08:04:31.7113151Z 184/292 Test #184: TrafficGenTest.SendLoopProducesNPackets .................   Passed    0.00 sec
+2026-09-22T08:04:31.7114378Z         Start 185: TrafficGenTest.SendWithoutOpenReturnsNotOpen
+2026-09-22T08:04:31.7152186Z 185/292 Test #185: TrafficGenTest.SendWithoutOpenReturnsNotOpen ............   Passed    0.00 sec
+2026-09-22T08:04:31.7153391Z         Start 186: VerilatorSenderBeat.FullBeat
+2026-09-22T08:04:31.7186629Z 186/292 Test #186: VerilatorSenderBeat.FullBeat ............................   Passed    0.00 sec
+2026-09-22T08:04:31.7187623Z         Start 187: VerilatorSenderBeat.PartialLastBeat
+2026-09-22T08:04:31.7218451Z 187/292 Test #187: VerilatorSenderBeat.PartialLastBeat .....................   Passed    0.00 sec
+2026-09-22T08:04:31.7219397Z         Start 188: WideField.Emits512BitFieldWithoutUB
+2026-09-22T08:04:31.7253143Z 188/292 Test #188: WideField.Emits512BitFieldWithoutUB .....................   Passed    0.00 sec
+2026-09-22T08:04:31.7254361Z         Start 189: AdpFuzzTest.VarCount
+2026-09-22T08:04:31.7307404Z 189/292 Test #189: AdpFuzzTest.VarCount ....................................   Passed    0.01 sec
+2026-09-22T08:04:31.7308328Z         Start 190: AdpFuzzTest.MessageTypeConstraints
+2026-09-22T08:04:31.7360103Z 190/292 Test #190: AdpFuzzTest.MessageTypeConstraints ......................   Passed    0.01 sec
+2026-09-22T08:04:31.7361436Z         Start 191: AdpFuzzTest.ValidTimeRangeConstraint
+2026-09-22T08:04:31.7416102Z 191/292 Test #191: AdpFuzzTest.ValidTimeRangeConstraint ....................   Passed    0.01 sec
+2026-09-22T08:04:31.7417116Z         Start 192: AdpFuzzTest.ControlDataLengthFixed
+2026-09-22T08:04:31.7470291Z 192/292 Test #192: AdpFuzzTest.ControlDataLengthFixed ......................   Passed    0.01 sec
+2026-09-22T08:04:31.7471253Z         Start 193: AdpFuzzTest.TalkerCapabilitiesMask
+2026-09-22T08:04:31.7525720Z 193/292 Test #193: AdpFuzzTest.TalkerCapabilitiesMask ......................   Passed    0.01 sec
+2026-09-22T08:04:31.7526760Z         Start 194: AdpFuzzTest.ListenerCapabilitiesMask
+2026-09-22T08:04:31.7579693Z 194/292 Test #194: AdpFuzzTest.ListenerCapabilitiesMask ....................   Passed    0.01 sec
+2026-09-22T08:04:31.7580644Z         Start 195: AdpFuzzTest.ControllerCapabilitiesMask
+2026-09-22T08:04:31.7634551Z 195/292 Test #195: AdpFuzzTest.ControllerCapabilitiesMask ..................   Passed    0.01 sec
+2026-09-22T08:04:31.7635771Z         Start 196: AdpFuzzTest.ReservedFieldsAreFixed
+2026-09-22T08:04:31.7687745Z 196/292 Test #196: AdpFuzzTest.ReservedFieldsAreFixed ......................   Passed    0.01 sec
+2026-09-22T08:04:31.7688629Z         Start 197: AdpFuzzTest.InterfaceCount
+2026-09-22T08:04:31.7742131Z 197/292 Test #197: AdpFuzzTest.InterfaceCount ..............................   Passed    0.01 sec
+2026-09-22T08:04:31.7743132Z         Start 198: AdpFuzzTest.IfDataDirection
+2026-09-22T08:04:31.7796330Z 198/292 Test #198: AdpFuzzTest.IfDataDirection .............................   Passed    0.01 sec
+2026-09-22T08:04:31.7797432Z         Start 199: AdpFuzzTest.IfDataHas20VarRefs
+2026-09-22T08:04:31.7850916Z 199/292 Test #199: AdpFuzzTest.IfDataHas20VarRefs ..........................   Passed    0.01 sec
+2026-09-22T08:04:31.7851961Z         Start 200: AdpFuzzTest.IfDataFirstVarRefIsMessageType
+2026-09-22T08:04:31.7905699Z 200/292 Test #200: AdpFuzzTest.IfDataFirstVarRefIsMessageType ..............   Passed    0.01 sec
+2026-09-22T08:04:31.7906709Z         Start 201: AdpFuzzTest.IfDataLastVarRefIsReserved1
+2026-09-22T08:04:31.7959725Z 201/292 Test #201: AdpFuzzTest.IfDataLastVarRefIsReserved1 .................   Passed    0.01 sec
+2026-09-22T08:04:31.7960659Z         Start 202: AdpFuzzTest.FullAdpPacketIs67Bytes
+2026-09-22T08:04:31.8031722Z 202/292 Test #202: AdpFuzzTest.FullAdpPacketIs67Bytes ......................   Passed    0.01 sec
+2026-09-22T08:04:31.8032701Z         Start 203: AdpFuzzTest.MessageTypeAlwaysValid
+2026-09-22T08:04:31.8101674Z 203/292 Test #203: AdpFuzzTest.MessageTypeAlwaysValid ......................   Passed    0.01 sec
+2026-09-22T08:04:31.8102673Z         Start 204: AdpFuzzTest.ValidTimeAlwaysInRange
+2026-09-22T08:04:31.8174487Z 204/292 Test #204: AdpFuzzTest.ValidTimeAlwaysInRange ......................   Passed    0.01 sec
+2026-09-22T08:04:31.8175713Z         Start 205: AdpFuzzTest.ControlDataLengthAlways56
+2026-09-22T08:04:31.8232777Z 205/292 Test #205: AdpFuzzTest.ControlDataLengthAlways56 ...................   Passed    0.01 sec
+2026-09-22T08:04:31.8233986Z         Start 206: AdpFuzzTest.TalkerCapsRespectMask
+2026-09-22T08:04:31.8309022Z 206/292 Test #206: AdpFuzzTest.TalkerCapsRespectMask .......................   Passed    0.01 sec
+2026-09-22T08:04:31.8310157Z         Start 207: AdpFuzzTest.ListenerCapsRespectMask
+2026-09-22T08:04:31.8383508Z 207/292 Test #207: AdpFuzzTest.ListenerCapsRespectMask .....................   Passed    0.01 sec
+2026-09-22T08:04:31.8385030Z         Start 208: AdpFuzzTest.ControllerCapsRespectMask
+2026-09-22T08:04:31.8461520Z 208/292 Test #208: AdpFuzzTest.ControllerCapsRespectMask ...................   Passed    0.01 sec
+2026-09-22T08:04:31.8462577Z         Start 209: AdpFuzzTest.ReservedFieldsAlwaysZero
+2026-09-22T08:04:31.8523130Z 209/292 Test #209: AdpFuzzTest.ReservedFieldsAlwaysZero ....................   Passed    0.01 sec
+2026-09-22T08:04:31.8524245Z         Start 210: AdpFuzzTest.AvailableIndexAlwaysValid
+2026-09-22T08:04:31.8585081Z 210/292 Test #210: AdpFuzzTest.AvailableIndexAlwaysValid ...................   Passed    0.01 sec
+2026-09-22T08:04:31.8586029Z         Start 211: AdpFuzzTest.VarCount
+2026-09-22T08:04:31.8756629Z 211/292 Test #211: AdpFuzzTest.VarCount ....................................   Passed    0.02 sec
+2026-09-22T08:04:31.8757887Z         Start 212: AdpFuzzTest.MessageTypeConstraints
+2026-09-22T08:04:31.8941349Z 212/292 Test #212: AdpFuzzTest.MessageTypeConstraints ......................   Passed    0.02 sec
+2026-09-22T08:04:31.8942368Z         Start 213: AdpFuzzTest.ValidTimeRangeConstraint
+2026-09-22T08:04:31.9133077Z 213/292 Test #213: AdpFuzzTest.ValidTimeRangeConstraint ....................   Passed    0.02 sec
+2026-09-22T08:04:31.9134923Z         Start 214: AdpFuzzTest.ControlDataLengthFixed
+2026-09-22T08:04:31.9339108Z 214/292 Test #214: AdpFuzzTest.ControlDataLengthFixed ......................   Passed    0.02 sec
+2026-09-22T08:04:31.9340179Z         Start 215: AdpFuzzTest.TalkerCapabilitiesMask
+2026-09-22T08:04:31.9541971Z 215/292 Test #215: AdpFuzzTest.TalkerCapabilitiesMask ......................   Passed    0.02 sec
+2026-09-22T08:04:31.9543108Z         Start 216: AdpFuzzTest.ListenerCapabilitiesMask
+2026-09-22T08:04:31.9737698Z 216/292 Test #216: AdpFuzzTest.ListenerCapabilitiesMask ....................   Passed    0.02 sec
+2026-09-22T08:04:31.9739175Z         Start 217: AdpFuzzTest.ControllerCapabilitiesMask
+2026-09-22T08:04:31.9947341Z 217/292 Test #217: AdpFuzzTest.ControllerCapabilitiesMask ..................   Passed    0.02 sec
+2026-09-22T08:04:31.9948461Z         Start 218: AdpFuzzTest.ReservedFieldsAreFixed
+2026-09-22T08:04:32.0128634Z 218/292 Test #218: AdpFuzzTest.ReservedFieldsAreFixed ......................   Passed    0.02 sec
+2026-09-22T08:04:32.0129871Z         Start 219: AdpFuzzTest.InterfaceCount
+2026-09-22T08:04:32.0319336Z 219/292 Test #219: AdpFuzzTest.InterfaceCount ..............................   Passed    0.02 sec
+2026-09-22T08:04:32.0320576Z         Start 220: AdpFuzzTest.IfDataDirection
+2026-09-22T08:04:32.0506388Z 220/292 Test #220: AdpFuzzTest.IfDataDirection .............................   Passed    0.02 sec
+2026-09-22T08:04:32.0508355Z         Start 221: AdpFuzzTest.IfDataHas20VarRefs
+2026-09-22T08:04:32.0694971Z 221/292 Test #221: AdpFuzzTest.IfDataHas20VarRefs ..........................   Passed    0.02 sec
+2026-09-22T08:04:32.0696298Z         Start 222: AdpFuzzTest.IfDataFirstVarRefIsMessageType
+2026-09-22T08:04:32.0896597Z 222/292 Test #222: AdpFuzzTest.IfDataFirstVarRefIsMessageType ..............   Passed    0.02 sec
+2026-09-22T08:04:32.0897793Z         Start 223: AdpFuzzTest.IfDataLastVarRefIsReserved1
+2026-09-22T08:04:32.1080553Z 223/292 Test #223: AdpFuzzTest.IfDataLastVarRefIsReserved1 .................   Passed    0.02 sec
+2026-09-22T08:04:32.1081710Z         Start 224: AdpFuzzTest.FullAdpPacketIs67Bytes
+2026-09-22T08:04:32.1272282Z 224/292 Test #224: AdpFuzzTest.FullAdpPacketIs67Bytes ......................   Passed    0.02 sec
+2026-09-22T08:04:32.1273425Z         Start 225: AdpFuzzTest.MessageTypeAlwaysValid
+2026-09-22T08:04:32.1496185Z 225/292 Test #225: AdpFuzzTest.MessageTypeAlwaysValid ......................   Passed    0.02 sec
+2026-09-22T08:04:32.1497485Z         Start 226: AdpFuzzTest.ValidTimeAlwaysInRange
+2026-09-22T08:04:32.1731107Z 226/292 Test #226: AdpFuzzTest.ValidTimeAlwaysInRange ......................   Passed    0.02 sec
+2026-09-22T08:04:32.1732259Z         Start 227: AdpFuzzTest.ControlDataLengthAlways56
+2026-09-22T08:04:32.1928341Z 227/292 Test #227: AdpFuzzTest.ControlDataLengthAlways56 ...................   Passed    0.02 sec
+2026-09-22T08:04:32.1929332Z         Start 228: AdpFuzzTest.TalkerCapsRespectMask
+2026-09-22T08:04:32.2151263Z 228/292 Test #228: AdpFuzzTest.TalkerCapsRespectMask .......................   Passed    0.02 sec
+2026-09-22T08:04:32.2152378Z         Start 229: AdpFuzzTest.ListenerCapsRespectMask
+2026-09-22T08:04:32.2412228Z 229/292 Test #229: AdpFuzzTest.ListenerCapsRespectMask .....................   Passed    0.03 sec
+2026-09-22T08:04:32.2413589Z         Start 230: AdpFuzzTest.ControllerCapsRespectMask
+2026-09-22T08:04:32.2660719Z 230/292 Test #230: AdpFuzzTest.ControllerCapsRespectMask ...................   Passed    0.02 sec
+2026-09-22T08:04:32.2661894Z         Start 231: AdpFuzzTest.ReservedFieldsAlwaysZero
+2026-09-22T08:04:32.2874754Z 231/292 Test #231: AdpFuzzTest.ReservedFieldsAlwaysZero ....................   Passed    0.02 sec
+2026-09-22T08:04:32.2875825Z         Start 232: AdpFuzzTest.AvailableIndexAlwaysValid
+2026-09-22T08:04:32.3089085Z 232/292 Test #232: AdpFuzzTest.AvailableIndexAlwaysValid ...................   Passed    0.02 sec
+2026-09-22T08:04:32.3089980Z         Start 233: AdpFuzzTest.VarCount
+2026-09-22T08:04:32.3139611Z 233/292 Test #233: AdpFuzzTest.VarCount ....................................   Passed    0.00 sec
+2026-09-22T08:04:32.3140734Z         Start 234: AdpFuzzTest.MessageTypeConstraints
+2026-09-22T08:04:32.3180464Z 234/292 Test #234: AdpFuzzTest.MessageTypeConstraints ......................   Passed    0.00 sec
+2026-09-22T08:04:32.3181537Z         Start 235: AdpFuzzTest.ValidTimeRangeConstraint
+2026-09-22T08:04:32.3219421Z 235/292 Test #235: AdpFuzzTest.ValidTimeRangeConstraint ....................   Passed    0.00 sec
+2026-09-22T08:04:32.3220409Z         Start 236: AdpFuzzTest.ControlDataLengthFixed
+2026-09-22T08:04:32.3258021Z 236/292 Test #236: AdpFuzzTest.ControlDataLengthFixed ......................   Passed    0.00 sec
+2026-09-22T08:04:32.3259037Z         Start 237: AdpFuzzTest.TalkerCapabilitiesMask
+2026-09-22T08:04:32.3296544Z 237/292 Test #237: AdpFuzzTest.TalkerCapabilitiesMask ......................   Passed    0.00 sec
+2026-09-22T08:04:32.3297549Z         Start 238: AdpFuzzTest.ListenerCapabilitiesMask
+2026-09-22T08:04:32.3334654Z 238/292 Test #238: AdpFuzzTest.ListenerCapabilitiesMask ....................   Passed    0.00 sec
+2026-09-22T08:04:32.3335419Z         Start 239: AdpFuzzTest.ControllerCapabilitiesMask
+2026-09-22T08:04:32.3372615Z 239/292 Test #239: AdpFuzzTest.ControllerCapabilitiesMask ..................   Passed    0.00 sec
+2026-09-22T08:04:32.3373572Z         Start 240: AdpFuzzTest.ReservedFieldsAreFixed
+2026-09-22T08:04:32.3410671Z 240/292 Test #240: AdpFuzzTest.ReservedFieldsAreFixed ......................   Passed    0.00 sec
+2026-09-22T08:04:32.3411626Z         Start 241: AdpFuzzTest.InterfaceCount
+2026-09-22T08:04:32.3449639Z 241/292 Test #241: AdpFuzzTest.InterfaceCount ..............................   Passed    0.00 sec
+2026-09-22T08:04:32.3450772Z         Start 242: AdpFuzzTest.IfDataDirection
+2026-09-22T08:04:32.3488629Z 242/292 Test #242: AdpFuzzTest.IfDataDirection .............................   Passed    0.00 sec
+2026-09-22T08:04:32.3489674Z         Start 243: AdpFuzzTest.IfDataHas20VarRefs
+2026-09-22T08:04:32.3527149Z 243/292 Test #243: AdpFuzzTest.IfDataHas20VarRefs ..........................   Passed    0.00 sec
+2026-09-22T08:04:32.3528376Z         Start 244: AdpFuzzTest.IfDataFirstVarRefIsMessageType
+2026-09-22T08:04:32.3565622Z 244/292 Test #244: AdpFuzzTest.IfDataFirstVarRefIsMessageType ..............   Passed    0.00 sec
+2026-09-22T08:04:32.3566670Z         Start 245: AdpFuzzTest.IfDataLastVarRefIsReserved1
+2026-09-22T08:04:32.3606549Z 245/292 Test #245: AdpFuzzTest.IfDataLastVarRefIsReserved1 .................   Passed    0.00 sec
+2026-09-22T08:04:32.3607480Z         Start 246: AdpFuzzTest.FullAdpPacketIs67Bytes
+2026-09-22T08:04:32.3658595Z 246/292 Test #246: AdpFuzzTest.FullAdpPacketIs67Bytes ......................   Passed    0.00 sec
+2026-09-22T08:04:32.3659589Z         Start 247: AdpFuzzTest.MessageTypeAlwaysValid
+2026-09-22T08:04:32.3708800Z 247/292 Test #247: AdpFuzzTest.MessageTypeAlwaysValid ......................   Passed    0.00 sec
+2026-09-22T08:04:32.3709823Z         Start 248: AdpFuzzTest.ValidTimeAlwaysInRange
+2026-09-22T08:04:32.3758988Z 248/292 Test #248: AdpFuzzTest.ValidTimeAlwaysInRange ......................   Passed    0.00 sec
+2026-09-22T08:04:32.3760156Z         Start 249: AdpFuzzTest.ControlDataLengthAlways56
+2026-09-22T08:04:32.3802731Z 249/292 Test #249: AdpFuzzTest.ControlDataLengthAlways56 ...................   Passed    0.00 sec
+2026-09-22T08:04:32.3804117Z         Start 250: AdpFuzzTest.TalkerCapsRespectMask
+2026-09-22T08:04:32.3854565Z 250/292 Test #250: AdpFuzzTest.TalkerCapsRespectMask .......................   Passed    0.01 sec
+2026-09-22T08:04:32.3855802Z         Start 251: AdpFuzzTest.ListenerCapsRespectMask
+2026-09-22T08:04:32.3907852Z 251/292 Test #251: AdpFuzzTest.ListenerCapsRespectMask .....................   Passed    0.01 sec
+2026-09-22T08:04:32.3908871Z         Start 252: AdpFuzzTest.ControllerCapsRespectMask
+2026-09-22T08:04:32.3961272Z 252/292 Test #252: AdpFuzzTest.ControllerCapsRespectMask ...................   Passed    0.01 sec
+2026-09-22T08:04:32.3962380Z         Start 253: AdpFuzzTest.ReservedFieldsAlwaysZero
+2026-09-22T08:04:32.4005663Z 253/292 Test #253: AdpFuzzTest.ReservedFieldsAlwaysZero ....................   Passed    0.00 sec
+2026-09-22T08:04:32.4006843Z         Start 254: AdpFuzzTest.AvailableIndexAlwaysValid
+2026-09-22T08:04:32.4051534Z 254/292 Test #254: AdpFuzzTest.AvailableIndexAlwaysValid ...................   Passed    0.00 sec
+2026-09-22T08:04:32.4052731Z         Start 255: PtpFlags.SyncModelPermitsOnlyTwoStepFlag
+2026-09-22T08:04:32.4213133Z 255/292 Test #255: PtpFlags.SyncModelPermitsOnlyTwoStepFlag ................   Passed    0.02 sec
+2026-09-22T08:04:32.4214249Z         Start 256: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear
+2026-09-22T08:04:32.4373279Z 256/292 Test #256: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear ..........   Passed    0.02 sec
+2026-09-22T08:04:32.4374541Z         Start 257: PtpFlags.PdelayModelsKeepTheirStrictFlags
+2026-09-22T08:04:32.4535831Z 257/292 Test #257: PtpFlags.PdelayModelsKeepTheirStrictFlags ...............   Passed    0.02 sec
+2026-09-22T08:04:32.4536885Z         Start 258: PtpFlags.NoMediaDependentModelPermitsPtpTimescale
+2026-09-22T08:04:32.4701252Z 258/292 Test #258: PtpFlags.NoMediaDependentModelPermitsPtpTimescale .......   Passed    0.02 sec
+2026-09-22T08:04:32.4702678Z         Start 259: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly
+2026-09-22T08:04:32.4958564Z 259/292 Test #259: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly ........   Passed    0.03 sec
+2026-09-22T08:04:32.4960105Z         Start 260: PtpFlags.GeneratedFollowUpFramesCarryNoFlags
+2026-09-22T08:04:32.5242557Z 260/292 Test #260: PtpFlags.GeneratedFollowUpFramesCarryNoFlags ............   Passed    0.03 sec
+2026-09-22T08:04:32.5243784Z         Start 261: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags
+2026-09-22T08:04:32.5687321Z 261/292 Test #261: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags ......   Passed    0.04 sec
+2026-09-22T08:04:32.5688344Z         Start 262: PtpFlags.GeneratedFramesMatchTheirModelsFlags
+2026-09-22T08:04:32.6202747Z 262/292 Test #262: PtpFlags.GeneratedFramesMatchTheirModelsFlags ...........   Passed    0.05 sec
+2026-09-22T08:04:32.6204178Z         Start 263: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim
+2026-09-22T08:04:32.6374925Z 263/292 Test #263: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim .......   Passed    0.02 sec
+2026-09-22T08:04:32.6376361Z         Start 264: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint
+2026-09-22T08:04:32.6541444Z 264/292 Test #264: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint ......   Passed    0.02 sec
+2026-09-22T08:04:32.6542712Z         Start 265: PtpFlags.SyncModelPermitsOnlyTwoStepFlag
+2026-09-22T08:04:32.6992221Z 265/292 Test #265: PtpFlags.SyncModelPermitsOnlyTwoStepFlag ................   Passed    0.04 sec
+2026-09-22T08:04:32.6993201Z         Start 266: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear
+2026-09-22T08:04:32.7430450Z 266/292 Test #266: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear ..........   Passed    0.04 sec
+2026-09-22T08:04:32.7431390Z         Start 267: PtpFlags.PdelayModelsKeepTheirStrictFlags
+2026-09-22T08:04:32.7867841Z 267/292 Test #267: PtpFlags.PdelayModelsKeepTheirStrictFlags ...............   Passed    0.04 sec
+2026-09-22T08:04:32.7869365Z         Start 268: PtpFlags.NoMediaDependentModelPermitsPtpTimescale
+2026-09-22T08:04:32.8310742Z 268/292 Test #268: PtpFlags.NoMediaDependentModelPermitsPtpTimescale .......   Passed    0.04 sec
+2026-09-22T08:04:32.8312167Z         Start 269: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly
+2026-09-22T08:04:32.8956843Z 269/292 Test #269: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly ........   Passed    0.06 sec
+2026-09-22T08:04:32.8958036Z         Start 270: PtpFlags.GeneratedFollowUpFramesCarryNoFlags
+2026-09-22T08:04:32.9646661Z 270/292 Test #270: PtpFlags.GeneratedFollowUpFramesCarryNoFlags ............   Passed    0.07 sec
+2026-09-22T08:04:32.9647709Z         Start 271: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags
+2026-09-22T08:04:33.0560588Z 271/292 Test #271: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags ......   Passed    0.09 sec
+2026-09-22T08:04:33.0561427Z         Start 272: PtpFlags.GeneratedFramesMatchTheirModelsFlags
+2026-09-22T08:04:33.1690753Z 272/292 Test #272: PtpFlags.GeneratedFramesMatchTheirModelsFlags ...........   Passed    0.11 sec
+2026-09-22T08:04:33.1691824Z         Start 273: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim
+2026-09-22T08:04:33.2117841Z 273/292 Test #273: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim .......   Passed    0.04 sec
+2026-09-22T08:04:33.2119183Z         Start 274: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint
+2026-09-22T08:04:33.2553701Z 274/292 Test #274: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint ......   Passed    0.04 sec
+2026-09-22T08:04:33.2555077Z         Start 275: PtpFlags.SyncModelPermitsOnlyTwoStepFlag
+2026-09-22T08:04:33.2685908Z 275/292 Test #275: PtpFlags.SyncModelPermitsOnlyTwoStepFlag ................   Passed    0.01 sec
+2026-09-22T08:04:33.2687202Z         Start 276: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear
+2026-09-22T08:04:33.2811559Z 276/292 Test #276: PtpFlags.FollowUpModelPermitsOnlyAllFlagsClear ..........   Passed    0.01 sec
+2026-09-22T08:04:33.2812739Z         Start 277: PtpFlags.PdelayModelsKeepTheirStrictFlags
+2026-09-22T08:04:33.2934433Z 277/292 Test #277: PtpFlags.PdelayModelsKeepTheirStrictFlags ...............   Passed    0.01 sec
+2026-09-22T08:04:33.2935879Z         Start 278: PtpFlags.NoMediaDependentModelPermitsPtpTimescale
+2026-09-22T08:04:33.3058990Z 278/292 Test #278: PtpFlags.NoMediaDependentModelPermitsPtpTimescale .......   Passed    0.01 sec
+2026-09-22T08:04:33.3059962Z         Start 279: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly
+2026-09-22T08:04:33.3236194Z 279/292 Test #279: PtpFlags.GeneratedSyncFramesCarryTwoStepFlagOnly ........   Passed    0.02 sec
+2026-09-22T08:04:33.3237093Z         Start 280: PtpFlags.GeneratedFollowUpFramesCarryNoFlags
+2026-09-22T08:04:33.3431909Z 280/292 Test #280: PtpFlags.GeneratedFollowUpFramesCarryNoFlags ............   Passed    0.02 sec
+2026-09-22T08:04:33.3432792Z         Start 281: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags
+2026-09-22T08:04:33.3736752Z 281/292 Test #281: PtpFlags.GeneratedPdelayFramesKeepTheirStrictFlags ......   Passed    0.03 sec
+2026-09-22T08:04:33.3738345Z         Start 282: PtpFlags.GeneratedFramesMatchTheirModelsFlags
+2026-09-22T08:04:33.4066615Z 282/292 Test #282: PtpFlags.GeneratedFramesMatchTheirModelsFlags ...........   Passed    0.03 sec
+2026-09-22T08:04:33.4067880Z         Start 283: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim
+2026-09-22T08:04:33.4201552Z 283/292 Test #283: PtpFlags.DecoderRecoversOutOfProfileFlagsVerbatim .......   Passed    0.01 sec
+2026-09-22T08:04:33.4202864Z         Start 284: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint
+2026-09-22T08:04:33.4329167Z 284/292 Test #284: PtpFlags.DecodingDoesNotApplyTheTransmitConstraint ......   Passed    0.01 sec
+2026-09-22T08:04:33.4329985Z         Start 285: corpus_validates
+2026-09-22T08:04:33.4427638Z 285/292 Test #285: corpus_validates ........................................   Passed    0.01 sec
+2026-09-22T08:04:33.4428284Z         Start 286: sanitizer_probe-test.clean
+2026-09-22T08:04:33.4446677Z 286/292 Test #286: sanitizer_probe-test.clean ..............................   Passed    0.00 sec
+2026-09-22T08:04:33.4447950Z         Start 287: sanitizer_probe-test_ASAN.clean
+2026-09-22T08:04:33.4523374Z 287/292 Test #287: sanitizer_probe-test_ASAN.clean .........................   Passed    0.01 sec
+2026-09-22T08:04:33.4524702Z         Start 288: sanitizer_probe-test_UBSAN.clean
+2026-09-22T08:04:33.4547366Z 288/292 Test #288: sanitizer_probe-test_UBSAN.clean ........................   Passed    0.00 sec
+2026-09-22T08:04:33.4548505Z         Start 289: sanitizer_probe-test_ASAN.library-heap-overflow
+2026-09-22T08:04:33.4807146Z 289/292 Test #289: sanitizer_probe-test_ASAN.library-heap-overflow .........   Passed    0.03 sec
+2026-09-22T08:04:33.4808697Z         Start 290: sanitizer_probe-test_ASAN.consumer-heap-overflow
+2026-09-22T08:04:33.5071574Z 290/292 Test #290: sanitizer_probe-test_ASAN.consumer-heap-overflow ........   Passed    0.03 sec
+2026-09-22T08:04:33.5072557Z         Start 291: sanitizer_probe-test_UBSAN.library-signed-overflow
+2026-09-22T08:04:33.5136061Z 291/292 Test #291: sanitizer_probe-test_UBSAN.library-signed-overflow ......   Passed    0.01 sec
+2026-09-22T08:04:33.5137429Z         Start 292: sanitizer_probe-test_UBSAN.consumer-signed-overflow
+2026-09-22T08:04:33.5189547Z 292/292 Test #292: sanitizer_probe-test_UBSAN.consumer-signed-overflow .....   Passed    0.01 sec
+2026-09-22T08:04:33.5204513Z 
+2026-09-22T08:04:33.5204757Z 100% tests passed, 0 tests failed out of 292
+2026-09-22T08:04:33.5205163Z 
+2026-09-22T08:04:33.5205330Z Total Test time (real) =   3.35 sec
+2026-09-22T08:04:33.5341852Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-22T08:04:33.5343449Z Post job cleanup.
+2026-09-22T08:04:33.6198554Z [command]/usr/bin/git version
+2026-09-22T08:04:33.6246478Z git version 2.55.0
+2026-09-22T08:04:33.6286672Z Temporarily overriding HOME='/home/runner/work/_temp/f3865628-7cb8-4e71-b6ca-0cf9c2dc0c83' before making global git config changes
+2026-09-22T08:04:33.6288312Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-22T08:04:33.6293193Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/tsn-gen/tsn-gen
+2026-09-22T08:04:33.6337421Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-22T08:04:33.6379582Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-22T08:04:33.6635035Z Entering 'external/FTXUI'
+2026-09-22T08:04:33.6680883Z Entering 'external/PcapPlusPlus'
+2026-09-22T08:04:33.6728444Z Entering 'external/googletest'
+2026-09-22T08:04:33.6781857Z Entering 'external/mininet'
+2026-09-22T08:04:33.6845126Z Entering 'external/protobuf-c'
+2026-09-22T08:04:33.6885168Z Entering 'external/rapidyaml'
+2026-09-22T08:04:33.6938257Z Entering 'external/rapidyaml/ext/c4core'
+2026-09-22T08:04:33.6985341Z Entering 'external/rapidyaml/ext/c4core/cmake'
+2026-09-22T08:04:33.7035174Z Entering 'external/rapidyaml/ext/c4core/src/c4/ext/debugbreak'
+2026-09-22T08:04:33.7082376Z Entering 'external/rapidyaml/ext/c4core/src/c4/ext/fast_float'
+2026-09-22T08:04:33.7138494Z Entering 'tests/act'
+2026-09-22T08:04:33.7223542Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-22T08:04:33.7264708Z http.https://github.com/.extraheader
+2026-09-22T08:04:33.7294958Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-09-22T08:04:33.7320819Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-22T08:04:33.7563999Z Entering 'external/FTXUI'
+2026-09-22T08:04:33.7607686Z Entering 'external/PcapPlusPlus'
+2026-09-22T08:04:33.7657181Z Entering 'external/googletest'
+2026-09-22T08:04:33.7704256Z Entering 'external/mininet'
+2026-09-22T08:04:33.7751175Z Entering 'external/protobuf-c'
+2026-09-22T08:04:33.7795902Z Entering 'external/rapidyaml'
+2026-09-22T08:04:33.7839388Z Entering 'external/rapidyaml/ext/c4core'
+2026-09-22T08:04:33.7882615Z Entering 'external/rapidyaml/ext/c4core/cmake'
+2026-09-22T08:04:33.7928267Z Entering 'external/rapidyaml/ext/c4core/src/c4/ext/debugbreak'
+2026-09-22T08:04:33.7972579Z Entering 'external/rapidyaml/ext/c4core/src/c4/ext/fast_float'
+2026-09-22T08:04:33.8021426Z Entering 'tests/act'
+2026-09-22T08:04:33.8085739Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-22T08:04:33.8126018Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-22T08:04:33.8345647Z Entering 'external/FTXUI'
+2026-09-22T08:04:33.8364072Z file:/home/runner/work/tsn-gen/tsn-gen/.git/modules/external/FTXUI/config	remote.origin.url
+2026-09-22T08:04:33.8382258Z Entering 'external/PcapPlusPlus'
+2026-09-22T08:04:33.8401891Z file:/home/runner/work/tsn-gen/tsn-gen/.git/modules/external/PcapPlusPlus/config	remote.origin.url
+2026-09-22T08:04:33.8422229Z Entering 'external/googletest'
+2026-09-22T08:04:33.8442264Z file:/home/runner/work/tsn-gen/tsn-gen/.git/modules/external/googletest/config	remote.origin.url
+2026-09-22T08:04:33.8461501Z Entering 'external/mininet'
+2026-09-22T08:04:33.8480007Z file:/home/runner/work/tsn-gen/tsn-gen/.git/modules/external/mininet/config	remote.origin.url
+2026-09-22T08:04:33.8498730Z Entering 'external/protobuf-c'
+2026-09-22T08:04:33.8518126Z file:/home/runner/work/tsn-gen/tsn-gen/.git/modules/external/protobuf-c/config	remote.origin.url
+2026-09-22T08:04:33.8536262Z Entering 'external/rapidyaml'
+2026-09-22T08:04:33.8555258Z file:/home/runner/work/tsn-gen/tsn-gen/.git/modules/external/rapidyaml/config	remote.origin.url
+2026-09-22T08:04:33.8572035Z Entering 'external/rapidyaml/ext/c4core'
+2026-09-22T08:04:33.8591824Z file:/home/runner/work/tsn-gen/tsn-gen/.git/modules/external/rapidyaml/modules/extern/c4core/config	remote.origin.url
+2026-09-22T08:04:33.8609890Z Entering 'external/rapidyaml/ext/c4core/cmake'
+2026-09-22T08:04:33.8629702Z file:/home/runner/work/tsn-gen/tsn-gen/.git/modules/external/rapidyaml/modules/extern/c4core/modules/cmake/config	remote.origin.url
+2026-09-22T08:04:33.8650619Z Entering 'external/rapidyaml/ext/c4core/src/c4/ext/debugbreak'
+2026-09-22T08:04:33.8670925Z file:/home/runner/work/tsn-gen/tsn-gen/.git/modules/external/rapidyaml/modules/extern/c4core/modules/extern/debugbreak/config	remote.origin.url
+2026-09-22T08:04:33.8690251Z Entering 'external/rapidyaml/ext/c4core/src/c4/ext/fast_float'
+2026-09-22T08:04:33.8710399Z file:/home/runner/work/tsn-gen/tsn-gen/.git/modules/external/rapidyaml/modules/extern/c4core/modules/src/c4/ext/fast_float/config	remote.origin.url
+2026-09-22T08:04:33.8733585Z Entering 'tests/act'
+2026-09-22T08:04:33.8752549Z file:/home/runner/work/tsn-gen/tsn-gen/.git/modules/tests/act/config	remote.origin.url
+2026-09-22T08:04:33.8792332Z [command]/usr/bin/git config --file /home/runner/work/tsn-gen/tsn-gen/.git/modules/external/FTXUI/config --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-22T08:04:33.8830902Z [command]/usr/bin/git config --file /home/runner/work/tsn-gen/tsn-gen/.git/modules/external/PcapPlusPlus/config --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-22T08:04:33.8865823Z [command]/usr/bin/git config --file /home/runner/work/tsn-gen/tsn-gen/.git/modules/external/googletest/config --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-22T08:04:33.8901886Z [command]/usr/bin/git config --file /home/runner/work/tsn-gen/tsn-gen/.git/modules/external/mininet/config --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-22T08:04:33.8937247Z [command]/usr/bin/git config --file /home/runner/work/tsn-gen/tsn-gen/.git/modules/external/protobuf-c/config --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-22T08:04:33.8971990Z [command]/usr/bin/git config --file /home/runner/work/tsn-gen/tsn-gen/.git/modules/external/rapidyaml/config --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-22T08:04:33.9013525Z [command]/usr/bin/git config --file /home/runner/work/tsn-gen/tsn-gen/.git/modules/external/rapidyaml/modules/extern/c4core/config --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-22T08:04:33.9045517Z [command]/usr/bin/git config --file /home/runner/work/tsn-gen/tsn-gen/.git/modules/external/rapidyaml/modules/extern/c4core/modules/cmake/config --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-22T08:04:33.9078414Z [command]/usr/bin/git config --file /home/runner/work/tsn-gen/tsn-gen/.git/modules/external/rapidyaml/modules/extern/c4core/modules/extern/debugbreak/config --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-22T08:04:33.9113064Z [command]/usr/bin/git config --file /home/runner/work/tsn-gen/tsn-gen/.git/modules/external/rapidyaml/modules/extern/c4core/modules/src/c4/ext/fast_float/config --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-22T08:04:33.9146911Z [command]/usr/bin/git config --file /home/runner/work/tsn-gen/tsn-gen/.git/modules/tests/act/config --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-22T08:04:33.9318000Z Cleaning up orphan processes
+2026-09-22T08:04:33.9779461Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

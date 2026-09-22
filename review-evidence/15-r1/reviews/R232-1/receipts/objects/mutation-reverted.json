@@ -1,0 +1,44 @@
+[
+  {
+    "object": "tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o",
+    "compile_command": "/usr/bin/c++ -Dsanitizer_probe_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer -std=gnu++17 -fPIC -o CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/sanitizer_probe_lib.cpp",
+    "asan_references": [],
+    "ubsan_references": [],
+    "raw_nm": ""
+  },
+  {
+    "object": "tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o",
+    "compile_command": "/usr/bin/c++ -Dsanitizer_probe_ubsan_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer -std=gnu++17 -fPIC -o CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/sanitizer_probe_lib.cpp",
+    "asan_references": [],
+    "ubsan_references": [],
+    "raw_nm": ""
+  },
+  {
+    "object": "tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o",
+    "compile_command": "/usr/bin/c++ -Dsanitizer_probe_asan_EXPORTS -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer -std=gnu++17 -fPIC -o CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/sanitizer_probe_lib.cpp",
+    "asan_references": [],
+    "ubsan_references": [],
+    "raw_nm": ""
+  },
+  {
+    "object": "tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o",
+    "compile_command": "/usr/bin/c++  -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer -std=gnu++17 -fPIE -o CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/sanitizer_probe_test.cpp",
+    "asan_references": [],
+    "ubsan_references": [],
+    "raw_nm": "                 U _Unwind_Resume\n                 U _ZN15sanitizer_probe10libraryAddEii\n                 U _ZN15sanitizer_probe11libraryReadEPKim\n                 U _ZdaPv\n                 U _Znam\n                 U __cxa_throw_bad_array_new_length\n                 U __gxx_personality_v0\n                 U __stack_chk_fail\n                 U fflush\n                 U fprintf\n                 U printf\n                 U stderr\n                 U stdout\n                 U strcmp\n"
+  },
+  {
+    "object": "tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o",
+    "compile_command": "/usr/bin/c++  -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer -std=gnu++17 -fPIE -o CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/sanitizer_probe_test.cpp",
+    "asan_references": [],
+    "ubsan_references": [],
+    "raw_nm": "                 U _Unwind_Resume\n                 U _ZN15sanitizer_probe10libraryAddEii\n                 U _ZN15sanitizer_probe11libraryReadEPKim\n                 U _ZdaPv\n                 U _Znam\n                 U __cxa_throw_bad_array_new_length\n                 U __gxx_personality_v0\n                 U __stack_chk_fail\n                 U fflush\n                 U fprintf\n                 U printf\n                 U stderr\n                 U stdout\n                 U strcmp\n"
+  },
+  {
+    "object": "tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o",
+    "compile_command": "/usr/bin/c++  -I$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer -std=gnu++17 -fPIE -o CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o -c $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/sanitizer_probe_test.cpp",
+    "asan_references": [],
+    "ubsan_references": [],
+    "raw_nm": "                 U _Unwind_Resume\n                 U _ZN15sanitizer_probe10libraryAddEii\n                 U _ZN15sanitizer_probe11libraryReadEPKim\n                 U _ZdaPv\n                 U _Znam\n                 U __cxa_throw_bad_array_new_length\n                 U __gxx_personality_v0\n                 U __stack_chk_fail\n                 U fflush\n                 U fprintf\n                 U printf\n                 U stderr\n                 U stdout\n                 U strcmp\n"
+  }
+]

@@ -1,0 +1,202 @@
+Start testing: Sep 22 11:22 CEST
+----------------------------------------------------------
+1/7 Testing: sanitizer_probe-test.clean
+1/7 Test: sanitizer_probe-test.clean
+Command: "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer/sanitizer_probe-test" "clean"
+Directory: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer
+"sanitizer_probe-test.clean" start time: Sep 22 11:22 CEST
+Output:
+----------------------------------------------------------
+sanitizer_probe: clean started
+sanitizer_probe: clean completed (value 4)
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"sanitizer_probe-test.clean" end time: Sep 22 11:22 CEST
+"sanitizer_probe-test.clean" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/7 Testing: sanitizer_probe-test_ASAN.clean
+2/7 Test: sanitizer_probe-test_ASAN.clean
+Command: "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer/sanitizer_probe-test_ASAN" "clean"
+Directory: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer
+"sanitizer_probe-test_ASAN.clean" start time: Sep 22 11:22 CEST
+Output:
+----------------------------------------------------------
+sanitizer_probe: clean started
+sanitizer_probe: clean completed (value 4)
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"sanitizer_probe-test_ASAN.clean" end time: Sep 22 11:22 CEST
+"sanitizer_probe-test_ASAN.clean" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/7 Testing: sanitizer_probe-test_UBSAN.clean
+3/7 Test: sanitizer_probe-test_UBSAN.clean
+Command: "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer/sanitizer_probe-test_UBSAN" "clean"
+Directory: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer
+"sanitizer_probe-test_UBSAN.clean" start time: Sep 22 11:22 CEST
+Output:
+----------------------------------------------------------
+sanitizer_probe: clean started
+sanitizer_probe: clean completed (value 4)
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"sanitizer_probe-test_UBSAN.clean" end time: Sep 22 11:22 CEST
+"sanitizer_probe-test_UBSAN.clean" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/7 Testing: sanitizer_probe-test_ASAN.library-heap-overflow
+4/7 Test: sanitizer_probe-test_ASAN.library-heap-overflow
+Command: "/usr/bin/cmake" "-DCHILD=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer/sanitizer_probe-test_ASAN" "-DMODE=library-heap-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=ERROR: AddressSanitizer: heap-buffer-overflow" "-P" "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/check_sanitizer_child.cmake"
+Directory: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer
+"sanitizer_probe-test_ASAN.library-heap-overflow" start time: Sep 22 11:22 CEST
+Output:
+----------------------------------------------------------
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS is unset
+-- child: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer/sanitizer_probe-test_ASAN library-heap-overflow
+-- child exit status: 0
+-- child stdout:
+sanitizer_probe: library-heap-overflow started
+sanitizer_probe: library-heap-overflow completed (value 0)
+
+-- child stderr:
+
+CMake Error at $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+  sanitizer diagnostic control failed:
+
+  exit status 0, expected 1
+
+  no report matching "ERROR: AddressSanitizer: heap-buffer-overflow" on
+  stderr
+
+  the probe continued past its faulting operation
+
+
+
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"sanitizer_probe-test_ASAN.library-heap-overflow" end time: Sep 22 11:22 CEST
+"sanitizer_probe-test_ASAN.library-heap-overflow" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/7 Testing: sanitizer_probe-test_ASAN.consumer-heap-overflow
+5/7 Test: sanitizer_probe-test_ASAN.consumer-heap-overflow
+Command: "/usr/bin/cmake" "-DCHILD=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer/sanitizer_probe-test_ASAN" "-DMODE=consumer-heap-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=ERROR: AddressSanitizer: heap-buffer-overflow" "-P" "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/check_sanitizer_child.cmake"
+Directory: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer
+"sanitizer_probe-test_ASAN.consumer-heap-overflow" start time: Sep 22 11:22 CEST
+Output:
+----------------------------------------------------------
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS is unset
+-- child: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer/sanitizer_probe-test_ASAN consumer-heap-overflow
+-- child exit status: 0
+-- child stdout:
+sanitizer_probe: consumer-heap-overflow started
+sanitizer_probe: consumer-heap-overflow completed (value 0)
+
+-- child stderr:
+
+CMake Error at $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+  sanitizer diagnostic control failed:
+
+  exit status 0, expected 1
+
+  no report matching "ERROR: AddressSanitizer: heap-buffer-overflow" on
+  stderr
+
+  the probe continued past its faulting operation
+
+
+
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"sanitizer_probe-test_ASAN.consumer-heap-overflow" end time: Sep 22 11:22 CEST
+"sanitizer_probe-test_ASAN.consumer-heap-overflow" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/7 Testing: sanitizer_probe-test_UBSAN.library-signed-overflow
+6/7 Test: sanitizer_probe-test_UBSAN.library-signed-overflow
+Command: "/usr/bin/cmake" "-DCHILD=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer/sanitizer_probe-test_UBSAN" "-DMODE=library-signed-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=sanitizer_probe_lib[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow" "-P" "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/check_sanitizer_child.cmake"
+Directory: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer
+"sanitizer_probe-test_UBSAN.library-signed-overflow" start time: Sep 22 11:22 CEST
+Output:
+----------------------------------------------------------
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS=halt_on_error=1
+-- child: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer/sanitizer_probe-test_UBSAN library-signed-overflow
+-- child exit status: 0
+-- child stdout:
+sanitizer_probe: library-signed-overflow started
+sanitizer_probe: library-signed-overflow completed (value -2147483648)
+
+-- child stderr:
+
+CMake Error at $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+  sanitizer diagnostic control failed:
+
+  exit status 0, expected 1
+
+  no report matching "sanitizer_probe_lib[.]cpp:[0-9]+:[0-9]+: runtime error:
+  signed integer overflow" on stderr
+
+  the probe continued past its faulting operation
+
+
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"sanitizer_probe-test_UBSAN.library-signed-overflow" end time: Sep 22 11:22 CEST
+"sanitizer_probe-test_UBSAN.library-signed-overflow" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/7 Testing: sanitizer_probe-test_UBSAN.consumer-signed-overflow
+7/7 Test: sanitizer_probe-test_UBSAN.consumer-signed-overflow
+Command: "/usr/bin/cmake" "-DCHILD=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer/sanitizer_probe-test_UBSAN" "-DMODE=consumer-signed-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=sanitizer_probe_test[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow" "-P" "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/check_sanitizer_child.cmake"
+Directory: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer
+"sanitizer_probe-test_UBSAN.consumer-signed-overflow" start time: Sep 22 11:22 CEST
+Output:
+----------------------------------------------------------
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS=halt_on_error=1
+-- child: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer/sanitizer_probe-test_UBSAN consumer-signed-overflow
+-- child exit status: 0
+-- child stdout:
+sanitizer_probe: consumer-signed-overflow started
+sanitizer_probe: consumer-signed-overflow completed (value -2147483648)
+
+-- child stderr:
+
+CMake Error at $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+  sanitizer diagnostic control failed:
+
+  exit status 0, expected 1
+
+  no report matching "sanitizer_probe_test[.]cpp:[0-9]+:[0-9]+: runtime
+  error: signed integer overflow" on stderr
+
+  the probe continued past its faulting operation
+
+
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"sanitizer_probe-test_UBSAN.consumer-signed-overflow" end time: Sep 22 11:22 CEST
+"sanitizer_probe-test_UBSAN.consumer-signed-overflow" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 22 11:22 CEST

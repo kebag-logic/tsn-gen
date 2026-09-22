@@ -1,0 +1,103 @@
+{
+  "reviewer": "R232",
+  "role": "independent cold external Codex reviewer",
+  "round": "R232-1",
+  "head": "76906b83eb54ac29040fe72fd910d34727188694",
+  "base": "deca300c9eb4863fa13383b45ba6cb6fd0828671",
+  "tree": "a34065c39ea41aeb5daae9ecae3763f632f27484",
+  "verdict": "POSITIVE",
+  "open_minor_major_blocker": [],
+  "lenses": [
+    {
+      "reviewer": "R232",
+      "round": "R232-1",
+      "head": "76906b83eb54ac29040fe72fd910d34727188694",
+      "lens": "Conformance",
+      "status": "CLEAN",
+      "open_minor_major_blocker": [],
+      "optional_suggestions": [
+        "S1"
+      ],
+      "artifacts": [
+        "receipts/diff.patch",
+        "receipts/matrix-summary.json",
+        "receipts/matrix/",
+        "receipts/unchanged-domains.json",
+        "receipts/registration-compare.json",
+        "public/frozen-decision.json"
+      ]
+    },
+    {
+      "reviewer": "R232",
+      "round": "R232-1",
+      "head": "76906b83eb54ac29040fe72fd910d34727188694",
+      "lens": "RTL",
+      "status": "CLEAN",
+      "open_minor_major_blocker": [],
+      "optional_suggestions": [
+        "S1"
+      ],
+      "artifacts": [
+        "receipts/consumer-summary.json",
+        "receipts/matrix/",
+        "receipts/objects/",
+        "receipts/runtime/",
+        "receipts/mutation-private-summary.json",
+        "receipts/mutation-interface-summary.json"
+      ]
+    },
+    {
+      "reviewer": "R232",
+      "round": "R232-1",
+      "head": "76906b83eb54ac29040fe72fd910d34727188694",
+      "lens": "Robustness",
+      "status": "CLEAN",
+      "open_minor_major_blocker": [],
+      "optional_suggestions": [],
+      "artifacts": [
+        "receipts/commands/probe-ctest-empty/",
+        "receipts/commands/probe-ctest-Debug/",
+        "receipts/commands/probe-ctest-Release/",
+        "receipts/commands/probe-ctest-MinSizeRel/",
+        "receipts/commands/probe-ctest-RelWithDebInfo/",
+        "receipts/exits-driver.log",
+        "receipts/mutation-driver.log"
+      ]
+    },
+    {
+      "reviewer": "R232",
+      "round": "R232-1",
+      "head": "76906b83eb54ac29040fe72fd910d34727188694",
+      "lens": "Tests",
+      "status": "CLEAN",
+      "open_minor_major_blocker": [],
+      "optional_suggestions": [],
+      "artifacts": [
+        "receipts/registration-compare.json",
+        "receipts/probe-driver.log",
+        "receipts/mutation-driver.log",
+        "receipts/commands/direct-runner-preserves-ctest-failure/",
+        "public/archive/review-evidence/15-r1/manager/full-native/results.json",
+        "public/workflow-runs.json"
+      ]
+    },
+    {
+      "reviewer": "R232",
+      "round": "R232-1",
+      "head": "76906b83eb54ac29040fe72fd910d34727188694",
+      "lens": "Docs",
+      "status": "CLEAN",
+      "open_minor_major_blocker": [],
+      "optional_suggestions": [
+        "S1"
+      ],
+      "artifacts": [
+        "receipts/diff.patch",
+        "receipts/matrix/",
+        "receipts/consumer-summary.json",
+        "receipts/exits-driver.log",
+        "public/frozen-decision.json"
+      ]
+    }
+  ]
+}

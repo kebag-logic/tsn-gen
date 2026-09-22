@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "git",
+    "diff",
+    "--check",
+    "deca300c9eb4863fa13383b45ba6cb6fd0828671",
+    "76906b83eb54ac29040fe72fd910d34727188694"
+  ],
+  "shell": "rtk proxy git diff --check deca300c9eb4863fa13383b45ba6cb6fd0828671 76906b83eb54ac29040fe72fd910d34727188694",
+  "cwd": "$VALIDATION_STORAGE/reviews/r232-18-r1",
+  "environment": {
+    "unset": [
+      "ASAN_OPTIONS",
+      "UBSAN_OPTIONS"
+    ],
+    "CMAKE_BUILD_PARALLEL_LEVEL": "8"
+  },
+  "exit": 0,
+  "seconds": 0.003
+}

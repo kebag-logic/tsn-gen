@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/object_serializer-test_UBSAN.dir/link.d "CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o" -o object_serializer-test_UBSAN  -Wl,-rpath,"\$ORIGIN/../" -fsanitize=undefined ../libprotocol_parser_ubsan.so ../../lib/libgtest_main.a ../../external/rapidyaml/libryml.a ../../lib/libgtest.a

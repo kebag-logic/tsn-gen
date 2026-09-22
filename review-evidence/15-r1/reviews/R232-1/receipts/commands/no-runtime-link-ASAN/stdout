@@ -1,0 +1,5 @@
+[ 25%] Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o
+[ 50%] Linking CXX shared library libsanitizer_probe_asan.so
+[ 50%] Built target sanitizer_probe_asan
+[ 75%] Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o
+[100%] Linking CXX executable sanitizer_probe-test_ASAN

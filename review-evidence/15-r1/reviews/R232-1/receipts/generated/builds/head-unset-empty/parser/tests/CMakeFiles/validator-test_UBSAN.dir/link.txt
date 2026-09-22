@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/validator-test_UBSAN.dir/link.d "CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o" -o validator-test_UBSAN  -Wl,-rpath,"\$ORIGIN/../" -fsanitize=undefined ../libprotocol_parser_ubsan.so ../../lib/libgtest_main.a ../../external/rapidyaml/libryml.a ../../lib/libgtest.a

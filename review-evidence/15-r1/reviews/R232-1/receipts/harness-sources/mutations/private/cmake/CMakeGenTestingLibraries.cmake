@@ -1,0 +1,45 @@
+# Callers gate on ENABLE_PARSER_TESTS themselves; no guard here — a
+# return() inside a macro would abort the *calling* CMakeLists mid-file.
+macro(generate_test_libs BASENAME INCDIRS SOURCEFILES)
+	set(_SOURCEFILES ${SOURCEFILES} ${ARGN})
+
+	message(STATUS "Generating Multi-library ${COMP_UBSAN_FLAGS}")
+
+	add_library(${BASENAME}_ubsan SHARED
+		${_SOURCEFILES}
+	)
+
+	add_library(${BASENAME}_asan SHARED
+		${_SOURCEFILES}
+	)
+
+	# Only optimisation/debug levels follow the configuration. The sanitizer
+	# flag applies under every build type, including the empty default, and
+	# as a PUBLIC option it also instruments each test TU linking the variant.
+	target_compile_options(${BASENAME}_asan PRIVATE
+		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS}>
+		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS}>
+		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS}>
+		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS}>
+		${COMP_ASAN_FLAGS}
+	)
+
+	target_include_directories(${BASENAME}_asan PUBLIC
+		$<BUILD_INTERFACE:${INCDIRS}>
+		$<INSTALL_INTERFACE:include/${BASENAME}>
+	)
+
+	target_compile_options(${BASENAME}_ubsan PRIVATE
+		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS}>
+		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS}>
+		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS}>
+		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS}>
+		${COMP_UBSAN_FLAGS}
+	)
+
+	target_include_directories(${BASENAME}_ubsan PUBLIC
+		$<BUILD_INTERFACE:${INCDIRS}>
+		$<INSTALL_INTERFACE:include/${BASENAME}>
+	)
+
+endmacro(generate_test_libs)

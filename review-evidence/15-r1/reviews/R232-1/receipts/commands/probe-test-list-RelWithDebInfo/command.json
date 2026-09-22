@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "ctest",
+    "--test-dir",
+    "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-RelWithDebInfo",
+    "--show-only=json-v1"
+  ],
+  "shell": "rtk proxy ctest --test-dir $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-RelWithDebInfo --show-only=json-v1",
+  "cwd": "$VALIDATION_STORAGE/reviews/r232-18-r1",
+  "environment": {
+    "unset": [
+      "ASAN_OPTIONS",
+      "UBSAN_OPTIONS"
+    ],
+    "CMAKE_BUILD_PARALLEL_LEVEL": "8"
+  },
+  "exit": 0,
+  "seconds": 0.013
+}

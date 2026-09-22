@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "cmake",
+    "-DCHILD=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-empty/tests/sanitizer/sanitizer_probe-test_UBSAN",
+    "-DMODE=consumer-signed-overflow",
+    "-DEXPECT_EXIT=1",
+    "-DEXPECT_REPORT=runtime error: signed integer overflow",
+    "-P",
+    "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/head/tests/sanitizer/check_sanitizer_child.cmake"
+  ],
+  "shell": "rtk proxy cmake -DCHILD=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/builds/head-ON-empty/tests/sanitizer/sanitizer_probe-test_UBSAN -DMODE=consumer-signed-overflow -DEXPECT_EXIT=1 '-DEXPECT_REPORT=runtime error: signed integer overflow' -P $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/head/tests/sanitizer/check_sanitizer_child.cmake",
+  "cwd": "$VALIDATION_STORAGE/reviews/r232-18-r1",
+  "environment": {
+    "unset": [
+      "ASAN_OPTIONS",
+      "UBSAN_OPTIONS"
+    ],
+    "CMAKE_BUILD_PARALLEL_LEVEL": "8"
+  },
+  "exit": 1,
+  "seconds": 0.013
+}

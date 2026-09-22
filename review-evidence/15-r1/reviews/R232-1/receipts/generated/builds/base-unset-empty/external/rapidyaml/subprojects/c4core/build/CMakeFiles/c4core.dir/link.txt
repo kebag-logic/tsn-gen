@@ -1,0 +1,2 @@
+/usr/bin/ar qc libc4core.a CMakeFiles/c4core.dir/src/c4/base64.cpp.o CMakeFiles/c4core.dir/src/c4/char_traits.cpp.o CMakeFiles/c4core.dir/src/c4/error.cpp.o CMakeFiles/c4core.dir/src/c4/format.cpp.o CMakeFiles/c4core.dir/src/c4/language.cpp.o CMakeFiles/c4core.dir/src/c4/memory_resource.cpp.o CMakeFiles/c4core.dir/src/c4/memory_util.cpp.o CMakeFiles/c4core.dir/src/c4/utf.cpp.o CMakeFiles/c4core.dir/src/c4/version.cpp.o
+/usr/bin/ranlib libc4core.a

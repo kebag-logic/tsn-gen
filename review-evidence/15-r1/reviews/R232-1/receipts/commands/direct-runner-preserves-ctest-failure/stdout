@@ -1,0 +1,119 @@
+Executing software test suite
+Test location: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build
+Test project $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build
+    Start 1: sanitizer_probe-test.clean
+1/7 Test #1: sanitizer_probe-test.clean ............................   Passed    0.00 sec
+    Start 2: sanitizer_probe-test_ASAN.clean
+2/7 Test #2: sanitizer_probe-test_ASAN.clean .......................   Passed    0.01 sec
+    Start 3: sanitizer_probe-test_UBSAN.clean
+3/7 Test #3: sanitizer_probe-test_UBSAN.clean ......................   Passed    0.00 sec
+    Start 4: sanitizer_probe-test_ASAN.library-heap-overflow
+4/7 Test #4: sanitizer_probe-test_ASAN.library-heap-overflow .......***Failed    0.02 sec
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS is unset
+-- child: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer/sanitizer_probe-test_ASAN library-heap-overflow
+-- child exit status: 0
+-- child stdout:
+sanitizer_probe: library-heap-overflow started
+sanitizer_probe: library-heap-overflow completed (value 0)
+
+-- child stderr:
+
+CMake Error at $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+  sanitizer diagnostic control failed:
+
+  exit status 0, expected 1
+
+  no report matching "ERROR: AddressSanitizer: heap-buffer-overflow" on
+  stderr
+
+  the probe continued past its faulting operation
+
+
+
+
+    Start 5: sanitizer_probe-test_ASAN.consumer-heap-overflow
+5/7 Test #5: sanitizer_probe-test_ASAN.consumer-heap-overflow ......***Failed    0.02 sec
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS is unset
+-- child: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer/sanitizer_probe-test_ASAN consumer-heap-overflow
+-- child exit status: 0
+-- child stdout:
+sanitizer_probe: consumer-heap-overflow started
+sanitizer_probe: consumer-heap-overflow completed (value 0)
+
+-- child stderr:
+
+CMake Error at $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+  sanitizer diagnostic control failed:
+
+  exit status 0, expected 1
+
+  no report matching "ERROR: AddressSanitizer: heap-buffer-overflow" on
+  stderr
+
+  the probe continued past its faulting operation
+
+
+
+
+    Start 6: sanitizer_probe-test_UBSAN.library-signed-overflow
+6/7 Test #6: sanitizer_probe-test_UBSAN.library-signed-overflow ....***Failed    0.01 sec
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS=halt_on_error=1
+-- child: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer/sanitizer_probe-test_UBSAN library-signed-overflow
+-- child exit status: 0
+-- child stdout:
+sanitizer_probe: library-signed-overflow started
+sanitizer_probe: library-signed-overflow completed (value -2147483648)
+
+-- child stderr:
+
+CMake Error at $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+  sanitizer diagnostic control failed:
+
+  exit status 0, expected 1
+
+  no report matching "sanitizer_probe_lib[.]cpp:[0-9]+:[0-9]+: runtime error:
+  signed integer overflow" on stderr
+
+  the probe continued past its faulting operation
+
+
+
+
+    Start 7: sanitizer_probe-test_UBSAN.consumer-signed-overflow
+7/7 Test #7: sanitizer_probe-test_UBSAN.consumer-signed-overflow ...***Failed    0.01 sec
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS=halt_on_error=1
+-- child: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build/tests/sanitizer/sanitizer_probe-test_UBSAN consumer-signed-overflow
+-- child exit status: 0
+-- child stdout:
+sanitizer_probe: consumer-signed-overflow started
+sanitizer_probe: consumer-signed-overflow completed (value -2147483648)
+
+-- child stderr:
+
+CMake Error at $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+  sanitizer diagnostic control failed:
+
+  exit status 0, expected 1
+
+  no report matching "sanitizer_probe_test[.]cpp:[0-9]+:[0-9]+: runtime
+  error: signed integer overflow" on stderr
+
+  the probe continued past its faulting operation
+
+
+
+
+
+43% tests passed, 4 tests failed out of 7
+
+Total Test time (real) =   0.08 sec
+
+The following tests FAILED:
+	  4 - sanitizer_probe-test_ASAN.library-heap-overflow (Failed)
+	  5 - sanitizer_probe-test_ASAN.consumer-heap-overflow (Failed)
+	  6 - sanitizer_probe-test_UBSAN.library-signed-overflow (Failed)
+	  7 - sanitizer_probe-test_UBSAN.consumer-signed-overflow (Failed)

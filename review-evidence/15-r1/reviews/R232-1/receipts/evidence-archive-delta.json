@@ -1,0 +1,15 @@
+{
+  "old_archive": "9c9917e0148376a086dd8587e0a02e4080c79584",
+  "new_archive": "0be5bf0dc34bd7924b4227c1c2a2602849db4c52",
+  "changed_existing_paths": [
+    "review-evidence/15-r1/MANIFEST.json"
+  ],
+  "added_paths": [
+    "review-evidence/15-r1/manager/hosted-snapshot.json",
+    "review-evidence/15-r1/manager/premerge-history/01.log",
+    "review-evidence/15-r1/manager/premerge-history/02.log",
+    "review-evidence/15-r1/manager/premerge-history/complete.json",
+    "review-evidence/15-r1/manager/premerge-history/results.json"
+  ],
+  "verified_blobs": 3106
+}

@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/object_serializer-test.dir/link.d "CMakeFiles/object_serializer-test.dir/object_serializer_test.cpp.o" -o object_serializer-test  -Wl,-rpath,"\$ORIGIN/../" ../libprotocol_parser.so.0.1.0 ../../lib/libgtest_main.a ../../external/rapidyaml/libryml.a ../../lib/libgtest.a

@@ -1,0 +1,20 @@
+--- $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/head/cmake/CMakeGenTestingLibraries.cmake	2026-09-22 09:21:04.000000000 +0200
++++ $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/interface/cmake/CMakeGenTestingLibraries.cmake	2026-09-22 11:22:06.162599353 +0200
+@@ -16,7 +16,7 @@
+ 	# Only optimisation/debug levels follow the configuration. The sanitizer
+ 	# flag applies under every build type, including the empty default, and
+ 	# as a PUBLIC option it also instruments each test TU linking the variant.
+-	target_compile_options(${BASENAME}_asan PUBLIC
++	target_compile_options(${BASENAME}_asan INTERFACE
+ 		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS}>
+ 		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS}>
+ 		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS}>
+@@ -29,7 +29,7 @@
+ 		$<INSTALL_INTERFACE:include/${BASENAME}>
+ 	)
+ 
+-	target_compile_options(${BASENAME}_ubsan PUBLIC
++	target_compile_options(${BASENAME}_ubsan INTERFACE
+ 		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS}>
+ 		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS}>
+ 		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS}>

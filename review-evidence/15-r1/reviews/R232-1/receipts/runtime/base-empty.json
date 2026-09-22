@@ -1,0 +1,294 @@
+[
+  {
+    "file": "parser/libprotocol_parser_asan.so",
+    "needed": [
+      "libryml.so.0.8.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0xa8d50 contains 30 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000000e (SONAME)             Library soname: [libprotocol_parser_asan.so]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../external/rapidyaml]\n 0x000000000000000c (INIT)               0x3c000\n 0x000000000000000d (FINI)               0x97a4c\n 0x0000000000000019 (INIT_ARRAY)         0xa99c8\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0xa99d8\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x2d0\n 0x0000000000000005 (STRTAB)             0xc720\n 0x0000000000000006 (SYMTAB)             0x2e80\n 0x000000000000000a (STRSZ)              158023 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000003 (PLTGOT)             0xa9fe8\n 0x0000000000000002 (PLTRELSZ)           29544 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0x34920\n 0x0000000000000007 (RELA)               0x33e70\n 0x0000000000000008 (RELASZ)             2736 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffe (VERNEED)            0x33d20\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0x33068\n 0x000000006ffffff9 (RELACOUNT)          63\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "parser/libprotocol_parser_ubsan.so",
+    "needed": [
+      "libryml.so.0.8.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0xa8d50 contains 30 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000000e (SONAME)             Library soname: [libprotocol_parser_ubsan.so]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../external/rapidyaml]\n 0x000000000000000c (INIT)               0x3c000\n 0x000000000000000d (FINI)               0x97a4c\n 0x0000000000000019 (INIT_ARRAY)         0xa99c8\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0xa99d8\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x2d0\n 0x0000000000000005 (STRTAB)             0xc720\n 0x0000000000000006 (SYMTAB)             0x2e80\n 0x000000000000000a (STRSZ)              158024 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000003 (PLTGOT)             0xa9fe8\n 0x0000000000000002 (PLTRELSZ)           29544 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0x34920\n 0x0000000000000007 (RELA)               0x33e70\n 0x0000000000000008 (RELASZ)             2736 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffe (VERNEED)            0x33d20\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0x33068\n 0x000000006ffffff9 (RELACOUNT)          63\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "parser/tests/logic_registry-test_ASAN",
+    "needed": [
+      "libasan.so.8",
+      "libprotocol_parser_asan.so",
+      "libgtest_main.so.1.16.0",
+      "libryml.so.0.8.0",
+      "libgtest.so.1.16.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x1cd28 contains 37 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libasan.so.8]\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_asan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest_main.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../:$ORIGIN/../../lib:$ORIGIN/../../external/rapidyaml]\n 0x000000000000000c (INIT)               0xb000\n 0x000000000000000d (FINI)               0x15554\n 0x0000000000000020 (PREINIT_ARRAY)      0x1d750\n 0x0000000000000021 (PREINIT_ARRAYSZ)    8 (bytes)\n 0x0000000000000019 (INIT_ARRAY)         0x1d758\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x1d768\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3c8\n 0x0000000000000005 (STRTAB)             0x2f30\n 0x0000000000000006 (SYMTAB)             0xda0\n 0x000000000000000a (STRSZ)              24838 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x1dfe8\n 0x0000000000000002 (PLTRELSZ)           984 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0xa440\n 0x0000000000000007 (RELA)               0x93d8\n 0x0000000000000008 (RELASZ)             4200 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffb (FLAGS_1)            Flags: PIE\n 0x000000006ffffffe (VERNEED)            0x9308\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0x9036\n 0x000000006ffffff9 (RELACOUNT)          121\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "parser/tests/logic_registry-test_UBSAN",
+    "needed": [
+      "libprotocol_parser_ubsan.so",
+      "libgtest_main.so.1.16.0",
+      "libryml.so.0.8.0",
+      "libgtest.so.1.16.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libubsan.so.1",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x1cd48 contains 35 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_ubsan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest_main.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libubsan.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../:$ORIGIN/../../lib:$ORIGIN/../../external/rapidyaml]\n 0x000000000000000c (INIT)               0xb000\n 0x000000000000000d (FINI)               0x15554\n 0x0000000000000019 (INIT_ARRAY)         0x1d778\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x1d788\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3c8\n 0x0000000000000005 (STRTAB)             0x2ed0\n 0x0000000000000006 (SYMTAB)             0xda0\n 0x000000000000000a (STRSZ)              24774 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x1dfe8\n 0x0000000000000002 (PLTRELSZ)           984 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0xa3a0\n 0x0000000000000007 (RELA)               0x9350\n 0x0000000000000008 (RELASZ)             4176 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffb (FLAGS_1)            Flags: PIE\n 0x000000006ffffffe (VERNEED)            0x9260\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0x8f96\n 0x000000006ffffff9 (RELACOUNT)          121\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "parser/tests/object_serializer-test_ASAN",
+    "needed": [
+      "libasan.so.8",
+      "libprotocol_parser_asan.so",
+      "libgtest_main.so.1.16.0",
+      "libryml.so.0.8.0",
+      "libgtest.so.1.16.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x22d20 contains 37 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libasan.so.8]\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_asan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest_main.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../:$ORIGIN/../../lib:$ORIGIN/../../external/rapidyaml]\n 0x000000000000000c (INIT)               0xd000\n 0x000000000000000d (FINI)               0x1a9dc\n 0x0000000000000020 (PREINIT_ARRAY)      0x23620\n 0x0000000000000021 (PREINIT_ARRAYSZ)    8 (bytes)\n 0x0000000000000019 (INIT_ARRAY)         0x23628\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x23638\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3c8\n 0x0000000000000005 (STRTAB)             0x32c8\n 0x0000000000000006 (SYMTAB)             0xe08\n 0x000000000000000a (STRSZ)              32529 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x23fe8\n 0x0000000000000002 (PLTRELSZ)           1152 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0xc938\n 0x0000000000000007 (RELA)               0xb5d0\n 0x0000000000000008 (RELASZ)             4968 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffb (FLAGS_1)            Flags: PIE\n 0x000000006ffffffe (VERNEED)            0xb4f0\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0xb1da\n 0x000000006ffffff9 (RELACOUNT)          141\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "parser/tests/object_serializer-test_UBSAN",
+    "needed": [
+      "libprotocol_parser_ubsan.so",
+      "libgtest_main.so.1.16.0",
+      "libryml.so.0.8.0",
+      "libgtest.so.1.16.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libubsan.so.1",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x22d40 contains 35 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_ubsan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest_main.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libubsan.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../:$ORIGIN/../../lib:$ORIGIN/../../external/rapidyaml]\n 0x000000000000000c (INIT)               0xd000\n 0x000000000000000d (FINI)               0x1a9dc\n 0x0000000000000019 (INIT_ARRAY)         0x23648\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x23658\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3c8\n 0x0000000000000005 (STRTAB)             0x3268\n 0x0000000000000006 (SYMTAB)             0xe08\n 0x000000000000000a (STRSZ)              32465 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x23fe8\n 0x0000000000000002 (PLTRELSZ)           1152 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0xc898\n 0x0000000000000007 (RELA)               0xb548\n 0x0000000000000008 (RELASZ)             4944 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffb (FLAGS_1)            Flags: PIE\n 0x000000006ffffffe (VERNEED)            0xb448\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0xb13a\n 0x000000006ffffff9 (RELACOUNT)          141\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "parser/tests/protocol_parser-test_ASAN",
+    "needed": [
+      "libasan.so.8",
+      "libprotocol_parser_asan.so",
+      "libgtest_main.so.1.16.0",
+      "libryml.so.0.8.0",
+      "libgtest.so.1.16.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x18d20 contains 37 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libasan.so.8]\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_asan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest_main.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../:$ORIGIN/../../lib:$ORIGIN/../../external/rapidyaml]\n 0x000000000000000c (INIT)               0xb000\n 0x000000000000000d (FINI)               0x1293c\n 0x0000000000000020 (PREINIT_ARRAY)      0x18750\n 0x0000000000000021 (PREINIT_ARRAYSZ)    8 (bytes)\n 0x0000000000000019 (INIT_ARRAY)         0x18758\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x18768\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3c8\n 0x0000000000000005 (STRTAB)             0x2c70\n 0x0000000000000006 (SYMTAB)             0xd50\n 0x000000000000000a (STRSZ)              26844 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x18fe8\n 0x0000000000000002 (PLTRELSZ)           816 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0xa8f0\n 0x0000000000000007 (RELA)               0x98b8\n 0x0000000000000008 (RELASZ)             4152 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffb (FLAGS_1)            Flags: PIE\n 0x000000006ffffffe (VERNEED)            0x97e8\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0x954c\n 0x000000006ffffff9 (RELACOUNT)          117\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "parser/tests/protocol_parser-test_UBSAN",
+    "needed": [
+      "libprotocol_parser_ubsan.so",
+      "libgtest_main.so.1.16.0",
+      "libryml.so.0.8.0",
+      "libgtest.so.1.16.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libubsan.so.1",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x18d40 contains 35 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_ubsan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest_main.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libubsan.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../:$ORIGIN/../../lib:$ORIGIN/../../external/rapidyaml]\n 0x000000000000000c (INIT)               0xb000\n 0x000000000000000d (FINI)               0x1293c\n 0x0000000000000019 (INIT_ARRAY)         0x18778\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x18788\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3c8\n 0x0000000000000005 (STRTAB)             0x2c10\n 0x0000000000000006 (SYMTAB)             0xd50\n 0x000000000000000a (STRSZ)              26780 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x18fe8\n 0x0000000000000002 (PLTRELSZ)           816 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0xa850\n 0x0000000000000007 (RELA)               0x9830\n 0x0000000000000008 (RELASZ)             4128 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffb (FLAGS_1)            Flags: PIE\n 0x000000006ffffffe (VERNEED)            0x9740\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0x94ac\n 0x000000006ffffff9 (RELACOUNT)          117\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "parser/tests/stack_builder-test_ASAN",
+    "needed": [
+      "libasan.so.8",
+      "libprotocol_parser_asan.so",
+      "libgtest_main.so.1.16.0",
+      "libryml.so.0.8.0",
+      "libgtest.so.1.16.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x27d28 contains 37 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libasan.so.8]\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_asan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest_main.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../:$ORIGIN/../../lib:$ORIGIN/../../external/rapidyaml]\n 0x000000000000000c (INIT)               0xf000\n 0x000000000000000d (FINI)               0x1e000\n 0x0000000000000020 (PREINIT_ARRAY)      0x28720\n 0x0000000000000021 (PREINIT_ARRAYSZ)    8 (bytes)\n 0x0000000000000019 (INIT_ARRAY)         0x28728\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x28738\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3c8\n 0x0000000000000005 (STRTAB)             0x3d50\n 0x0000000000000006 (SYMTAB)             0x1068\n 0x000000000000000a (STRSZ)              37741 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x28fe8\n 0x0000000000000002 (PLTRELSZ)           1128 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0xe630\n 0x0000000000000007 (RELA)               0xd550\n 0x0000000000000008 (RELASZ)             4320 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffb (FLAGS_1)            Flags: PIE\n 0x000000006ffffffe (VERNEED)            0xd480\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0xd0be\n 0x000000006ffffff9 (RELACOUNT)          124\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "parser/tests/stack_builder-test_UBSAN",
+    "needed": [
+      "libprotocol_parser_ubsan.so",
+      "libgtest_main.so.1.16.0",
+      "libryml.so.0.8.0",
+      "libgtest.so.1.16.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libubsan.so.1",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x27d48 contains 35 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_ubsan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest_main.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libubsan.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../:$ORIGIN/../../lib:$ORIGIN/../../external/rapidyaml]\n 0x000000000000000c (INIT)               0xf000\n 0x000000000000000d (FINI)               0x1e000\n 0x0000000000000019 (INIT_ARRAY)         0x28748\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x28758\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3c8\n 0x0000000000000005 (STRTAB)             0x3cf0\n 0x0000000000000006 (SYMTAB)             0x1068\n 0x000000000000000a (STRSZ)              37677 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x28fe8\n 0x0000000000000002 (PLTRELSZ)           1128 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0xe590\n 0x0000000000000007 (RELA)               0xd4c8\n 0x0000000000000008 (RELASZ)             4296 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffb (FLAGS_1)            Flags: PIE\n 0x000000006ffffffe (VERNEED)            0xd3d8\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0xd01e\n 0x000000006ffffff9 (RELACOUNT)          124\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "parser/tests/validator-test_ASAN",
+    "needed": [
+      "libasan.so.8",
+      "libprotocol_parser_asan.so",
+      "libgtest_main.so.1.16.0",
+      "libryml.so.0.8.0",
+      "libgtest.so.1.16.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x14d28 contains 37 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libasan.so.8]\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_asan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest_main.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../:$ORIGIN/../../lib:$ORIGIN/../../external/rapidyaml]\n 0x000000000000000c (INIT)               0x8000\n 0x000000000000000d (FINI)               0xf458\n 0x0000000000000020 (PREINIT_ARRAY)      0x14810\n 0x0000000000000021 (PREINIT_ARRAYSZ)    8 (bytes)\n 0x0000000000000019 (INIT_ARRAY)         0x14818\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x14828\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3c8\n 0x0000000000000005 (STRTAB)             0x20b8\n 0x0000000000000006 (SYMTAB)             0x960\n 0x000000000000000a (STRSZ)              17823 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x14fe8\n 0x0000000000000002 (PLTRELSZ)           960 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0x7778\n 0x0000000000000007 (RELA)               0x6920\n 0x0000000000000008 (RELASZ)             3672 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffb (FLAGS_1)            Flags: PIE\n 0x000000006ffffffe (VERNEED)            0x6850\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0x6658\n 0x000000006ffffff9 (RELACOUNT)          102\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "parser/tests/validator-test_UBSAN",
+    "needed": [
+      "libprotocol_parser_ubsan.so",
+      "libgtest_main.so.1.16.0",
+      "libryml.so.0.8.0",
+      "libgtest.so.1.16.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libubsan.so.1",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x14d48 contains 35 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_ubsan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest_main.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libubsan.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../:$ORIGIN/../../lib:$ORIGIN/../../external/rapidyaml]\n 0x000000000000000c (INIT)               0x8000\n 0x000000000000000d (FINI)               0xf458\n 0x0000000000000019 (INIT_ARRAY)         0x14838\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x14848\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3c8\n 0x0000000000000005 (STRTAB)             0x2058\n 0x0000000000000006 (SYMTAB)             0x960\n 0x000000000000000a (STRSZ)              17759 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x14fe8\n 0x0000000000000002 (PLTRELSZ)           960 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0x76d8\n 0x0000000000000007 (RELA)               0x6898\n 0x0000000000000008 (RELASZ)             3648 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffb (FLAGS_1)            Flags: PIE\n 0x000000006ffffffe (VERNEED)            0x67a8\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0x65b8\n 0x000000006ffffff9 (RELACOUNT)          102\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "traffic-gen/libtraffic_gen_asan.so",
+    "needed": [
+      "libprotocol_parser_asan.so",
+      "libryml.so.0.8.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x46d40 contains 31 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_asan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000000e (SONAME)             Library soname: [libtraffic_gen_asan.so]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../parser:$ORIGIN/../external/rapidyaml]\n 0x000000000000000c (INIT)               0x23000\n 0x000000000000000d (FINI)               0x3a698\n 0x0000000000000019 (INIT_ARRAY)         0x46910\n 0x000000000000001b (INIT_ARRAYSZ)       8 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x46918\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x2d0\n 0x0000000000000005 (STRTAB)             0x7e98\n 0x0000000000000006 (SYMTAB)             0x1e20\n 0x000000000000000a (STRSZ)              86342 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000003 (PLTGOT)             0x46fe8\n 0x0000000000000002 (PLTRELSZ)           18120 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0x1e4a0\n 0x0000000000000007 (RELA)               0x1d918\n 0x0000000000000008 (RELASZ)             2952 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffe (VERNEED)            0x1d7e8\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0x1cfde\n 0x000000006ffffff9 (RELACOUNT)          42\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "traffic-gen/libtraffic_gen_ubsan.so",
+    "needed": [
+      "libprotocol_parser_ubsan.so",
+      "libryml.so.0.8.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x46d40 contains 31 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_ubsan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000000e (SONAME)             Library soname: [libtraffic_gen_ubsan.so]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../parser:$ORIGIN/../external/rapidyaml]\n 0x000000000000000c (INIT)               0x23000\n 0x000000000000000d (FINI)               0x3a698\n 0x0000000000000019 (INIT_ARRAY)         0x46910\n 0x000000000000001b (INIT_ARRAYSZ)       8 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x46918\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x2d0\n 0x0000000000000005 (STRTAB)             0x7e98\n 0x0000000000000006 (SYMTAB)             0x1e20\n 0x000000000000000a (STRSZ)              86344 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000003 (PLTGOT)             0x46fe8\n 0x0000000000000002 (PLTRELSZ)           18120 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0x1e4a8\n 0x0000000000000007 (RELA)               0x1d920\n 0x0000000000000008 (RELASZ)             2952 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffe (VERNEED)            0x1d7f0\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0x1cfe0\n 0x000000006ffffff9 (RELACOUNT)          42\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "traffic-gen/tests/adp_fuzz-test_ASAN",
+    "needed": [
+      "libasan.so.8",
+      "libtraffic_gen_asan.so",
+      "libgtest_main.so.1.16.0",
+      "libprotocol_parser_asan.so",
+      "libryml.so.0.8.0",
+      "libgtest.so.1.16.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x2cd18 contains 38 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libasan.so.8]\n 0x0000000000000001 (NEEDED)             Shared library: [libtraffic_gen_asan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest_main.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_asan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../:$ORIGIN/../../lib:$ORIGIN/../../parser:$ORIGIN/../../external/rapidyaml]\n 0x000000000000000c (INIT)               0xf000\n 0x000000000000000d (FINI)               0x21314\n 0x0000000000000020 (PREINIT_ARRAY)      0x2cf58\n 0x0000000000000021 (PREINIT_ARRAYSZ)    8 (bytes)\n 0x0000000000000019 (INIT_ARRAY)         0x2cf60\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x2cf70\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3c8\n 0x0000000000000005 (STRTAB)             0x3840\n 0x0000000000000006 (SYMTAB)             0xed0\n 0x000000000000000a (STRSZ)              34638 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x2dfe8\n 0x0000000000000002 (PLTRELSZ)           1176 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0xe950\n 0x0000000000000007 (RELA)               0xc3e8\n 0x0000000000000008 (RELASZ)             9576 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffb (FLAGS_1)            Flags: PIE\n 0x000000006ffffffe (VERNEED)            0xc308\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0xbf8e\n 0x000000006ffffff9 (RELACOUNT)          318\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "traffic-gen/tests/adp_fuzz-test_UBSAN",
+    "needed": [
+      "libtraffic_gen_ubsan.so",
+      "libgtest_main.so.1.16.0",
+      "libprotocol_parser_ubsan.so",
+      "libryml.so.0.8.0",
+      "libgtest.so.1.16.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libubsan.so.1",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x2cd38 contains 36 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libtraffic_gen_ubsan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest_main.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_ubsan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libubsan.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../:$ORIGIN/../../lib:$ORIGIN/../../parser:$ORIGIN/../../external/rapidyaml]\n 0x000000000000000c (INIT)               0xf000\n 0x000000000000000d (FINI)               0x21314\n 0x0000000000000019 (INIT_ARRAY)         0x2cf80\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x2cf90\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3c8\n 0x0000000000000005 (STRTAB)             0x37e0\n 0x0000000000000006 (SYMTAB)             0xed0\n 0x000000000000000a (STRSZ)              34575 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x2dfe8\n 0x0000000000000002 (PLTRELSZ)           1176 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0xe8b0\n 0x0000000000000007 (RELA)               0xc360\n 0x0000000000000008 (RELASZ)             9552 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffb (FLAGS_1)            Flags: PIE\n 0x000000006ffffffe (VERNEED)            0xc260\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0xbef0\n 0x000000006ffffff9 (RELACOUNT)          318\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "traffic-gen/tests/ptp_flags-test_ASAN",
+    "needed": [
+      "libasan.so.8",
+      "libtraffic_gen_asan.so",
+      "libgtest_main.so.1.16.0",
+      "libprotocol_parser_asan.so",
+      "libryml.so.0.8.0",
+      "libgtest.so.1.16.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x24d10 contains 38 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libasan.so.8]\n 0x0000000000000001 (NEEDED)             Shared library: [libtraffic_gen_asan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest_main.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_asan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../:$ORIGIN/../../lib:$ORIGIN/../../parser:$ORIGIN/../../external/rapidyaml]\n 0x000000000000000c (INIT)               0xe000\n 0x000000000000000d (FINI)               0x1c0e4\n 0x0000000000000020 (PREINIT_ARRAY)      0x255c0\n 0x0000000000000021 (PREINIT_ARRAYSZ)    8 (bytes)\n 0x0000000000000019 (INIT_ARRAY)         0x255c8\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x255d8\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3c8\n 0x0000000000000005 (STRTAB)             0x3748\n 0x0000000000000006 (SYMTAB)             0xeb0\n 0x000000000000000a (STRSZ)              33502 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x25fe8\n 0x0000000000000002 (PLTRELSZ)           1176 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0xd1c0\n 0x0000000000000007 (RELA)               0xbe58\n 0x0000000000000008 (RELASZ)             4968 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffb (FLAGS_1)            Flags: PIE\n 0x000000006ffffffe (VERNEED)            0xbd88\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0xba26\n 0x000000006ffffff9 (RELACOUNT)          162\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "traffic-gen/tests/ptp_flags-test_UBSAN",
+    "needed": [
+      "libtraffic_gen_ubsan.so",
+      "libgtest_main.so.1.16.0",
+      "libprotocol_parser_ubsan.so",
+      "libryml.so.0.8.0",
+      "libgtest.so.1.16.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libubsan.so.1",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x24d30 contains 36 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libtraffic_gen_ubsan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest_main.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_ubsan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libubsan.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../:$ORIGIN/../../lib:$ORIGIN/../../parser:$ORIGIN/../../external/rapidyaml]\n 0x000000000000000c (INIT)               0xe000\n 0x000000000000000d (FINI)               0x1c0e4\n 0x0000000000000019 (INIT_ARRAY)         0x255e8\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x255f8\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3c8\n 0x0000000000000005 (STRTAB)             0x36e8\n 0x0000000000000006 (SYMTAB)             0xeb0\n 0x000000000000000a (STRSZ)              33439 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x25fe8\n 0x0000000000000002 (PLTRELSZ)           1176 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0xd128\n 0x0000000000000007 (RELA)               0xbdd8\n 0x0000000000000008 (RELASZ)             4944 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffb (FLAGS_1)            Flags: PIE\n 0x000000006ffffffe (VERNEED)            0xbce8\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0xb988\n 0x000000006ffffff9 (RELACOUNT)          162\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "traffic-gen/tests/traffic_gen-test_ASAN",
+    "needed": [
+      "libasan.so.8",
+      "libtraffic_gen_asan.so",
+      "libgtest_main.so.1.16.0",
+      "libprotocol_parser_asan.so",
+      "libryml.so.0.8.0",
+      "libgtest.so.1.16.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x2cd18 contains 38 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libasan.so.8]\n 0x0000000000000001 (NEEDED)             Shared library: [libtraffic_gen_asan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest_main.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_asan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../:$ORIGIN/../../lib:$ORIGIN/../../parser:$ORIGIN/../../external/rapidyaml]\n 0x000000000000000c (INIT)               0x11000\n 0x000000000000000d (FINI)               0x21f18\n 0x0000000000000020 (PREINIT_ARRAY)      0x2c220\n 0x0000000000000021 (PREINIT_ARRAYSZ)    8 (bytes)\n 0x0000000000000019 (INIT_ARRAY)         0x2c228\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x2c238\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3c8\n 0x0000000000000005 (STRTAB)             0x40c0\n 0x0000000000000006 (SYMTAB)             0x10c0\n 0x000000000000000a (STRSZ)              39351 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x2cfe8\n 0x0000000000000002 (PLTRELSZ)           1416 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0xfd10\n 0x0000000000000007 (RELA)               0xdf58\n 0x0000000000000008 (RELASZ)             7608 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffb (FLAGS_1)            Flags: PIE\n 0x000000006ffffffe (VERNEED)            0xde78\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0xda78\n 0x000000006ffffff9 (RELACOUNT)          243\n 0x0000000000000000 (NULL)               0x0\n"
+  },
+  {
+    "file": "traffic-gen/tests/traffic_gen-test_UBSAN",
+    "needed": [
+      "libtraffic_gen_ubsan.so",
+      "libgtest_main.so.1.16.0",
+      "libprotocol_parser_ubsan.so",
+      "libryml.so.0.8.0",
+      "libgtest.so.1.16.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libubsan.so.1",
+      "libgcc_s.so.1",
+      "libc.so.6"
+    ],
+    "raw_readelf": "\nDynamic section at offset 0x2cd38 contains 36 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libtraffic_gen_ubsan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest_main.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libprotocol_parser_ubsan.so]\n 0x0000000000000001 (NEEDED)             Shared library: [libryml.so.0.8.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgtest.so.1.16.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [libubsan.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [$ORIGIN/../:$ORIGIN/../../lib:$ORIGIN/../../parser:$ORIGIN/../../external/rapidyaml]\n 0x000000000000000c (INIT)               0x11000\n 0x000000000000000d (FINI)               0x21f18\n 0x0000000000000019 (INIT_ARRAY)         0x2c248\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x2c258\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3c8\n 0x0000000000000005 (STRTAB)             0x4060\n 0x0000000000000006 (SYMTAB)             0x10c0\n 0x000000000000000a (STRSZ)              39288 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x2cfe8\n 0x0000000000000002 (PLTRELSZ)           1416 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0xfc70\n 0x0000000000000007 (RELA)               0xded0\n 0x0000000000000008 (RELASZ)             7584 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffb (FLAGS_1)            Flags: PIE\n 0x000000006ffffffe (VERNEED)            0xddd0\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x000000006ffffff0 (VERSYM)             0xd9d8\n 0x000000006ffffff9 (RELACOUNT)          243\n 0x0000000000000000 (NULL)               0x0\n"
+  }
+]

@@ -1,0 +1,36 @@
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o: in function `(anonymous namespace)::consumerRead(int const*, unsigned long)':
+sanitizer_probe_test.cpp:(.text+0x44): undefined reference to `__ubsan_handle_pointer_overflow'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x77): undefined reference to `__ubsan_handle_type_mismatch_v1'
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o: in function `(anonymous namespace)::consumerAdd(int, int)':
+sanitizer_probe_test.cpp:(.text+0xb7): undefined reference to `__ubsan_handle_add_overflow'
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o: in function `main':
+sanitizer_probe_test.cpp:(.text+0x112): undefined reference to `__ubsan_handle_type_mismatch_v1'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x134): undefined reference to `__ubsan_handle_nonnull_arg'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x180): undefined reference to `__ubsan_handle_type_mismatch_v1'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x1a4): undefined reference to `__ubsan_handle_pointer_overflow'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x23a): undefined reference to `__ubsan_handle_type_mismatch_v1'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x260): undefined reference to `__ubsan_handle_sub_overflow'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x285): undefined reference to `__ubsan_handle_pointer_overflow'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x2f6): undefined reference to `__ubsan_handle_nonnull_arg'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x374): undefined reference to `__ubsan_handle_add_overflow'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x3a6): undefined reference to `__ubsan_handle_add_overflow'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x3d4): undefined reference to `__ubsan_handle_add_overflow'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x3f2): undefined reference to `__ubsan_handle_nonnull_arg'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x445): undefined reference to `__ubsan_handle_nonnull_arg'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x498): undefined reference to `__ubsan_handle_nonnull_arg'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x4df): undefined reference to `__ubsan_handle_nonnull_arg'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text+0x528): undefined reference to `__ubsan_handle_nonnull_arg'
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o: in function `std::__uniq_ptr_data<int, std::default_delete<int []>, true, true>::__uniq_ptr_impl(int*)':
+sanitizer_probe_test.cpp:(.text._ZNSt15__uniq_ptr_dataIiSt14default_deleteIA_iELb1ELb1EECI2St15__uniq_ptr_implIiS2_EEPi[_ZNSt15__uniq_ptr_dataIiSt14default_deleteIA_iELb1ELb1EECI5St15__uniq_ptr_implIiS2_EEPi]+0x35): undefined reference to `__ubsan_handle_type_mismatch_v1'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text._ZNSt15__uniq_ptr_dataIiSt14default_deleteIA_iELb1ELb1EECI2St15__uniq_ptr_implIiS2_EEPi[_ZNSt15__uniq_ptr_dataIiSt14default_deleteIA_iELb1ELb1EECI5St15__uniq_ptr_implIiS2_EEPi]+0x5e): undefined reference to `__ubsan_handle_type_mismatch_v1'
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o: in function `std::unique_ptr<int [], std::default_delete<int []> >::unique_ptr<int*, std::default_delete<int []>, void, bool>(int*)':
+sanitizer_probe_test.cpp:(.text._ZNSt10unique_ptrIA_iSt14default_deleteIS0_EEC2IPiS2_vbEET_[_ZNSt10unique_ptrIA_iSt14default_deleteIS0_EEC5IPiS2_vbEET_]+0x35): undefined reference to `__ubsan_handle_type_mismatch_v1'
+/usr/bin/ld: sanitizer_probe_test.cpp:(.text._ZNSt10unique_ptrIA_iSt14default_deleteIS0_EEC2IPiS2_vbEET_[_ZNSt10unique_ptrIA_iSt14default_deleteIS0_EEC5IPiS2_vbEET_]+0x5e): undefined reference to `__ubsan_handle_type_mismatch_v1'
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o: in function `std::unique_ptr<int [], std::default_delete<int []> >::~unique_ptr()':
+sanitizer_probe_test.cpp:(.text._ZNSt10unique_ptrIA_iSt14default_deleteIS0_EED2Ev[_ZNSt10unique_ptrIA_iSt14default_deleteIS0_EED5Ev]+0x31): undefined reference to `__ubsan_handle_type_mismatch_v1'
+/usr/bin/ld: CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o:sanitizer_probe_test.cpp:(.text._ZNSt10unique_ptrIA_iSt14default_deleteIS0_EED2Ev[_ZNSt10unique_ptrIA_iSt14default_deleteIS0_EED5Ev]+0x5a): more undefined references to `__ubsan_handle_type_mismatch_v1' follow
+collect2: error: ld returned 1 exit status
+make[3]: *** [tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/build.make:102: tests/sanitizer/sanitizer_probe-test_UBSAN] Error 1
+make[2]: *** [CMakeFiles/Makefile2:217: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/all] Error 2
+make[1]: *** [CMakeFiles/Makefile2:224: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/rule] Error 2
+make: *** [Makefile:180: sanitizer_probe-test_UBSAN] Error 2

@@ -1,0 +1,213 @@
+UpdateCTestConfiguration  from :$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/DartConfiguration.tcl
+Test project $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: sanitizer_probe-test.clean
+
+1: Test command: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer/sanitizer_probe-test "clean"
+1: Working Directory: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer
+1: Test timeout computed to be: 10000000
+1: sanitizer_probe: clean started
+1: sanitizer_probe: clean completed (value 4)
+1/7 Test #1: sanitizer_probe-test.clean ............................   Passed    0.00 sec
+test 2
+    Start 2: sanitizer_probe-test_ASAN.clean
+
+2: Test command: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer/sanitizer_probe-test_ASAN "clean"
+2: Working Directory: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer
+2: Test timeout computed to be: 10000000
+2: sanitizer_probe: clean started
+2: sanitizer_probe: clean completed (value 4)
+2/7 Test #2: sanitizer_probe-test_ASAN.clean .......................   Passed    0.01 sec
+test 3
+    Start 3: sanitizer_probe-test_UBSAN.clean
+
+3: Test command: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer/sanitizer_probe-test_UBSAN "clean"
+3: Working Directory: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer
+3: Test timeout computed to be: 10000000
+3: sanitizer_probe: clean started
+3: sanitizer_probe: clean completed (value 4)
+3/7 Test #3: sanitizer_probe-test_UBSAN.clean ......................   Passed    0.00 sec
+test 4
+    Start 4: sanitizer_probe-test_ASAN.library-heap-overflow
+
+4: Test command: /usr/bin/cmake "-DCHILD=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer/sanitizer_probe-test_ASAN" "-DMODE=library-heap-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=ERROR: AddressSanitizer: heap-buffer-overflow" "-P" "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/check_sanitizer_child.cmake"
+4: Working Directory: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer
+4: Test timeout computed to be: 10000000
+4: -- ASAN_OPTIONS is unset
+4: -- UBSAN_OPTIONS is unset
+4: -- child: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer/sanitizer_probe-test_ASAN library-heap-overflow
+4: -- child exit status: 1
+4: -- child stdout:
+4: sanitizer_probe: library-heap-overflow started
+4: 
+4: -- child stderr:
+4: =================================================================
+4: ==2438421==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7bfd035e0020 at pc 0x7fdd0535f184 bp 0x7ffcfd225520 sp 0x7ffcfd225510
+4: READ of size 4 at 0x7bfd035e0020 thread T0
+4:     #0 0x7fdd0535f183 in sanitizer_probe::libraryRead(int const*, unsigned long) $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/sanitizer_probe_lib.cpp:13
+4:     #1 0x55b28ce84667 in main $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/sanitizer_probe_test.cpp:64
+4:     #2 0x7fdd04427780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+4:     #3 0x7fdd044278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+4:     #4 0x55b28ce841b4 in _start ($WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer/sanitizer_probe-test_ASAN+0x21b4) (BuildId: 3274012f559bf887a2a0550000995aa719f37fb7)
+4: 
+4: 0x7bfd035e0020 is located 0 bytes after 16-byte region [0x7bfd035e0010,0x7bfd035e0020)
+4: allocated by thread T0 here:
+4:     #0 0x7fdd04d2d431 in operator new[](unsigned long) (/usr/lib/libasan.so.8+0x12d431) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+4:     #1 0x55b28ce844a9 in main $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/sanitizer_probe_test.cpp:53
+4:     #2 0x7fdd04427780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+4:     #3 0x7fdd044278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+4:     #4 0x55b28ce841b4 in _start ($WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer/sanitizer_probe-test_ASAN+0x21b4) (BuildId: 3274012f559bf887a2a0550000995aa719f37fb7)
+4: 
+4: SUMMARY: AddressSanitizer: heap-buffer-overflow $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/sanitizer_probe_lib.cpp:13 in sanitizer_probe::libraryRead(int const*, unsigned long)
+4: Shadow bytes around the buggy address:
+4:   0x7bfd035dfd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+4:   0x7bfd035dfe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+4:   0x7bfd035dfe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+4:   0x7bfd035dff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+4:   0x7bfd035dff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+4: =>0x7bfd035e0000: fa fa 00 00[fa]fa fa fa fa fa fa fa fa fa fa fa
+4:   0x7bfd035e0080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+4:   0x7bfd035e0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+4:   0x7bfd035e0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+4:   0x7bfd035e0200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+4:   0x7bfd035e0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+4: Shadow byte legend (one shadow byte represents 8 application bytes):
+4:   Addressable:           00
+4:   Partially addressable: 01 02 03 04 05 06 07 
+4:   Heap left redzone:       fa
+4:   Freed heap region:       fd
+4:   Stack left redzone:      f1
+4:   Stack mid redzone:       f2
+4:   Stack right redzone:     f3
+4:   Stack after return:      f5
+4:   Stack use after scope:   f8
+4:   Global redzone:          f9
+4:   Global init order:       f6
+4:   Poisoned by user:        f7
+4:   Container overflow:      fc
+4:   Array cookie:            ac
+4:   Intra object redzone:    bb
+4:   ASan internal:           fe
+4:   Left alloca redzone:     ca
+4:   Right alloca redzone:    cb
+4: ==2438421==ABORTING
+4: 
+4: -- the sanitizer stopped the probe at its fault, as expected
+4/7 Test #4: sanitizer_probe-test_ASAN.library-heap-overflow .......   Passed    0.02 sec
+test 5
+    Start 5: sanitizer_probe-test_ASAN.consumer-heap-overflow
+
+5: Test command: /usr/bin/cmake "-DCHILD=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer/sanitizer_probe-test_ASAN" "-DMODE=consumer-heap-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=ERROR: AddressSanitizer: heap-buffer-overflow" "-P" "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/check_sanitizer_child.cmake"
+5: Working Directory: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer
+5: Test timeout computed to be: 10000000
+5: -- ASAN_OPTIONS is unset
+5: -- UBSAN_OPTIONS is unset
+5: -- child: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer/sanitizer_probe-test_ASAN consumer-heap-overflow
+5: -- child exit status: 1
+5: -- child stdout:
+5: sanitizer_probe: consumer-heap-overflow started
+5: 
+5: -- child stderr:
+5: =================================================================
+5: ==2438443==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7b2fac5e0020 at pc 0x5635068002e4 bp 0x7ffcabaec2c0 sp 0x7ffcabaec2b0
+5: READ of size 4 at 0x7b2fac5e0020 thread T0
+5:     #0 0x5635068002e3 in consumerRead $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/sanitizer_probe_test.cpp:29
+5:     #1 0x5635068006aa in main $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/sanitizer_probe_test.cpp:66
+5:     #2 0x7f0fad427780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+5:     #3 0x7f0fad4278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+5:     #4 0x5635068001b4 in _start ($WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer/sanitizer_probe-test_ASAN+0x21b4) (BuildId: 3274012f559bf887a2a0550000995aa719f37fb7)
+5: 
+5: 0x7b2fac5e0020 is located 0 bytes after 16-byte region [0x7b2fac5e0010,0x7b2fac5e0020)
+5: allocated by thread T0 here:
+5:     #0 0x7f0fadd2d431 in operator new[](unsigned long) (/usr/lib/libasan.so.8+0x12d431) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+5:     #1 0x5635068004a9 in main $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/sanitizer_probe_test.cpp:53
+5:     #2 0x7f0fad427780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+5:     #3 0x7f0fad4278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+5:     #4 0x5635068001b4 in _start ($WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer/sanitizer_probe-test_ASAN+0x21b4) (BuildId: 3274012f559bf887a2a0550000995aa719f37fb7)
+5: 
+5: SUMMARY: AddressSanitizer: heap-buffer-overflow $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/sanitizer_probe_test.cpp:29 in consumerRead
+5: Shadow bytes around the buggy address:
+5:   0x7b2fac5dfd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+5:   0x7b2fac5dfe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+5:   0x7b2fac5dfe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+5:   0x7b2fac5dff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+5:   0x7b2fac5dff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+5: =>0x7b2fac5e0000: fa fa 00 00[fa]fa fa fa fa fa fa fa fa fa fa fa
+5:   0x7b2fac5e0080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+5:   0x7b2fac5e0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+5:   0x7b2fac5e0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+5:   0x7b2fac5e0200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+5:   0x7b2fac5e0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+5: Shadow byte legend (one shadow byte represents 8 application bytes):
+5:   Addressable:           00
+5:   Partially addressable: 01 02 03 04 05 06 07 
+5:   Heap left redzone:       fa
+5:   Freed heap region:       fd
+5:   Stack left redzone:      f1
+5:   Stack mid redzone:       f2
+5:   Stack right redzone:     f3
+5:   Stack after return:      f5
+5:   Stack use after scope:   f8
+5:   Global redzone:          f9
+5:   Global init order:       f6
+5:   Poisoned by user:        f7
+5:   Container overflow:      fc
+5:   Array cookie:            ac
+5:   Intra object redzone:    bb
+5:   ASan internal:           fe
+5:   Left alloca redzone:     ca
+5:   Right alloca redzone:    cb
+5: ==2438443==ABORTING
+5: 
+5: -- the sanitizer stopped the probe at its fault, as expected
+5/7 Test #5: sanitizer_probe-test_ASAN.consumer-heap-overflow ......   Passed    0.02 sec
+test 6
+    Start 6: sanitizer_probe-test_UBSAN.library-signed-overflow
+
+6: Test command: /usr/bin/cmake "-DCHILD=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer/sanitizer_probe-test_UBSAN" "-DMODE=library-signed-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=sanitizer_probe_lib[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow" "-P" "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/check_sanitizer_child.cmake"
+6: Working Directory: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer
+6: Environment variables: 
+6:  UBSAN_OPTIONS=halt_on_error=1
+6: Test timeout computed to be: 10000000
+6: -- ASAN_OPTIONS is unset
+6: -- UBSAN_OPTIONS=halt_on_error=1
+6: -- child: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer/sanitizer_probe-test_UBSAN library-signed-overflow
+6: -- child exit status: 1
+6: -- child stdout:
+6: sanitizer_probe: library-signed-overflow started
+6: 
+6: -- child stderr:
+6: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/sanitizer_probe_lib.cpp:18:18: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+6: 
+6: -- the sanitizer stopped the probe at its fault, as expected
+6/7 Test #6: sanitizer_probe-test_UBSAN.library-signed-overflow ....   Passed    0.01 sec
+test 7
+    Start 7: sanitizer_probe-test_UBSAN.consumer-signed-overflow
+
+7: Test command: /usr/bin/cmake "-DCHILD=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer/sanitizer_probe-test_UBSAN" "-DMODE=consumer-signed-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=sanitizer_probe_test[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow" "-P" "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/check_sanitizer_child.cmake"
+7: Working Directory: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer
+7: Environment variables: 
+7:  UBSAN_OPTIONS=halt_on_error=1
+7: Test timeout computed to be: 10000000
+7: -- ASAN_OPTIONS is unset
+7: -- UBSAN_OPTIONS=halt_on_error=1
+7: -- child: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/build-Debug/tests/sanitizer/sanitizer_probe-test_UBSAN consumer-signed-overflow
+7: -- child exit status: 1
+7: -- child stdout:
+7: sanitizer_probe: consumer-signed-overflow started
+7: 
+7: -- child stderr:
+7: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/18-r1-r232/work/mutations/reverted/tests/sanitizer/sanitizer_probe_test.cpp:34:18: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+7: 
+7: -- the sanitizer stopped the probe at its fault, as expected
+7/7 Test #7: sanitizer_probe-test_UBSAN.consumer-signed-overflow ...   Passed    0.01 sec
+
+100% tests passed out of 7
+
+Total Test time (real) =   0.08 sec
