@@ -18592,5 +18592,35 @@
     "original_sha256": "51b778e60c63f18198d0bd9085d99e9ffb5c5d6a663d65f2c3f6744aeeb827fa",
     "published_sha256": "643d0513cd5b53e835fb459bf0d885be39ea67ec7a3b0f57ccd6479371087b6c",
     "path_redacted": true
+  },
+  {
+    "file": "manager/hosted-snapshot.json",
+    "original_sha256": "6788f74b03351056b4567156727c4e0596952c0b5045913a7b6051e2cb9c1b86",
+    "published_sha256": "6788f74b03351056b4567156727c4e0596952c0b5045913a7b6051e2cb9c1b86",
+    "path_redacted": false
+  },
+  {
+    "file": "manager/premerge-history/01.log",
+    "original_sha256": "15d4c1929bc1391fd94f5f567f081675f661482c6bd280b390710d639cb3bd2e",
+    "published_sha256": "15d4c1929bc1391fd94f5f567f081675f661482c6bd280b390710d639cb3bd2e",
+    "path_redacted": false
+  },
+  {
+    "file": "manager/premerge-history/02.log",
+    "original_sha256": "924981b7362198cc0785f3077f8dfa836a8a2c2938f64301839cb8e73d154c2e",
+    "published_sha256": "924981b7362198cc0785f3077f8dfa836a8a2c2938f64301839cb8e73d154c2e",
+    "path_redacted": false
+  },
+  {
+    "file": "manager/premerge-history/complete.json",
+    "original_sha256": "d9d2d6f93076d3c0a5bcac965ead8c31fe57fa26dc6a1859b1ce184f9d45d21f",
+    "published_sha256": "d9d2d6f93076d3c0a5bcac965ead8c31fe57fa26dc6a1859b1ce184f9d45d21f",
+    "path_redacted": false
+  },
+  {
+    "file": "manager/premerge-history/results.json",
+    "original_sha256": "5fad6373d9e73ba552dc8c06f87c3e739c027a621b15aecbe0109676346be728",
+    "published_sha256": "c0b63b1db15a5597af091db8b320a69a73bf09fdff70993975f155e096cf5e2c",
+    "path_redacted": true
   }
 ]

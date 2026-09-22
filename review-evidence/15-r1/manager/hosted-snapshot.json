@@ -1,0 +1,46 @@
+{
+  "headRefOid": "76906b83eb54ac29040fe72fd910d34727188694",
+  "isDraft": true,
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-09-22T08:04:51Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/kebag-logic/tsn-gen/actions/runs/35702733560/job/106664335400",
+      "name": "behave-testing",
+      "startedAt": "2026-09-22T08:03:24Z",
+      "status": "COMPLETED",
+      "workflowName": "Behave-Testing"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-09-22T08:04:36Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/kebag-logic/tsn-gen/actions/runs/35702728177/job/106664318369",
+      "name": "behave-testing",
+      "startedAt": "2026-09-22T08:03:21Z",
+      "status": "COMPLETED",
+      "workflowName": "Behave-Testing"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-09-22T08:04:17Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/kebag-logic/tsn-gen/actions/runs/35702733614/job/106664335640",
+      "name": "unit-tests",
+      "startedAt": "2026-09-22T08:03:24Z",
+      "status": "COMPLETED",
+      "workflowName": "Unit-testing"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-09-22T08:04:35Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/kebag-logic/tsn-gen/actions/runs/35702728202/job/106664318693",
+      "name": "unit-tests",
+      "startedAt": "2026-09-22T08:03:21Z",
+      "status": "COMPLETED",
+      "workflowName": "Unit-testing"
+    }
+  ]
+}
