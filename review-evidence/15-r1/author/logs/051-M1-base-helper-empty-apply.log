@@ -1,0 +1,7 @@
+# id: 051-M1-base-helper-empty-apply
+# description: Apply mutation M1 base helper to a copy of the candidate
+# cwd: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author
+# argv: patch -p1 -d $VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-051-M1-base-helper-empty -i $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/receipts/mutations/M1-base-helper.patch 
+# start: 2026-09-22T07:28:11Z
+patching file cmake/CMakeGenTestingLibraries.cmake
+# end: 2026-09-22T07:28:12Z exit: 0

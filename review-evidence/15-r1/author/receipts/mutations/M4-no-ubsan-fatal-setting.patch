@@ -1,0 +1,12 @@
+diff -u -r a/tests/sanitizer/CMakeLists.txt b/tests/sanitizer/CMakeLists.txt
+--- a/tests/sanitizer/CMakeLists.txt	2026-09-22 09:27:46.385993740 +0200
++++ b/tests/sanitizer/CMakeLists.txt	2026-09-22 09:27:46.386100470 +0200
+@@ -72,8 +72,3 @@
+ # An ASan report stops the process by default, but UBSan reports and carries
+ # on. These two controls alone make UBSan fatal; every other test keeps the
+ # default recovery.
+-set_tests_properties(
+-	sanitizer_probe-test_UBSAN.library-signed-overflow
+-	sanitizer_probe-test_UBSAN.consumer-signed-overflow
+-	PROPERTIES ENVIRONMENT "UBSAN_OPTIONS=halt_on_error=1"
+-)

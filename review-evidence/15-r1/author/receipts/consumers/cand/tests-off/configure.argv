@@ -1,0 +1,1 @@
+-S $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand -B $VALIDATION_STORAGE/tmp/a162-tsngen15/build/consumer-cand-tests-off -G Unix\ Makefiles -DENABLE_PARSER_TESTS=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=ON 

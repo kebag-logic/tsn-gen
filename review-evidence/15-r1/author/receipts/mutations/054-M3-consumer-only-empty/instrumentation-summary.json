@@ -1,0 +1,20 @@
+{
+ "build": "$VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-054-M3-consumer-only-empty",
+ "objects": 6,
+ "objects_by_compile_flags": {
+  "undefined": 1,
+  "none": 4,
+  "address": 1
+ },
+ "objects_by_observed": {
+  "undefined": 1,
+  "none": 4,
+  "address": 1
+ },
+ "flag_vs_observed_mismatches": {},
+ "artifacts_linking_a_runtime": [
+  "tests/sanitizer/sanitizer_probe-test_ASAN",
+  "tests/sanitizer/sanitizer_probe-test_UBSAN"
+ ],
+ "shared_libs_with_undefined_sanitizer_symbols": []
+}

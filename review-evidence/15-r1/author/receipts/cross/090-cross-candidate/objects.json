@@ -1,0 +1,226 @@
+{
+ "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o": {
+  "asan_refs": 19,
+  "compile_flags": [
+   "-fsanitize=address"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 0
+ },
+ "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o": {
+  "asan_refs": 4,
+  "compile_flags": [
+   "-fsanitize=address"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 0
+ },
+ "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o": {
+  "asan_refs": 19,
+  "compile_flags": [
+   "-fsanitize=address"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 0
+ },
+ "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o": {
+  "asan_refs": 21,
+  "compile_flags": [
+   "-fsanitize=address"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 0
+ },
+ "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o": {
+  "asan_refs": 10,
+  "compile_flags": [
+   "-fsanitize=address"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 0
+ },
+ "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o": {
+  "asan_refs": 17,
+  "compile_flags": [
+   "-fsanitize=address"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 0
+ },
+ "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o": {
+  "asan_refs": 29,
+  "compile_flags": [
+   "-fsanitize=address"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 0
+ },
+ "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o": {
+  "asan_refs": 18,
+  "compile_flags": [
+   "-fsanitize=address"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 0
+ },
+ "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o": {
+  "asan_refs": 7,
+  "compile_flags": [
+   "-fsanitize=address"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 0
+ },
+ "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o": {
+  "asan_refs": 22,
+  "compile_flags": [
+   "-fsanitize=address"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 0
+ },
+ "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o": {
+  "asan_refs": 27,
+  "compile_flags": [
+   "-fsanitize=address"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 0
+ },
+ "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o": {
+  "asan_refs": 0,
+  "compile_flags": [
+   "-fsanitize=undefined"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 5
+ },
+ "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o": {
+  "asan_refs": 0,
+  "compile_flags": [
+   "-fsanitize=undefined"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 0
+ },
+ "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o": {
+  "asan_refs": 0,
+  "compile_flags": [
+   "-fsanitize=undefined"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 5
+ },
+ "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o": {
+  "asan_refs": 0,
+  "compile_flags": [
+   "-fsanitize=undefined"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 5
+ },
+ "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o": {
+  "asan_refs": 0,
+  "compile_flags": [
+   "-fsanitize=undefined"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 5
+ },
+ "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o": {
+  "asan_refs": 0,
+  "compile_flags": [
+   "-fsanitize=undefined"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 6
+ },
+ "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o": {
+  "asan_refs": 0,
+  "compile_flags": [
+   "-fsanitize=undefined"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 7
+ },
+ "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o": {
+  "asan_refs": 0,
+  "compile_flags": [
+   "-fsanitize=undefined"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 7
+ },
+ "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o": {
+  "asan_refs": 0,
+  "compile_flags": [
+   "-fsanitize=undefined"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 4
+ },
+ "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o": {
+  "asan_refs": 0,
+  "compile_flags": [
+   "-fsanitize=undefined"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 6
+ },
+ "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o": {
+  "asan_refs": 0,
+  "compile_flags": [
+   "-fsanitize=undefined"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 7
+ },
+ "tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o": {
+  "asan_refs": 12,
+  "compile_flags": [
+   "-fsanitize=address"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 0
+ },
+ "tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o": {
+  "asan_refs": 0,
+  "compile_flags": [
+   "-fsanitize=undefined"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 5
+ },
+ "tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o": {
+  "asan_refs": 3,
+  "compile_flags": [
+   "-fsanitize=address"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 0
+ },
+ "tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o": {
+  "asan_refs": 0,
+  "compile_flags": [
+   "-fsanitize=undefined"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 3
+ },
+ "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o": {
+  "asan_refs": 26,
+  "compile_flags": [
+   "-fsanitize=address"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 0
+ },
+ "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o": {
+  "asan_refs": 0,
+  "compile_flags": [
+   "-fsanitize=undefined"
+  ],
+  "file": "ELF 64-bit LSB relocatable, ARM aarch64,",
+  "ubsan_refs": 8
+ }
+}

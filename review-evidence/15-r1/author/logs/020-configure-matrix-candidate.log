@@ -1,0 +1,16 @@
+# id: 020-configure-matrix-candidate
+# description: Configure-only matrix of candidate 76906b8 (5 build types x BUILD_SHARED_LIBS unset/ON)
+# cwd: $VALIDATION_STORAGE/lanes/tsngen15-sanitizer-targets
+# argv: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/scripts/configure-matrix.sh cand $VALIDATION_STORAGE/lanes/tsngen15-sanitizer-targets $VALIDATION_STORAGE/tmp/a162-tsngen15/cfg $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/receipts/configure 
+# start: 2026-09-22T07:21:47Z
+cand empty-shared_unset configure exit 0
+cand empty-shared_ON configure exit 0
+cand Debug-shared_unset configure exit 0
+cand Debug-shared_ON configure exit 0
+cand Release-shared_unset configure exit 0
+cand Release-shared_ON configure exit 0
+cand MinSizeRel-shared_unset configure exit 0
+cand MinSizeRel-shared_ON configure exit 0
+cand RelWithDebInfo-shared_unset configure exit 0
+cand RelWithDebInfo-shared_ON configure exit 0
+# end: 2026-09-22T07:21:57Z exit: 0

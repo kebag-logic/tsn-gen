@@ -1,0 +1,16 @@
+# id: 011-configure-matrix-helper-only
+# description: Configure-only matrix with only the helper change applied (before the regression was added)
+# cwd: $VALIDATION_STORAGE/lanes/tsngen15-sanitizer-targets
+# argv: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/scripts/configure-matrix.sh helper-only $VALIDATION_STORAGE/lanes/tsngen15-sanitizer-targets $VALIDATION_STORAGE/tmp/a162-tsngen15/cfg $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/receipts/configure 
+# start: 2026-09-22T07:15:56Z
+helper-only empty-shared_unset configure exit 0
+helper-only empty-shared_ON configure exit 0
+helper-only Debug-shared_unset configure exit 0
+helper-only Debug-shared_ON configure exit 0
+helper-only Release-shared_unset configure exit 0
+helper-only Release-shared_ON configure exit 0
+helper-only MinSizeRel-shared_unset configure exit 0
+helper-only MinSizeRel-shared_ON configure exit 0
+helper-only RelWithDebInfo-shared_unset configure exit 0
+helper-only RelWithDebInfo-shared_ON configure exit 0
+# end: 2026-09-22T07:16:06Z exit: 0

@@ -1,0 +1,3162 @@
+{
+ "configurations": {
+  "Debug-shared_ON": {
+   "compile": {
+    "changed": {},
+    "classes": {
+     "identical": 125
+    },
+    "count_a": 125,
+    "count_b": 125,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "flags": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "link": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "population": {
+    "base": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    },
+    "helper-only": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    }
+   }
+  },
+  "Debug-shared_unset": {
+   "compile": {
+    "changed": {},
+    "classes": {
+     "identical": 125
+    },
+    "count_a": 125,
+    "count_b": 125,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "flags": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "link": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "population": {
+    "base": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    },
+    "helper-only": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    }
+   }
+  },
+  "MinSizeRel-shared_ON": {
+   "compile": {
+    "changed": {},
+    "classes": {
+     "identical": 125
+    },
+    "count_a": 125,
+    "count_b": 125,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "flags": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "link": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "population": {
+    "base": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    },
+    "helper-only": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    }
+   }
+  },
+  "MinSizeRel-shared_unset": {
+   "compile": {
+    "changed": {},
+    "classes": {
+     "identical": 125
+    },
+    "count_a": 125,
+    "count_b": 125,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "flags": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "link": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "population": {
+    "base": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    },
+    "helper-only": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    }
+   }
+  },
+  "RelWithDebInfo-shared_ON": {
+   "compile": {
+    "changed": {},
+    "classes": {
+     "identical": 125
+    },
+    "count_a": 125,
+    "count_b": 125,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "flags": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "link": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "population": {
+    "base": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    },
+    "helper-only": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    }
+   }
+  },
+  "RelWithDebInfo-shared_unset": {
+   "compile": {
+    "changed": {},
+    "classes": {
+     "identical": 125
+    },
+    "count_a": 125,
+    "count_b": 125,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "flags": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "link": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "population": {
+    "base": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    },
+    "helper-only": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    }
+   }
+  },
+  "Release-shared_ON": {
+   "compile": {
+    "changed": {},
+    "classes": {
+     "identical": 125
+    },
+    "count_a": 125,
+    "count_b": 125,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "flags": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "link": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "population": {
+    "base": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    },
+    "helper-only": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    }
+   }
+  },
+  "Release-shared_unset": {
+   "compile": {
+    "changed": {},
+    "classes": {
+     "identical": 125
+    },
+    "count_a": 125,
+    "count_b": 125,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "flags": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "link": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "population": {
+    "base": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    },
+    "helper-only": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    }
+   }
+  },
+  "empty-shared_ON": {
+   "compile": {
+    "changed": {
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "logic_registry-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "logic_registry-test_UBSAN"
+     },
+     "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "object_serializer-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "object_serializer-test_UBSAN"
+     },
+     "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser-test_UBSAN"
+     },
+     "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "stack_builder-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "stack_builder-test_UBSAN"
+     },
+     "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "validator-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "validator-test_UBSAN"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "adp_fuzz-test_ASAN"
+     },
+     "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "adp_fuzz-test_UBSAN"
+     },
+     "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "ptp_flags-test_ASAN"
+     },
+     "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "ptp_flags-test_UBSAN"
+     },
+     "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen-test_ASAN"
+     },
+     "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen-test_UBSAN"
+     }
+    },
+    "classes": {
+     "added:-fsanitize=address": 29,
+     "added:-fsanitize=undefined": 29,
+     "identical": 67
+    },
+    "count_a": 125,
+    "count_b": 125,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "flags": {
+    "changed": {
+     "parser/CMakeFiles/protocol_parser_asan.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "logic_registry-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "logic_registry-test_UBSAN"
+     },
+     "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "object_serializer-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "object_serializer-test_UBSAN"
+     },
+     "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser-test_UBSAN"
+     },
+     "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "stack_builder-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "stack_builder-test_UBSAN"
+     },
+     "parser/tests/CMakeFiles/validator-test_ASAN.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "validator-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/validator-test_UBSAN.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "validator-test_UBSAN"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "adp_fuzz-test_ASAN"
+     },
+     "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "adp_fuzz-test_UBSAN"
+     },
+     "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "ptp_flags-test_ASAN"
+     },
+     "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "ptp_flags-test_UBSAN"
+     },
+     "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen-test_ASAN"
+     },
+     "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen-test_UBSAN"
+     }
+    },
+    "classes": {
+     "added:-fsanitize=address": 10,
+     "added:-fsanitize=undefined": 10,
+     "identical": 21
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "link": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "population": {
+    "base": {
+     "address": [],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 125,
+     "undefined": []
+    },
+    "helper-only": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    }
+   }
+  },
+  "empty-shared_unset": {
+   "compile": {
+    "changed": {
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "logic_registry-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "logic_registry-test_UBSAN"
+     },
+     "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "object_serializer-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "object_serializer-test_UBSAN"
+     },
+     "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser-test_UBSAN"
+     },
+     "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "stack_builder-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "stack_builder-test_UBSAN"
+     },
+     "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "validator-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "validator-test_UBSAN"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "adp_fuzz-test_ASAN"
+     },
+     "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "adp_fuzz-test_UBSAN"
+     },
+     "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "ptp_flags-test_ASAN"
+     },
+     "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "ptp_flags-test_UBSAN"
+     },
+     "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen-test_ASAN"
+     },
+     "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen-test_UBSAN"
+     }
+    },
+    "classes": {
+     "added:-fsanitize=address": 29,
+     "added:-fsanitize=undefined": 29,
+     "identical": 67
+    },
+    "count_a": 125,
+    "count_b": 125,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "flags": {
+    "changed": {
+     "parser/CMakeFiles/protocol_parser_asan.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser_asan"
+     },
+     "parser/CMakeFiles/protocol_parser_ubsan.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser_ubsan"
+     },
+     "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "logic_registry-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "logic_registry-test_UBSAN"
+     },
+     "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "object_serializer-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "object_serializer-test_UBSAN"
+     },
+     "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "protocol_parser-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "protocol_parser-test_UBSAN"
+     },
+     "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "stack_builder-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "stack_builder-test_UBSAN"
+     },
+     "parser/tests/CMakeFiles/validator-test_ASAN.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "validator-test_ASAN"
+     },
+     "parser/tests/CMakeFiles/validator-test_UBSAN.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "validator-test_UBSAN"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_asan.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen_asan"
+     },
+     "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen_ubsan"
+     },
+     "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "adp_fuzz-test_ASAN"
+     },
+     "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "adp_fuzz-test_UBSAN"
+     },
+     "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "ptp_flags-test_ASAN"
+     },
+     "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "ptp_flags-test_UBSAN"
+     },
+     "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/flags.make": {
+      "class": "added:-fsanitize=address",
+      "target": "traffic_gen-test_ASAN"
+     },
+     "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/flags.make": {
+      "class": "added:-fsanitize=undefined",
+      "target": "traffic_gen-test_UBSAN"
+     }
+    },
+    "classes": {
+     "added:-fsanitize=address": 10,
+     "added:-fsanitize=undefined": 10,
+     "identical": 21
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "link": {
+    "changed": {},
+    "classes": {
+     "identical": 41
+    },
+    "count_a": 41,
+    "count_b": 41,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "population": {
+    "base": {
+     "address": [],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 125,
+     "undefined": []
+    },
+    "helper-only": {
+     "address": [
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o"
+     ],
+     "link_with_sanitizer": {
+      "parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "parser/tests/CMakeFiles/validator-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/link.txt": [
+       "address"
+      ],
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/link.txt": [
+       "undefined"
+      ]
+     },
+     "none": 67,
+     "undefined": [
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o",
+      "parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o",
+      "parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o",
+      "parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o",
+      "parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o",
+      "parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o",
+      "parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o",
+      "traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o",
+      "traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o",
+      "traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o"
+     ]
+    }
+   }
+  }
+ },
+ "label_a": "base",
+ "label_b": "helper-only"
+}

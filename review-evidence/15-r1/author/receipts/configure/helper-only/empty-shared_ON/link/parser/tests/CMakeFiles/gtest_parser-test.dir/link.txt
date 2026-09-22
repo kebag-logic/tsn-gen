@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/gtest_parser-test.dir/link.d "CMakeFiles/gtest_parser-test.dir/gtest.cpp.o" -o gtest_parser-test  -Wl,-rpath,"\$ORIGIN/../../lib" ../../lib/libgtest_main.so.1.16.0 ../../lib/libgtest.so.1.16.0

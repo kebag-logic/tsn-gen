@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/validator-test.dir/link.d "CMakeFiles/validator-test.dir/validator_test.cpp.o" -o validator-test  -Wl,-rpath,"\$ORIGIN/../" ../libprotocol_parser.so.0.1.0 ../../lib/libgtest_main.a ../../external/rapidyaml/libryml.a ../../lib/libgtest.a

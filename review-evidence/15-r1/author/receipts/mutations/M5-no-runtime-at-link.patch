@@ -1,0 +1,19 @@
+diff -u -r a/cmake/CMakeLinkToTestlibs.cmake b/cmake/CMakeLinkToTestlibs.cmake
+--- a/cmake/CMakeLinkToTestlibs.cmake	2026-09-22 09:27:46.386231336 +0200
++++ b/cmake/CMakeLinkToTestlibs.cmake	2026-09-22 09:27:46.386332257 +0200
+@@ -10,7 +10,6 @@
+ 	)
+ 	target_link_libraries(
+ 		${TARGETEX}_UBSAN
+-		${COMP_UBSAN_FLAGS}
+ 		${INSTRLIB}_ubsan
+ 		${_LIBS}
+ 
+@@ -23,7 +22,6 @@
+ 	)
+ 	target_link_libraries(
+ 		${TARGETEX}_ASAN
+-		${COMP_ASAN_FLAGS}
+ 		${INSTRLIB}_asan
+ 		${_LIBS}
+ 	)

@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -Werror -pedantic -Wl,--dependency-file=CMakeFiles/gtest_parser-test.dir/link.d "CMakeFiles/gtest_parser-test.dir/gtest.cpp.o" -o gtest_parser-test  ../../lib/libgtest_main.a ../../lib/libgtest.a

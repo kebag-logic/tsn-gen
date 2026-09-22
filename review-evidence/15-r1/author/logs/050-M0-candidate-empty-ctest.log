@@ -1,0 +1,25 @@
+# id: 050-M0-candidate-empty-ctest
+# description: Run the probe CTest cases of mutation M0 unmutated candidate
+# cwd: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author
+# argv: ctest --test-dir $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-050-M0-candidate-empty -R \^sanitizer_probe --output-on-failure 
+# start: 2026-09-22T07:28:11Z
+Test project $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-050-M0-candidate-empty
+    Start 29: sanitizer_probe-test.clean
+1/7 Test #29: sanitizer_probe-test.clean ............................   Passed    0.00 sec
+    Start 30: sanitizer_probe-test_ASAN.clean
+2/7 Test #30: sanitizer_probe-test_ASAN.clean .......................   Passed    0.01 sec
+    Start 31: sanitizer_probe-test_UBSAN.clean
+3/7 Test #31: sanitizer_probe-test_UBSAN.clean ......................   Passed    0.00 sec
+    Start 32: sanitizer_probe-test_ASAN.library-heap-overflow
+4/7 Test #32: sanitizer_probe-test_ASAN.library-heap-overflow .......   Passed    0.02 sec
+    Start 33: sanitizer_probe-test_ASAN.consumer-heap-overflow
+5/7 Test #33: sanitizer_probe-test_ASAN.consumer-heap-overflow ......   Passed    0.02 sec
+    Start 34: sanitizer_probe-test_UBSAN.library-signed-overflow
+6/7 Test #34: sanitizer_probe-test_UBSAN.library-signed-overflow ....   Passed    0.01 sec
+    Start 35: sanitizer_probe-test_UBSAN.consumer-signed-overflow
+7/7 Test #35: sanitizer_probe-test_UBSAN.consumer-signed-overflow ...   Passed    0.01 sec
+
+100% tests passed out of 7
+
+Total Test time (real) =   0.09 sec
+# end: 2026-09-22T07:28:11Z exit: 0

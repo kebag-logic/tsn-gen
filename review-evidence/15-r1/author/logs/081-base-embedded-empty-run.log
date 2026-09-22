@@ -1,0 +1,8 @@
+# id: 081-base-embedded-empty-run
+# description: Run the embedded consumer app
+# cwd: $VALIDATION_STORAGE/lanes/tsngen15-sanitizer-targets
+# argv: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/consumer-base-embedded-empty/app 
+# start: 2026-09-22T07:31:15Z
+interface stack: 55 bytes c151df7d6ee5a3978fb9b92522f0fb0001824032b846d0bbd3f4b861191c96090b446af6d8000c0000000c0d2eda553d1bc3600110bfb0
+logic stack: 55 bytes 10894433f947bf62e22b962322f0fb00128241f5d587b2a99fb54bec32aaf5dd5e32752e1800000000000ed150d8debe66847001c6a820
+# end: 2026-09-22T07:31:15Z exit: 0

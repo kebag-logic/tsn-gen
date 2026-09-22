@@ -1,0 +1,29 @@
+{
+ "log": "$VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-051-M1-base-helper-empty/Testing/Temporary/LastTest.log",
+ "tests": 7,
+ "passed": 3,
+ "not_passed": [
+  "032 sanitizer_probe-test_ASAN.library-heap-overflow [sanitizer_probe-test_ASAN]",
+  "033 sanitizer_probe-test_ASAN.consumer-heap-overflow [sanitizer_probe-test_ASAN]",
+  "034 sanitizer_probe-test_UBSAN.library-signed-overflow [sanitizer_probe-test_UBSAN]",
+  "035 sanitizer_probe-test_UBSAN.consumer-signed-overflow [sanitizer_probe-test_UBSAN]"
+ ],
+ "tests_per_executable": {
+  "sanitizer_probe-test": 1,
+  "sanitizer_probe-test_ASAN": 3,
+  "sanitizer_probe-test_UBSAN": 3
+ },
+ "tests_with_reports_outside_probe_diagnostics": {},
+ "probe_diagnostic_reports": {
+  "032 sanitizer_probe-test_ASAN.library-heap-overflow [sanitizer_probe-test_ASAN]": [
+   "no report matching \"ERROR: AddressSanitizer: heap-buffer-overflow\" on"
+  ],
+  "033 sanitizer_probe-test_ASAN.consumer-heap-overflow [sanitizer_probe-test_ASAN]": [
+   "no report matching \"ERROR: AddressSanitizer: heap-buffer-overflow\" on"
+  ],
+  "034 sanitizer_probe-test_UBSAN.library-signed-overflow [sanitizer_probe-test_UBSAN]": [
+   "no report matching \"sanitizer_probe_lib[.]cpp:[0-9]+:[0-9]+: runtime error:"
+  ],
+  "035 sanitizer_probe-test_UBSAN.consumer-signed-overflow [sanitizer_probe-test_UBSAN]": []
+ }
+}

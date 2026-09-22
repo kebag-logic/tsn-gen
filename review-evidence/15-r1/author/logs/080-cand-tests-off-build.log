@@ -1,0 +1,70 @@
+# id: 080-cand-tests-off-build
+# description: Build tests-off tree, capped at 8 jobs
+# cwd: $VALIDATION_STORAGE/lanes/tsngen15-sanitizer-targets
+# argv: cmake --build $VALIDATION_STORAGE/tmp/a162-tsngen15/build/consumer-cand-tests-off -j8 
+# start: 2026-09-22T07:31:24Z
+[  3%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/reference_resolver.cpp.o
+[  3%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/tag.cpp.o
+[  8%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/node_type.cpp.o
+[  8%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/preprocess.cpp.o
+[  8%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/parse.cpp.o
+[ 10%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/common.cpp.o
+[ 12%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/node.cpp.o
+[ 13%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/base64.cpp.o
+[ 15%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/char_traits.cpp.o
+[ 17%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/tree.cpp.o
+[ 18%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/version.cpp.o
+[ 20%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/base64.cpp.o
+[ 22%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/char_traits.cpp.o
+[ 24%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/error.cpp.o
+[ 25%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/error.cpp.o
+[ 27%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/format.cpp.o
+[ 29%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/language.cpp.o
+[ 31%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_resource.cpp.o
+[ 32%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_util.cpp.o
+[ 34%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/format.cpp.o
+[ 36%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/utf.cpp.o
+[ 37%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/version.cpp.o
+[ 39%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/language.cpp.o
+[ 41%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/memory_resource.cpp.o
+[ 43%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/memory_util.cpp.o
+[ 44%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/utf.cpp.o
+[ 46%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/version.cpp.o
+[ 48%] Linking CXX static library libc4core.a
+[ 48%] Built target c4core
+[ 50%] Linking CXX static library libryml.a
+[ 50%] Built target ryml
+[ 53%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/db_proto_if_impl.cpp.o
+[ 53%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/log.cpp.o
+[ 55%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/db_proto_service_impl.cpp.o
+[ 56%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/db_proto_impl.cpp.o
+[ 60%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/protocol_parser.cpp.o
+[ 60%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/protocol.cpp.o
+[ 62%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/validator.cpp.o
+[ 63%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/db_var_impl.cpp.o
+[ 65%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/logic_registry.cpp.o
+[ 67%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/stack.cpp.o
+[ 68%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/stack_builder.cpp.o
+[ 70%] Linking CXX shared library libprotocol_parser.so
+[ 70%] Built target protocol_parser
+[ 74%] Building CXX object logic/CMakeFiles/protocol_logic.dir/src/ethernet_frame_logic.cpp.o
+[ 74%] Building CXX object logic/CMakeFiles/protocol_logic.dir/src/avtp_control_logic.cpp.o
+[ 75%] Building CXX object logic/CMakeFiles/protocol_logic.dir/src/aecp_aem_logic.cpp.o
+[ 77%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/pcap_sender.cpp.o
+[ 81%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/packet_decoder.cpp.o
+[ 81%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/packet_builder.cpp.o
+[ 82%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/pcap_receiver.cpp.o
+[ 84%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/raw_socket_sender.cpp.o
+[ 86%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/raw_socket_receiver.cpp.o
+[ 87%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/verilator_sender.cpp.o
+[ 89%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/verilator_receiver.cpp.o
+[ 91%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/traffic_generator.cpp.o
+[ 93%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/session.cpp.o
+[ 94%] Linking CXX shared library libprotocol_logic.so
+[ 94%] Built target protocol_logic
+[ 96%] Linking CXX shared library libtraffic_gen.so
+[ 96%] Built target traffic_gen
+[ 98%] Building CXX object traffic-gen/CMakeFiles/packet_gen.dir/tools/packet_gen_main.cpp.o
+[100%] Linking CXX executable packet_gen
+[100%] Built target packet_gen
+# end: 2026-09-22T07:31:31Z exit: 0

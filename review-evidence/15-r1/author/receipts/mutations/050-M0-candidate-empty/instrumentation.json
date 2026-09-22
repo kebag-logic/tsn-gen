@@ -1,0 +1,153 @@
+{
+ "artifacts": {
+  "tests/sanitizer/libsanitizer_probe.so": {
+   "link_flags": [],
+   "needed_runtimes": [],
+   "shared": true,
+   "undefined_dynamic_sanitizer_symbols": {
+    "address": 0,
+    "undefined": 0
+   }
+  },
+  "tests/sanitizer/libsanitizer_probe_asan.so": {
+   "link_flags": [],
+   "needed_runtimes": [],
+   "shared": true,
+   "undefined_dynamic_sanitizer_symbols": {
+    "address": 3,
+    "undefined": 0
+   }
+  },
+  "tests/sanitizer/libsanitizer_probe_ubsan.so": {
+   "link_flags": [],
+   "needed_runtimes": [],
+   "shared": true,
+   "undefined_dynamic_sanitizer_symbols": {
+    "address": 0,
+    "undefined": 3
+   }
+  },
+  "tests/sanitizer/sanitizer_probe-test": {
+   "link_flags": [],
+   "needed_runtimes": [],
+   "shared": false
+  },
+  "tests/sanitizer/sanitizer_probe-test_ASAN": {
+   "link_flags": [
+    "address"
+   ],
+   "needed_runtimes": [
+    "libasan.so.8"
+   ],
+   "shared": false
+  },
+  "tests/sanitizer/sanitizer_probe-test_UBSAN": {
+   "link_flags": [
+    "undefined"
+   ],
+   "needed_runtimes": [
+    "libubsan.so.1"
+   ],
+   "shared": false
+  }
+ },
+ "objects": {
+  "tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o": {
+   "asan_refs": 0,
+   "compile_flags": [],
+   "observed": [],
+   "sample": [],
+   "ubsan_refs": 0
+  },
+  "tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o": {
+   "asan_refs": 12,
+   "compile_flags": [
+    "address"
+   ],
+   "observed": [
+    "address"
+   ],
+   "sample": [
+    "__asan_handle_no_return",
+    "__asan_init",
+    "__asan_option_detect_stack_use_after_return"
+   ],
+   "ubsan_refs": 0
+  },
+  "tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o": {
+   "asan_refs": 0,
+   "compile_flags": [
+    "undefined"
+   ],
+   "observed": [
+    "undefined"
+   ],
+   "sample": [
+    "__ubsan_handle_add_overflow",
+    "__ubsan_handle_nonnull_arg",
+    "__ubsan_handle_pointer_overflow"
+   ],
+   "ubsan_refs": 5
+  },
+  "tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o": {
+   "asan_refs": 0,
+   "compile_flags": [],
+   "observed": [],
+   "sample": [],
+   "ubsan_refs": 0
+  },
+  "tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o": {
+   "asan_refs": 3,
+   "compile_flags": [
+    "address"
+   ],
+   "observed": [
+    "address"
+   ],
+   "sample": [
+    "__asan_init",
+    "__asan_report_load4",
+    "__asan_version_mismatch_check_v8"
+   ],
+   "ubsan_refs": 0
+  },
+  "tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o": {
+   "asan_refs": 0,
+   "compile_flags": [
+    "undefined"
+   ],
+   "observed": [
+    "undefined"
+   ],
+   "sample": [
+    "__ubsan_handle_add_overflow",
+    "__ubsan_handle_pointer_overflow",
+    "__ubsan_handle_type_mismatch_v1"
+   ],
+   "ubsan_refs": 3
+  }
+ },
+ "summary": {
+  "artifacts_linking_a_runtime": [
+   "tests/sanitizer/sanitizer_probe-test_ASAN",
+   "tests/sanitizer/sanitizer_probe-test_UBSAN"
+  ],
+  "build": "$VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-050-M0-candidate-empty",
+  "flag_vs_observed_mismatches": {},
+  "objects": 6,
+  "objects_by_compile_flags": {
+   "address": 2,
+   "none": 2,
+   "undefined": 2
+  },
+  "objects_by_observed": {
+   "address": 2,
+   "none": 2,
+   "undefined": 2
+  },
+  "shared_libs_with_undefined_sanitizer_symbols": [
+   "tests/sanitizer/libsanitizer_probe_asan.so",
+   "tests/sanitizer/libsanitizer_probe_ubsan.so"
+  ]
+ }
+}

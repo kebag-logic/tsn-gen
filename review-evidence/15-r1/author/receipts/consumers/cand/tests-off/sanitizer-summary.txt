@@ -1,0 +1,5 @@
+compile commands: 52
+compile commands with -fsanitize: 0
+link.txt files with -fsanitize: 0
+sanitizer variant or probe targets: 0
+CTest file present: no

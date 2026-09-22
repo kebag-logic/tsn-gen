@@ -1,0 +1,24 @@
+# id: 050-M0-candidate-empty-build
+# description: Build only the probe targets of mutation M0 unmutated candidate, capped at 8 jobs
+# cwd: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author
+# argv: cmake --build $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-050-M0-candidate-empty -j8 --target sanitizer_probe-test sanitizer_probe-test_ASAN sanitizer_probe-test_UBSAN 
+# start: 2026-09-22T07:28:10Z
+[ 50%] Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o
+[ 50%] Linking CXX shared library libsanitizer_probe.so
+[ 50%] Built target sanitizer_probe
+[100%] Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o
+[100%] Linking CXX executable sanitizer_probe-test
+[100%] Built target sanitizer_probe-test
+[  0%] Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o
+[ 33%] Linking CXX shared library libsanitizer_probe_asan.so
+[ 33%] Built target sanitizer_probe_asan
+[ 66%] Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o
+[100%] Linking CXX executable sanitizer_probe-test_ASAN
+[100%] Built target sanitizer_probe-test_ASAN
+[  0%] Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o
+[ 50%] Linking CXX shared library libsanitizer_probe_ubsan.so
+[ 50%] Built target sanitizer_probe_ubsan
+[ 50%] Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o
+[100%] Linking CXX executable sanitizer_probe-test_UBSAN
+[100%] Built target sanitizer_probe-test_UBSAN
+# end: 2026-09-22T07:28:11Z exit: 0

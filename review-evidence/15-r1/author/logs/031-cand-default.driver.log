@@ -1,0 +1,6 @@
+[031-cand-default-configure] exit=0 log=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/logs/031-cand-default-configure.log
+[031-cand-default-build] exit=0 log=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/logs/031-cand-default-build.log
+[031-cand-default-prep] exit=0 log=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/logs/031-cand-default-prep.log
+[031-cand-default-unit] exit=0 log=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/logs/031-cand-default-unit.log
+prep exit 0, unit exit 0
+driver exit 0

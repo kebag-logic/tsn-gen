@@ -1,0 +1,1 @@
+/usr/bin/c++ -Os -DNDEBUG -Wl,--dependency-file=CMakeFiles/logic_registry-test_UBSAN.dir/link.d "CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o" -o logic_registry-test_UBSAN  -Wl,-rpath,"\$ORIGIN/../" -fsanitize=undefined ../libprotocol_parser_ubsan.so ../../lib/libgtest_main.a ../../external/rapidyaml/libryml.a ../../lib/libgtest.a

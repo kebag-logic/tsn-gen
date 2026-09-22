@@ -1,0 +1,144 @@
+{
+ "configurations": {
+  "embedded-Debug": {
+   "compile": {
+    "changed": {},
+    "classes": {
+     "identical": 53
+    },
+    "count_a": 53,
+    "count_b": 53,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "flags": {
+    "changed": {},
+    "classes": {
+     "identical": 7
+    },
+    "count_a": 7,
+    "count_b": 7,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "link": {
+    "changed": {},
+    "classes": {
+     "identical": 7
+    },
+    "count_a": 7,
+    "count_b": 7,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "population": {
+    "base": {
+     "address": [],
+     "link_with_sanitizer": {},
+     "none": 53,
+     "undefined": []
+    },
+    "cand": {
+     "address": [],
+     "link_with_sanitizer": {},
+     "none": 53,
+     "undefined": []
+    }
+   }
+  },
+  "embedded-empty": {
+   "compile": {
+    "changed": {},
+    "classes": {
+     "identical": 53
+    },
+    "count_a": 53,
+    "count_b": 53,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "flags": {
+    "changed": {},
+    "classes": {
+     "identical": 7
+    },
+    "count_a": 7,
+    "count_b": 7,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "link": {
+    "changed": {},
+    "classes": {
+     "identical": 7
+    },
+    "count_a": 7,
+    "count_b": 7,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "population": {
+    "base": {
+     "address": [],
+     "link_with_sanitizer": {},
+     "none": 53,
+     "undefined": []
+    },
+    "cand": {
+     "address": [],
+     "link_with_sanitizer": {},
+     "none": 53,
+     "undefined": []
+    }
+   }
+  },
+  "tests-off": {
+   "compile": {
+    "changed": {},
+    "classes": {
+     "identical": 52
+    },
+    "count_a": 52,
+    "count_b": 52,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "flags": {
+    "changed": {},
+    "classes": {
+     "identical": 6
+    },
+    "count_a": 6,
+    "count_b": 6,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "link": {
+    "changed": {},
+    "classes": {
+     "identical": 6
+    },
+    "count_a": 6,
+    "count_b": 6,
+    "only_in_a": [],
+    "only_in_b": []
+   },
+   "population": {
+    "base": {
+     "address": [],
+     "link_with_sanitizer": {},
+     "none": 52,
+     "undefined": []
+    },
+    "cand": {
+     "address": [],
+     "link_with_sanitizer": {},
+     "none": 52,
+     "undefined": []
+    }
+   }
+  }
+ },
+ "label_a": "base",
+ "label_b": "cand"
+}

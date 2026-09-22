@@ -1,0 +1,6 @@
+# id: 060-venv-create
+# description: Create disposable venv for the documented BDD tool (outside the checkout)
+# cwd: $VALIDATION_STORAGE/tmp/a162-tsngen15
+# argv: python3 -m venv $VALIDATION_STORAGE/tmp/a162-tsngen15/venv 
+# start: 2026-09-22T07:29:05Z
+# end: 2026-09-22T07:29:07Z exit: 0

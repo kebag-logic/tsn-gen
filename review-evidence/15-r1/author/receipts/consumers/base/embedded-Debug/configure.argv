@@ -1,0 +1,1 @@
+-S $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/scripts/embedded-consumer -B $VALIDATION_STORAGE/tmp/a162-tsngen15/build/consumer-base-embedded-Debug -G Unix\ Makefiles -DTSN_GEN_SOURCE_DIR=$VALIDATION_STORAGE/tmp/a162-tsngen15/src/base -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug 

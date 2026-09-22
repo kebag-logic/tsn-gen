@@ -1,0 +1,76 @@
+# id: 054-M3-consumer-only-empty-ctest
+# description: Run the probe CTest cases of mutation M3 consumer-only instrumentation
+# cwd: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author
+# argv: ctest --test-dir $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-054-M3-consumer-only-empty -R \^sanitizer_probe --output-on-failure 
+# start: 2026-09-22T07:28:21Z
+Test project $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-054-M3-consumer-only-empty
+    Start 29: sanitizer_probe-test.clean
+1/7 Test #29: sanitizer_probe-test.clean ............................   Passed    0.00 sec
+    Start 30: sanitizer_probe-test_ASAN.clean
+2/7 Test #30: sanitizer_probe-test_ASAN.clean .......................   Passed    0.01 sec
+    Start 31: sanitizer_probe-test_UBSAN.clean
+3/7 Test #31: sanitizer_probe-test_UBSAN.clean ......................   Passed    0.00 sec
+    Start 32: sanitizer_probe-test_ASAN.library-heap-overflow
+4/7 Test #32: sanitizer_probe-test_ASAN.library-heap-overflow .......***Failed    0.02 sec
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS is unset
+-- child: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-054-M3-consumer-only-empty/tests/sanitizer/sanitizer_probe-test_ASAN library-heap-overflow
+-- child exit status: 0
+-- child stdout:
+sanitizer_probe: library-heap-overflow started
+sanitizer_probe: library-heap-overflow completed (value 0)
+
+-- child stderr:
+
+CMake Error at $VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-054-M3-consumer-only-empty/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+  sanitizer diagnostic control failed:
+
+  exit status 0, expected 1
+
+  no report matching "ERROR: AddressSanitizer: heap-buffer-overflow" on
+  stderr
+
+  the probe continued past its faulting operation
+
+
+
+
+    Start 33: sanitizer_probe-test_ASAN.consumer-heap-overflow
+5/7 Test #33: sanitizer_probe-test_ASAN.consumer-heap-overflow ......   Passed    0.02 sec
+    Start 34: sanitizer_probe-test_UBSAN.library-signed-overflow
+6/7 Test #34: sanitizer_probe-test_UBSAN.library-signed-overflow ....***Failed    0.01 sec
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS=halt_on_error=1
+-- child: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-054-M3-consumer-only-empty/tests/sanitizer/sanitizer_probe-test_UBSAN library-signed-overflow
+-- child exit status: 0
+-- child stdout:
+sanitizer_probe: library-signed-overflow started
+sanitizer_probe: library-signed-overflow completed (value -2147483648)
+
+-- child stderr:
+
+CMake Error at $VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-054-M3-consumer-only-empty/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+  sanitizer diagnostic control failed:
+
+  exit status 0, expected 1
+
+  no report matching "sanitizer_probe_lib[.]cpp:[0-9]+:[0-9]+: runtime error:
+  signed integer overflow" on stderr
+
+  the probe continued past its faulting operation
+
+
+
+
+    Start 35: sanitizer_probe-test_UBSAN.consumer-signed-overflow
+7/7 Test #35: sanitizer_probe-test_UBSAN.consumer-signed-overflow ...   Passed    0.01 sec
+
+71% tests passed, 2 tests failed out of 7
+
+Total Test time (real) =   0.08 sec
+
+The following tests FAILED:
+	 32 - sanitizer_probe-test_ASAN.library-heap-overflow (Failed)
+	 34 - sanitizer_probe-test_UBSAN.library-signed-overflow (Failed)
+Errors while running CTest
+# end: 2026-09-22T07:28:21Z exit: 8

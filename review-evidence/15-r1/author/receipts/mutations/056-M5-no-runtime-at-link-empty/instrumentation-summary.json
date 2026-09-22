@@ -1,0 +1,17 @@
+{
+ "build": "$VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-056-M5-no-runtime-at-link-empty",
+ "objects": 4,
+ "objects_by_compile_flags": {
+  "none": 2,
+  "address": 2
+ },
+ "objects_by_observed": {
+  "none": 2,
+  "address": 2
+ },
+ "flag_vs_observed_mismatches": {},
+ "artifacts_linking_a_runtime": [],
+ "shared_libs_with_undefined_sanitizer_symbols": [
+  "tests/sanitizer/libsanitizer_probe_asan.so"
+ ]
+}

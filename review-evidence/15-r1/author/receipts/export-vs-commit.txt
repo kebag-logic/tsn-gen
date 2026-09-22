@@ -1,0 +1,3 @@
+$VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand vs 76906b83eb54ac29040fe72fd910d34727188694: 219 superproject blobs compared, mismatches 0 []
+$VALIDATION_STORAGE/tmp/a162-tsngen15/src/replay-cand vs 76906b83eb54ac29040fe72fd910d34727188694: 219 superproject blobs compared, mismatches 0 []
+$VALIDATION_STORAGE/tmp/a162-tsngen15/src/base vs deca300c9eb4863fa13383b45ba6cb6fd0828671: 214 superproject blobs compared, mismatches 0 []

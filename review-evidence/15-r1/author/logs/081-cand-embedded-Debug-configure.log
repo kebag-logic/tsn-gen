@@ -1,0 +1,73 @@
+# id: 081-cand-embedded-Debug-configure
+# description: Embedded add_subdirectory consumer, build type 'Debug'
+# cwd: $VALIDATION_STORAGE/lanes/tsngen15-sanitizer-targets
+# argv: env -u CMAKE_BUILD_TYPE cmake -S $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/scripts/embedded-consumer -B $VALIDATION_STORAGE/tmp/a162-tsngen15/build/consumer-cand-embedded-Debug -G Unix\ Makefiles -DTSN_GEN_SOURCE_DIR=$VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug 
+# start: 2026-09-22T07:31:38Z
+-- The CXX compiler identification is GNU 16.2.1
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- ryml: using C++ standard: C++17
+-- ryml: importing subproject c4core (SUBDIRECTORY)... $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/ext/c4core
+-- c4core: using C++ standard: C++17
+CMake Warning (author) at $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2056 (elseif):
+  ELSEIF called with no arguments, it will be skipped.
+Call Stack (most recent call first):
+  $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/ext/c4core/cmake/c4Project.cmake:1889 (c4_add_target)
+  $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/ext/c4core/CMakeLists.txt:94 (c4_add_library)
+This warning is for project developers.  Use -Wno-author to suppress it.
+
+CMake Warning (policy) at $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2694 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+Call Stack (most recent call first):
+  $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2777 (__c4_install_exports)
+  $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/ext/c4core/CMakeLists.txt:112 (c4_install_exports)
+This warning is for project developers.  Use -Wno-author or -Wno-policy to
+suppress it.
+
+CMake Warning (policy) at $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2746 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+Call Stack (most recent call first):
+  $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2777 (__c4_install_exports)
+  $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/ext/c4core/CMakeLists.txt:112 (c4_install_exports)
+This warning is for project developers.  Use -Wno-author or -Wno-policy to
+suppress it.
+
+CMake Warning (author) at $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2056 (elseif):
+  ELSEIF called with no arguments, it will be skipped.
+Call Stack (most recent call first):
+  $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/ext/c4core/cmake/c4Project.cmake:1889 (c4_add_target)
+  $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/CMakeLists.txt:35 (c4_add_library)
+This warning is for project developers.  Use -Wno-author to suppress it.
+
+-- ryml: -----> target ryml PUBLIC incorporating lib c4core
+CMake Warning (policy) at $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2694 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+Call Stack (most recent call first):
+  $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2777 (__c4_install_exports)
+  $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/CMakeLists.txt:118 (c4_install_exports)
+This warning is for project developers.  Use -Wno-author or -Wno-policy to
+suppress it.
+
+CMake Warning (policy) at $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2746 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+Call Stack (most recent call first):
+  $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2777 (__c4_install_exports)
+  $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/external/rapidyaml/CMakeLists.txt:118 (c4_install_exports)
+This warning is for project developers.  Use -Wno-author or -Wno-policy to
+suppress it.
+
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/consumer-cand-embedded-Debug
+# end: 2026-09-22T07:31:38Z exit: 0

@@ -1,0 +1,60 @@
+# id: 041-scan-cand-debug
+# description: Scan cand-debug LastTest.log for sanitizer reports
+# cwd: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author
+# argv: python3 scripts/scan-test-log.py $VALIDATION_STORAGE/tmp/a162-tsngen15/build/cand-debug receipts/scan-cand-debug.json 
+# start: 2026-09-22T07:25:19Z
+{
+ "log": "$VALIDATION_STORAGE/tmp/a162-tsngen15/build/cand-debug/Testing/Temporary/LastTest.log",
+ "tests": 292,
+ "passed": 292,
+ "not_passed": [],
+ "tests_per_executable": {
+  "adp_fuzz-test": 22,
+  "adp_fuzz-test_ASAN": 22,
+  "adp_fuzz-test_UBSAN": 22,
+  "ethernet_frame_logic-test": 5,
+  "gtest_parser-test": 1,
+  "logic_registry-test": 7,
+  "logic_registry-test_ASAN": 7,
+  "logic_registry-test_UBSAN": 7,
+  "object_serializer-test": 11,
+  "object_serializer-test_ASAN": 11,
+  "object_serializer-test_UBSAN": 11,
+  "packet_gen": 1,
+  "protocol_parser-test": 9,
+  "protocol_parser-test_ASAN": 9,
+  "protocol_parser-test_UBSAN": 9,
+  "ptp_flags-test": 10,
+  "ptp_flags-test_ASAN": 10,
+  "ptp_flags-test_UBSAN": 10,
+  "sanitizer_probe-test": 1,
+  "sanitizer_probe-test_ASAN": 3,
+  "sanitizer_probe-test_UBSAN": 3,
+  "stack_builder-test": 8,
+  "stack_builder-test_ASAN": 8,
+  "stack_builder-test_UBSAN": 8,
+  "stack_codec-test": 5,
+  "traffic_gen-test": 16,
+  "traffic_gen-test_ASAN": 16,
+  "traffic_gen-test_UBSAN": 16,
+  "validator-test": 8,
+  "validator-test_ASAN": 8,
+  "validator-test_UBSAN": 8
+ },
+ "tests_with_reports_outside_probe_diagnostics": {},
+ "probe_diagnostic_reports": {
+  "289 sanitizer_probe-test_ASAN.library-heap-overflow [sanitizer_probe-test_ASAN]": [
+   "==1910423==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7bd986be0020 at pc 0x7fb9889aa184 bp 0x7ffd9fb85de0 sp 0x7ffd9fb85dd0"
+  ],
+  "290 sanitizer_probe-test_ASAN.consumer-heap-overflow [sanitizer_probe-test_ASAN]": [
+   "==1910436==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7b8b807e0020 at pc 0x55bf6f3792e4 bp 0x7ffdb659a980 sp 0x7ffdb659a970"
+  ],
+  "291 sanitizer_probe-test_UBSAN.library-signed-overflow [sanitizer_probe-test_UBSAN]": [
+   "$VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/tests/sanitizer/sanitizer_probe_lib.cpp:18:18: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'"
+  ],
+  "292 sanitizer_probe-test_UBSAN.consumer-signed-overflow [sanitizer_probe-test_UBSAN]": [
+   "$VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/tests/sanitizer/sanitizer_probe_test.cpp:34:18: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'"
+  ]
+ }
+}
+# end: 2026-09-22T07:25:19Z exit: 0

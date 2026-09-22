@@ -1,0 +1,36 @@
+# id: 034-instrumentation-base-default
+# description: Object sanitizer references and runtime NEEDED entries of base-default (flags.make based)
+# cwd: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author
+# argv: python3 scripts/instrumentation.py $VALIDATION_STORAGE/tmp/a162-tsngen15/build/base-default receipts/instrumentation-base-default.json 
+# start: 2026-09-22T07:23:53Z
+{
+ "build": "$VALIDATION_STORAGE/tmp/a162-tsngen15/build/base-default",
+ "objects": 125,
+ "objects_by_compile_flags": {
+  "none": 125
+ },
+ "objects_by_observed": {
+  "none": 125
+ },
+ "flag_vs_observed_mismatches": {},
+ "artifacts_linking_a_runtime": [
+  "parser/tests/logic_registry-test_ASAN",
+  "parser/tests/logic_registry-test_UBSAN",
+  "parser/tests/object_serializer-test_ASAN",
+  "parser/tests/object_serializer-test_UBSAN",
+  "parser/tests/protocol_parser-test_ASAN",
+  "parser/tests/protocol_parser-test_UBSAN",
+  "parser/tests/stack_builder-test_ASAN",
+  "parser/tests/stack_builder-test_UBSAN",
+  "parser/tests/validator-test_ASAN",
+  "parser/tests/validator-test_UBSAN",
+  "traffic-gen/tests/adp_fuzz-test_ASAN",
+  "traffic-gen/tests/adp_fuzz-test_UBSAN",
+  "traffic-gen/tests/ptp_flags-test_ASAN",
+  "traffic-gen/tests/ptp_flags-test_UBSAN",
+  "traffic-gen/tests/traffic_gen-test_ASAN",
+  "traffic-gen/tests/traffic_gen-test_UBSAN"
+ ],
+ "shared_libs_with_undefined_sanitizer_symbols": []
+}
+# end: 2026-09-22T07:23:55Z exit: 0

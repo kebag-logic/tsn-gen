@@ -1,0 +1,644 @@
+# id: 062-bdd-cand-default-aecp_behave
+# description: behave --tags=-hardware --tags=-verilator traffic-gen/tests/aecp_behave/features/ with PACKET_GEN_BIN=$VALIDATION_STORAGE/tmp/a162-tsngen15/build/cand-default/traffic-gen/packet_gen
+# cwd: $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand
+# argv: $VALIDATION_STORAGE/tmp/a162-tsngen15/venv/bin/behave --tags=-hardware --tags=-verilator traffic-gen/tests/aecp_behave/features/ 
+# start: 2026-09-22T07:29:23Z
+USING RUNNER: behave.runner:Runner
+Feature: AECP AEM ACQUIRE_ENTITY and LOCK_ENTITY PDU generation # traffic-gen/tests/aecp_behave/features/aecp_acquire_lock_entity.feature:6
+
+  Feature: AECP AEM ACQUIRE_ENTITY and LOCK_ENTITY PDU generation  # traffic-gen/tests/aecp_behave/features/aecp_acquire_lock_entity.feature:6
+
+  Scenario: ACQUIRE_ENTITY command_type is always 0                                               # traffic-gen/tests/aecp_behave/features/aecp_acquire_lock_entity.feature:15
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 10                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" always equals 0                                                 # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: ACQUIRE_ENTITY acquire_entity_flags respects PERSISTENT|RELEASE mask                  # traffic-gen/tests/aecp_behave/features/aecp_acquire_lock_entity.feature:20
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 11                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "acquire_entity_flags" always satisfies mask 0xC0000000                        # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:126
+
+  Scenario: ACQUIRE_ENTITY descriptor_type is a valid IEEE 1722.1 descriptor                      # traffic-gen/tests/aecp_behave/features/aecp_acquire_lock_entity.feature:25
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 12                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "descriptor_type" is always in range [0, 37]                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:116
+
+  Scenario: ACQUIRE_ENTITY message_type is AEM_COMMAND or AEM_RESPONSE                            # traffic-gen/tests/aecp_behave/features/aecp_acquire_lock_entity.feature:30
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 13                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "message_type" is always one of [0, 1]                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:137
+
+  Scenario: ACQUIRE_ENTITY control_data_length is always 36                                       # traffic-gen/tests/aecp_behave/features/aecp_acquire_lock_entity.feature:35
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 14                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 36                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: ACQUIRE_ENTITY packet is 39 bytes (308 bits padded)                                   # traffic-gen/tests/aecp_behave/features/aecp_acquire_lock_entity.feature:40
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 50 packets with seed 15                                                       # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the packet size is always 39 bytes                                                       # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:148
+
+  Scenario: LOCK_ENTITY command_type is always 1                                         # traffic-gen/tests/aecp_behave/features/aecp_acquire_lock_entity.feature:49
+    Given the AECP protocol directory is loaded                                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_lock_entity::AECP_LOCK_ENTITY::AECP_LOCK_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 20                                             # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" always equals 1                                        # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: LOCK_ENTITY lock_entity_flags respects UNLOCK mask                           # traffic-gen/tests/aecp_behave/features/aecp_acquire_lock_entity.feature:54
+    Given the AECP protocol directory is loaded                                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_lock_entity::AECP_LOCK_ENTITY::AECP_LOCK_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 21                                             # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "lock_entity_flags" always satisfies mask 0x80000000                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:126
+
+  Scenario: LOCK_ENTITY descriptor_type is a valid IEEE 1722.1 descriptor                # traffic-gen/tests/aecp_behave/features/aecp_acquire_lock_entity.feature:59
+    Given the AECP protocol directory is loaded                                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_lock_entity::AECP_LOCK_ENTITY::AECP_LOCK_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 22                                             # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "descriptor_type" is always in range [0, 37]                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:116
+
+  Scenario: LOCK_ENTITY control_data_length is always 36                                 # traffic-gen/tests/aecp_behave/features/aecp_acquire_lock_entity.feature:64
+    Given the AECP protocol directory is loaded                                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_lock_entity::AECP_LOCK_ENTITY::AECP_LOCK_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 23                                             # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 36                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: ACQUIRE_ENTITY packets are written to a pcap capture file                             # traffic-gen/tests/aecp_behave/features/aecp_acquire_lock_entity.feature:73
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 10 packets with seed 30 to pcap file "/tmp/aecp_acquire.pcap"                 # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:72
+    Then the pcap file "/tmp/aecp_acquire.pcap" exists                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:232
+    And the pcap file "/tmp/aecp_acquire.pcap" contains 10 packets                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:237
+
+Feature: AECP AEM audio mapping PDU generation # traffic-gen/tests/aecp_behave/features/aecp_audio_mapping.feature:7
+
+  Feature: AECP AEM audio mapping PDU generation  # traffic-gen/tests/aecp_behave/features/aecp_audio_mapping.feature:7
+
+  Scenario: GET_AUDIO_MAP command_type is always 43                                            # traffic-gen/tests/aecp_behave/features/aecp_audio_mapping.feature:16
+    Given the AECP protocol directory is loaded                                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_get_audio_map::AECP_GET_AUDIO_MAP::AECP_GET_AUDIO_MAP_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 150                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" always equals 43                                             # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: GET_AUDIO_MAP control_data_length is always 28                                     # traffic-gen/tests/aecp_behave/features/aecp_audio_mapping.feature:21
+    Given the AECP protocol directory is loaded                                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_get_audio_map::AECP_GET_AUDIO_MAP::AECP_GET_AUDIO_MAP_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 151                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 28                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: GET_AUDIO_MAP reserved field is always zero                                        # traffic-gen/tests/aecp_behave/features/aecp_audio_mapping.feature:26
+    Given the AECP protocol directory is loaded                                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_get_audio_map::AECP_GET_AUDIO_MAP::AECP_GET_AUDIO_MAP_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 152                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "reserved" always equals 0                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: GET_AUDIO_MAP descriptor_type is a valid IEEE 1722.1 descriptor                    # traffic-gen/tests/aecp_behave/features/aecp_audio_mapping.feature:31
+    Given the AECP protocol directory is loaded                                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_get_audio_map::AECP_GET_AUDIO_MAP::AECP_GET_AUDIO_MAP_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 153                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "descriptor_type" is always in range [0, 37]                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:116
+
+  Scenario: GET_AUDIO_MAP packet is 31 bytes (244 bits padded)                                 # traffic-gen/tests/aecp_behave/features/aecp_audio_mapping.feature:36
+    Given the AECP protocol directory is loaded                                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_get_audio_map::AECP_GET_AUDIO_MAP::AECP_GET_AUDIO_MAP_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 50 packets with seed 154                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the packet size is always 31 bytes                                                    # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:148
+
+  Scenario: Audio mappings command_type is ADD or REMOVE                                          # traffic-gen/tests/aecp_behave/features/aecp_audio_mapping.feature:45
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_audio_mappings::AECP_AUDIO_MAPPINGS::AECP_AUDIO_MAPPINGS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 160                                                     # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" is always one of [44, 45]                                       # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:137
+
+  Scenario: Audio mappings number_of_mappings is always 1                                         # traffic-gen/tests/aecp_behave/features/aecp_audio_mapping.feature:50
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_audio_mappings::AECP_AUDIO_MAPPINGS::AECP_AUDIO_MAPPINGS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 161                                                     # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "number_of_mappings" always equals 1                                           # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: Audio mappings control_data_length is always 36                                       # traffic-gen/tests/aecp_behave/features/aecp_audio_mapping.feature:55
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_audio_mappings::AECP_AUDIO_MAPPINGS::AECP_AUDIO_MAPPINGS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 162                                                     # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 36                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: Audio mappings reserved field is always zero                                          # traffic-gen/tests/aecp_behave/features/aecp_audio_mapping.feature:60
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_audio_mappings::AECP_AUDIO_MAPPINGS::AECP_AUDIO_MAPPINGS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 163                                                     # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "reserved" always equals 0                                                     # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: Audio mappings descriptor_type is a valid IEEE 1722.1 descriptor                      # traffic-gen/tests/aecp_behave/features/aecp_audio_mapping.feature:65
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_audio_mappings::AECP_AUDIO_MAPPINGS::AECP_AUDIO_MAPPINGS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 164                                                     # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "descriptor_type" is always in range [0, 37]                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:116
+
+  Scenario: Audio mappings packet is 39 bytes (308 bits padded)                                   # traffic-gen/tests/aecp_behave/features/aecp_audio_mapping.feature:70
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_audio_mappings::AECP_AUDIO_MAPPINGS::AECP_AUDIO_MAPPINGS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 50 packets with seed 165                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the packet size is always 39 bytes                                                       # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:148
+
+  Scenario: ADD_AUDIO_MAPPINGS packets are captured to a pcap file                                # traffic-gen/tests/aecp_behave/features/aecp_audio_mapping.feature:79
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_audio_mappings::AECP_AUDIO_MAPPINGS::AECP_AUDIO_MAPPINGS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 15 packets with seed 170 to pcap file "/tmp/aecp_audio_map.pcap"              # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:72
+    Then the pcap file "/tmp/aecp_audio_map.pcap" exists                                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:232
+    And the pcap file "/tmp/aecp_audio_map.pcap" contains 15 packets                              # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:237
+
+Feature: AECP AEM descriptor operation PDU generation # traffic-gen/tests/aecp_behave/features/aecp_descriptor_ops.feature:8
+
+  Feature: AECP AEM descriptor operation PDU generation  # traffic-gen/tests/aecp_behave/features/aecp_descriptor_ops.feature:8
+
+  Scenario: READ_DESCRIPTOR command_type is always 4                                                 # traffic-gen/tests/aecp_behave/features/aecp_descriptor_ops.feature:17
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_read_descriptor::AECP_READ_DESCRIPTOR::AECP_READ_DESCRIPTOR_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 40                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" always equals 4                                                    # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: READ_DESCRIPTOR control_data_length is always 28                                         # traffic-gen/tests/aecp_behave/features/aecp_descriptor_ops.feature:22
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_read_descriptor::AECP_READ_DESCRIPTOR::AECP_READ_DESCRIPTOR_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 41                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 28                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: READ_DESCRIPTOR reserved field is always zero                                            # traffic-gen/tests/aecp_behave/features/aecp_descriptor_ops.feature:27
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_read_descriptor::AECP_READ_DESCRIPTOR::AECP_READ_DESCRIPTOR_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 42                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "reserved" always equals 0                                                        # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: READ_DESCRIPTOR descriptor_type is a valid IEEE 1722.1 descriptor                        # traffic-gen/tests/aecp_behave/features/aecp_descriptor_ops.feature:32
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_read_descriptor::AECP_READ_DESCRIPTOR::AECP_READ_DESCRIPTOR_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 43                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "descriptor_type" is always in range [0, 37]                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:116
+
+  Scenario: READ_DESCRIPTOR packet is 31 bytes (244 bits padded)                                     # traffic-gen/tests/aecp_behave/features/aecp_descriptor_ops.feature:37
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_read_descriptor::AECP_READ_DESCRIPTOR::AECP_READ_DESCRIPTOR_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 50 packets with seed 44                                                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the packet size is always 31 bytes                                                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:148
+
+  Scenario: SET_CONFIGURATION command_type is always 6                                                     # traffic-gen/tests/aecp_behave/features/aecp_descriptor_ops.feature:46
+    Given the AECP protocol directory is loaded                                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_configuration::AECP_SET_CONFIGURATION::AECP_SET_CONFIGURATION_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 50                                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" always equals 6                                                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_CONFIGURATION control_data_length is always 24                                             # traffic-gen/tests/aecp_behave/features/aecp_descriptor_ops.feature:51
+    Given the AECP protocol directory is loaded                                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_configuration::AECP_SET_CONFIGURATION::AECP_SET_CONFIGURATION_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 51                                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 24                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_CONFIGURATION reserved field is always zero                                                # traffic-gen/tests/aecp_behave/features/aecp_descriptor_ops.feature:56
+    Given the AECP protocol directory is loaded                                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_configuration::AECP_SET_CONFIGURATION::AECP_SET_CONFIGURATION_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 52                                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "reserved" always equals 0                                                              # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_CONFIGURATION packet is 27 bytes (212 bits padded)                                         # traffic-gen/tests/aecp_behave/features/aecp_descriptor_ops.feature:61
+    Given the AECP protocol directory is loaded                                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_configuration::AECP_SET_CONFIGURATION::AECP_SET_CONFIGURATION_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 50 packets with seed 53                                                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the packet size is always 27 bytes                                                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:148
+
+  Scenario: Descriptor query command_type is one of the defined query commands                                # traffic-gen/tests/aecp_behave/features/aecp_descriptor_ops.feature:70
+    Given the AECP protocol directory is loaded                                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_aem_descriptor_query::AECP_AEM_DESCRIPTOR_QUERY::AECP_AEM_DESC_QUERY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 60                                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" is always one of [9, 15, 21, 23, 25, 26, 27, 34, 35, 39, 40, 41, 42]        # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:137
+
+  Scenario: Descriptor query control_data_length is always 24                                                 # traffic-gen/tests/aecp_behave/features/aecp_descriptor_ops.feature:75
+    Given the AECP protocol directory is loaded                                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_aem_descriptor_query::AECP_AEM_DESCRIPTOR_QUERY::AECP_AEM_DESC_QUERY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 61                                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 24                                                     # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: Descriptor query descriptor_type is a valid IEEE 1722.1 descriptor                                # traffic-gen/tests/aecp_behave/features/aecp_descriptor_ops.feature:80
+    Given the AECP protocol directory is loaded                                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_aem_descriptor_query::AECP_AEM_DESCRIPTOR_QUERY::AECP_AEM_DESC_QUERY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 62                                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "descriptor_type" is always in range [0, 37]                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:116
+
+  Scenario: Descriptor query packet is 27 bytes (212 bits padded)                                             # traffic-gen/tests/aecp_behave/features/aecp_descriptor_ops.feature:85
+    Given the AECP protocol directory is loaded                                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_aem_descriptor_query::AECP_AEM_DESCRIPTOR_QUERY::AECP_AEM_DESC_QUERY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 50 packets with seed 63                                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the packet size is always 27 bytes                                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:148
+
+Feature: AECP AEM name and control PDU generation # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:8
+
+  Feature: AECP AEM name and control PDU generation  # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:8
+
+  Scenario: SET_NAME command_type is always 16                                  # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:17
+    Given the AECP protocol directory is loaded                                 # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_name::AECP_SET_NAME::AECP_SET_NAME_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 100                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" always equals 16                              # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_NAME control_data_length is always 92                           # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:22
+    Given the AECP protocol directory is loaded                                 # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_name::AECP_SET_NAME::AECP_SET_NAME_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 101                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 92                       # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_NAME descriptor_type is a valid IEEE 1722.1 descriptor          # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:27
+    Given the AECP protocol directory is loaded                                 # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_name::AECP_SET_NAME::AECP_SET_NAME_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 102                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "descriptor_type" is always in range [0, 37]                 # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:116
+
+  Scenario: SET_NAME packet is 95 bytes (756 bits padded)                       # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:32
+    Given the AECP protocol directory is loaded                                 # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_name::AECP_SET_NAME::AECP_SET_NAME_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 50 packets with seed 103                                    # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the packet size is always 95 bytes                                     # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:148
+
+  Scenario: GET_NAME command_type is always 17                                  # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:41
+    Given the AECP protocol directory is loaded                                 # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_get_name::AECP_GET_NAME::AECP_GET_NAME_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 110                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" always equals 17                              # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: GET_NAME control_data_length is always 28                           # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:46
+    Given the AECP protocol directory is loaded                                 # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_get_name::AECP_GET_NAME::AECP_GET_NAME_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 111                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 28                       # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: GET_NAME packet is 31 bytes (244 bits padded)                       # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:51
+    Given the AECP protocol directory is loaded                                 # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_get_name::AECP_GET_NAME::AECP_GET_NAME_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 50 packets with seed 112                                    # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the packet size is always 31 bytes                                     # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:148
+
+  Scenario: SET_SAMPLING_RATE command_type is always 20                                                    # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:60
+    Given the AECP protocol directory is loaded                                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_sampling_rate::AECP_SET_SAMPLING_RATE::AECP_SET_SAMPLING_RATE_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 120                                                              # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" always equals 20                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_SAMPLING_RATE control_data_length is always 28                                             # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:65
+    Given the AECP protocol directory is loaded                                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_sampling_rate::AECP_SET_SAMPLING_RATE::AECP_SET_SAMPLING_RATE_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 121                                                              # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 28                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_SAMPLING_RATE descriptor_type is a valid IEEE 1722.1 descriptor                            # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:70
+    Given the AECP protocol directory is loaded                                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_sampling_rate::AECP_SET_SAMPLING_RATE::AECP_SET_SAMPLING_RATE_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 122                                                              # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "descriptor_type" is always in range [0, 37]                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:116
+
+  Scenario: SET_CLOCK_SOURCE command_type is always 22                                                  # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:79
+    Given the AECP protocol directory is loaded                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_clock_source::AECP_SET_CLOCK_SOURCE::AECP_SET_CLOCK_SOURCE_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 130                                                           # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" always equals 22                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_CLOCK_SOURCE control_data_length is always 28                                           # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:84
+    Given the AECP protocol directory is loaded                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_clock_source::AECP_SET_CLOCK_SOURCE::AECP_SET_CLOCK_SOURCE_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 131                                                           # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 28                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_CLOCK_SOURCE reserved field is always zero                                              # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:89
+    Given the AECP protocol directory is loaded                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_clock_source::AECP_SET_CLOCK_SOURCE::AECP_SET_CLOCK_SOURCE_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 132                                                           # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "reserved" always equals 0                                                           # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_CONTROL command_type is always 24                                        # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:98
+    Given the AECP protocol directory is loaded                                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_control::AECP_SET_CONTROL::AECP_SET_CONTROL_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 140                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" always equals 24                                       # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_CONTROL control_data_length is always 32                                 # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:103
+    Given the AECP protocol directory is loaded                                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_control::AECP_SET_CONTROL::AECP_SET_CONTROL_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 141                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 32                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_CONTROL descriptor_type is a valid IEEE 1722.1 descriptor                # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:108
+    Given the AECP protocol directory is loaded                                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_control::AECP_SET_CONTROL::AECP_SET_CONTROL_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 142                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "descriptor_type" is always in range [0, 37]                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:116
+
+  Scenario: SET_CONTROL packet is 35 bytes (276 bits padded)                             # traffic-gen/tests/aecp_behave/features/aecp_name_control.feature:113
+    Given the AECP protocol directory is loaded                                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_control::AECP_SET_CONTROL::AECP_SET_CONTROL_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 50 packets with seed 143                                             # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the packet size is always 35 bytes                                              # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:148
+
+Feature: AECP non-AEM PDU generation (ADDRESS_ACCESS and VENDOR_UNIQUE) # traffic-gen/tests/aecp_behave/features/aecp_non_aem.feature:7
+
+  Feature: AECP non-AEM PDU generation (ADDRESS_ACCESS and VENDOR_UNIQUE)  # traffic-gen/tests/aecp_behave/features/aecp_non_aem.feature:7
+
+  Scenario: ADDRESS_ACCESS message_type is COMMAND or RESPONSE                                    # traffic-gen/tests/aecp_behave/features/aecp_non_aem.feature:16
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_address_access::AECP_ADDRESS_ACCESS::AECP_ADDRESS_ACCESS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 300                                                     # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "message_type" is always one of [2, 3]                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:137
+
+  Scenario: ADDRESS_ACCESS control_data_length is always 38                                       # traffic-gen/tests/aecp_behave/features/aecp_non_aem.feature:21
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_address_access::AECP_ADDRESS_ACCESS::AECP_ADDRESS_ACCESS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 301                                                     # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 38                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: ADDRESS_ACCESS tlv_count is always 1                                                  # traffic-gen/tests/aecp_behave/features/aecp_non_aem.feature:26
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_address_access::AECP_ADDRESS_ACCESS::AECP_ADDRESS_ACCESS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 302                                                     # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "tlv_count" always equals 1                                                    # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: ADDRESS_ACCESS tlv_length_and_mode respects defined bit mask                          # traffic-gen/tests/aecp_behave/features/aecp_non_aem.feature:31
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_address_access::AECP_ADDRESS_ACCESS::AECP_ADDRESS_ACCESS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 303                                                     # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "tlv_length_and_mode" always satisfies mask 0xFF0F                             # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:126
+
+  Scenario: ADDRESS_ACCESS packet is 41 bytes (324 bits padded)                                   # traffic-gen/tests/aecp_behave/features/aecp_non_aem.feature:36
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_address_access::AECP_ADDRESS_ACCESS::AECP_ADDRESS_ACCESS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 50 packets with seed 304                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the packet size is always 41 bytes                                                       # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:148
+
+  Scenario: ADDRESS_ACCESS packets are captured to a pcap file                                    # traffic-gen/tests/aecp_behave/features/aecp_non_aem.feature:41
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_address_access::AECP_ADDRESS_ACCESS::AECP_ADDRESS_ACCESS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 20 packets with seed 310 to pcap file "/tmp/aecp_addr_access.pcap"            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:72
+    Then the pcap file "/tmp/aecp_addr_access.pcap" exists                                        # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:232
+    And the pcap file "/tmp/aecp_addr_access.pcap" contains 20 packets                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:237
+
+  Scenario: VENDOR_UNIQUE message_type is COMMAND or RESPONSE                                  # traffic-gen/tests/aecp_behave/features/aecp_non_aem.feature:51
+    Given the AECP protocol directory is loaded                                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_vendor_unique::AECP_VENDOR_UNIQUE::AECP_VENDOR_UNIQUE_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 320                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "message_type" is always one of [6, 7]                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:137
+
+  Scenario: VENDOR_UNIQUE control_data_length is always 32                                     # traffic-gen/tests/aecp_behave/features/aecp_non_aem.feature:56
+    Given the AECP protocol directory is loaded                                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_vendor_unique::AECP_VENDOR_UNIQUE::AECP_VENDOR_UNIQUE_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 321                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 32                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: VENDOR_UNIQUE packet is 35 bytes (276 bits padded)                                 # traffic-gen/tests/aecp_behave/features/aecp_non_aem.feature:61
+    Given the AECP protocol directory is loaded                                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_vendor_unique::AECP_VENDOR_UNIQUE::AECP_VENDOR_UNIQUE_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 50 packets with seed 322                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the packet size is always 35 bytes                                                    # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:148
+
+  Scenario: VENDOR_UNIQUE packets are captured to a pcap file                                  # traffic-gen/tests/aecp_behave/features/aecp_non_aem.feature:66
+    Given the AECP protocol directory is loaded                                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_vendor_unique::AECP_VENDOR_UNIQUE::AECP_VENDOR_UNIQUE_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 30 packets with seed 330 to pcap file "/tmp/aecp_vendor_unique.pcap"       # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:72
+    Then the pcap file "/tmp/aecp_vendor_unique.pcap" exists                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:232
+    And the pcap file "/tmp/aecp_vendor_unique.pcap" contains 30 packets                       # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:237
+
+  @hardware
+  Scenario: ADDRESS_ACCESS packets are sent on a raw network interface                            # traffic-gen/tests/aecp_behave/features/aecp_non_aem.feature:77
+    Given the AECP protocol directory is loaded                                                   # None
+    Given the interface "atdecc_aecp_address_access::AECP_ADDRESS_ACCESS::AECP_ADDRESS_ACCESS_IF" # None
+    When I generate 5 packets with seed 340 to raw interface "lo"                                 # None
+    Then the field "message_type" is always one of [2, 3]                                         # None
+
+  @verilator
+  Scenario: VENDOR_UNIQUE packets are sent to a Verilator DUT                                  # traffic-gen/tests/aecp_behave/features/aecp_non_aem.feature:83
+    Given the AECP protocol directory is loaded                                                # None
+    Given the interface "atdecc_aecp_vendor_unique::AECP_VENDOR_UNIQUE::AECP_VENDOR_UNIQUE_IF" # None
+    When I generate 5 packets with seed 350 to verilator socket "/tmp/verilator.sock"          # None
+    Then the field "message_type" is always one of [6, 7]                                      # None
+
+Feature: AECP AEM operation and no-payload PDU generation # traffic-gen/tests/aecp_behave/features/aecp_operations.feature:8
+
+  Feature: AECP AEM operation and no-payload PDU generation  # traffic-gen/tests/aecp_behave/features/aecp_operations.feature:8
+
+  Scenario: START_OPERATION command_type is always 52                                                # traffic-gen/tests/aecp_behave/features/aecp_operations.feature:17
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_start_operation::AECP_START_OPERATION::AECP_START_OPERATION_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 200                                                        # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" always equals 52                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: START_OPERATION control_data_length is always 28                                         # traffic-gen/tests/aecp_behave/features/aecp_operations.feature:22
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_start_operation::AECP_START_OPERATION::AECP_START_OPERATION_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 201                                                        # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 28                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: START_OPERATION descriptor_type is a valid IEEE 1722.1 descriptor                        # traffic-gen/tests/aecp_behave/features/aecp_operations.feature:27
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_start_operation::AECP_START_OPERATION::AECP_START_OPERATION_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 202                                                        # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "descriptor_type" is always in range [0, 37]                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:116
+
+  Scenario: START_OPERATION packet is 31 bytes (244 bits padded)                                     # traffic-gen/tests/aecp_behave/features/aecp_operations.feature:32
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_start_operation::AECP_START_OPERATION::AECP_START_OPERATION_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 50 packets with seed 203                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the packet size is always 31 bytes                                                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:148
+
+  Scenario: ABORT_OPERATION command_type is always 53                                                # traffic-gen/tests/aecp_behave/features/aecp_operations.feature:41
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_abort_operation::AECP_ABORT_OPERATION::AECP_ABORT_OPERATION_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 210                                                        # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" always equals 53                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: ABORT_OPERATION control_data_length is always 28                                         # traffic-gen/tests/aecp_behave/features/aecp_operations.feature:46
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_abort_operation::AECP_ABORT_OPERATION::AECP_ABORT_OPERATION_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 211                                                        # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 28                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: ABORT_OPERATION reserved field is always zero                                            # traffic-gen/tests/aecp_behave/features/aecp_operations.feature:51
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_abort_operation::AECP_ABORT_OPERATION::AECP_ABORT_OPERATION_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 212                                                        # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "reserved" always equals 0                                                        # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: OPERATION_STATUS command_type is always 54                                                  # traffic-gen/tests/aecp_behave/features/aecp_operations.feature:60
+    Given the AECP protocol directory is loaded                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_operation_status::AECP_OPERATION_STATUS::AECP_OPERATION_STATUS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 220                                                           # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" always equals 54                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: OPERATION_STATUS percent_complete is always in [0, 100]                                     # traffic-gen/tests/aecp_behave/features/aecp_operations.feature:65
+    Given the AECP protocol directory is loaded                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_operation_status::AECP_OPERATION_STATUS::AECP_OPERATION_STATUS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 221                                                           # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "percent_complete" is always in range [0, 100]                                       # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:116
+
+  Scenario: OPERATION_STATUS control_data_length is always 28                                           # traffic-gen/tests/aecp_behave/features/aecp_operations.feature:70
+    Given the AECP protocol directory is loaded                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_operation_status::AECP_OPERATION_STATUS::AECP_OPERATION_STATUS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 222                                                           # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 28                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: No-payload command_type is one of the defined no-payload commands                     # traffic-gen/tests/aecp_behave/features/aecp_operations.feature:79
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_aem_no_payload::AECP_AEM_NO_PAYLOAD::AECP_AEM_NO_PAYLOAD_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 230                                                     # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" is always one of [2, 3, 7, 36, 37]                              # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:137
+
+  Scenario: No-payload control_data_length is always 20                                           # traffic-gen/tests/aecp_behave/features/aecp_operations.feature:84
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_aem_no_payload::AECP_AEM_NO_PAYLOAD::AECP_AEM_NO_PAYLOAD_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 231                                                     # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 20                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: No-payload packet is 23 bytes (180 bits padded)                                       # traffic-gen/tests/aecp_behave/features/aecp_operations.feature:89
+    Given the AECP protocol directory is loaded                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_aem_no_payload::AECP_AEM_NO_PAYLOAD::AECP_AEM_NO_PAYLOAD_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 50 packets with seed 232                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the packet size is always 23 bytes                                                       # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:148
+
+  Scenario: OPERATION_STATUS packets are captured to a pcap file                                        # traffic-gen/tests/aecp_behave/features/aecp_operations.feature:98
+    Given the AECP protocol directory is loaded                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_operation_status::AECP_OPERATION_STATUS::AECP_OPERATION_STATUS_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 25 packets with seed 240 to pcap file "/tmp/aecp_op_status.pcap"                    # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:72
+    Then the pcap file "/tmp/aecp_op_status.pcap" exists                                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:232
+    And the pcap file "/tmp/aecp_op_status.pcap" contains 25 packets                                    # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:237
+
+Feature: AECP AEM stream operation PDU generation # traffic-gen/tests/aecp_behave/features/aecp_stream_ops.feature:7
+
+  Feature: AECP AEM stream operation PDU generation  # traffic-gen/tests/aecp_behave/features/aecp_stream_ops.feature:7
+
+  Scenario: SET_STREAM_FORMAT command_type is always 8                                                     # traffic-gen/tests/aecp_behave/features/aecp_stream_ops.feature:16
+    Given the AECP protocol directory is loaded                                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_stream_format::AECP_SET_STREAM_FORMAT::AECP_SET_STREAM_FORMAT_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 70                                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" always equals 8                                                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_STREAM_FORMAT control_data_length is always 32                                             # traffic-gen/tests/aecp_behave/features/aecp_stream_ops.feature:21
+    Given the AECP protocol directory is loaded                                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_stream_format::AECP_SET_STREAM_FORMAT::AECP_SET_STREAM_FORMAT_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 71                                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 32                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_STREAM_FORMAT descriptor_type is a valid IEEE 1722.1 descriptor                            # traffic-gen/tests/aecp_behave/features/aecp_stream_ops.feature:26
+    Given the AECP protocol directory is loaded                                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_stream_format::AECP_SET_STREAM_FORMAT::AECP_SET_STREAM_FORMAT_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 72                                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "descriptor_type" is always in range [0, 37]                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:116
+
+  Scenario: SET_STREAM_FORMAT packet is 35 bytes (276 bits padded)                                         # traffic-gen/tests/aecp_behave/features/aecp_stream_ops.feature:31
+    Given the AECP protocol directory is loaded                                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_stream_format::AECP_SET_STREAM_FORMAT::AECP_SET_STREAM_FORMAT_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 50 packets with seed 73                                                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the packet size is always 35 bytes                                                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:148
+
+  Scenario: SET_STREAM_INFO command_type is always 14                                                # traffic-gen/tests/aecp_behave/features/aecp_stream_ops.feature:40
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_stream_info::AECP_SET_STREAM_INFO::AECP_SET_STREAM_INFO_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 80                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "command_type" always equals 14                                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_STREAM_INFO control_data_length is always 68                                         # traffic-gen/tests/aecp_behave/features/aecp_stream_ops.feature:45
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_stream_info::AECP_SET_STREAM_INFO::AECP_SET_STREAM_INFO_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 100 packets with seed 81                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "control_data_length" always equals 68                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_STREAM_INFO descriptor_type is a valid IEEE 1722.1 descriptor                        # traffic-gen/tests/aecp_behave/features/aecp_stream_ops.feature:50
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_stream_info::AECP_SET_STREAM_INFO::AECP_SET_STREAM_INFO_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 82                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "descriptor_type" is always in range [0, 37]                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:116
+
+  Scenario: SET_STREAM_INFO reserved fields are always zero                                          # traffic-gen/tests/aecp_behave/features/aecp_stream_ops.feature:55
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_stream_info::AECP_SET_STREAM_INFO::AECP_SET_STREAM_INFO_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 200 packets with seed 83                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "reserved0" always equals 0                                                       # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+    And the field "reserved1" always equals 0                                                        # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:95
+
+  Scenario: SET_STREAM_INFO msrp_flags respects defined bit mask                                     # traffic-gen/tests/aecp_behave/features/aecp_stream_ops.feature:61
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_stream_info::AECP_SET_STREAM_INFO::AECP_SET_STREAM_INFO_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 500 packets with seed 84                                                         # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the field "msrp_flags" always satisfies mask 0xF800000000000000                             # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:126
+
+  Scenario: SET_STREAM_INFO packet is 75 bytes (596 bits padded)                                     # traffic-gen/tests/aecp_behave/features/aecp_stream_ops.feature:66
+    Given the AECP protocol directory is loaded                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_stream_info::AECP_SET_STREAM_INFO::AECP_SET_STREAM_INFO_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 50 packets with seed 85                                                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:62
+    Then the packet size is always 75 bytes                                                          # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:148
+
+  Scenario: SET_STREAM_FORMAT packets are captured to a pcap file                                          # traffic-gen/tests/aecp_behave/features/aecp_stream_ops.feature:75
+    Given the AECP protocol directory is loaded                                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface "atdecc_aecp_set_stream_format::AECP_SET_STREAM_FORMAT::AECP_SET_STREAM_FORMAT_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:24
+    When I generate 20 packets with seed 90 to pcap file "/tmp/aecp_stream_format.pcap"                    # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:72
+    Then the pcap file "/tmp/aecp_stream_format.pcap" exists                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:232
+    And the pcap file "/tmp/aecp_stream_format.pcap" contains 20 packets                                   # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:237
+
+Feature: Layer stacking — full on-wire frame assembly # traffic-gen/tests/aecp_behave/features/layer_stack.feature:16
+
+  Feature: Layer stacking — full on-wire frame assembly  # traffic-gen/tests/aecp_behave/features/layer_stack.feature:16
+
+  Scenario: Ethernet + AVTP + AECP_ACQUIRE_ENTITY stack produces 55-byte frame                                                                                                                                   # traffic-gen/tests/aecp_behave/features/layer_stack.feature:21
+    Given the AECP protocol directory is loaded                                                                                                                                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface stack "ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF:avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF:atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:29
+    When I generate 20 stacked packets with seed 1                                                                                                                                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:183
+    Then the stacked packet size is always 55 bytes                                                                                                                                                              # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:220
+
+  Scenario: Ethernet MAC ethertype is always 0x22F0                                                                                                                                                              # traffic-gen/tests/aecp_behave/features/layer_stack.feature:26
+    Given the AECP protocol directory is loaded                                                                                                                                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface stack "ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF:avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF:atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:29
+    When I generate 50 stacked packets with seed 99                                                                                                                                                              # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:183
+    Then layer 0 field "ethertype" always equals 8944                                                                                                                                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:199
+
+  Scenario: Ethernet MAC ethertype is always 0x22F0 (hex check)                                                                                                                                                  # traffic-gen/tests/aecp_behave/features/layer_stack.feature:31
+    Given the AECP protocol directory is loaded                                                                                                                                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface stack "ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF:avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF:atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:29
+    When I generate 20 stacked packets with seed 7                                                                                                                                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:183
+    Then layer 0 field "ethertype" always equals hex 22F0                                                                                                                                                        # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:209
+
+  Scenario: AVTP subtype is always 0xFB (251 decimal)                                                                                                                                                            # traffic-gen/tests/aecp_behave/features/layer_stack.feature:36
+    Given the AECP protocol directory is loaded                                                                                                                                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface stack "ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF:avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF:atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:29
+    When I generate 20 stacked packets with seed 12                                                                                                                                                              # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:183
+    Then layer 1 field "subtype" always equals 251                                                                                                                                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:199
+
+  Scenario: AVTP sv and version are always zero                                                                                                                                                                  # traffic-gen/tests/aecp_behave/features/layer_stack.feature:41
+    Given the AECP protocol directory is loaded                                                                                                                                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface stack "ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF:avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF:atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:29
+    When I generate 30 stacked packets with seed 5                                                                                                                                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:183
+    Then layer 1 field "sv" always equals 0                                                                                                                                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:199
+    And layer 1 field "version" always equals 0                                                                                                                                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:199
+
+  Scenario: AECP command_type is always ACQUIRE_ENTITY (0)                                                                                                                                                       # traffic-gen/tests/aecp_behave/features/layer_stack.feature:47
+    Given the AECP protocol directory is loaded                                                                                                                                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface stack "ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF:avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF:atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:29
+    When I generate 30 stacked packets with seed 77                                                                                                                                                              # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:183
+    Then layer 2 field "command_type" always equals 0                                                                                                                                                            # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:199
+
+  Scenario: Stacked frame can be captured to a pcap file                                                                                                                                                         # traffic-gen/tests/aecp_behave/features/layer_stack.feature:52
+    Given the AECP protocol directory is loaded                                                                                                                                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface stack "ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF:avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF:atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:29
+    When I generate 5 stacked packets with seed 42 to pcap file "/tmp/stack_aecp_test.pcap"                                                                                                                      # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:193
+    Then the pcap file "/tmp/stack_aecp_test.pcap" exists                                                                                                                                                        # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:232
+    And the pcap file "/tmp/stack_aecp_test.pcap" contains 5 packets                                                                                                                                             # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:237
+
+  Scenario: Stack output is deterministic with a fixed seed                                                                                                                                                      # traffic-gen/tests/aecp_behave/features/layer_stack.feature:58
+    Given the AECP protocol directory is loaded                                                                                                                                                                  # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:17
+    Given the interface stack "ethernet_mac_frame::ETHERNET_FRAME::ETHERNET_FRAME_IF:avtp_control_header::AVTP_CONTROL::AVTP_CONTROL_IF:atdecc_aecp_acquire_entity::AECP_ACQUIRE_ENTITY::AECP_ACQUIRE_ENTITY_IF" # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:29
+    When I generate 5 stacked packets with seed 42                                                                                                                                                               # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:183
+    Then the stacked packet size is always 55 bytes                                                                                                                                                              # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:220
+    And layer 0 field "ethertype" always equals 8944                                                                                                                                                             # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:199
+    And layer 1 field "subtype" always equals 251                                                                                                                                                                # traffic-gen/tests/aecp_behave/features/steps/packet_steps.py:199
+
+8 features passed, 0 failed, 0 skipped
+96 scenarios passed, 0 failed, 2 skipped
+395 steps passed, 0 failed, 8 skipped
+Took 0min 1.477s
+# end: 2026-09-22T07:29:24Z exit: 0

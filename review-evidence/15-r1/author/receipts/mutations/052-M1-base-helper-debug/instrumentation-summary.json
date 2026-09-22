@@ -1,0 +1,23 @@
+{
+ "build": "$VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-052-M1-base-helper-debug",
+ "objects": 6,
+ "objects_by_compile_flags": {
+  "undefined": 2,
+  "none": 2,
+  "address": 2
+ },
+ "objects_by_observed": {
+  "undefined": 2,
+  "none": 2,
+  "address": 2
+ },
+ "flag_vs_observed_mismatches": {},
+ "artifacts_linking_a_runtime": [
+  "tests/sanitizer/sanitizer_probe-test_ASAN",
+  "tests/sanitizer/sanitizer_probe-test_UBSAN"
+ ],
+ "shared_libs_with_undefined_sanitizer_symbols": [
+  "tests/sanitizer/libsanitizer_probe_asan.so",
+  "tests/sanitizer/libsanitizer_probe_ubsan.so"
+ ]
+}

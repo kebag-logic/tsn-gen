@@ -1,0 +1,229 @@
+Start testing: Sep 22 09:28 CEST
+----------------------------------------------------------
+29/35 Testing: sanitizer_probe-test.clean
+29/35 Test: sanitizer_probe-test.clean
+Command: "$VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe-test" "clean"
+Directory: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer
+"sanitizer_probe-test.clean" start time: Sep 22 09:28 CEST
+Output:
+----------------------------------------------------------
+sanitizer_probe: clean started
+sanitizer_probe: clean completed (value 4)
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"sanitizer_probe-test.clean" end time: Sep 22 09:28 CEST
+"sanitizer_probe-test.clean" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/35 Testing: sanitizer_probe-test_ASAN.clean
+30/35 Test: sanitizer_probe-test_ASAN.clean
+Command: "$VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe-test_ASAN" "clean"
+Directory: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer
+"sanitizer_probe-test_ASAN.clean" start time: Sep 22 09:28 CEST
+Output:
+----------------------------------------------------------
+sanitizer_probe: clean started
+sanitizer_probe: clean completed (value 4)
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"sanitizer_probe-test_ASAN.clean" end time: Sep 22 09:28 CEST
+"sanitizer_probe-test_ASAN.clean" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/35 Testing: sanitizer_probe-test_UBSAN.clean
+31/35 Test: sanitizer_probe-test_UBSAN.clean
+Command: "$VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe-test_UBSAN" "clean"
+Directory: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer
+"sanitizer_probe-test_UBSAN.clean" start time: Sep 22 09:28 CEST
+Output:
+----------------------------------------------------------
+sanitizer_probe: clean started
+sanitizer_probe: clean completed (value 4)
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"sanitizer_probe-test_UBSAN.clean" end time: Sep 22 09:28 CEST
+"sanitizer_probe-test_UBSAN.clean" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/35 Testing: sanitizer_probe-test_ASAN.library-heap-overflow
+32/35 Test: sanitizer_probe-test_ASAN.library-heap-overflow
+Command: "/usr/bin/cmake" "-DCHILD=$VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe-test_ASAN" "-DMODE=library-heap-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=ERROR: AddressSanitizer: heap-buffer-overflow" "-P" "$VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-053-M2-library-only-empty/tests/sanitizer/check_sanitizer_child.cmake"
+Directory: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer
+"sanitizer_probe-test_ASAN.library-heap-overflow" start time: Sep 22 09:28 CEST
+Output:
+----------------------------------------------------------
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS is unset
+-- child: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe-test_ASAN library-heap-overflow
+-- child exit status: 1
+-- child stdout:
+sanitizer_probe: library-heap-overflow started
+
+-- child stderr:
+=================================================================
+==1936968==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7b3b713e0020 at pc 0x7f1b73173184 bp 0x7ffee56cb0c0 sp 0x7ffee56cb0b0
+READ of size 4 at 0x7b3b713e0020 thread T0
+    #0 0x7f1b73173183 in sanitizer_probe::libraryRead(int const*, unsigned long) ($VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/libsanitizer_probe_asan.so+0x1183) (BuildId: 49f17f5dbcf136743381dec21321fbeed2394ddd)
+    #1 0x5644112c13ef in main ($VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x13ef) (BuildId: 8787ca8eb4ee24701ae21fabf3eba7dcc1e55a09)
+    #2 0x7f1b72227780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #3 0x7f1b722278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #4 0x5644112c1104 in _start ($VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x1104) (BuildId: 8787ca8eb4ee24701ae21fabf3eba7dcc1e55a09)
+
+0x7b3b713e0020 is located 0 bytes after 16-byte region [0x7b3b713e0010,0x7b3b713e0020)
+allocated by thread T0 here:
+    #0 0x7f1b72b2d431 in operator new[](unsigned long) (/usr/lib/libasan.so.8+0x12d431) (BuildId: b8a4241051a1621937fdc46e867ba7ecb56d96ea)
+    #1 0x5644112c12aa in main ($VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x12aa) (BuildId: 8787ca8eb4ee24701ae21fabf3eba7dcc1e55a09)
+    #2 0x7f1b72227780  (/usr/lib/libc.so.6+0x27780) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #3 0x7f1b722278b8 in __libc_start_main (/usr/lib/libc.so.6+0x278b8) (BuildId: 503200d7fda94a5dc6058d7e0694e5d1dcb2e372)
+    #4 0x5644112c1104 in _start ($VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe-test_ASAN+0x1104) (BuildId: 8787ca8eb4ee24701ae21fabf3eba7dcc1e55a09)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow ($VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/libsanitizer_probe_asan.so+0x1183) (BuildId: 49f17f5dbcf136743381dec21321fbeed2394ddd) in sanitizer_probe::libraryRead(int const*, unsigned long)
+Shadow bytes around the buggy address:
+  0x7b3b713dfd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7b3b713dfe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7b3b713dfe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7b3b713dff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7b3b713dff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x7b3b713e0000: fa fa 00 00[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x7b3b713e0080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b3b713e0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b3b713e0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b3b713e0200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7b3b713e0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==1936968==ABORTING
+
+-- the sanitizer stopped the probe at its fault, as expected
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"sanitizer_probe-test_ASAN.library-heap-overflow" end time: Sep 22 09:28 CEST
+"sanitizer_probe-test_ASAN.library-heap-overflow" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/35 Testing: sanitizer_probe-test_ASAN.consumer-heap-overflow
+33/35 Test: sanitizer_probe-test_ASAN.consumer-heap-overflow
+Command: "/usr/bin/cmake" "-DCHILD=$VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe-test_ASAN" "-DMODE=consumer-heap-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=ERROR: AddressSanitizer: heap-buffer-overflow" "-P" "$VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-053-M2-library-only-empty/tests/sanitizer/check_sanitizer_child.cmake"
+Directory: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer
+"sanitizer_probe-test_ASAN.consumer-heap-overflow" start time: Sep 22 09:28 CEST
+Output:
+----------------------------------------------------------
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS is unset
+-- child: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe-test_ASAN consumer-heap-overflow
+-- child exit status: 0
+-- child stdout:
+sanitizer_probe: consumer-heap-overflow started
+sanitizer_probe: consumer-heap-overflow completed (value 0)
+
+-- child stderr:
+
+CMake Error at $VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-053-M2-library-only-empty/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+  sanitizer diagnostic control failed:
+
+  exit status 0, expected 1
+
+  no report matching "ERROR: AddressSanitizer: heap-buffer-overflow" on
+  stderr
+
+  the probe continued past its faulting operation
+
+
+
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"sanitizer_probe-test_ASAN.consumer-heap-overflow" end time: Sep 22 09:28 CEST
+"sanitizer_probe-test_ASAN.consumer-heap-overflow" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/35 Testing: sanitizer_probe-test_UBSAN.library-signed-overflow
+34/35 Test: sanitizer_probe-test_UBSAN.library-signed-overflow
+Command: "/usr/bin/cmake" "-DCHILD=$VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe-test_UBSAN" "-DMODE=library-signed-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=sanitizer_probe_lib[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow" "-P" "$VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-053-M2-library-only-empty/tests/sanitizer/check_sanitizer_child.cmake"
+Directory: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer
+"sanitizer_probe-test_UBSAN.library-signed-overflow" start time: Sep 22 09:28 CEST
+Output:
+----------------------------------------------------------
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS=halt_on_error=1
+-- child: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe-test_UBSAN library-signed-overflow
+-- child exit status: 1
+-- child stdout:
+sanitizer_probe: library-signed-overflow started
+
+-- child stderr:
+$VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe_lib.cpp:18:18: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+
+-- the sanitizer stopped the probe at its fault, as expected
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"sanitizer_probe-test_UBSAN.library-signed-overflow" end time: Sep 22 09:28 CEST
+"sanitizer_probe-test_UBSAN.library-signed-overflow" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/35 Testing: sanitizer_probe-test_UBSAN.consumer-signed-overflow
+35/35 Test: sanitizer_probe-test_UBSAN.consumer-signed-overflow
+Command: "/usr/bin/cmake" "-DCHILD=$VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe-test_UBSAN" "-DMODE=consumer-signed-overflow" "-DEXPECT_EXIT=1" "-DEXPECT_REPORT=sanitizer_probe_test[.]cpp:[0-9]+:[0-9]+: runtime error: signed integer overflow" "-P" "$VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-053-M2-library-only-empty/tests/sanitizer/check_sanitizer_child.cmake"
+Directory: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer
+"sanitizer_probe-test_UBSAN.consumer-signed-overflow" start time: Sep 22 09:28 CEST
+Output:
+----------------------------------------------------------
+-- ASAN_OPTIONS is unset
+-- UBSAN_OPTIONS=halt_on_error=1
+-- child: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe-test_UBSAN consumer-signed-overflow
+-- child exit status: 0
+-- child stdout:
+sanitizer_probe: consumer-signed-overflow started
+sanitizer_probe: consumer-signed-overflow completed (value -2147483648)
+
+-- child stderr:
+
+CMake Error at $VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-053-M2-library-only-empty/tests/sanitizer/check_sanitizer_child.cmake:51 (message):
+  sanitizer diagnostic control failed:
+
+  exit status 0, expected 1
+
+  no report matching "sanitizer_probe_test[.]cpp:[0-9]+:[0-9]+: runtime
+  error: signed integer overflow" on stderr
+
+  the probe continued past its faulting operation
+
+
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"sanitizer_probe-test_UBSAN.consumer-signed-overflow" end time: Sep 22 09:28 CEST
+"sanitizer_probe-test_UBSAN.consumer-signed-overflow" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 22 09:28 CEST

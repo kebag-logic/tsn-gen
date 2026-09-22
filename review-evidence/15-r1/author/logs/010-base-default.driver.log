@@ -1,0 +1,6 @@
+[010-base-default-configure] exit=0 log=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/logs/010-base-default-configure.log
+[010-base-default-build] exit=0 log=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/logs/010-base-default-build.log
+[010-base-default-prep] exit=0 log=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/logs/010-base-default-prep.log
+[010-base-default-unit] exit=0 log=$WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/logs/010-base-default-unit.log
+prep exit 0, unit exit 0
+driver exit 0

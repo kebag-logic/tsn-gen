@@ -1,0 +1,24 @@
+date_utc=2026-09-22T07:40:22Z
+head=76906b83eb54ac29040fe72fd910d34727188694
+tree=a34065c39ea41aeb5daae9ecae3763f632f27484
+parent=deca300c9eb4863fa13383b45ba6cb6fd0828671
+branch=15-instrument-sanitizer-targets
+local_origin_tracking_ref=deca300c9eb4863fa13383b45ba6cb6fd0828671
+remote_branch_head=deca300c9eb4863fa13383b45ba6cb6fd0828671
+remote_main_head=deca300c9eb4863fa13383b45ba6cb6fd0828671
+commits_ahead_of_base=1
+commit_message_lines=1
+commit_subject=Instrument sanitizer variants and their test TUs under every build type
+status_porcelain_ignored_begin
+# branch.oid 76906b83eb54ac29040fe72fd910d34727188694
+# branch.head 15-instrument-sanitizer-targets
+# branch.upstream origin/15-instrument-sanitizer-targets
+# branch.ab +1 -0
+status_porcelain_ignored_end
+-d75108e96058b6e00da6306a7d99c9555f645434 external/FTXUI
+-bc5c08d3df37e9d725656c345d3991ab0c982717 external/PcapPlusPlus
+ 0bdccf4aa2f5c67af967193caf31d42d5c49bde2 external/googletest (release-1.8.0-3529-g0bdccf4a)
+-88f14e946a05cd0895e1a127bf89da9b3fb1d98b external/mininet
+-8c201f6e47a53feaab773922a743091eb6c8972a external/protobuf-c
+ e65999dc4d65368e1b3eb770e28d775885b0f525 external/rapidyaml (v0.8.0)
+-eb46e8aa5a23f99c76be4a53413a856d6b236145 tests/act

@@ -1,0 +1,59 @@
+# id: 091-cross-M1-base-helper-libs
+# description: Build sanitizer variant shared libraries with the cross compiler, 8 jobs
+# cwd: $VALIDATION_STORAGE/lanes/tsngen15-sanitizer-targets
+# argv: cmake --build $VALIDATION_STORAGE/tmp/a162-tsngen15/build/cross-091-cross-M1-base-helper -j8 --target sanitizer_probe_asan sanitizer_probe_ubsan protocol_parser_asan protocol_parser_ubsan 
+# start: 2026-09-22T07:33:07Z
+[  0%] Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o
+[100%] Linking CXX shared library libsanitizer_probe_asan.so
+[100%] Built target sanitizer_probe_asan
+[  0%] Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o
+[100%] Linking CXX shared library libsanitizer_probe_ubsan.so
+[100%] Built target sanitizer_probe_ubsan
+[  0%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/common.cpp.o
+[  0%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/node_type.cpp.o
+[  0%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/tag.cpp.o
+[  5%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/preprocess.cpp.o
+[  5%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/reference_resolver.cpp.o
+[ 11%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/parse.cpp.o
+[ 17%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/tree.cpp.o
+[ 23%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/node.cpp.o
+[ 29%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/version.cpp.o
+[ 29%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/base64.cpp.o
+[ 35%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/char_traits.cpp.o
+[ 35%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/error.cpp.o
+[ 41%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/format.cpp.o
+[ 41%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/language.cpp.o
+[ 47%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_resource.cpp.o
+[ 47%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/utf.cpp.o
+[ 52%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_util.cpp.o
+[ 58%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/version.cpp.o
+[ 58%] Linking CXX shared library libryml.so
+[ 58%] Built target ryml
+[ 58%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o
+[ 64%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o
+[ 70%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o
+[ 76%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o
+[ 76%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o
+[ 76%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o
+[ 82%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o
+[ 82%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o
+[ 88%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o
+[ 88%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o
+[ 94%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o
+[100%] Linking CXX shared library libprotocol_parser_asan.so
+[100%] Built target protocol_parser_asan
+[ 62%] Built target ryml
+[ 68%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o
+[ 68%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o
+[ 68%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o
+[ 75%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o
+[ 75%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o
+[ 81%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o
+[ 87%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o
+[ 87%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o
+[ 93%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o
+[ 93%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o
+[100%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o
+[100%] Linking CXX shared library libprotocol_parser_ubsan.so
+[100%] Built target protocol_parser_ubsan
+# end: 2026-09-22T07:33:14Z exit: 0

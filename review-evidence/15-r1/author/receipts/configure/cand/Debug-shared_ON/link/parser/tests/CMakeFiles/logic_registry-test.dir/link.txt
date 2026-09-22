@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/logic_registry-test.dir/link.d "CMakeFiles/logic_registry-test.dir/logic_registry_test.cpp.o" -o logic_registry-test  -Wl,-rpath,"\$ORIGIN/../:\$ORIGIN/../../lib:\$ORIGIN/../../external/rapidyaml" ../libprotocol_parser.so.0.1.0 ../../lib/libgtest_main.so.1.16.0 ../../external/rapidyaml/libryml.so.0.8.0 ../../lib/libgtest.so.1.16.0

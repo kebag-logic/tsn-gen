@@ -1,0 +1,1 @@
+cmake -S $VALIDATION_STORAGE/lanes/tsngen15-sanitizer-targets -B $VALIDATION_STORAGE/tmp/a162-tsngen15/cfg/helper-only/empty-shared_ON -G Unix\ Makefiles -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DBUILD_SHARED_LIBS=ON 

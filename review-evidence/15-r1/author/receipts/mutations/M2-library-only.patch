@@ -1,0 +1,23 @@
+diff -u -r a/cmake/CMakeGenTestingLibraries.cmake b/cmake/CMakeGenTestingLibraries.cmake
+--- a/cmake/CMakeGenTestingLibraries.cmake	2026-09-22 09:27:46.385511126 +0200
++++ b/cmake/CMakeGenTestingLibraries.cmake	2026-09-22 09:27:46.385626199 +0200
+@@ -21,8 +21,8 @@
+ 		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS}>
+ 		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS}>
+ 		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS}>
+-		${COMP_ASAN_FLAGS}
+ 	)
++	target_compile_options(${BASENAME}_asan PRIVATE ${COMP_ASAN_FLAGS})
+ 
+ 	target_include_directories(${BASENAME}_asan PUBLIC
+ 		$<BUILD_INTERFACE:${INCDIRS}>
+@@ -34,8 +34,8 @@
+ 		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS}>
+ 		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS}>
+ 		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS}>
+-		${COMP_UBSAN_FLAGS}
+ 	)
++	target_compile_options(${BASENAME}_ubsan PRIVATE ${COMP_UBSAN_FLAGS})
+ 
+ 	target_include_directories(${BASENAME}_ubsan PUBLIC
+ 		$<BUILD_INTERFACE:${INCDIRS}>

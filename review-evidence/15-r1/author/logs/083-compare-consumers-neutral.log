@@ -1,0 +1,24 @@
+# id: 083-compare-consumers-neutral
+# description: Compare base and candidate consumer generated files with the tsn-gen root neutralised
+# cwd: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author
+# argv: python3 scripts/compare-configure.py receipts/consumers base cand receipts/compare-consumers-base-vs-candidate.json 
+# start: 2026-09-22T07:32:06Z
+== embedded-Debug
+  compile: a=53 b=53 classes={'identical': 53} only_in_a=0 only_in_b=0
+  link: a=7 b=7 classes={'identical': 7} only_in_a=0 only_in_b=0
+  flags: a=7 b=7 classes={'identical': 7} only_in_a=0 only_in_b=0
+  population base: address=0 undefined=0 none=53 both=0 sanitizer-linked=0
+  population cand: address=0 undefined=0 none=53 both=0 sanitizer-linked=0
+== embedded-empty
+  compile: a=53 b=53 classes={'identical': 53} only_in_a=0 only_in_b=0
+  link: a=7 b=7 classes={'identical': 7} only_in_a=0 only_in_b=0
+  flags: a=7 b=7 classes={'identical': 7} only_in_a=0 only_in_b=0
+  population base: address=0 undefined=0 none=53 both=0 sanitizer-linked=0
+  population cand: address=0 undefined=0 none=53 both=0 sanitizer-linked=0
+== tests-off
+  compile: a=52 b=52 classes={'identical': 52} only_in_a=0 only_in_b=0
+  link: a=6 b=6 classes={'identical': 6} only_in_a=0 only_in_b=0
+  flags: a=6 b=6 classes={'identical': 6} only_in_a=0 only_in_b=0
+  population base: address=0 undefined=0 none=52 both=0 sanitizer-linked=0
+  population cand: address=0 undefined=0 none=52 both=0 sanitizer-linked=0
+# end: 2026-09-22T07:32:06Z exit: 0

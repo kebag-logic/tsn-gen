@@ -1,0 +1,86 @@
+# id: 056-M5-no-runtime-at-link-empty-configure
+# description: Configure mutation M5 no sanitizer runtime at link, build type 'empty'
+# cwd: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author
+# argv: env -u CMAKE_BUILD_TYPE cmake -S $VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-056-M5-no-runtime-at-link-empty -B $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-056-M5-no-runtime-at-link-empty -G Unix\ Makefiles -DBUILD_SHARED_LIBS=ON -DCMAKE_EXPORT_COMPILE_COMMANDS=ON 
+# start: 2026-09-22T07:28:24Z
+-- The CXX compiler identification is GNU 16.2.1
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- ryml: using C++ standard: C++17
+-- ryml: importing subproject c4core (SUBDIRECTORY)... $VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-056-M5-no-runtime-at-link-empty/external/rapidyaml/ext/c4core
+-- c4core: using C++ standard: C++17
+CMake Warning (author) at external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2056 (elseif):
+  ELSEIF called with no arguments, it will be skipped.
+Call Stack (most recent call first):
+  external/rapidyaml/ext/c4core/cmake/c4Project.cmake:1889 (c4_add_target)
+  external/rapidyaml/ext/c4core/CMakeLists.txt:94 (c4_add_library)
+This warning is for project developers.  Use -Wno-author to suppress it.
+
+CMake Warning (policy) at external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2694 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+Call Stack (most recent call first):
+  external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2777 (__c4_install_exports)
+  external/rapidyaml/ext/c4core/CMakeLists.txt:112 (c4_install_exports)
+This warning is for project developers.  Use -Wno-author or -Wno-policy to
+suppress it.
+
+CMake Warning (policy) at external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2746 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+Call Stack (most recent call first):
+  external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2777 (__c4_install_exports)
+  external/rapidyaml/ext/c4core/CMakeLists.txt:112 (c4_install_exports)
+This warning is for project developers.  Use -Wno-author or -Wno-policy to
+suppress it.
+
+CMake Warning (author) at external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2056 (elseif):
+  ELSEIF called with no arguments, it will be skipped.
+Call Stack (most recent call first):
+  external/rapidyaml/ext/c4core/cmake/c4Project.cmake:1889 (c4_add_target)
+  external/rapidyaml/CMakeLists.txt:35 (c4_add_library)
+This warning is for project developers.  Use -Wno-author to suppress it.
+
+-- ryml: -----> target ryml PUBLIC incorporating lib c4core
+CMake Warning (policy) at external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2694 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+Call Stack (most recent call first):
+  external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2777 (__c4_install_exports)
+  external/rapidyaml/CMakeLists.txt:118 (c4_install_exports)
+This warning is for project developers.  Use -Wno-author or -Wno-policy to
+suppress it.
+
+CMake Warning (policy) at external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2746 (install):
+  Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
+  "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+Call Stack (most recent call first):
+  external/rapidyaml/ext/c4core/cmake/c4Project.cmake:2777 (__c4_install_exports)
+  external/rapidyaml/CMakeLists.txt:118 (c4_install_exports)
+This warning is for project developers.  Use -Wno-author or -Wno-policy to
+suppress it.
+
+-- The C compiler identification is GNU 16.2.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Generating Multi-library -fsanitize=undefined
+-- tshark not found — skipping stack_codec_tshark validation
+-- Generating Multi-library -fsanitize=undefined
+-- Generating Multi-library -fsanitize=undefined
+-- Configuring done (0.6s)
+-- Generating done (0.1s)
+-- Build files have been written to: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-056-M5-no-runtime-at-link-empty
+# end: 2026-09-22T07:28:25Z exit: 0

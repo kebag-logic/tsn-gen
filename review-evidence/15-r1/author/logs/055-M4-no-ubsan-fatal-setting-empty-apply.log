@@ -1,0 +1,7 @@
+# id: 055-M4-no-ubsan-fatal-setting-empty-apply
+# description: Apply mutation M4 UBSan controls without the fatal setting to a copy of the candidate
+# cwd: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author
+# argv: patch -p1 -d $VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-055-M4-no-ubsan-fatal-setting-empty -i $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/receipts/mutations/M4-no-ubsan-fatal-setting.patch 
+# start: 2026-09-22T07:28:22Z
+patching file tests/sanitizer/CMakeLists.txt
+# end: 2026-09-22T07:28:22Z exit: 0

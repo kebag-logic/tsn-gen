@@ -1,0 +1,26 @@
+{
+ "log": "$VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-050-M0-candidate-empty/Testing/Temporary/LastTest.log",
+ "tests": 7,
+ "passed": 7,
+ "not_passed": [],
+ "tests_per_executable": {
+  "sanitizer_probe-test": 1,
+  "sanitizer_probe-test_ASAN": 3,
+  "sanitizer_probe-test_UBSAN": 3
+ },
+ "tests_with_reports_outside_probe_diagnostics": {},
+ "probe_diagnostic_reports": {
+  "032 sanitizer_probe-test_ASAN.library-heap-overflow [sanitizer_probe-test_ASAN]": [
+   "==1936189==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7b23c03e0020 at pc 0x7f03c2151184 bp 0x7fff7d2667e0 sp 0x7fff7d2667d0"
+  ],
+  "033 sanitizer_probe-test_ASAN.consumer-heap-overflow [sanitizer_probe-test_ASAN]": [
+   "==1936191==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7c117d5e0020 at pc 0x564244a0e2e4 bp 0x7fffe023a210 sp 0x7fffe023a200"
+  ],
+  "034 sanitizer_probe-test_UBSAN.library-signed-overflow [sanitizer_probe-test_UBSAN]": [
+   "$VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-050-M0-candidate-empty/tests/sanitizer/sanitizer_probe_lib.cpp:18:18: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'"
+  ],
+  "035 sanitizer_probe-test_UBSAN.consumer-signed-overflow [sanitizer_probe-test_UBSAN]": [
+   "$VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-050-M0-candidate-empty/tests/sanitizer/sanitizer_probe_test.cpp:34:18: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'"
+  ]
+ }
+}

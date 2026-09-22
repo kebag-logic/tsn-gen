@@ -1,0 +1,326 @@
+# id: 084-recompare-base-candidate
+# description: Re-run the matrix comparison with the updated script (same inputs)
+# cwd: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author
+# argv: python3 scripts/compare-configure.py receipts/configure base cand receipts/compare-base-vs-candidate.json 
+# start: 2026-09-22T07:32:06Z
+== Debug-shared_ON
+  compile: a=125 b=131 classes={'identical': 125} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o
+  link: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/link.txt
+  flags: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/flags.make
+  population base: address=29 undefined=29 none=67 both=0 sanitizer-linked=16
+  population cand: address=31 undefined=31 none=69 both=0 sanitizer-linked=18
+== Debug-shared_unset
+  compile: a=125 b=131 classes={'identical': 125} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o
+  link: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/link.txt
+  flags: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/flags.make
+  population base: address=29 undefined=29 none=67 both=0 sanitizer-linked=16
+  population cand: address=31 undefined=31 none=69 both=0 sanitizer-linked=18
+== MinSizeRel-shared_ON
+  compile: a=125 b=131 classes={'identical': 125} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o
+  link: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/link.txt
+  flags: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/flags.make
+  population base: address=29 undefined=29 none=67 both=0 sanitizer-linked=16
+  population cand: address=31 undefined=31 none=69 both=0 sanitizer-linked=18
+== MinSizeRel-shared_unset
+  compile: a=125 b=131 classes={'identical': 125} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o
+  link: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/link.txt
+  flags: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/flags.make
+  population base: address=29 undefined=29 none=67 both=0 sanitizer-linked=16
+  population cand: address=31 undefined=31 none=69 both=0 sanitizer-linked=18
+== RelWithDebInfo-shared_ON
+  compile: a=125 b=131 classes={'identical': 125} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o
+  link: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/link.txt
+  flags: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/flags.make
+  population base: address=29 undefined=29 none=67 both=0 sanitizer-linked=16
+  population cand: address=31 undefined=31 none=69 both=0 sanitizer-linked=18
+== RelWithDebInfo-shared_unset
+  compile: a=125 b=131 classes={'identical': 125} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o
+  link: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/link.txt
+  flags: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/flags.make
+  population base: address=29 undefined=29 none=67 both=0 sanitizer-linked=16
+  population cand: address=31 undefined=31 none=69 both=0 sanitizer-linked=18
+== Release-shared_ON
+  compile: a=125 b=131 classes={'identical': 125} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o
+  link: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/link.txt
+  flags: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/flags.make
+  population base: address=29 undefined=29 none=67 both=0 sanitizer-linked=16
+  population cand: address=31 undefined=31 none=69 both=0 sanitizer-linked=18
+== Release-shared_unset
+  compile: a=125 b=131 classes={'identical': 125} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o
+  link: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/link.txt
+  flags: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/flags.make
+  population base: address=29 undefined=29 none=67 both=0 sanitizer-linked=16
+  population cand: address=31 undefined=31 none=69 both=0 sanitizer-linked=18
+== empty-shared_ON
+  compile: a=125 b=131 classes={'identical': 67, 'added:-fsanitize=address': 29, 'added:-fsanitize=undefined': 29} only_in_a=0 only_in_b=6
+    adp_fuzz-test_ASAN added:-fsanitize=address x1
+    adp_fuzz-test_UBSAN added:-fsanitize=undefined x1
+    logic_registry-test_ASAN added:-fsanitize=address x1
+    logic_registry-test_UBSAN added:-fsanitize=undefined x1
+    object_serializer-test_ASAN added:-fsanitize=address x1
+    object_serializer-test_UBSAN added:-fsanitize=undefined x1
+    protocol_parser-test_ASAN added:-fsanitize=address x1
+    protocol_parser-test_UBSAN added:-fsanitize=undefined x1
+    protocol_parser_asan added:-fsanitize=address x11
+    protocol_parser_ubsan added:-fsanitize=undefined x11
+    ptp_flags-test_ASAN added:-fsanitize=address x1
+    ptp_flags-test_UBSAN added:-fsanitize=undefined x1
+    stack_builder-test_ASAN added:-fsanitize=address x1
+    stack_builder-test_UBSAN added:-fsanitize=undefined x1
+    traffic_gen-test_ASAN added:-fsanitize=address x1
+    traffic_gen-test_UBSAN added:-fsanitize=undefined x1
+    traffic_gen_asan added:-fsanitize=address x10
+    traffic_gen_ubsan added:-fsanitize=undefined x10
+    validator-test_ASAN added:-fsanitize=address x1
+    validator-test_UBSAN added:-fsanitize=undefined x1
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o
+  link: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/link.txt
+  flags: a=41 b=47 classes={'identical': 21, 'added:-fsanitize=address': 10, 'added:-fsanitize=undefined': 10} only_in_a=0 only_in_b=6
+    adp_fuzz-test_ASAN added:-fsanitize=address x1
+    adp_fuzz-test_UBSAN added:-fsanitize=undefined x1
+    logic_registry-test_ASAN added:-fsanitize=address x1
+    logic_registry-test_UBSAN added:-fsanitize=undefined x1
+    object_serializer-test_ASAN added:-fsanitize=address x1
+    object_serializer-test_UBSAN added:-fsanitize=undefined x1
+    protocol_parser-test_ASAN added:-fsanitize=address x1
+    protocol_parser-test_UBSAN added:-fsanitize=undefined x1
+    protocol_parser_asan added:-fsanitize=address x1
+    protocol_parser_ubsan added:-fsanitize=undefined x1
+    ptp_flags-test_ASAN added:-fsanitize=address x1
+    ptp_flags-test_UBSAN added:-fsanitize=undefined x1
+    stack_builder-test_ASAN added:-fsanitize=address x1
+    stack_builder-test_UBSAN added:-fsanitize=undefined x1
+    traffic_gen-test_ASAN added:-fsanitize=address x1
+    traffic_gen-test_UBSAN added:-fsanitize=undefined x1
+    traffic_gen_asan added:-fsanitize=address x1
+    traffic_gen_ubsan added:-fsanitize=undefined x1
+    validator-test_ASAN added:-fsanitize=address x1
+    validator-test_UBSAN added:-fsanitize=undefined x1
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/flags.make
+  population base: address=0 undefined=0 none=125 both=0 sanitizer-linked=16
+  population cand: address=31 undefined=31 none=69 both=0 sanitizer-linked=18
+== empty-shared_unset
+  compile: a=125 b=131 classes={'identical': 67, 'added:-fsanitize=address': 29, 'added:-fsanitize=undefined': 29} only_in_a=0 only_in_b=6
+    adp_fuzz-test_ASAN added:-fsanitize=address x1
+    adp_fuzz-test_UBSAN added:-fsanitize=undefined x1
+    logic_registry-test_ASAN added:-fsanitize=address x1
+    logic_registry-test_UBSAN added:-fsanitize=undefined x1
+    object_serializer-test_ASAN added:-fsanitize=address x1
+    object_serializer-test_UBSAN added:-fsanitize=undefined x1
+    protocol_parser-test_ASAN added:-fsanitize=address x1
+    protocol_parser-test_UBSAN added:-fsanitize=undefined x1
+    protocol_parser_asan added:-fsanitize=address x11
+    protocol_parser_ubsan added:-fsanitize=undefined x11
+    ptp_flags-test_ASAN added:-fsanitize=address x1
+    ptp_flags-test_UBSAN added:-fsanitize=undefined x1
+    stack_builder-test_ASAN added:-fsanitize=address x1
+    stack_builder-test_UBSAN added:-fsanitize=undefined x1
+    traffic_gen-test_ASAN added:-fsanitize=address x1
+    traffic_gen-test_UBSAN added:-fsanitize=undefined x1
+    traffic_gen_asan added:-fsanitize=address x10
+    traffic_gen_ubsan added:-fsanitize=undefined x10
+    validator-test_ASAN added:-fsanitize=address x1
+    validator-test_UBSAN added:-fsanitize=undefined x1
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/sanitizer_probe_test.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/sanitizer_probe_lib.cpp.o
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/sanitizer_probe_lib.cpp.o
+  link: a=41 b=47 classes={'identical': 41} only_in_a=0 only_in_b=6
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/link.txt
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/link.txt
+  flags: a=41 b=47 classes={'identical': 21, 'added:-fsanitize=address': 10, 'added:-fsanitize=undefined': 10} only_in_a=0 only_in_b=6
+    adp_fuzz-test_ASAN added:-fsanitize=address x1
+    adp_fuzz-test_UBSAN added:-fsanitize=undefined x1
+    logic_registry-test_ASAN added:-fsanitize=address x1
+    logic_registry-test_UBSAN added:-fsanitize=undefined x1
+    object_serializer-test_ASAN added:-fsanitize=address x1
+    object_serializer-test_UBSAN added:-fsanitize=undefined x1
+    protocol_parser-test_ASAN added:-fsanitize=address x1
+    protocol_parser-test_UBSAN added:-fsanitize=undefined x1
+    protocol_parser_asan added:-fsanitize=address x1
+    protocol_parser_ubsan added:-fsanitize=undefined x1
+    ptp_flags-test_ASAN added:-fsanitize=address x1
+    ptp_flags-test_UBSAN added:-fsanitize=undefined x1
+    stack_builder-test_ASAN added:-fsanitize=address x1
+    stack_builder-test_UBSAN added:-fsanitize=undefined x1
+    traffic_gen-test_ASAN added:-fsanitize=address x1
+    traffic_gen-test_UBSAN added:-fsanitize=undefined x1
+    traffic_gen_asan added:-fsanitize=address x1
+    traffic_gen_ubsan added:-fsanitize=undefined x1
+    validator-test_ASAN added:-fsanitize=address x1
+    validator-test_UBSAN added:-fsanitize=undefined x1
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe-test_UBSAN.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_asan.dir/flags.make
+    new in b: tests/sanitizer/CMakeFiles/sanitizer_probe_ubsan.dir/flags.make
+  population base: address=0 undefined=0 none=125 both=0 sanitizer-linked=16
+  population cand: address=31 undefined=31 none=69 both=0 sanitizer-linked=18
+# end: 2026-09-22T07:32:06Z exit: 0

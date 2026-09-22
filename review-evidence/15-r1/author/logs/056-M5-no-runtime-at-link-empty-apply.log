@@ -1,0 +1,7 @@
+# id: 056-M5-no-runtime-at-link-empty-apply
+# description: Apply mutation M5 no sanitizer runtime at link to a copy of the candidate
+# cwd: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author
+# argv: patch -p1 -d $VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-056-M5-no-runtime-at-link-empty -i $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/receipts/mutations/M5-no-runtime-at-link.patch 
+# start: 2026-09-22T07:28:24Z
+patching file cmake/CMakeLinkToTestlibs.cmake
+# end: 2026-09-22T07:28:24Z exit: 0

@@ -1,0 +1,15 @@
+# id: 090-cross-candidate-exe-link
+# description: Attempt the sanitizer_probe-test_ASAN link with the cross compiler
+# cwd: $VALIDATION_STORAGE/lanes/tsngen15-sanitizer-targets
+# argv: cmake --build $VALIDATION_STORAGE/tmp/a162-tsngen15/build/cross-090-cross-candidate -j8 --target sanitizer_probe-test_ASAN 
+# start: 2026-09-22T07:33:05Z
+[ 33%] Built target sanitizer_probe_asan
+[ 66%] Linking CXX executable sanitizer_probe-test_ASAN
+/usr/aarch64-linux-gnu/bin/ld: cannot find libasan_preinit.o: No such file or directory
+/usr/aarch64-linux-gnu/bin/ld: cannot find -lasan: No such file or directory
+collect2: error: ld returned 1 exit status
+make[3]: *** [tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/build.make:102: tests/sanitizer/sanitizer_probe-test_ASAN] Error 1
+make[2]: *** [CMakeFiles/Makefile2:2082: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/all] Error 2
+make[1]: *** [CMakeFiles/Makefile2:2089: tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/rule] Error 2
+make: *** [Makefile:797: sanitizer_probe-test_ASAN] Error 2
+# end: 2026-09-22T07:33:05Z exit: 2

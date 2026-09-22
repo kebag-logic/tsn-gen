@@ -1,0 +1,6 @@
+# id: 031-cand-default-prep
+# description: setup.sh prepare step: parser/tests/prep-tests.sh
+# cwd: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/cand-default
+# argv: $VALIDATION_STORAGE/tmp/a162-tsngen15/src/cand/parser/tests/prep-tests.sh 
+# start: 2026-09-22T07:22:23Z
+# end: 2026-09-22T07:22:23Z exit: 0

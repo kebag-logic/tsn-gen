@@ -1,0 +1,73 @@
+# id: 081-cand-embedded-empty-build
+# description: Build embedded consumer, capped at 8 jobs
+# cwd: $VALIDATION_STORAGE/lanes/tsngen15-sanitizer-targets
+# argv: cmake --build $VALIDATION_STORAGE/tmp/a162-tsngen15/build/consumer-cand-embedded-empty -j8 
+# start: 2026-09-22T07:31:31Z
+[  1%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/common.cpp.o
+[  3%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/preprocess.cpp.o
+[  5%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/node_type.cpp.o
+[  6%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/reference_resolver.cpp.o
+[  8%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/tag.cpp.o
+[ 10%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/node.cpp.o
+[ 11%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/parse.cpp.o
+[ 13%] Building CXX object tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/base64.cpp.o
+[ 15%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/tree.cpp.o
+[ 16%] Building CXX object tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/char_traits.cpp.o
+[ 18%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/version.cpp.o
+[ 20%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/base64.cpp.o
+[ 21%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/char_traits.cpp.o
+[ 23%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/error.cpp.o
+[ 25%] Building CXX object tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/error.cpp.o
+[ 26%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/format.cpp.o
+[ 28%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/language.cpp.o
+[ 30%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_resource.cpp.o
+[ 31%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_util.cpp.o
+[ 33%] Building CXX object tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/format.cpp.o
+[ 35%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/utf.cpp.o
+[ 36%] Building CXX object tsn-gen/external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/version.cpp.o
+[ 38%] Building CXX object tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/language.cpp.o
+[ 40%] Building CXX object tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/memory_resource.cpp.o
+[ 41%] Building CXX object tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/memory_util.cpp.o
+[ 43%] Building CXX object tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/utf.cpp.o
+[ 45%] Building CXX object tsn-gen/external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/version.cpp.o
+[ 46%] Linking CXX static library libc4core.a
+[ 46%] Built target c4core
+[ 48%] Linking CXX static library libryml.a
+[ 48%] Built target ryml
+[ 50%] Building CXX object tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/validator.cpp.o
+[ 51%] Building CXX object tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/protocol_parser.cpp.o
+[ 55%] Building CXX object tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/db_proto_impl.cpp.o
+[ 55%] Building CXX object tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/log.cpp.o
+[ 56%] Building CXX object tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/db_proto_service_impl.cpp.o
+[ 58%] Building CXX object tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/db_proto_if_impl.cpp.o
+[ 60%] Building CXX object tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/protocol.cpp.o
+[ 61%] Building CXX object tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/db_var_impl.cpp.o
+[ 63%] Building CXX object tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/logic_registry.cpp.o
+[ 65%] Building CXX object tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/stack.cpp.o
+[ 66%] Building CXX object tsn-gen/parser/CMakeFiles/protocol_parser.dir/src/stack_builder.cpp.o
+[ 68%] Linking CXX shared library libprotocol_parser.so
+[ 68%] Built target protocol_parser
+[ 70%] Building CXX object tsn-gen/logic/CMakeFiles/protocol_logic.dir/src/ethernet_frame_logic.cpp.o
+[ 71%] Building CXX object tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/packet_decoder.cpp.o
+[ 76%] Building CXX object tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/packet_builder.cpp.o
+[ 76%] Building CXX object tsn-gen/logic/CMakeFiles/protocol_logic.dir/src/aecp_aem_logic.cpp.o
+[ 78%] Building CXX object tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/pcap_sender.cpp.o
+[ 78%] Building CXX object tsn-gen/logic/CMakeFiles/protocol_logic.dir/src/avtp_control_logic.cpp.o
+[ 80%] Building CXX object tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/pcap_receiver.cpp.o
+[ 81%] Building CXX object tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/raw_socket_sender.cpp.o
+[ 83%] Building CXX object tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/raw_socket_receiver.cpp.o
+[ 85%] Building CXX object tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/verilator_sender.cpp.o
+[ 86%] Building CXX object tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/verilator_receiver.cpp.o
+[ 88%] Building CXX object tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/traffic_generator.cpp.o
+[ 90%] Building CXX object tsn-gen/traffic-gen/CMakeFiles/traffic_gen.dir/src/session.cpp.o
+[ 91%] Linking CXX shared library libprotocol_logic.so
+[ 91%] Built target protocol_logic
+[ 93%] Linking CXX shared library libtraffic_gen.so
+[ 93%] Built target traffic_gen
+[ 95%] Building CXX object CMakeFiles/app.dir/main.cpp.o
+[ 96%] Building CXX object tsn-gen/traffic-gen/CMakeFiles/packet_gen.dir/tools/packet_gen_main.cpp.o
+[ 98%] Linking CXX executable app
+[ 98%] Built target app
+[100%] Linking CXX executable packet_gen
+[100%] Built target packet_gen
+# end: 2026-09-22T07:31:38Z exit: 0

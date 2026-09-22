@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/protocol_parser-test_UBSAN.dir/link.d "CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o" -o protocol_parser-test_UBSAN  -Wl,-rpath,"\$ORIGIN/../" -fsanitize=undefined ../libprotocol_parser_ubsan.so ../../lib/libgtest_main.a ../../external/rapidyaml/libryml.a ../../lib/libgtest.a

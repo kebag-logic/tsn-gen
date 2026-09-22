@@ -1,0 +1,23 @@
+{
+ "build": "$VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty",
+ "objects": 6,
+ "objects_by_compile_flags": {
+  "none": 4,
+  "undefined": 1,
+  "address": 1
+ },
+ "objects_by_observed": {
+  "none": 4,
+  "undefined": 1,
+  "address": 1
+ },
+ "flag_vs_observed_mismatches": {},
+ "artifacts_linking_a_runtime": [
+  "tests/sanitizer/sanitizer_probe-test_ASAN",
+  "tests/sanitizer/sanitizer_probe-test_UBSAN"
+ ],
+ "shared_libs_with_undefined_sanitizer_symbols": [
+  "tests/sanitizer/libsanitizer_probe_asan.so",
+  "tests/sanitizer/libsanitizer_probe_ubsan.so"
+ ]
+}

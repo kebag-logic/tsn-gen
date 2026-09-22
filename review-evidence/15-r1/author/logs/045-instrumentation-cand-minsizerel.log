@@ -1,0 +1,59 @@
+# id: 045-instrumentation-cand-minsizerel
+# description: Object sanitizer references and runtime NEEDED entries of cand-minsizerel
+# cwd: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author
+# argv: python3 scripts/instrumentation.py $VALIDATION_STORAGE/tmp/a162-tsngen15/build/cand-minsizerel receipts/instrumentation-cand-minsizerel.json 
+# start: 2026-09-22T07:27:03Z
+{
+ "build": "$VALIDATION_STORAGE/tmp/a162-tsngen15/build/cand-minsizerel",
+ "objects": 131,
+ "objects_by_compile_flags": {
+  "address": 31,
+  "undefined": 31,
+  "none": 69
+ },
+ "objects_by_observed": {
+  "address": 31,
+  "undefined": 30,
+  "none": 70
+ },
+ "flag_vs_observed_mismatches": {
+  "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o": {
+   "compile_flags": [
+    "undefined"
+   ],
+   "observed": [],
+   "asan_refs": 0,
+   "ubsan_refs": 0,
+   "sample": []
+  }
+ },
+ "artifacts_linking_a_runtime": [
+  "parser/tests/logic_registry-test_ASAN",
+  "parser/tests/logic_registry-test_UBSAN",
+  "parser/tests/object_serializer-test_ASAN",
+  "parser/tests/object_serializer-test_UBSAN",
+  "parser/tests/protocol_parser-test_ASAN",
+  "parser/tests/protocol_parser-test_UBSAN",
+  "parser/tests/stack_builder-test_ASAN",
+  "parser/tests/stack_builder-test_UBSAN",
+  "parser/tests/validator-test_ASAN",
+  "parser/tests/validator-test_UBSAN",
+  "tests/sanitizer/sanitizer_probe-test_ASAN",
+  "tests/sanitizer/sanitizer_probe-test_UBSAN",
+  "traffic-gen/tests/adp_fuzz-test_ASAN",
+  "traffic-gen/tests/adp_fuzz-test_UBSAN",
+  "traffic-gen/tests/ptp_flags-test_ASAN",
+  "traffic-gen/tests/ptp_flags-test_UBSAN",
+  "traffic-gen/tests/traffic_gen-test_ASAN",
+  "traffic-gen/tests/traffic_gen-test_UBSAN"
+ ],
+ "shared_libs_with_undefined_sanitizer_symbols": [
+  "parser/libprotocol_parser_asan.so",
+  "parser/libprotocol_parser_ubsan.so",
+  "tests/sanitizer/libsanitizer_probe_asan.so",
+  "tests/sanitizer/libsanitizer_probe_ubsan.so",
+  "traffic-gen/libtraffic_gen_asan.so",
+  "traffic-gen/libtraffic_gen_ubsan.so"
+ ]
+}
+# end: 2026-09-22T07:27:06Z exit: 0

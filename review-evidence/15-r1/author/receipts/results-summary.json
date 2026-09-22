@@ -1,0 +1,715 @@
+{
+ "behave": {
+  "062-bdd-base-default-aecp_behave": {
+   "counts": {
+    "features": {
+     "failed": 0,
+     "passed": 8,
+     "skipped": 0
+    },
+    "scenarios": {
+     "failed": 0,
+     "passed": 96,
+     "skipped": 2
+    },
+    "steps": {
+     "failed": 0,
+     "passed": 395,
+     "skipped": 8
+    }
+   },
+   "exit": 0
+  },
+  "062-bdd-base-default-stack_behave": {
+   "counts": {
+    "features": {
+     "failed": 0,
+     "passed": 4,
+     "skipped": 0
+    },
+    "scenarios": {
+     "failed": 0,
+     "passed": 115,
+     "skipped": 0
+    },
+    "steps": {
+     "failed": 0,
+     "passed": 563,
+     "skipped": 0
+    }
+   },
+   "exit": 0
+  },
+  "062-bdd-cand-default-aecp_behave": {
+   "counts": {
+    "features": {
+     "failed": 0,
+     "passed": 8,
+     "skipped": 0
+    },
+    "scenarios": {
+     "failed": 0,
+     "passed": 96,
+     "skipped": 2
+    },
+    "steps": {
+     "failed": 0,
+     "passed": 395,
+     "skipped": 8
+    }
+   },
+   "exit": 0
+  },
+  "062-bdd-cand-default-stack_behave": {
+   "counts": {
+    "features": {
+     "failed": 0,
+     "passed": 4,
+     "skipped": 0
+    },
+    "scenarios": {
+     "failed": 0,
+     "passed": 115,
+     "skipped": 0
+    },
+    "steps": {
+     "failed": 0,
+     "passed": 563,
+     "skipped": 0
+    }
+   },
+   "exit": 0
+  },
+  "074-replay-behave": {
+   "exit": 0
+  }
+ },
+ "candidate": "76906b83eb54ac29040fe72fd910d34727188694",
+ "consumer_controls": {
+  "embedded-Debug": {
+   "compile": {
+    "identical": 53
+   },
+   "flags": {
+    "identical": 7
+   },
+   "link": {
+    "identical": 7
+   }
+  },
+  "embedded-empty": {
+   "compile": {
+    "identical": 53
+   },
+   "flags": {
+    "identical": 7
+   },
+   "link": {
+    "identical": 7
+   }
+  },
+  "tests-off": {
+   "compile": {
+    "identical": 52
+   },
+   "flags": {
+    "identical": 6
+   },
+   "link": {
+    "identical": 6
+   }
+  }
+ },
+ "consumer_controls_exits": {
+  "080-base-tests-off-build": 0,
+  "080-base-tests-off-configure": 0,
+  "080-base-tests-off-run": 0,
+  "080-cand-tests-off-build": 0,
+  "080-cand-tests-off-configure": 0,
+  "080-cand-tests-off-run": 0,
+  "081-base-embedded-Debug-build": 0,
+  "081-base-embedded-Debug-configure": 0,
+  "081-base-embedded-Debug-run": 0,
+  "081-base-embedded-empty-build": 0,
+  "081-base-embedded-empty-configure": 0,
+  "081-base-embedded-empty-run": 0,
+  "081-cand-embedded-Debug-build": 0,
+  "081-cand-embedded-Debug-configure": 0,
+  "081-cand-embedded-Debug-run": 0,
+  "081-cand-embedded-empty-build": 0,
+  "081-cand-embedded-empty-configure": 0,
+  "081-cand-embedded-empty-run": 0
+ },
+ "generated_commands": {
+  "Debug-shared_ON": {
+   "compile": {
+    "classes": {
+     "identical": 125
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "flags": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "link": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   }
+  },
+  "Debug-shared_unset": {
+   "compile": {
+    "classes": {
+     "identical": 125
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "flags": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "link": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   }
+  },
+  "MinSizeRel-shared_ON": {
+   "compile": {
+    "classes": {
+     "identical": 125
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "flags": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "link": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   }
+  },
+  "MinSizeRel-shared_unset": {
+   "compile": {
+    "classes": {
+     "identical": 125
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "flags": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "link": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   }
+  },
+  "RelWithDebInfo-shared_ON": {
+   "compile": {
+    "classes": {
+     "identical": 125
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "flags": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "link": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   }
+  },
+  "RelWithDebInfo-shared_unset": {
+   "compile": {
+    "classes": {
+     "identical": 125
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "flags": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "link": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   }
+  },
+  "Release-shared_ON": {
+   "compile": {
+    "classes": {
+     "identical": 125
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "flags": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "link": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   }
+  },
+  "Release-shared_unset": {
+   "compile": {
+    "classes": {
+     "identical": 125
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "flags": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "link": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   }
+  },
+  "empty-shared_ON": {
+   "compile": {
+    "classes": {
+     "added:-fsanitize=address": 29,
+     "added:-fsanitize=undefined": 29,
+     "identical": 67
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "flags": {
+    "classes": {
+     "added:-fsanitize=address": 10,
+     "added:-fsanitize=undefined": 10,
+     "identical": 21
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "link": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   }
+  },
+  "empty-shared_unset": {
+   "compile": {
+    "classes": {
+     "added:-fsanitize=address": 29,
+     "added:-fsanitize=undefined": 29,
+     "identical": 67
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "flags": {
+    "classes": {
+     "added:-fsanitize=address": 10,
+     "added:-fsanitize=undefined": 10,
+     "identical": 21
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   },
+   "link": {
+    "classes": {
+     "identical": 41
+    },
+    "missing_in_candidate": 0,
+    "new_in_candidate": 6
+   }
+  }
+ },
+ "instrumentation_and_linkage": {
+  "base-debug": {
+   "by_compile_flags": {
+    "address": 29,
+    "none": 67,
+    "undefined": 29
+   },
+   "by_observed_references": {
+    "address": 29,
+    "none": 68,
+    "undefined": 28
+   },
+   "flag_vs_reference_mismatches": [
+    "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o"
+   ],
+   "objects": 125,
+   "runtime_linked_artifacts": 16
+  },
+  "base-default": {
+   "by_compile_flags": {
+    "none": 125
+   },
+   "by_observed_references": {
+    "none": 125
+   },
+   "flag_vs_reference_mismatches": [],
+   "objects": 125,
+   "runtime_linked_artifacts": 16
+  },
+  "cand-debug": {
+   "by_compile_flags": {
+    "address": 31,
+    "none": 69,
+    "undefined": 31
+   },
+   "by_observed_references": {
+    "address": 31,
+    "none": 70,
+    "undefined": 30
+   },
+   "flag_vs_reference_mismatches": [
+    "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o"
+   ],
+   "objects": 131,
+   "runtime_linked_artifacts": 18
+  },
+  "cand-default": {
+   "by_compile_flags": {
+    "address": 31,
+    "none": 69,
+    "undefined": 31
+   },
+   "by_observed_references": {
+    "address": 31,
+    "none": 70,
+    "undefined": 30
+   },
+   "flag_vs_reference_mismatches": [
+    "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o"
+   ],
+   "objects": 131,
+   "runtime_linked_artifacts": 18
+  },
+  "cand-minsizerel": {
+   "by_compile_flags": {
+    "address": 31,
+    "none": 69,
+    "undefined": 31
+   },
+   "by_observed_references": {
+    "address": 31,
+    "none": 70,
+    "undefined": 30
+   },
+   "flag_vs_reference_mismatches": [
+    "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o"
+   ],
+   "objects": 131,
+   "runtime_linked_artifacts": 18
+  },
+  "cand-release": {
+   "by_compile_flags": {
+    "address": 31,
+    "none": 69,
+    "undefined": 31
+   },
+   "by_observed_references": {
+    "address": 31,
+    "none": 70,
+    "undefined": 30
+   },
+   "flag_vs_reference_mismatches": [
+    "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o"
+   ],
+   "objects": 131,
+   "runtime_linked_artifacts": 18
+  },
+  "cand-relwithdebinfo": {
+   "by_compile_flags": {
+    "address": 31,
+    "none": 69,
+    "undefined": 31
+   },
+   "by_observed_references": {
+    "address": 31,
+    "none": 70,
+    "undefined": 30
+   },
+   "flag_vs_reference_mismatches": [
+    "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o"
+   ],
+   "objects": 131,
+   "runtime_linked_artifacts": 18
+  }
+ },
+ "mutations": {
+  "050-M0-candidate-empty": {
+   "ctest_exit": 0,
+   "failed": [],
+   "passed": [
+    "sanitizer_probe-test.clean",
+    "sanitizer_probe-test_ASAN.clean",
+    "sanitizer_probe-test_ASAN.consumer-heap-overflow",
+    "sanitizer_probe-test_ASAN.library-heap-overflow",
+    "sanitizer_probe-test_UBSAN.clean",
+    "sanitizer_probe-test_UBSAN.consumer-signed-overflow",
+    "sanitizer_probe-test_UBSAN.library-signed-overflow"
+   ]
+  },
+  "051-M1-base-helper-empty": {
+   "ctest_exit": 8,
+   "failed": [
+    "sanitizer_probe-test_ASAN.consumer-heap-overflow",
+    "sanitizer_probe-test_ASAN.library-heap-overflow",
+    "sanitizer_probe-test_UBSAN.consumer-signed-overflow",
+    "sanitizer_probe-test_UBSAN.library-signed-overflow"
+   ],
+   "passed": [
+    "sanitizer_probe-test.clean",
+    "sanitizer_probe-test_ASAN.clean",
+    "sanitizer_probe-test_UBSAN.clean"
+   ]
+  },
+  "052-M1-base-helper-debug": {
+   "ctest_exit": 0,
+   "failed": [],
+   "passed": [
+    "sanitizer_probe-test.clean",
+    "sanitizer_probe-test_ASAN.clean",
+    "sanitizer_probe-test_ASAN.consumer-heap-overflow",
+    "sanitizer_probe-test_ASAN.library-heap-overflow",
+    "sanitizer_probe-test_UBSAN.clean",
+    "sanitizer_probe-test_UBSAN.consumer-signed-overflow",
+    "sanitizer_probe-test_UBSAN.library-signed-overflow"
+   ]
+  },
+  "053-M2-library-only-empty": {
+   "ctest_exit": 8,
+   "failed": [
+    "sanitizer_probe-test_ASAN.consumer-heap-overflow",
+    "sanitizer_probe-test_UBSAN.consumer-signed-overflow"
+   ],
+   "passed": [
+    "sanitizer_probe-test.clean",
+    "sanitizer_probe-test_ASAN.clean",
+    "sanitizer_probe-test_ASAN.library-heap-overflow",
+    "sanitizer_probe-test_UBSAN.clean",
+    "sanitizer_probe-test_UBSAN.library-signed-overflow"
+   ]
+  },
+  "054-M3-consumer-only-empty": {
+   "ctest_exit": 8,
+   "failed": [
+    "sanitizer_probe-test_ASAN.library-heap-overflow",
+    "sanitizer_probe-test_UBSAN.library-signed-overflow"
+   ],
+   "passed": [
+    "sanitizer_probe-test.clean",
+    "sanitizer_probe-test_ASAN.clean",
+    "sanitizer_probe-test_ASAN.consumer-heap-overflow",
+    "sanitizer_probe-test_UBSAN.clean",
+    "sanitizer_probe-test_UBSAN.consumer-signed-overflow"
+   ]
+  },
+  "055-M4-no-ubsan-fatal-setting-empty": {
+   "ctest_exit": 8,
+   "failed": [
+    "sanitizer_probe-test_UBSAN.consumer-signed-overflow",
+    "sanitizer_probe-test_UBSAN.library-signed-overflow"
+   ],
+   "passed": [
+    "sanitizer_probe-test.clean",
+    "sanitizer_probe-test_ASAN.clean",
+    "sanitizer_probe-test_ASAN.consumer-heap-overflow",
+    "sanitizer_probe-test_ASAN.library-heap-overflow",
+    "sanitizer_probe-test_UBSAN.clean"
+   ]
+  },
+  "056-M5-no-runtime-at-link-empty": {
+   "asan_build_exit": 2,
+   "ubsan_build_exit": 2
+  }
+ },
+ "second_compiler_compile_only": {
+  "090-cross-candidate": {
+   "flagged_without_references": [
+    "parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o"
+   ],
+   "objects": 28,
+   "sanitized_executable_link_exit": 2,
+   "variant_libs_build_exit": 0,
+   "with_flag": 28,
+   "with_references": 27
+  },
+  "091-cross-M1-base-helper": {
+   "flagged_without_references": [],
+   "objects": 28,
+   "sanitized_executable_link_exit": 2,
+   "variant_libs_build_exit": 0,
+   "with_flag": 0,
+   "with_references": 0
+  }
+ },
+ "test_output_scans": {
+  "base-debug": {
+   "passed": 285,
+   "probe_diagnostics_with_report": 0,
+   "tests": 285,
+   "tests_with_sanitizer_reports_outside_probe_diagnostics": 0
+  },
+  "base-default": {
+   "passed": 285,
+   "probe_diagnostics_with_report": 0,
+   "tests": 285,
+   "tests_with_sanitizer_reports_outside_probe_diagnostics": 0
+  },
+  "cand-debug": {
+   "passed": 292,
+   "probe_diagnostics_with_report": 4,
+   "tests": 292,
+   "tests_with_sanitizer_reports_outside_probe_diagnostics": 0
+  },
+  "cand-default": {
+   "passed": 292,
+   "probe_diagnostics_with_report": 4,
+   "tests": 292,
+   "tests_with_sanitizer_reports_outside_probe_diagnostics": 0
+  },
+  "cand-minsizerel": {
+   "passed": 292,
+   "probe_diagnostics_with_report": 4,
+   "tests": 292,
+   "tests_with_sanitizer_reports_outside_probe_diagnostics": 0
+  },
+  "cand-release": {
+   "passed": 292,
+   "probe_diagnostics_with_report": 4,
+   "tests": 292,
+   "tests_with_sanitizer_reports_outside_probe_diagnostics": 0
+  },
+  "cand-relwithdebinfo": {
+   "passed": 292,
+   "probe_diagnostics_with_report": 4,
+   "tests": 292,
+   "tests_with_sanitizer_reports_outside_probe_diagnostics": 0
+  }
+ },
+ "unit_gates": {
+  "010-base-default-unit": {
+   "ctest": {
+    "failed": 0,
+    "total": 285
+   },
+   "exit": 0
+  },
+  "031-cand-default-unit": {
+   "ctest": {
+    "failed": 0,
+    "total": 292
+   },
+   "exit": 0
+  },
+  "040-base-debug-unit": {
+   "ctest": {
+    "failed": 0,
+    "total": 285
+   },
+   "exit": 0
+  },
+  "040-cand-debug-unit": {
+   "ctest": {
+    "failed": 0,
+    "total": 292
+   },
+   "exit": 0
+  },
+  "043-cand-minsizerel-unit": {
+   "ctest": {
+    "failed": 0,
+    "total": 292
+   },
+   "exit": 0
+  },
+  "043-cand-release-unit": {
+   "ctest": {
+    "failed": 0,
+    "total": 292
+   },
+   "exit": 0
+  },
+  "043-cand-relwithdebinfo-unit": {
+   "ctest": {
+    "failed": 0,
+    "total": 292
+   },
+   "exit": 0
+  },
+  "072-replay-setup": {
+   "ctest": {
+    "failed": 0,
+    "total": 292
+   },
+   "exit": 0
+  },
+  "073-replay-unit": {
+   "ctest": {
+    "failed": 0,
+    "total": 292
+   },
+   "exit": 0
+  }
+ }
+}

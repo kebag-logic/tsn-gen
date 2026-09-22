@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -Werror -pedantic -Wl,--dependency-file=CMakeFiles/logic_registry-test_ASAN.dir/link.d "CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o" -o logic_registry-test_ASAN  -Wl,-rpath,"\$ORIGIN/../" -fsanitize=address ../libprotocol_parser_asan.so ../../lib/libgtest_main.a ../../external/rapidyaml/libryml.a ../../lib/libgtest.a

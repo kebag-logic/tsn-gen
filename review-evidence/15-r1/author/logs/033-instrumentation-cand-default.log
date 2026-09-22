@@ -1,0 +1,11 @@
+# id: 033-instrumentation-cand-default
+# description: Object sanitizer references and runtime NEEDED entries of cand-default
+# cwd: $WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author
+# argv: python3 scripts/instrumentation.py $VALIDATION_STORAGE/tmp/a162-tsngen15/build/cand-default receipts/instrumentation-cand-default.json 
+# start: 2026-09-22T07:23:28Z
+Traceback (most recent call last):
+  File "$WORKSPACE_HOME/milan-fpga-management/2026-09-22/tsngen15-author/scripts/instrumentation.py", line 39, in <module>
+    for e in json.load(open(os.path.join(bld, "compile_commands.json"))):
+                       ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '$VALIDATION_STORAGE/tmp/a162-tsngen15/build/cand-default/compile_commands.json'
+# end: 2026-09-22T07:23:28Z exit: 1

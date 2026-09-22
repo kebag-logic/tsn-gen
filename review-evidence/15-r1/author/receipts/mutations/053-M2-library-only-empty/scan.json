@@ -1,0 +1,27 @@
+{
+ "log": "$VALIDATION_STORAGE/tmp/a162-tsngen15/build/mut-053-M2-library-only-empty/Testing/Temporary/LastTest.log",
+ "tests": 7,
+ "passed": 5,
+ "not_passed": [
+  "033 sanitizer_probe-test_ASAN.consumer-heap-overflow [sanitizer_probe-test_ASAN]",
+  "035 sanitizer_probe-test_UBSAN.consumer-signed-overflow [sanitizer_probe-test_UBSAN]"
+ ],
+ "tests_per_executable": {
+  "sanitizer_probe-test": 1,
+  "sanitizer_probe-test_ASAN": 3,
+  "sanitizer_probe-test_UBSAN": 3
+ },
+ "tests_with_reports_outside_probe_diagnostics": {},
+ "probe_diagnostic_reports": {
+  "032 sanitizer_probe-test_ASAN.library-heap-overflow [sanitizer_probe-test_ASAN]": [
+   "==1936968==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7b3b713e0020 at pc 0x7f1b73173184 bp 0x7ffee56cb0c0 sp 0x7ffee56cb0b0"
+  ],
+  "033 sanitizer_probe-test_ASAN.consumer-heap-overflow [sanitizer_probe-test_ASAN]": [
+   "no report matching \"ERROR: AddressSanitizer: heap-buffer-overflow\" on"
+  ],
+  "034 sanitizer_probe-test_UBSAN.library-signed-overflow [sanitizer_probe-test_UBSAN]": [
+   "$VALIDATION_STORAGE/tmp/a162-tsngen15/src/mut-053-M2-library-only-empty/tests/sanitizer/sanitizer_probe_lib.cpp:18:18: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'"
+  ],
+  "035 sanitizer_probe-test_UBSAN.consumer-signed-overflow [sanitizer_probe-test_UBSAN]": []
+ }
+}

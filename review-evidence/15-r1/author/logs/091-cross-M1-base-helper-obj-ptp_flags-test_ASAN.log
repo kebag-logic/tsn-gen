@@ -1,0 +1,9 @@
+# id: 091-cross-M1-base-helper-obj-ptp_flags-test_ASAN
+# description: Compile traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o only, with the cross compiler
+# cwd: $VALIDATION_STORAGE/lanes/tsngen15-sanitizer-targets
+# argv: make -C $VALIDATION_STORAGE/tmp/a162-tsngen15/build/cross-091-cross-M1-base-helper -f traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/build.make traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o 
+# start: 2026-09-22T07:33:14Z
+make: Entering directory '$VALIDATION_STORAGE/tmp/a162-tsngen15/build/cross-091-cross-M1-base-helper'
+Building CXX object traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o
+make: Leaving directory '$VALIDATION_STORAGE/tmp/a162-tsngen15/build/cross-091-cross-M1-base-helper'
+# end: 2026-09-22T07:33:16Z exit: 0

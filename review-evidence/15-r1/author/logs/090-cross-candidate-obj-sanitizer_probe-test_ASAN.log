@@ -1,0 +1,9 @@
+# id: 090-cross-candidate-obj-sanitizer_probe-test_ASAN
+# description: Compile tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o only, with the cross compiler
+# cwd: $VALIDATION_STORAGE/lanes/tsngen15-sanitizer-targets
+# argv: make -C $VALIDATION_STORAGE/tmp/a162-tsngen15/build/cross-090-cross-candidate -f tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/build.make tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o 
+# start: 2026-09-22T07:33:00Z
+make: Entering directory '$VALIDATION_STORAGE/tmp/a162-tsngen15/build/cross-090-cross-candidate'
+Building CXX object tests/sanitizer/CMakeFiles/sanitizer_probe-test_ASAN.dir/sanitizer_probe_test.cpp.o
+make: Leaving directory '$VALIDATION_STORAGE/tmp/a162-tsngen15/build/cross-090-cross-candidate'
+# end: 2026-09-22T07:33:01Z exit: 0

@@ -1,0 +1,82 @@
+{
+  "head": "76906b83eb54ac29040fe72fd910d34727188694",
+  "base": "deca300c9eb4863fa13383b45ba6cb6fd0828671",
+  "results": [
+    {
+      "command": [
+        "bash",
+        "setup.sh",
+        "d"
+      ],
+      "exit_code": 0,
+      "seconds": 19.831,
+      "log": "$VALIDATION_STORAGE/tmp/tsngen15-manager-r1/full-native/01.log"
+    },
+    {
+      "command": [
+        "bash",
+        "tests/run-tests.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 3.854,
+      "log": "$VALIDATION_STORAGE/tmp/tsngen15-manager-r1/full-native/02.log"
+    },
+    {
+      "command": [
+        "bash",
+        "tests/run-tests-behave.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 6.351,
+      "log": "$VALIDATION_STORAGE/tmp/tsngen15-manager-r1/full-native/03.log"
+    },
+    {
+      "command": [
+        "cmake",
+        "-S",
+        ".",
+        "-B",
+        "build-debug",
+        "-DCMAKE_BUILD_TYPE=Debug",
+        "-DBUILD_SHARED_LIBS=ON"
+      ],
+      "exit_code": 0,
+      "seconds": 0.707,
+      "log": "$VALIDATION_STORAGE/tmp/tsngen15-manager-r1/full-native/04.log"
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "build-debug",
+        "--parallel",
+        "8"
+      ],
+      "exit_code": 0,
+      "seconds": 18.217,
+      "log": "$VALIDATION_STORAGE/tmp/tsngen15-manager-r1/full-native/05.log"
+    },
+    {
+      "command": [
+        "bash",
+        "tests/run-tests.sh",
+        "build-debug"
+      ],
+      "exit_code": 0,
+      "seconds": 3.89,
+      "log": "$VALIDATION_STORAGE/tmp/tsngen15-manager-r1/full-native/06.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "deca300c9eb4863fa13383b45ba6cb6fd0828671",
+        "76906b83eb54ac29040fe72fd910d34727188694"
+      ],
+      "exit_code": 0,
+      "seconds": 0.003,
+      "log": "$VALIDATION_STORAGE/tmp/tsngen15-manager-r1/full-native/07.log"
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+# id: 010-base-default-build
+# description: setup.sh build step, capped: make -j8
+# cwd: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/base-default
+# argv: make -j8 
+# start: 2026-09-22T07:14:49Z
+[  1%] Building CXX object external/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[  2%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/common.cpp.o
+[  2%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/char_traits.cpp.o
+[  3%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/format.cpp.o
+[  3%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/language.cpp.o
+[  6%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/node.cpp.o
+[  6%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/error.cpp.o
+[  6%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/base64.cpp.o
+[  7%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/memory_resource.cpp.o
+[  7%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/memory_util.cpp.o
+[  8%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/utf.cpp.o
+[  8%] Building CXX object external/rapidyaml/subprojects/c4core/build/CMakeFiles/c4core.dir/src/c4/version.cpp.o
+[  8%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/node_type.cpp.o
+[  9%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/parse.cpp.o
+[  9%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/preprocess.cpp.o
+[ 10%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/reference_resolver.cpp.o
+[ 11%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/tag.cpp.o
+[ 11%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/tree.cpp.o
+[ 12%] Linking CXX shared library libc4core.so
+[ 12%] Built target c4core
+[ 13%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/src/c4/yml/version.cpp.o
+[ 13%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/base64.cpp.o
+[ 14%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/char_traits.cpp.o
+[ 15%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/error.cpp.o
+[ 15%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/format.cpp.o
+[ 16%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/language.cpp.o
+[ 16%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_resource.cpp.o
+[ 17%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/memory_util.cpp.o
+[ 18%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/utf.cpp.o
+[ 18%] Building CXX object external/rapidyaml/CMakeFiles/ryml.dir/ext/c4core/src/c4/version.cpp.o
+[ 19%] Linking CXX shared library libryml.so
+[ 19%] Built target ryml
+[ 19%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/log.cpp.o
+[ 19%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/log.cpp.o
+[ 20%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/validator.cpp.o
+[ 21%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol_parser.cpp.o
+[ 21%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/validator.cpp.o
+[ 22%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/protocol_parser.cpp.o
+[ 22%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/log.cpp.o
+[ 23%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/protocol.cpp.o
+[ 24%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/protocol.cpp.o
+[ 25%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/validator.cpp.o
+[ 25%] Linking CXX shared library ../../../lib/libgtest.so
+[ 25%] Built target gtest
+[ 25%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/protocol_parser.cpp.o
+[ 26%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/db_proto_if_impl.cpp.o
+[ 26%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/db_proto_impl.cpp.o
+[ 27%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_if_impl.cpp.o
+[ 28%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/db_proto_service_impl.cpp.o
+[ 28%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/db_var_impl.cpp.o
+[ 29%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/protocol.cpp.o
+[ 29%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_impl.cpp.o
+[ 30%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/logic_registry.cpp.o
+[ 31%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_proto_service_impl.cpp.o
+[ 32%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/stack.cpp.o
+[ 32%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_if_impl.cpp.o
+[ 32%] Building CXX object parser/CMakeFiles/protocol_parser.dir/src/stack_builder.cpp.o
+[ 33%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_impl.cpp.o
+[ 34%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/db_proto_service_impl.cpp.o
+[ 34%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/db_var_impl.cpp.o
+[ 34%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/db_var_impl.cpp.o
+[ 35%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/logic_registry.cpp.o
+[ 36%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/logic_registry.cpp.o
+[ 37%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack.cpp.o
+[ 37%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/stack.cpp.o
+[ 37%] Building CXX object parser/CMakeFiles/protocol_parser_ubsan.dir/src/stack_builder.cpp.o
+[ 37%] Building CXX object external/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+[ 38%] Building CXX object parser/CMakeFiles/protocol_parser_asan.dir/src/stack_builder.cpp.o
+[ 39%] Building CXX object external/googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+[ 40%] Linking CXX shared library libprotocol_parser.so
+[ 40%] Built target protocol_parser
+[ 41%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/pcap_sender.cpp.o
+[ 41%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/packet_decoder.cpp.o
+[ 42%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/packet_builder.cpp.o
+[ 42%] Building CXX object logic/CMakeFiles/protocol_logic.dir/src/ethernet_frame_logic.cpp.o
+[ 43%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/pcap_receiver.cpp.o
+[ 44%] Linking CXX shared library ../../../lib/libgtest_main.so
+[ 44%] Building CXX object logic/CMakeFiles/protocol_logic.dir/src/avtp_control_logic.cpp.o
+[ 44%] Built target gtest_main
+[ 45%] Building CXX object logic/CMakeFiles/protocol_logic.dir/src/aecp_aem_logic.cpp.o
+[ 46%] Linking CXX shared library libprotocol_parser_ubsan.so
+[ 46%] Built target protocol_parser_ubsan
+[ 47%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/raw_socket_sender.cpp.o
+[ 47%] Building CXX object parser/tests/CMakeFiles/gtest_parser-test.dir/gtest.cpp.o
+[ 47%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/raw_socket_receiver.cpp.o
+[ 48%] Linking CXX shared library libprotocol_parser_asan.so
+[ 49%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/verilator_sender.cpp.o
+[ 49%] Built target protocol_parser_asan
+[ 50%] Building CXX object parser/tests/CMakeFiles/protocol_parser-test_UBSAN.dir/protocol_parser_test.cpp.o
+[ 51%] Building CXX object parser/tests/CMakeFiles/protocol_parser-test_ASAN.dir/protocol_parser_test.cpp.o
+[ 52%] Linking CXX shared library libprotocol_logic.so
+[ 52%] Built target protocol_logic
+[ 52%] Building CXX object parser/tests/CMakeFiles/protocol_parser-test.dir/protocol_parser_test.cpp.o
+[ 52%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/verilator_receiver.cpp.o
+[ 53%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/traffic_generator.cpp.o
+[ 54%] Building CXX object traffic-gen/CMakeFiles/traffic_gen.dir/src/session.cpp.o
+[ 55%] Linking CXX shared library ../../../lib/libgmock.so
+[ 55%] Building CXX object parser/tests/CMakeFiles/object_serializer-test_UBSAN.dir/object_serializer_test.cpp.o
+[ 55%] Built target gmock
+[ 56%] Linking CXX executable gtest_parser-test
+[ 56%] Building CXX object parser/tests/CMakeFiles/object_serializer-test_ASAN.dir/object_serializer_test.cpp.o
+[ 56%] Built target gtest_parser-test
+[ 57%] Building CXX object parser/tests/CMakeFiles/object_serializer-test.dir/object_serializer_test.cpp.o
+[ 58%] Building CXX object parser/tests/CMakeFiles/logic_registry-test_UBSAN.dir/logic_registry_test.cpp.o
+[ 58%] Linking CXX executable protocol_parser-test_UBSAN
+[ 58%] Linking CXX executable protocol_parser-test_ASAN
+[ 58%] Built target protocol_parser-test_UBSAN
+[ 59%] Building CXX object parser/tests/CMakeFiles/logic_registry-test_ASAN.dir/logic_registry_test.cpp.o
+[ 59%] Linking CXX shared library libtraffic_gen.so
+[ 59%] Built target protocol_parser-test_ASAN
+[ 60%] Linking CXX executable protocol_parser-test
+[ 60%] Building CXX object parser/tests/CMakeFiles/logic_registry-test.dir/logic_registry_test.cpp.o
+[ 60%] Built target traffic_gen
+[ 60%] Built target protocol_parser-test
+[ 61%] Building CXX object parser/tests/CMakeFiles/stack_builder-test_UBSAN.dir/stack_builder_test.cpp.o
+[ 62%] Building CXX object parser/tests/CMakeFiles/stack_builder-test_ASAN.dir/stack_builder_test.cpp.o
+[ 63%] Linking CXX executable object_serializer-test_UBSAN
+[ 64%] Linking CXX executable object_serializer-test_ASAN
+[ 64%] Built target object_serializer-test_UBSAN
+[ 64%] Building CXX object parser/tests/CMakeFiles/stack_builder-test.dir/stack_builder_test.cpp.o
+[ 64%] Linking CXX executable logic_registry-test_UBSAN
+[ 65%] Linking CXX executable object_serializer-test
+[ 65%] Built target object_serializer-test_ASAN
+[ 66%] Building CXX object parser/tests/CMakeFiles/validator-test_UBSAN.dir/validator_test.cpp.o
+[ 66%] Built target logic_registry-test_UBSAN
+[ 67%] Building CXX object parser/tests/CMakeFiles/validator-test_ASAN.dir/validator_test.cpp.o
+[ 67%] Built target object_serializer-test
+[ 68%] Building CXX object parser/tests/CMakeFiles/validator-test.dir/validator_test.cpp.o
+[ 68%] Linking CXX executable logic_registry-test_ASAN
+[ 69%] Linking CXX executable logic_registry-test
+[ 69%] Built target logic_registry-test_ASAN
+[ 69%] Building CXX object logic/tests/CMakeFiles/ethernet_frame_logic-test.dir/ethernet_frame_logic_test.cpp.o
+[ 69%] Built target logic_registry-test
+[ 70%] Building CXX object logic/tests/CMakeFiles/stack_codec-test.dir/stack_codec_test.cpp.o
+[ 71%] Linking CXX executable validator-test_UBSAN
+[ 71%] Linking CXX executable validator-test_ASAN
+[ 71%] Linking CXX executable validator-test
+[ 71%] Built target validator-test_UBSAN
+[ 72%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_builder.cpp.o
+[ 72%] Linking CXX executable stack_builder-test_ASAN
+[ 72%] Linking CXX executable stack_builder-test_UBSAN
+[ 72%] Built target validator-test
+[ 72%] Built target validator-test_ASAN
+[ 73%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/packet_decoder.cpp.o
+[ 73%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_builder.cpp.o
+[ 73%] Built target stack_builder-test_UBSAN
+[ 73%] Built target stack_builder-test_ASAN
+[ 73%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_sender.cpp.o
+[ 74%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/pcap_receiver.cpp.o
+[ 74%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_sender.cpp.o
+[ 75%] Linking CXX executable stack_builder-test
+[ 76%] Building CXX object traffic-gen/CMakeFiles/packet_gen.dir/tools/packet_gen_main.cpp.o
+[ 77%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/raw_socket_receiver.cpp.o
+[ 78%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_sender.cpp.o
+[ 78%] Built target stack_builder-test
+[ 79%] Building CXX object traffic-gen/tests/CMakeFiles/traffic_gen-test.dir/traffic_gen_test.cpp.o
+[ 80%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/packet_decoder.cpp.o
+[ 80%] Building CXX object traffic-gen/tests/CMakeFiles/adp_fuzz-test.dir/adp_fuzz_test.cpp.o
+[ 81%] Linking CXX executable ethernet_frame_logic-test
+[ 81%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/verilator_receiver.cpp.o
+[ 81%] Building CXX object traffic-gen/tests/CMakeFiles/ptp_flags-test.dir/ptp_flags_test.cpp.o
+[ 81%] Built target ethernet_frame_logic-test
+[ 82%] Building CXX object external/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
+[ 83%] Linking CXX executable stack_codec-test
+[ 84%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_sender.cpp.o
+[ 85%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/traffic_generator.cpp.o
+[ 85%] Built target stack_codec-test
+[ 85%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/pcap_receiver.cpp.o
+[ 86%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_sender.cpp.o
+[ 86%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/raw_socket_receiver.cpp.o
+[ 87%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_sender.cpp.o
+[ 87%] Linking CXX executable packet_gen
+[ 87%] Linking CXX shared library ../../../lib/libgmock_main.so
+[ 88%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/verilator_receiver.cpp.o
+[ 88%] Built target packet_gen
+[ 88%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/traffic_generator.cpp.o
+[ 88%] Built target gmock_main
+[ 89%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_asan.dir/src/session.cpp.o
+[ 89%] Building CXX object traffic-gen/CMakeFiles/traffic_gen_ubsan.dir/src/session.cpp.o
+[ 89%] Linking CXX executable traffic_gen-test
+[ 90%] Linking CXX executable adp_fuzz-test
+[ 90%] Built target traffic_gen-test
+[ 90%] Built target adp_fuzz-test
+[ 91%] Linking CXX executable ptp_flags-test
+[ 91%] Built target ptp_flags-test
+[ 91%] Linking CXX shared library libtraffic_gen_asan.so
+[ 92%] Linking CXX shared library libtraffic_gen_ubsan.so
+[ 92%] Built target traffic_gen_asan
+[ 92%] Built target traffic_gen_ubsan
+[ 93%] Building CXX object traffic-gen/tests/CMakeFiles/traffic_gen-test_ASAN.dir/traffic_gen_test.cpp.o
+[ 94%] Building CXX object traffic-gen/tests/CMakeFiles/ptp_flags-test_ASAN.dir/ptp_flags_test.cpp.o
+[ 94%] Building CXX object traffic-gen/tests/CMakeFiles/adp_fuzz-test_ASAN.dir/adp_fuzz_test.cpp.o
+[ 94%] Building CXX object traffic-gen/tests/CMakeFiles/traffic_gen-test_UBSAN.dir/traffic_gen_test.cpp.o
+[ 94%] Building CXX object traffic-gen/tests/CMakeFiles/adp_fuzz-test_UBSAN.dir/adp_fuzz_test.cpp.o
+[ 95%] Building CXX object traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o
+[ 95%] Linking CXX executable ptp_flags-test_ASAN
+[ 95%] Linking CXX executable ptp_flags-test_UBSAN
+[ 96%] Linking CXX executable adp_fuzz-test_ASAN
+[ 97%] Linking CXX executable adp_fuzz-test_UBSAN
+[ 98%] Linking CXX executable traffic_gen-test_UBSAN
+[100%] Linking CXX executable traffic_gen-test_ASAN
+[100%] Built target ptp_flags-test_UBSAN
+[100%] Built target ptp_flags-test_ASAN
+[100%] Built target adp_fuzz-test_UBSAN
+[100%] Built target adp_fuzz-test_ASAN
+[100%] Built target traffic_gen-test_UBSAN
+[100%] Built target traffic_gen-test_ASAN
+# end: 2026-09-22T07:15:03Z exit: 0

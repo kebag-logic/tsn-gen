@@ -1,0 +1,9 @@
+# id: 090-cross-candidate-obj-ptp_flags-test_UBSAN
+# description: Compile traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o only, with the cross compiler
+# cwd: $VALIDATION_STORAGE/lanes/tsngen15-sanitizer-targets
+# argv: make -C $VALIDATION_STORAGE/tmp/a162-tsngen15/build/cross-090-cross-candidate -f traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/build.make traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o 
+# start: 2026-09-22T07:33:03Z
+make: Entering directory '$VALIDATION_STORAGE/tmp/a162-tsngen15/build/cross-090-cross-candidate'
+Building CXX object traffic-gen/tests/CMakeFiles/ptp_flags-test_UBSAN.dir/ptp_flags_test.cpp.o
+make: Leaving directory '$VALIDATION_STORAGE/tmp/a162-tsngen15/build/cross-090-cross-candidate'
+# end: 2026-09-22T07:33:05Z exit: 0

@@ -1,0 +1,6 @@
+# id: 010-base-default-prep
+# description: setup.sh prepare step: parser/tests/prep-tests.sh
+# cwd: $VALIDATION_STORAGE/tmp/a162-tsngen15/build/base-default
+# argv: $VALIDATION_STORAGE/tmp/a162-tsngen15/src/base/parser/tests/prep-tests.sh 
+# start: 2026-09-22T07:15:03Z
+# end: 2026-09-22T07:15:03Z exit: 0

@@ -1,0 +1,10 @@
+ CMakeLists.txt                              |  5 ++
+ cmake/CMakeGenTestingLibraries.cmake        | 21 +++++---
+ docs/low-level/architecture.md              | 15 ++++--
+ docs/low-level/testing-and-ci.md            | 43 +++++++++++++++-
+ tests/sanitizer/CMakeLists.txt              | 79 +++++++++++++++++++++++++++++
+ tests/sanitizer/check_sanitizer_child.cmake | 53 +++++++++++++++++++
+ tests/sanitizer/sanitizer_probe.h           | 22 ++++++++
+ tests/sanitizer/sanitizer_probe_lib.cpp     | 21 ++++++++
+ tests/sanitizer/sanitizer_probe_test.cpp    | 78 ++++++++++++++++++++++++++++
+ 9 files changed, 324 insertions(+), 13 deletions(-)
