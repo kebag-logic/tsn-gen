@@ -37,6 +37,7 @@ Current suites:
 | traffic-gen | `ptp_flags-test` | 802.1AS media-dependent TX flag oracle (see below) |
 | logic | `ethernet_frame_logic-test` | reference module bound via StackBuilder |
 | logic | `stack_codec-test` | logic-driven stack encode/decode golden tests (see below) |
+| tests/sanitizer | `sanitizer_probe-test` | the sanitizer helpers instrument what they build (see below) |
 
 ### Sanitizer variants
 
@@ -45,10 +46,48 @@ Current suites:
 `target_link_testlibs` emits three executables per test — `<name>`,
 `<name>_ASAN`, `<name>_UBSAN` — linked against the matching variant, and
 `gtest_discover_test_wtestlibs` registers all three. So one `ctest` run
-covers plain, ASan, and UBSan. A sanitizer report exits non-zero and fails
-the test. The logic library intentionally has no sanitized variant today;
+covers plain, ASan, and UBSan.
+The logic library intentionally has no sanitized variant today;
 its test links the plain libraries (sanitizer coverage of the shared
 machinery comes from the parser suites).
+
+Only the `-O`/`-g` levels of a variant follow the build type. Its sanitizer
+flag is a PUBLIC compile option applied under every build type, including
+the empty default that `setup.sh` and CI configure, so the variant and each
+test TU linking it are compiled with instrumentation; the `_ASAN`/`_UBSAN`
+link lines add the sanitizer runtime. Plain libraries and executables,
+`protocol_logic`, `packet_gen` and the vendored rapidyaml and googletest
+targets are not instrumented.
+
+The two sanitizers end a run differently. An ASan report stops the process
+with exit status 1, which fails the test. UBSan recovers by default from
+most checks: it prints the report to stderr and the program carries on, so
+a UBSan report fails a test only when the test fails for another reason.
+Look for `runtime error:` in the output (CTest keeps passing tests' output
+in `Testing/Temporary/LastTest.log`), or run the binary with
+`UBSAN_OPTIONS=halt_on_error=1` to stop at the first report.
+
+### Sanitizer helper check
+
+`tests/sanitizer/` tests the helpers themselves under whatever build type
+is configured. A fixture library built by `generate_test_libs` and a probe
+built by `target_link_testlibs` give seven CTest cases:
+
+- `sanitizer_probe-test.clean`, `sanitizer_probe-test_ASAN.clean` and
+  `sanitizer_probe-test_UBSAN.clean`: a clean run exits 0 with no report.
+- `sanitizer_probe-test_ASAN.library-heap-overflow`,
+  `sanitizer_probe-test_ASAN.consumer-heap-overflow`,
+  `sanitizer_probe-test_UBSAN.library-signed-overflow` and
+  `sanitizer_probe-test_UBSAN.consumer-signed-overflow`: each puts one
+  defect either in the fixture library or in the probe's own TU. A linked
+  runtime alone cannot catch it; only compiling that TU with the sanitizer
+  does. `check_sanitizer_child.cmake` prints the child's exit status and
+  output, and passes only for status 1, the expected report, and no
+  progress past the fault.
+
+The two UBSan cases set `UBSAN_OPTIONS=halt_on_error=1` in their test
+properties, because otherwise UBSan recovers and the child exits 0. No other
+test changes the default.
 
 ### Stack codec golden tests
 

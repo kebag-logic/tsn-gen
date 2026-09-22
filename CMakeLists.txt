@@ -60,6 +60,11 @@ add_subdirectory(parser)
 add_subdirectory(logic)
 add_subdirectory(traffic-gen)
 
+# Checks that the sanitizer helpers instrument what they build.
+if(ENABLE_PARSER_TESTS)
+    add_subdirectory(tests/sanitizer)
+endif()
+
 if(ENABLE_SYSTEMC_SIM)
     add_subdirectory(sim)
 endif()
