@@ -13,11 +13,15 @@ macro(generate_test_libs BASENAME INCDIRS SOURCEFILES)
 		${_SOURCEFILES}
 	)
 
+	# Only optimisation/debug levels follow the configuration. The sanitizer
+	# flag applies under every build type, including the empty default, and
+	# as a PUBLIC option it also instruments each test TU linking the variant.
 	target_compile_options(${BASENAME}_asan PUBLIC
-		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
-		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
-		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
-		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS} ${COMP_ASAN_FLAGS}>
+		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS}>
+		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS}>
+		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS}>
+		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS}>
+		${COMP_ASAN_FLAGS}
 	)
 
 	target_include_directories(${BASENAME}_asan PUBLIC
@@ -26,10 +30,11 @@ macro(generate_test_libs BASENAME INCDIRS SOURCEFILES)
 	)
 
 	target_compile_options(${BASENAME}_ubsan PUBLIC
-		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS} ${COMP_UBSAN_FLAGS}>
-		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS} ${COMP_UBSAN_FLAGS}>
-		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS} ${COMP_UBSAN_FLAGS}>
-		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS} ${COMP_UBSAN_FLAGS}>
+		$<$<CONFIG:Debug>:-O0 -g3 ${COMP_COVERAGE_FLAGS}>
+		$<$<CONFIG:Release>:-O3 -g0 ${COMP_COVERAGE_FLAGS}>
+		$<$<CONFIG:MinSizeRel>:-Os -g0 ${COMP_COVERAGE_FLAGS}>
+		$<$<CONFIG:RelWithDebInfo>:-Os -g3 ${COMP_COVERAGE_FLAGS}>
+		${COMP_UBSAN_FLAGS}
 	)
 
 	target_include_directories(${BASENAME}_ubsan PUBLIC

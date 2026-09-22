@@ -184,10 +184,18 @@ protocol_logic      x          (intentionally not built — mirror
 `target_link_testlibs` (`cmake/CMakeLinkToTestlibs.cmake`) then produces
 three executables per test source — `<name>`, `<name>_ASAN`,
 `<name>_UBSAN` — each linked against the matching library variant, and
-`gtest_discover_test_wtestlibs` registers all three with CTest. A sanitizer
-report makes the binary exit non-zero, which CTest reports as a failure.
+`gtest_discover_test_wtestlibs` registers all three with CTest.
 Never mix sanitized and unsanitized libraries in one binary — the runtimes
 must match.
+
+The per-configuration part of a variant is only its `-O`/`-g` level. The
+sanitizer flag is a PUBLIC compile option under every build type, including
+the empty default, so the variant and each test TU linking it are
+instrumented, while the `_ASAN`/`_UBSAN` link lines add the runtime. An
+ASan report stops the binary with exit status 1, which CTest reports as a
+failure; UBSan recovers by default, printing its report and carrying on.
+See [testing-and-ci.md](testing-and-ci.md) for these semantics and for the
+`tests/sanitizer/` check of the helpers.
 
 ## Directory layout
 
@@ -220,7 +228,8 @@ tsn-gen/
 │   └── tests/                gtest + aecp_behave/ + stack_behave/ BDD suites
 ├── sim/                      SystemC + ns-3 + Verilator co-simulation (opt-in)
 └── tests/                    runner scripts (run-tests.sh, run-tests-behave.sh,
-                              exec-local-test.sh) + pre-commit hook installer
+                              exec-local-test.sh) + pre-commit hook installer;
+                              sanitizer/ checks the sanitizer helpers
 ```
 
 ## Extension points
