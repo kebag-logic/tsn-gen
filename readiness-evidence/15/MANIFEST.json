@@ -1,0 +1,74 @@
+[
+  {
+    "file": "Debug-compile-commands.json",
+    "original_sha256": "8ad8280cb29caf876c21ace1f0c59d37a3dc2ce68842536567df6ed42b725ebb",
+    "published_sha256": "44723148884f1f891e8edd75c0250863a0cb1aea0506aa8de2470cde4bf85c31",
+    "path_redacted": true
+  },
+  {
+    "file": "Debug-configure.log",
+    "original_sha256": "2005ad232d00a38b3013f44522d48abd16cb12a6996a0a1c2c2e025f9ee7d123",
+    "published_sha256": "d4e0992a24068d526397caa194d29e94d2e14af91f69b557cc6f007c2ed54974",
+    "path_redacted": true
+  },
+  {
+    "file": "MinSizeRel-compile-commands.json",
+    "original_sha256": "1cf63cc2aa403ba1b1045c9f5850d8ae2c2af8ee3ba3336af36febb3ca80ea6d",
+    "published_sha256": "1188e769db601549aac1d28b60d2bb18233ca5e0586a4458ecc381fe26ab6766",
+    "path_redacted": true
+  },
+  {
+    "file": "MinSizeRel-configure.log",
+    "original_sha256": "5101bf52a89a218bb1bc5ff61e46071155558f8c0b44a7ef4d12b76ee5f2721f",
+    "published_sha256": "82b3e52914d6acaefb010730240a56d6b0aa99f01617f703126bc0e452c21425",
+    "path_redacted": true
+  },
+  {
+    "file": "RelWithDebInfo-compile-commands.json",
+    "original_sha256": "7924144794ca7d30c2592c00063ea6f65c40beb183a327f7ab890664139a8eb3",
+    "published_sha256": "19a83a7696c902d3f90e96211dfb392c09ec83e4bbcbea0f59fae39509e8c4a9",
+    "path_redacted": true
+  },
+  {
+    "file": "RelWithDebInfo-configure.log",
+    "original_sha256": "a1c29c3b652252fe396c57395b08219d8e98db5ce4accbbf09fc028cf7f47013",
+    "published_sha256": "5ade3a42411067ee2864091c15b43cd7bdf057bd99d573c6d4cdde990f3f2d5c",
+    "path_redacted": true
+  },
+  {
+    "file": "Release-compile-commands.json",
+    "original_sha256": "64efe68ae4602754c0e7b0c4b97e0fb2884994b2d8152e266393696b97f13394",
+    "published_sha256": "b3f522a8a0f7b0c111464af240e2f4e595efd7a5a8be0f7167eaf5a65bb4ffd6",
+    "path_redacted": true
+  },
+  {
+    "file": "Release-configure.log",
+    "original_sha256": "7e4688d6eb54263f34a517073c6ecaec574a2bed5d295a21244e2c71c3517fcd",
+    "published_sha256": "d2dc2dd6f1b04f8376f7644cd6dbfffc8a5dde8d8e761e25048ddea37346f3de",
+    "path_redacted": true
+  },
+  {
+    "file": "empty-compile-commands.json",
+    "original_sha256": "f8d723c144d4eaaf4b592cb43e9d1a8c1d3fded5db68d858499110f9389cbbcb",
+    "published_sha256": "1587b285a4b9b8c91a405441c72a101574a345578c8969e374461f94cd428090",
+    "path_redacted": true
+  },
+  {
+    "file": "empty-configure.log",
+    "original_sha256": "9184d91f68f62af904085f0a3eb36ec23047edae34285d207afa3c4ba35668e3",
+    "published_sha256": "5eb4a28ddce63a1289cc71fc624e216a87c56a46e6cf4c0d03c048058b2b0278",
+    "path_redacted": true
+  },
+  {
+    "file": "generated-command-results.json",
+    "original_sha256": "ee089fcb8da4e4ca3573278c67ffc48d8b1148b3ba4944c672b6cf0752dc45e4",
+    "published_sha256": "175217330063b83314dfcd64d06bbe4fb6226dbc509c881a78d9088776f3efbe",
+    "path_redacted": true
+  },
+  {
+    "file": "issue.json",
+    "original_sha256": "3d2600c276ff0d03dd55b44c3fe20032a968df22ff7f79429096a678d8f6fda7",
+    "published_sha256": "3d2600c276ff0d03dd55b44c3fe20032a968df22ff7f79429096a678d8f6fda7",
+    "path_redacted": false
+  }
+]
